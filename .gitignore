@@ -2,9 +2,9 @@
 __pycache__/
 *.pyc
 .pytest_cache/
-data/
-demo/
-new_stories.json
+/data/
+/demo/
+/new_stories.json
 digests/*.md
 digests/.last_digest
 !digests/.gitkeep
