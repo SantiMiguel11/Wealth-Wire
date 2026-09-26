@@ -186,7 +186,7 @@ def snapshot() -> dict:
         }
 
 
-def public_view(data: dict, show_descriptions: bool, exclude: set[str]) -> dict:
+def public_view(data: dict, show_descriptions: bool, exclude: set[str], top_hours: float = 24) -> dict:
     """Drop excluded sources and (unless allowed) publisher descriptions from everything embedded in the page."""
     clusters = []
     for c in data["clusters"]:
@@ -224,16 +224,20 @@ def public_view(data: dict, show_descriptions: bool, exclude: set[str]) -> dict:
                 counts[f] = counts.get(f, 0) + 1
     data["trending"] = [{"firm": f, "stories": n} for f, n in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))[:15]]
 
-    # "Today's top stories" (the Claude-written digest is not part of the public site)
-    top = []
-    ns = paths.new_stories_path()
-    if ns.exists():
-        for st in json.loads(ns.read_text(encoding="utf-8")).get("stories", []):
-            st = dict(st, sources=[s for s in st["sources"] if s["name"] not in exclude], descriptions=[])
-            if st["sources"]:
-                st["outlet_count"] = len(st["sources"])
-                top.append(st)
-    data["digest"] = {"date": None, "filename": None, "html": None, "top": top[:10], "site_mode": True}
+    # "Top stories" tab: stories from the window before the latest refresh (the Claude-written digest is not
+    # part of the public site). Rank: watchlist hits, then outlet count, then recency.
+    cutoff = (now - timedelta(hours=top_hours)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    ranked = sorted((c for c in clusters if c["last_published"] >= cutoff), key=lambda c: c["last_published"], reverse=True)
+    ranked.sort(key=lambda c: (-len(c.get("watchlist_hits") or []), -c["outlet_count"]))
+    top = [
+        {"cluster_id": c["id"], "headline": c["headline"], "category": c["category"],
+         "sources": [{"name": s["name"], "url": s["url"]} for s in c["sources"]], "outlet_count": c["outlet_count"],
+         "watchlist_hits": c.get("watchlist_hits") or [], "firms": c["firms"], "aum_usd": c["aum_usd"],
+         "descriptions": [], "first_seen": c["first_seen"]}
+        for c in ranked
+    ]
+    data["digest"] = {"date": None, "filename": None, "html": None, "top": top[:10], "site_mode": True,
+                      "window_hours": top_hours}
 
     data["meta"]["sources"] = [s for s in data["meta"]["sources"] if s["name"] not in exclude]
     data["meta"]["items"] = sum(len(c["items"]) for c in clusters)
@@ -264,7 +268,8 @@ def render(data: dict, banner: str = "", extra_head: str = "", extra_css: str = 
 
 def build_site(out: Path) -> None:
     cfg = load_config().get("site") or {}
-    data = public_view(snapshot(), bool(cfg.get("show_descriptions", False)), set(cfg.get("exclude_sources") or []))
+    data = public_view(snapshot(), bool(cfg.get("show_descriptions", False)), set(cfg.get("exclude_sources") or []),
+                       float(cfg.get("top_stories_hours", 24)))
     html = render(data, extra_head='\n<meta name="robots" content="noindex, nofollow">',
                   extra_css=READONLY_CSS, watch_note=READONLY_NOTE)
     if not cfg.get("show_descriptions", False):

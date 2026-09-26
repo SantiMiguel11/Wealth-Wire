@@ -20,7 +20,7 @@ date, source and a description of at most 300 characters, and never logs in or r
 
 The easiest way to use Wealth Wire is the self-updating website:
 
-1. **Every 2 hours**, GitHub Actions (`.github/workflows/refresh-site.yml`) runs the ingestion on GitHub's
+1. **Every 3 days** (7:17am Pacific), GitHub Actions (`.github/workflows/refresh-site.yml`) runs the ingestion on GitHub's
    machines, rebuilds a static copy of the app, and force-pushes it to the **`live`** branch. The branch
    carries the database forward, so history accumulates.
 2. **Vercel** serves the `live` branch. Its `vercel.json` tells Vercel to publish the `site/` folder as-is,

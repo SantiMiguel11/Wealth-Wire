@@ -446,9 +446,9 @@ async function renderDigest() {
   }
   const top = d.top || [];
   box.replaceChildren(el("article", { class: "digest" },
-    d.site_mode ? el("div", { class: "digest-head" }, el("h1", {}, "Today's top stories")) :
+    d.site_mode ? el("div", { class: "digest-head" }, el("h1", {}, "Top stories")) :
       el("div", { class: "digest-head" }, el("h1", {}, "No digest written yet")),
-    d.site_mode ? el("p", { class: "muted" }, "New in the last 24 hours, ranked by watchlist hits, then how many outlets covered it, then recency. Refreshed automatically every 2 hours.") :
+    d.site_mode ? el("p", { class: "muted" }, `Published in the ${d.window_hours && d.window_hours !== 24 ? "last " + Math.round(d.window_hours / 24) + " days" : "last 24 hours"} before the latest refresh, ranked by watchlist hits, then how many outlets covered it, then recency.`) :
       el("p", {}, "There is no ", el("code", {}, "digests/YYYY-MM-DD.md"), " yet. Run ", el("code", {}, "/digest"),
         " in Claude Code to write today's. Meanwhile, here are the top stories from ", el("code", {}, "new_stories.json"), "."),
     top.length ? el("ol", { class: "fallback-list" }, ...top.map((c) => el("li", {},
@@ -457,7 +457,7 @@ async function renderDigest() {
         `${c.outlet_count} outlet${c.outlet_count > 1 ? "s" : ""}`), c.aum_usd ? el("span", { class: "aum-cell", style: "margin-left:8px" }, fmtAum(c.aum_usd)) : null,
         (c.watchlist_hits || []).length ? el("span", { class: "chip chip-watch", style: "margin-left:8px" }, "★ " + c.watchlist_hits.join(", ")) : null),
       el("div", { class: "srcs" }, ...c.sources.map((x) => extLink(x.url, x.name, "src")))))) :
-      stateBox("", "No new stories", d.site_mode ? "Nothing new in the last 24 hours." : "new_stories.json is empty or missing — run an ingestion first.")));
+      stateBox("", "No new stories", d.site_mode ? "Nothing new since the previous refresh." : "new_stories.json is empty or missing — run an ingestion first.")));
 }
 
 /* ---------- Sources ---------- */

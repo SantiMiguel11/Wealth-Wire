@@ -1,4 +1,4 @@
-# Fetches the news every 2 hours on GitHub's machines, rebuilds the static site, and force-pushes it to
+# Fetches the news every 3 days on GitHub's machines, rebuilds the static site, and force-pushes it to
 # the `live` branch. Vercel deploys `live` automatically (vercel.json on that branch sets it up).
 # Also runs when code/config on main changes (e.g. you edit watchlist.yaml on github.com), and on demand
 # from the Actions tab ("Run workflow").
@@ -6,7 +6,7 @@ name: Refresh site
 
 on:
   schedule:
-    - cron: "17 */2 * * *"          # every 2 hours at :17 (UTC)
+    - cron: "17 14 */3 * *"         # every 3rd day of the month at 14:17 UTC (7:17am Pacific)
   workflow_dispatch:
   push:
     branches: [main]
