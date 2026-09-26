@@ -15,7 +15,8 @@ def _ensure_deps() -> None:
         import bleach, fastapi, feedparser, httpx, rapidfuzz, yaml  # noqa: F401
     except ImportError:
         venv_py = ROOT / ".venv" / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
-        if venv_py.exists() and Path(sys.executable).resolve() != venv_py.resolve():
+        in_venv = Path(sys.prefix).resolve() == (ROOT / ".venv").resolve()
+        if venv_py.exists() and not in_venv:
             os.chdir(ROOT)
             os.execv(str(venv_py), [str(venv_py), "-m", "wealthwire", *sys.argv[1:]])
         raise SystemExit("Missing dependencies. Run ./run.sh once (creates .venv) or: pip install -r requirements.txt")
