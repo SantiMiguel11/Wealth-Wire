@@ -7,8 +7,11 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 from .categorize import Categorizer
-from .config import load_config
+from .cluster import ClusterItem, cluster
+from .config import load_config, load_stoplist
 from .dates import utcnow
+from .extract import extract_aum, extract_firms
+from .watchlist import Matcher, load_watchlist
 
 
 def _load_items(conn: sqlite3.Connection) -> list[dict]:
@@ -19,7 +22,29 @@ def _load_items(conn: sqlite3.Connection) -> list[dict]:
 
 
 def group_items(items: list[dict], cfg: dict) -> list[list[dict]]:
-    return [[it] for it in items]
+    by_id = {it["id"]: it for it in items}
+    citems = [
+        ClusterItem(it["id"], it["source"], it["published_at"], it["title"], firms=set(it["title_firms"]), category=it["category"])
+        for it in items
+    ]
+    groups = cluster(citems, threshold=float(cfg["cluster"]["threshold"]), window_hours=float(cfg["cluster"]["window_hours"]))
+    return [[by_id[c.id] for c in g] for g in groups]
+
+
+def extract_item(it: dict, stoplist: set[str], matcher: Matcher) -> None:
+    """Firms from title and description (separately, so spans never cross fields) + watchlist names."""
+    alias_map = matcher.alias_map()
+    title_firms = extract_firms(it["title"], stoplist, alias_map)
+    firms = list(title_firms)
+    for f in extract_firms(it["description"], stoplist, alias_map) + matcher.hits(it["title"], it["description"]):
+        if f not in firms:
+            firms.append(f)
+    for f in matcher.hits(it["title"]):
+        if f not in title_firms:
+            title_firms.append(f)
+    it["title_firms"] = title_firms
+    it["firms"] = firms
+    it["aum_usd"] = extract_aum(it["title"]) or extract_aum(it["description"])
 
 
 def write_clusters(conn: sqlite3.Connection, groups: list[list[dict]]) -> None:
@@ -54,10 +79,14 @@ def recompute(conn: sqlite3.Connection, now: datetime | None = None) -> dict:
     now = now or utcnow()
     items = _load_items(conn)
     categorizer = Categorizer()
+    stoplist = load_stoplist()
+    matcher = Matcher(load_watchlist())
     for it in items:
         it["category"] = categorizer.categorize(it["title"], it["description"])
-        it["aum_usd"] = None
+        extract_item(it, stoplist, matcher)
     conn.executemany("UPDATE items SET category=?, aum_usd=? WHERE id=?", [(it["category"], it["aum_usd"], it["id"]) for it in items])
+    conn.execute("DELETE FROM item_firms")
+    conn.executemany("INSERT OR IGNORE INTO item_firms(item_id, firm) VALUES (?, ?)", [(it["id"], f) for it in items for f in it["firms"]])
     groups = group_items(items, cfg)
     write_clusters(conn, groups)
     conn.commit()

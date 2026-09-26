@@ -14,7 +14,7 @@ DEFAULTS: dict[str, Any] = {
     "user_agent": "WealthWire/0.1 (personal news reader; {contact_email})",
     "timezone": "America/Los_Angeles",
     "http": {"per_host_delay_seconds": 2.0, "timeout_seconds": 15, "retries": 1, "backoff_seconds": 2.0},
-    "cluster": {"window_hours": 72, "threshold": 72},
+    "cluster": {"window_hours": 72, "threshold": 70},
     "server": {"host": "127.0.0.1", "port": 8000, "reingest_interval_hours": 2},
     "digest": {"fallback_hours": 24, "top_n": 10},
 }

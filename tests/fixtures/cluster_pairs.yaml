@@ -1,0 +1,56 @@
+# Headline pairs for tuning/testing the clusterer. SYNTHETIC: written in the styles of the seeded outlets
+# (live sources were unreachable from the build environment; see DECISIONS.md #2).
+# Add real pairs here as you notice mis-clustering: [headline A, headline B].
+match:
+  - ["Harborview Wealth Partners buys $1.2bn Summit Ridge Advisors", "Harborview Wealth Partners Acquires $1.2B Summit Ridge Advisors | ThinkAdvisor"]
+  - ["Harborview Wealth Partners Acquires $1.2B Summit Ridge Advisors", "Harborview Wealth Partners to Acquire Summit Ridge Advisors, a $1.2 Billion RIA"]
+  - ["Harborview Wealth Partners buys $1.2bn Summit Ridge Advisors", "Harborview Wealth Partners scoops up Summit Ridge Advisors as its RIA buying spree continues"]
+  - ["Cedar Lane Private Wealth sells to Meridian Capital Partners", "Meridian Capital Partners adds $850M Cedar Lane Private Wealth"]
+  - ["Blue Heron Capital Takes Minority Stake In Oakmont Family Office", "Blue Heron Capital takes minority stake in Oakmont Family Office"]
+  - ["Northgate Advisors and Pinecrest Wealth Merge to Form $4.5B Firm", "Northgate Advisors and Pinecrest Wealth merge in $4.5 billion combination"]
+  - ["PE-Backed Crestline Wealth to Buy Riverbend Financial and Aspen Grove Advisors", "Crestline Wealth To Buy Riverbend Financial, Aspen Grove Advisors"]
+  - ["Bear Mountain Capital makes minority investment in Willowbrook Wealth", "Willowbrook Wealth lands minority investment from Bear Mountain Capital"]
+  - ["Wirehouse Team Managing $2.1 Billion Breaks Away to Join Harborview Wealth Partners", "Wirehouse Team With $2.1B Breaks Away to Harborview Wealth Partners | ThinkAdvisor"]
+  - ["$2.1bn wirehouse team breaks away to join Harborview Wealth Partners", "Wirehouse Team With $2.1B Breaks Away to Harborview Wealth Partners"]
+  - ["Alder Street Securities Team With $400 Million Joins Bluewater Private Wealth", "Alder Street team with $400M joins Bluewater Private Wealth"]
+  - ["SEC Charges Ohio Investment Adviser With Cherry-Picking Scheme", "SEC charges Ohio adviser in $3M cherry-picking scheme"]
+  - ["SEC charges Ohio adviser in $3M cherry-picking scheme", "SEC Charges Ohio Advisor Over Cherry-Picking Scheme | ThinkAdvisor"]
+  - ["FINRA fines broker-dealer $1.5 million over supervision lapses", "FINRA fines broker-dealer $1.5M for supervision failures"]
+  - ["SEC proposes changes to custody rule for crypto assets", "SEC Proposes Revamp of Custody Rule for Crypto Assets"]
+  - ["SEC Proposes Revamp of Custody Rule for Crypto Assets", "SEC Proposes Custody Rule Changes for Crypto | ThinkAdvisor"]
+  - ["Ledgerline launches AI meeting-notes assistant for RIAs", "Ledgerline Rolls Out AI Meeting-Notes Assistant for RIAs"]
+  - ["Goldman Sachs Asset Management Launches Two Active ETFs", "Goldman Sachs Asset Management Launches Pair Of Active ETFs"]
+  - ["Goldman Sachs Asset Management Launches Two Active ETFs", "Goldman Sachs Asset Management Launches 2 Active ETFs | ThinkAdvisor"]
+  - ["Fed holds rates steady as advisors brace for volatility", "Fed Holds Rates Steady, Signals One More Cut"]
+  - ["Fed Holds Rates Steady, Signals One More Cut", "Fed Holds Rates Steady; What Advisors Should Tell Clients"]
+  - ["Mariner Wealth Advisors adds $2.4B RIA in Texas", "Mariner acquires $2.4 billion Texas RIA"]
+  - ["LPL Financial to buy Atria Wealth Solutions", "LPL Financial Agrees to Acquire Atria Wealth Solutions | ThinkAdvisor"]
+  - ["Schwab to cut 5% of workforce", "Charles Schwab Cutting 5% of Staff"]
+no_match:
+  # same acquirer, different targets
+  - ["Atlas Wealth Management acquires Brookfield Row Advisory", "Lakeshore Financial Group agrees to be acquired by Atlas Wealth Management"]
+  - ["Harborview Wealth Partners buys $1.2bn Summit Ridge Advisors", "Harborview Wealth Partners buys $600M Canyon Creek Advisors"]
+  # same firm, different kind of story
+  - ["Harborview Wealth Partners buys $1.2bn Summit Ridge Advisors", "$2.1bn wirehouse team breaks away to join Harborview Wealth Partners"]
+  - ["Harborview Wealth Partners Acquires $1.2B Summit Ridge Advisors", "Wirehouse Team With $2.1B Breaks Away to Harborview Wealth Partners"]
+  - ["Northgate Advisors and Pinecrest Wealth Merge to Form $4.5B Firm", "Pinecrest Wealth names Dana Ortiz CEO ahead of Northgate merger"]
+  - ["Coldstream hires former Kestrel Advisors CIO to lead investments", "Coldstream Wealth Management Opens Portland Office"]
+  - ["Goldman Sachs Asset Management Launches Two Active ETFs", "Former Goldman Sachs Advisors Launch Tidewater Family Office"]
+  # same regulator, different cases
+  - ["SEC Charges Ohio Investment Adviser With Cherry-Picking Scheme", "SEC Charges New Jersey Adviser With Misappropriating Client Funds"]
+  - ["SEC charges Ohio adviser in $3M cherry-picking scheme", "SEC Announces Enforcement Results for Fiscal Year 2026"]
+  - ["FINRA fines broker-dealer $1.5 million over supervision lapses", "FINRA fines broker-dealer $3 million over Reg BI violations"]
+  - ["SEC proposes changes to custody rule for crypto assets", "SEC charges Ohio adviser in $3M cherry-picking scheme"]
+  # same topic, different stories
+  - ["Fed holds rates steady as advisors brace for volatility", "S&P 500 Notches Record As Tech Rally Broadens"]
+  - ["Alder Street team with $400M joins Bluewater Private Wealth", "Wirehouse Team With $2.1B Breaks Away to Harborview Wealth Partners"]
+  - ["Ledgerline launches AI meeting-notes assistant for RIAs", "Arbor Clearing Rolls Out New Advisor Portal"]
+  - ["Interval funds see record inflows as advisors chase private credit", "Goldman Sachs Asset Management Launches Two Active ETFs"]
+  - ["Weekend Reading For Financial Planners (September 20-21)", "Weekend Reading For Financial Planners (September 27-28)"]
+  - ["Two Texas RIAs combine in deal creating $3bn firm", "Serial acquirer strikes again with $600M buy in Arizona"]
+  - ["Blue Heron Capital takes minority stake in Oakmont Family Office", "Bear Mountain Capital makes minority investment in Willowbrook Wealth"]
+# Known limitation (documented, not asserted): two different teams with the same AUM joining the same firm
+# differ only in one proper noun, which fuzzy token scoring cannot weigh. They are only merged if they land
+# within the 72h window.
+known_limitations:
+  - ["Merrill team managing $1B joins Rockefeller", "Morgan Stanley team managing $1B joins Rockefeller"]

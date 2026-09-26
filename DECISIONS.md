@@ -60,10 +60,16 @@ Each entry: **decision** — alternatives considered — why.
     then People Moves; then weak M&A words ("deal", "sale", "stake"); then Regulation, Wealthtech,
     Products & Funds, Markets; else Other. First match wins. Category of a cluster = category of its
     headline (earliest) item, falling back to the most common non-Other category among its items.
-15. **Clustering** = union-find over pairs from *different* sources within 72h; score = 0.6·token_set_ratio
-    + 0.4·token_sort_ratio on normalized titles (+12 shared firm, +10 shared AUM, −10 conflicting AUM,
-    capped at 50 when fewer than 2 content tokens are shared). Pure token_set_ratio alone scored 100 for
-    any short headline whose words were a subset of a long one, which over-merged.
+15. **Clustering** = union-find over pairs from *different* sources within 72h. Score = 0.6·token_set_ratio
+    + 0.4·token_sort_ratio on normalized titles (source suffix, stopwords, punctuation removed; money
+    canonicalized so "$1.2B" = "$1.2 billion"; headline-verb synonyms like buys/acquires/scoops up unified),
+    then evidence: +12 identical firm sets, +4 shared firm with extras on one side, −20 when both sides name
+    a firm the other lacks (same acquirer, different targets), −10 no firm in common, ±10 shared/conflicting
+    AUM, +8 identical first three tokens, −30 conflicting plain numbers (recurring columns), −8 different
+    categories, capped at 50 with fewer than 2 shared tokens. Threshold 70: in the pair fixtures matches score
+    ≥70.3 and non-matches ≤67.8. Pure token_set_ratio scored 100 for any short headline whose words were a
+    subset of a long one, which over-merged. Known limitation (in the fixture file, not asserted): two teams
+    with identical AUM joining the same firm differ by one proper noun and would merge.
 16. **AUM requires a `$`** and asset context nearby ("with", "managing", "RIA", "team", "in assets",
     "AUM", …); dollar figures next to "fine", "penalty", "pay", "raises", "fund", "for" are not AUM.
     Alternative: treat every dollar figure as AUM — that turned SEC fines into AUM.

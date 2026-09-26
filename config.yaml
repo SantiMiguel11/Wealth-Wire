@@ -14,7 +14,7 @@ http:
 
 cluster:
   window_hours: 72                 # only group items published within this window of each other
-  threshold: 72                    # 0-100 similarity score needed to join a cluster
+  threshold: 70                    # 0-100 similarity score needed to join a cluster (tuned on tests/fixtures/cluster_pairs.yaml)
 
 server:
   host: 127.0.0.1
