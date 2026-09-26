@@ -7,6 +7,10 @@ You are writing the Wealth Wire morning digest for a U.S. wealth-management / RI
 Work only from the local files named below. Do not fetch any web page, do not open article links,
 and do not add any fact, number, name or date that is not present in `new_stories.json`.
 
+This command runs unattended, so use only these tools: the one shell command in step 1, reading
+`./new_stories.json`, and writing files under `./digests/`. The `digests/` folder already exists — do not
+create directories, list files, or run any other shell command.
+
 ## Steps
 
 1. Run exactly this command from the repository root (it takes about a minute — it is polite to the news sites):
@@ -56,8 +60,9 @@ and do not add any fact, number, name or date that is not present in `new_storie
    ```
 
    Rules for the text you write:
-   - The summary is ONE sentence based only on that story's `headline` and `descriptions`. If the
-     descriptions are empty, restate the headline plainly — do not speculate about details.
+   - The summary is ONE sentence based only on that story's `headline` and `descriptions`, keeping their
+     wording where possible (don't upgrade "to lead investments" into a specific title or committee role).
+     If the descriptions are empty, restate the headline plainly — do not speculate about details.
    - "Why it matters to advisors" is one sentence of practical relevance (competition for clients or
      advisors, compliance exposure, product shelf, M&A valuations, recruiting), phrased as implication, not
      as new fact. Never invent numbers, names, dates or outcomes.
