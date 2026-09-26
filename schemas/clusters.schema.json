@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wealth-wire/schemas/clusters.schema.json",
+  "title": "clusters.json",
+  "description": "One entry per story (a cluster of articles from different outlets), newest activity first.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+    },
+    "clusters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "headline": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^https?://"
+          },
+          "category": {
+            "type": "string",
+            "minLength": 1
+          },
+          "first_published": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+          },
+          "last_published": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+          },
+          "first_seen": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+          },
+          "outlet_count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "pattern": "^https?://"
+                },
+                "published_at": {
+                  "type": "string",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+                },
+                "kind": {
+                  "enum": [
+                    "feed",
+                    "wire",
+                    "google_news"
+                  ]
+                }
+              },
+              "required": [
+                "name",
+                "url",
+                "published_at",
+                "kind"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "firms": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "slug": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "pattern": "^[a-z0-9-]+$"
+                },
+                "crd": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "verified": {
+                  "type": "boolean"
+                },
+                "city": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "state": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "name",
+                "slug",
+                "crd",
+                "verified",
+                "city",
+                "state"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "states": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Z]{2}$"
+            }
+          },
+          "aum_usd": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "aum_source": {
+            "enum": [
+              "headline",
+              "sec",
+              null
+            ]
+          },
+          "sec_aum_as_of": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "press_release": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "headline",
+          "url",
+          "category",
+          "first_published",
+          "last_published",
+          "first_seen",
+          "outlet_count",
+          "sources",
+          "firms",
+          "states",
+          "aum_usd",
+          "aum_source",
+          "sec_aum_as_of",
+          "press_release"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "generated_at",
+    "clusters"
+  ],
+  "additionalProperties": false
+}

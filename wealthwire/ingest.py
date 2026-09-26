@@ -265,6 +265,6 @@ def run_ingest(fixtures: Path | None = None, now: datetime | None = None, quiet:
             print(
                 f"Done: {summary['sources_ok']}/{summary['sources_total']} sources ok, "
                 f"{summary['fetched']} items fetched, {summary['new']} new, {summary['clusters']} clusters, "
-                f"{summary['new_stories']} new stories → {paths.new_stories_path().name} (local date {summary['local_date']})"
+                f"{summary['deals']} M&A rows (local date {summary['local_date']})"
             )
         return summary

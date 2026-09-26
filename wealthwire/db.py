@@ -41,8 +41,11 @@ CREATE TRIGGER IF NOT EXISTS items_au AFTER UPDATE OF title, description ON item
 END;
 
 CREATE TABLE IF NOT EXISTS item_firms (
-    item_id INTEGER NOT NULL REFERENCES items(id) ON DELETE CASCADE,
-    firm    TEXT NOT NULL,
+    item_id  INTEGER NOT NULL REFERENCES items(id) ON DELETE CASCADE,
+    firm     TEXT NOT NULL,              -- display name
+    crd      TEXT,                       -- SEC-verified firms only
+    verified INTEGER NOT NULL DEFAULT 0, -- 1 = matched in SEC adviser data, 0 = regex fallback
+    in_title INTEGER NOT NULL DEFAULT 0,
     PRIMARY KEY (item_id, firm)
 );
 
@@ -90,11 +93,43 @@ CREATE TABLE IF NOT EXISTS http_cache (
     last_modified TEXT
 );
 
+CREATE TABLE IF NOT EXISTS sec_firms (
+    crd           TEXT PRIMARY KEY,
+    sec_number    TEXT,
+    legal_name    TEXT NOT NULL,
+    business_name TEXT NOT NULL,
+    city          TEXT,
+    state         TEXT,
+    aum_usd       REAL,
+    data_date     TEXT NOT NULL          -- date of the SEC file this row came from (YYYY-MM-DD)
+);
+
 CREATE TABLE IF NOT EXISTS meta (
     key   TEXT PRIMARY KEY,
     value TEXT
 );
 """
+
+
+# Columns added after phase 1: (table, column, DDL). Applied to existing databases on connect.
+MIGRATIONS = [
+    ("item_firms", "crd", "ALTER TABLE item_firms ADD COLUMN crd TEXT"),
+    ("item_firms", "verified", "ALTER TABLE item_firms ADD COLUMN verified INTEGER NOT NULL DEFAULT 0"),
+    ("item_firms", "in_title", "ALTER TABLE item_firms ADD COLUMN in_title INTEGER NOT NULL DEFAULT 0"),
+    ("mna_deals", "press_release", "ALTER TABLE mna_deals ADD COLUMN press_release INTEGER NOT NULL DEFAULT 0"),
+    ("clusters", "sec_aum_usd", "ALTER TABLE clusters ADD COLUMN sec_aum_usd REAL"),
+    ("clusters", "sec_aum_crd", "ALTER TABLE clusters ADD COLUMN sec_aum_crd TEXT"),
+    ("source_status", "dropped_last_run", "ALTER TABLE source_status ADD COLUMN dropped_last_run INTEGER NOT NULL DEFAULT 0"),
+    ("source_status", "kind", "ALTER TABLE source_status ADD COLUMN kind TEXT NOT NULL DEFAULT 'feed'"),
+]
+
+
+def _migrate(conn: sqlite3.Connection) -> None:
+    for table, column, ddl in MIGRATIONS:
+        cols = {r[1] for r in conn.execute(f"PRAGMA table_info({table})")}
+        if column not in cols:
+            conn.execute(ddl)
+    conn.commit()
 
 
 def connect(path: Path | None = None) -> sqlite3.Connection:
@@ -105,7 +140,22 @@ def connect(path: Path | None = None) -> sqlite3.Connection:
     conn.execute("PRAGMA journal_mode=WAL")
     conn.execute("PRAGMA foreign_keys=ON")
     conn.executescript(SCHEMA)
+    _migrate(conn)
     return conn
+
+
+def backup_to(dest: Path) -> None:
+    """Consistent copy of the live DB (includes anything still in the WAL), for carrying state forward."""
+    src = connect()
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    if dest.exists():
+        dest.unlink()
+    out = sqlite3.connect(dest)
+    try:
+        src.backup(out)
+    finally:
+        out.close()
+        src.close()
 
 
 def get_meta(conn: sqlite3.Connection, key: str, default: str | None = None) -> str | None:

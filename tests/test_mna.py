@@ -94,17 +94,14 @@ def test_demo_mna_table(ingested):
         assert rows[h]["note"]
 
 
-def test_mna_api_filter(ingested, monkeypatch):
-    monkeypatch.setenv("WEALTHWIRE_NO_BACKGROUND", "1")
-    from fastapi.testclient import TestClient
+def test_public_mna_rows(ingested):
+    from wealthwire import db
+    from wealthwire.sitebuild import collect
 
-    from wealthwire.server import app
+    from .conftest import NOW
 
-    with TestClient(app) as c:
-        all_rows = c.get("/api/mna").json()
-        low = c.get("/api/mna?confidence=low").json()
-        high = c.get("/api/mna?confidence=high").json()
-        assert c.get("/api/mna?confidence=bogus").status_code == 422
-    assert len(all_rows) == len(low) + len(high) and low and high
-    assert all(r["confidence"] == "low" for r in low)
-    assert all(r["sources"] and r["sources"][0]["url"].startswith("https://") for r in all_rows)
+    deals = collect(db.connect(), NOW)["mna.json"]["deals"]
+    assert {r["confidence"] for r in deals} == {"high", "low"}
+    assert all(r["sources"] and r["sources"][0]["url"].startswith("https://") for r in deals)
+    summit = next(r for r in deals if "Summit Ridge" in r["headline"])
+    assert summit["acquirer"]["name"] == "Harborview Wealth Partners" and summit["target_aum_source"] == "headline"

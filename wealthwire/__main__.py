@@ -28,12 +28,26 @@ def main(argv: list[str] | None = None) -> int:
 
     parser = argparse.ArgumentParser(prog="python -m wealthwire", description="Wealth Wire news aggregator")
     sub = parser.add_subparsers(dest="cmd", required=True)
-    p_ing = sub.add_parser("ingest", help="fetch all sources once, recompute, write SOURCES.md and new_stories.json")
-    p_ing.add_argument("--fixtures", type=Path, help="offline mode: serve requests from a fixture dir (routes.yaml)")
-    p_srv = sub.add_parser("serve", help="start the web server (re-ingests in the background)")
-    p_srv.add_argument("--host")
-    p_srv.add_argument("--port", type=int)
-    sub.add_parser("recompute", help="recompute categories/clusters/extraction from stored items")
+    p = sub.add_parser("ingest", help="fetch all sources once, recompute, write SOURCES.md")
+    p.add_argument("--fixtures", type=Path, help="offline mode: serve requests from a fixture dir (routes.yaml)")
+    sub.add_parser("recompute", help="recompute categories/firms/clusters/M&A from stored items")
+    p = sub.add_parser("build-site", help="write OUT/site (public) + OUT/state (private) + OUT/vercel.json")
+    p.add_argument("out", type=Path)
+    p.add_argument("--no-state", action="store_true", help="skip writing OUT/state")
+    p = sub.add_parser("serve", help="build the static site and serve it locally (like Vercel)")
+    p.add_argument("--host")
+    p.add_argument("--port", type=int)
+    p.add_argument("--no-build", action="store_true", help="serve the last build as-is")
+    p = sub.add_parser("state", help="carry data between refreshes through the live branch")
+    p.add_argument("action", choices=["fetch", "restore"])
+    p.add_argument("dir", type=Path, help="fetch: where to extract the previous live tree; restore: that tree")
+    p.add_argument("--remote", default="origin")
+    p.add_argument("--branch", default="live")
+    p = sub.add_parser("publish", help="force-push OUT as a single orphan commit")
+    p.add_argument("out", type=Path)
+    p.add_argument("--remote-url", required=True)
+    p.add_argument("--branch", default="live")
+    p.add_argument("--message", default="Refresh")
     args = parser.parse_args(argv)
 
     if args.cmd == "ingest":
@@ -49,13 +63,35 @@ def main(argv: list[str] | None = None) -> int:
         print(recompute(conn))
         conn.commit()
         return 0
+    if args.cmd == "build-site":
+        from .sitebuild import build_site
+
+        print(build_site(args.out, write_state=not args.no_state))
+        return 0
     if args.cmd == "serve":
         import uvicorn
 
         from .config import load_config
+        from .server import create_app, rebuild
 
+        if not args.no_build:
+            rebuild()
         cfg = load_config()["server"]
-        uvicorn.run("wealthwire.server:app", host=args.host or cfg["host"], port=args.port or int(cfg["port"]), log_level="info")
+        uvicorn.run(create_app(), host=args.host or cfg["host"], port=args.port or int(cfg["port"]), log_level="info")
+        return 0
+    if args.cmd == "state":
+        from . import state
+
+        if args.action == "fetch":
+            ok = state.fetch_previous(args.dir, remote=args.remote, branch=args.branch)
+            print(f"previous {args.branch}: {'extracted to ' + str(args.dir) if ok else 'none'}")
+        else:
+            print("restored:", state.restore(args.dir))
+        return 0
+    if args.cmd == "publish":
+        from .state import publish
+
+        publish(args.out, args.remote_url, args.branch, args.message)
         return 0
     return 2
 

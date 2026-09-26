@@ -13,7 +13,8 @@ on:
     paths:
       - "*.yaml"
       - "wealthwire/**"
-      - "scripts/build_preview.py"
+      - "frontend/**"
+      - "schemas/**"
       - "requirements.txt"
       - ".github/workflows/refresh-site.yml"
 
@@ -42,34 +43,26 @@ jobs:
           grep -vi '^playwright' requirements.txt > /tmp/requirements.txt
           pip install -r /tmp/requirements.txt
 
-      - name: Restore the database from the previous run
+      - name: Restore state from the previous live commit
         run: |
-          mkdir -p data
-          if git fetch --depth=1 origin live 2>/dev/null; then
-            git show FETCH_HEAD:state/wealthwire.db > data/wealthwire.db 2>/dev/null || rm -f data/wealthwire.db
-          fi
-          ls -la data
+          python -m wealthwire state fetch _prev
+          python -m wealthwire state restore _prev
 
       - name: Ingest
-        run: python -m wealthwire ingest || echo "::warning::no source ingested successfully — see SOURCES.md on the live branch"
+        run: python -m wealthwire ingest || echo "::warning::no source ingested successfully — see state/SOURCES.md on the live branch"
 
-      - name: Build site
-        run: python scripts/build_preview.py --site _live
+      - name: Build site (public data + private state)
+        run: python -m wealthwire build-site _live
 
-      - name: Publish to the live branch
-        run: |
-          cd _live
-          git init -q -b live
-          git add -A
-          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
-            commit -qm "Refresh $(date -u +%Y-%m-%dT%H:%MZ)"
-          git push -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:live
+      - name: Publish to the live branch (single orphan commit)
+        run: python -m wealthwire publish _live --remote-url "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" --message "Refresh $(date -u +%Y-%m-%dT%H:%MZ)"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Summary
+        if: always()
         run: |
           {
             echo "### Wealth Wire refresh"
-            sed -n '1,/^## Failures/p' _live/state/SOURCES.md | head -30
-          } >> "$GITHUB_STEP_SUMMARY"
+            test -f SOURCES.md && sed -n '1,/^## Failures/p' SOURCES.md | head -40
+          } >> "$GITHUB_STEP_SUMMARY" || true

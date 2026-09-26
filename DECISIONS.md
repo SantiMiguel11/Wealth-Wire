@@ -130,3 +130,26 @@ Each entry: **decision** — alternatives considered — why.
     → Goldman Sachs, "Pugh Capital Management" → Pugh Capital), so Trending Firms counts each watched firm once.
 32. **Search uses the FTS5 porter stemmer**, so "custody" also finds "custodian(s)". Better recall for news
     search; exact phrases can be narrowed with more words.
+
+## Phase 2
+
+P1. **Build order differs from the brief's numbering.** Every feature publishes through the data contract,
+    so §7 (state round trip) and §9 (data files + schemas + frontend split) came first, then §1, §3, §4, §5+§6,
+    §2+§8. Each section is still its own commit. See PLAN-PHASE2.md.
+P2. **The FastAPI JSON API is gone; the frontend reads only `/data/*.json`.** The brief makes the static files
+    the only interface. `python -m wealthwire serve` now builds the static site and serves it with the same
+    `/firm/<slug>` fallback Vercel uses. That keeps local preview identical to production. `run.sh` still works.
+P3. **The refresh is a sequence of CLI steps** (`state fetch/restore`, `ingest`, `digest-input`,
+    `digest-finalize`, `build-site`, `alert`, `publish`) instead of shell in the workflow, so the round trip is
+    unit-tested (`tests/test_state.py` pushes to a real bare git remote twice and checks no data loss and a
+    single orphan commit).
+P4. **The DB is copied with SQLite's backup API**, not a file copy. The DB runs in WAL mode, so a plain copy
+    can miss the newest writes.
+P5. **"Previous successful refresh" is recorded by `build-site` just before state is saved.** If publishing
+    fails, the old state (with the old marker) stays on `live`, so the next run's window still starts at the
+    last refresh that actually went out.
+P6. **Schemas are strict** (`additionalProperties: false`, required fields, typed nulls), and the test suite
+    enforces them. At build time, contract drift only logs a warning instead of blocking the refresh; the tests
+    are the gate. `category` is a free string (not an enum) because `categories.yaml` is user-editable.
+P7. **The public site excludes `site.exclude_sources` (AdvisorHub) everywhere**: clusters, M&A sources,
+    sources.json. Clusters made only of excluded items are dropped.

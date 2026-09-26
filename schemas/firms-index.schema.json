@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wealth-wire/schemas/firms-index.schema.json",
+  "title": "firms/index.json",
+  "description": "SEC-verified firms mentioned in at least one story.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+    },
+    "sec_data_date": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "firms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "legal_name": {
+            "type": "string"
+          },
+          "crd": {
+            "type": "string"
+          },
+          "city": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "state": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "sec_aum_usd": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "story_count": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "slug",
+          "name",
+          "legal_name",
+          "crd",
+          "city",
+          "state",
+          "sec_aum_usd",
+          "story_count"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "generated_at",
+    "sec_data_date",
+    "firms"
+  ],
+  "additionalProperties": false
+}

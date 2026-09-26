@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wealth-wire/schemas/mna.schema.json",
+  "title": "mna.json",
+  "description": "M&A tracker: one row per M&A story, newest first.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+    },
+    "sec_aum_as_of": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "deals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "cluster_id": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "date": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+          },
+          "headline": {
+            "type": "string"
+          },
+          "acquirer": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "slug": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^[a-z0-9-]+$"
+              },
+              "crd": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "slug",
+              "crd"
+            ],
+            "additionalProperties": false
+          },
+          "target": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "slug": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^[a-z0-9-]+$"
+              },
+              "crd": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "slug",
+              "crd"
+            ],
+            "additionalProperties": false
+          },
+          "target_aum_usd": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "target_aum_source": {
+            "enum": [
+              "headline",
+              "sec",
+              null
+            ]
+          },
+          "deal_type": {
+            "enum": [
+              "acquisition",
+              "stake",
+              "merger",
+              "recapitalization",
+              null
+            ]
+          },
+          "confidence": {
+            "enum": [
+              "high",
+              "low"
+            ]
+          },
+          "note": {
+            "type": "string"
+          },
+          "press_release": {
+            "type": "boolean"
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "pattern": "^https?://"
+                }
+              },
+              "required": [
+                "name",
+                "url"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "cluster_id",
+          "date",
+          "headline",
+          "acquirer",
+          "target",
+          "target_aum_usd",
+          "target_aum_source",
+          "deal_type",
+          "confidence",
+          "note",
+          "press_release",
+          "sources"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "generated_at",
+    "sec_aum_as_of",
+    "deals"
+  ],
+  "additionalProperties": false
+}

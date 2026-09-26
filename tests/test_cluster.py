@@ -64,15 +64,15 @@ def test_demo_clusters(ingested):
     assert team["id"] != row["id"] and team["category"] == "People Moves" and team["outlet_count"] == 3
 
 
-def test_api_card_lists_all_sources(ingested, monkeypatch):
-    monkeypatch.setenv("WEALTHWIRE_NO_BACKGROUND", "1")
-    from fastapi.testclient import TestClient
+def test_public_card_lists_all_sources(ingested):
+    from wealthwire import db
+    from wealthwire.sitebuild import collect
 
-    from wealthwire.server import app
+    from .conftest import NOW
 
-    with TestClient(app) as c:
-        data = c.get("/api/feed", params={"q": "Summit Ridge"}).json()
-    cards = data["pinned"] + data["clusters"]
+    files = collect(db.connect(), NOW)
+    cards = [c for c in files["clusters.json"]["clusters"] if "Summit Ridge" in c["headline"]]
     assert len(cards) == 1
+    # AdvisorHub is excluded from the public site; the other outlets are all listed with links
     assert {s["name"] for s in cards[0]["sources"]} == {"Citywire RIA", "ThinkAdvisor", "WealthManagement.com", "RIABiz"}
     assert all(s["url"].startswith("https://") for s in cards[0]["sources"])

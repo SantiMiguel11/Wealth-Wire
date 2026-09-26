@@ -53,6 +53,9 @@ class Source:
     listing_url: str = ""
     gated: bool = False
     enabled: bool = True
+    kind: str = "feed"          # feed | wire (press-release wire, filtered) | google_news
+    query: str = ""             # google_news: the search query, e.g. "site:thinkadvisor.com"
+    max_age_days: int = 0       # 0 = no limit; wires/google_news skip items older than this
 
 
 def load_sources() -> list[Source]:
@@ -67,6 +70,9 @@ def load_sources() -> list[Source]:
                 listing_url=(raw.get("listing_url") or "").strip(),
                 gated=bool(raw.get("gated", False)),
                 enabled=bool(raw.get("enabled", True)),
+                kind=str(raw.get("kind") or "feed").strip(),
+                query=(raw.get("query") or "").strip(),
+                max_age_days=int(raw.get("max_age_days") or 0),
             )
         )
     return out

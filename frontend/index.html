@@ -3,9 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
 <title>Wealth Wire</title>
 <meta name="description" content="Personal news wire for the U.S. wealth management and RIA industry">
-<link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script>
   // Apply the theme before first paint: saved choice, else system preference.
   (function () {
@@ -15,22 +16,27 @@
     document.documentElement.dataset.theme = t;
   })();
 </script>
-<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="/style.css">
 </head>
 <body>
+<!--
+  Wealth Wire frontend. Reads ONLY the static JSON files under /data/ (see DATA-CONTRACT.md).
+  Everything in this folder can be replaced without touching the Python pipeline.
+-->
 <header class="topbar">
-  <div class="brand">
+  <a class="brand" href="/" aria-label="Wealth Wire home">
     <span class="logo" aria-hidden="true">WW</span>
     <span class="brand-name">WEALTH<b>WIRE</b></span>
-  </div>
+  </a>
   <nav class="tabs" role="tablist" aria-label="Sections">
-    <a role="tab" href="?tab=feed" data-tab="feed">Feed</a>
-    <a role="tab" href="?tab=mna" data-tab="mna">M&amp;A</a>
-    <a role="tab" href="?tab=digest" data-tab="digest">Digest</a>
-    <a role="tab" href="?tab=sources" data-tab="sources">Sources</a>
+    <a role="tab" href="/?tab=feed" data-tab="feed">Feed</a>
+    <a role="tab" href="/?tab=digest" data-tab="digest">Digest</a>
+    <a role="tab" href="/?tab=mna" data-tab="mna">M&amp;A</a>
+    <a role="tab" href="/?tab=archive" data-tab="archive">Archive</a>
+    <a role="tab" href="/?tab=sources" data-tab="sources">Sources</a>
   </nav>
   <div class="status">
-    <span id="demo-chip" class="chip chip-demo" hidden title="The database was filled from offline fixture feeds (synthetic test data), not live sources">DEMO DATA</span>
+    <span id="demo-chip" class="chip chip-demo" hidden title="The data came from offline fixture feeds (synthetic test data), not live sources">DEMO DATA</span>
     <span id="ingest-status" class="mono muted"></span>
     <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle dark mode" title="Toggle dark / light">
       <svg class="i-sun" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -45,11 +51,14 @@
     <form id="filters" class="filters" autocomplete="off" role="search">
       <div class="f-search">
         <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <input id="q" name="q" type="search" placeholder="Search headlines &amp; descriptions" aria-label="Search">
+        <input id="q" name="q" type="search" placeholder="Search headlines" aria-label="Search">
         <kbd class="hint">/</kbd>
       </div>
       <label class="f-field"><span>Source</span>
         <select id="source" name="source" aria-label="Source"><option value="">All sources</option></select>
+      </label>
+      <label class="f-field"><span>Region</span>
+        <select id="region" name="region" aria-label="Region or state"><option value="">All regions</option></select>
       </label>
       <label class="f-field f-date"><span>From</span><input id="from" name="from" type="date" aria-label="From date"></label>
       <label class="f-field f-date"><span>To</span><input id="to" name="to" type="date" aria-label="To date"></label>
@@ -74,52 +83,68 @@
           <h2 class="panel-h">Trending firms <span class="muted mono">7d</span></h2>
           <ol id="trending" class="trending"></ol>
         </section>
-        <section class="panel">
-          <h2 class="panel-h">Watchlist</h2>
+        <section class="panel" id="watch-panel">
+          <h2 class="panel-h">Watchlist <span class="muted mono">this browser</span></h2>
           <ul id="watchlist" class="watchlist"></ul>
           <form id="watch-add" class="watch-add" autocomplete="off">
             <input id="watch-name" placeholder="Firm name" aria-label="Firm name" required maxlength="80">
             <input id="watch-aliases" placeholder="Aliases, comma-separated" aria-label="Aliases" maxlength="300">
             <button class="btn" type="submit">Add firm</button>
-            <p id="watch-msg" class="form-msg" role="status"></p>
           </form>
+          <div class="watch-io">
+            <button id="watch-export" class="btn-ghost" type="button">Export JSON</button>
+            <label class="btn-ghost file-btn">Import JSON<input id="watch-import" type="file" accept="application/json,.json" hidden></label>
+          </div>
+          <p id="watch-msg" class="form-msg" role="status"></p>
+          <p class="form-msg">Stored only in this browser; never sent anywhere.</p>
         </section>
       </aside>
     </div>
   </section>
+
+  <!-- DIGEST -->
+  <section id="view-digest" class="view" hidden><div id="digest"></div></section>
+
+  <!-- ARCHIVE -->
+  <section id="view-archive" class="view" hidden><div id="archive"></div></section>
+
+  <!-- WEEKLY RECAP -->
+  <section id="view-weekly" class="view" hidden><div id="weekly"></div></section>
 
   <!-- M&A -->
   <section id="view-mna" class="view" hidden>
     <div class="view-head">
       <h1 class="view-title">M&amp;A tracker</h1>
       <div class="seg" role="group" aria-label="Confidence filter">
-        <a href="?tab=mna" data-conf="">All</a>
-        <a href="?tab=mna&amp;conf=high" data-conf="high">High confidence</a>
-        <a href="?tab=mna&amp;conf=low" data-conf="low">Low confidence</a>
+        <a href="/?tab=mna" data-conf="">All</a>
+        <a href="/?tab=mna&amp;conf=high" data-conf="high">High confidence</a>
+        <a href="/?tab=mna&amp;conf=low" data-conf="low">Low confidence</a>
       </div>
     </div>
-    <p class="note">One row per story cluster. Fields that can't be determined unambiguously from the headline are left blank and the row is marked <span class="conf conf-low">LOW</span> — nothing is guessed.</p>
-    <div id="mna-error"></div>
+    <p class="note">One row per story. Fields that can't be read unambiguously from the headlines are left blank and the row is marked <span class="conf conf-low">LOW</span> — nothing is guessed. A matching press release raises confidence.</p>
     <div id="mna-wrap" class="table-wrap"></div>
-  </section>
-
-  <!-- DIGEST -->
-  <section id="view-digest" class="view" hidden>
-    <div id="digest"></div>
   </section>
 
   <!-- SOURCES -->
   <section id="view-sources" class="view" hidden>
     <div class="view-head"><h1 class="view-title">Sources</h1></div>
-    <p class="note">Status from the last ingestion. The same table is written to <code>SOURCES.md</code> after every run.</p>
+    <p class="note">Status from the latest refresh.</p>
     <div id="sources-wrap" class="table-wrap"></div>
   </section>
+
+  <!-- FIRM PAGE (/firm/<slug>) -->
+  <section id="view-firm" class="view" hidden><div id="firm"></div></section>
 </main>
+
+<footer class="site-footer">
+  <span id="footer-note">Summaries written with Claude from outlet headlines.</span>
+  <span id="footer-refresh" class="mono muted"></span>
+</footer>
 
 <template id="tpl-skeleton">
   <div class="card skeleton" aria-hidden="true"><div class="sk sk-meta"></div><div class="sk sk-title"></div><div class="sk sk-line"></div></div>
 </template>
 
-<script src="/static/app.js"></script>
+<script src="/app.js"></script>
 </body>
 </html>

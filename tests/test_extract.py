@@ -2,7 +2,6 @@ import pytest
 
 from wealthwire.config import load_stoplist
 from wealthwire.extract import extract_aum, extract_firms, firm_spans, parse_aum
-from wealthwire.queries import trending_firms
 
 
 @pytest.mark.parametrize(
@@ -89,18 +88,17 @@ def test_watchlist_alias_mapped_to_display_name():
 
 
 def test_trending_firms(ingested):
-    import sqlite3
-
-    from wealthwire import paths
+    from wealthwire import db
+    from wealthwire.config import load_config
+    from wealthwire.sitebuild import Snapshot
 
     from .conftest import NOW
 
-    conn = sqlite3.connect(paths.db_path())
-    conn.row_factory = sqlite3.Row
-    rows = trending_firms(conn, days=7, now=NOW)
-    ranked = {r["firm"]: r["stories"] for r in rows}
+    snap = Snapshot(db.connect(), load_config(), NOW)
+    rows = snap.trending_json()["firms"]
+    ranked = {r["name"]: r["stories"] for r in rows}
     # Harborview: the Summit Ridge deal + the breakaway team → 2 distinct clusters (not 7 items)
     assert ranked["Harborview Wealth Partners"] == 2
     assert rows[0]["stories"] >= rows[-1]["stories"]
-    assert "Goldman Sachs" in ranked and "Coldstream" in ranked
-    assert trending_firms(conn, days=7, now=NOW.replace(year=2027)) == []
+    later = Snapshot(db.connect(), load_config(), NOW.replace(year=2027))
+    assert later.trending_json()["firms"] == []

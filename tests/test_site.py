@@ -1,43 +1,87 @@
-import importlib.util
+"""§9 data contract + frontend isolation."""
 import json
 import re
 from pathlib import Path
 
+import pytest
+
+from wealthwire.contract import RULES, schema_for, validate_data_dir
+from wealthwire.sitebuild import build_site
+
+from .conftest import NOW
+
 ROOT = Path(__file__).resolve().parent.parent
+EXPECTED = {"meta.json", "stories.json", "clusters.json", "digest.json", "digests/index.json", "mna.json",
+            "weekly/index.json", "firms/index.json", "trending.json", "sources.json"}
 
 
-def load_builder(monkeypatch):
-    monkeypatch.setenv("WEALTHWIRE_NO_BACKGROUND", "1")
-    spec = importlib.util.spec_from_file_location("build_preview", ROOT / "scripts" / "build_preview.py")
-    mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
-    return mod
+@pytest.fixture
+def built(ingested, tmp_path):
+    out = tmp_path / "out"
+    build_site(out, now=NOW)
+    return out
 
 
-def embedded(html: str) -> dict:
-    raw = re.search(r"window.__WW_DATA__ = (\{.*?\});</script>", html, re.S).group(1)
-    return json.loads(raw.replace("<\\/", "</"))
+def test_all_contract_files_emitted(built):
+    data = built / "site" / "data"
+    rels = {p.relative_to(data).as_posix() for p in data.rglob("*.json")}
+    assert EXPECTED <= rels
 
 
-def test_public_site_build(ingested, tmp_path, monkeypatch):
-    out = tmp_path / "_live"
-    load_builder(monkeypatch).build_site(out)
-    html = (out / "site" / "index.html").read_text()
-    data = embedded(html)
-    # headlines + links only: no publisher descriptions anywhere in the page
-    assert all(it["description"] == "" for c in data["clusters"] for it in c["items"])
-    assert all(c["description"] == "" for c in data["clusters"])
-    assert all(not s["descriptions"] for s in data["digest"]["top"])
-    # excluded (paywalled) source is gone everywhere, and outlet counts follow
-    assert "advisorhub" not in html.lower()
-    team = next(c for c in data["clusters"] if "Harborview" in c["headline"] and "Breaks Away" in c["headline"])
-    assert team["outlet_count"] == 2 and "AdvisorHub" not in team["headline"]
-    # not indexed, read-only watchlist, digest tab in site mode
-    assert '<meta name="robots" content="noindex, nofollow">' in html
-    assert (out / "site" / "robots.txt").read_text().startswith("User-agent: *\nDisallow: /")
-    assert data["readonly"] is True and data["digest"]["site_mode"] is True
-    assert 'placeholder="Search headlines"' in html
-    # Vercel serves only site/; the DB for the next run travels in state/
-    vercel = json.loads((out / "vercel.json").read_text())
-    assert vercel["outputDirectory"] == "site"
-    assert (out / "state" / "wealthwire.db").exists() and not (out / "site" / "wealthwire.db").exists()
+def test_generated_json_matches_schemas(built):
+    assert validate_data_dir(built / "site" / "data") == []
+
+
+def test_every_schema_is_valid_and_used():
+    import jsonschema
+
+    names = {name for _, name in RULES}
+    for p in (ROOT / "schemas").glob("*.json"):
+        jsonschema.Draft202012Validator.check_schema(json.loads(p.read_text()))
+        assert p.name in names, f"{p.name} is not mapped to any data file"
+    assert schema_for("firms/some-firm-123.json") == "firm.schema.json"
+    assert schema_for("digests/2026-09-25.json") == "digest.schema.json"
+    assert schema_for("weekly/2026-W39.json") == "weekly.schema.json"
+
+
+def test_schema_rejects_drift(built):
+    """An unknown field or a wrong type must fail validation (the contract is strict)."""
+    data = built / "site" / "data"
+    meta = json.loads((data / "meta.json").read_text())
+    meta["surprise"] = 1
+    (data / "meta.json").write_text(json.dumps(meta))
+    assert any("meta.json" in p for p in validate_data_dir(data))
+
+
+def test_frontend_reads_only_static_data():
+    js = (ROOT / "frontend" / "app.js").read_text()
+    fetches = re.findall(r"fetch\(([^,)]+)", js)
+    assert fetches == ['"/data/" + path'], fetches
+    assert "/api/" not in js
+    # nothing in the frontend folder refers to the pipeline
+    for p in (ROOT / "frontend").iterdir():
+        assert "wealthwire" not in p.read_text(errors="ignore").lower().replace("wealth wire", "")
+
+
+def test_vercel_config(built):
+    v = json.loads((built / "vercel.json").read_text())
+    assert v["outputDirectory"] == "site"
+    assert {"source": "/firm/:slug", "destination": "/index.html"} in v["rewrites"]
+    assert any(h["key"] == "X-Robots-Tag" and "noindex" in h["value"] for rule in v["headers"] for h in rule["headers"])
+    assert (built / "site" / "robots.txt").read_text() == "User-agent: *\nDisallow: /\n"
+    assert '<meta name="robots" content="noindex, nofollow">' in (built / "site" / "index.html").read_text()
+
+
+def test_local_server_serves_site_and_firm_fallback(built):
+    from fastapi.testclient import TestClient
+
+    from wealthwire.server import create_app
+
+    import os
+    os.environ["WEALTHWIRE_NO_BACKGROUND"] = "1"
+    with TestClient(create_app(built / "site")) as c:
+        assert c.get("/").status_code == 200
+        assert c.get("/data/meta.json").json()["schema_version"] == 1
+        r = c.get("/firm/anything-123")
+        assert r.status_code == 200 and "<title>Wealth Wire</title>" in r.text
+        assert r.headers["x-robots-tag"] == "noindex, nofollow"

@@ -152,6 +152,35 @@ scheduled-tasks feature of the Claude desktop app works the same way. The job on
 `claude -p "/digest"` from the repo folder. Open the Digest tab afterwards (the server doesn't have to run
 for the digest to be written).
 
+## Replacing the frontend
+
+All rendering lives in **`frontend/`** (`index.html`, `app.js`, `style.css`, `favicon.svg`). The build copies
+that folder verbatim into the site root and writes the data next to it under `/data/`. A new design only has
+to:
+
+1. **Read the data.** Load the JSON files documented in [DATA-CONTRACT.md](DATA-CONTRACT.md) (schemas in
+   `schemas/`) with `fetch("/data/…")`. There is no API.
+2. **Handle the routes:** `/` and `/firm/<slug>`. Vercel rewrites `/firm/*` to `/index.html`, and the local
+   server does the same. Query-string views (`?tab=…`) are up to you.
+3. **Keep the watchlist in the browser.** Store it in `localStorage` and match it against `clusters.json`,
+   using `firms/index.json` for SEC names. The current `app.js` shows the matching rules.
+4. **Keep the footer note:** "Summaries written with Claude from outlet headlines." It is also available as
+   `meta.footer_note`.
+
+Replace the files in `frontend/` (any static output works; if you use a build tool, commit its output into
+`frontend/`). Nothing in `wealthwire/`, `schemas/` or the workflow needs to change.
+
+**Test locally against real data:**
+
+```bash
+python -m wealthwire state fetch _prev && python -m wealthwire state restore _prev   # pull the live DB
+python -m wealthwire serve            # builds site/data from it and serves http://localhost:8000
+```
+
+Or run fully offline on the fixture data:
+`WEALTHWIRE_HOME=demo python -m wealthwire ingest --fixtures tests/fixtures/demo && WEALTHWIRE_HOME=demo python -m wealthwire serve`.
+`python -m pytest tests/test_site.py` checks that the generated data still matches the contract.
+
 ## Development
 
 ```bash
