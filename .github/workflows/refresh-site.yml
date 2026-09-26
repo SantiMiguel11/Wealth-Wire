@@ -1,12 +1,19 @@
-# Fetches the news every 3 days on GitHub's machines, rebuilds the static site, and force-pushes it to
-# the `live` branch. Vercel deploys `live` automatically (vercel.json on that branch sets it up).
-# Also runs when code/config on main changes (e.g. you edit watchlist.yaml on github.com), and on demand
-# from the Actions tab ("Run workflow").
+# Refresh: fetch the news on GitHub's machines, (optionally) have Claude write the digest, rebuild the static
+# site, and force-push it to the `live` branch as a single orphan commit. Vercel deploys `live`.
+# Also runs when source code on main changes, and on demand from the Actions tab ("Run workflow").
 name: Refresh site
 
 on:
   schedule:
-    - cron: "17 14 */3 * *"         # every 3rd day of the month at 14:17 UTC (7:17am Pacific)
+    # GitHub cron is UTC. Targets (Pacific): weekdays ~6:00, ~12:00, ~17:00; weekends ~8:00.
+    # The UTC times below are anchored to Pacific *Daylight* Time (UTC-7, mid-March → early November).
+    # DST drift: during Pacific *Standard* Time (UTC-8, November → March) every run happens one hour
+    # earlier in local terms — weekdays ~5:00, ~11:00, ~16:00 and weekends ~7:00. GitHub cron has no
+    # time-zone support; edit the hours twice a year if the hour matters to you.
+    # Minute :07 avoids the top-of-the-hour queue, when scheduled GitHub jobs are most often delayed.
+    - cron: "7 13,19 * * 1-5"   # Mon–Fri 13:07 and 19:07 UTC = 06:07 and 12:07 PDT
+    - cron: "7 0 * * 2-6"       # Tue–Sat 00:07 UTC = Mon–Fri 17:07 PDT (previous calendar day in Pacific)
+    - cron: "7 15 * * 0,6"      # Sat–Sun 15:07 UTC = 08:07 PDT
   workflow_dispatch:
   push:
     branches: [main]
@@ -21,6 +28,7 @@ on:
 permissions:
   contents: write
 
+# Runs never overlap: a new run waits for the one in progress (and never cancels it mid-publish).
 concurrency:
   group: refresh-site
   cancel-in-progress: false

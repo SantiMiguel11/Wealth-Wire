@@ -153,3 +153,12 @@ P6. **Schemas are strict** (`additionalProperties: false`, required fields, type
     are the gate. `category` is a free string (not an enum) because `categories.yaml` is user-editable.
 P7. **The public site excludes `site.exclude_sources` (AdvisorHub) everywhere**: clusters, M&A sources,
     sources.json. Clusters made only of excluded items are dropped.
+P8. **The cron schedule is anchored to Pacific Daylight Time** (the season when this was built), at minute :07.
+    In Pacific Standard Time, every run lands one hour earlier in local terms. That's documented in the
+    workflow and asserted by `tests/test_schedule.py`, which expands the crons for a July week and a January
+    week. The 17:00 weekday run is `0 * * 2-6` UTC because 17:00 PDT is already the next UTC day.
+P9. **Top Stories window = max(24h, time since the previous successful refresh).** After a missed or failed
+    run it grows to cover the gap. Clusters also need activity within 48h before the window start, so a newly
+    added source's backlog (first seen now, published weeks ago) doesn't flood Top Stories.
+P10. **Concurrency uses `cancel-in-progress: false`.** A queued run waits rather than killing a run
+    mid-publish.

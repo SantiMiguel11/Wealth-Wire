@@ -27,6 +27,5 @@ digest:
 
 # Public website (built by .github/workflows/refresh-site.yml, served by Vercel)
 site:
-  top_stories_hours: 96            # "Top stories" tab window; covers the 3-day gap between refreshes
   show_descriptions: false         # publishers' article teasers stay off the public page (headlines + links only)
   exclude_sources: [AdvisorHub]    # paywalled outlet: not shown on the public page
