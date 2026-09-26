@@ -162,3 +162,13 @@ P9. **Top Stories window = max(24h, time since the previous successful refresh).
     added source's backlog (first seen now, published weeks ago) doesn't flood Top Stories.
 P10. **Concurrency uses `cancel-in-progress: false`.** A queued run waits rather than killing a run
     mid-publish.
+P11. **The privacy check runs inside every build and fails closed.** No `.db`/`.sqlite`/WAL file or SQLite
+     header may appear under `site/`, and no stored publisher teaser (40+ chars, compared raw and
+     JSON-decoded) may appear in any public file. A teaser that is just a copy of its own headline is not
+     treated as private. If the check fails, nothing is published; that's the right trade for a leak.
+P12. **The watchlist is browser-only** (`localStorage["ww-watchlist"]`, import/export in the same JSON format).
+     The server-side `watchlist.yaml` and its alias roll-up in firm extraction are gone. The file is
+     git-ignored so it can't be re-committed by accident. Matching on the site: headline regex
+     (case-insensitive, word boundaries, 3+ char terms), plus the CRDs of any SEC firm whose name or legal
+     name starts with a watchlist term, so "Goldman Sachs" also catches stories tagged with Goldman Sachs'
+     SEC entity.

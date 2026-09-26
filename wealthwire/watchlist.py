@@ -1,16 +1,15 @@
-"""Watchlist: load/save watchlist.yaml and match firms in text."""
+"""Watchlist matching for the server-side email alert (§8).
+
+The site's watchlist lives only in each visitor's browser (localStorage). The optional email alert gets its
+watchlist from the WATCHLIST_JSON secret via the environment — it is never read from or written to a file.
+"""
 from __future__ import annotations
 
+import json
 import re
-import threading
 from dataclasses import dataclass, field
 
-import yaml
-
-from . import paths
-
 MIN_ALIAS_LEN = 3
-_LOCK = threading.Lock()
 
 
 @dataclass
@@ -29,36 +28,18 @@ class Firm:
         return out
 
 
-def _path():
-    return paths.config_dir() / "watchlist.yaml"
-
-
-def load_watchlist() -> list[Firm]:
-    p = _path()
-    if not p.exists():
-        return []
-    data = yaml.safe_load(p.read_text(encoding="utf-8")) or {}
+def parse_watchlist(raw: str) -> list[Firm]:
+    """Parse the WATCHLIST_JSON format (same as the site's export): {"firms":[{"name","aliases"}]} or a list."""
+    data = json.loads(raw)
+    items = data.get("firms", []) if isinstance(data, dict) else data
     firms = []
-    for raw in data.get("firms", []) or []:
-        if isinstance(raw, str):
-            firms.append(Firm(raw.strip()))
-        elif raw and raw.get("name"):
-            firms.append(Firm(str(raw["name"]).strip(), [str(a).strip() for a in raw.get("aliases") or [] if str(a).strip()]))
+    for f in items or []:
+        if isinstance(f, str):
+            f = {"name": f}
+        name = " ".join(str(f.get("name", "")).split())
+        if name:
+            firms.append(Firm(name, [" ".join(str(a).split()) for a in f.get("aliases") or [] if str(a).strip()]))
     return firms
-
-
-HEADER = """# Firms to highlight and pin. Matching is case-insensitive on word boundaries.
-# Aliases shorter than 3 characters are ignored (avoids matching acronyms like "GS").
-# Also edited by the web UI (Watchlist panel), which rewrites this file.
-"""
-
-
-def save_watchlist(firms: list[Firm]) -> None:
-    with _LOCK:
-        body = yaml.safe_dump({"firms": [{"name": f.name, "aliases": f.aliases} for f in firms]}, sort_keys=False, allow_unicode=True)
-        tmp = _path().with_suffix(".yaml.tmp")
-        tmp.write_text(HEADER + body, encoding="utf-8")
-        tmp.replace(_path())
 
 
 class Matcher:

@@ -12,3 +12,4 @@ digests/.last_digest
 digests/*.log
 /preview/
 /_live/
+watchlist.yaml

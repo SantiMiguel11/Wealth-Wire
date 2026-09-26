@@ -1,8 +1,6 @@
 import pytest
-import yaml
 
-from wealthwire import paths
-from wealthwire.watchlist import Firm, Matcher, load_watchlist, save_watchlist
+from wealthwire.watchlist import Firm, Matcher
 
 
 SEED = [
@@ -46,9 +44,10 @@ def test_short_aliases_never_match():
     assert Firm("GS", ["Goldman Sachs"]).terms() == ["Goldman Sachs"]
 
 
-def test_yaml_round_trip(home):
-    save_watchlist(SEED + [Firm("Acme Wealth", ["Acme"])])
-    loaded = load_watchlist()
-    assert [f.name for f in loaded][-1] == "Acme Wealth" and loaded[-1].aliases == ["Acme"]
-    data = yaml.safe_load((paths.config_dir() / "watchlist.yaml").read_text())
-    assert data["firms"][1] == {"name": "Coldstream", "aliases": ["Coldstream Wealth Management"]}
+def test_parse_watchlist_json_formats():
+    from wealthwire.watchlist import parse_watchlist
+
+    exported = '{"version":1,"firms":[{"name":"Goldman Sachs","aliases":["Goldman"]},{"name":" Pugh  Capital "}]}'
+    firms = parse_watchlist(exported)
+    assert [(f.name, f.aliases) for f in firms] == [("Goldman Sachs", ["Goldman"]), ("Pugh Capital", [])]
+    assert [f.name for f in parse_watchlist('["Coldstream", {"name": ""}]')] == ["Coldstream"]

@@ -12,7 +12,6 @@ from .config import load_config, load_stoplist
 from .dates import utcnow
 from .extract import extract_aum, extract_firms
 from .mna import deal_for_cluster
-from .watchlist import Matcher, load_watchlist
 
 
 def _load_items(conn: sqlite3.Connection) -> list[dict]:
@@ -32,17 +31,13 @@ def group_items(items: list[dict], cfg: dict) -> list[list[dict]]:
     return [[by_id[c.id] for c in g] for g in groups]
 
 
-def extract_item(it: dict, stoplist: set[str], matcher: Matcher) -> None:
-    """Firms from title and description (separately, so spans never cross fields) + watchlist names."""
-    alias_map = matcher.alias_map()
-    title_firms = extract_firms(it["title"], stoplist, alias_map)
+def extract_item(it: dict, stoplist: set[str]) -> None:
+    """Firms from title and description (separately, so spans never cross fields)."""
+    title_firms = extract_firms(it["title"], stoplist)
     firms = list(title_firms)
-    for f in extract_firms(it["description"], stoplist, alias_map) + matcher.hits(it["title"], it["description"]):
+    for f in extract_firms(it["description"], stoplist):
         if f not in firms:
             firms.append(f)
-    for f in matcher.hits(it["title"]):
-        if f not in title_firms:
-            title_firms.append(f)
     it["title_firms"] = title_firms
     it["firms"] = firms
     it["aum_usd"] = extract_aum(it["title"]) or extract_aum(it["description"])
@@ -96,10 +91,9 @@ def recompute(conn: sqlite3.Connection, now: datetime | None = None) -> dict:
     items = _load_items(conn)
     categorizer = Categorizer()
     stoplist = load_stoplist()
-    matcher = Matcher(load_watchlist())
     for it in items:
         it["category"] = categorizer.categorize(it["title"], it["description"])
-        extract_item(it, stoplist, matcher)
+        extract_item(it, stoplist)
     conn.executemany("UPDATE items SET category=?, aum_usd=? WHERE id=?", [(it["category"], it["aum_usd"], it["id"]) for it in items])
     conn.execute("DELETE FROM item_firms")
     conn.executemany("INSERT OR IGNORE INTO item_firms(item_id, firm) VALUES (?, ?)", [(it["id"], f) for it in items for f in it["firms"]])
