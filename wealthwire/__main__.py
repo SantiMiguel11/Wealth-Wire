@@ -1,4 +1,4 @@
-"""CLI: python -m wealthwire {ingest,serve,recompute}"""
+"""CLI: python -m wealthwire <command>; see --help."""
 from __future__ import annotations
 
 import os
@@ -50,6 +50,10 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--message", default="Refresh")
     p = sub.add_parser("eval-firms", help="precision/recall of SEC firm matching on the labeled headlines")
     p.add_argument("--out", type=Path, help="write the JSON report here (default: firm_eval.json in the data dir)")
+    p = sub.add_parser("digest-input", help="write _work/digest_input.json (+ weekly_input.json on Fridays) for Claude")
+    p.add_argument("--weekly", action="store_true", help="also write the weekly M&A input, whatever the day")
+    sub.add_parser("digest-finalize", help="validate Claude's output; archive the digest or fall back to the plain list")
+    sub.add_parser("alert", help="email new watchlist matches (needs WATCHLIST_JSON, RESEND_API_KEY, ALERT_EMAIL)")
     args = parser.parse_args(argv)
 
     if args.cmd == "ingest":
@@ -112,7 +116,42 @@ def main(argv: list[str] | None = None) -> int:
               f"(generated aliases only: precision {generated['precision']}, recall {generated['recall']}); "
               f"unresolved curated aliases: {m.curated_unresolved or 'none'}")
         return 0
+    if args.cmd == "digest-input":
+        from . import db
+        from .aidigest import build_inputs
+
+        conn = db.connect()
+        r = build_inputs(conn, weekly=True if args.weekly else None)
+        print(f"digest input: {r['clusters']} clusters for {r['date']}"
+              + (f"; weekly input: {r['deals']} deals for {r['week']}" if r["weekly"] else ""))
+        _gh_output(clusters=r["clusters"], weekly=str(r["weekly"]).lower())
+        return 0
+    if args.cmd == "digest-finalize":
+        from . import db
+        from .aidigest import finalize
+
+        st = finalize(db.connect())
+        for what in ("digest", "weekly"):
+            if st[what]:
+                level = "" if st[what].startswith(("ok", "no input", "no new stories")) else "::notice::"
+                print(f"{level}{what}: {st[what]}")
+        return 0
+    if args.cmd == "alert":
+        from . import db
+        from .alert import run_alert
+
+        run_alert(db.connect())
+        return 0
     return 2
+
+
+def _gh_output(**kv) -> None:
+    """Expose values to later workflow steps (no-op outside GitHub Actions)."""
+    path = os.environ.get("GITHUB_OUTPUT")
+    if path:
+        with open(path, "a", encoding="utf-8") as fh:
+            for k, v in kv.items():
+                fh.write(f"{k}={v}\n")
 
 
 if __name__ == "__main__":

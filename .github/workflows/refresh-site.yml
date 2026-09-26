@@ -23,10 +23,12 @@ on:
       - "frontend/**"
       - "schemas/**"
       - "requirements.txt"
+      - "prompts/**"
       - ".github/workflows/refresh-site.yml"
 
 permissions:
   contents: write
+  id-token: write   # claude-code-action can authenticate through GitHub OIDC; harmless otherwise
 
 # Runs never overlap: a new run waits for the one in progress (and never cancels it mid-publish).
 concurrency:
@@ -36,7 +38,10 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
+    env:
+      # Step conditions can't read secrets directly; these flags say whether an optional secret is set.
+      HAS_CLAUDE: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' || secrets.ANTHROPIC_API_KEY != '' }}
     steps:
       - uses: actions/checkout@v5
 
@@ -59,6 +64,43 @@ jobs:
       - name: Ingest
         run: python -m wealthwire ingest || echo "::warning::no source ingested successfully — see state/SOURCES.md on the live branch"
 
+      - name: Prepare the digest input (top 15 stories; weekly M&A input on Pacific Fridays)
+        id: dinput
+        run: python -m wealthwire digest-input
+
+      # Claude writes the summaries from headlines and teasers only (prompts/digest.md). It gets file
+      # Read/Write and nothing else: no shell, no web. Skipped on code pushes (only scheduled and manual runs
+      # write a digest), when no Claude secret is set, or when there is nothing to summarize. Any failure here
+      # just means the site shows the plain ranked list.
+      - name: Write the digest with Claude
+        if: >-
+          env.HAS_CLAUDE == 'true' && github.event_name != 'push' &&
+          (steps.dinput.outputs.clusters != '0' || steps.dinput.outputs.weekly == 'true')
+        continue-on-error: true
+        timeout-minutes: 12
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          anthropic_api_key: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN == '' && secrets.ANTHROPIC_API_KEY || '' }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Read prompts/digest.md in this repository and follow it exactly. Your only inputs are
+            _work/digest_input.json and, if it exists, _work/weekly_input.json. Write only
+            _work/digest_output.json and, if the weekly input exists, _work/weekly_output.json.
+            Do not fetch or open any web page or link.
+          claude_args: >-
+            --allowedTools "Read,Write"
+            --disallowedTools "Bash,Edit,WebFetch,WebSearch,NotebookEdit"
+            --max-turns 12
+
+      - name: No Claude secret
+        if: env.HAS_CLAUDE != 'true'
+        run: |
+          echo "::notice::AI digest skipped: no CLAUDE_CODE_OAUTH_TOKEN or ANTHROPIC_API_KEY secret (see MANUAL-STEPS.md). The site shows the plain ranked list."
+
+      - name: Validate the digest (falls back to the plain list if invalid)
+        run: python -m wealthwire digest-finalize | tee -a "$GITHUB_STEP_SUMMARY"
+
       - name: Firm-matching quality report (real SEC data; kept in private state)
         continue-on-error: true
         run: python -m wealthwire eval-firms
@@ -70,6 +112,20 @@ jobs:
         run: python -m wealthwire publish _live --remote-url "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" --message "Refresh $(date -u +%Y-%m-%dT%H:%MZ)"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Watchlist email (optional; skipped unless WATCHLIST_JSON, RESEND_API_KEY and ALERT_EMAIL are set)
+        continue-on-error: true
+        run: python -m wealthwire alert
+        env:
+          WATCHLIST_JSON: ${{ secrets.WATCHLIST_JSON }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+          ALERT_FROM: ${{ vars.ALERT_FROM }}
+          SITE_URL: ${{ vars.SITE_URL }}
+
+      - name: Remove scratch files (they contain publisher teasers)
+        if: always()
+        run: rm -rf _work
 
       - name: Summary
         if: always()

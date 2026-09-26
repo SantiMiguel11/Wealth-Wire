@@ -225,3 +225,46 @@ P23. **Press releases join trade coverage through normal clustering.** A cluster
      release is marked `press_release`. An M&A row whose cluster holds a matching release with both parties
      identified is raised to high confidence ("raised by a matching press release"). Title parsing prefers
      the release's own headline.
+P24. **The AI digest runs through claude-code-action with file tools only.**
+     - Claude reads `_work/digest_input.json` and writes `_work/digest_output.json`, following
+       `prompts/digest.md`. The same file drives the local `/digest` command.
+     - Allowed tools are Read and Write. Bash, Edit, WebFetch and WebSearch are disallowed, with max 12 turns.
+     - The step runs only on scheduled and manual runs, not on code pushes, so a push doesn't overwrite the
+       day's digest.
+     - The step has `continue-on-error`. A missing secret produces a notice, not a failure.
+     - `CLAUDE_CODE_OAUTH_TOKEN` is preferred. `ANTHROPIC_API_KEY` is passed only when the OAuth token is
+       absent.
+P25. **Validation is strict, and any failure falls back for the whole digest** (the spec's
+     "on failure, publish the plain ranked list"). A digest is rejected if any of these apply:
+     - invalid JSON;
+     - an unknown, duplicate or missing cluster id;
+     - an empty field;
+     - an opener outside 2–4 sentences (the prompt asks for 2–3; one extra is tolerated because sentence
+       counting is approximate), or a summary / why-it-matters longer than 2 sentences;
+     - an emoji, an exclamation mark, or a banned filler phrase;
+     - a number that doesn't appear in the input (±0.05, so "$1.2 billion" matches "$1.2bn");
+     - 10+ consecutive words copied from a teaser, which the privacy check would otherwise catch later.
+     Only validated digests are archived (`digests/DATE.{json,md}`), so "last good digest" is the newest
+     archive entry. If a later run the same day falls back, the site keeps that day's earlier good digest
+     and lists newer stories under "more".
+P26. **Weekly recap.**
+     - It is written on refreshes where the Pacific date is a Friday. The week runs from Monday to that Friday,
+       using ISO week ids.
+     - Every Friday run rewrites it, so late Friday deals are included.
+     - If Claude fails on a later run but an earlier run produced a paragraph for exactly the same deals,
+       that paragraph is kept.
+     - "Total disclosed AUM" counts only AUM stated in the deal coverage. SEC-reported fallbacks are shown
+       per row but not summed, since they aren't disclosed deal terms.
+P27. **Watchlist email.**
+     - The watchlist is read from the `WATCHLIST_JSON` env var only and never written or logged. Logs show
+       counts only.
+     - "New stories" means items first fetched by this refresh (`fetched_at ≥ last_ingest`), grouped by
+       cluster and headed with the site's headline. The list is capped at 40.
+     - Matching uses the site's rules (case-insensitive, word boundary, aliases) against the headline and
+       the SEC-verified firm names on the story.
+     - The sender defaults to `onboarding@resend.dev`, which Resend only delivers to the account owner's
+       address. The optional `ALERT_FROM` / `SITE_URL` repo variables override the sender and add a site
+       link.
+     - The step runs after publish, so a failed email can never block the site.
+P28. **`_work/` holds publisher teasers**, so it is git-ignored, never copied into `site/` or `state/`, and
+     deleted at the end of each workflow run.

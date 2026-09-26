@@ -1,11 +1,16 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python -m wealthwire ingest)",
-      "Bash(python3 -m wealthwire ingest)",
-      "Read(./new_stories.json)",
-      "Write(./digests/**)",
-      "Edit(./digests/**)"
+      "Bash(python -m wealthwire digest-input)",
+      "Bash(python -m wealthwire digest-finalize)",
+      "Read(./prompts/digest.md)",
+      "Read(./_work/**)",
+      "Write(./_work/digest_output.json)",
+      "Write(./_work/weekly_output.json)"
+    ],
+    "deny": [
+      "WebFetch",
+      "WebSearch"
     ]
   }
 }

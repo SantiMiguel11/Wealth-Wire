@@ -25,6 +25,7 @@ Conventions:
 | `digest.json` | `digest.schema.json` | Digest / Top Stories |
 | `digests/index.json` | `digests-index.schema.json` | Archive |
 | `digests/<YYYY-MM-DD>.json` | `digest.schema.json` | Archive → one past digest |
+| `digests/<YYYY-MM-DD>.md` | (Markdown, not validated) | The same AI digest as Markdown, for reading or download |
 | `weekly/index.json` | `weekly-index.schema.json` | Archive, weekly recap |
 | `weekly/<YYYY-Www>.json` | `weekly.schema.json` | Weekly M&A recap |
 | `mna.json` | `mna.schema.json` | M&A tracker |
@@ -149,9 +150,9 @@ The index is `{schema_version, generated_at, weekly[]}`. Each recap:
 | field | type | notes |
 |---|---|---|
 | `week` | `"2026-W39"` | ISO week (Mon–Sun, Pacific) |
-| `start`, `end` | date | |
-| `deals[]` | M&A row | see `mna.json` |
-| `total_disclosed_aum_usd` | number \| null | sum of target AUM over deals where it was disclosed |
+| `start`, `end` | date | Monday of that week → the Friday the recap was written |
+| `deals[]` | M&A row | see `mna.json`; deals dated `start`…`end` (Pacific) |
+| `total_disclosed_aum_usd` | number \| null | sum of target AUM over deals whose AUM came from a headline (SEC-reported fallbacks excluded) |
 | `disclosed_aum_deals` | int | how many deals contributed to that sum |
 | `top_acquirers[]` | `{name, slug, deals}` | most active acquirers this week |
 | `paragraph` | string \| null | Claude-written summary; null if unavailable (numbers are always present) |

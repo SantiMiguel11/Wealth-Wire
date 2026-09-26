@@ -266,6 +266,20 @@ def _read_json(path: Path) -> dict | None:
         return None
 
 
+def window_ranked(snap: Snapshot, window_start: datetime) -> list[dict]:
+    """Top Stories candidates: first seen since the window start, still recent, ranked by outlets then recency."""
+    return rank_clusters([c for c in snap.clusters if from_iso(c["first_seen"]) > window_start
+                          and from_iso(c["last_published"]) >= window_start - timedelta(hours=48)])
+
+
+def public_item(c: dict) -> dict:
+    """A cluster as a digest item (summary fields empty until Claude's validated text fills them)."""
+    return {"cluster_id": c["id"], "headline": c["headline"], "url": c["url"], "category": c["category"],
+            "outlet_count": c["outlet_count"], "sources": [{"name": s["name"], "url": s["url"]} for s in c["sources"]],
+            "firms": [{"name": f["name"], "slug": f["slug"]} for f in c["firms"]],
+            "aum_usd": c["aum_usd"], "aum_source": c["aum_source"], "summary": None, "why_it_matters": None}
+
+
 def digest_files(snap: Snapshot, window_start: datetime) -> dict[str, dict]:
     """digest.json (latest good AI digest for today, else the plain ranked list) + archive."""
     files: dict[str, dict] = {}
@@ -292,13 +306,7 @@ def digest_files(snap: Snapshot, window_start: datetime) -> dict[str, dict]:
                                    "digests": index, "weekly": weekly}
     files["weekly/index.json"] = {"schema_version": SCHEMA_VERSION, "generated_at": to_iso(snap.now), "weekly": weekly}
 
-    ranked = rank_clusters([c for c in snap.clusters if from_iso(c["first_seen"]) > window_start
-                            and from_iso(c["last_published"]) >= window_start - timedelta(hours=48)])
-    top = [{"cluster_id": c["id"], "headline": c["headline"], "url": c["url"], "category": c["category"],
-            "outlet_count": c["outlet_count"], "sources": [{"name": s["name"], "url": s["url"]} for s in c["sources"]],
-            "firms": [{"name": f["name"], "slug": f["slug"]} for f in c["firms"]],
-            "aum_usd": c["aum_usd"], "aum_source": c["aum_source"], "summary": None, "why_it_matters": None}
-           for c in ranked[:25]]
+    top = [public_item(c) for c in window_ranked(snap, window_start)[:25]]
     latest = _read_json(ddir / "latest.json") if ddir.exists() else None
     last_good = index[0] if index else None
     local_today = snap.now.astimezone(_tz(snap.cfg)).date().isoformat()
@@ -392,6 +400,10 @@ def build_site(out: Path, now: datetime | None = None, write_state: bool = True)
         p = data / rel
         p.parent.mkdir(parents=True, exist_ok=True)
         p.write_text(json.dumps(obj, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    ddir = paths.digests_dir()
+    for md in sorted(ddir.glob("????-??-??.md")) if ddir.exists() else []:
+        (data / "digests").mkdir(parents=True, exist_ok=True)
+        shutil.copy(md, data / "digests" / md.name)
     (site / "robots.txt").write_text("User-agent: *\nDisallow: /\n", encoding="utf-8")
     (out / "vercel.json").write_text(json.dumps(VERCEL_JSON, indent=2) + "\n", encoding="utf-8")
     (out / "README.md").write_text(LIVE_README, encoding="utf-8")
