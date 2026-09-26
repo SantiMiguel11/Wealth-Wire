@@ -105,7 +105,7 @@ def latest_digest(digests: Path | None = None) -> Path | None:
 
 
 def render_markdown(text: str) -> str:
-    html = markdown.markdown(text, extensions=["extra", "sane_lists"])
+    html = markdown.markdown(text, extensions=["extra", "sane_lists", "nl2br"])
     return bleach.clean(html, tags=ALLOWED_TAGS, attributes=ALLOWED_ATTRS, protocols=["http", "https", "mailto"], strip=True)
 
 

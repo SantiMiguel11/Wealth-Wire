@@ -15,6 +15,7 @@ from fastapi.staticfiles import StaticFiles
 from . import db, paths, queries
 from .config import load_categories, load_config, load_sources
 from .dates import to_iso
+from .urls import clean_link
 from .watchlist import Firm, Matcher, load_watchlist, save_watchlist
 
 log = logging.getLogger("wealthwire.server")
@@ -151,7 +152,7 @@ def mna(confidence: str | None = Query(None, pattern="^(high|low)?$")):
             for it in conn.execute("SELECT source, url FROM items WHERE cluster_id=? ORDER BY published_at, id", (r["cluster_id"],)):
                 if it["source"] not in seen:
                     seen.add(it["source"])
-                    r["sources"].append({"name": it["source"], "url": it["url"]})
+                    r["sources"].append({"name": it["source"], "url": clean_link(it["url"])})
         return rows
     finally:
         conn.close()

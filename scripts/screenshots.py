@@ -34,6 +34,7 @@ SCENES = [
     ("mna-low", "?tab=mna&conf=low", None),
     ("digest", "?tab=digest", None),
     ("sources", "?tab=sources", None),
+    ("empty", "?q=zzzznotaword", None),
 ]
 
 
@@ -134,6 +135,42 @@ def main() -> int:
                         page.screenshot(path=str(OUT / f"{name}-{vp_name}-{theme}.png"))
                         shots += 1
                     ctx.close()
+            # error state: API forced to fail (deliberate, so not counted as a problem)
+            ctx = browser.new_context(viewport={"width": 1440, "height": 900}, color_scheme="light")
+            page = ctx.new_page()
+            page.route("**/api/feed*", lambda route: route.fulfill(status=500, json={"detail": "database is locked"}))
+            page.goto(base + "/")
+            page.wait_for_selector(".state.error")
+            page.screenshot(path=str(OUT / "error-desktop-light.png"))
+            ctx.close()
+            # interactions: filter/search state lives in the URL; watchlist add/remove from the UI
+            ctx = browser.new_context(viewport={"width": 1440, "height": 900}, color_scheme="light")
+            page = ctx.new_page()
+            page.on("console", lambda m: m.type == "error" and problems.append(f"[interact] console: {m.text}"))
+            page.goto(base + "/")
+            page.wait_for_selector(".card")
+            page.fill("#q", "custody")
+            page.wait_for_url("**q=custody**")
+            page.wait_for_function("document.querySelectorAll('#feed-list .card').length === 3")  # porter stemming: custody ~ custodian
+            page.click('#cat-chips button[data-cat="Regulation"]')
+            page.wait_for_url("**category=Regulation**")
+            page.go_back()
+            page.wait_for_function("!location.search.includes('category')")
+            page.select_option("#source", "Kitces")
+            page.wait_for_url("**source=Kitces**")
+            page.click("#clear")
+            page.wait_for_function("location.search === ''")
+            page.fill("#watch-name", "Harborview Wealth Partners")
+            page.fill("#watch-aliases", "Harborview")
+            page.click("#watch-add button")
+            page.wait_for_selector("#watchlist li:has-text('Harborview Wealth Partners')")
+            page.wait_for_selector("#pinned-list .card:has-text('Summit Ridge')")
+            page.evaluate("scrollTo(0, 0)")
+            page.screenshot(path=str(OUT / "watchlist-added-desktop-light.png"))
+            page.click("#watchlist button[aria-label='Remove Harborview Wealth Partners']")
+            page.wait_for_function("!document.querySelector('#watchlist').textContent.includes('Harborview')")
+            page.wait_for_function("!document.querySelector('#pinned-list').textContent.includes('Summit Ridge')")
+            ctx.close()
             # theme toggle persists in localStorage
             ctx = browser.new_context(viewport={"width": 1440, "height": 900}, color_scheme="light")
             page = ctx.new_page()

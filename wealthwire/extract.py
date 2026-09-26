@@ -188,7 +188,12 @@ def extract_firms(text: str, stoplist: set[str], alias_map: dict[str, str] | Non
         low = name.lower()
         if low in stoplist:
             continue
-        name = alias_map.get(low, name)
+        mapped = alias_map.get(low)
+        if mapped is None:
+            # "Goldman Sachs Asset Management" / "Pugh Capital Management" roll up to the watchlist firm
+            mapped = next((disp for alias, disp in sorted(alias_map.items(), key=lambda kv: -len(kv[0]))
+                           if low.startswith(alias + " ")), name)
+        name = mapped
         if name not in out:
             out.append(name)
     return out

@@ -6,6 +6,7 @@ import sqlite3
 from datetime import timedelta
 
 from .dates import from_iso, to_iso, utcnow
+from .urls import clean_link
 
 _TOKEN = re.compile(r"[\w$&.'-]+", re.UNICODE)
 
@@ -68,6 +69,7 @@ def load_clusters(conn: sqlite3.Connection, ids: list[int]) -> list[dict]:
         chunk = ids[chunk_start : chunk_start + 500]
         for r in conn.execute(f"SELECT * FROM clusters WHERE id IN ({_in(chunk)})", chunk):
             c = dict(r)
+            c["url"] = clean_link(c["url"])
             c.update(items=[], firms=[], sources=[])
             out[c["id"]] = c
         for r in conn.execute(
@@ -75,7 +77,9 @@ def load_clusters(conn: sqlite3.Connection, ids: list[int]) -> list[dict]:
             f"FROM items WHERE cluster_id IN ({_in(chunk)}) ORDER BY published_at, id",
             chunk,
         ):
-            out[r["cluster_id"]]["items"].append(dict(r))
+            it = dict(r)
+            it["url"] = clean_link(it["url"])
+            out[r["cluster_id"]]["items"].append(it)
         for r in conn.execute(
             f"SELECT i.cluster_id, f.firm, MIN(i.published_at) AS first FROM item_firms f JOIN items i ON i.id = f.item_id "
             f"WHERE i.cluster_id IN ({_in(chunk)}) GROUP BY i.cluster_id, f.firm ORDER BY first",

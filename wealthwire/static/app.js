@@ -415,8 +415,9 @@ async function renderMna(s) {
       el("td", { class: "num", "data-label": "Target AUM" }, r.target_aum_usd ? el("span", { class: "aum-cell" }, fmtAum(r.target_aum_usd)) : blank("", "not stated or ambiguous")),
       el("td", { "data-label": "Type" }, el("span", { class: "deal-type" }, r.deal_type || "—")),
       el("td", { "data-label": "Sources" }, el("div", { class: "srcs" }, ...r.sources.map((x) => extLink(x.url, x.name, "src")))),
-      el("td", { "data-label": "Confidence" },
-        el("span", { class: "conf conf-" + r.confidence, title: r.note || "" }, r.confidence === "low" ? "⚠ LOW" : "HIGH")));
+      el("td", { "data-label": "Confidence" }, el("div", {},
+        el("span", { class: "conf conf-" + r.confidence }, r.confidence === "low" ? "⚠ LOW" : "HIGH"),
+        r.confidence === "low" && r.note ? el("span", { class: "conf-note" }, r.note) : null)));
   });
   wrap.replaceChildren(el("table", {},
     el("thead", {}, el("tr", {}, ...["Date", "Acquirer", "Target", "Target AUM", "Type", "Sources", "Confidence"].map((h) => el("th", {}, h)))),
@@ -438,8 +439,8 @@ async function renderDigest() {
     body.innerHTML = d.html;  // sanitized server-side with bleach (allow-listed tags/attrs only)
     for (const a of body.querySelectorAll("a")) { a.target = "_blank"; a.rel = "noopener noreferrer"; }
     box.replaceChildren(el("article", { class: "digest" },
-      el("div", { class: "digest-head" }, el("h1", {}, "Morning digest"), el("span", { class: "digest-date" }, d.date),
-        el("span", { class: "muted mono", style: "font-size:12px" }, d.filename)),
+      el("div", { class: "digest-head digest-head-slim" }, el("span", { class: "digest-label" }, "Morning digest"),
+        el("span", { class: "digest-date" }, d.date), el("span", { class: "muted mono digest-file" }, d.filename)),
       body));
     return;
   }
@@ -470,7 +471,7 @@ async function renderSources() {
       el("td", { class: "url", "data-label": "URL used" }, s.url_used ? extLink(s.url_used, s.url_used) : "—"),
       el("td", { class: "num", "data-label": "Items" }, s.items_last_run),
       el("td", { class: "num", "data-label": "New" }, s.new_last_run),
-      el("td", { class: "reason", "data-label": "Notes" }, s.reason || (s.ok ? "" : "not run yet")))))));
+      el("td", { class: "reason", "data-label": s.ok ? "Notes" : "Reason" }, s.reason || (s.ok ? null : "not run yet")))))));
 }
 
 /* ---------- boot ---------- */

@@ -30,3 +30,12 @@ def canonicalize(url: str) -> str:
     ]
     query = urlencode(sorted(query_pairs))
     return urlunsplit((scheme, host, path, query, ""))
+
+
+def clean_link(url: str) -> str:
+    """For outgoing links: drop tracking params and the fragment, but otherwise keep the URL as published
+    (path case, trailing slash) so it still resolves exactly as the outlet intended."""
+    parts = urlsplit((url or "").strip())
+    pairs = [(k, v) for k, v in parse_qsl(parts.query, keep_blank_values=True)
+             if not k.lower().startswith("utm_") and k.lower() not in TRACKING_PARAMS]
+    return urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(pairs), ""))
