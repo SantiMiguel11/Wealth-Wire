@@ -302,6 +302,57 @@ def main() -> None:
     add("https://www.sec.gov/news/pressreleases.rss", write("sec.xml", rss("SEC Press Releases", "https://www.sec.gov", items)),
         headers={"ETag": '"sec-v1"', "Last-Modified": rfc(3)})
 
+    # SEC Investment Adviser Information Reports — synthetic monthly file (fictional firms, fake CRDs 9990xx)
+    import csv
+    import io
+    import zipfile
+
+    sec_page = "https://www.sec.gov/data-research/sec-markets-data/information-about-registered-investment-advisers-exempt-reporting-advisers"
+    base = "/files/investment/data/information-about-registered-investment-advisers-exempt-reporting-advisers"
+    add(sec_page, write("sec_ia_page.html",
+        f"<html><body><!-- {NOTE} --><h1>Information About Registered Investment Advisers</h1>"
+        f'<a href="{base}/ia090126.zip">September 2026</a> <a href="{base}/era090126.zip">ERA September 2026</a>'
+        f'<a href="{base}/ia080126.zip">August 2026</a></body></html>'), content_type="text/html")
+    firms = [
+        # legal name, primary business name, city, state, regulatory AUM
+        ("HARBORVIEW WEALTH PARTNERS, LLC", "HARBORVIEW WEALTH PARTNERS", "SEATTLE", "WA", 9_800_000_000),
+        ("SUMMIT RIDGE ADVISORS LLC", "SUMMIT RIDGE ADVISORS", "DENVER", "CO", 1_200_000_000),
+        ("CEDAR LANE PRIVATE WEALTH LLC", "CEDAR LANE PRIVATE WEALTH", "CHARLOTTE", "NC", 850_000_000),
+        ("MERIDIAN CAPITAL PARTNERS LLC", "MERIDIAN CAPITAL PARTNERS", "PORTLAND", "OR", 6_100_000_000),
+        ("OAKMONT FAMILY OFFICE LLC", "OAKMONT FAMILY OFFICE", "BELLEVUE", "WA", 2_300_000_000),
+        ("NORTHGATE ADVISORS LLC", "NORTHGATE ADVISORS", "CHICAGO", "IL", 2_500_000_000),
+        ("PINECREST WEALTH LLC", "PINECREST WEALTH", "CHICAGO", "IL", 2_000_000_000),
+        ("LAKESHORE FINANCIAL GROUP, INC.", "LAKESHORE FINANCIAL GROUP", "MILWAUKEE", "WI", 640_000_000),
+        ("ATLAS WEALTH MANAGEMENT LLC", "ATLAS WEALTH MANAGEMENT", "MINNEAPOLIS", "MN", 12_000_000_000),
+        ("BROOKFIELD ROW ADVISORY LLC", "BROOKFIELD ROW ADVISORY", "MINNEAPOLIS", "MN", 300_000_000),
+        ("CRESTLINE WEALTH LLC", "CRESTLINE WEALTH", "DALLAS", "TX", 7_000_000_000),
+        ("RIVERBEND FINANCIAL LLC", "RIVERBEND FINANCIAL", "AUSTIN", "TX", 900_000_000),
+        ("ASPEN GROVE ADVISORS LLC", "ASPEN GROVE ADVISORS", "BOULDER", "CO", 1_000_000_000),
+        ("WILLOWBROOK WEALTH LLC", "WILLOWBROOK WEALTH", "SPOKANE", "WA", 1_100_000_000),
+        ("SEQUOIA POINT WEALTH LLC", "SEQUOIA POINT WEALTH", "SAN JOSE", "CA", 2_800_000_000),
+        ("BLUEWATER PRIVATE WEALTH LLC", "BLUEWATER PRIVATE WEALTH", "TAMPA", "FL", 3_000_000_000),
+        ("KESTREL ADVISORS LLC", "KESTREL ADVISORS", "PORTLAND", "OR", 4_000_000_000),
+        ("TIDEWATER FAMILY OFFICE LLC", "TIDEWATER FAMILY OFFICE", "NEW YORK", "NY", 500_000_000),
+        # distractors for the precision guards
+        ("SUMMIT WEALTH GROUP LLC", "SUMMIT WEALTH GROUP", "BOISE", "ID", 400_000_000),
+        ("SUMMIT WEALTH PARTNERS LLC", "SUMMIT WEALTH PARTNERS", "OMAHA", "NE", 250_000_000),
+        ("MERCER CAPITAL ADVISORS LLC", "MERCER CAPITAL ADVISORS", "MEMPHIS", "TN", 700_000_000),
+        ("FOCUS ADVISORY LLC", "FOCUS ADVISORY", "RENO", "NV", 90_000_000),
+    ]
+    buf = io.StringIO()
+    w = csv.writer(buf)
+    w.writerow(["SEC#", "Organization CRD#", "SEC Region", "Legal Name", "Primary Business Name", "Main Office City",
+                "Main Office State", "Main Office Country", "5F(2)(c)"])
+    for i, (legal, business, city, state, aum) in enumerate(firms):
+        w.writerow([f"801-{99000 + i}", str(999001 + i), "SEC", legal, business, city, state, "United States", f"{aum:,}"])
+    w.writerow(["802-99999", "998001", "SEC", "EXEMPT REPORTING FUND ADVISER LLC", "HARBORVIEW VENTURES", "SEATTLE", "WA", "United States", ""])
+    zbuf = io.BytesIO()
+    with zipfile.ZipFile(zbuf, "w", zipfile.ZIP_DEFLATED) as zf:
+        zf.writestr("IA_FIRM_SEC_Feed_09_01_2026.csv", buf.getvalue())
+        zf.writestr("README.txt", NOTE + "\n")
+    (OUT / "sec_ia090126.zip").write_bytes(zbuf.getvalue())
+    routes[f"https://www.sec.gov{base}/ia090126.zip"] = {"status": 200, "content_type": "application/zip", "file": "sec_ia090126.zip"}
+
     # FINRA — robots.txt disallows the news section → failed with a robots reason
     add("https://www.finra.org/robots.txt", body="User-agent: *\nDisallow: /media-center/\n", content_type="text/plain")
 

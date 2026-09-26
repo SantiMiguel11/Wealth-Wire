@@ -59,6 +59,10 @@ jobs:
       - name: Ingest
         run: python -m wealthwire ingest || echo "::warning::no source ingested successfully — see state/SOURCES.md on the live branch"
 
+      - name: Firm-matching quality report (real SEC data; kept in private state)
+        continue-on-error: true
+        run: python -m wealthwire eval-firms
+
       - name: Build site (public data + private state)
         run: python -m wealthwire build-site _live
 
@@ -73,4 +77,5 @@ jobs:
           {
             echo "### Wealth Wire refresh"
             test -f SOURCES.md && sed -n '1,/^## Failures/p' SOURCES.md | head -40
+            test -f firm_eval.json && python -c "import json;r=json.load(open('firm_eval.json'));print(f\"\\nFirm matching: precision {r['precision']}, recall {r['recall']} on {r['headlines']} labeled headlines (SEC file {r['sec_data_date']})\")"
           } >> "$GITHUB_STEP_SUMMARY" || true

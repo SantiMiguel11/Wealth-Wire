@@ -172,3 +172,35 @@ P12. **The watchlist is browser-only** (`localStorage["ww-watchlist"]`, import/e
      (case-insensitive, word boundaries, 3+ char terms), plus the CRDs of any SEC firm whose name or legal
      name starts with a watchlist term, so "Goldman Sachs" also catches stories tagged with Goldman Sachs'
      SEC entity.
+P13. **SEC data source and cadence.** The monthly "Investment Adviser Information Reports" zip is found by parsing
+     the SEC page for `ia*.zip` links (exempt-reporting `era*` files skipped) and dating each file from its
+     name (MMDDYY). The page is checked at most every 25 days, and the zip is downloaded only when it's newer
+     than the loaded one. Every request goes through the same polite fetcher (UA with contact email, ≥2s per
+     host, robots.txt). Only `801-` (SEC-registered) rows are kept. A file that parses to fewer than 100
+     advisers is rejected, keeping the previous data, since a real month has ~15k.
+     Header names are matched loosely, and CSV/XLSX are both handled, because the exact column labels weren't
+     verifiable from the build sandbox.
+P14. **Firm matching guards** (the brief's "Summit/Focus/Pinnacle/Mercer" rule):
+     - a single-word alias matches alone only if it's distinctive: not in the `english-words` web2 dictionary,
+       3+ letters, and capitalized in the headline;
+     - multi-word aliases made only of dictionary/generic words must appear Title Cased;
+     - aliases made only of generic words are never used;
+     - an alias shared by unrelated firms is dropped, unless it is some firm's full name or a proper-noun brand
+       ("goldman sachs", "raymond james" → the largest registration by AUM);
+     - matches never cross sentence punctuation, and the longest match wins.
+     Result on 75 real labeled headlines, fixture dictionary: precision 0.95 / recall 0.86 with curated aliases,
+     0.96 / 0.71 generated-only. Real-SEC-data numbers come from `eval-firms` in the workflow.
+P15. **`firm_aliases.yaml`: a short, user-editable list of brand aliases** (Vanguard, Merrill, BofA, JPMorgan,
+     Schwab, …) mapped to SEC names and resolved to CRDs each refresh. These brands dominate headlines but are
+     dictionary words or don't match the registered name. Curated aliases only match when capitalized, and
+     unresolved names are reported. P/R is reported with and without them, so the list can't hide weak
+     automatic matching.
+P16. **SEC AUM is attached to a story only through its subject.** It applies when no headline states an AUM and
+     the headlines agree on one verified firm that opens the headline (after an optional "People Moves:"
+     label). "Coldstream hires former Kestrel Advisors CIO" is about Coldstream, so Kestrel's AUM never shows.
+     It is labeled "SEC-reported AUM (as of <file date>)".
+P17. **Firm identity for clustering is now the CRD** when verified. Identical firm sets get the +12 bonus only if
+     the categories also match. "Northgate and Pinecrest merge" and "Pinecrest names CEO ahead of Northgate
+     merger" name the same two firms but are different stories.
+P18. **The demo SEC file is synthetic** (fictional firms, fake CRDs 9990xx, plus look-alike distractors). Its
+     IAPD links point at non-existent CRDs, and the DEMO DATA badge is shown.

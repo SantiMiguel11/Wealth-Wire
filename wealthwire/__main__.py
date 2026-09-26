@@ -48,6 +48,8 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--remote-url", required=True)
     p.add_argument("--branch", default="live")
     p.add_argument("--message", default="Refresh")
+    p = sub.add_parser("eval-firms", help="precision/recall of SEC firm matching on the labeled headlines")
+    p.add_argument("--out", type=Path, help="write the JSON report here (default: firm_eval.json in the data dir)")
     args = parser.parse_args(argv)
 
     if args.cmd == "ingest":
@@ -92,6 +94,23 @@ def main(argv: list[str] | None = None) -> int:
         from .state import publish
 
         publish(args.out, args.remote_url, args.branch, args.message)
+        return 0
+    if args.cmd == "eval-firms":
+        from . import db, paths
+        from .firmeval import evaluate, write_report
+        from .firms import SecMatcher
+
+        conn = db.connect()
+        m = SecMatcher.from_db(conn)
+        if not m.firms:
+            print("no SEC adviser data loaded yet — run an ingestion first")
+            return 0
+        rep = write_report(m, args.out or paths.firm_eval_path(), db.get_meta(conn, "sec_data_date"))
+        generated = evaluate(SecMatcher.from_db(conn, curated={}))
+        print(f"SEC firm matching on {rep['headlines']} labeled headlines (SEC file {rep['sec_data_date']}, "
+              f"{rep['sec_firms_in_dictionary']} advisers): precision {rep['precision']}, recall {rep['recall']} "
+              f"(generated aliases only: precision {generated['precision']}, recall {generated['recall']}); "
+              f"unresolved curated aliases: {m.curated_unresolved or 'none'}")
         return 0
     return 2
 

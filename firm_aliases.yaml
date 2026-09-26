@@ -1,0 +1,22 @@
+# Curated brand aliases for SEC firm matching (§4). Headlines often use a short brand ("Vanguard", "Merrill",
+# "JPMorgan", "BofA") that is an ordinary English word or doesn't match the registered name, so the automatic
+# aliases can't safely catch it. Each alias maps to the SEC legal or primary business name it means; names are
+# resolved to a CRD against the current SEC file at every refresh (unresolved entries are ignored and reported).
+# Curated aliases only match when capitalized in the headline. Keep this list short: every entry is a
+# precision risk ("Vanguard" also means "the vanguard of…" in title-cased headlines).
+aliases:
+  Vanguard: The Vanguard Group, Inc.
+  Merrill: Merrill Lynch, Pierce, Fenner & Smith Incorporated
+  Merrill Lynch: Merrill Lynch, Pierce, Fenner & Smith Incorporated
+  BofA: Merrill Lynch, Pierce, Fenner & Smith Incorporated
+  JPMorgan: J.P. Morgan Securities LLC
+  Goldman: Goldman Sachs & Co. LLC
+  Schwab: Charles Schwab & Co., Inc.
+  Raymond James: Raymond James & Associates, Inc.
+  RayJay: Raymond James & Associates, Inc.
+  Morgan Stanley: Morgan Stanley Smith Barney LLC
+  UBS: UBS Financial Services Inc.
+  Edward Jones: Edward D. Jones & Co., L.P.
+  Wells Fargo: Wells Fargo Clearing Services, LLC
+  Fidelity Investments: Fidelity Personal and Workplace Advisors LLC
+  BNY: BNY Mellon Securities Corporation

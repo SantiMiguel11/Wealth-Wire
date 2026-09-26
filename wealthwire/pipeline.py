@@ -1,4 +1,4 @@
-"""Recompute all derived data from stored items (categories, firms, AUM, clusters, M&A, new stories)."""
+"""Recompute all derived data from stored items (categories, firms, AUM, clusters, M&A)."""
 from __future__ import annotations
 
 import sqlite3
@@ -11,6 +11,7 @@ from .cluster import ClusterItem, cluster
 from .config import load_config, load_stoplist
 from .dates import utcnow
 from .extract import extract_aum, extract_firms
+from .firms import SecMatcher, normalize, tokenize
 from .mna import deal_for_cluster
 
 
@@ -31,19 +32,54 @@ def group_items(items: list[dict], cfg: dict) -> list[list[dict]]:
     return [[by_id[c.id] for c in g] for g in groups]
 
 
-def extract_item(it: dict, stoplist: set[str]) -> None:
+def firms_in_text(text: str, stoplist: set[str], sec: SecMatcher) -> list[dict]:
+    """SEC-verified firms first; regex-extracted names only for firms the SEC data doesn't cover (unverified)."""
+    out: list[dict] = []
+    matches = sec.match(text)
+    verified_aliases = [m.alias for m in matches]
+    for crd in dict.fromkeys(m.crd for m in matches):
+        out.append({"name": sec.display(crd), "crd": crd, "verified": True})
+    covered = [normalize(f["name"]) for f in out] + verified_aliases
+    for name in extract_firms(text, stoplist):
+        n = normalize(name)
+        if any(a in n or n in a for a in covered):
+            continue  # the regex span is (part of) a firm we already verified
+        out.append({"name": name, "crd": None, "verified": False})
+    return out
+
+
+def subject_crd(title: str, sec: SecMatcher) -> str | None:
+    """The verified firm the headline is about: its name opens the headline, after an optional label
+    ("People Moves: Mercer Advisors hires …" → Mercer Advisors; "Coldstream hires Kestrel's CIO" → none)."""
+    toks = [n for _, n in tokenize(title)]
+    start = 0
+    for i, t in enumerate(toks[:6]):
+        if t == "|":
+            start = i + 1
+    for m in sec.match(title):
+        if m.start_token == start:
+            return m.crd
+    return None
+
+
+def extract_item(it: dict, stoplist: set[str], sec: SecMatcher) -> None:
     """Firms from title and description (separately, so spans never cross fields)."""
-    title_firms = extract_firms(it["title"], stoplist)
-    firms = list(title_firms)
-    for f in extract_firms(it["description"], stoplist):
-        if f not in firms:
-            firms.append(f)
-    it["title_firms"] = title_firms
+    title = firms_in_text(it["title"], stoplist, sec)
+    firms = [dict(f, in_title=True) for f in title]
+    keys = {f["crd"] or f["name"].lower() for f in firms}
+    for f in firms_in_text(it["description"], stoplist, sec):
+        if (f["crd"] or f["name"].lower()) not in keys:
+            keys.add(f["crd"] or f["name"].lower())
+            firms.append(dict(f, in_title=False))
     it["firms"] = firms
+    # clustering compares firm identities: CRD when verified, else the lowercased name
+    it["title_firms"] = [f["crd"] or f["name"].lower() for f in title]
+    it["title_crds"] = [f["crd"] for f in title if f["crd"]]
+    it["subject_crd"] = subject_crd(it["title"], sec)
     it["aum_usd"] = extract_aum(it["title"]) or extract_aum(it["description"])
 
 
-def write_clusters(conn: sqlite3.Connection, groups: list[list[dict]]) -> None:
+def write_clusters(conn: sqlite3.Connection, groups: list[list[dict]], sec: SecMatcher | None = None) -> None:
     conn.execute("DELETE FROM clusters")
     for group in groups:
         group = sorted(group, key=lambda it: (it["published_at"], it["id"]))
@@ -57,14 +93,23 @@ def write_clusters(conn: sqlite3.Connection, groups: list[list[dict]]) -> None:
                 category = Counter(non_other).most_common(1)[0][0]
         aums = [it.get("aum_usd") for it in group if it.get("aum_usd")]
         aum = head.get("aum_usd") or (Counter(aums).most_common(1)[0][0] if aums else None)
+        # SEC-reported AUM, only when no headline states one and the headlines agree on one verified subject firm
+        # ("Coldstream hires former Kestrel Advisors CIO" is about Coldstream → Kestrel's AUM must not appear)
+        sec_aum = sec_crd = None
+        subjects = {it.get("subject_crd") for it in group if it.get("subject_crd")}
+        if not aum and sec and len(subjects) == 1:
+            sec_crd = subjects.pop()
+            sec_aum = sec.firms[sec_crd].get("aum_usd") or None
+            if not sec_aum:
+                sec_crd = None
         conn.execute(
             "INSERT INTO clusters(id, headline_item_id, headline, url, category, first_seen, first_published, last_published, "
-            "outlet_count, item_count, aum_usd) VALUES (?,?,?,?,?,?,?,?,?,?,?)",
+            "outlet_count, item_count, aum_usd, sec_aum_usd, sec_aum_crd) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
             (
                 cid, head["id"], head["title"], head["url"], category,
                 min(it["fetched_at"] for it in group),
                 head["published_at"], max(it["published_at"] for it in group),
-                len({it["source"] for it in group}), len(group), aum,
+                len({it["source"] for it in group}), len(group), aum, sec_aum, sec_crd,
             ),
         )
         conn.executemany("UPDATE items SET cluster_id=? WHERE id=?", [(cid, it["id"]) for it in group])
@@ -91,14 +136,18 @@ def recompute(conn: sqlite3.Connection, now: datetime | None = None) -> dict:
     items = _load_items(conn)
     categorizer = Categorizer()
     stoplist = load_stoplist()
+    sec = SecMatcher.from_db(conn)
     for it in items:
         it["category"] = categorizer.categorize(it["title"], it["description"])
-        extract_item(it, stoplist)
+        extract_item(it, stoplist, sec)
     conn.executemany("UPDATE items SET category=?, aum_usd=? WHERE id=?", [(it["category"], it["aum_usd"], it["id"]) for it in items])
     conn.execute("DELETE FROM item_firms")
-    conn.executemany("INSERT OR IGNORE INTO item_firms(item_id, firm) VALUES (?, ?)", [(it["id"], f) for it in items for f in it["firms"]])
+    conn.executemany(
+        "INSERT OR IGNORE INTO item_firms(item_id, firm, crd, verified, in_title) VALUES (?, ?, ?, ?, ?)",
+        [(it["id"], f["name"], f["crd"], int(f["verified"]), int(f["in_title"])) for it in items for f in it["firms"]],
+    )
     groups = group_items(items, cfg)
-    write_clusters(conn, groups)
+    write_clusters(conn, groups, sec)
     deals = write_deals(conn)
     conn.commit()
     local_date = now.astimezone(ZoneInfo(cfg["timezone"])).date().isoformat()

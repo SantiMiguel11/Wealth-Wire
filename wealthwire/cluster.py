@@ -97,6 +97,8 @@ def score(a: ClusterItem, b: ClusterItem) -> float:
             base -= 20      # "Atlas buys Lakeshore" vs "Atlas buys Brookfield": same acquirer, different deals
         elif only_a or only_b:
             base += 4
+        elif a.category and b.category and a.category != b.category:
+            base += 4       # same firms, different kind of story ("A and B merge" vs "B names CEO ahead of A merger")
         else:
             base += 12
     elif fa and fb:

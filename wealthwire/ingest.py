@@ -1,6 +1,7 @@
 """Per-source ingestion and SOURCES.md generation."""
 from __future__ import annotations
 
+import json
 import logging
 import sqlite3
 import threading
@@ -171,7 +172,8 @@ class SourceIngester:
         return run
 
 
-def write_sources_md(runs: list[SourceRun], now: datetime, cfg: dict, demo: bool, path: Path | None = None) -> Path:
+def write_sources_md(runs: list[SourceRun], now: datetime, cfg: dict, demo: bool, path: Path | None = None,
+                     sec_status: dict | None = None) -> Path:
     path = path or paths.sources_md_path()
     ok = sum(1 for r in runs if r.ok)
     lines = [
@@ -182,6 +184,10 @@ def write_sources_md(runs: list[SourceRun], now: datetime, cfg: dict, demo: bool
     ]
     if demo:
         lines += ["> **Offline fixture run** — these results come from `--fixtures`, not the live sites.", ""]
+    if sec_status:
+        lines += [f"**SEC adviser data** (firm detection): {sec_status.get('status')} — file dated "
+                  f"{sec_status.get('data_date') or 'n/a'}, {sec_status.get('firms', 0)} SEC-registered advisers"
+                  + (f". {sec_status['reason']}" if sec_status.get("reason") else "") + ".", ""]
     if cfg.get("contact_email") == PLACEHOLDER_EMAIL:
         lines += ["> ⚠ `contact_email` in config.yaml is still the placeholder `me@example.com`. Set your own address — SEC.gov requires a real contact in the User-Agent.", ""]
     lines += [
@@ -239,6 +245,16 @@ def run_ingest(fixtures: Path | None = None, now: datetime | None = None, quiet:
         )
         runs: list[SourceRun] = []
         try:
+            from .sec import maybe_update
+
+            if fixtures:  # the offline fixture file is tiny by design
+                cfg.setdefault("sec", {})["allow_small_file"] = True
+            sec_status = maybe_update(conn, fetcher, now, cfg)
+            db.set_meta(conn, "sec_status", json.dumps(sec_status))
+            conn.commit()
+            if not quiet:
+                print(f"[SEC] adviser data: {sec_status.get('status')} (file {sec_status.get('data_date') or '—'}, "
+                      f"{sec_status.get('firms', 0)} firms){' — ' + sec_status['reason'] if sec_status.get('reason') else ''}")
             ingester = SourceIngester(fetcher, conn, cfg["timezone"], now)
             for src in sources:
                 run = ingester.run(src)
@@ -251,7 +267,7 @@ def run_ingest(fixtures: Path | None = None, now: datetime | None = None, quiet:
         db.set_meta(conn, "last_ingest", to_iso(now))
         db.set_meta(conn, "demo", "1" if fixtures else "0")
         conn.commit()
-        write_sources_md(runs, now, cfg, demo=bool(fixtures))
+        write_sources_md(runs, now, cfg, demo=bool(fixtures), sec_status=sec_status)
         result = recompute(conn, now=now)
         conn.close()
         summary = {

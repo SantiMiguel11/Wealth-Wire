@@ -17,6 +17,7 @@ from pathlib import Path
 from . import db, paths
 from .config import load_config, load_sources
 from .dates import from_iso, to_iso, utcnow
+from .firms import pretty_name
 from .urls import clean_link
 from .window import rank_clusters, top_window
 
@@ -47,6 +48,10 @@ def slugify(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-") or "firm"
 
 
+def _title(city: str | None) -> str | None:
+    return city.title() if city and city.isupper() else (city or None)
+
+
 def firm_slug(name: str, crd: str) -> str:
     return f"{slugify(name)}-{crd}"
 
@@ -69,9 +74,9 @@ class Snapshot:
     def _firm_obj(self, name: str, crd: str | None, verified: bool) -> dict:
         if verified and crd and crd in self.sec:
             f = self.sec[crd]
-            display = f["business_name"] or f["legal_name"]
+            display = pretty_name(f["business_name"] or f["legal_name"])
             return {"name": display, "slug": firm_slug(display, crd), "crd": crd, "verified": True,
-                    "city": f["city"] or None, "state": f["state"] or None}
+                    "city": _title(f["city"]), "state": f["state"] or None}
         return {"name": name, "slug": None, "crd": None, "verified": False, "city": None, "state": None}
 
     def _load(self) -> None:
@@ -204,8 +209,8 @@ class Snapshot:
             stories = [self.by_id[cid] for cid in f["cluster_ids"]]
             deals = [d for d in mna if slug in (d["acquirer"]["slug"], d["target"]["slug"])]
             page = {
-                "schema_version": SCHEMA_VERSION, "slug": slug, "name": f["name"], "legal_name": sec["legal_name"],
-                "crd": f["crd"], "sec_number": sec["sec_number"], "city": sec["city"], "state": sec["state"],
+                "schema_version": SCHEMA_VERSION, "slug": slug, "name": f["name"], "legal_name": pretty_name(sec["legal_name"]),
+                "crd": f["crd"], "sec_number": sec["sec_number"], "city": _title(sec["city"]), "state": sec["state"],
                 "sec_aum_usd": sec["aum_usd"], "sec_aum_as_of": sec["data_date"],
                 "iapd_url": f"https://adviserinfo.sec.gov/firm/summary/{f['crd']}",
                 "stories": [{"cluster_id": c["id"], "headline": c["headline"], "url": c["url"], "category": c["category"],
@@ -214,8 +219,8 @@ class Snapshot:
                 "deals": [{**d, "role": "acquirer" if d["acquirer"]["slug"] == slug else "target"} for d in deals],
             }
             pages[slug] = page
-            index.append({"slug": slug, "name": f["name"], "legal_name": sec["legal_name"], "crd": f["crd"],
-                          "city": sec["city"], "state": sec["state"], "sec_aum_usd": sec["aum_usd"],
+            index.append({"slug": slug, "name": f["name"], "legal_name": pretty_name(sec["legal_name"]), "crd": f["crd"],
+                          "city": _title(sec["city"]), "state": sec["state"], "sec_aum_usd": sec["aum_usd"],
                           "story_count": len(stories)})
         return {"schema_version": SCHEMA_VERSION, "generated_at": to_iso(self.now), "sec_data_date": self.sec_date,
                 "firms": index}, pages

@@ -18,7 +18,7 @@ def home(tmp_path, monkeypatch):
     """Isolated data dir + copy of the config files (so watchlist edits don't touch the repo)."""
     cfg = tmp_path / "config"
     cfg.mkdir()
-    for name in ("config.yaml", "sources.yaml", "categories.yaml", "firm_stoplist.yaml"):
+    for name in ("config.yaml", "sources.yaml", "categories.yaml", "firm_stoplist.yaml", "firm_aliases.yaml"):
         shutil.copy(ROOT / name, cfg / name)
     data = tmp_path / "home"
     data.mkdir()

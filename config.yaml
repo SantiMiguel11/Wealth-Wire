@@ -29,3 +29,9 @@ digest:
 site:
   show_descriptions: false         # publishers' article teasers stay off the public page (headlines + links only)
   exclude_sources: [AdvisorHub]    # paywalled outlet: not shown on the public page
+
+# SEC Investment Adviser Information Reports (monthly) — used to verify firm names (§4)
+sec:
+  enabled: true
+  page_url: https://www.sec.gov/data-research/sec-markets-data/information-about-registered-investment-advisers-exempt-reporting-advisers
+  check_days: 25                   # look for a newer monthly file at most this often

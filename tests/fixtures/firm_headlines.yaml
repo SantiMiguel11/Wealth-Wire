@@ -1,0 +1,81 @@
+# Firm-detection evaluation set (§4): real headlines ingested by the live site on 2026-09-26, labeled by hand
+# with the firms they name. `firms` are lowercase name keys: a detected SEC firm is correct when a key is
+# contained in its normalized name (e.g. "lpl" ⊂ "lpl financial"). Empty list = no adviser firm is named
+# (tricky negatives: common words, people's surnames, "Partners" used as a verb, regulators, tech vendors).
+# Used by tests/test_firms.py (fixture SEC dictionary) and `python -m wealthwire eval-firms` (real SEC data).
+headlines:
+  - {text: "Mercer Advisors hires Goldman alum Cynthia Loh as first-ever chief platform officer", firms: [mercer advisors, goldman sachs]}
+  - {text: "Savvy Wealth Launches Custodial Platform for RIAs", firms: [savvy]}
+  - {text: "FINRA Orders American Portfolios to Pay $1.2 Million in Restitution and $400,000 in Fines for UIT Supervision Failures", firms: [american portfolios]}
+  - {text: "FINRA fines Vanguard $950,000 over decade of cost basis errors", firms: [vanguard]}
+  - {text: "People Moves: Edelman Financial Engines Names Chief Retirement Officer", firms: [edelman financial engines]}
+  - {text: "Corient enters Cayman Islands with $2.6B FortCay acquisition", firms: [corient]}
+  - {text: "Captrust Adds $1.2B in Double Deal for Long Island Firms", firms: [captrust]}
+  - {text: "Cerity Partners Adds $1.4B in Teams from Shufro Rose & Co.", firms: [cerity partners, shufro rose]}
+  - {text: "RIAs working with Schwab get higher-yielding option for clients' cash", firms: [schwab]}
+  - {text: "Q&A: Charlesbank's David Katz on Building RIA Institutions", firms: [charlesbank]}
+  - {text: "SEC Commissioner Peirce to leave agency", firms: []}
+  - {text: "Advisor moves: Raymond James lands $1.25B team as Merrill loses two", firms: [raymond james, merrill]}
+  - {text: "RIA Dealmaking Dips Almost 20%, Threatening Record Streak: DeVoe", firms: []}
+  - {text: "JPMorgan Tweaks Data-Sharing Notices in Battle With Fintechs", firms: [j p morgan]}
+  - {text: "Verdence plans CTO hire, national push after largest acquisition", firms: [verdence]}
+  - {text: "Private business owners selling now are often unprepared, BNY survey says", firms: [bny]}
+  - {text: "Weekend Reading For Financial Planners (September 26–27)", firms: []}
+  - {text: "Judge Upholds Broker’s $4.25 Million Award in J.P. Morgan ‘Deli Platter’ Dispute", firms: [j p morgan]}
+  - {text: "Never a losing day: CFTC alleges $950 million forex Ponzi scheme", firms: []}
+  - {text: "Fintech bytes: Northwestern Mutual picks Jump for enterprise AI", firms: [northwestern mutual]}
+  - {text: "Deals & Moves: LPL Financial Adds Two Utah Advisory Teams With $1B", firms: [lpl]}
+  - {text: "People moves: AllianceBernstein names Onur Erzan as next CEO", firms: [alliancebernstein]}
+  - {text: "5 ways financial advisors can sharpen their listening skills", firms: []}
+  - {text: "WealthStack Roundup: Northwestern Mutual Adopts Jump's AI Suite", firms: [northwestern mutual]}
+  - {text: "Market Brief: Corporate Earnings Are Growing Much Faster Than the Economy", firms: []}
+  - {text: "Why Quality Investing May Be Entering a Rare Opportunity", firms: []}
+  - {text: "Private equity faces challenge from Warren's revived Stop Wall Street Looting Act", firms: []}
+  - {text: "Prudential Wealth Advisors teams up with InvestmentNews for Women Advisor Summit and Women to Watch Awards", firms: [prudential]}
+  - {text: "Obama headlines Creative Planning event as RIA crosses 1,000 employee equity partners", firms: [creative planning]}
+  - {text: "CFP Board survey: Social Security, Medicare fears top client concerns", firms: []}
+  - {text: "Raymond James Attracts Two Teams Totaling $1.75B", firms: [raymond james]}
+  - {text: "‘Dumbfounded’ Arbitrator Slams Client’s Elder Abuse Claim Against Wells Vet", firms: []}
+  - {text: "Ameriprise, advisor on the hook to pay Edward Jones $4.7 million in trade secrets lawsuit", firms: [ameriprise, edward jones]}
+  - {text: "Bitwise Partners with Vise for Crypto Model Rollout", firms: [bitwise]}
+  - {text: "$744 Million Wells Fargo Team Joins &Partners in Missouri", firms: [wells fargo, "and partners"]}
+  - {text: "RIA Edge Podcast: How Mission Wealth Scales Without Sacrificing Client Experience with Matt Adams", firms: [mission wealth]}
+  - {text: "The Diamond Podcast for Financial Advisors: David Bahnsen on Building a $10.5B Business Worth Selling", firms: []}
+  - {text: "Betterment Advisor Solutions Launches AI Document Reader", firms: [betterment]}
+  - {text: "Advisor moves: LPL welcomes back RayJay advisor trio in Texas", firms: [lpl, raymond james]}
+  - {text: "RIA M&A Activity Plummets 19% in Q3", firms: []}
+  - {text: "Prudential Advisors has become Prudential Wealth Advisors in 'milestone' move", firms: [prudential]}
+  - {text: "Private Markets Boost TDF Returns, CFA Institute Study Finds", firms: []}
+  - {text: "Fed's Williams sees another rate hike as Treasury rout deepens", firms: []}
+  - {text: "SEC alleges Florida operator faked fund returns targeting police retirees", firms: []}
+  - {text: "Wells Fargo names COO Scott Powell as its next chief risk officer", firms: [wells fargo]}
+  - {text: "Fidelity Investments just cast a wider net for RIA custody revenues by backstopping Savvy Wealth's (expected mid-2027 ) custody launch", firms: [fidelity, savvy]}
+  - {text: "Ameriprise runs advisor ads on ESPN, Golf Channel, CBS", firms: [ameriprise]}
+  - {text: "Advisor moves: RBC lands $2B BofA Private Bank duo in La Jolla", firms: [rbc, merrill]}
+  - {text: "Fear of Meta’s Muse whacks share prices of financial advice firms: Reports", firms: []}
+  - {text: "Choreo taps Beemo AI agents to speed proposals, scale onboarding", firms: [choreo]}
+  - {text: "Workers allege Principal Financial ran $4.59B 401(k) as a fee machine", firms: [principal]}
+  - {text: "SEC strips Grenda Group of adviser registration over concealed bar", firms: [grenda]}
+  - {text: "SEC gives Navellier's firm 60 days to wind down, bars founder", firms: [navellier]}
+  - {text: "Americana Partners launches family office group for UHNW clients", firms: [americana partners]}
+  - {text: "Wealth Services Firm Horizon Buys OCIO Provider", firms: [horizon]}
+  - {text: "Succession drives Wisconsin advisory team to Carson Group", firms: [carson]}
+  - {text: "Schwab's poach of $8-billion Ameriprise breakaway extends its wild 2026 rout", firms: [schwab, ameriprise]}
+  - {text: "Altruist is acquired by Vanguard to vertically integrate asset management and custody", firms: [altruist, vanguard]}
+  - {text: "Kay Lynn Mayhue named Merit CEO, still seeks 'big splash' deal", firms: [merit]}
+  - {text: "LPL adds $1 billion Salt Lake City teams from Northwestern Mutual", firms: [lpl, northwestern mutual]}
+  - {text: "Hightower Advisors Hires Vanguard Executive as New President", firms: [hightower, vanguard]}
+  - {text: "EP Wealth adds CFO, elevates client chief as growth accelerates", firms: [ep wealth]}
+  - {text: "Hightower taps Vanguard vet as president, shuffles Signature Wealth leadership", firms: [hightower, vanguard, signature wealth]}
+  - {text: "$33B Merit President Mayhue to Take CEO Role as Founder Kent Becomes Executive Chair", firms: [merit]}
+  - {text: "Composition Wealth names general counsel and head of advisors in leadership push", firms: [composition wealth]}
+  - {text: "SEIA Partners With Invent to Unify Data Systems", firms: [seia]}
+  - {text: "Modern Wealth acquires California RIA in sixth deal of 2026", firms: [modern wealth]}
+  - {text: "Luma adds first ETFs to its platform as advisors push for unified income tools", firms: []}
+  - {text: "Annuity income eases retirement anxiety and market fear, advisors say", firms: []}
+  - {text: "Family offices pivot to public equities as succession pressure mounts", firms: []}
+  - {text: "Tips From the Pros: Lewis Shouldn’t be a Loser", firms: []}
+  - {text: "Milemarker Launches Advisory Firm MCP AI Server", firms: []}
+  - {text: "Charitable Gift Annuities", firms: []}
+  - {text: "Why female financial advisors are slow to embrace independence", firms: []}
+  - {text: "Advisor moves: Raymond James, Baird add significant teams in latest recruiting push", firms: [raymond james, baird]}
