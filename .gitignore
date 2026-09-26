@@ -10,3 +10,4 @@ digests/.last_digest
 !digests/.gitkeep
 .claude/settings.local.json
 digests/*.log
+/preview/
