@@ -170,7 +170,7 @@ def _recompute_after_watchlist_change() -> None:
     with _LOCK:
         conn = _conn()
         try:
-            recompute(conn)
+            recompute(conn, write_digest_input=False)
         finally:
             conn.close()
 
@@ -217,6 +217,13 @@ def remove_watch(name: str):
     save_watchlist(keep)
     _recompute_after_watchlist_change()
     return {"ok": True}
+
+
+@app.get("/api/digest")
+def digest():
+    from .digest import digest_payload
+
+    return digest_payload(int(load_config()["digest"]["top_n"]))
 
 
 @app.get("/api/meta")

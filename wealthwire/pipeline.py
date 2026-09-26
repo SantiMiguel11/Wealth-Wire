@@ -10,6 +10,7 @@ from .categorize import Categorizer
 from .cluster import ClusterItem, cluster
 from .config import load_config, load_stoplist
 from .dates import utcnow
+from .digest import write_new_stories
 from .extract import extract_aum, extract_firms
 from .mna import deal_for_cluster
 from .watchlist import Matcher, load_watchlist
@@ -89,7 +90,8 @@ def write_deals(conn: sqlite3.Connection) -> int:
     return len(rows)
 
 
-def recompute(conn: sqlite3.Connection, now: datetime | None = None) -> dict:
+def recompute(conn: sqlite3.Connection, now: datetime | None = None, write_digest_input: bool = True) -> dict:
+    """Recompute derived data. new_stories.json is rewritten after ingestions (and CLI recompute)."""
     cfg = load_config()
     now = now or utcnow()
     items = _load_items(conn)
@@ -106,5 +108,7 @@ def recompute(conn: sqlite3.Connection, now: datetime | None = None) -> dict:
     write_clusters(conn, groups)
     deals = write_deals(conn)
     conn.commit()
+    new = write_new_stories(conn, now, cfg) if write_digest_input else None
     local_date = now.astimezone(ZoneInfo(cfg["timezone"])).date().isoformat()
-    return {"items": len(items), "clusters": len(groups), "deals": deals, "new_stories": 0, "local_date": local_date}
+    return {"items": len(items), "clusters": len(groups), "deals": deals,
+            "new_stories": new["count"] if new else 0, "local_date": local_date}

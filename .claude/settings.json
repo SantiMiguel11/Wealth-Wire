@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m wealthwire ingest)",
+      "Bash(python3 -m wealthwire ingest)",
+      "Read(./new_stories.json)",
+      "Write(./digests/**)",
+      "Edit(./digests/**)"
+    ]
+  }
+}
