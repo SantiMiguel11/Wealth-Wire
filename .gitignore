@@ -11,3 +11,4 @@ digests/.last_digest
 .claude/settings.local.json
 digests/*.log
 /preview/
+/_live/

@@ -16,11 +16,28 @@ date, source and a description of at most 300 characters, and never logs in or r
 > The screenshots use the offline **demo dataset**: synthetic fixture feeds, marked with a DEMO DATA badge
 > in the UI. See [Known limitations](#known-limitations).
 
-## Quick start
+## Website (no terminal needed)
+
+The easiest way to use Wealth Wire is the self-updating website:
+
+1. **Every 2 hours**, GitHub Actions (`.github/workflows/refresh-site.yml`) runs the ingestion on GitHub's
+   machines, rebuilds a static copy of the app, and force-pushes it to the **`live`** branch. The branch
+   carries the database forward, so history accumulates.
+2. **Vercel** serves the `live` branch. Its `vercel.json` tells Vercel to publish the `site/` folder as-is,
+   with no build step.
+
+The public page shows headlines, links to the original articles, source, date, category, firms and AUM.
+Publisher descriptions and paywalled sources are left out; both are controlled by the `site:` section of
+`config.yaml`. The page asks search engines not to index it (`noindex` + `robots.txt`). The watchlist is
+read-only there: edit `watchlist.yaml` on github.com and the site updates within minutes, because a push
+to `main` triggers a refresh. To refresh on demand, go to the Actions tab → **Refresh site** → **Run workflow**.
+
+One-time Vercel setup: **Add New → Project →** import this repo → under **Settings → Environments →
+Production**, set the branch to `live`. Every refresh after that deploys automatically.
+
+## Run it on your own computer (optional)
 
 ```bash
-# 1. Put your email in the User-Agent (SEC.gov requires a real contact):
-#    edit config.yaml → contact_email: you@yourdomain.com
 ./run.sh
 ```
 

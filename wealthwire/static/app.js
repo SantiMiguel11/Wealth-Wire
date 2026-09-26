@@ -446,16 +446,18 @@ async function renderDigest() {
   }
   const top = d.top || [];
   box.replaceChildren(el("article", { class: "digest" },
-    el("div", { class: "digest-head" }, el("h1", {}, "No digest written yet")),
-    el("p", {}, "There is no ", el("code", {}, "digests/YYYY-MM-DD.md"), " yet. Run ", el("code", {}, "/digest"),
-      " in Claude Code to write today's. Meanwhile, here are the top stories from ", el("code", {}, "new_stories.json"), "."),
+    d.site_mode ? el("div", { class: "digest-head" }, el("h1", {}, "Today's top stories")) :
+      el("div", { class: "digest-head" }, el("h1", {}, "No digest written yet")),
+    d.site_mode ? el("p", { class: "muted" }, "New in the last 24 hours, ranked by watchlist hits, then how many outlets covered it, then recency. Refreshed automatically every 2 hours.") :
+      el("p", {}, "There is no ", el("code", {}, "digests/YYYY-MM-DD.md"), " yet. Run ", el("code", {}, "/digest"),
+        " in Claude Code to write today's. Meanwhile, here are the top stories from ", el("code", {}, "new_stories.json"), "."),
     top.length ? el("ol", { class: "fallback-list" }, ...top.map((c) => el("li", {},
       el("div", { class: "t" }, extLink(c.sources[0] && c.sources[0].url, c.headline)),
       el("div", {}, catChip(c.category), " ", el("span", { class: "mono muted", style: "font-size:12px" },
         `${c.outlet_count} outlet${c.outlet_count > 1 ? "s" : ""}`), c.aum_usd ? el("span", { class: "aum-cell", style: "margin-left:8px" }, fmtAum(c.aum_usd)) : null,
         (c.watchlist_hits || []).length ? el("span", { class: "chip chip-watch", style: "margin-left:8px" }, "★ " + c.watchlist_hits.join(", ")) : null),
       el("div", { class: "srcs" }, ...c.sources.map((x) => extLink(x.url, x.name, "src")))))) :
-      stateBox("", "No new stories", "new_stories.json is empty or missing — run an ingestion first.")));
+      stateBox("", "No new stories", d.site_mode ? "Nothing new in the last 24 hours." : "new_stories.json is empty or missing — run an ingestion first.")));
 }
 
 /* ---------- Sources ---------- */

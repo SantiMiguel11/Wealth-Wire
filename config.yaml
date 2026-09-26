@@ -24,3 +24,8 @@ server:
 digest:
   fallback_hours: 24               # window when digests/.last_digest is missing
   top_n: 10
+
+# Public website (built by .github/workflows/refresh-site.yml, served by Vercel)
+site:
+  show_descriptions: false         # publishers' article teasers stay off the public page (headlines + links only)
+  exclude_sources: [AdvisorHub]    # paywalled outlet: not shown on the public page

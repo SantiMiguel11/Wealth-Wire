@@ -1,0 +1,75 @@
+# Fetches the news every 2 hours on GitHub's machines, rebuilds the static site, and force-pushes it to
+# the `live` branch. Vercel deploys `live` automatically (vercel.json on that branch sets it up).
+# Also runs when code/config on main changes (e.g. you edit watchlist.yaml on github.com), and on demand
+# from the Actions tab ("Run workflow").
+name: Refresh site
+
+on:
+  schedule:
+    - cron: "17 */2 * * *"          # every 2 hours at :17 (UTC)
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "*.yaml"
+      - "wealthwire/**"
+      - "scripts/build_preview.py"
+      - "requirements.txt"
+      - ".github/workflows/refresh-site.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-site
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install dependencies (no browser tooling needed here)
+        run: |
+          grep -vi '^playwright' requirements.txt > /tmp/requirements.txt
+          pip install -r /tmp/requirements.txt
+
+      - name: Restore the database from the previous run
+        run: |
+          mkdir -p data
+          if git fetch --depth=1 origin live 2>/dev/null; then
+            git show FETCH_HEAD:state/wealthwire.db > data/wealthwire.db 2>/dev/null || rm -f data/wealthwire.db
+          fi
+          ls -la data
+
+      - name: Ingest
+        run: python -m wealthwire ingest || echo "::warning::no source ingested successfully — see SOURCES.md on the live branch"
+
+      - name: Build site
+        run: python scripts/build_preview.py --site _live
+
+      - name: Publish to the live branch
+        run: |
+          cd _live
+          git init -q -b live
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -qm "Refresh $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:live
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Summary
+        run: |
+          {
+            echo "### Wealth Wire refresh"
+            sed -n '1,/^## Failures/p' _live/state/SOURCES.md | head -30
+          } >> "$GITHUB_STEP_SUMMARY"
