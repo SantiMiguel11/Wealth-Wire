@@ -1,0 +1,26 @@
+# Wealth Wire runtime configuration.
+# The User-Agent is sent with every request. SEC.gov requires a contact email in it —
+# replace the placeholder with your own address.
+contact_email: me@example.com
+user_agent: "WealthWire/0.1 (personal news reader; {contact_email})"
+
+timezone: America/Los_Angeles      # used for digest dates and naive listing-page dates
+
+http:
+  per_host_delay_seconds: 2.0      # minimum gap between requests to the same host
+  timeout_seconds: 15
+  retries: 1                       # one retry with backoff
+  backoff_seconds: 2.0
+
+cluster:
+  window_hours: 72                 # only group items published within this window of each other
+  threshold: 72                    # 0-100 similarity score needed to join a cluster
+
+server:
+  host: 127.0.0.1
+  port: 8000
+  reingest_interval_hours: 2
+
+digest:
+  fallback_hours: 24               # window when digests/.last_digest is missing
+  top_n: 10

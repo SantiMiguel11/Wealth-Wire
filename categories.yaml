@@ -1,0 +1,68 @@
+# Ordered category rules. The first rule whose `any` list matches the headline (title + description
+# are checked, title first) and whose `unless` list does NOT match wins. No match → Other.
+#
+# Patterns are case-insensitive phrases matched on word boundaries. Prefix with `re:` for a raw regex.
+# A rule may list `title_only: true` to ignore the description.
+#
+# Why the order matters: in RIA trade press "joins", "moves to", "breaks away", "hires", "departs"
+# describe advisor/team moves (People Moves), not firm M&A — so strong M&A verbs only win when the
+# headline has no advisor-move language, and weak M&A words ("deal", "sale") come after People Moves.
+categories:
+  - M&A
+  - People Moves
+  - Regulation
+  - Wealthtech
+  - Products & Funds
+  - Markets
+  - Other
+
+rules:
+  - category: M&A
+    title_only: true
+    any: [acquires, acquire, acquired, acquisition, acquisitions, acquirer, buys, to buy, bought,
+          merges, merge, merger, mergers, merging, takes stake, "re:takes? (?:a )?(?:minority|majority|significant|strategic) stake",
+          minority investment, majority investment, strategic investment, sells to, "re:sells? (?:\\w+ )?stake",
+          agrees to be acquired, recapitalization, recapitalizes, recap, tuck-in, tuck-ins, "re:m&a", rollup, roll-up]
+    unless: [team, teams, joins, join, breaks away, breakaway, breakaways, hires, hired, departs, moves to,
+             "re:jumps? to", recruits, poaches, advisor who, advisors who]
+
+  - category: People Moves
+    title_only: true
+    any: [joins, join, joined, moves to, "re:moves? .{0,40} to", breaks away, breakaway, breakaways, "re:breaks? from",
+          hires, hired, hiring, departs, departure, leaves, "re:jumps? (?:ship )?to", taps, poaches, recruits, recruited,
+          "re:names? (?:\\w+ ){0,4}(?:ceo|president|chief|head|chair|cio|coo|cfo|leader|director|partner)",
+          "re:\\b(?:new|named|as|to) (?:ceo|president|chief executive|cio|coo|cfo|chair)\\b",
+          appoints, appointed, promotes, promoted, promotion, retires, retirement of, steps down, stepping down,
+          succeed, successor, exits, "re:team (?:with|managing|overseeing) \\$", adds team, lands team, team, teams, lures,
+          defects, defect, "re:advisors? (?:leave|exit|quit)"]
+
+  - category: M&A
+    title_only: true
+    any: [deal, deals, sale, sells, sell, stake, "re:private equity (?:firm )?(?:invests|backs|investment)",
+          "re:pe firm", consolidator, aggregator, "re:backed by"]
+
+  - category: Regulation
+    any: [SEC, FINRA, regulator, regulators, regulatory, rule, rules, rulemaking, "re:fine[sd]?", penalty,
+          penalties, charges, charged, settles, settlement, enforcement, lawsuit, sues, sued, "Reg BI",
+          "Regulation Best Interest", fiduciary, compliance, DOL, "Department of Labor", barred, bars,
+          suspended, suspends, expelled, arbitration, fraud, "re:ponzi", "re:cherry[- ]?pick", whistleblower,
+          custody rule, marketing rule, "Form CRS", "Form ADV", NASAA, CFTC, IRS, Treasury, congress,
+          lawmakers, legislation, bill, court, judge, examination, exam priorities, "re:cyber ?security rule"]
+
+  - category: Wealthtech
+    any: [wealthtech, fintech, technology, tech, software, platform, "re:\\bai\\b", artificial intelligence,
+          app, digital, automation, CRM, "re:robo[- ]?advis", portal, data, cybersecurity, API, cloud, Orion,
+          Envestnet, Addepar, Altruist, Riskalyze, Nitrogen, Wealthbox, Salesforce, "re:tamps?\\b", integration,
+          chatbot, generative, machine learning, startup, raises]
+
+  - category: Products & Funds
+    any: [ETF, ETFs, fund, funds, annuity, annuities, SMA, SMAs, separately managed, model portfolio,
+          model portfolios, share class, interval fund, private credit, alternatives, alts, "re:direct index",
+          launches, unveils, debuts, product, products, strategy, strategies, "re:mutual funds?", insurance,
+          "re:structured (?:notes|products)", tokenized, bitcoin, crypto]
+
+  - category: Markets
+    any: [market, markets, stocks, stock, equities, Fed, "Federal Reserve", "re:rates?\\b", inflation,
+          "S&P", "S&P 500", Dow, Nasdaq, bond, bonds, yield, yields, treasuries, recession, earnings, economy,
+          economic, tariff, tariffs, GDP, jobs report, volatility, rally, selloff, sell-off, "re:\\b(?:bull|bear) market",
+          outlook, forecast]

@@ -1,0 +1,81 @@
+# Each source: name, homepage, feed_url (blank = discover), gated, listing_url (optional), enabled.
+# Discovery order: feed_url → previously discovered feed → <link rel="alternate"> on homepage/listing
+# page → common paths (/feed, /feed/, /rss, /rss.xml) → listing-page parse → failed.
+# gated: true stores headline, link, date and source only (empty description).
+sources:
+  - name: Citywire RIA
+    homepage: https://citywire.com/ria
+    feed_url: ""
+    listing_url: https://citywire.com/ria/news
+    gated: false
+    enabled: true
+
+  - name: WealthManagement.com
+    homepage: https://www.wealthmanagement.com
+    feed_url: https://www.wealthmanagement.com/rss.xml
+    listing_url: ""
+    gated: false
+    enabled: true
+
+  - name: Financial Advisor Magazine
+    homepage: https://www.fa-mag.com
+    feed_url: ""
+    listing_url: https://www.fa-mag.com/news
+    gated: false
+    enabled: true
+
+  - name: InvestmentNews
+    homepage: https://www.investmentnews.com
+    feed_url: ""
+    listing_url: https://www.investmentnews.com/latest-news
+    gated: false
+    enabled: true
+
+  - name: ThinkAdvisor
+    homepage: https://www.thinkadvisor.com
+    feed_url: https://www.thinkadvisor.com/feed/
+    listing_url: ""
+    gated: false
+    enabled: true
+
+  - name: RIABiz
+    homepage: https://riabiz.com
+    feed_url: ""
+    listing_url: https://riabiz.com/
+    gated: false
+    enabled: true
+
+  - name: Financial Planning
+    homepage: https://www.financial-planning.com
+    feed_url: https://www.financial-planning.com/feed?rss=true
+    listing_url: ""
+    gated: false
+    enabled: true
+
+  - name: AdvisorHub
+    homepage: https://www.advisorhub.com
+    feed_url: https://www.advisorhub.com/feed/
+    listing_url: ""
+    gated: true
+    enabled: true
+
+  - name: Kitces
+    homepage: https://www.kitces.com
+    feed_url: https://www.kitces.com/feed/
+    listing_url: ""
+    gated: false
+    enabled: true
+
+  - name: SEC Press Releases
+    homepage: https://www.sec.gov/newsroom/press-releases
+    feed_url: https://www.sec.gov/news/pressreleases.rss
+    listing_url: ""
+    gated: false
+    enabled: true
+
+  - name: FINRA News
+    homepage: https://www.finra.org/media-center/newsreleases
+    feed_url: ""
+    listing_url: https://www.finra.org/media-center/newsreleases
+    gated: false
+    enabled: true

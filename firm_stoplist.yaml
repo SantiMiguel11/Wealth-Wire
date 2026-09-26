@@ -1,0 +1,43 @@
+# Capitalized spans the firm extractor must never report as firms (case-insensitive, exact match
+# after normalization). Add false positives here as you find them.
+stoplist:
+  - Financial Advisor
+  - Financial Advisors
+  - Financial Advisor Magazine
+  - Financial Planning
+  - Financial Planning Association
+  - Investment News
+  - InvestmentNews
+  - Wealth Management
+  - WealthManagement.com
+  - Private Wealth
+  - Private Equity
+  - Private Credit
+  - Private Markets
+  - Private Capital
+  - Asset Management
+  - Family Office
+  - Family Offices
+  - Capital Markets
+  - Capital Gains
+  - Financial Group
+  - Wealth Advisors
+  - Investment Advisers Act
+  - Investment Advisers
+  - Investment Adviser
+  - Registered Investment Advisers
+  - Financial Services
+  - Financial Industry Regulatory Authority
+  - Securities and Exchange Commission
+  - Wealth Tech
+  - Social Security
+  - Top RIA
+  - Next Gen
+  - Barron's Top
+  - Private Wealth Management
+  - Wealth Partners
+  - Financial Partners
+  - Capital Partners
+  - Asset Managers
+  - Advisors
+  - Partners
