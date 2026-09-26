@@ -6,6 +6,7 @@ from collections import Counter
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
+from .categorize import Categorizer
 from .config import load_config
 from .dates import utcnow
 
@@ -52,8 +53,9 @@ def recompute(conn: sqlite3.Connection, now: datetime | None = None) -> dict:
     cfg = load_config()
     now = now or utcnow()
     items = _load_items(conn)
+    categorizer = Categorizer()
     for it in items:
-        it["category"] = "Other"
+        it["category"] = categorizer.categorize(it["title"], it["description"])
         it["aum_usd"] = None
     conn.executemany("UPDATE items SET category=?, aum_usd=? WHERE id=?", [(it["category"], it["aum_usd"], it["id"]) for it in items])
     groups = group_items(items, cfg)

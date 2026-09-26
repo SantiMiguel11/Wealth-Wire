@@ -24,7 +24,7 @@ rules:
           minority investment, majority investment, strategic investment, sells to, "re:sells? (?:\\w+ )?stake",
           agrees to be acquired, recapitalization, recapitalizes, recap, tuck-in, tuck-ins, "re:m&a", rollup, roll-up]
     unless: [team, teams, joins, join, breaks away, breakaway, breakaways, hires, hired, departs, moves to,
-             "re:jumps? to", recruits, poaches, advisor who, advisors who]
+             "re:jumps? to", recruits, poaches, advisor who, advisors who, "re:\\bnames?\\b", appoints, "re:\\b(?:ceo|president|cio|coo|cfo)\\b"]
 
   - category: People Moves
     title_only: true
@@ -34,11 +34,12 @@ rules:
           "re:\\b(?:new|named|as|to) (?:ceo|president|chief executive|cio|coo|cfo|chair)\\b",
           appoints, appointed, promotes, promoted, promotion, retires, retirement of, steps down, stepping down,
           succeed, successor, exits, "re:team (?:with|managing|overseeing) \\$", adds team, lands team, team, teams, lures,
-          defects, defect, "re:advisors? (?:leave|exit|quit)"]
+          defects, defect, "re:advisors? (?:leave|exit|quit)",
+          "re:\\bformer\\b.{0,60}\\blaunch", "re:\\blaunch(?:es)? (?:own |new |an? )?(?:ria|firm|practice|family office)\\b"]
 
   - category: M&A
     title_only: true
-    any: [deal, deals, sale, sells, sell, stake, "re:private equity (?:firm )?(?:invests|backs|investment)",
+    any: [deal, deals, sale, sells, sell, stake, "re:\\badds? \\$[\\d.,]+\\s?(?:b|bn|billion|m|mm|million)\\b", "re:private equity (?:firm )?(?:invests|backs|investment)",
           "re:pe firm", consolidator, aggregator, "re:backed by"]
 
   - category: Regulation
@@ -50,7 +51,7 @@ rules:
           lawmakers, legislation, bill, court, judge, examination, exam priorities, "re:cyber ?security rule"]
 
   - category: Wealthtech
-    any: [wealthtech, fintech, technology, tech, software, platform, "re:\\bai\\b", artificial intelligence,
+    any: [wealthtech, fintech, advisortech, "#AdvisorTech", technology, software, platform, "re:\\bai\\b", artificial intelligence,
           app, digital, automation, CRM, "re:robo[- ]?advis", portal, data, cybersecurity, API, cloud, Orion,
           Envestnet, Addepar, Altruist, Riskalyze, Nitrogen, Wealthbox, Salesforce, "re:tamps?\\b", integration,
           chatbot, generative, machine learning, startup, raises]
