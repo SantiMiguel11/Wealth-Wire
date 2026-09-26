@@ -83,6 +83,13 @@ Each entry: **decision** — alternatives considered — why.
     still get a (low, blank) row so nothing is silently dropped. Target AUM is only taken from a figure
     attached to the target (prefix "$1.2B RIA X", appositive "X, a $1.2B firm", "X with $1.2B", "X ($1.2B)");
     prices ("for $50M") and combined figures ("to form $5B firm") are ignored.
+18a. **"AUM can't be determined" means ambiguous, not absent.** A headline that states no AUM keeps a blank
+    AUM and can still be high confidence (most deal headlines omit it). A headline with a dollar figure that
+    can't be attached to the target — "acquires Texas RIA in $2.4B deal" (AUM or price?) — forces low.
+    Multiple targets ("buys X and Y", "buys X, Y") blank the target and force low. When several outlets'
+    headlines agree on both parties, one that states the target's AUM fills it in; disagreement on parties → low.
+    Only M&A-category clusters get rows, so advisor moves ("team joins X") never appear in the tracker.
+
 19. **Watchlist matches** are computed at query time from watchlist.yaml, so UI edits apply instantly.
     Aliases shorter than 3 characters are ignored. Possessives ("Goldman's") match.
     Known limitation: a person surnamed Goldman also matches the "Goldman" alias the user asked for.

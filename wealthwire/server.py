@@ -116,6 +116,28 @@ def trending(days: int = Query(7, ge=1, le=90), limit: int = Query(15, ge=1, le=
         conn.close()
 
 
+@app.get("/api/mna")
+def mna(confidence: str | None = Query(None, pattern="^(high|low)?$")):
+    conn = _conn()
+    try:
+        sql = "SELECT d.*, c.headline, c.url FROM mna_deals d JOIN clusters c ON c.id = d.cluster_id"
+        params: list = []
+        if confidence:
+            sql += " WHERE d.confidence = ?"
+            params.append(confidence)
+        sql += " ORDER BY d.deal_date DESC, d.cluster_id DESC"
+        rows = [dict(r) for r in conn.execute(sql, params)]
+        for r in rows:
+            seen, r["sources"] = set(), []
+            for it in conn.execute("SELECT source, url FROM items WHERE cluster_id=? ORDER BY published_at, id", (r["cluster_id"],)):
+                if it["source"] not in seen:
+                    seen.add(it["source"])
+                    r["sources"].append({"name": it["source"], "url": it["url"]})
+        return rows
+    finally:
+        conn.close()
+
+
 @app.get("/api/meta")
 def meta():
     conn = _conn()

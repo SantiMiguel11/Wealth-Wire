@@ -11,6 +11,7 @@ from .cluster import ClusterItem, cluster
 from .config import load_config, load_stoplist
 from .dates import utcnow
 from .extract import extract_aum, extract_firms
+from .mna import deal_for_cluster
 from .watchlist import Matcher, load_watchlist
 
 
@@ -74,6 +75,20 @@ def write_clusters(conn: sqlite3.Connection, groups: list[list[dict]]) -> None:
         conn.executemany("UPDATE items SET cluster_id=? WHERE id=?", [(cid, it["id"]) for it in group])
 
 
+def write_deals(conn: sqlite3.Connection) -> int:
+    """One M&A row per M&A-category cluster."""
+    conn.execute("DELETE FROM mna_deals")
+    rows = conn.execute("SELECT id, first_published FROM clusters WHERE category = 'M&A'").fetchall()
+    for r in rows:
+        titles = [t[0] for t in conn.execute("SELECT title FROM items WHERE cluster_id=? ORDER BY published_at, id", (r["id"],))]
+        d = deal_for_cluster(titles)
+        conn.execute(
+            "INSERT INTO mna_deals(cluster_id, acquirer, target, target_aum_usd, deal_type, deal_date, confidence, note) VALUES (?,?,?,?,?,?,?,?)",
+            (r["id"], d.acquirer, d.target, d.target_aum_usd, d.deal_type, r["first_published"], d.confidence, d.note),
+        )
+    return len(rows)
+
+
 def recompute(conn: sqlite3.Connection, now: datetime | None = None) -> dict:
     cfg = load_config()
     now = now or utcnow()
@@ -89,6 +104,7 @@ def recompute(conn: sqlite3.Connection, now: datetime | None = None) -> dict:
     conn.executemany("INSERT OR IGNORE INTO item_firms(item_id, firm) VALUES (?, ?)", [(it["id"], f) for it in items for f in it["firms"]])
     groups = group_items(items, cfg)
     write_clusters(conn, groups)
+    deals = write_deals(conn)
     conn.commit()
     local_date = now.astimezone(ZoneInfo(cfg["timezone"])).date().isoformat()
-    return {"items": len(items), "clusters": len(groups), "new_stories": 0, "local_date": local_date}
+    return {"items": len(items), "clusters": len(groups), "deals": deals, "new_stories": 0, "local_date": local_date}
