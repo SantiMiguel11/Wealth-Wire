@@ -107,6 +107,15 @@ def feed(
         conn.close()
 
 
+@app.get("/api/trending")
+def trending(days: int = Query(7, ge=1, le=90), limit: int = Query(15, ge=1, le=50)):
+    conn = _conn()
+    try:
+        return queries.trending_firms(conn, days=days, limit=limit)
+    finally:
+        conn.close()
+
+
 @app.get("/api/meta")
 def meta():
     conn = _conn()

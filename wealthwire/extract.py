@@ -95,7 +95,9 @@ BREAK = {
     "chief", "head", "chair", "founder", "co-founder", "partner", "why", "how", "what", "when", "where", "new", "former",
     "ex", "exclusive", "breaking", "update", "q&a", "podcast", "video", "webinar", "etf", "etfs", "fund", "funds",
     "pair", "two", "three", "four", "five", "record", "top", "best", "announcement", "portland", "strikes",
-    "recapitalization", "recap", "investing",
+    "recapitalization", "recap", "investing", "can", "could", "should", "would", "may", "might", "must", "use",
+    "uses", "get", "keep", "keeps", "need", "needs", "want", "wants", "do", "does", "get", "gets", "know", "tell", "should",
+    "buying", "selling", "hiring", "growing", "building", "tips", "lessons", "ways", "outlook", "q1", "q2", "q3", "q4",
 }
 # Allowed inside a firm name even though they are also in BREAK (only when followed by a capitalized word).
 CONNECT = {"&", "of"}
