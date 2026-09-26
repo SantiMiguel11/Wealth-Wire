@@ -115,3 +115,18 @@ Each entry: **decision** — alternatives considered — why.
 26. Vanilla JS with `fetch`; URL is the single source of truth for filter state (`history.pushState` +
     `popstate`). Theme: `data-theme` on `<html>`, initial value from localStorage or system preference.
 27. Date filters are interpreted as local calendar days in the browser and sent as UTC bounds.
+28. **Feed order = most recent activity** (a cluster's latest item), while the card shows when the story was
+    first reported and the headline of the earliest item. A story that breaks Monday and gets new coverage
+    Tuesday moves back up. Alternative: first-reported order, which buries developing stories.
+29. **Outgoing links drop tracking params and fragments** (`#comments`, `fbclid`, `utm_*`) but otherwise keep
+    the URL exactly as published. The fully canonicalized URL (lowercase host, no trailing slash) is only for
+    dedupe, because some servers treat the trailing slash as significant.
+30. **`/digest` permissions are declared twice**: in `.claude/settings.json` and in the command's
+    `allowed-tools` frontmatter, with the same five narrow rules. A headless test showed Claude Code ignores
+    project settings until the folder is trusted, while command frontmatter still applies. The command text
+    also forbids any other shell command (a first headless run tried an unneeded `mkdir`, which was denied).
+    The second run had 0 denials.
+31. **Watchlist firms absorb longer extracted names that start with them** ("Goldman Sachs Asset Management"
+    → Goldman Sachs, "Pugh Capital Management" → Pugh Capital), so Trending Firms counts each watched firm once.
+32. **Search uses the FTS5 porter stemmer**, so "custody" also finds "custodian(s)". Better recall for news
+    search; exact phrases can be narrowed with more words.
