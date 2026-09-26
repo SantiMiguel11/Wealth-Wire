@@ -5,14 +5,17 @@ import asyncio
 import logging
 import os
 from contextlib import asynccontextmanager
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from fastapi import FastAPI, HTTPException, Query
+from pydantic import BaseModel, Field
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 from . import db, paths, queries
 from .config import load_categories, load_config, load_sources
+from .dates import to_iso
+from .watchlist import Firm, Matcher, load_watchlist, save_watchlist
 
 log = logging.getLogger("wealthwire.server")
 PAGE_SIZE = 50
@@ -68,7 +71,6 @@ def _day_bound(value: str | None, field: str) -> str | None:
             datetime.strptime(value, "%Y-%m-%d")
             return value + "T00:00:00Z"
         dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
-        from .dates import to_iso
 
         return to_iso(dt)
     except ValueError:
@@ -92,6 +94,7 @@ def feed(
     category: list[str] | None = Query(None),
     date_from: str | None = Query(None, alias="from"),
     date_to: str | None = Query(None, alias="to"),
+    watch: bool = False,
     limit: int = Query(PAGE_SIZE, ge=1, le=200),
     offset: int = Query(0, ge=0),
 ):
@@ -101,8 +104,24 @@ def feed(
             conn, q=q, sources=_split(source), categories=_split(category),
             date_from=_day_bound(date_from, "from"), date_to=_day_bound(date_to, "to"),
         )
+        matcher = Matcher(load_watchlist())
+        hits = queries.watch_hits(conn, ids, matcher)
+        pinned_ids: list[int] = []
+        if watch:
+            ids = [c for c in ids if hits[c]]
+        else:
+            # watchlist stories from the last week are pinned above the feed (and not repeated below)
+            recent = {r[0] for r in conn.execute(
+                "SELECT id FROM clusters WHERE last_published >= ?",
+                (to_iso(queries.utcnow() - timedelta(days=PIN_DAYS)),))}
+            pinned_ids = [c for c in ids if hits[c] and c in recent][:PIN_MAX]
+            pinned_set = set(pinned_ids)
+            ids = [c for c in ids if c not in pinned_set]
         page = queries.load_clusters(conn, ids[offset : offset + limit])
-        return {"pinned": [], "clusters": page, "total": len(ids), "offset": offset, "limit": limit}
+        pinned = queries.load_clusters(conn, pinned_ids) if offset == 0 else []
+        for c in page + pinned:
+            c["watchlist_hits"] = hits.get(c["id"], [])
+        return {"pinned": pinned, "clusters": page, "total": len(ids), "offset": offset, "limit": limit}
     finally:
         conn.close()
 
@@ -136,6 +155,68 @@ def mna(confidence: str | None = Query(None, pattern="^(high|low)?$")):
         return rows
     finally:
         conn.close()
+
+
+class WatchIn(BaseModel):
+    name: str = Field(min_length=1, max_length=80)
+    aliases: list[str] = Field(default_factory=list, max_length=20)
+
+
+def _recompute_after_watchlist_change() -> None:
+    """Firm extraction maps watchlist aliases to display names, so refresh derived data."""
+    from .ingest import _LOCK
+    from .pipeline import recompute
+
+    with _LOCK:
+        conn = _conn()
+        try:
+            recompute(conn)
+        finally:
+            conn.close()
+
+
+@app.get("/api/watchlist")
+def get_watchlist():
+    firms = load_watchlist()
+    conn = _conn()
+    try:
+        since = to_iso(queries.utcnow() - timedelta(days=PIN_DAYS))
+        ids = [r[0] for r in conn.execute("SELECT id FROM clusters WHERE last_published >= ?", (since,))]
+        texts = queries.cluster_texts(conn, ids)
+    finally:
+        conn.close()
+    out = []
+    for f in firms:
+        m = Matcher([f])
+        out.append({"name": f.name, "aliases": f.aliases, "recent": sum(1 for t in texts.values() if m.hits(*t)),
+                    "ignored_terms": [t for t in [f.name, *f.aliases] if len(t.replace(" ", "")) < 3]})
+    return {"firms": out}
+
+
+@app.post("/api/watchlist", status_code=201)
+def add_watch(body: WatchIn):
+    name = " ".join(body.name.split())
+    aliases = [" ".join(a.split()) for a in body.aliases if a.strip()]
+    if len(name.replace(" ", "")) < 3 and not any(len(a.replace(" ", "")) >= 3 for a in aliases):
+        raise HTTPException(422, "Name must be at least 3 characters (shorter terms are never matched).")
+    firms = load_watchlist()
+    if any(f.name.lower() == name.lower() for f in firms):
+        raise HTTPException(409, f"{name} is already on the watchlist.")
+    firms.append(Firm(name, [a for a in dict.fromkeys(aliases) if a.lower() != name.lower()]))
+    save_watchlist(firms)
+    _recompute_after_watchlist_change()
+    return {"ok": True, "name": name}
+
+
+@app.delete("/api/watchlist/{name}")
+def remove_watch(name: str):
+    firms = load_watchlist()
+    keep = [f for f in firms if f.name.lower() != name.strip().lower()]
+    if len(keep) == len(firms):
+        raise HTTPException(404, f"{name} is not on the watchlist.")
+    save_watchlist(keep)
+    _recompute_after_watchlist_change()
+    return {"ok": True}
 
 
 @app.get("/api/meta")

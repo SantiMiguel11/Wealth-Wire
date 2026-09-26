@@ -117,3 +117,16 @@ def date_bounds(conn: sqlite3.Connection) -> tuple[str | None, str | None]:
 def within_days(iso: str, days: int, now=None) -> bool:
     now = now or utcnow()
     return from_iso(iso) >= now - timedelta(days=days)
+
+
+def cluster_texts(conn: sqlite3.Connection, ids: list[int]) -> dict[int, list[str]]:
+    out: dict[int, list[str]] = {cid: [] for cid in ids}
+    for start in range(0, len(ids), 500):
+        chunk = ids[start : start + 500]
+        for r in conn.execute(f"SELECT cluster_id, title, description FROM items WHERE cluster_id IN ({_in(chunk)})", chunk):
+            out[r["cluster_id"]] += [r["title"], r["description"]]
+    return out
+
+
+def watch_hits(conn: sqlite3.Connection, ids: list[int], matcher) -> dict[int, list[str]]:
+    return {cid: matcher.hits(*texts) for cid, texts in cluster_texts(conn, ids).items()}
