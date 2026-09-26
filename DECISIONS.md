@@ -204,3 +204,24 @@ P17. **Firm identity for clustering is now the CRD** when verified. Identical fi
      merger" name the same two firms but are different stories.
 P18. **The demo SEC file is synthetic** (fictional firms, fake CRDs 9990xx, plus look-alike distractors). Its
      IAPD links point at non-existent CRDs, and the DEMO DATA badge is shown.
+P19. **Google News RSS for ThinkAdvisor, FA Magazine and Citywire** (§6), using
+     `news.google.com/rss/search?q=site:<domain>&hl=en-US&gl=US&ceid=US:en`. Only items whose `<source url>`
+     host matches the outlet are kept. The " - Outlet" suffix is stripped. Teasers are left empty because
+     Google's description is just the headline plus link HTML. Redirect links are stored as-is and never
+     resolved, and the outlet's own site is never contacted.
+P20. **Google News dedupe key** is `gnews:<outlet>:<YYYY-MM-DD>:<normalized headline>`, not the URL.
+     Google rotates its redirect URLs, so a URL key would duplicate stories on every refresh.
+P21. **The Citywire query is `site:citywire.com/ria`** (assumption). It keeps the feed to Citywire's U.S. RIA
+     vertical; plain `site:citywire.com` is mostly UK/Asia fund news.
+P22. **Wire feeds** (§5):
+     - PR Newswire "financial services latest news";
+     - GlobeNewswire "Mergers and Acquisitions" subject feed;
+     - Business Wire home feed. Business Wire has no public wealth-management-specific RSS, so the broad
+       feed relies entirely on the filter.
+     Items are kept only if they contain a wealth term (wealth, RIA, adviser/advisor, family office, ...) AND
+     either match an SEC-registered firm or categorize as M&A / People Moves. Dropped counts are shown per
+     source in SOURCES.md. Wire items older than 14 days are dropped at ingest.
+P23. **Press releases join trade coverage through normal clustering.** A cluster that contains a press
+     release is marked `press_release`. An M&A row whose cluster holds a matching release with both parties
+     identified is raised to high confidence ("raised by a matching press release"). Title parsing prefers
+     the release's own headline.

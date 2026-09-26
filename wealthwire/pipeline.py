@@ -115,16 +115,26 @@ def write_clusters(conn: sqlite3.Connection, groups: list[list[dict]], sec: SecM
         conn.executemany("UPDATE items SET cluster_id=? WHERE id=?", [(cid, it["id"]) for it in group])
 
 
-def write_deals(conn: sqlite3.Connection) -> int:
-    """One M&A row per M&A-category cluster."""
+def write_deals(conn: sqlite3.Connection, wire_sources: set[str] | None = None) -> int:
+    """One M&A row per M&A-category cluster. A press release in the cluster raises confidence (§5)."""
+    wire_sources = wire_sources or set()
     conn.execute("DELETE FROM mna_deals")
     rows = conn.execute("SELECT id, first_published FROM clusters WHERE category = 'M&A'").fetchall()
     for r in rows:
-        titles = [t[0] for t in conn.execute("SELECT title FROM items WHERE cluster_id=? ORDER BY published_at, id", (r["id"],))]
+        members = conn.execute("SELECT title, source FROM items WHERE cluster_id=? ORDER BY published_at, id", (r["id"],)).fetchall()
+        # press-release headlines are the most explicit statement of a deal: parse them first
+        titles = [m["title"] for m in members if m["source"] in wire_sources] + [m["title"] for m in members if m["source"] not in wire_sources]
+        press_release = any(m["source"] in wire_sources for m in members)
         d = deal_for_cluster(titles)
+        note = d.note
+        if press_release and d.acquirer and d.target:
+            if d.confidence == "low":
+                note = "raised by a matching press release" + (f" (was: {note})" if note else "")
+            d.confidence = "high"
         conn.execute(
-            "INSERT INTO mna_deals(cluster_id, acquirer, target, target_aum_usd, deal_type, deal_date, confidence, note) VALUES (?,?,?,?,?,?,?,?)",
-            (r["id"], d.acquirer, d.target, d.target_aum_usd, d.deal_type, r["first_published"], d.confidence, d.note),
+            "INSERT INTO mna_deals(cluster_id, acquirer, target, target_aum_usd, deal_type, deal_date, confidence, note, press_release) "
+            "VALUES (?,?,?,?,?,?,?,?,?)",
+            (r["id"], d.acquirer, d.target, d.target_aum_usd, d.deal_type, r["first_published"], d.confidence, note, int(press_release)),
         )
     return len(rows)
 
@@ -148,7 +158,9 @@ def recompute(conn: sqlite3.Connection, now: datetime | None = None) -> dict:
     )
     groups = group_items(items, cfg)
     write_clusters(conn, groups, sec)
-    deals = write_deals(conn)
+    from .config import load_sources
+
+    deals = write_deals(conn, {s.name for s in load_sources() if s.kind == "wire"})
     conn.commit()
     local_date = now.astimezone(ZoneInfo(cfg["timezone"])).date().isoformat()
     return {"items": len(items), "clusters": len(groups), "deals": deals, "local_date": local_date}

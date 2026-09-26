@@ -5,8 +5,9 @@
 sources:
   - name: Citywire RIA
     homepage: https://citywire.com/ria
-    feed_url: ""
-    listing_url: https://citywire.com/ria/news
+    kind: google_news              # no feed; the news page is JavaScript-rendered
+    query: "site:citywire.com/ria"
+    max_age_days: 14
     gated: false
     enabled: true
 
@@ -19,8 +20,9 @@ sources:
 
   - name: Financial Advisor Magazine
     homepage: https://www.fa-mag.com
-    feed_url: ""
-    listing_url: https://www.fa-mag.com/news
+    kind: google_news              # fa-mag.com answers HTTP 403 to automated readers
+    query: "site:fa-mag.com"
+    max_age_days: 14
     gated: false
     enabled: true
 
@@ -33,8 +35,9 @@ sources:
 
   - name: ThinkAdvisor
     homepage: https://www.thinkadvisor.com
-    feed_url: https://www.thinkadvisor.com/feed/
-    listing_url: ""
+    kind: google_news              # thinkadvisor.com answers HTTP 403 to automated readers
+    query: "site:thinkadvisor.com"
+    max_age_days: 14
     gated: false
     enabled: true
 
@@ -77,5 +80,30 @@ sources:
     homepage: https://www.finra.org/media-center/newsreleases
     feed_url: ""
     listing_url: https://www.finra.org/media-center/newsreleases
+    gated: false
+    enabled: true
+
+  # --- press-release wires (§5): only wealth-management items are kept ---
+  - name: PR Newswire
+    homepage: https://www.prnewswire.com
+    kind: wire
+    feed_url: https://www.prnewswire.com/rss/financial-services-latest-news/financial-services-latest-news-list.rss
+    max_age_days: 14
+    gated: false
+    enabled: true
+
+  - name: GlobeNewswire
+    homepage: https://www.globenewswire.com
+    kind: wire
+    feed_url: https://www.globenewswire.com/RssFeed/subjectcode/27-Mergers%20And%20Acquisitions/feedTitle/GlobeNewswire%20-%20Mergers%20And%20Acquisitions
+    max_age_days: 14
+    gated: false
+    enabled: true
+
+  - name: Business Wire
+    homepage: https://www.businesswire.com
+    kind: wire
+    feed_url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkpaGVlYXg==
+    max_age_days: 14
     gated: false
     enabled: true

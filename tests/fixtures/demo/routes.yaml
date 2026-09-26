@@ -16,6 +16,22 @@ routes:
       '
     content_type: text/plain
     status: 200
+  https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkpaGVlYXg==:
+    content_type: application/xml
+    file: businesswire.xml
+    status: 200
+  https://news.google.com/rss/search?q=site:citywire.com%2Fria&hl=en-US&gl=US&ceid=US:en:
+    content_type: application/xml
+    file: gnews_citywire.xml
+    status: 200
+  https://news.google.com/rss/search?q=site:fa-mag.com&hl=en-US&gl=US&ceid=US:en:
+    content_type: application/xml
+    file: gnews_famag.xml
+    status: 200
+  https://news.google.com/rss/search?q=site:thinkadvisor.com&hl=en-US&gl=US&ceid=US:en:
+    content_type: application/xml
+    file: gnews_thinkadvisor.xml
+    status: 200
   https://riabiz.com:
     content_type: text/html
     file: riabiz_home.html
@@ -64,6 +80,10 @@ routes:
       '
     content_type: text/plain
     status: 200
+  ? https://www.globenewswire.com/RssFeed/subjectcode/27-Mergers%20And%20Acquisitions/feedTitle/GlobeNewswire%20-%20Mergers%20And%20Acquisitions
+  : content_type: application/xml
+    file: globenewswire.xml
+    status: 200
   https://www.investmentnews.com:
     body: Forbidden
     content_type: text/html
@@ -83,6 +103,10 @@ routes:
   https://www.kitces.com/feed/:
     content_type: application/xml
     file: kitces.xml
+    status: 200
+  https://www.prnewswire.com/rss/financial-services-latest-news/financial-services-latest-news-list.rss:
+    content_type: application/xml
+    file: prnewswire.xml
     status: 200
   ? https://www.sec.gov/data-research/sec-markets-data/information-about-registered-investment-advisers-exempt-reporting-advisers
   : content_type: text/html

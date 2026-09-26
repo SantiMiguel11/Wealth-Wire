@@ -6,7 +6,7 @@ import logging
 import sqlite3
 import threading
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 from . import db, paths
@@ -23,7 +23,7 @@ _LOCK = threading.Lock()
 @dataclass
 class SourceRun:
     name: str
-    method: str = "failed"            # RSS | discovered RSS | listing fallback | failed | disabled
+    method: str = "failed"            # RSS | discovered RSS | listing fallback | Google News RSS | failed | disabled
     url_used: str = ""
     discovered_feed_url: str = ""
     items: list[Item] = field(default_factory=list)
@@ -32,6 +32,9 @@ class SourceRun:
     ok: bool = False
     notes: list[str] = field(default_factory=list)
     attempts: list[str] = field(default_factory=list)
+    dropped: int = 0
+    kind: str = "feed"
+    src: Source | None = None
 
     @property
     def reason(self) -> str:
@@ -46,6 +49,64 @@ class SourceIngester:
         self.conn = conn
         self.local_tz = local_tz
         self.now = now
+        self._sec = None
+        self._categorizer = None
+
+    @property
+    def sec(self):
+        if self._sec is None:
+            from .firms import SecMatcher
+
+            self._sec = SecMatcher.from_db(self.conn)
+        return self._sec
+
+    @property
+    def categorizer(self):
+        if self._categorizer is None:
+            from .categorize import Categorizer
+
+            self._categorizer = Categorizer()
+        return self._categorizer
+
+    def _google_news(self, run: SourceRun, src: Source) -> None:
+        from .gnews import feed_url, parse_google_news
+
+        url = src.feed_url or feed_url(src.query or f"site:{src.homepage}")
+        res = self.fetcher.get(url, conditional=True)
+        if res.not_modified:
+            run.method, run.url_used, run.ok = "Google News RSS", url, True
+            run.notes.append("not modified since last run (HTTP 304)")
+            return
+        if not res.ok:
+            run.attempts.append(f"{url}: {res.describe_failure()}")
+            return
+        items, skipped = parse_google_news(res.content, src.name, src.homepage, self.now, self.local_tz)
+        run.method, run.url_used, run.ok, run.items = "Google News RSS", url, True, items
+        run.notes.append("via Google News RSS (the outlet blocks automated readers); links are Google redirects")
+        if skipped:
+            run.notes.append(f"{skipped} items from other outlets skipped")
+
+    def _filter(self, run: SourceRun) -> None:
+        """Age limit (wires, Google News) and the wealth-management filter (wires)."""
+        src = run.src
+        if not src or not run.items:
+            return
+        kept = run.items
+        if src.max_age_days:
+            from .dates import from_iso
+
+            cutoff = self.now - timedelta(days=src.max_age_days)
+            kept = [it for it in kept if from_iso(it.published_at) >= cutoff]
+            if len(kept) < len(run.items):
+                run.notes.append(f"{len(run.items) - len(kept)} items older than {src.max_age_days} days ignored")
+        if src.kind == "wire":
+            from .wires import keep_wire_item
+
+            before = len(kept)
+            kept = [it for it in kept if keep_wire_item(it.title, it.description, self.sec, self.categorizer)[0]]
+            run.dropped = before - len(kept)
+            run.notes.append(f"wealth-management filter kept {len(kept)} of {before} (dropped {run.dropped})")
+        run.items = kept
 
     def _try_feed(self, run: SourceRun, src: Source, url: str, method: str) -> bool:
         res = self.fetcher.get(url, conditional=True)
@@ -67,11 +128,16 @@ class SourceIngester:
         return True
 
     def run(self, src: Source) -> SourceRun:
-        run = SourceRun(src.name)
+        run = SourceRun(src.name, kind=src.kind, src=src)
         if not src.enabled:
             run.method = "disabled"
             run.notes.append("disabled in sources.yaml")
             return run
+        if src.kind == "google_news":
+            self._google_news(run, src)
+            if not run.ok:
+                run.method = "failed"
+            return self._finish(run)
         if src.gated:
             run.notes.append("gated: headline, link, date and source only")
 
@@ -149,7 +215,9 @@ class SourceIngester:
         return self._finish(run)
 
     def _finish(self, run: SourceRun) -> SourceRun:
-        run.fetched = len(run.items)
+        raw = len(run.items)
+        self._filter(run)
+        run.fetched = raw
         new = 0
         for it in run.items:
             cur = self.conn.execute(
@@ -162,11 +230,13 @@ class SourceIngester:
         if run.ok and run.method == "RSS":
             run.attempts.clear()  # configured feed worked; earlier attempts are irrelevant
         self.conn.execute(
-            "INSERT INTO source_status(name, method, url_used, discovered_feed_url, items_last_run, new_last_run, ok, reason, last_run_at) "
-            "VALUES (?,?,?,?,?,?,?,?,?) ON CONFLICT(name) DO UPDATE SET method=excluded.method, url_used=excluded.url_used, "
+            "INSERT INTO source_status(name, method, url_used, discovered_feed_url, items_last_run, new_last_run, ok, reason, last_run_at, kind, dropped_last_run) "
+            "VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(name) DO UPDATE SET method=excluded.method, url_used=excluded.url_used, "
             "discovered_feed_url=CASE WHEN excluded.discovered_feed_url != '' THEN excluded.discovered_feed_url ELSE source_status.discovered_feed_url END, "
-            "items_last_run=excluded.items_last_run, new_last_run=excluded.new_last_run, ok=excluded.ok, reason=excluded.reason, last_run_at=excluded.last_run_at",
-            (run.name, run.method, run.url_used, run.discovered_feed_url, run.fetched, run.new, int(run.ok), run.reason, to_iso(self.now)),
+            "items_last_run=excluded.items_last_run, new_last_run=excluded.new_last_run, ok=excluded.ok, reason=excluded.reason, "
+            "last_run_at=excluded.last_run_at, kind=excluded.kind, dropped_last_run=excluded.dropped_last_run",
+            (run.name, run.method, run.url_used, run.discovered_feed_url, run.fetched, run.new, int(run.ok), run.reason,
+             to_iso(self.now), run.kind, run.dropped),
         )
         self.conn.commit()
         return run
@@ -191,14 +261,14 @@ def write_sources_md(runs: list[SourceRun], now: datetime, cfg: dict, demo: bool
     if cfg.get("contact_email") == PLACEHOLDER_EMAIL:
         lines += ["> ⚠ `contact_email` in config.yaml is still the placeholder `me@example.com`. Set your own address — SEC.gov requires a real contact in the User-Agent.", ""]
     lines += [
-        "| Source | Status | Method | URL used | Items (last run) | New | Notes |",
-        "|---|---|---|---|---:|---:|---|",
+        "| Source | Kind | Status | Method | URL used | Items (last run) | New | Dropped | Notes |",
+        "|---|---|---|---|---|---:|---:|---:|---|",
     ]
     for r in runs:
         status = "✅ ok" if r.ok else ("⏸ disabled" if r.method == "disabled" else "❌ failed")
         notes = "; ".join(r.notes) if r.ok else "see below"
         url = f"<{r.url_used}>" if r.url_used else "—"
-        lines.append(f"| {r.name} | {status} | {r.method} | {url} | {r.fetched} | {r.new} | {notes.replace('|', '/') or ''} |")
+        lines.append(f"| {r.name} | {r.kind} | {status} | {r.method} | {url} | {r.fetched} | {r.new} | {r.dropped} | {notes.replace('|', '/') or ''} |")
     failures = [r for r in runs if not r.ok]
     lines += ["", "## Failures", ""]
     if not failures:
@@ -216,6 +286,8 @@ def write_sources_md(runs: list[SourceRun], now: datetime, cfg: dict, demo: bool
         "- **RSS** — the `feed_url` configured in sources.yaml.",
         "- **discovered RSS** — found via `<link rel=\"alternate\">` on the homepage/news page or a common path (`/feed`, `/rss`, `/rss.xml`); cached for later runs.",
         "- **listing fallback** — headlines, links and dates parsed from the public listing page (robots.txt permitting).",
+        "- **Google News RSS** — Google News search feed scoped to the outlet's site (`site:` query), for outlets that block automated readers. Items are attributed to the outlet; links are Google redirect URLs (not resolved); deduped by headline + outlet + date.",
+        "- **Dropped** — press-release wire items removed by the wealth-management filter (wealth terms AND an SEC firm or an M&A / people-move story).",
         "- **failed** — every step above failed; the exact reasons are listed per attempt.",
         "",
     ]

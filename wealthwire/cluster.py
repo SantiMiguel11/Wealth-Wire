@@ -116,6 +116,10 @@ def score(a: ClusterItem, b: ClusterItem) -> float:
         base -= 8
     if len(shared_tokens) < 2:
         base = min(base, 50.0)
+    # a press release and trade coverage of the same deal: both M&A and both name the same two SEC-verified
+    # firms (CRD keys are all digits). Wording differs a lot ("X Announces Acquisition of Y" vs "X buys Y").
+    if a.category == b.category == "M&A" and len({k for k in shared_firms if k.isdigit()}) >= 2:
+        base = max(base, 90.0)
     return max(0.0, min(100.0, base))
 
 

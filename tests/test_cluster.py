@@ -52,13 +52,13 @@ def test_window():
 def test_demo_clusters(ingested):
     conn = sqlite3.connect(paths.db_path())
     conn.row_factory = sqlite3.Row
-    assert conn.execute("SELECT COUNT(*) FROM clusters").fetchone()[0] == 35
+    assert conn.execute("SELECT COUNT(*) FROM clusters").fetchone()[0] == 36
     row = conn.execute("SELECT * FROM clusters WHERE headline LIKE '%Summit Ridge%'").fetchone()
-    assert row["outlet_count"] == 4
+    assert row["outlet_count"] == 5  # 4 trade outlets + the PR Newswire release
     # headline comes from the earliest item
     assert row["headline"] == "Harborview Wealth Partners buys $1.2bn Summit Ridge Advisors"
     sources = {r[0] for r in conn.execute("SELECT source FROM items WHERE cluster_id=?", (row["id"],))}
-    assert sources == {"Citywire RIA", "ThinkAdvisor", "WealthManagement.com", "RIABiz"}
+    assert sources == {"Citywire RIA", "ThinkAdvisor", "WealthManagement.com", "RIABiz", "PR Newswire"}
     # the breakaway team joining Harborview is a separate story
     team = conn.execute("SELECT * FROM clusters WHERE headline LIKE '%Breaks Away%'").fetchone()
     assert team["id"] != row["id"] and team["category"] == "People Moves" and team["outlet_count"] == 3
@@ -74,5 +74,7 @@ def test_public_card_lists_all_sources(ingested):
     cards = [c for c in files["clusters.json"]["clusters"] if "Summit Ridge" in c["headline"]]
     assert len(cards) == 1
     # AdvisorHub is excluded from the public site; the other outlets are all listed with links
-    assert {s["name"] for s in cards[0]["sources"]} == {"Citywire RIA", "ThinkAdvisor", "WealthManagement.com", "RIABiz"}
+    assert {s["name"] for s in cards[0]["sources"]} == {"Citywire RIA", "ThinkAdvisor", "WealthManagement.com", "RIABiz", "PR Newswire"}
+    assert cards[0]["press_release"] is True
+    assert {s["name"]: s["kind"] for s in cards[0]["sources"]}["PR Newswire"] == "wire"
     assert all(s["url"].startswith("https://") for s in cards[0]["sources"])

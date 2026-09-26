@@ -73,30 +73,49 @@ def test_gated_source_has_empty_descriptions(ingested):
 def test_source_methods_and_reasons(ingested):
     conn = _conn()
     status = {r["name"]: r for r in conn.execute("SELECT * FROM source_status")}
-    assert status["ThinkAdvisor"]["method"] == "RSS"
-    assert status["Citywire RIA"]["method"] == "discovered RSS"
-    assert status["Citywire RIA"]["url_used"] == "https://citywire.com/ria/news.rss"  # not the comments feed
-    assert status["Financial Advisor Magazine"]["url_used"] == "https://www.fa-mag.com/rss"  # common path
-    assert status["InvestmentNews"]["method"] == "discovered RSS"
+    assert status["WealthManagement.com"]["method"] == "RSS"
+    assert status["InvestmentNews"]["method"] == "discovered RSS"   # homepage 403 → /feed
     assert status["RIABiz"]["method"] == "listing fallback"
+    for name in ("ThinkAdvisor", "Financial Advisor Magazine", "Citywire RIA"):
+        assert status[name]["method"] == "Google News RSS" and status[name]["kind"] == "google_news"
     assert status["FINRA News"]["method"] == "failed"
     assert "robots.txt disallows" in status["FINRA News"]["reason"]
     assert "gated" in status["AdvisorHub"]["reason"]
+    assert status["PR Newswire"]["kind"] == "wire" and status["PR Newswire"]["dropped_last_run"] == 2
     assert sum(r["ok"] for r in status.values()) >= 7
 
 
 def test_sources_md_written(ingested):
     text = paths.sources_md_path().read_text()
-    assert "| FINRA News | ❌ failed | failed |" in text
+    assert "| FINRA News | feed | ❌ failed | failed |" in text
     assert "robots.txt disallows /media-center/newsreleases" in text
-    assert "listing fallback" in text and "discovered RSS" in text
-    assert "Offline fixture run" in text
+    assert "listing fallback" in text and "discovered RSS" in text and "Google News RSS" in text
+    assert "| PR Newswire | wire | ✅ ok | RSS |" in text and "dropped 2" in text
+    assert "Offline fixture run" in text and "SEC adviser data" in text
 
 
-def test_discovered_feed_is_cached_and_reused(ingested):
-    run_ingest(fixtures=DEMO, now=NOW, quiet=True)
-    row = _conn().execute("SELECT discovered_feed_url FROM source_status WHERE name='Citywire RIA'").fetchone()
+def _discover(src, now=NOW):
+    from wealthwire.config import Source
+    from wealthwire.ingest import SourceIngester
+
+    conn = db.connect()
+    f = Fetcher("UA test@example.com", per_host_delay=0, conn=conn, transport=FixtureTransport(DEMO))
+    return SourceIngester(f, conn, "America/Los_Angeles", now).run(Source(**src)), conn
+
+
+def test_discovery_via_link_rel_alternate_skips_comment_feeds(home):
+    run, conn = _discover({"name": "CW direct", "homepage": "https://citywire.com/ria", "listing_url": "https://citywire.com/ria/news"})
+    assert run.method == "discovered RSS" and run.url_used == "https://citywire.com/ria/news.rss" and run.fetched == 7
+    # cached and reused on the next run (no homepage crawl)
+    row = conn.execute("SELECT discovered_feed_url FROM source_status WHERE name='CW direct'").fetchone()
     assert row["discovered_feed_url"] == "https://citywire.com/ria/news.rss"
+    again, _ = _discover({"name": "CW direct", "homepage": "https://citywire.com/ria"})
+    assert again.method == "discovered RSS" and again.new == 0
+
+
+def test_discovery_via_common_path(home):
+    run, _ = _discover({"name": "FA direct", "homepage": "https://www.fa-mag.com", "listing_url": "https://www.fa-mag.com/news"})
+    assert run.method == "discovered RSS" and run.url_used == "https://www.fa-mag.com/rss"
 
 
 def test_conditional_get_uses_etag_and_handles_304(ingested):
