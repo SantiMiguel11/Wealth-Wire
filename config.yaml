@@ -1,7 +1,7 @@
 # Wealth Wire runtime configuration.
 # The User-Agent is sent with every request. SEC.gov requires a contact email in it —
 # replace the placeholder with your own address.
-contact_email: me@example.com
+contact_email: santimiguel10@outlook.com
 user_agent: "WealthWire/0.1 (personal news reader; {contact_email})"
 
 timezone: America/Los_Angeles      # used for digest dates and naive listing-page dates
