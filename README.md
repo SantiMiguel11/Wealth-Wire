@@ -32,7 +32,8 @@ Publisher descriptions and paywalled sources are left out; both are controlled b
 read-only there: edit `watchlist.yaml` on github.com and the site updates within minutes, because a push
 to `main` triggers a refresh. To refresh on demand, go to the Actions tab → **Refresh site** → **Run workflow**.
 
-One-time Vercel setup: **Add New → Project →** import this repo → under **Settings → Environments →
+The `vercel.json` on `main` turns off Vercel deployments for code branches; the `live` branch has its own
+`vercel.json`, which publishes `site/`. One-time Vercel setup: **Add New → Project →** import this repo → under **Settings → Environments →
 Production**, set the branch to `live`. Every refresh after that deploys automatically.
 
 ## Run it on your own computer (optional)
