@@ -84,7 +84,7 @@ def test_local_server_serves_site_and_firm_fallback(built):
         assert c.get("/").status_code == 200
         assert c.get("/data/meta.json").json()["schema_version"] == 1
         r = c.get("/firm/anything-123")
-        assert r.status_code == 200 and "<title>Wealth Wire</title>" in r.text
+        assert r.status_code == 200 and "<title>Fiduciary Duty</title>" in r.text
         assert r.headers["x-robots-tag"] == "noindex, nofollow"
 
 

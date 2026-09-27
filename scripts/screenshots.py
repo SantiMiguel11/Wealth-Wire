@@ -33,20 +33,31 @@ SAMPLE_WATCHLIST = {"version": 1, "firms": [
 FIXED_NOW = "2026-09-25T18:00:00Z"
 SCENES = [
     # name, path + query string ("{firm}" = a firm page slug)
-    ("feed", "/"),
-    ("feed-filtered", "/?category=M%26A,People+Moves&source=Citywire+RIA"),
-    ("region", "/?region=Pacific+Northwest"),
-    ("search", "/?q=custody+rule"),
-    ("watchlist", "/?watch=1"),
+    ("today", "/"),
+    ("feed", "/?tab=feed"),
+    ("feed-filtered", "/?tab=feed&category=M%26A,People+Moves&source=Citywire+RIA"),
+    ("region", "/?tab=feed&region=Pacific+Northwest"),
+    ("search", "/?tab=feed&q=custody+rule"),
+    ("watchlist", "/?tab=feed&watch=1"),
     ("firm", "/firm/{firm}"),
-    ("mna", "/?tab=mna"),
-    ("mna-low", "/?tab=mna&conf=low"),
-    ("digest", "/?tab=digest"),
+    ("deals", "/?tab=mna"),
+    ("deals-review", "/?tab=mna&conf=low"),
     ("archive", "/?tab=archive"),
+    ("archive-day", "/?tab=today&date=2026-09-25"),
     ("weekly", "/?tab=weekly&week=2026-W39"),
     ("sources", "/?tab=sources"),
-    ("empty", "/?q=zzzznotaword"),
+    ("empty", "/?tab=feed&q=zzzznotaword"),
 ]
+TAP_CHECK = """() => {
+  const bad = [];
+  for (const e of document.querySelectorAll('.sections a, .textbtn, button, select, input:not([type=checkbox]):not([type=file]), .cat-toggles button, .footer-links a')) {
+    const r = e.getBoundingClientRect();
+    if (!r.width || !r.height || getComputedStyle(e).visibility === 'hidden') continue;
+    if (e.closest('.deals-table, [hidden]')) continue;
+    if (r.height < 44) bad.push((e.id || e.className || e.tagName) + ' ' + Math.round(r.height) + 'px');
+  }
+  return bad.slice(0, 8);
+}"""
 
 
 def free_port() -> int:
@@ -92,6 +103,30 @@ def start_server(env: dict) -> tuple[subprocess.Popen, str]:
     raise RuntimeError("server did not start")
 
 
+_FONT_CACHE: dict[str, tuple[int, dict, bytes]] = {}
+
+
+def serve_fonts(ctx) -> None:
+    """Google Fonts through Python (which trusts the sandbox's proxy CA), cached, so screenshots always get the
+    real type instead of flaky browser-side proxy failures. Only used by this test script."""
+    import httpx
+
+    def handle(route):
+        url = route.request.url
+        if url not in _FONT_CACHE:
+            try:
+                r = httpx.get(url, headers={"User-Agent": route.request.headers.get("user-agent", "")}, timeout=20)
+                _FONT_CACHE[url] = (r.status_code, {"content-type": r.headers.get("content-type", ""),
+                                                    "access-control-allow-origin": "*"}, r.content)
+            except httpx.HTTPError:
+                return route.abort()
+        status, headers, body = _FONT_CACHE[url]
+        route.fulfill(status=status, headers=headers, body=body)
+
+    ctx.route("https://fonts.googleapis.com/**", handle)
+    ctx.route("https://fonts.gstatic.com/**", handle)
+
+
 def launch(p):
     """Default Playwright Chromium; fall back to an explicit binary (WW_CHROMIUM or a preinstalled one)."""
     exe = os.environ.get("WW_CHROMIUM")
@@ -130,7 +165,8 @@ def main() -> int:
             probe.close()
             for theme in THEMES:
                 for vp_name, (w, h) in VIEWPORTS.items():
-                    ctx = browser.new_context(viewport={"width": w, "height": h}, color_scheme=theme, device_scale_factor=1)
+                    ctx = browser.new_context(ignore_https_errors=True, viewport={"width": w, "height": h}, color_scheme=theme, device_scale_factor=1)
+                    serve_fonts(ctx)
                     ctx.add_init_script(seed)  # a sample watchlist, as if the visitor had added two firms
                     page = ctx.new_page()
                     page.on("console", lambda m, t=theme, v=vp_name: m.type == "error" and problems.append(f"[{t}/{v}] console: {m.text}"))
@@ -141,67 +177,107 @@ def main() -> int:
                         page.goto(base + path.format(firm=firm))
                         page.wait_for_load_state("networkidle")
                         page.wait_for_function("!document.querySelector('.skeleton')")
+                        page.evaluate("document.fonts.ready")
                         overflow = page.evaluate("document.documentElement.scrollWidth - document.documentElement.clientWidth")
                         if overflow > 0:
                             problems.append(f"[{theme}/{vp_name}] {name}: horizontal overflow {overflow}px")
+                        if vp_name == "mobile":
+                            small = page.evaluate(TAP_CHECK)
+                            if small:
+                                problems.append(f"[{theme}/{vp_name}] {name}: tap targets under 44px: {small}")
                         page.screenshot(path=str(OUT / f"{name}-{vp_name}-{theme}.png"), full_page=vp_name == "desktop")
                         shots += 1
                     ctx.close()
-            # error state: data file forced to fail (deliberate, so not counted as a problem)
-            ctx = browser.new_context(viewport={"width": 1440, "height": 900}, color_scheme="light")
+            # error state: a data file forced to fail (deliberate, so not counted as a problem)
+            ctx = browser.new_context(ignore_https_errors=True, viewport={"width": 1440, "height": 900}, color_scheme="light")
+            serve_fonts(ctx)
             page = ctx.new_page()
             page.route("**/data/clusters.json", lambda route: route.fulfill(status=500, body="error"))
-            page.goto(base + "/")
+            page.goto(base + "/?tab=feed")
             page.wait_for_selector(".state.error")
+            if "clusters.json" not in page.inner_text(".state.error"):
+                problems.append("error state does not name the file that failed")
             page.screenshot(path=str(OUT / "error-desktop-light.png"))
             ctx.close()
-            # interactions: URL-held filters; watchlist add/remove/import/export in localStorage
-            ctx = browser.new_context(viewport={"width": 1440, "height": 900}, color_scheme="light", accept_downloads=True)
-            page = ctx.new_page()
-            page.on("console", lambda m: m.type == "error" and problems.append(f"[interact] console: {m.text}"))
-            page.on("pageerror", lambda e: problems.append(f"[interact] pageerror: {e}"))
-            page.goto(base + "/")
-            page.wait_for_selector("#feed-list .card")
-            page.fill("#q", "custody")
-            page.wait_for_url("**q=custody**")
-            page.wait_for_function("document.querySelectorAll('#feed-list .card').length >= 1")
-            page.click('#cat-chips button[data-cat="Regulation"]')
-            page.wait_for_url("**category=Regulation**")
-            page.go_back()
-            page.wait_for_function("!location.search.includes('category')")
-            page.select_option("#region", "Pacific Northwest")
-            page.wait_for_url("**region=Pacific**")
-            page.click("#clear")
-            page.wait_for_function("location.search === ''")
-            page.fill("#watch-name", "Harborview Wealth Partners")
-            page.fill("#watch-aliases", "Harborview")
-            page.click("#watch-add button")
-            page.wait_for_selector("#watchlist li:has-text('Harborview Wealth Partners')")
-            page.wait_for_selector("#pinned-list .card:has-text('Summit Ridge')")
-            page.evaluate("scrollTo(0, 0)")
-            page.screenshot(path=str(OUT / "watchlist-added-desktop-light.png"))
-            with page.expect_download() as dl:
-                page.click("#watch-export")
-            exported = json.loads(Path(dl.value.path()).read_text())
-            if [f["name"] for f in exported.get("firms", [])] != ["Harborview Wealth Partners"]:
-                problems.append(f"watchlist export unexpected: {exported}")
-            page.click("#watchlist button[aria-label='Remove Harborview Wealth Partners']")
-            page.wait_for_function("!document.querySelector('#watchlist').textContent.includes('Harborview')")
-            page.wait_for_function("!document.querySelector('#pinned-list').textContent.includes('Summit Ridge')")
-            imp = OUT / "_import.json"
-            imp.write_text(json.dumps(SAMPLE_WATCHLIST))
-            page.set_input_files("#watch-import", str(imp))
-            imp.unlink()
-            page.wait_for_selector("#watchlist li:has-text('Crestline Wealth')")
-            ctx.close()
+            # interactions: URL-held filters; watchlist drawer (add/pin/export/remove/import, Esc, focus trap)
+            for vp_name, (w, h) in VIEWPORTS.items():
+                ctx = browser.new_context(ignore_https_errors=True, viewport={"width": w, "height": h}, color_scheme="light", accept_downloads=True)
+                serve_fonts(ctx)
+                page = ctx.new_page()
+                page.on("console", lambda m: m.type == "error" and problems.append(f"[interact] console: {m.text}"))
+                page.on("pageerror", lambda e: problems.append(f"[interact] pageerror: {e}"))
+                page.goto(base + "/?tab=feed")
+                page.wait_for_selector("#feed-list .row")
+                if vp_name == "desktop":
+                    page.fill("#q", "custody")
+                    page.wait_for_url("**q=custody**")
+                    page.wait_for_function("document.querySelectorAll('#feed-list .row').length >= 1")
+                    page.click('#cats button[data-cat="Regulation"]')
+                    page.wait_for_url("**category=Regulation**")
+                    page.go_back()
+                    page.wait_for_function("!location.search.includes('category')")
+                    page.select_option("#region", "Pacific Northwest")
+                    page.wait_for_url("**region=Pacific**")
+                    page.fill("#q", "zzzznotaword")
+                    page.wait_for_selector(".state button:has-text('Clear filters')")
+                    page.click(".state button:has-text('Clear filters')")
+                    page.wait_for_function("location.search === '?tab=feed'")
+                    page.keyboard.press("/")
+                    if page.evaluate("document.activeElement.id") != "q":
+                        problems.append("'/' shortcut did not focus the search box")
+                    page.goto(base + "/?tab=mna")
+                    page.click("th button:has-text('Headline AUM')")
+                    page.wait_for_url("**sort=h**")
+                    if page.get_attribute("th[aria-sort]", "aria-sort") != "descending":
+                        problems.append("deals sort did not set aria-sort")
+                page.goto(base + "/")
+                page.wait_for_selector(".story")
+                page.click("#watch-open")
+                page.wait_for_selector("#drawer:not([hidden])")
+                page.fill("#watch-name", "Harborview Wealth Partners")
+                page.fill("#watch-aliases", "Harborview")
+                page.click("#watch-add button[type=submit]")
+                page.wait_for_selector("#watchlist li:has-text('Harborview Wealth Partners')")
+                for _ in range(12):  # focus stays inside the drawer
+                    page.keyboard.press("Tab")
+                if not page.evaluate("document.getElementById('drawer').contains(document.activeElement)"):
+                    problems.append(f"[{vp_name}] focus escaped the watchlist drawer")
+                page.screenshot(path=str(OUT / f"drawer-{vp_name}-light.png"))
+                page.keyboard.press("Escape")
+                page.wait_for_selector("#drawer", state="hidden")
+                page.wait_for_selector(".section-head:has-text('From your watchlist')")
+                page.wait_for_selector(".story.is-watch:has-text('Summit Ridge')")
+                page.evaluate("scrollTo(0, 0)")
+                page.screenshot(path=str(OUT / f"watchlist-added-{vp_name}-light.png"))
+                page.click("#watch-open")
+                with page.expect_download() as dl:
+                    page.click("#watch-export")
+                exported = json.loads(Path(dl.value.path()).read_text())
+                if [f["name"] for f in exported.get("firms", [])] != ["Harborview Wealth Partners"]:
+                    problems.append(f"watchlist export unexpected: {exported}")
+                page.click("#watchlist button[aria-label='Remove Harborview Wealth Partners']")
+                page.wait_for_function("!document.querySelector('#watchlist').textContent.includes('Harborview')")
+                imp = OUT / "_import.json"
+                imp.write_text(json.dumps(SAMPLE_WATCHLIST))
+                page.set_input_files("#watch-import", str(imp))
+                imp.unlink()
+                page.wait_for_selector("#watchlist li:has-text('Crestline Wealth')")
+                if page.evaluate("JSON.parse(localStorage.getItem('ww-watchlist')).firms.length") != 2:
+                    problems.append("imported watchlist not stored under ww-watchlist")
+                ctx.close()
             # theme toggle persists in localStorage
-            ctx = browser.new_context(viewport={"width": 1440, "height": 900}, color_scheme="light")
+            ctx = browser.new_context(ignore_https_errors=True, viewport={"width": 1440, "height": 900}, color_scheme="light")
+            serve_fonts(ctx)
             page = ctx.new_page()
             page.on("console", lambda m: m.type == "error" and problems.append(f"[toggle] console: {m.text}"))
             page.goto(base + "/")
+            page.evaluate("localStorage.setItem('ww-theme', 'dark')")   # the old key is honored once, then migrated
+            page.reload()
+            if page.evaluate("document.documentElement.dataset.theme + localStorage.getItem('fd-theme')") != "darkdark":
+                problems.append("old ww-theme choice was not migrated to fd-theme")
             page.click("#theme-toggle")
             page.reload()
-            if page.evaluate("document.documentElement.dataset.theme") != "dark":
+            if page.evaluate("document.documentElement.dataset.theme") != "light" or page.text_content("#theme-toggle") != "Dark mode":
                 problems.append("theme toggle did not persist across reload")
             ctx.close()
             browser.close()
