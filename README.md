@@ -1,23 +1,24 @@
-# Wealth Wire
+# Fiduciary Duty
 
-A news wire for the U.S. wealth-management and RIA industry. It pulls headlines from trade outlets, SEC and
-FINRA releases, and press-release wires. It then:
+Daily news for wealth management and RIAs. Fiduciary Duty pulls headlines from trade outlets, SEC and FINRA
+releases, and press-release wires. It then:
 - removes duplicates and groups the same story across outlets;
 - sorts stories into categories;
 - recognizes SEC-registered advisers and their AUM;
 - tracks RIA M&A;
 - has Claude write a short digest of the day's top stories.
 
-It runs by itself on GitHub Actions and is served as a static site by Vercel.
+It runs by itself on GitHub Actions and is served as a static site by Vercel. (The code and repository keep
+the project's working name, Wealth Wire.)
 
-![Feed](screenshots/feed-desktop-light.png)
+![Today](screenshots/today-desktop-light.png)
 
-| Digest | Firm page (mobile) | Weekly M&A recap (dark) |
+| Deals | Firm page (mobile) | Today (mobile, dark) |
 |---|---|---|
-| ![Digest](screenshots/digest-desktop-light.png) | ![Firm](screenshots/firm-mobile-light.png) | ![Weekly](screenshots/weekly-mobile-dark.png) |
+| ![Deals](screenshots/deals-desktop-dark.png) | ![Firm](screenshots/firm-mobile-light.png) | ![Today, mobile](screenshots/today-mobile-dark.png) |
 
-> The screenshots use the offline **demo dataset**: synthetic fixture feeds and a synthetic SEC file, shown
-> with a DEMO DATA badge.
+> The screenshots use the offline **demo dataset**: synthetic fixture feeds and a synthetic SEC file, marked
+> "Demo data" in the dateline.
 
 **What needs you:** [MANUAL-STEPS.md](MANUAL-STEPS.md) covers making the repo private and the optional
 secrets for the Claude digest and the watchlist email. Each step is click-by-click. Without the secrets,
@@ -46,33 +47,38 @@ GitHub Actions (weekdays ~6:00, 12:00, 17:00 PT; weekends ~8:00 PT; or "Run work
 
 ## Using the site
 
-- **Feed** has one card per story, with every outlet that covered it. You can filter by:
-  - search;
-  - source;
-  - region ("Pacific Northwest" = WA/OR/ID) or a single state;
-  - date range;
-  - category chips.
-  Filters live in the URL.
-- **Watchlist** lives only in your browser (`localStorage`):
-  - Add firms with optional aliases. A firm's SEC-registered names are matched too.
-  - Matching is case-insensitive and on word boundaries.
-  - Matching stories are highlighted, pinned for 7 days, and ranked first in Top Stories and the digest.
-  - **Export JSON / Import JSON** moves the list between browsers. The same file is the `WATCHLIST_JSON`
-    email secret.
-- **Digest** shows the top stories since the last refresh (at least 24h), ranked by outlet count, then
-  recency. Once a Claude secret is set, each story gets a one-sentence summary and "Why it matters to
-  advisors", under a short "Today in wealth management" opener. If Claude's output fails validation, the
-  plain ranked list is shown with a link to the last good digest.
-- **Archive** lists past digests and the Friday **weekly M&A recaps**: deal count, total disclosed AUM, most
-  active acquirers, a Claude paragraph and the deal table.
-- **M&A** has one row per deal: acquirer, target, target AUM, type, sources and confidence.
-  - A matching press release raises the confidence.
-  - Low-confidence rows are tinted and explain why.
-  - AUM missing from the headline falls back to the SEC-reported figure, labeled with its date.
-- **Firm pages** (`/firm/<slug>`) show name, city/state, SEC-reported AUM, CRD with an IAPD link, and every
-  story and deal for that firm. Trending Firms links to them.
-- **Sources** shows each source's method and last-run status, including the exact failure reason and how
-  many wire items the wealth filter dropped.
+Four sections across the top, **Today · Feed · Deals · Archive**, with the date, the time of the last
+refresh, the watchlist and the light/dark switch in the dateline above the nameplate. The design reference
+is `design/Fiduciary Duty.dc.html`.
+
+- **Today** (`/`) is the digest: a short "Today in wealth management" opener, then the day's top stories,
+  numbered, each with a one-sentence summary and "Why it matters to advisors". Stories about firms on your
+  watchlist come first, under **From your watchlist**. Further stories follow as compact rows under **More
+  stories**. On Fridays a closing line links to the weekly M&A recap. The side column shows **Trending firms**
+  and **Deals this week**. When Claude's summaries aren't available, Today shows the ranked headlines with a
+  note and a link to the last written digest.
+- **Feed** (`?tab=feed`) lists every story, newest first, grouped by day (Pacific time), with every outlet
+  that covered it, the firms it names and any AUM. You can:
+  - search headlines, firm names and outlet names (press `/` to jump to the box);
+  - filter by outlet, date (today, last 3 days, this week, or a date range) and region ("Pacific Northwest"
+    = WA/OR/ID, or a single state);
+  - toggle categories, or show watchlist stories only.
+  Filters live in the URL, so a view can be bookmarked and the back button works.
+- **Deals** (`?tab=mna`) is the RIA M&A tracker: date, acquirer, target, type, headline AUM, SEC AUM (the
+  target's Form ADV figure, with its as-of date) and sources. Columns sort by clicking their headers; on a
+  phone the rows stack and a "Sort by" menu replaces the headers. Rows the parser couldn't read are marked
+  "Needs review" and left blank rather than guessed. Filter by All, Confirmed or Needs review.
+- **Firm pages** (`/firm/<slug>`) show an SEC-registered adviser's location, SEC-reported AUM with its
+  Form ADV date, CRD number with a link to the SEC adviser page, every story and deal naming it, and an
+  **Add to watchlist** button. Firm names throughout the site link here.
+- **Archive** (`?tab=archive`) lists past digests by week; opening one shows it in the Today layout. The side
+  column lists the **Friday M&A recaps**: deal count, total headline AUM, most active acquirers, a short
+  Claude-written paragraph and the week's deal table.
+- **Sources** (footer link) shows each source's method and last-run status, with the exact failure reason.
+- **Watchlist** (dateline) opens a drawer where you add firms with optional aliases. It lives only in your
+  browser (`localStorage`). Matching ignores case, works on word boundaries, skips aliases under three
+  characters and also covers each firm's SEC-registered names. **Export JSON / Import JSON** moves the list
+  between browsers; the same file is the `WATCHLIST_JSON` email secret.
 
 ## Sources
 
@@ -165,8 +171,8 @@ generated data still matches the contract.
 
 ```bash
 pip install -r requirements.txt
-python -m pytest                   # 334 tests, no network (fixture feeds + httpx MockTransport)
-python scripts/screenshots.py      # Playwright: 13 views × 1440/390 × light/dark, interactions; fails on console errors
+python -m pytest                   # 354 tests, no network (fixture feeds + httpx MockTransport)
+python scripts/screenshots.py      # Playwright: 14 views × 1440/390 × light/dark, interactions, tap targets; fails on console errors
 python scripts/make_fixtures.py    # regenerate the offline fixture sites
 python -m wealthwire eval-firms    # firm-matching precision/recall on the 75 labeled headlines
 ```

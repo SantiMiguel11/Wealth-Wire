@@ -372,3 +372,29 @@ F11. **Wire stats file.** Every run appends one row per wire feed to `wire_stats
      - fetched, too_old, dropped_by_filter, kept;
      - source_new_items (new after merging the feeds; a release in two keyword feeds counts once).
      The run summary prints that run's rows. Disabled wires write no rows.
+
+## Fiduciary Duty redesign (2026-09-27)
+
+R1. **Frontend only.** `frontend/` was rewritten from `design/Fiduciary Duty.dc.html`. The pipeline, `schemas/`,
+    the data contract's fields, the refresh workflow and the Vercel settings are unchanged. The repo and
+    Python package keep the working name "Wealth Wire".
+R2. **Where the prototype and the brief differ, the brief wins:**
+    - the watchlist drawer imports and exports **JSON**, the contract's format, not the prototype's YAML;
+    - the prototype's "Wordmark" studies page is a design tool, so it isn't shipped;
+    - the Serif wordmark is used.
+R3. **Deals' "SEC AUM" column is derived in the browser.** `mna.json` carries one target AUM and its source,
+    so the column shows that figure when it is SEC-sourced. Otherwise it shows the target's `sec_aum_usd` from
+    `firms/index.json`, dated by `mna.sec_aum_as_of`. With no match it reads "No ADV match". No contract change.
+R4. **`?tab=digest` and `?tab=deals` still work** (aliases of Today and Deals). An archived digest opens at
+    `?tab=today&date=YYYY-MM-DD`.
+R5. **The Feed shows `last_published` times, grouped by Pacific day.** Clusters are already ordered that way,
+    so a story updated today appears under today. The Today view stamps each story with its `first_published`
+    time.
+R6. **Accessibility is measured, not assumed.**
+    - Text contrast against the background and the review-row tint is at least 5.2:1 in both themes, including
+      the oklch category colors.
+    - Tap targets are 44 px or taller at 390 px, checked by `scripts/screenshots.py`.
+    - The drawer traps focus and closes on Esc (also checked).
+R7. **Screenshots use the real fonts.** The test browser fetches Google Fonts through a cached route in
+    `scripts/screenshots.py`, because this build sandbox's HTTPS proxy isn't trusted by Chromium. Production is
+    unaffected.
