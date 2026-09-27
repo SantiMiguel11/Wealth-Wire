@@ -533,3 +533,29 @@ fails on any old name in its HTML, JS, CSS, JSON, SVG or `live` README.
   restores and then republishes as `state/fiduciarywire.db`.
 - **Past digests.** There are no archived digests yet. When there are, their content is left as written; only the
   site chrome around them changed.
+
+## Verification results
+
+- **Search re-run:** no old name in any tracked path; the remaining text mentions are exactly the intentional ones
+  in the table above.
+- **Tests:** 360 passed, including the privacy tests and `tests/test_rename_compat.py` (old env vars, old local
+  database, pre-rename `live` state, no old name in the built site, User-Agent, email, digest text).
+- **Browser, demo data:** `scripts/screenshots.py` ran 56 screenshots and all interaction checks with 0 problems.
+  That includes the storage migration: `ww-watchlist` and `fd-theme` move to `fw-watchlist` and `fw-theme`, the
+  old keys are removed, the migrated watchlist still pins its stories, and a leftover old key never overwrites
+  the new one.
+- **Browser, real data:** built from the `live` database, which was restored from its pre-rename file
+  `state/wealthwire.db`. `screenshots/real-data/` holds Today, Feed, Deals and Archive at 1440 and 390, light and
+  dark (16 images). Measured on every page:
+  - the wordmark reads "Fiduciary Wire" in Cormorant Garamond, on one line (it ends at 244 px on a 390 px screen);
+  - the four nav items sit on one row;
+  - the tagline sits beside the wordmark on desktop and below it on mobile;
+  - no horizontal overflow and no console errors.
+- **Refresh workflow, end to end:**
+  - [push run 36302341142](https://github.com/SantiMiguel11/Wealth-Wire/actions/runs/36302341142) restored
+    `db_file: 'wealthwire.db'` from the pre-rename `live` commit, ingested 12 of 13 sources and published
+    `state/fiduciarywire.db`;
+  - the explicit [`workflow_dispatch` run 36302344969](https://github.com/SantiMiguel11/Wealth-Wire/actions/runs/36302344969)
+    then succeeded on the renamed state. `gh` isn't installed in the build sandbox, so it was triggered through the
+    GitHub API, which is the same event.
+  `live` now carries `<title>Fiduciary Wire</title>` and `# Fiduciary Wire — live branch`.

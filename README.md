@@ -184,9 +184,10 @@ python -m fiduciarywire eval-firms    # firm-matching precision/recall on the 75
 
 ## Known limitations
 
-- **Google News RSS returns HTTP 503 to GitHub's runners.** Google blocks many datacenter IP ranges. The
-  spec rules out any workaround, so ThinkAdvisor, FA Magazine and Citywire stay failed on the Sources tab
-  until Google serves those runners again. The code path is tested on fixtures.
+- **Google News RSS is intermittent from GitHub's runners.** On 2026-09-26 it answered HTTP 503 (Google blocks
+  some datacenter ranges); on 2026-09-27 the same feeds returned ~100 items each. When it fails, ThinkAdvisor,
+  FA Magazine and Citywire show as failed on the Sources tab until the next run. Per the spec there is no
+  workaround.
 - **One press-release wire.** GlobeNewswire's keyword feeds are the only scoped wire source found. PR Newswire
   offers no keyword feed (every subject feed probed was off-topic or the all-news firehose), so it is disabled;
   Business Wire's robots.txt disallows its feeds, so it was removed. `state/wire_stats.csv` on `live` records,
