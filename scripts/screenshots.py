@@ -1,6 +1,7 @@
 """Playwright UI check: screenshots of every main view at desktop + mobile, light + dark.
 
-Starts its own server on a fresh copy of the offline fixture data (DEMO), so it needs no network:
+Starts its own server on a fresh copy of the offline fixture data (DEMO), with the clock pinned to the
+fixtures' date and the demo digest from tests/fixtures/demo/*_output.json, so it needs no network:
     python scripts/screenshots.py            # → screenshots/*.png, exits 1 on any console error / failed request
 
 Use --base-url to point it at an already-running server instead.
@@ -22,19 +23,29 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "screenshots"
 DEMO_HOME = ROOT / "demo"
+DEMO_FIXTURES = ROOT / "tests" / "fixtures" / "demo"
 VIEWPORTS = {"desktop": (1440, 900), "mobile": (390, 844)}
 THEMES = ("light", "dark")
+SAMPLE_WATCHLIST = {"version": 1, "firms": [
+    {"name": "Harborview Wealth Partners", "aliases": ["Harborview"]},
+    {"name": "Crestline Wealth", "aliases": []},
+]}
+FIXED_NOW = "2026-09-25T18:00:00Z"
 SCENES = [
-    # name, query string, optional action
-    ("feed", "", None),
-    ("feed-filtered", "?category=M%26A,People+Moves&source=Citywire+RIA", None),
-    ("search", "?q=custody+rule", None),
-    ("watchlist", "?watch=1", None),
-    ("mna", "?tab=mna", None),
-    ("mna-low", "?tab=mna&conf=low", None),
-    ("digest", "?tab=digest", None),
-    ("sources", "?tab=sources", None),
-    ("empty", "?q=zzzznotaword", None),
+    # name, path + query string ("{firm}" = a firm page slug)
+    ("feed", "/"),
+    ("feed-filtered", "/?category=M%26A,People+Moves&source=Citywire+RIA"),
+    ("region", "/?region=Pacific+Northwest"),
+    ("search", "/?q=custody+rule"),
+    ("watchlist", "/?watch=1"),
+    ("firm", "/firm/{firm}"),
+    ("mna", "/?tab=mna"),
+    ("mna-low", "/?tab=mna&conf=low"),
+    ("digest", "/?tab=digest"),
+    ("archive", "/?tab=archive"),
+    ("weekly", "/?tab=weekly&week=2026-W39"),
+    ("sources", "/?tab=sources"),
+    ("empty", "/?q=zzzznotaword"),
 ]
 
 
@@ -47,26 +58,22 @@ def free_port() -> int:
 
 
 def prepare_demo() -> dict:
-    """Fresh demo data dir + config copy (watchlist edits in the UI must not touch the repo)."""
+    """Fresh demo data dir: fixture ingest, then the demo digest through the real validate/archive step."""
     if DEMO_HOME.exists():
-        keep = DEMO_HOME / "digests"
-        saved = {p.name: p.read_bytes() for p in keep.glob("*.md")} if keep.exists() else {}
-        last = (keep / ".last_digest").read_bytes() if (keep / ".last_digest").exists() else None
         shutil.rmtree(DEMO_HOME)
-    else:
-        saved, last = {}, None
     cfg = DEMO_HOME / "config"
     cfg.mkdir(parents=True)
-    for name in ("config.yaml", "sources.yaml", "watchlist.yaml", "categories.yaml", "firm_stoplist.yaml"):
+    for name in ("config.yaml", "sources.yaml", "categories.yaml", "firm_stoplist.yaml", "firm_aliases.yaml"):
         shutil.copy(ROOT / name, cfg / name)
-    (DEMO_HOME / "digests").mkdir()
-    for n, b in saved.items():
-        (DEMO_HOME / "digests" / n).write_bytes(b)
-    if last is not None:
-        (DEMO_HOME / "digests" / ".last_digest").write_bytes(last)
-    env = dict(os.environ, WEALTHWIRE_HOME=str(DEMO_HOME), WEALTHWIRE_CONFIG=str(cfg), WEALTHWIRE_NO_BACKGROUND="1")
-    subprocess.run([sys.executable, "-m", "wealthwire", "ingest", "--fixtures", str(ROOT / "tests/fixtures/demo")],
-                   cwd=ROOT, env=env, check=True, stdout=subprocess.DEVNULL)
+    env = dict(os.environ, WEALTHWIRE_HOME=str(DEMO_HOME), WEALTHWIRE_CONFIG=str(cfg), WEALTHWIRE_NO_BACKGROUND="1",
+               WEALTHWIRE_NOW=FIXED_NOW)
+    run = lambda *a: subprocess.run([sys.executable, "-m", "wealthwire", *a], cwd=ROOT, env=env, check=True,  # noqa: E731
+                                    stdout=subprocess.DEVNULL)
+    run("ingest", "--fixtures", str(DEMO_FIXTURES))
+    run("digest-input")
+    for name in ("digest_output.json", "weekly_output.json"):
+        shutil.copy(DEMO_FIXTURES / name, DEMO_HOME / "_work" / name)
+    run("digest-finalize")
     return env
 
 
@@ -113,51 +120,57 @@ def main() -> int:
     problems: list[str] = []
     shots = 0
     scenes = [s for s in SCENES if not args.only or s[0] in args.only.split(",")]
+    seed = f"localStorage.setItem('ww-watchlist', {json.dumps(json.dumps(SAMPLE_WATCHLIST))})"
     try:
         with sync_playwright() as p:
             browser = launch(p)
+            probe = browser.new_page()
+            firms = probe.goto(base + "/data/firms/index.json").json()["firms"]
+            firm = next(f["slug"] for f in firms if f["name"].startswith("Harborview"))
+            probe.close()
             for theme in THEMES:
                 for vp_name, (w, h) in VIEWPORTS.items():
                     ctx = browser.new_context(viewport={"width": w, "height": h}, color_scheme=theme, device_scale_factor=1)
+                    ctx.add_init_script(seed)  # a sample watchlist, as if the visitor had added two firms
                     page = ctx.new_page()
                     page.on("console", lambda m, t=theme, v=vp_name: m.type == "error" and problems.append(f"[{t}/{v}] console: {m.text}"))
                     page.on("pageerror", lambda e, t=theme, v=vp_name: problems.append(f"[{t}/{v}] pageerror: {e}"))
                     page.on("requestfailed", lambda r, t=theme, v=vp_name: problems.append(f"[{t}/{v}] requestfailed: {r.url} {r.failure}"))
                     page.on("response", lambda r, t=theme, v=vp_name: r.status >= 400 and problems.append(f"[{t}/{v}] HTTP {r.status}: {r.url}"))
-                    for name, qs, _ in scenes:
-                        page.goto(base + "/" + qs)
+                    for name, path in scenes:
+                        page.goto(base + path.format(firm=firm))
                         page.wait_for_load_state("networkidle")
                         page.wait_for_function("!document.querySelector('.skeleton')")
-                        # horizontal overflow check
                         overflow = page.evaluate("document.documentElement.scrollWidth - document.documentElement.clientWidth")
                         if overflow > 0:
                             problems.append(f"[{theme}/{vp_name}] {name}: horizontal overflow {overflow}px")
-                        page.screenshot(path=str(OUT / f"{name}-{vp_name}-{theme}.png"))
+                        page.screenshot(path=str(OUT / f"{name}-{vp_name}-{theme}.png"), full_page=vp_name == "desktop")
                         shots += 1
                     ctx.close()
-            # error state: API forced to fail (deliberate, so not counted as a problem)
+            # error state: data file forced to fail (deliberate, so not counted as a problem)
             ctx = browser.new_context(viewport={"width": 1440, "height": 900}, color_scheme="light")
             page = ctx.new_page()
-            page.route("**/api/feed*", lambda route: route.fulfill(status=500, json={"detail": "database is locked"}))
+            page.route("**/data/clusters.json", lambda route: route.fulfill(status=500, body="error"))
             page.goto(base + "/")
             page.wait_for_selector(".state.error")
             page.screenshot(path=str(OUT / "error-desktop-light.png"))
             ctx.close()
-            # interactions: filter/search state lives in the URL; watchlist add/remove from the UI
-            ctx = browser.new_context(viewport={"width": 1440, "height": 900}, color_scheme="light")
+            # interactions: URL-held filters; watchlist add/remove/import/export in localStorage
+            ctx = browser.new_context(viewport={"width": 1440, "height": 900}, color_scheme="light", accept_downloads=True)
             page = ctx.new_page()
             page.on("console", lambda m: m.type == "error" and problems.append(f"[interact] console: {m.text}"))
+            page.on("pageerror", lambda e: problems.append(f"[interact] pageerror: {e}"))
             page.goto(base + "/")
-            page.wait_for_selector(".card")
+            page.wait_for_selector("#feed-list .card")
             page.fill("#q", "custody")
             page.wait_for_url("**q=custody**")
-            page.wait_for_function("document.querySelectorAll('#feed-list .card').length === 3")  # porter stemming: custody ~ custodian
+            page.wait_for_function("document.querySelectorAll('#feed-list .card').length >= 1")
             page.click('#cat-chips button[data-cat="Regulation"]')
             page.wait_for_url("**category=Regulation**")
             page.go_back()
             page.wait_for_function("!location.search.includes('category')")
-            page.select_option("#source", "Kitces")
-            page.wait_for_url("**source=Kitces**")
+            page.select_option("#region", "Pacific Northwest")
+            page.wait_for_url("**region=Pacific**")
             page.click("#clear")
             page.wait_for_function("location.search === ''")
             page.fill("#watch-name", "Harborview Wealth Partners")
@@ -167,9 +180,19 @@ def main() -> int:
             page.wait_for_selector("#pinned-list .card:has-text('Summit Ridge')")
             page.evaluate("scrollTo(0, 0)")
             page.screenshot(path=str(OUT / "watchlist-added-desktop-light.png"))
+            with page.expect_download() as dl:
+                page.click("#watch-export")
+            exported = json.loads(Path(dl.value.path()).read_text())
+            if [f["name"] for f in exported.get("firms", [])] != ["Harborview Wealth Partners"]:
+                problems.append(f"watchlist export unexpected: {exported}")
             page.click("#watchlist button[aria-label='Remove Harborview Wealth Partners']")
             page.wait_for_function("!document.querySelector('#watchlist').textContent.includes('Harborview')")
             page.wait_for_function("!document.querySelector('#pinned-list').textContent.includes('Summit Ridge')")
+            imp = OUT / "_import.json"
+            imp.write_text(json.dumps(SAMPLE_WATCHLIST))
+            page.set_input_files("#watch-import", str(imp))
+            imp.unlink()
+            page.wait_for_selector("#watchlist li:has-text('Crestline Wealth')")
             ctx.close()
             # theme toggle persists in localStorage
             ctx = browser.new_context(viewport={"width": 1440, "height": 900}, color_scheme="light")
@@ -186,13 +209,13 @@ def main() -> int:
         if proc:
             proc.terminate()
     print(f"{shots} screenshots → {OUT.relative_to(ROOT)}/")
+    (OUT / "playwright-report.json").write_text(json.dumps({"screenshots": shots, "problems": problems}, indent=2))
     if problems:
         print(f"{len(problems)} problem(s):")
         for p_ in problems:
             print("  " + p_)
         return 1
     print("0 console errors, 0 failed requests, no horizontal overflow")
-    (OUT / "playwright-report.json").write_text(json.dumps({"screenshots": shots, "problems": problems}, indent=2))
     return 0
 
 

@@ -418,3 +418,7 @@ a.trend-name:hover { color: var(--link); }
   .firm-facts { grid-template-columns: 1fr; gap: 2px; }
   .firm-facts dd { margin-bottom: 6px; }
 }
+
+/* weekly recap holds the full M&A table: use the full content width */
+.digest.digest-wide { max-width: none; }
+.digest-wide > p { max-width: 820px; }

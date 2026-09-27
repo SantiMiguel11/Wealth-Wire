@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import calendar
+import os
 import re
 import time
 from datetime import datetime, timedelta, timezone
@@ -22,6 +23,11 @@ def from_iso(value: str) -> datetime:
 
 
 def utcnow() -> datetime:
+    """Current UTC time. WEALTHWIRE_NOW (ISO '...Z') pins the clock, for the offline demo whose fixture
+    stories are dated relative to a fixed instant. Never set in the refresh workflow."""
+    pinned = os.environ.get("WEALTHWIRE_NOW")
+    if pinned:
+        return from_iso(pinned)
     return datetime.now(timezone.utc).replace(microsecond=0)
 
 

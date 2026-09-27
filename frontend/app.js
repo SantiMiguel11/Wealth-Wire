@@ -387,7 +387,7 @@ async function renderDigest(s) {
   const items = watchFirst(d.items);
   const archived = !!s.date;
   box.replaceChildren(el("article", { class: "digest" },
-    el("div", { class: "digest-head digest-head-slim" }, el("span", { class: "digest-label" }, d.ai ? "Morning digest" : "Top stories"),
+    el("div", { class: "digest-head digest-head-slim" }, el("span", { class: "digest-label" }, d.ai ? "Digest" : "Top stories"),
       el("span", { class: "digest-date" }, fmtDate(d.date)),
       archived ? el("a", { class: "digest-file", href: "/?tab=archive", "data-nav": "" }, "← All digests") : null),
     d.ai && d.opener ? el("div", { class: "digest-opener" }, el("h2", {}, "Today in wealth management"), el("p", {}, d.opener)) : null,
@@ -397,7 +397,7 @@ async function renderDigest(s) {
     items.length ? el("ol", { class: "fallback-list digest-list" }, ...items.map((it, i) => digestItem(it, i, d.ai))) : stateBox("", "No new stories", "Nothing new since the previous refresh."),
     (d.more || []).length ? [el("h2", { class: "section-h", style: "margin-top:20px" }, "More stories"),
       el("ol", { class: "fallback-list" }, ...watchFirst(d.more).map((it, i) => digestItem(it, i, false)))] : null,
-    el("p", { class: "note digest-foot" }, META.footer_note)));
+  ));
 }
 
 /* ---------- archive + weekly ---------- */
@@ -427,7 +427,7 @@ async function renderWeekly(s) {
     if (!week) { box.replaceChildren(stateBox("", "No weekly recap yet", "Recaps are generated on Friday refreshes.")); return; }
     w = await data(`weekly/${week}.json`);
   } catch (e) { box.replaceChildren(stateBox("error", "Couldn't load the recap", e.message)); return; }
-  box.replaceChildren(el("article", { class: "digest" },
+  box.replaceChildren(el("article", { class: "digest digest-wide" },
     el("div", { class: "digest-head digest-head-slim" }, el("span", { class: "digest-label" }, "Weekly M&A recap"),
       el("span", { class: "digest-date" }, `${fmtDate(w.start)} – ${fmtDate(w.end)}`),
       el("a", { class: "digest-file", href: "/?tab=archive", "data-nav": "" }, "← Archive")),
@@ -459,7 +459,7 @@ function mnaTable(rows) {
       el("td", { "data-label": "Confidence" }, el("div", {},
         el("span", { class: "conf conf-" + r.confidence }, r.confidence === "low" ? "⚠ LOW" : "HIGH"),
         r.press_release ? el("span", { class: "conf-note" }, "press release") : null,
-        r.confidence === "low" && r.note ? el("span", { class: "conf-note" }, r.note) : null))))))));
+        r.confidence === "low" && r.note ? el("span", { class: "conf-note" }, r.note) : null)))))));
 }
 async function renderMna(s) {
   for (const a of document.querySelectorAll(".seg a")) a.setAttribute("aria-current", String(a.dataset.conf === s.conf));

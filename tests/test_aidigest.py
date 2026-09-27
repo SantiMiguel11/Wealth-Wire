@@ -236,3 +236,13 @@ def test_workflow_runs_claude_safely():
     alert = next(s for s in steps if s.get("run", "").strip() == "python -m wealthwire alert")
     assert alert["continue-on-error"] is True
     assert steps.index(alert) > names.index("Publish to the live branch (single orphan commit)")
+
+
+def test_demo_digest_fixture_still_validates(prepared):
+    """The screenshot demo feeds tests/fixtures/demo/*_output.json through the real validator."""
+    from .conftest import DEMO
+
+    _, work, inp, _ = prepared
+    assert validate_digest(json.loads((DEMO / "digest_output.json").read_text()), inp) == []
+    winput = json.loads((work / WEEKLY_INPUT).read_text())
+    assert validate_weekly(json.loads((DEMO / "weekly_output.json").read_text()), winput) == []

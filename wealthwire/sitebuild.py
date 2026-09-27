@@ -233,6 +233,8 @@ class Snapshot:
             if c["last_published"] < since:
                 continue
             for f in {(f["crd"] or f["name"].lower()): f for f in c["firms"]}.values():
+                if self.sec and not f["verified"]:
+                    continue  # with SEC data loaded, trending lists only verified advisers (they have firm pages)
                 key = f["crd"] or f["name"].lower()
                 counts[key] += 1
                 info[key] = f
