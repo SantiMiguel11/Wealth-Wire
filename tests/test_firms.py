@@ -82,3 +82,38 @@ def test_curated_aliases_resolve_against_sec_names():
     assert found(m, "Altruist is acquired by Vanguard") == ["Vanguard"]
     assert found(m, "at the vanguard of change") == []      # curated aliases must be capitalized
     assert m.curated_unresolved == ["Nope"]
+
+
+GUARD_ROWS = [
+    {"crd": "1", "legal_name": "PEIRCE CAPITAL MANAGEMENT LLC", "business_name": "PEIRCE CAPITAL MANAGEMENT", "aum_usd": 1e8},
+    {"crd": "2", "legal_name": "WISCONSIN CAPITAL MANAGEMENT, LLC", "business_name": "", "aum_usd": 1e8},
+    {"crd": "3", "legal_name": "LONG ISLAND WEALTH MANAGEMENT INC", "business_name": "", "aum_usd": 1e8},
+    {"crd": "4", "legal_name": "M & A CONSULTING GROUP, LLC", "business_name": "CAM INVESTOR SOLUTIONS", "aum_usd": 1e8},
+    {"crd": "5", "legal_name": "MCP MANAGEMENT, LP", "business_name": "", "aum_usd": 1e8},
+    {"crd": "6", "legal_name": "TRUSTAGE INVESTMENT MANAGEMENT", "business_name": "MEMBERS CAPITAL ADVISORS", "aum_usd": 1e8},
+    {"crd": "7", "legal_name": "WELLS FINANCIAL ADVISORS, INC.", "business_name": "TSW WEALTH MANAGEMENT", "aum_usd": 1e8},
+    {"crd": "8", "legal_name": "CARSON GROUP INVESTING, LLC", "business_name": "", "aum_usd": 2e9},
+    {"crd": "9", "legal_name": "CARSON ADVISORY, INC.", "business_name": "CARSON ADVISORY GROUP", "aum_usd": 8e8},
+    {"crd": "10", "legal_name": "&PARTNERS", "business_name": "&PARTNERS", "aum_usd": 3e10},
+]
+
+
+@pytest.mark.parametrize("headline", [
+    "SEC Commissioner Peirce to leave agency",                       # surname
+    "Succession drives Wisconsin advisory team to Carson Group",     # state (Carson is expected, Wisconsin not)
+    "Captrust Adds $1.2B in Double Deal for Long Island Firms",      # place
+    "RIA M&A Activity Plummets 19% in Q3",                           # 1-2 letter tokens
+    "Milemarker Launches Advisory Firm MCP AI Server",               # short acronym
+    "SEC Alleges Man Defrauded Law Enforcement Members In Scheme",   # inflected dictionary word
+    "Dumbfounded Arbitrator Slams Elder Abuse Claim Against Wells Vet",  # surname-like single token
+])
+def test_real_world_false_positives_are_guarded(headline):
+    m = SecMatcher(GUARD_ROWS, {})
+    names = {m.display(c) for c in m.firms_in(headline)}
+    assert names <= {"Carson Group Investing"}, names
+
+
+def test_brand_resolution_and_curated_ampersand():
+    m = SecMatcher(GUARD_ROWS, {"&Partners": "&PARTNERS"})
+    assert [m.display(c) for c in m.firms_in("Succession drives advisory team to Carson Group")] == ["Carson Group Investing"]
+    assert m.firms_in("$744 Million Wells Fargo Team Joins &Partners in Missouri") == ["10"]

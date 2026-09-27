@@ -35,8 +35,41 @@ consulting consultants services service strategies strategy securities trust tru
 lp llp ltd corp corporation holdings holding global national international america american americas us usa united
 states retirement fund funds equity counsel associates solutions bank banking research portfolio portfolios markets
 market fiduciary fiduciaries wealthcare pllc pc plc na n a inv mgmt mgt grp svcs llc. inc. advisory. of. for in
-first new
+first new firm firms investing
 """.split())
+# Common U.S. surnames: as single-word aliases they mostly match people in the news ("Commissioner Peirce",
+# "Fed's Williams", "COO Scott Powell"), not the adviser that happens to carry the name.
+SURNAMES = frozenset("""
+smith johnson williams brown jones garcia miller davis rodriguez martinez hernandez lopez gonzalez wilson anderson
+thomas taylor moore jackson martin lee perez thompson white harris sanchez clark ramirez lewis robinson walker young
+allen king wright scott torres nguyen hill flores green adams nelson baker hall rivera campbell mitchell carter
+roberts gomez phillips evans turner diaz parker cruz edwards collins reyes stewart morris morales murphy cook rogers
+gutierrez ortiz morgan cooper peterson bailey reed kelly howard ramos kim cox ward richardson watson brooks chavez
+wood james bennett gray mendoza ruiz hughes price alvarez castillo sanders patel myers long ross foster jimenez
+powell jenkins perry russell sullivan bell coleman butler henderson barnes gonzales fisher vasquez simmons romero
+jordan patterson alexander hamilton graham reynolds griffin wallace moreno west cole hayes bryant herrera gibson
+ellis tran medina aguilar stevens murray ford castro marshall owens harrison fernandez mcdonald woods washington
+kennedy wells vargas henry chen freeman webb tucker guzman burns crawford olson simpson porter hunter gordon mendez
+silva shaw snyder mason dixon munoz hunt hicks holmes palmer wagner black robertson boyd rose stone salazar fox
+warren mills meyer rice schmidt garza daniels ferguson nichols stephens soto weaver ryan gardner payne grant dunn
+kelley spencer hawkins arnold pierce peirce hansen peters santos hart bradley knight elliott cunningham duncan
+armstrong hudson carroll lane riley andrews alvarado ray delgado berry perkins hoffman johnston matthews pena
+richards contreras willis carpenter lawrence sandoval gensler atkins yellen bessent forbes shook
+""".split())
+# Places that name many advisers but, alone, almost always mean the place ("Wisconsin advisory team",
+# "Long Island firms", "Stop Wall Street Looting Act").
+GEO = frozenset("""
+alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|
+indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|
+nebraska|nevada|new hampshire|new jersey|new mexico|new york|north carolina|north dakota|ohio|oklahoma|oregon|
+pennsylvania|rhode island|south carolina|south dakota|tennessee|texas|utah|vermont|virginia|washington|
+west virginia|wisconsin|wyoming|carolina|carolinas|dakota|new england|midwest|pacific northwest|northwest|
+southwest|southeast|northeast|gulf coast|wall street|main street|park avenue|long island|silicon valley|
+chicago|boston|atlanta|dallas|houston|austin|denver|seattle|portland|phoenix|miami|philadelphia|pittsburgh|
+cleveland|detroit|minneapolis|st louis|nashville|charlotte|san francisco|los angeles|san diego|las vegas|
+salt lake|kansas city|baltimore|manhattan|brooklyn|boise|spokane|tacoma|omaha|tulsa|cincinnati|columbus|
+indianapolis|milwaukee|richmond|raleigh|tampa|orlando|jacksonville|new orleans|san antonio|sacramento|honolulu
+""".replace("\n", "").split("|")) - {""}
 LEGAL_SUFFIX = re.compile(r"(?:[\s,]+(?:llc|l\.l\.c\.?|inc\.?|incorporated|corp\.?|corporation|co\.?|company|ltd\.?|limited|"
                           r"l\.?p\.?|llp|l\.l\.p\.?|pllc|p\.c\.|pc|na|n\.a\.|plc))+\.?\s*$", re.I)
 BOUNDARY = re.compile(r"[:;,!?|\"“”‘()\[\]—–]|\s-\s")
@@ -97,8 +130,32 @@ def pretty_name(name: str) -> str:
     return base
 
 
+# Everyday words missing from the web2 dictionary (newer coinages); treated like dictionary words.
+EXTRA_WORDS = frozenset("lifestyle saas fintech wealthtech insurtech regtech crypto bitcoin blockchain esg online "
+                        "website podcast webinar startup ecosystem".split())
+
+
+def is_word(token: str) -> bool:
+    """In the dictionary as-is or after removing a common inflection ("members", "focused", "emerging")."""
+    words = english_words()
+    if token in words or token in EXTRA_WORDS:
+        return True
+    stems = []
+    if token.endswith("ies"):
+        stems.append(token[:-3] + "y")
+    if token.endswith("es"):
+        stems.append(token[:-2])
+    if token.endswith("s") and not token.endswith("ss"):
+        stems.append(token[:-1])
+    if token.endswith("ed"):
+        stems += [token[:-2], token[:-1]]
+    if token.endswith("ing"):
+        stems += [token[:-3], token[:-3] + "e"]
+    return any(len(st) >= 3 and st in words for st in stems)
+
+
 def distinctive(token: str) -> bool:
-    return len(token) >= 3 and token not in GENERIC and token not in english_words() and not token.isdigit()
+    return len(token) >= 3 and token not in GENERIC and not is_word(token) and not token.isdigit()
 
 
 def aliases_for(name: str) -> list[str]:
@@ -138,8 +195,12 @@ class SecMatcher:
         self.alias_to_crd: dict[str, str] = {}
         for alias, cands in candidates.items():
             toks = alias.split()
-            if len(toks) == 1 and not distinctive(toks[0]):
-                continue  # "summit", "focus", "pinnacle", "mercer" never match alone
+            if len(toks) == 1 and (not distinctive(toks[0]) or len(toks[0]) <= 3 or toks[0] in SURNAMES):
+                continue  # "summit", "mercer" (words), "powell" (surname), "mcp" (acronym) never match alone
+            if all(len(t) <= 2 for t in toks if t not in ("and", "of", "the")):
+                continue  # "m and a" (M & A Consulting) would match every "M&A" headline
+            if alias in GEO:
+                continue  # "wisconsin", "long island", "wall street"
             crds = {c for c, _ in cands}
             if len(crds) == 1:
                 self.alias_to_crd[alias] = crds.pop()
@@ -196,7 +257,7 @@ class SecMatcher:
             ti = starts[s]
             words = alias.split()
             n = len(words)
-            needs_caps = n == 1 or alias in self.curated or all(w in GENERIC or w in english_words() for w in words)
+            needs_caps = n == 1 or alias in self.curated or all(w in GENERIC or is_word(w) for w in words)
             if needs_caps and not _capitalized([o for o, _ in toks], ti, n):
                 continue
             found.append(FirmMatch(self.alias_to_crd[alias], alias, ti, ti + n))
@@ -226,7 +287,7 @@ def _capitalized(tokens: list[str], i: int, n: int) -> bool:
     if len(span) < n:
         return False
     for w in span:
-        if w.lower() in {"and", "of", "the", "for", "in"}:
+        if w.lower() in {"and", "of", "the", "for", "in", "&"}:
             continue
         if not (w[:1].isupper() or w[:1].isdigit()):
             return False

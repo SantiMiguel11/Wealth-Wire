@@ -268,3 +268,24 @@ P27. **Watchlist email.**
      - The step runs after publish, so a failed email can never block the site.
 P28. **`_work/` holds publisher teasers**, so it is git-ignored, never copied into `site/` or `state/`, and
      deleted at the end of each workflow run.
+P29. **Firm matching was tuned against the real September 2026 SEC file** (17,149 advisers), using the database
+     that the first live run saved in `live/state`. On the 75 labeled headlines, precision/recall went from
+     0.828/0.791 to 0.984/0.925. The changes are general guards plus a short curated list:
+     - Single-word aliases are rejected when they are:
+       - a common U.S. surname, since they mostly match people ("Commissioner Peirce", "Scott Powell");
+       - 1–3 letters ("MCP"; brands like LPL are curated);
+       - a dictionary word after removing an inflection ("Members", "Focused", "Emerging").
+     - Place names alone (states, large cities, "Wall Street", "Long Island") are never aliases.
+     - Aliases made only of 1–2 letter tokens are dropped, since "M & A Consulting" matched every "M&A"
+       headline.
+     - "firm", "firms" and "investing" are generic, so "Carson Group" resolves to Carson Group Investing.
+     - Curated aliases were added only where the SEC name was confirmed in the real file:
+       - Fidelity, LPL, Betterment, Altruist, Merit, Savvy Wealth, Bitwise, &Partners and Principal Financial;
+       - J.P. Morgan, mapped to the same CRD as JPMorgan.
+     Known misses:
+     - Prudential, whose advisory arm isn't SEC-registered under that name;
+     - American Portfolios, a broker-dealer;
+     - RBC, whose registered name wasn't checked;
+     - the ambiguous "Horizon".
+     Known false positive: "Luma", a fintech that shares its name with Luma Capital. The labeled set is small,
+     so the precision and recall figures show direction, not a guarantee.

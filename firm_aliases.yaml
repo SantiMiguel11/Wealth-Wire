@@ -2,6 +2,7 @@
 # "JPMorgan", "BofA") that is an ordinary English word or doesn't match the registered name, so the automatic
 # aliases can't safely catch it. Each alias maps to the SEC legal or primary business name it means; names are
 # resolved to a CRD against the current SEC file at every refresh (unresolved entries are ignored and reported).
+# Every SEC name here was checked against the September 2026 SEC file.
 # Curated aliases only match when capitalized in the headline. Keep this list short: every entry is a
 # precision risk ("Vanguard" also means "the vanguard of…" in title-cased headlines).
 aliases:
@@ -10,6 +11,7 @@ aliases:
   Merrill Lynch: Merrill Lynch, Pierce, Fenner & Smith Incorporated
   BofA: Merrill Lynch, Pierce, Fenner & Smith Incorporated
   JPMorgan: J.P. Morgan Securities LLC
+  J.P. Morgan: J.P. Morgan Securities LLC
   Goldman: Goldman Sachs & Co. LLC
   Schwab: Charles Schwab & Co., Inc.
   Raymond James: Raymond James & Associates, Inc.
@@ -18,5 +20,15 @@ aliases:
   UBS: UBS Financial Services Inc.
   Edward Jones: Edward D. Jones & Co., L.P.
   Wells Fargo: Wells Fargo Clearing Services, LLC
-  Fidelity Investments: Fidelity Personal and Workplace Advisors LLC
+  Fidelity Investments: Fidelity Management & Research Company LLC
+  Fidelity: Fidelity Management & Research Company LLC
+  LPL: LPL Financial LLC
+  Betterment: Betterment LLC
+  Altruist: Altruist LLC
+  Merit Financial Advisors: Merit Financial Group, LLC
+  Merit: Merit Financial Group, LLC
+  Savvy Wealth: Savvy Advisors, Inc.
+  Bitwise: Bitwise Investment Manager, LLC
+  "&Partners": "&Partners"
+  Principal Financial: Principal Global Investors, LLC
   BNY: BNY Mellon Securities Corporation
