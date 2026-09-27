@@ -1,0 +1,46 @@
+# On-demand check of candidate feeds from GitHub's network (the build sandbox can't reach these hosts).
+# Read-only: restores the SEC data from `live` so the wealth filter can be applied, prints results, publishes
+# nothing. Run from the Actions tab or the API; `urls` adds extra feed URLs to try.
+name: Probe feeds
+
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "Extra feed URLs to probe (space-separated)"
+        required: false
+        default: ""
+      only_extra:
+        description: "Probe only the extra URLs"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - name: Install dependencies
+        run: |
+          grep -vi '^playwright' requirements.txt > /tmp/requirements.txt
+          pip install -r /tmp/requirements.txt
+      - name: Restore SEC data from live (for the wealth filter)
+        run: |
+          python -m wealthwire state fetch _prev
+          python -m wealthwire state restore _prev
+      - name: Probe
+        env:
+          EXTRA: ${{ inputs.urls }}
+          ONLY: ${{ inputs.only_extra }}
+        run: |
+          flag=""; [ "$ONLY" = "true" ] && flag="--only-extra"
+          python scripts/probe_feeds.py --extra "$EXTRA" $flag | tee -a "$GITHUB_STEP_SUMMARY"

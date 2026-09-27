@@ -1,0 +1,23 @@
+# Candidate wire feeds for `scripts/probe_feeds.py` (run on GitHub by .github/workflows/probe-feeds.yml,
+# because the build sandbox can't reach these hosts). Directories: pages whose RSS links are listed.
+directories:
+  - https://www.prnewswire.com/rss/
+  - https://www.globenewswire.com/rss/list
+  - https://www.businesswire.com/portal/site/home/news/rss/
+  - https://www.businesswire.com/newsroom/rss
+feeds:
+  # GlobeNewswire keyword feeds
+  - https://www.globenewswire.com/RssFeed/keyword/registered%20investment%20adviser/feedTitle/GlobeNewswire%20-%20registered%20investment%20adviser
+  - https://www.globenewswire.com/RssFeed/keyword/registered%20investment%20advisor/feedTitle/GlobeNewswire%20-%20registered%20investment%20advisor
+  - https://www.globenewswire.com/RssFeed/keyword/wealth%20management/feedTitle/GlobeNewswire%20-%20wealth%20management
+  - https://www.globenewswire.com/RssFeed/keyword/RIA/feedTitle/GlobeNewswire%20-%20RIA
+  - https://www.globenewswire.com/RssFeed/keyword/family%20office/feedTitle/GlobeNewswire%20-%20family%20office
+  # GlobeNewswire industry feeds (ICB codes for asset managers / investment services)
+  - https://www.globenewswire.com/RssFeed/industry/8771-Asset%20Managers/feedTitle/GlobeNewswire%20-%20Industry%20News%20on%20Asset%20Managers
+  - https://www.globenewswire.com/RssFeed/industry/30202010-Asset%20Managers%20and%20Custodians/feedTitle/GlobeNewswire%20-%20Asset%20Managers%20and%20Custodians
+  # PR Newswire subject feeds within financial services
+  - https://www.prnewswire.com/rss/financial-services-latest-news/banking-financial-services-list.rss
+  - https://www.prnewswire.com/rss/financial-services-latest-news/acquisitions-mergers-and-takeovers-list.rss
+  - https://www.prnewswire.com/rss/financial-services-latest-news/investment-opinions-list.rss
+  # Business Wire (current URL + variants)
+  - https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkpaGVlYXg==
