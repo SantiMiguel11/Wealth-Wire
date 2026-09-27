@@ -82,7 +82,7 @@ Listed in `sources.yaml`; live status in the Sources tab and `state/SOURCES.md` 
 |---|---|---|
 | RSS (direct or discovered) | WealthManagement.com, InvestmentNews, RIABiz, Financial Planning, Kitces, SEC press releases, FINRA, AdvisorHub | AdvisorHub is gated (headline only) and left off the public site |
 | Google News RSS | ThinkAdvisor, Financial Advisor Magazine, Citywire RIA | These outlets block automated readers. Items are attributed to the outlet, with Google's redirect links left unresolved. |
-| Press-release wires | PR Newswire, GlobeNewswire, Business Wire | Kept only if they mention wealth management AND name an SEC-registered firm or read as M&A or a people move |
+| Press-release wire | GlobeNewswire (keyword feeds: registered investment advisor, wealth management, RIA, family office) | Kept only if they mention wealth management AND name an SEC-registered firm or read as M&A or a people move; award/ranking releases dropped. Per-feed counts per run in `state/wire_stats.csv`. PR Newswire is disabled (no keyword-scoped feed exists); Business Wire was removed (its robots.txt disallows the feed). |
 | SEC adviser data | Monthly Form ADV extract | Checked at most every 25 days; downloaded only when newer |
 
 Rules for every request:
@@ -181,10 +181,10 @@ python -m wealthwire eval-firms    # firm-matching precision/recall on the 75 la
 - **Google News RSS returns HTTP 503 to GitHub's runners.** Google blocks many datacenter IP ranges. The
   spec rules out any workaround, so ThinkAdvisor, FA Magazine and Citywire stay failed on the Sources tab
   until Google serves those runners again. The code path is tested on fixtures.
-- **The Business Wire feed URL currently returns an empty feed.** Business Wire publishes no stable public
-  wealth-management feed. Replace `feed_url` in `sources.yaml` if you find a working category feed.
-- **The wire filter is strict on purpose.** On the first live runs it kept 0 of 40 wire items. Press releases
-  about wealth-management deals get through; general financial PR doesn't.
+- **One press-release wire.** GlobeNewswire's keyword feeds are the only scoped wire source found. PR Newswire
+  offers no keyword feed (every subject feed probed was off-topic or the all-news firehose), so it is disabled;
+  Business Wire's robots.txt disallows its feeds, so it was removed. `state/wire_stats.csv` on `live` records,
+  per feed and run, what was fetched, too old, filtered out and kept.
 - **Firm matching is heuristic.** On 75 labeled real headlines against the real SEC file it scores
   precision 0.98 and recall 0.93. Brands that are ordinary words ("Horizon") or firms that aren't
   SEC-registered advisers (broker-dealers, Prudential) are missed. The same text as a real adviser's name

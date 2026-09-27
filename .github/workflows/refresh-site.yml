@@ -133,5 +133,6 @@ jobs:
           {
             echo "### Wealth Wire refresh"
             test -f SOURCES.md && sed -n '1,/^## Failures/p' SOURCES.md | head -40
+            test -f wire_stats.csv && { echo; echo "Wire feeds this run (full history: state/wire_stats.csv on live):"; echo '```'; grep "^$(tail -n1 wire_stats.csv | cut -d, -f1)," wire_stats.csv | cut -d, -f2- | sed 's#https://www.globenewswire.com/RssFeed/keyword/##; s#/feedTitle/[^,]*##'; echo '```'; }
             test -f firm_eval.json && python -c "import json;r=json.load(open('firm_eval.json'));print(f\"\\nFirm matching: precision {r['precision']}, recall {r['recall']} on {r['headlines']} labeled headlines (SEC file {r['sec_data_date']})\")"
           } >> "$GITHUB_STEP_SUMMARY" || true

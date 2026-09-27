@@ -51,6 +51,9 @@ def restore(prev: Path) -> dict:
         paths.db_path().parent.mkdir(parents=True, exist_ok=True)
         shutil.copy(state / "wealthwire.db", paths.db_path())
         restored["db"] = True
+    if (state / "wire_stats.csv").exists():  # appended to by every run, so it must carry forward
+        shutil.copy(state / "wire_stats.csv", paths.wire_stats_path())
+        restored["wire_stats"] = True
     for sub, target in (("digests", paths.digests_dir()), ("weekly", paths.weekly_dir())):
         if (state / sub).is_dir():
             target.mkdir(parents=True, exist_ok=True)
@@ -74,7 +77,7 @@ def save(out: Path) -> Path:
             for f in source.iterdir():
                 if f.is_file() and not f.name.startswith("."):
                     shutil.copy(f, state / sub / f.name)
-    for f in (paths.sources_md_path(), paths.firm_eval_path()):
+    for f in (paths.sources_md_path(), paths.firm_eval_path(), paths.wire_stats_path()):
         if f.exists():
             shutil.copy(f, state / f.name)
     return state

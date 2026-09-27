@@ -81,7 +81,8 @@ def test_source_methods_and_reasons(ingested):
     assert status["FINRA News"]["method"] == "failed"
     assert "robots.txt disallows" in status["FINRA News"]["reason"]
     assert "gated" in status["AdvisorHub"]["reason"]
-    assert status["PR Newswire"]["kind"] == "wire" and status["PR Newswire"]["dropped_last_run"] == 2
+    assert status["GlobeNewswire"]["kind"] == "wire" and status["GlobeNewswire"]["dropped_last_run"] == 5
+    assert "PR Newswire" not in status  # disabled: listed in SOURCES.md, never fetched
     assert sum(r["ok"] for r in status.values()) >= 7
 
 
@@ -90,7 +91,8 @@ def test_sources_md_written(ingested):
     assert "| FINRA News | feed | ❌ failed | failed |" in text
     assert "robots.txt disallows /media-center/newsreleases" in text
     assert "listing fallback" in text and "discovered RSS" in text and "Google News RSS" in text
-    assert "| PR Newswire | wire | ✅ ok | RSS |" in text and "dropped 2" in text
+    assert "| GlobeNewswire | wire | ✅ ok | RSS (4 of 4 feeds) |" in text and "kept 5 of 11 across 4 keyword feeds (4 unique)" in text
+    assert "| PR Newswire | wire | ⏸ disabled | disabled |" in text
     assert "Offline fixture run" in text and "SEC adviser data" in text
 
 

@@ -56,6 +56,7 @@ class Source:
     kind: str = "feed"          # feed | wire (press-release wire, filtered) | google_news
     query: str = ""             # google_news: the search query, e.g. "site:thinkadvisor.com"
     max_age_days: int = 0       # 0 = no limit; wires/google_news skip items older than this
+    feed_urls: list = field(default_factory=list)  # wire: several keyword-scoped feeds, merged and deduped
 
 
 def load_sources() -> list[Source]:
@@ -73,6 +74,7 @@ def load_sources() -> list[Source]:
                 kind=str(raw.get("kind") or "feed").strip(),
                 query=(raw.get("query") or "").strip(),
                 max_age_days=int(raw.get("max_age_days") or 0),
+                feed_urls=[str(u).strip() for u in raw.get("feed_urls") or [] if str(u).strip()],
             )
         )
     return out

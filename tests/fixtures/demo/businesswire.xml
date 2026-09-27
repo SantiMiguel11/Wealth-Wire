@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- SYNTHETIC TEST DATA - not real news -->
-<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
-<channel><title>Business Wire</title><link>https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkpaGVlYXg==</link><description>SYNTHETIC TEST DATA - not real news</description>
-<item><title>Kestrel Advisors Opens Boise Office to Serve Idaho Families</title><link>https://feed.businesswire.com/news-releases/kestrel-advisors-opens-boise-office-to-serve-idaho-families.html</link><guid>https://feed.businesswire.com/news-releases/kestrel-advisors-opens-boise-office-to-serve-idaho-families.html</guid><pubDate>Thu, 24 Sep 2026 05:00:00 -0400</pubDate><description><![CDATA[Kestrel Advisors, a wealth management firm based in Portland, opened its third office.]]></description></item>
-<item><title>Global Shipping Firm Reports Third Quarter Results</title><link>https://feed.businesswire.com/news-releases/global-shipping-firm-reports-third-quarter-results.html</link><guid>https://feed.businesswire.com/news-releases/global-shipping-firm-reports-third-quarter-results.html</guid><pubDate>Fri, 25 Sep 2026 04:00:00 -0400</pubDate><description><![CDATA[Revenue rose 4%.]]></description></item>
-</channel></rss>

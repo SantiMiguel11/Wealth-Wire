@@ -35,6 +35,8 @@ class SourceRun:
     dropped: int = 0
     kind: str = "feed"
     src: Source | None = None
+    feed_stats: list[dict] = field(default_factory=list)  # wires: per-feed fetched/kept/dropped
+    prefiltered: bool = False
 
     @property
     def reason(self) -> str:
@@ -86,6 +88,50 @@ class SourceIngester:
         if skipped:
             run.notes.append(f"{skipped} items from other outlets skipped")
 
+    def _wire_feeds(self, run: SourceRun, src: Source) -> None:
+        """Several keyword-scoped wire feeds: each is fetched and filtered on its own (so the stats file can show
+        which feed earns its keep), then kept items are merged, deduped by canonical URL."""
+        merged: dict[str, Item] = {}
+        ok_urls = []
+        for url in src.feed_urls:
+            row = {"feed": url, "status": "", "fetched": 0, "kept": 0, "dropped": 0}
+            allowed, why = self.fetcher.robots.check(url)
+            if not allowed:  # wires are corporate sites; their robots.txt is respected even for feeds
+                row["status"] = f"skipped, {why}"
+                run.attempts.append(f"{url}: skipped, {why}")
+                run.feed_stats.append(row)
+                continue
+            res = self.fetcher.get(url, conditional=True)
+            if res.not_modified:
+                row["status"] = "304"
+                ok_urls.append(url)
+            elif not res.ok:
+                row["status"] = res.describe_failure()
+                run.attempts.append(f"{url}: {row['status']}")
+            else:
+                items, parsed = parse_feed(res.content, src.name, self.now, gated=src.gated, local_tz=self.local_tz)
+                if not looks_like_feed(parsed):
+                    row["status"] = "not a feed"
+                    run.attempts.append(f"{url}: not a feed (content-type {res.content_type or 'unknown'})")
+                else:
+                    sub = SourceRun(src.name, kind=src.kind, src=src, items=items)
+                    self._filter(sub)
+                    row.update(status="ok", fetched=len(items), kept=len(sub.items), dropped=sub.dropped)
+                    ok_urls.append(url)
+                    for it in sub.items:
+                        merged.setdefault(it.canonical_url, it)
+            run.feed_stats.append(row)
+        if ok_urls:
+            run.ok, run.method, run.url_used = True, "RSS" if len(src.feed_urls) == 1 else f"RSS ({len(ok_urls)} of {len(src.feed_urls)} feeds)", ok_urls[0]
+            run.items = list(merged.values())
+            run.fetched = sum(r["fetched"] for r in run.feed_stats)
+            run.dropped = sum(r["dropped"] for r in run.feed_stats)
+            run.notes.append(f"wealth-management filter kept {sum(r['kept'] for r in run.feed_stats)} of {run.fetched} "
+                             f"across {len(ok_urls)} keyword feeds ({len(run.items)} unique)")
+            if len(ok_urls) < len(src.feed_urls):
+                run.notes.append("; ".join(run.attempts))
+        run.prefiltered = True
+
     def _filter(self, run: SourceRun) -> None:
         """Age limit (wires, Google News) and the wealth-management filter (wires)."""
         src = run.src
@@ -109,6 +155,11 @@ class SourceIngester:
         run.items = kept
 
     def _try_feed(self, run: SourceRun, src: Source, url: str, method: str) -> bool:
+        if src.kind == "wire":
+            allowed, why = self.fetcher.robots.check(url)
+            if not allowed:
+                run.attempts.append(f"{url}: skipped, {why}")
+                return False
         res = self.fetcher.get(url, conditional=True)
         if res.not_modified:
             run.method, run.url_used, run.ok = method, url, True
@@ -133,6 +184,11 @@ class SourceIngester:
             run.method = "disabled"
             run.notes.append("disabled in sources.yaml")
             return run
+        if src.kind == "wire" and src.feed_urls:
+            self._wire_feeds(run, src)
+            if not run.ok:
+                run.method = "failed"
+            return self._finish(run)
         if src.kind == "google_news":
             self._google_news(run, src)
             if not run.ok:
@@ -215,9 +271,14 @@ class SourceIngester:
         return self._finish(run)
 
     def _finish(self, run: SourceRun) -> SourceRun:
-        raw = len(run.items)
-        self._filter(run)
-        run.fetched = raw
+        if not run.prefiltered:
+            raw = len(run.items)
+            self._filter(run)
+            run.fetched = raw
+            if run.kind == "wire":
+                run.feed_stats.append({"feed": run.url_used or (run.src.feed_url if run.src else ""),
+                                       "status": "ok" if run.ok else "failed", "fetched": raw,
+                                       "kept": len(run.items), "dropped": run.dropped})
         new = 0
         for it in run.items:
             cur = self.conn.execute(
@@ -240,6 +301,37 @@ class SourceIngester:
         )
         self.conn.commit()
         return run
+
+
+WIRE_STATS_COLUMNS = ["run_at", "source", "feed", "status", "fetched", "too_old", "dropped_by_filter", "kept",
+                      "source_new_items"]
+WIRE_STATS_KEEP_DAYS = 120
+
+
+def append_wire_stats(runs: list[SourceRun], now: datetime, path: Path | None = None) -> Path:
+    """One row per wire feed per run: what came in, what the age limit and the wealth filter removed, what was
+    kept, and how many of the source's kept items were new. Rows older than 120 days are pruned."""
+    import csv
+
+    path = path or paths.wire_stats_path()
+    rows: list[dict] = []
+    if path.exists():
+        with path.open(newline="", encoding="utf-8") as fh:
+            cutoff = to_iso(now - timedelta(days=WIRE_STATS_KEEP_DAYS))
+            rows = [r for r in csv.DictReader(fh) if r.get("run_at", "") >= cutoff]
+    for run in runs:
+        if run.kind != "wire" or run.method == "disabled":
+            continue
+        for st in run.feed_stats or [{"feed": "", "status": run.method, "fetched": 0, "kept": 0, "dropped": 0}]:
+            rows.append({"run_at": to_iso(now), "source": run.name, "feed": st["feed"], "status": st["status"],
+                         "fetched": st["fetched"], "too_old": max(st["fetched"] - st["kept"] - st["dropped"], 0),
+                         "dropped_by_filter": st["dropped"], "kept": st["kept"], "source_new_items": run.new})
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=WIRE_STATS_COLUMNS)
+        w.writeheader()
+        w.writerows(rows)
+    return path
 
 
 def write_sources_md(runs: list[SourceRun], now: datetime, cfg: dict, demo: bool, path: Path | None = None,
@@ -340,6 +432,7 @@ def run_ingest(fixtures: Path | None = None, now: datetime | None = None, quiet:
         db.set_meta(conn, "demo", "1" if fixtures else "0")
         conn.commit()
         write_sources_md(runs, now, cfg, demo=bool(fixtures), sec_status=sec_status)
+        append_wire_stats(runs, now)
         result = recompute(conn, now=now)
         conn.close()
         summary = {

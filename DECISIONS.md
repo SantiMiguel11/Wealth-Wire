@@ -343,3 +343,32 @@ F5. **Regression test on real data.** `tests/fixtures/sec_firms_real_subset.csv`
 F6. **`gh` is not installed in this build environment.** Workflows are triggered with the GitHub API
     (`workflow_dispatch` via the GitHub MCP tool), which is the same event `gh workflow run` sends. Run logs are
     read the same way.
+F7. **Wire feeds are probed from GitHub, not guessed.** `.github/workflows/probe-feeds.yml` runs
+    `scripts/probe_feeds.py` on demand. It uses the same polite fetcher, restores the SEC data, lists each wire's
+    RSS directory, and shows per feed the item count, newest date and how many pass the wealth filter.
+    Results (2026-09-27):
+    - GlobeNewswire keyword feeds work and are well scoped. Of 20 items each, the filter kept:
+      - "registered investment advisor": 12;
+      - "wealth management": 10;
+      - "RIA": 12;
+      - "family office": 11.
+    - "registered investment adviser" (-er) is stale (newest item 2011).
+    - The old GlobeNewswire M&A subject feed kept 0 of 20.
+F8. **PR Newswire is disabled, not replaced.** It has no keyword-scoped feed. Every financial-services subject
+    slug probed either returned the all-news firehose (identical items, empty feed title) or was off-topic:
+    banking kept 0, M&A across all industries kept 1 irrelevant item. It stays in `sources.yaml` with
+    `enabled: false` and the reason, so it shows as "Disabled" on the Sources page.
+F9. **Business Wire is removed.** `feed.businesswire.com/robots.txt` disallows `/rss/home/`, and
+    `www.businesswire.com/robots.txt` returns 403, which is treated as disallow-all. Configured trade feeds
+    still skip the robots check, as in phase 1, but **wire feeds are now robots-checked**, because wires are
+    corporate sites that state their rules. The old configured Business Wire URL had been fetched without that
+    check.
+F10. **Award and ranking releases are dropped from wires** unless the release is also a deal. Examples:
+     "Named to Barron's Top 100", "Earns Great Place To Work Certification", "Wins … Award". These made up a
+     large share of what the keyword feeds' filter kept, and they are promotion, not news.
+F11. **Wire stats file.** Every run appends one row per wire feed to `wire_stats.csv`, carried in `state/` on
+     `live`, with rows older than 120 days pruned. Columns:
+     - run_at, source, feed, status;
+     - fetched, too_old, dropped_by_filter, kept;
+     - source_new_items (new after merging the feeds; a release in two keyword feeds counts once).
+     The run summary prints that run's rows. Disabled wires write no rows.

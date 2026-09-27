@@ -45,3 +45,8 @@ def work_dir() -> Path:
 
 def firm_eval_path() -> Path:
     return data_home() / "firm_eval.json"
+
+
+def wire_stats_path() -> Path:
+    """Per-run, per-feed counts for the press-release wires (kept in private state on `live`)."""
+    return data_home() / "wire_stats.csv"

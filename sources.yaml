@@ -84,26 +84,28 @@ sources:
     enabled: true
 
   # --- press-release wires (§5): only wealth-management items are kept ---
+  # PR Newswire has no keyword-scoped feed: every subject slug probed from GitHub (fund managers, financial
+  # advisors, wealth management, personnel…) either falls back to the all-news firehose or is off-topic (banking,
+  # M&A across all industries) — 0 wealth items. Disabled until a scoped feed exists (see DECISIONS F8).
   - name: PR Newswire
     homepage: https://www.prnewswire.com
     kind: wire
     feed_url: https://www.prnewswire.com/rss/financial-services-latest-news/financial-services-latest-news-list.rss
     max_age_days: 14
     gated: false
-    enabled: true
+    enabled: false
 
+  # GlobeNewswire keyword feeds (verified from GitHub's network 2026-09-27). Each feed is filtered on its own
+  # and the stats go to state/wire_stats.csv. "registered investment adviser" (-er spelling) was dropped: its
+  # newest item is from 2011. Business Wire was removed: its robots.txt disallows the feed path.
   - name: GlobeNewswire
     homepage: https://www.globenewswire.com
     kind: wire
-    feed_url: https://www.globenewswire.com/RssFeed/subjectcode/27-Mergers%20And%20Acquisitions/feedTitle/GlobeNewswire%20-%20Mergers%20And%20Acquisitions
-    max_age_days: 14
-    gated: false
-    enabled: true
-
-  - name: Business Wire
-    homepage: https://www.businesswire.com
-    kind: wire
-    feed_url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkpaGVlYXg==
+    feed_urls:
+      - https://www.globenewswire.com/RssFeed/keyword/registered%20investment%20advisor/feedTitle/GlobeNewswire%20-%20registered%20investment%20advisor
+      - https://www.globenewswire.com/RssFeed/keyword/wealth%20management/feedTitle/GlobeNewswire%20-%20wealth%20management
+      - https://www.globenewswire.com/RssFeed/keyword/RIA/feedTitle/GlobeNewswire%20-%20RIA
+      - https://www.globenewswire.com/RssFeed/keyword/family%20office/feedTitle/GlobeNewswire%20-%20family%20office
     max_age_days: 14
     gated: false
     enabled: true

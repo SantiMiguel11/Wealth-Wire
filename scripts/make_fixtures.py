@@ -330,29 +330,40 @@ def main() -> None:
             g_items.append(gnews_item("Unrelated Story From Another Outlet", "Some Other Site", "https://example.org", 3))
         add(gnews_url(query), write(fname, rss(f'"{query}" - Google News', "https://news.google.com", g_items)))
 
-    # Press-release wires (§5): wealth-management releases are kept, everything else is dropped.
+    # Press-release wire (§5, follow-up 2): GlobeNewswire keyword feeds, each filtered on its own; the same
+    # release can appear in several keyword feeds (merged by URL). Award/ranking releases are dropped.
+    gnw = "https://www.globenewswire.com/RssFeed/keyword/{0}/feedTitle/GlobeNewswire%20-%20{0}"
+    harborview = (27, "Harborview Wealth Partners Announces Acquisition of Summit Ridge Advisors, a $1.2 Billion Registered Investment Adviser",
+                  "SEATTLE -- Harborview Wealth Partners, a wealth management firm, today announced it has acquired Summit Ridge Advisors.")
+    crestline = (21.5, "Crestline Wealth Completes Acquisition of Riverbend Financial, a $900 Million RIA",
+                 "DALLAS -- Crestline Wealth, a registered investment adviser, closed its acquisition of Riverbend Financial.")
     wires = {
-        "PR Newswire": ("https://www.prnewswire.com/rss/financial-services-latest-news/financial-services-latest-news-list.rss", "prnewswire.xml", [
-            (27, "Harborview Wealth Partners Announces Acquisition of Summit Ridge Advisors, a $1.2 Billion Registered Investment Adviser",
-             "SEATTLE -- Harborview Wealth Partners, a wealth management firm, today announced it has acquired Summit Ridge Advisors."),
+        "registered%20investment%20advisor": ("gnw_ria_adviser.xml", [
+            harborview,
             (50, "Meridian Capital Partners Completes Acquisition of Cedar Lane Private Wealth",
              "PORTLAND, Ore. -- Meridian Capital Partners, an independent RIA, completed its acquisition of Cedar Lane Private Wealth."),
             (12, "Acme Biotech Announces Positive Phase 2 Results for ACM-101", "The trial met its primary endpoint."),
             (9, "National Survey: Financial Advisors Expect Client Growth in 2027", "A survey of 500 financial advisors found optimism."),
         ]),
-        "GlobeNewswire": ("https://www.globenewswire.com/RssFeed/subjectcode/27-Mergers%20And%20Acquisitions/feedTitle/GlobeNewswire%20-%20Mergers%20And%20Acquisitions", "globenewswire.xml", [
-            (21.5, "Crestline Wealth Completes Acquisition of Riverbend Financial, a $900 Million RIA",
-             "DALLAS -- Crestline Wealth, a registered investment adviser, closed its acquisition of Riverbend Financial."),
-            (15, "Industrial Holdings Corp. Merges With Regional Steel Supplier", "The combined company will have 4,000 employees."),
-        ]),
-        "Business Wire": ("https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkpaGVlYXg==", "businesswire.xml", [
+        "wealth%20management": ("gnw_wealth_management.xml", [
+            harborview,                                           # duplicate across keyword feeds → one item
             (31, "Kestrel Advisors Opens Boise Office to Serve Idaho Families", "Kestrel Advisors, a wealth management firm based in Portland, opened its third office."),
             (8, "Global Shipping Firm Reports Third Quarter Results", "Revenue rose 4%."),
+            (500, "Old Wealth Management Release From Last Spring", "A wealth management firm said something long ago."),  # > 14 days
+        ]),
+        "RIA": ("gnw_ria.xml", [
+            crestline,
+            (15, "Industrial Holdings Corp. Merges With Regional Steel Supplier", "The combined company will have 4,000 employees."),
+        ]),
+        "family%20office": ("gnw_family_office.xml", [
+            (18, "Oakmont Family Office Named to Barron's Top 100 RIA Firms List", "Oakmont Family Office, a registered investment adviser, was recognized."),
         ]),
     }
-    for wname, (wurl, wfile, witems) in wires.items():
-        items = [rss_item(t, f"https://{wurl.split('/')[2]}/news-releases/{slug(t)}.html", rfc(h, -4), d) for h, t, d in witems]
-        add(wurl, write(wfile, rss(wname, wurl, items)))
+    add("https://www.globenewswire.com/robots.txt", body=allow_all, content_type="text/plain")
+    for kw, (wfile, witems) in wires.items():
+        wurl = gnw.format(kw)
+        items = [rss_item(t, f"https://www.globenewswire.com/news-release/{slug(t)}.html", rfc(h, -4), d) for h, t, d in witems]
+        add(wurl, write(wfile, rss(f"GlobeNewswire - {kw.replace('%20', ' ')}", wurl, items)))
 
     # SEC Investment Adviser Information Reports — synthetic monthly file (fictional firms, fake CRDs 9990xx)
     import csv

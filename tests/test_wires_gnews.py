@@ -94,7 +94,9 @@ def test_wire_filter(sec, title, desc, keep):
 def test_wire_drop_counts_and_press_release_effects(ingested):
     conn = db.connect()
     st = {r["name"]: (r["items_last_run"], r["new_last_run"], r["dropped_last_run"]) for r in conn.execute("SELECT * FROM source_status")}
-    assert st["PR Newswire"] == (4, 2, 2) and st["GlobeNewswire"] == (2, 1, 1) and st["Business Wire"] == (2, 1, 1)
+    # 4 keyword feeds: 11 items fetched, 5 kept (4 unique: Harborview is in two feeds), 5 dropped, 1 too old
+    assert st["GlobeNewswire"] == (11, 4, 5)
+    assert "Business Wire" not in st and "PR Newswire" not in st
     from wealthwire.sitebuild import collect
 
     files = collect(conn, NOW)
