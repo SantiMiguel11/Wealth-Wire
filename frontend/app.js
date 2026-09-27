@@ -1,103 +1,148 @@
-/* Wealth Wire frontend — vanilla JS, no build step.
-   Reads ONLY the static files under /data/ described in DATA-CONTRACT.md. The URL is the source of truth
-   for the current view and filters; the watchlist lives in this browser's localStorage. */
+/* Fiduciary Duty frontend — vanilla JS, no build step.
+   Reads ONLY the static files under /data/ described in DATA-CONTRACT.md. The URL is the source of truth for
+   the current view and filters; the watchlist lives in this browser's localStorage. */
 "use strict";
 
 const $ = (sel, root = document) => root.querySelector(sel);
+const TZ = "America/Los_Angeles";
+const TABS = ["today", "feed", "mna", "archive", "weekly", "sources"];
+const TAB_ALIASES = { digest: "today", deals: "mna" };
 const CAT_CLASS = {
   "M&A": "cat-mna", "People Moves": "cat-people", "Regulation": "cat-reg", "Wealthtech": "cat-tech",
   "Products & Funds": "cat-prod", "Markets": "cat-mkt", "Other": "cat-other",
 };
-const TABS = ["feed", "digest", "archive", "weekly", "mna", "sources"];
 const REGIONS = { "Pacific Northwest": ["WA", "OR", "ID"] };
+const STATE_NAMES = {
+  AL: "Alabama", AK: "Alaska", AZ: "Arizona", AR: "Arkansas", CA: "California", CO: "Colorado", CT: "Connecticut", DE: "Delaware",
+  DC: "District of Columbia", FL: "Florida", GA: "Georgia", HI: "Hawaii", ID: "Idaho", IL: "Illinois", IN: "Indiana", IA: "Iowa",
+  KS: "Kansas", KY: "Kentucky", LA: "Louisiana", ME: "Maine", MD: "Maryland", MA: "Massachusetts", MI: "Michigan", MN: "Minnesota",
+  MS: "Mississippi", MO: "Missouri", MT: "Montana", NE: "Nebraska", NV: "Nevada", NH: "New Hampshire", NJ: "New Jersey",
+  NM: "New Mexico", NY: "New York", NC: "North Carolina", ND: "North Dakota", OH: "Ohio", OK: "Oklahoma", OR: "Oregon",
+  PA: "Pennsylvania", RI: "Rhode Island", SC: "South Carolina", SD: "South Dakota", TN: "Tennessee", TX: "Texas", UT: "Utah",
+  VT: "Vermont", VA: "Virginia", WA: "Washington", WV: "West Virginia", WI: "Wisconsin", WY: "Wyoming", PR: "Puerto Rico",
+};
+const SHORT_OUTLET = {
+  "Citywire RIA": "Citywire", "Financial Advisor Magazine": "FA Magazine", "SEC Press Releases": "SEC", "FINRA News": "FINRA",
+};
+const DEAL_TYPE = { acquisition: "Acquisition", stake: "Minority", merger: "Merger", recapitalization: "Recap" };
+const DEAL_VERB = { acquisition: "acquires", stake: "invests in", merger: "merges with", recapitalization: "recapitalizes" };
 const PAGE = 50;
-const PIN_DAYS = 7;
 const WATCH_KEY = "ww-watchlist";
+const THEME_KEY = "fd-theme";
 
 /* ---------- data layer: /data/*.json only ---------- */
 const cache = new Map();
 function data(path) {
   if (!cache.has(path)) {
     cache.set(path, fetch("/data/" + path, { headers: { Accept: "application/json" } }).then(async (r) => {
-      if (!r.ok) throw new Error(`Couldn't load ${path} (HTTP ${r.status})`);
+      if (!r.ok) throw new Error(`Couldn't load ${path} (HTTP ${r.status}).`);
       return r.json();
-    }).catch((e) => { cache.delete(path); throw e.message ? e : new Error("Network error loading " + path); }));
+    }).catch((e) => { cache.delete(path); throw /^Couldn't load/.test(e.message) ? e : new Error(`Couldn't load ${path} (network error).`); }));
   }
   return cache.get(path);
 }
 async function optional(path, fallback) { try { return await data(path); } catch (e) { return fallback; } }
 
-/* ---------- helpers ---------- */
-function el(tag, attrs = {}, ...children) {
-  const node = document.createElement(tag);
-  for (const [k, v] of Object.entries(attrs)) {
-    if (v === null || v === undefined || v === false) continue;
-    if (k === "class") node.className = v;
-    else if (k.startsWith("on")) node.addEventListener(k.slice(2), v);
-    else node.setAttribute(k, v === true ? "" : v);
+/* ---------- DOM helpers ---------- */
+function el(tag, attrs, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v == null || v === false) continue;
+    if (k.startsWith("on") && typeof v === "function") n.addEventListener(k.slice(2), v);
+    else if (k === "class") n.className = v;
+    else n.setAttribute(k, v === true ? "" : String(v));
   }
-  for (const c of children.flat()) {
-    if (c === null || c === undefined || c === false) continue;
-    node.append(c instanceof Node ? c : document.createTextNode(String(c)));
-  }
-  return node;
+  const add = (c) => {
+    if (c == null || c === false) return;
+    if (Array.isArray(c)) c.forEach(add);
+    else n.append(c instanceof Node ? c : String(c));
+  };
+  kids.forEach(add);
+  return n;
 }
-const safeUrl = (u) => (/^https?:\/\//i.test(u || "") ? u : null);
-const extLink = (href, text, cls) => el("a", { href: safeUrl(href), class: cls, target: "_blank", rel: "noopener noreferrer" }, text);
-const catChip = (cat) => el("span", { class: "cat " + (CAT_CLASS[cat] || "cat-other") }, cat || "Other");
-function firmLink(f, cls = "firm") {
-  return f.slug ? el("a", { class: cls, href: "/firm/" + encodeURIComponent(f.slug), "data-nav": "" }, f.name)
-    : el("span", { class: cls + " unverified", title: "Not found in SEC adviser data (unverified)" }, f.name);
+const put = (node, ...kids) => node.replaceChildren(...kids.flat(Infinity).filter((k) => k != null && k !== false));
+const safeUrl = (u) => (/^https?:\/\//i.test(u || "") ? u : "#");
+const ext = (href, text, cls) => el("a", { href: safeUrl(href), class: cls, target: "_blank", rel: "noopener" }, text);
+const nav = (href, text, cls, extra) => el("a", { href, class: cls, "data-nav": "", ...(extra || {}) }, text);
+const pad2 = (n) => String(n).padStart(2, "0");
+const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const plural = (n, one, many) => `${n} ${n === 1 ? one : (many || one + "s")}`;
+
+/* ---------- formatting (Pacific time) ---------- */
+const dtf = (opts) => new Intl.DateTimeFormat("en-US", { timeZone: TZ, ...opts });
+const F = {
+  key: dtf({ year: "numeric", month: "2-digit", day: "2-digit" }),
+  time: dtf({ hour: "numeric", minute: "2-digit" }),
+  wday: dtf({ weekday: "short" }),
+  long: dtf({ weekday: "long", month: "long", day: "numeric", year: "numeric" }),
+  dayHead: dtf({ weekday: "long", month: "long", day: "numeric" }),
+  md: dtf({ month: "short", day: "numeric" }),
+};
+const U = { // dates given as YYYY-MM-DD are calendar dates; format them in UTC so they never shift a day
+  long: new Intl.DateTimeFormat("en-US", { timeZone: "UTC", weekday: "long", month: "long", day: "numeric", year: "numeric" }),
+  mdy: new Intl.DateTimeFormat("en-US", { timeZone: "UTC", month: "short", day: "numeric", year: "numeric" }),
+  md: new Intl.DateTimeFormat("en-US", { timeZone: "UTC", month: "short", day: "numeric" }),
+  mdLong: new Intl.DateTimeFormat("en-US", { timeZone: "UTC", month: "long", day: "numeric" }),
+  wday: new Intl.DateTimeFormat("en-US", { timeZone: "UTC", weekday: "long" }),
+  wdayShort: new Intl.DateTimeFormat("en-US", { timeZone: "UTC", weekday: "short" }),
+};
+function dayKey(ts) { // Pacific calendar date of a timestamp → "YYYY-MM-DD"
+  const p = Object.fromEntries(F.key.formatToParts(new Date(ts)).map((x) => [x.type, x.value]));
+  return `${p.year}-${p.month}-${p.day}`;
 }
+const dateOnly = (d) => new Date(d + "T00:00:00Z");
+const fmtDate = (d, f = U.mdy) => (d ? f.format(dateOnly(d)) : "");
+const fmtTime = (ts) => F.time.format(new Date(ts));
+function addDays(d, n) { const x = dateOnly(d); x.setUTCDate(x.getUTCDate() + n); return x.toISOString().slice(0, 10); }
+function mondayOf(d) { const x = dateOnly(d); const wd = (x.getUTCDay() + 6) % 7; return addDays(d, -wd); }
+const todayKey = () => dayKey(Date.now());
 function fmtAum(v) {
-  if (!v) return "";
-  for (const [n, s] of [[1e12, "T"], [1e9, "B"], [1e6, "M"], [1e3, "K"]]) {
-    if (v >= n) { const x = v / n; return "$" + (x >= 100 ? x.toFixed(0) : x >= 10 ? x.toFixed(1).replace(/\.0$/, "") : x.toFixed(2).replace(/0$/, "").replace(/\.0$/, "")) + s; }
+  if (v == null || !isFinite(v) || v <= 0) return "—";
+  const trim = (x) => x.toFixed(2).replace(/\.?0+$/, "");
+  if (v >= 1e12) return "$" + trim(v / 1e12) + "T";
+  if (v >= 1e9) return "$" + (v >= 1e11 ? Math.round(v / 1e9) : trim(v / 1e9)) + "B";
+  return "$" + Math.round(v / 1e6) + "M";
+}
+const short = (name) => SHORT_OUTLET[name] || name;
+
+/* ---------- small components ---------- */
+function catTag(c) { return el("span", { class: "cat " + (CAT_CLASS[c] || "cat-other") }, c || "Other"); }
+function aumFig(v, source, asOf, compact) {
+  if (!v) return null;
+  if (source === "sec") {
+    const label = `SEC-reported AUM (as of ${asOf ? fmtDate(asOf) : "the latest SEC file"})`;
+    return el("span", { class: "aum aum-sec", title: label },
+      fmtAum(v), " ", el("span", { class: "aum-note" }, compact ? "SEC" + (asOf ? " · " + fmtDate(asOf, U.md) : "") : label));
   }
-  return "$" + Math.round(v);
+  return el("span", { class: "aum", title: "AUM stated in the headline" }, fmtAum(v), compact ? null : [" ", el("span", { class: "aum-note" }, "AUM")]);
 }
-const dFmt = new Intl.DateTimeFormat(undefined, { month: "short", day: "numeric" });
-const tFmt = new Intl.DateTimeFormat(undefined, { hour: "2-digit", minute: "2-digit", hour12: false });
-const fullFmt = new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeStyle: "short" });
-const longDay = new Intl.DateTimeFormat(undefined, { weekday: "long", month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
-function fmtTime(iso) {
-  if (!iso) return "";
-  const d = new Date(iso);
-  return d.toDateString() === new Date().toDateString() ? tFmt.format(d) : dFmt.format(d) + " " + tFmt.format(d);
+function outletList(sources, { prefix = true, shortNames = false } = {}) {
+  const list = (sources || []).filter((s) => s && s.name);
+  if (!list.length) return null;
+  return el("span", { class: "outlets" }, prefix ? "Via" : null,
+    list.map((s, i) => [ext(s.url, shortNames ? short(s.name) : s.name), i < list.length - 1 ? "·" : null]));
 }
-const fmtDay = (iso) => (iso ? dFmt.format(new Date(iso)) : "");
-const fmtDate = (ymd) => (ymd ? longDay.format(new Date(ymd + "T12:00:00Z")) : "");
-function relAgo(iso) {
-  if (!iso) return "never";
-  const mins = Math.round((Date.now() - new Date(iso).getTime()) / 60000);
-  if (mins < 1) return "just now";
-  if (mins < 60) return mins + "m ago";
-  if (mins < 48 * 60) return Math.round(mins / 60) + "h ago";
-  return Math.round(mins / 1440) + "d ago";
+function firmChips(firms) {
+  const list = (firms || []).filter((f) => f && f.name);
+  if (!list.length) return null;
+  return el("span", { class: "firm-chips" }, list.map((f) => (f.slug
+    ? nav(`/firm/${encodeURIComponent(f.slug)}`, f.name, "firm-chip")
+    : el("span", { class: "firm-chip" }, f.name))));
 }
-function stateBox(kind, title, body, action) {
-  return el("div", { class: "state " + (kind || ""), role: kind === "error" ? "alert" : null },
-    el("h3", {}, title), body ? el("p", {}, body) : null, action || null);
+function sectionHead(label, right) { return el("div", { class: "section-head" }, el("span", {}, label), right || null); }
+function skeletons(n = 4) { return Array.from({ length: n }, () => el("div", { class: "skeleton", "aria-hidden": "true" }, el("span"), el("span"), el("span"))); }
+function errorState(err, retry) {
+  return el("p", { class: "state error", role: "alert" }, err.message + " ",
+    el("button", { type: "button", onclick: retry || (() => location.reload()) }, "Retry"));
 }
-function skeletons(n) {
-  const frag = document.createDocumentFragment();
-  for (let i = 0; i < n; i++) frag.append($("#tpl-skeleton").content.cloneNode(true));
-  return frag;
-}
-function aumBlock(c) {
-  if (!c.aum_usd) return null;
-  const sec = c.aum_source === "sec";
-  return el("div", { class: "aum" + (sec ? " aum-sec" : ""), title: sec ? `SEC-reported AUM (as of ${c.sec_aum_as_of || "latest SEC file"})` : "AUM stated in the headline or teaser" },
-    fmtAum(c.aum_usd), el("small", {}, sec ? "SEC AUM" : "AUM"));
+function emptyState(text, withClear) {
+  return el("p", { class: "state" }, text + (withClear ? " " : ""), withClear ? el("button", { type: "button", onclick: clearFilters }, "Clear filters") : null);
 }
 
 /* ---------- watchlist (localStorage; never leaves the browser) ---------- */
 const Watch = {
   load() {
-    try {
-      const raw = JSON.parse(localStorage.getItem(WATCH_KEY) || "null");
-      return Watch.clean(raw);
-    } catch (e) { return []; }
+    try { return Watch.clean(JSON.parse(localStorage.getItem(WATCH_KEY) || "null")); } catch (e) { return []; }
   },
   clean(raw) {
     const list = Array.isArray(raw) ? raw : (raw && Array.isArray(raw.firms) ? raw.firms : []);
@@ -106,7 +151,7 @@ const Watch = {
       const name = String((f && (f.name || f)) || "").trim().replace(/\s+/g, " ").slice(0, 80);
       if (!name || seen.has(name.toLowerCase())) continue;
       seen.add(name.toLowerCase());
-      const aliases = (Array.isArray(f.aliases) ? f.aliases : []).map((a) => String(a).trim()).filter(Boolean).slice(0, 20);
+      const aliases = (f && Array.isArray(f.aliases) ? f.aliases : []).map((a) => String(a).trim()).filter(Boolean).slice(0, 20);
       out.push({ name, aliases });
     }
     return out;
@@ -117,131 +162,281 @@ const Watch = {
 };
 let WATCH = Watch.load();
 let MATCHERS = [];
-
 const norm = (s) => s.toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9]+/g, " ").trim();
-const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-function compileWatch(firmIndex) {
+function compileWatch() {
   MATCHERS = WATCH.map((f) => {
     const terms = [f.name, ...f.aliases].map((t) => t.trim()).filter((t) => t.replace(/\s/g, "").length >= 3);
-    // SEC names: firms whose name or legal name starts with one of the terms (whole words)
     const crds = new Set();
-    for (const firm of firmIndex) {
+    for (const firm of FIRMS) { // SEC names whose name or legal name starts with a watchlist term (whole words)
       const names = [firm.name, firm.legal_name].filter(Boolean).map(norm);
       if (terms.some((t) => names.some((n) => n === norm(t) || n.startsWith(norm(t) + " ")))) {
         crds.add(firm.crd);
         for (const n of [firm.name, firm.legal_name]) if (n && !terms.includes(n)) terms.push(n);
       }
     }
-    const re = terms.length ? new RegExp("(?<![\\w&-])(?:" + terms.sort((a, b) => b.length - a.length)
+    const re = terms.length ? new RegExp("(?<![\\w&-])(?:" + terms.slice().sort((a, b) => b.length - a.length)
       .map((t) => escRe(t).replace(/\s+/g, "\\s+")).join("|") + ")(?![\\w&]|-\\w)", "i") : null;
     return { name: f.name, re, crds };
   });
 }
 function watchHits(c) {
+  if (!c) return [];
+  const firms = c.firms || [];
   const hits = [];
   for (const m of MATCHERS) {
-    if ((m.re && m.re.test(c.headline)) || c.firms.some((f) => f.crd && m.crds.has(f.crd))
-      || (m.re && c.firms.some((f) => m.re.test(f.name)))) hits.push(m.name);
+    if ((m.re && m.re.test(c.headline || "")) || firms.some((f) => f.crd && m.crds.has(f.crd))
+      || (m.re && firms.some((f) => m.re.test(f.name || "")))) hits.push(m.name);
   }
   return hits;
 }
+const itemHits = (it) => watchHits(CL_BY_ID.get(it.cluster_id) || { headline: it.headline, firms: it.firms });
 
-/* ---------- URL state ---------- */
+/* ---------- state ---------- */
+let META = null, CLUSTERS = [], FIRMS = [], FIRM_BY_SLUG = new Map(), CL_BY_ID = new Map(), SEC_DATE = null;
+let feedShown = PAGE;
+let prevUrl = null;
+
 function readState() {
   const p = new URLSearchParams(location.search);
   const firm = location.pathname.match(/^\/firm\/([^/]+)\/?$/);
+  let tab = p.get("tab") || "today";
+  tab = TAB_ALIASES[tab] || tab;
+  if (!TABS.includes(tab)) tab = "today";
   return {
-    tab: firm ? "firm" : (TABS.includes(p.get("tab")) ? p.get("tab") : "feed"),
-    slug: firm ? decodeURIComponent(firm[1]) : "",
-    q: p.get("q") || "", source: p.get("source") || "",
-    category: (p.get("category") || "").split(",").filter(Boolean),
-    region: p.get("region") || "", from: p.get("from") || "", to: p.get("to") || "",
-    watch: p.get("watch") === "1", conf: p.get("conf") || "",
+    tab: firm ? "firm" : tab, slug: firm ? decodeURIComponent(firm[1]) : "",
+    q: p.get("q") || "", source: p.get("source") || "", category: (p.get("category") || "").split(",").filter(Boolean),
+    region: p.get("region") || "", when: p.get("when") || "", from: p.get("from") || "", to: p.get("to") || "",
+    watch: p.get("watch") === "1", conf: p.get("conf") || "", sort: p.get("sort") || "date", dir: p.get("dir") === "asc" ? 1 : -1,
     date: p.get("date") || "", week: p.get("week") || "",
   };
 }
-function writeState(patch, replace = false) {
-  const s = { ...readState(), ...patch };
+function stateUrl(s) {
   const p = new URLSearchParams();
-  if (s.tab !== "feed") p.set("tab", s.tab);
+  if (s.tab !== "today") p.set("tab", s.tab);
   if (s.tab === "feed") {
     if (s.q) p.set("q", s.q);
     if (s.source) p.set("source", s.source);
     if (s.category.length) p.set("category", s.category.join(","));
     if (s.region) p.set("region", s.region);
-    if (s.from) p.set("from", s.from);
-    if (s.to) p.set("to", s.to);
+    if (s.when) p.set("when", s.when);
+    if (s.when === "range" && s.from) p.set("from", s.from);
+    if (s.when === "range" && s.to) p.set("to", s.to);
     if (s.watch) p.set("watch", "1");
   }
-  if (s.tab === "mna" && s.conf) p.set("conf", s.conf);
-  if (s.tab === "digest" && s.date) p.set("date", s.date);
+  if (s.tab === "mna") {
+    if (s.conf) p.set("conf", s.conf);
+    if (s.sort !== "date") p.set("sort", s.sort);
+    if (s.dir === 1) p.set("dir", "asc");
+  }
+  if (s.tab === "today" && s.date) p.set("date", s.date);
   if (s.tab === "weekly" && s.week) p.set("week", s.week);
-  const url = "/" + (p.toString() ? "?" + p : "");
-  if (url !== location.pathname + location.search) history[replace ? "replaceState" : "pushState"](null, "", url);
+  const qs = p.toString();
+  return "/" + (qs ? "?" + qs : "");
+}
+function writeState(patch, replace = false) {
+  const s = { ...readState(), ...patch };
+  if (s.tab === "firm") s.tab = "today";
+  const url = stateUrl(s);
+  if (url !== location.pathname + location.search) {
+    if (!replace) prevUrl = location.pathname + location.search;
+    history[replace ? "replaceState" : "pushState"](null, "", url);
+  }
   route();
 }
-function go(url) { history.pushState(null, "", url); route(); }
+function go(href) {
+  if (href === location.pathname + location.search) return;
+  prevUrl = location.pathname + location.search;
+  history.pushState(null, "", href);
+  route();
+}
+function clearFilters() { feedShown = PAGE; writeState({ tab: "feed", q: "", source: "", category: [], region: "", when: "", from: "", to: "", watch: false }); }
 
-/* ---------- boot data ---------- */
-let META = null, CLUSTERS = [], FIRMS = [];
+/* ---------- core data + chrome ---------- */
 async function loadCore() {
   const [meta, clusters, firms] = await Promise.all([data("meta.json"), data("clusters.json"), optional("firms/index.json", { firms: [] })]);
-  META = meta; CLUSTERS = clusters.clusters; FIRMS = firms.firms;
-  compileWatch(FIRMS);
-  $("#demo-chip").hidden = !META.demo;
-  $("#ingest-status").textContent = `updated ${relAgo(META.last_refresh)} · ${META.sources_ok}/${META.sources_total} sources · ${META.counts.stories} stories`;
-  if (META.last_refresh) $("#ingest-status").title = "Last refresh: " + fullFmt.format(new Date(META.last_refresh));
-  $("#footer-note").textContent = META.footer_note || $("#footer-note").textContent;
-  $("#footer-refresh").textContent = META.last_refresh ? " · refreshed " + fullFmt.format(new Date(META.last_refresh)) : "";
-  $("#source").replaceChildren(el("option", { value: "" }, "All sources"),
-    ...META.sources.map((s) => el("option", { value: s.name }, s.name + (s.ok ? "" : " (failed)"))));
-  const states = [...new Set(CLUSTERS.flatMap((c) => c.states))].sort();
-  $("#region").replaceChildren(el("option", { value: "" }, "All regions"),
-    ...Object.keys(REGIONS).map((r) => el("option", { value: r }, r)),
-    ...(states.length ? [el("option", { disabled: true }, "── States ──")] : []),
-    ...states.map((s) => el("option", { value: s }, s)));
-  $("#cat-chips").replaceChildren(...META.categories.map((c) =>
-    el("button", { type: "button", class: CAT_CLASS[c] || "cat-other", "data-cat": c, "aria-pressed": "false" }, c)));
+  META = meta;
+  CLUSTERS = (clusters && clusters.clusters) || [];
+  CL_BY_ID = new Map(CLUSTERS.map((c) => [c.id, c]));
+  FIRMS = (firms && firms.firms) || [];
+  FIRM_BY_SLUG = new Map(FIRMS.map((f) => [f.slug, f]));
+  SEC_DATE = (meta.sec && meta.sec.data_date) || (firms && firms.sec_data_date) || null;
+  compileWatch();
+  renderChrome();
+  fillFeedControls();
+}
+function renderChrome() {
+  $("#today-date").textContent = F.long.format(new Date());
+  if (META && META.last_refresh) {
+    const t = new Date(META.last_refresh);
+    const sameDay = dayKey(t) === todayKey();
+    $("#updated").textContent = "Updated " + (sameDay ? "" : F.md.format(t) + ", ") + fmtTime(t) + " PT";
+  }
+  $("#demo-note").hidden = !(META && META.demo);
+  $("#footer-note").textContent = (META && META.footer_note) || $("#footer-note").textContent;
+  $("#watch-open").textContent = `Watchlist (${WATCH.length})`;
+  themeLabel();
 }
 
-/* ---------- routing ---------- */
 async function route() {
   const s = readState();
   for (const t of [...TABS, "firm"]) $("#view-" + t).hidden = t !== s.tab;
-  for (const a of document.querySelectorAll(".tabs a")) {
-    const on = a.dataset.tab === s.tab || (a.dataset.tab === "archive" && s.tab === "weekly");
-    a.setAttribute("aria-selected", String(on));
-  }
-  document.title = ({ feed: "Wealth Wire", digest: "Digest", archive: "Archive", weekly: "Weekly M&A recap", mna: "M&A", sources: "Sources", firm: "Firm" }[s.tab] || "Wealth Wire") + (s.tab === "feed" ? "" : " · Wealth Wire");
-  window.scrollTo(0, 0);
+  const current = s.tab === "weekly" || (s.tab === "today" && s.date) ? "archive" : s.tab;
+  for (const a of document.querySelectorAll(".sections a")) a.setAttribute("aria-selected", String(a.dataset.tab === current));
+  const TITLES = { feed: "Feed", mna: "Deals", archive: "Archive", weekly: "Weekly M&A recap", sources: "Sources" };
+  document.title = (TITLES[s.tab] ? TITLES[s.tab] + " · " : "") + "Fiduciary Duty";
   if (!META) {
-    try { await loadCore(); } catch (e) {
-      $("#view-" + s.tab).replaceChildren(stateBox("error", "Couldn't load Wealth Wire data", e.message,
-        el("button", { class: "btn", type: "button", onclick: () => location.reload() }, "Retry")));
-      return;
-    }
-    renderSidebar();
+    const view = $("#view-" + s.tab);
+    const target = s.tab === "feed" ? $("#feed-list") : view;
+    put(target, ...skeletons(5));
+    try { await loadCore(); } catch (e) { put(target, errorState(e, () => location.reload())); return; }
   }
-  ({ feed: renderFeed, digest: renderDigest, archive: renderArchive, weekly: renderWeekly, mna: renderMna, sources: renderSources, firm: renderFirm })[s.tab](s);
+  ({ today: renderToday, feed: renderFeed, mna: renderDeals, archive: renderArchive, weekly: renderWeekly, sources: renderSources, firm: renderFirm })[s.tab](s);
 }
 
-/* ---------- feed ---------- */
-function filterClusters(s, { ignoreWatch = false } = {}) {
+/* ---------- side column ---------- */
+async function trendingBlock() {
+  const t = await optional("trending.json", { firms: [], days: 7 });
+  const list = (t.firms || []).slice(0, 10);
+  return [
+    sectionHead("Trending firms", el("span", { class: "muted", style: "font-weight:500" }, `Stories, ${t.days || 7} days`)),
+    list.length ? el("ol", { class: "rank-list" }, list.map((f, i) => el("li", {},
+      el("span", { class: "rank" }, pad2(i + 1)),
+      f.slug ? nav(`/firm/${encodeURIComponent(f.slug)}`, f.name, "name") : el("span", { class: "name" }, f.name),
+      el("span", { class: "n" }, f.stories)))) : el("p", { class: "side-empty" }, "No firm mentions this week yet."),
+  ];
+}
+async function dealsThisWeekBlock() {
+  const m = await optional("mna.json", { deals: [] });
+  const since = addDays(todayKey(), -7);
+  const rows = (m.deals || []).filter((d) => dayKey(d.date) >= since && d.acquirer.name).slice(0, 5);
+  return [
+    sectionHead("Deals this week", nav("/?tab=mna", "All deals", "textbtn")),
+    rows.length ? rows.map((d) => nav("/?tab=mna", [
+      el("span", {}, d.acquirer.name || "Not named", " ", el("span", { class: "muted" }, "/"), " ", d.target.name || "Not named"),
+      el("span", { class: "aum" }, headlineAum(d) ? fmtAum(headlineAum(d)) : ""),
+    ], "side-deal")) : el("p", { class: "side-empty" }, "No deals in the last seven days."),
+  ];
+}
+
+/* ---------- Today ---------- */
+function stamp(ts, dayOf) {
+  if (!ts) return "";
+  const k = dayKey(ts);
+  return (k === dayOf ? "" : F.wday.format(new Date(ts)) + " ") + fmtTime(ts);
+}
+function storyItem(it, n, ai, dayOf) {
+  const c = CL_BY_ID.get(it.cluster_id);
+  const hits = itemHits(it);
+  const firms = (c && c.firms && c.firms.length ? c.firms : it.firms) || [];
+  return el("article", { class: "story" + (hits.length ? " is-watch" : "") },
+    el("div", { class: "story-n", "aria-hidden": "true" }, pad2(n)),
+    el("div", { class: "story-body" },
+      el("div", { class: "story-kicker" },
+        hits.length ? el("span", { class: "watch-mark" }, "Watchlist · " + hits.join(", ")) : null,
+        catTag(it.category),
+        c ? el("time", { class: "stamp", datetime: c.first_published }, stamp(c.first_published, dayOf)) : null,
+        it.aum_usd ? el("span", { class: "aum-wrap" }, aumFig(it.aum_usd, it.aum_source, (c && c.sec_aum_as_of) || SEC_DATE)) : null),
+      el("h3", {}, ext(it.url, it.headline)),
+      ai && it.summary ? el("p", { class: "sum" }, it.summary) : null,
+      ai && it.why_it_matters ? el("p", { class: "why" }, el("em", {}, "Why it matters to advisors:"), " ", it.why_it_matters) : null,
+      el("div", { class: "story-foot" }, outletList(it.sources), firmChips(firms))));
+}
+async function renderToday(s) {
+  const box = $("#view-today");
+  put(box, el("div", { class: "cols" }, el("div", { class: "col-main" }, skeletons(4))));
+  let d;
+  try { d = s.date ? await data(`digests/${s.date}.json`) : await data("digest.json"); } catch (e) {
+    put(box, errorState(e, () => renderToday(s))); return;
+  }
+  const items = d.items || [];
+  const watched = [], rest = [];
+  for (const it of items) (itemHits(it).length ? watched : rest).push(it);
+  const ai = !!d.ai;
+  const main = el("div", { class: "col-main" });
+  main.append(el("div", { class: "kicker" }, s.date ? "Digest · " + fmtDate(d.date, U.long) : "Today in wealth management"));
+  if (ai && d.opener) main.append(el("p", { class: "opener" }, d.opener));
+  else {
+    const last = d.last_good_digest;
+    main.append(el("p", { class: "note", style: "margin:10px 0 12px" },
+      "The day's summaries aren't available, so the stories below are ranked by how many outlets covered them.",
+      last && last.date !== d.date ? [" ", nav(`/?tab=today&date=${last.date}`, `Read the last written digest (${fmtDate(last.date, U.long)})`), "."] : null));
+  }
+  main.append(el("div", { class: "meta-line digest-meta" },
+    `${plural(items.length, "story", "stories")} · ${watched.length} from your watchlist · About two minutes`));
+  let n = 0;
+  if (watched.length) {
+    main.append(sectionHead("From your watchlist", el("button", { class: "textbtn", type: "button", onclick: openDrawer }, "Edit")));
+    watched.forEach((it) => main.append(storyItem(it, ++n, ai, d.date)));
+    main.append(el("div", { class: "section-gap" }));
+  }
+  main.append(sectionHead("Top stories"));
+  if (!rest.length && !watched.length) main.append(el("p", { class: "state" }, "No new stories since the previous refresh."));
+  rest.forEach((it) => main.append(storyItem(it, ++n, ai, d.date)));
+  const more = d.more || [];
+  if (more.length) {
+    main.append(el("div", { class: "section-gap" }), sectionHead("More stories"));
+    more.forEach((it) => main.append(feedRow(CL_BY_ID.get(it.cluster_id) || itemAsCluster(it))));
+  }
+  const friday = await fridayLine(d.date);
+  if (friday) main.append(friday);
+  const side = el("aside", { class: "col-side", "aria-label": "Trending firms and deals" });
+  put(box, el("div", { class: "cols" }, main, side));
+  put(side, await trendingBlock(), await dealsThisWeekBlock());
+}
+function itemAsCluster(it) {
+  return { id: it.cluster_id, headline: it.headline, url: it.url, category: it.category, sources: it.sources || [],
+    firms: it.firms || [], aum_usd: it.aum_usd, aum_source: it.aum_source, sec_aum_as_of: SEC_DATE, last_published: null };
+}
+async function fridayLine(date) {
+  if (!date || U.wday.format(dateOnly(date)) !== "Friday") return null;
+  const idx = await optional("weekly/index.json", { weekly: [] });
+  const w = (idx.weekly || []).find((x) => x.start <= date && date <= x.end);
+  if (!w) return null;
+  const rec = await optional(`weekly/${w.week}.json`, null);
+  const n = rec ? rec.deals.length : w.deal_count;
+  const total = rec && rec.total_disclosed_aum_usd ? `, ${fmtAum(rec.total_disclosed_aum_usd)} in headline AUM` : "";
+  return el("p", { class: "note friday" }, `It's Friday, so the weekly M&A recap is out: ${plural(n, "deal")}${total}. `,
+    nav(`/?tab=weekly&week=${w.week}`, "Read the recap"));
+}
+
+/* ---------- Feed ---------- */
+function fillFeedControls() {
+  const src = $("#source");
+  const names = [...new Set(CLUSTERS.flatMap((c) => c.sources.map((x) => x.name)))].sort((a, b) => a.localeCompare(b));
+  put(src, el("option", { value: "" }, "All outlets"), names.map((n) => el("option", { value: n }, n)));
+  const states = [...new Set(CLUSTERS.flatMap((c) => c.states || []))].sort((a, b) => (STATE_NAMES[a] || a).localeCompare(STATE_NAMES[b] || b));
+  put($("#region"), el("option", { value: "" }, "All regions"), el("option", { value: "Pacific Northwest" }, "Pacific Northwest"),
+    states.map((st) => el("option", { value: st }, STATE_NAMES[st] || st)));
+  const cats = (META && META.categories) || Object.keys(CAT_CLASS);
+  put($("#cats"), el("button", { type: "button", class: "all", "data-cat": "" }, "All"),
+    cats.map((c) => el("button", { type: "button", class: CAT_CLASS[c] || "cat-other", "data-cat": c }, c)));
+}
+function whenCutoff(when) {
+  const t = todayKey();
+  if (when === "today") return t;
+  if (when === "3d") return addDays(t, -2);
+  if (when === "week") return mondayOf(t);
+  return null;
+}
+function filterClusters(s) {
   const terms = (s.q.toLowerCase().match(/[\w$&.'-]+/g) || []).map((t) => t.replace(/^[.'-]+|[.'-]+$/g, "")).filter(Boolean);
-  const from = s.from ? new Date(s.from + "T00:00:00").toISOString() : null;
-  const to = s.to ? (() => { const d = new Date(s.to + "T00:00:00"); d.setDate(d.getDate() + 1); return d.toISOString(); })() : null;
   const states = s.region ? (REGIONS[s.region] || [s.region]) : null;
+  const cutoff = whenCutoff(s.when);
+  const from = s.when === "range" && s.from ? s.from : null;
+  const to = s.when === "range" && s.to ? s.to : null;
   return CLUSTERS.filter((c) => {
     if (s.category.length && !s.category.includes(c.category)) return false;
     if (s.source && !c.sources.some((x) => x.name === s.source)) return false;
-    if (states && !c.states.some((st) => states.includes(st))) return false;
-    if (from && c.last_published < from) return false;
-    if (to && c.first_published >= to) return false;
+    if (states && !(c.states || []).some((st) => states.includes(st))) return false;
+    const day = dayKey(c.last_published);
+    if (cutoff && day < cutoff) return false;
+    if (from && day < from) return false;
+    if (to && dayKey(c.first_published) > to) return false;
     if (terms.length) {
-      const words = (c.headline + " " + c.firms.map((f) => f.name).join(" ")).toLowerCase().match(/[\w$&.'-]+/g) || [];
+      const words = [c.headline, ...c.firms.map((f) => f.name), ...c.sources.map((x) => x.name)].join(" ").toLowerCase().match(/[\w$&.'-]+/g) || [];
       if (!terms.every((t) => words.some((w) => w.startsWith(t)))) return false;
     }
-    if (s.watch && !ignoreWatch && !watchHits(c).length) return false;
+    if (s.watch && !watchHits(c).length) return false;
     return true;
   });
 }
@@ -251,314 +446,377 @@ function highlight(text, q) {
   const re = new RegExp("(" + terms.map(escRe).join("|") + ")", "ig");
   return text.split(re).map((part, i) => (i % 2 ? el("mark", {}, part) : part));
 }
-function card(c, s = {}) {
+function feedRow(c, { q = "", timeLabel } = {}) {
   const hits = watchHits(c);
-  const multi = c.outlet_count > 1;
-  return el("article", { class: "card" + (hits.length ? " is-watch" : ""), "data-cluster": c.id },
-    el("div", { class: "card-meta" },
-      el("time", { class: "card-time", datetime: c.last_published, title: "First reported " + fullFmt.format(new Date(c.first_published)) }, fmtTime(c.first_published)),
-      catChip(c.category),
-      hits.length ? el("span", { class: "chip chip-watch", title: "Watchlist: " + hits.join(", ") }, "★ " + hits.join(", ")) : null,
-      c.press_release ? el("span", { class: "chip chip-pr", title: "Includes a press release" }, "PRESS RELEASE") : null,
-      el("span", { class: "card-outlets" + (multi ? " multi" : "") }, multi ? `${c.outlet_count} outlets` : "")),
-    el("div", { class: "card-main" },
-      el("div", { class: "card-body" },
-        el("h3", { class: "card-title" }, el("a", { href: safeUrl(c.url), target: "_blank", rel: "noopener noreferrer" }, ...highlight(c.headline, s.q))),
-        el("div", { class: "card-foot" },
-          ...c.sources.map((x) => el("a", { class: "src", href: safeUrl(x.url), target: "_blank", rel: "noopener noreferrer", title: `${x.name} · ${fullFmt.format(new Date(x.published_at))}` },
-            x.name, multi ? el("span", { class: "src-time" }, fmtTime(x.published_at)) : null)),
-          c.firms.length ? el("span", { class: "foot-sep" }) : null,
-          ...c.firms.slice(0, 5).map((f) => firmLink(f)))),
-      aumBlock(c)));
+  const t = timeLabel !== undefined ? timeLabel : (c.last_published ? fmtTime(c.last_published) : "");
+  return el("div", { class: "row" + (hits.length ? " is-watch" : "") },
+    el("span", { class: "t" }, c.last_published ? el("time", { datetime: c.last_published }, t) : t),
+    el("div", { class: "row-main" },
+      el("a", { class: "row-h", href: safeUrl(c.url), target: "_blank", rel: "noopener" }, ...highlight(c.headline, q)),
+      el("div", { class: "row-meta" },
+        hits.length ? el("span", { class: "watch-mark", title: "Watchlist: " + hits.join(", ") }, "Watchlist") : null,
+        catTag(c.category), outletList(c.sources, { prefix: false, shortNames: true }), firmChips(c.firms))),
+    c.aum_usd ? aumFig(c.aum_usd, c.aum_source, c.sec_aum_as_of || SEC_DATE, true) : el("span"));
 }
-function describeFilters(s) {
-  const b = [];
-  if (s.q) b.push(`“${s.q}”`);
-  if (s.source) b.push(s.source);
-  if (s.category.length) b.push(s.category.join(" + "));
-  if (s.region) b.push(s.region);
-  if (s.from || s.to) b.push(`${s.from || "…"} → ${s.to || "…"}`);
-  if (s.watch) b.push("watchlist");
-  return b.join(" · ");
-}
-let feedShown = PAGE;
-function renderFeed(s, more = false) {
-  syncFilterInputs(s);
-  if (!more) feedShown = PAGE;
-  let list = filterClusters(s);
-  let pinned = [];
-  if (!s.watch && MATCHERS.length) {
-    const cutoff = new Date(new Date(META.last_refresh || Date.now()).getTime() - PIN_DAYS * 864e5).toISOString();
-    pinned = list.filter((c) => c.last_published >= cutoff && watchHits(c).length).slice(0, 10);
-    const ids = new Set(pinned.map((c) => c.id));
-    list = list.filter((c) => !ids.has(c.id));
-  }
-  $("#pinned").hidden = !pinned.length;
-  $("#pinned-count").textContent = pinned.length ? String(pinned.length) : "";
-  $("#pinned-list").replaceChildren(...pinned.map((c) => card(c, s)));
-  $("#feed-list").replaceChildren(...list.slice(0, feedShown).map((c) => card(c, s)));
-  $("#more").hidden = feedShown >= list.length;
-  const f = describeFilters(s);
-  $("#feed-summary").replaceChildren(el("b", {}, String(list.length)), ` ${list.length === 1 ? "story" : "stories"}`,
-    pinned.length ? ` · ${pinned.length} pinned` : "", f ? ` · ${f}` : "");
-  const err = $("#feed-error");
-  err.replaceChildren();
-  if (!list.length && !pinned.length) {
-    err.append(CLUSTERS.length
-      ? stateBox("", f ? "No stories match these filters" : "No stories", f ? "Try a broader search, another source, category or region, or a wider date range." : "",
-        f ? el("button", { class: "btn", type: "button", onclick: clearFilters }, "Clear filters") : null)
-      : stateBox("", "No stories yet", "The next refresh will fill this in."));
-  }
-}
-function syncFilterInputs(s) {
+function syncFeedControls(s) {
   if (document.activeElement !== $("#q")) $("#q").value = s.q;
-  $("#source").value = s.source; $("#region").value = s.region;
-  $("#from").value = s.from; $("#to").value = s.to; $("#watch").checked = s.watch;
-  for (const b of $("#cat-chips").children) b.setAttribute("aria-pressed", String(s.category.includes(b.dataset.cat)));
-}
-function clearFilters() { writeState({ q: "", source: "", category: [], region: "", from: "", to: "", watch: false }); }
-
-/* ---------- sidebar ---------- */
-async function renderSidebar() {
-  renderWatchlist();
-  const box = $("#trending");
-  try {
-    const t = await data("trending.json");
-    if (!t.firms.length) { box.replaceChildren(el("li", { class: "muted" }, "No firm mentions in the last 7 days.")); return; }
-    const max = t.firms[0].stories;
-    box.replaceChildren(...t.firms.map((f) => el("li", {},
-      el("div", { style: "flex:1;min-width:0" }, firmLink(f, "trend-name"),
-        el("span", { class: "bar", style: `width:${Math.max(8, Math.round(100 * f.stories / max))}%` })),
-      el("span", { class: "n", title: `${f.stories} ${f.stories === 1 ? "story" : "stories"}` }, f.stories))));
-  } catch (e) { box.replaceChildren(el("li", { class: "form-msg err" }, e.message)); }
-}
-function renderWatchlist() {
-  const box = $("#watchlist");
-  if (!WATCH.length) { box.replaceChildren(el("li", { class: "muted" }, "No firms yet — add one below or import a JSON file.")); return; }
-  const cutoff = new Date(new Date((META && META.last_refresh) || Date.now()).getTime() - PIN_DAYS * 864e5).toISOString();
-  box.replaceChildren(...WATCH.map((f, i) => {
-    const m = MATCHERS[i];
-    const n = CLUSTERS.filter((c) => c.last_published >= cutoff && watchHits(c).includes(f.name)).length;
-    return el("li", {},
-      el("span", { class: "w-name" }, f.name, f.aliases.length ? el("span", { class: "w-alias" }, "aka " + f.aliases.join(", ")) : null,
-        m && m.crds.size ? el("span", { class: "w-alias" }, `matches ${m.crds.size} SEC-registered firm${m.crds.size > 1 ? "s" : ""}`) : null),
-      el("span", { class: "w-count", title: "Stories in the last 7 days" }, n || ""),
-      el("button", { type: "button", "aria-label": "Remove " + f.name, title: "Remove " + f.name, onclick: () => setWatch(WATCH.filter((x) => x !== f), `Removed ${f.name}.`) }, "×"));
-  }));
-}
-function setWatch(list, msg, isErr = false) {
-  WATCH = Watch.clean(list);
-  const ok = Watch.save(WATCH);
-  compileWatch(FIRMS);
-  const m = $("#watch-msg");
-  m.className = "form-msg" + (isErr || !ok ? " err" : "");
-  m.textContent = ok ? msg : "Couldn't save (browser storage unavailable); changes last until you reload.";
-  renderWatchlist();
-  route();
-}
-
-/* ---------- digest ---------- */
-function digestItem(it, i, ai) {
-  const c = CLUSTERS.find((x) => x.id === it.cluster_id);
-  const hits = c ? watchHits(c) : [];
-  return el("li", { class: hits.length ? "is-watch" : "" },
-    el("div", { class: "t" }, extLink(it.url, it.headline)),
-    el("div", { class: "d-meta" }, catChip(it.category), " ",
-      el("span", { class: "mono muted" }, `${it.outlet_count} outlet${it.outlet_count > 1 ? "s" : ""}`),
-      it.aum_usd ? el("span", { class: "aum-cell", title: it.aum_source === "sec" ? "SEC-reported AUM" : "AUM from the headline" }, " " + fmtAum(it.aum_usd) + (it.aum_source === "sec" ? " SEC" : "")) : null,
-      hits.length ? el("span", { class: "chip chip-watch" }, "★ " + hits.join(", ")) : null),
-    ai && it.summary ? el("p", { class: "d-sum" }, it.summary) : null,
-    ai && it.why_it_matters ? el("p", { class: "d-why" }, el("b", {}, "Why it matters to advisors: "), it.why_it_matters) : null,
-    el("div", { class: "srcs" }, ...it.sources.map((x) => extLink(x.url, x.name, "src")),
-      ...(it.firms || []).filter((f) => f.slug).map((f) => firmLink(f))));
-}
-function watchFirst(items) {
-  // stable re-rank: watchlist hits first, keep the server's order otherwise
-  return items.map((it, i) => ({ it, i, w: (() => { const c = CLUSTERS.find((x) => x.id === it.cluster_id); return c && watchHits(c).length ? 1 : 0; })() }))
-    .sort((a, b) => b.w - a.w || a.i - b.i).map((x) => x.it);
-}
-async function renderDigest(s) {
-  const box = $("#digest");
-  box.replaceChildren(stateBox("", "Loading digest…"));
-  let d;
-  try { d = s.date ? await data(`digests/${s.date}.json`) : await data("digest.json"); } catch (e) {
-    box.replaceChildren(stateBox("error", "Couldn't load the digest", e.message)); return;
+  $("#source").value = s.source;
+  $("#region").value = s.region;
+  $("#when").value = s.when;
+  $("#range").hidden = s.when !== "range";
+  $("#from").value = s.from; $("#to").value = s.to;
+  $("#watch").checked = s.watch;
+  for (const b of document.querySelectorAll("#cats button")) {
+    const c = b.dataset.cat;
+    b.setAttribute("aria-pressed", String(c ? s.category.includes(c) : !s.category.length));
   }
-  const items = watchFirst(d.items);
-  const archived = !!s.date;
-  box.replaceChildren(el("article", { class: "digest" },
-    el("div", { class: "digest-head digest-head-slim" }, el("span", { class: "digest-label" }, d.ai ? "Digest" : "Top stories"),
-      el("span", { class: "digest-date" }, fmtDate(d.date)),
-      archived ? el("a", { class: "digest-file", href: "/?tab=archive", "data-nav": "" }, "← All digests") : null),
-    d.ai && d.opener ? el("div", { class: "digest-opener" }, el("h2", {}, "Today in wealth management"), el("p", {}, d.opener)) : null,
-    !d.ai ? el("p", { class: "note" }, "No AI-written digest for this refresh — stories are ranked by how many outlets covered them, then recency.",
-      d.last_good_digest ? [" Last written digest: ", el("a", { href: `/?tab=digest&date=${d.last_good_digest.date}`, "data-nav": "" }, fmtDate(d.last_good_digest.date)), "."] : null) : null,
-    MATCHERS.length ? el("p", { class: "note" }, "Watchlist stories are listed first.") : null,
-    items.length ? el("ol", { class: "fallback-list digest-list" }, ...items.map((it, i) => digestItem(it, i, d.ai))) : stateBox("", "No new stories", "Nothing new since the previous refresh."),
-    (d.more || []).length ? [el("h2", { class: "section-h", style: "margin-top:20px" }, "More stories"),
-      el("ol", { class: "fallback-list" }, ...watchFirst(d.more).map((it, i) => digestItem(it, i, false)))] : null,
-  ));
+}
+async function renderFeed(s, append = false) {
+  syncFeedControls(s);
+  const list = filterClusters(s);
+  const outlets = new Set(list.flatMap((c) => c.sources.map((x) => x.name))).size;
+  $("#feed-count").textContent = `${plural(list.length, "story", "stories")} · ${plural(outlets, "outlet")} · Newest first`;
+  const box = $("#feed-list");
+  if (!append) feedShown = PAGE;
+  if (!list.length) {
+    const filtered = s.q || s.source || s.category.length || s.region || s.when || s.watch;
+    put(box, emptyState(CLUSTERS.length ? (filtered ? "No stories match these filters." : "No stories yet.") : "No stories yet. The next refresh will fill this in.", !!filtered));
+  } else {
+    const frag = [];
+    let day = null;
+    for (const c of list.slice(0, feedShown)) {
+      const k = dayKey(c.last_published);
+      if (k !== day) { day = k; frag.push(el("div", { class: "day-head" }, F.dayHead.format(new Date(c.last_published)))); }
+      frag.push(feedRow(c, { q: s.q }));
+    }
+    put(box, ...frag);
+  }
+  $("#more").hidden = feedShown >= list.length;
+  const side = $("#feed-side");
+  if (!side.dataset.done) { side.dataset.done = "1"; put(side, ...(await trendingBlock())); }
 }
 
-/* ---------- archive + weekly ---------- */
-async function renderArchive() {
-  const box = $("#archive");
-  box.replaceChildren(stateBox("", "Loading archive…"));
-  let idx;
-  try { idx = await data("digests/index.json"); } catch (e) { box.replaceChildren(stateBox("error", "Couldn't load the archive", e.message)); return; }
-  box.replaceChildren(el("article", { class: "digest" },
-    el("div", { class: "digest-head" }, el("h1", {}, "Archive")),
-    el("h2", { class: "section-h" }, "Weekly M&A recaps"),
-    idx.weekly.length ? el("ul", { class: "archive-list" }, ...idx.weekly.map((w) => el("li", {},
-      el("a", { href: `/?tab=weekly&week=${w.week}`, "data-nav": "" }, `Week of ${fmtDate(w.start)}`),
-      el("span", { class: "mono muted" }, ` ${w.deal_count} deal${w.deal_count === 1 ? "" : "s"}`)))) : el("p", { class: "muted" }, "No weekly recaps yet (they're written on Fridays)."),
-    el("h2", { class: "section-h", style: "margin-top:18px" }, "Daily digests"),
-    idx.digests.length ? el("ul", { class: "archive-list" }, ...idx.digests.map((d) => el("li", {},
-      el("a", { href: `/?tab=digest&date=${d.date}`, "data-nav": "" }, fmtDate(d.date)),
-      el("span", { class: "mono muted" }, ` ${d.item_count} stories`)))) : el("p", { class: "muted" }, "No AI digests have been written yet.")));
+/* ---------- Deals ---------- */
+const headlineAum = (d) => (d.target_aum_source === "headline" ? d.target_aum_usd : null);
+function secAum(d, asOfDefault) {
+  if (d.target_aum_source === "sec" && d.target_aum_usd) return { v: d.target_aum_usd, asOf: asOfDefault };
+  const f = d.target && d.target.slug ? FIRM_BY_SLUG.get(d.target.slug) : null;
+  return f && f.sec_aum_usd ? { v: f.sec_aum_usd, asOf: asOfDefault } : { v: null, asOf: null };
 }
+function party(p) {
+  if (!p || !p.name) return el("span", { class: "party none" }, "Not named");
+  return p.slug ? nav(`/firm/${encodeURIComponent(p.slug)}`, p.name, "party") : el("span", { class: "party" }, p.name);
+}
+const SORTS = {
+  date: (d) => d.date, acq: (d) => (d.acquirer.name || "~").toLowerCase(), tgt: (d) => (d.target.name || "~").toLowerCase(),
+  type: (d) => DEAL_TYPE[d.deal_type] || "~", h: (d) => headlineAum(d) ?? -1, s: (d) => d._sec.v ?? -1,
+};
+function sortDeals(rows, key, dir) {
+  const f = SORTS[key] || SORTS.date;
+  return rows.slice().sort((a, b) => { const x = f(a), y = f(b); return (typeof x === "string" ? x.localeCompare(y) : x - y) * dir; });
+}
+function dealsBlock(rows, asOf, sort, onSort) {
+  rows = rows.map((d) => ({ ...d, _sec: secAum(d, asOf) }));
+  const sorted = sortDeals(rows, sort.key, sort.dir);
+  const cols = [["Date", "date"], ["Acquirer", "acq"], ["Target", "tgt"], ["Type", "type"], ["Headline AUM", "h", "r"], ["SEC AUM", "s", "r"], ["Sources", null]];
+  const table = el("table", { class: "deals-table" },
+    el("thead", {}, el("tr", {}, cols.map(([label, key, align]) => {
+      const active = key && sort.key === key;
+      return el("th", { class: align || null, scope: "col", "aria-sort": active ? (sort.dir < 0 ? "descending" : "ascending") : null },
+        key ? el("button", { type: "button", onclick: () => onSort(key, active ? -sort.dir : (["date", "h", "s"].includes(key) ? -1 : 1)) },
+          label, " ", el("span", { class: "arrow", "aria-hidden": "true" }, active ? (sort.dir < 0 ? "↓" : "↑") : "")) : label);
+    }))),
+    el("tbody", {}, sorted.map((d) => el("tr", { class: d.confidence === "low" ? "is-low" : null },
+      el("td", { class: "date" }, F.md.format(new Date(d.date))),
+      el("td", {}, party(d.acquirer)),
+      el("td", {}, party(d.target), d.confidence === "low" ? el("div", { class: "review" }, "Needs review: " + (d.note || "the parser couldn't read this headline unambiguously.")) : null),
+      el("td", { class: "deal-type" }, DEAL_TYPE[d.deal_type] || "—"),
+      el("td", { class: "r" }, el("span", { class: "aum" }, fmtAum(headlineAum(d)))),
+      el("td", { class: "r" }, el("span", { class: "aum aum-sec" }, fmtAum(d._sec.v)),
+        el("span", { class: "asof" }, d._sec.v ? (d._sec.asOf ? fmtDate(d._sec.asOf) : "") : "No ADV match")),
+      el("td", { class: "deal-srcs" }, outletList(d.sources, { prefix: false, shortNames: true }))))));
+  const sortSel = el("select", { class: "input", "aria-label": "Sort deals by", onchange: (e) => onSort(e.target.value, ["acq", "tgt", "type"].includes(e.target.value) ? 1 : -1) },
+    [["date", "Newest"], ["h", "Headline AUM"], ["s", "SEC AUM"], ["acq", "Acquirer"], ["tgt", "Target"]].map(([v, l]) => el("option", { value: v, selected: sort.key === v }, l)));
+  const cards = el("div", { class: "deal-cards" }, sorted.map((d) => el("div", { class: "deal-card" + (d.confidence === "low" ? " is-low" : "") },
+    el("div", { class: "dc-top" }, F.md.format(new Date(d.date)), " · ", DEAL_TYPE[d.deal_type] || "Deal"),
+    el("div", { class: "dc-line" }, party(d.acquirer), " ", el("span", { class: "verb" }, DEAL_VERB[d.deal_type] || "and"), " ", party(d.target)),
+    el("dl", {},
+      el("dt", {}, "Headline AUM"), el("dd", {}, el("span", { class: "aum" }, fmtAum(headlineAum(d)))),
+      el("dt", {}, "SEC AUM"), el("dd", {}, el("span", { class: "aum aum-sec" }, fmtAum(d._sec.v)), " ",
+        el("span", { class: "asof", style: "display:inline" }, d._sec.v ? fmtDate(d._sec.asOf) : "No ADV match")),
+      el("dt", {}, "Sources"), el("dd", {}, (d.sources || []).map((x) => short(x.name)).join(", "))),
+    d.confidence === "low" ? el("div", { class: "review" }, "Needs review: " + (d.note || "")) : null)));
+  return [el("div", { class: "sort-bar" }, el("span", {}, "Sort by"), sortSel), table, cards];
+}
+async function renderDeals(s) {
+  const box = $("#view-mna");
+  put(box, ...skeletons(5));
+  let m;
+  try { m = await data("mna.json"); } catch (e) { put(box, errorState(e, () => renderDeals(s))); return; }
+  const rows = (m.deals || []).filter((d) => !s.conf || d.confidence === s.conf);
+  const seg = el("div", { class: "seg", role: "group", "aria-label": "Confidence" },
+    [["All", ""], ["Confirmed", "high"], ["Needs review", "low"]].map(([l, v]) => nav(v ? `/?tab=mna&conf=${v}` : "/?tab=mna", l, null, { "aria-current": String(s.conf === v) })));
+  put(box, 
+    el("div", { class: "page-head" }, el("h1", { class: "page-title" }, "Deals"), seg),
+    el("p", { class: "prose", style: "margin:0 0 18px" }, "RIA mergers, acquisitions and minority investments, one row per story. ",
+      el("em", {}, "Headline AUM"), " is the figure stated in coverage. SEC AUM is regulatory AUM from the target's latest Form ADV, with its as-of date. ",
+      "Rows the parser couldn't read unambiguously are marked for review and left blank rather than guessed."),
+    rows.length ? el("div", {}, dealsBlock(rows, m.sec_aum_as_of || SEC_DATE, { key: s.sort, dir: s.dir },
+      (key, dir) => writeState({ tab: "mna", sort: key, dir }, true)))
+      : el("p", { class: "state" }, s.conf ? "No deals with this status. " : "No deals yet. ", s.conf ? nav("/?tab=mna", "Show all deals") : null));
+}
+
+/* ---------- Firm page ---------- */
+function firmWatched(f) {
+  return MATCHERS.some((m) => m.crds.has(f.crd)) || WATCH.some((w) => norm(w.name) === norm(f.name));
+}
+async function renderFirm(s) {
+  const box = $("#view-firm");
+  put(box, ...skeletons(3));
+  let f;
+  try { f = await data(`firms/${encodeURIComponent(s.slug)}.json`); } catch (e) {
+    put(box, el("div", { class: "firm" }, backLink(),
+      el("p", { class: "state error", role: "alert" }, /HTTP 404/.test(e.message) ? "There's no firm page at this address. " : e.message + " ",
+        el("button", { type: "button", onclick: () => renderFirm(s) }, "Retry"))));
+    return;
+  }
+  document.title = f.name + " · Fiduciary Duty";
+  const place = [f.city, f.state ? (STATE_NAMES[f.state] || f.state) : null].filter(Boolean).join(", ");
+  const watched = firmWatched(f);
+  const deals = f.deals || [];
+  const stories = (f.stories || []).slice().sort((a, b) => (b.last_published || "").localeCompare(a.last_published || ""));
+  put(box, el("div", { class: "firm" },
+    backLink(),
+    el("div", { class: "firm-head" },
+      el("h1", { class: "firm-name" }, f.name),
+      el("button", { class: "btn", type: "button", onclick: () => toggleFirmWatch(f) }, watched ? "On your watchlist · Remove" : "Add to watchlist")),
+    el("div", { class: "firm-place" }, place ? place + " · Registered investment adviser" : "Registered investment adviser"),
+    f.legal_name && norm(f.legal_name) !== norm(f.name) ? el("div", { class: "firm-legal" }, "Legal name: " + f.legal_name) : null,
+    el("dl", { class: "facts" },
+      el("div", {}, el("dt", {}, "SEC-reported AUM"), el("dd", { class: "big" }, fmtAum(f.sec_aum_usd)),
+        el("dd", {}, f.sec_aum_as_of ? `Form ADV, as of ${fmtDate(f.sec_aum_as_of)}` : "No AUM reported")),
+      el("div", {}, el("dt", {}, "CRD number"), el("dd", { class: "big" }, f.crd || "—"),
+        el("dd", {}, f.iapd_url ? ext(f.iapd_url, "SEC adviser page ↗") : null)),
+      el("div", {}, el("dt", {}, "Coverage"), el("dd", { class: "big" }, plural(stories.length, "story", "stories")),
+        el("dd", {}, deals.length ? plural(deals.length, "deal") + " in the tracker" : "No deals in the tracker"))),
+    el("div", { class: "block-gap" }, sectionHead("Stories"),
+      stories.length ? stories.map((st) => feedRow(CL_BY_ID.get(st.cluster_id) || { ...st, id: st.cluster_id, firms: [], aum_usd: null },
+        { timeLabel: st.last_published ? F.md.format(new Date(st.last_published)) : "" })) : el("p", { class: "state" }, "No stories yet.")),
+    deals.length ? el("div", { class: "block-gap" }, sectionHead("Deals"), deals.map((d) => {
+      const sec = secAum(d, SEC_DATE);
+      return el("div", { class: "firm-deal" + (d.confidence === "low" ? " is-low" : "") },
+        el("span", { class: "t" }, F.md.format(new Date(d.date))),
+        el("span", { class: "line" }, party(d.acquirer), " ", el("span", { class: "verb" }, DEAL_VERB[d.deal_type] || "and"), " ", party(d.target),
+          el("span", { class: "role" }, d.role === "acquirer" ? (d.deal_type === "merger" ? "Party" : "Acquirer") : "Target")),
+        el("span", { class: "figs" }, el("span", { class: "aum" }, headlineAum(d) ? fmtAum(headlineAum(d)) : ""), " ",
+          sec.v ? el("span", { class: "aum aum-sec", title: `SEC-reported AUM (as of ${fmtDate(sec.asOf)})` }, "SEC " + fmtAum(sec.v)) : null));
+    })) : null));
+}
+function backLink() {
+  return el("a", { class: "back", href: prevUrl || "/", onclick: (e) => {
+    e.preventDefault();
+    if (prevUrl) history.back(); else go("/");
+  } }, "← Back");
+}
+function toggleFirmWatch(f) {
+  if (firmWatched(f)) {
+    const drop = new Set(MATCHERS.filter((m) => m.crds.has(f.crd)).map((m) => m.name.toLowerCase()));
+    setWatch(WATCH.filter((w) => !drop.has(w.name.toLowerCase()) && norm(w.name) !== norm(f.name)));
+  } else setWatch([...WATCH, { name: f.name, aliases: [] }]);
+}
+
+/* ---------- Archive + weekly ---------- */
+async function renderArchive() {
+  const box = $("#view-archive");
+  put(box, ...skeletons(4));
+  let idx;
+  try { idx = await data("digests/index.json"); } catch (e) { put(box, errorState(e, renderArchive)); return; }
+  const digests = idx.digests || [], weekly = idx.weekly || [];
+  const fridays = new Map(weekly.map((w) => [w.end, w]));
+  const main = el("div", { class: "col-main" }, el("h1", { class: "page-title", style: "margin-bottom:16px" }, "Archive"));
+  if (!digests.length) main.append(el("p", { class: "state" }, "No digests archived yet. A day's digest is archived once its summaries are written."));
+  const weeks = new Map();
+  for (const d of digests) { const k = mondayOf(d.date); if (!weeks.has(k)) weeks.set(k, []); weeks.get(k).push(d); }
+  for (const [monday, days] of weeks) {
+    main.append(sectionHead("Week of " + fmtDate(monday, U.mdLong)));
+    for (const d of days) {
+      const lead = el("span", { class: "lead" }, plural(d.item_count, "story", "stories"));
+      const recap = fridays.get(d.date);
+      main.append(nav(`/?tab=today&date=${d.date}`, [
+        el("span", { class: "when" }, fmtDate(d.date, U.wday), el("br"), fmtDate(d.date, U.md)),
+        el("span", {}, lead, el("span", { class: "meta-line" }, plural(d.item_count, "story", "stories") + (recap ? " · Weekly M&A recap" : ""))),
+      ], "arch-row"));
+      optional(`digests/${d.date}.json`, null).then((full) => {
+        if (!full) return;
+        const first = full.items && full.items[0] ? full.items[0].headline : (full.opener || "").split(/[.;:]/)[0];
+        if (first) lead.textContent = first;
+      });
+    }
+  }
+  if (digests.length) main.append(el("p", { class: "note", style: "margin-top:16px; font-size:14px; color:var(--muted)" },
+    "The archive begins " + fmtDate(digests[digests.length - 1].date, U.long) + "."));
+  const side = el("aside", { class: "col-side", "aria-label": "Friday M&A recaps" }, sectionHead("Friday M&A recaps"));
+  if (!weekly.length) side.append(el("p", { class: "side-empty" }, "The first recap is published on a Friday."));
+  for (const w of weekly) {
+    const desc = el("span", { class: "desc" }, plural(w.deal_count, "deal") + ".");
+    side.append(nav(`/?tab=weekly&week=${w.week}`, [
+      el("span", { class: "title" }, "Week of " + fmtDate(w.start, U.mdLong)), desc,
+      el("span", { class: "meta-line" }, "Published " + fmtDate(w.end, U.wdayShort) + ", " + fmtDate(w.end, U.md)),
+    ], "recap-link"));
+    optional(`weekly/${w.week}.json`, null).then((r) => {
+      if (r && r.total_disclosed_aum_usd) desc.textContent = `${plural(r.deals.length, "deal")}, ${fmtAum(r.total_disclosed_aum_usd)} in headline AUM.`;
+    });
+  }
+  put(box, el("div", { class: "cols" }, main, side));
+}
+let weeklySort = { key: "date", dir: -1 };
 async function renderWeekly(s) {
-  const box = $("#weekly");
-  box.replaceChildren(stateBox("", "Loading recap…"));
+  const box = $("#view-weekly");
+  put(box, ...skeletons(4));
   let w;
   try {
     const idx = await data("weekly/index.json");
     const week = s.week || (idx.weekly[0] && idx.weekly[0].week);
-    if (!week) { box.replaceChildren(stateBox("", "No weekly recap yet", "Recaps are generated on Friday refreshes.")); return; }
+    if (!week) { put(box, nav("/?tab=archive", "← Archive", "back"), el("p", { class: "state" }, "No weekly recap yet. Recaps are published on Fridays.")); return; }
     w = await data(`weekly/${week}.json`);
-  } catch (e) { box.replaceChildren(stateBox("error", "Couldn't load the recap", e.message)); return; }
-  box.replaceChildren(el("article", { class: "digest digest-wide" },
-    el("div", { class: "digest-head digest-head-slim" }, el("span", { class: "digest-label" }, "Weekly M&A recap"),
-      el("span", { class: "digest-date" }, `${fmtDate(w.start)} – ${fmtDate(w.end)}`),
-      el("a", { class: "digest-file", href: "/?tab=archive", "data-nav": "" }, "← Archive")),
-    el("div", { class: "stat-row" },
-      el("div", { class: "stat" }, el("b", {}, w.deals.length), el("span", {}, "deals")),
-      el("div", { class: "stat" }, el("b", {}, w.total_disclosed_aum_usd ? fmtAum(w.total_disclosed_aum_usd) : "—"), el("span", {}, "disclosed AUM")),
-      el("div", { class: "stat" }, el("b", {}, w.top_acquirers[0] ? w.top_acquirers[0].name : "—"), el("span", {}, "most active acquirer"))),
-    w.paragraph ? el("p", { class: "digest-opener-p" }, w.paragraph) : el("p", { class: "note" }, "No AI-written summary this week — the numbers below are computed from the M&A tracker."),
-    w.top_acquirers.length ? el("p", { class: "note" }, "Most active acquirers: ", w.top_acquirers.map((a) => `${a.name} (${a.deals})`).join(", ")) : null,
-    mnaTable(w.deals)));
+  } catch (e) { put(box, errorState(e, () => renderWeekly(s))); return; }
+  const top = (w.top_acquirers || []).map((a) => (a.slug ? nav(`/firm/${encodeURIComponent(a.slug)}`, `${a.name} (${a.deals})`) : `${a.name} (${a.deals})`));
+  put(box, el("div", { class: "col-main", style: "max-width:none" },
+    nav("/?tab=archive", "← Archive", "back"),
+    el("div", { class: "kicker", style: "margin-top:10px" }, "Friday M&A recap"),
+    el("h1", { class: "page-title", style: "margin-top:4px" }, "Week of " + fmtDate(w.start, U.mdLong)),
+    el("div", { class: "meta-line", style: "margin-top:6px" }, fmtDate(w.start, U.long) + " – " + fmtDate(w.end, U.long)),
+    w.ai && w.paragraph ? el("p", { class: "opener", style: "max-width:780px" }, w.paragraph) : null,
+    el("dl", { class: "facts stats" },
+      el("div", {}, el("dt", {}, "Deals"), el("dd", { class: "big" }, String(w.deals.length))),
+      el("div", {}, el("dt", {}, "Headline AUM"), el("dd", { class: "big" }, fmtAum(w.total_disclosed_aum_usd)),
+        el("dd", {}, `from ${plural(w.disclosed_aum_deals, "deal")} with disclosed AUM`)),
+      el("div", {}, el("dt", {}, "Most active"), el("dd", { class: "big", style: "font-size:20px; padding-top:6px" },
+        top.length ? top.map((t, i) => [t, i < top.length - 1 ? ", " : ""]) : "—"))),
+    w.deals.length ? dealsBlock(w.deals, SEC_DATE, weeklySort, (key, dir) => { weeklySort = { key, dir }; renderWeekly(s); })
+      : el("p", { class: "state" }, "No RIA deals were tracked this week.")));
 }
 
-/* ---------- M&A ---------- */
-function mnaTable(rows) {
-  if (!rows.length) return stateBox("", "No deals", "Deals appear when headlines are categorized as M&A.");
-  const blank = (why) => el("span", { class: "blank", title: why }, "—");
-  const party = (p) => (p && p.name ? (p.slug ? firmLink(p, "party-link") : p.name) : blank("could not be determined unambiguously"));
-  return el("div", { class: "table-wrap" }, el("table", {},
-    el("thead", {}, el("tr", {}, ...["Date", "Acquirer", "Target", "Target AUM", "Type", "Sources", "Confidence"].map((h) => el("th", {}, h)))),
-    el("tbody", {}, ...rows.map((r) => el("tr", { class: r.confidence === "low" ? "is-low" : "" },
-      el("td", { class: "date", "data-label": "Date" }, fmtDay(r.date)),
-      el("td", { class: "party", "data-label": r.deal_type === "merger" ? "Party A" : "Acquirer" }, el("div", {}, party(r.acquirer), el("span", { class: "headline" }, r.headline))),
-      el("td", { class: "party", "data-label": r.deal_type === "merger" ? "Party B" : "Target" }, party(r.target)),
-      el("td", { class: "num", "data-label": "Target AUM" }, r.target_aum_usd
-        ? el("span", { class: "aum-cell", title: r.target_aum_source === "sec" ? "SEC-reported AUM" : "From the headline" }, fmtAum(r.target_aum_usd), r.target_aum_source === "sec" ? el("small", { class: "sec-tag" }, " SEC") : null)
-        : blank("not stated or ambiguous")),
-      el("td", { "data-label": "Type" }, el("span", { class: "deal-type" }, r.deal_type || "—")),
-      el("td", { "data-label": "Sources" }, el("div", { class: "srcs" }, ...r.sources.map((x) => extLink(x.url, x.name, "src")))),
-      el("td", { "data-label": "Confidence" }, el("div", {},
-        el("span", { class: "conf conf-" + r.confidence }, r.confidence === "low" ? "⚠ LOW" : "HIGH"),
-        r.press_release ? el("span", { class: "conf-note" }, "press release") : null,
-        r.confidence === "low" && r.note ? el("span", { class: "conf-note" }, r.note) : null)))))));
-}
-async function renderMna(s) {
-  for (const a of document.querySelectorAll(".seg a")) a.setAttribute("aria-current", String(a.dataset.conf === s.conf));
-  const wrap = $("#mna-wrap");
-  try {
-    const m = await data("mna.json");
-    const rows = s.conf ? m.deals.filter((r) => r.confidence === s.conf) : m.deals;
-    wrap.replaceChildren(rows.length ? mnaTable(rows) : stateBox("", s.conf ? `No ${s.conf}-confidence deals` : "No deals yet", "Deals appear when headlines are categorized as M&A."));
-  } catch (e) { wrap.replaceChildren(stateBox("error", "Couldn't load the M&A tracker", e.message)); }
-}
-
-/* ---------- sources ---------- */
+/* ---------- Sources ---------- */
 async function renderSources() {
-  const wrap = $("#sources-wrap");
-  try {
-    const { sources } = await data("sources.json");
-    wrap.replaceChildren(el("table", {},
-      el("thead", {}, el("tr", {}, ...["Source", "Method", "URL used", "Items", "New", "Dropped", "Notes / failure reason"].map((h) => el("th", {}, h)))),
-      el("tbody", {}, ...sources.map((s) => el("tr", { class: s.ok ? "" : "is-low" },
-        el("td", { class: "party", "data-label": "Source" }, el("span", {}, el("span", { class: "ok-dot " + (s.ok ? "ok" : "fail") }), s.name)),
-        el("td", { "data-label": "Method" }, s.method),
-        el("td", { class: "url", "data-label": "URL used" }, s.url_used ? extLink(s.url_used, s.url_used) : "—"),
-        el("td", { class: "num", "data-label": "Items" }, s.items_last_run),
-        el("td", { class: "num", "data-label": "New" }, s.new_last_run),
-        el("td", { class: "num", "data-label": "Dropped" }, s.dropped_last_run || (s.kind === "wire" ? 0 : "—")),
-        el("td", { class: "reason", "data-label": s.ok ? "Notes" : "Reason" }, s.reason || (s.ok ? null : "not run yet")))))));
-  } catch (e) { wrap.replaceChildren(stateBox("error", "Couldn't load sources", e.message)); }
+  const box = $("#view-sources");
+  put(box, ...skeletons(6));
+  let d;
+  try { d = await data("sources.json"); } catch (e) { put(box, errorState(e, renderSources)); return; }
+  const last = META && META.last_refresh ? `${F.long.format(new Date(META.last_refresh))} at ${fmtTime(META.last_refresh)} PT` : "not yet run";
+  put(box, el("div", { style: "max-width:1040px" },
+    el("h1", { class: "page-title" }, "Sources"),
+    el("p", { class: "prose", style: "margin:10px 0 18px" }, `Status from the last run, ${last}. Only the headline, link, date and a short description are stored; gated outlets contribute headlines only.`),
+    el("div", { class: "src-list" }, (d.sources || []).map((r) => el("div", { class: "src-row" },
+      r.homepage ? ext(r.homepage, r.name, "name") : el("span", { class: "name" }, r.name),
+      el("span", { class: "method" }, r.method || "—"),
+      el("span", { class: "items" }, plural(r.items_last_run || 0, "item")),
+      !r.enabled ? el("span", { class: "off" }, "Disabled")
+        : r.ok ? el("span", { class: "ok" }, "OK")
+          : el("span", { class: "fail" }, r.reason || "Failed"))))));
 }
 
-/* ---------- firm page ---------- */
-async function renderFirm(s) {
-  const box = $("#firm");
-  box.replaceChildren(stateBox("", "Loading firm…"));
-  let f;
-  try { f = await data(`firms/${encodeURIComponent(s.slug)}.json`); } catch (e) {
-    box.replaceChildren(stateBox("error", "Firm not found", "No stories mention this firm, or the link is out of date.", el("a", { class: "btn", href: "/", "data-nav": "" }, "Back to the feed"))); return;
-  }
-  document.title = f.name + " · Wealth Wire";
-  const clusters = f.stories.map((st) => CLUSTERS.find((c) => c.id === st.cluster_id)).filter(Boolean);
-  box.replaceChildren(el("article", { class: "firm-page" },
-    el("div", { class: "view-head" }, el("h1", { class: "view-title" }, f.name)),
-    el("dl", { class: "firm-facts" },
-      el("dt", {}, "Legal name"), el("dd", {}, f.legal_name),
-      el("dt", {}, "Headquarters"), el("dd", {}, [f.city, f.state].filter(Boolean).join(", ") || "—"),
-      el("dt", {}, "SEC-reported AUM"), el("dd", {}, f.sec_aum_usd ? el("span", { class: "aum-cell" }, fmtAum(f.sec_aum_usd)) : "—", el("span", { class: "muted" }, ` (as of ${f.sec_aum_as_of})`)),
-      el("dt", {}, "CRD"), el("dd", { class: "mono" }, extLink(f.iapd_url, f.crd), el("span", { class: "muted" }, " · SEC# " + (f.sec_number || "—")))),
-    el("h2", { class: "section-h" }, `Stories (${f.stories.length})`),
-    clusters.length ? el("div", { class: "cards" }, ...clusters.map((c) => card(c))) : el("ul", { class: "archive-list" }, ...f.stories.map((st) => el("li", {}, extLink(st.url, st.headline)))),
-    el("h2", { class: "section-h", style: "margin-top:18px" }, `M&A (${f.deals.length})`),
-    f.deals.length ? mnaTable(f.deals) : el("p", { class: "muted" }, "No deals involving this firm in the tracker.")));
+/* ---------- watchlist drawer ---------- */
+let lastFocus = null;
+function openDrawer() {
+  lastFocus = document.activeElement;
+  renderWatchlist();
+  $("#watch-msg").textContent = "";
+  $("#drawer-backdrop").hidden = false;
+  $("#drawer").hidden = false;
+  document.body.style.overflow = "hidden";
+  $("#watch-name").focus();
+}
+function closeDrawer() {
+  $("#drawer").hidden = true;
+  $("#drawer-backdrop").hidden = true;
+  document.body.style.overflow = "";
+  if (lastFocus && lastFocus.focus) lastFocus.focus();
+}
+function renderWatchlist() {
+  const ul = $("#watchlist");
+  put(ul, ...(WATCH.length ? WATCH.map((f) => el("li", {},
+    el("span", { style: "min-width:0" }, el("span", { class: "w-name" }, f.name),
+      f.aliases.length ? el("span", { class: "w-alias" }, "Also: " + f.aliases.join(", ")) : null),
+    el("button", { class: "textbtn", type: "button", "aria-label": "Remove " + f.name,
+      onclick: () => setWatch(WATCH.filter((x) => x !== f), `Removed ${f.name}.`) }, "Remove")))
+    : [el("li", {}, el("span", { class: "empty" }, "No firms yet. Add one below."))]));
+}
+function setWatch(list, msg) {
+  WATCH = Watch.clean(list);
+  const saved = Watch.save(WATCH);
+  compileWatch();
+  $("#watch-open").textContent = `Watchlist (${WATCH.length})`;
+  if (!$("#drawer").hidden) renderWatchlist();
+  $("#watch-msg").textContent = saved ? (msg || "") : "This browser blocked storage, so the watchlist won't be kept.";
+  route();
+}
+function trapFocus(e) {
+  if ($("#drawer").hidden) return;
+  if (e.key === "Escape") { e.preventDefault(); closeDrawer(); return; }
+  if (e.key !== "Tab") return;
+  const vis = [...$("#drawer").querySelectorAll("button, input, a[href], select")].filter((x) => !x.disabled && x.getClientRects().length);
+  if (!vis.length) return;
+  const first = vis[0], last = vis[vis.length - 1];
+  if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+  else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
 }
 
 /* ---------- theme ---------- */
+function themeLabel() { $("#theme-toggle").textContent = document.documentElement.dataset.theme === "dark" ? "Light mode" : "Dark mode"; }
 function initTheme() {
   $("#theme-toggle").addEventListener("click", () => {
     const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = next;
-    try { localStorage.setItem("ww-theme", next); } catch (e) { /* private mode */ }
+    try { localStorage.setItem(THEME_KEY, next); } catch (e) { /* private mode */ }
+    themeLabel();
   });
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
     let saved = null;
-    try { saved = localStorage.getItem("ww-theme"); } catch (err) {}
-    if (!saved) document.documentElement.dataset.theme = e.matches ? "dark" : "light";
+    try { saved = localStorage.getItem(THEME_KEY); } catch (err) {}
+    if (!saved) { document.documentElement.dataset.theme = e.matches ? "dark" : "light"; themeLabel(); }
   });
+  themeLabel();
 }
 
 /* ---------- wiring ---------- */
 function init() {
   initTheme();
   let t = null;
-  $("#q").addEventListener("input", (e) => { clearTimeout(t); const v = e.target.value.trim(); t = setTimeout(() => writeState({ q: v }, true), 200); });
-  $("#filters").addEventListener("submit", (e) => { e.preventDefault(); writeState({ q: $("#q").value.trim() }); });
-  $("#source").addEventListener("change", (e) => writeState({ source: e.target.value }));
-  $("#region").addEventListener("change", (e) => writeState({ region: e.target.value }));
-  $("#from").addEventListener("change", (e) => writeState({ from: e.target.value }));
-  $("#to").addEventListener("change", (e) => writeState({ to: e.target.value }));
-  $("#watch").addEventListener("change", (e) => writeState({ watch: e.target.checked }));
-  $("#clear").addEventListener("click", clearFilters);
-  $("#cat-chips").addEventListener("click", (e) => {
+  $("#q").addEventListener("input", (e) => { clearTimeout(t); const v = e.target.value.trim(); t = setTimeout(() => { feedShown = PAGE; writeState({ tab: "feed", q: v }, true); }, 200); });
+  $("#filters").addEventListener("submit", (e) => { e.preventDefault(); writeState({ tab: "feed", q: $("#q").value.trim() }); });
+  $("#source").addEventListener("change", (e) => { feedShown = PAGE; writeState({ tab: "feed", source: e.target.value }); });
+  $("#region").addEventListener("change", (e) => { feedShown = PAGE; writeState({ tab: "feed", region: e.target.value }); });
+  $("#when").addEventListener("change", (e) => { feedShown = PAGE; writeState({ tab: "feed", when: e.target.value }); });
+  $("#from").addEventListener("change", (e) => writeState({ tab: "feed", when: "range", from: e.target.value }));
+  $("#to").addEventListener("change", (e) => writeState({ tab: "feed", when: "range", to: e.target.value }));
+  $("#watch").addEventListener("change", (e) => { feedShown = PAGE; writeState({ tab: "feed", watch: e.target.checked }); });
+  $("#cats").addEventListener("click", (e) => {
     const b = e.target.closest("button[data-cat]");
     if (!b) return;
     const cur = readState().category, cat = b.dataset.cat;
-    writeState({ category: cur.includes(cat) ? cur.filter((c) => c !== cat) : [...cur, cat] });
+    feedShown = PAGE;
+    writeState({ tab: "feed", category: !cat ? [] : cur.includes(cat) ? cur.filter((c) => c !== cat) : [...cur, cat] });
   });
   $("#more").addEventListener("click", () => { feedShown += PAGE; renderFeed(readState(), true); });
+  $("#watch-open").addEventListener("click", openDrawer);
+  $("#drawer-close").addEventListener("click", closeDrawer);
+  $("#drawer-backdrop").addEventListener("click", closeDrawer);
   $("#watch-add").addEventListener("submit", (e) => {
     e.preventDefault();
     const name = $("#watch-name").value.trim();
     const aliases = $("#watch-aliases").value.split(",").map((a) => a.trim()).filter(Boolean);
-    if (name.replace(/\s/g, "").length < 3 && !aliases.some((a) => a.replace(/\s/g, "").length >= 3)) {
-      setWatch(WATCH, "Use at least 3 characters — shorter names are never matched.", true); return;
-    }
-    if (WATCH.some((f) => f.name.toLowerCase() === name.toLowerCase())) { setWatch(WATCH, `${name} is already on the watchlist.`, true); return; }
+    const msg = $("#watch-msg");
+    if (!name) { msg.textContent = "Enter a firm name."; return; }
+    if (name.replace(/\s/g, "").length < 3 && !aliases.some((a) => a.replace(/\s/g, "").length >= 3)) { msg.textContent = "Use at least three characters; shorter names are never matched."; return; }
+    if (WATCH.some((f) => f.name.toLowerCase() === name.toLowerCase())) { msg.textContent = `${name} is already on the list.`; return; }
     $("#watch-name").value = ""; $("#watch-aliases").value = "";
     setWatch([...WATCH, { name, aliases }], `Added ${name}.`);
+    $("#watch-name").focus();
   });
   $("#watch-export").addEventListener("click", () => {
     const blob = new Blob([JSON.stringify({ version: 1, firms: WATCH }, null, 2)], { type: "application/json" });
-    const a = el("a", { href: URL.createObjectURL(blob), download: "wealth-wire-watchlist.json" });
+    const a = el("a", { href: URL.createObjectURL(blob), download: "fiduciary-duty-watchlist.json" });
     document.body.append(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(a.href), 1000);
   });
@@ -569,25 +827,26 @@ function init() {
     try {
       const list = Watch.clean(JSON.parse(await file.text()));
       if (!list.length) throw new Error("no firms found in that file");
-      setWatch(list, `Imported ${list.length} firm${list.length > 1 ? "s" : ""}.`);
-    } catch (err) { setWatch(WATCH, "Import failed: " + err.message, true); }
+      setWatch(list, `Imported ${plural(list.length, "firm")}.`);
+    } catch (err) { $("#watch-msg").textContent = "Import failed: " + err.message + "."; }
   });
+  document.addEventListener("keydown", trapFocus);
   document.addEventListener("click", (e) => {
-    const a = e.target.closest("a[data-tab], a[data-conf], a[data-nav]");
-    if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    const a = e.target.closest("a[data-nav]");
+    if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
     e.preventDefault();
-    if (a.dataset.tab) writeState({ tab: a.dataset.tab });
-    else if (a.dataset.conf !== undefined) writeState({ tab: "mna", conf: a.dataset.conf });
-    else go(a.getAttribute("href"));
+    feedShown = PAGE;
+    go(a.getAttribute("href"));
+    window.scrollTo(0, 0);
   });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "/" && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) {
+    if (e.key === "/" && $("#drawer").hidden && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) {
       e.preventDefault();
       if (readState().tab !== "feed") writeState({ tab: "feed" });
       $("#q").focus();
     }
   });
-  window.addEventListener("popstate", route);
+  window.addEventListener("popstate", () => { prevUrl = null; route(); });
   route();
 }
 init();
