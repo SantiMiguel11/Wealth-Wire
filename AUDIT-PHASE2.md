@@ -125,3 +125,87 @@ Fixed during review:
   host and sec.gov (HTTP 403 at the proxy), so the local "real" run failed all 14 sources. That confirmed the
   total-failure path is handled: the site builds, and the privacy and contract checks pass. The real
   end-to-end runs are the two GitHub Actions runs above.
+
+---
+
+# Follow-ups (2026-09-27)
+
+## 1. Honest firm-matching evaluation
+
+**Held-out set A:** `tests/fixtures/firm_headlines_heldout.yaml`.
+- 162 real headlines from the live site's refreshes of 2026-09-26/27, excluding every headline in the
+  original test set.
+- 50 labeled firm mentions; 127 headlines name no adviser.
+- Labeled by hand under one rule: a mention counts only if the named organization has an SEC-registered
+  adviser under that brand in the real SEC file, checked row by row (DECISIONS F1).
+
+| | Precision | Recall | TP / FP / FN |
+|---|---:|---:|---:|
+| **Held-out A, logic as deployed (`a6a9741`), before any change — the real score** | **0.957** | **0.900** | 45 / 2 / 5 |
+| Held-out A, generated aliases only (same logic) | 0.933 | 0.560 | |
+| Held-out A after the fixes (in-sample: the fixes were made on this set) | 1.000 | 0.980 | 49 / 0 / 1 |
+| Original 75-headline set after the fixes | 0.984 | 0.940 | 63 / 1 / 4 |
+
+**Caveat on the 0.957.** It is biased upward. On 2026-09-27 I inspected the matcher's output over this same
+corpus while tuning (fixing false positives such as "Members", "Focused" and "Frazier") before this set was
+built. Recall wasn't tuned on it.
+
+**Blind set B.** A truly blind score needs headlines first fetched after the tuning commit. When the set was
+built, only 6 such headlines existed. Set B will be labeled and scored the same way, without changing the
+logic first, once 75 or more new headlines have accumulated from the scheduled refreshes. It will be
+reported here.
+
+Pre-fix errors on set A, and what was done:
+
+| Headline | Error | Fix |
+|---|---|---|
+| Concurrent adds $425 million Houston team… | missed Concurrent (dictionary word) | subject rule (F3) |
+| EQT raises Perpetual takeover bid… | missed EQT (3-letter acronym) | subject rule (F3) |
+| Bain Capital (mostly) funds Envestnet buy of Vestmark… | missed Bain Capital and Orion | curated aliases (verified SEC names) |
+| …Prior Problematic Financial Decisions: Kitces & Carl | "Financial Decisions" false positive | stoplist now applies to SEC aliases |
+| FINRA Fines Pictet Overseas and Blue Ocean ATS… | "Blue Ocean Capital" false positive | word-only alias followed by an ALL-CAPS token is a different name |
+| Ritik Malhotra sells not-for-sale Savvy stake… | missed Savvy | **not fixed**: a curated "Savvy" would fire on "How Savvy Advisors…" |
+
+Across all 235 real headlines, the fixes changed exactly 6 results, all corrections. That includes one
+old-set miss fixed as a side effect ("Advisor moves: RBC lands…").
+
+**Regression test.** `tests/test_firms_real.py` runs both sets against
+`tests/fixtures/sec_firms_real_subset.csv`, the 594 real SEC registrants needed to reproduce full-file
+matching exactly. `scripts/build_eval_dictionary.py` verifies that equality when it rebuilds the slice.
+
+## 2 and 3. Press-release wires, verified from GitHub's network
+
+The build sandbox can't reach these hosts, so every candidate feed was checked with
+`.github/workflows/probe-feeds.yml`, run through `workflow_dispatch` via the GitHub API. `gh` isn't installed
+here, but it's the same event.
+
+| Wire | Result | Evidence |
+|---|---|---|
+| GlobeNewswire | **Fixed: 4 keyword feeds** (registered investment advisor · wealth management · RIA · family office) | Probe run 36286878218: 20 items each; the filter kept 12 / 10 / 12 / 11. **Live refresh run 36287163800: 80 fetched, 7 kept, 4 unique new stories stored** (Meristead Wealth launch, Wedbush hire, Callan Family Office appointment, AssetMark research). |
+| PR Newswire | **Disabled.** No keyword-scoped feed exists. | Probe runs 36286878218 and 36286976221: every financial-services subject slug either returns the all-news firehose or is off-topic (banking 0 kept, M&A 1 irrelevant). |
+| Business Wire | **Removed.** | `feed.businesswire.com/robots.txt` disallows `/rss/home/`; `businesswire.com/robots.txt` returns 403. Wire feeds are now robots-checked. |
+
+**Also new:**
+- award/ranking releases are dropped from wires;
+- `wire_stats.csv` (in `state/` on `live`) gets one row per wire feed per run: fetched, too old, dropped by
+  the filter, kept, and new. The first rows are from run 36287163800. Each run's summary prints its rows.
+
+## 4. First live Claude digest
+
+**Not yet run.** No `CLAUDE_CODE_OAUTH_TOKEN` or `ANTHROPIC_API_KEY` secret exists in the repository. In
+every run so far (including 36286484901 and 36287163800), "Write the digest with Claude" was **skipped** and
+the "No Claude secret" notice ran. So there is no Claude output or validator result to paste yet. Once a
+secret is added (MANUAL-STEPS §2), the next scheduled or manual run will produce it, and it will be recorded
+here with the validator's verdict.
+
+# Fiduciary Duty redesign (2026-09-27)
+
+- **Scope:** frontend only, per the brief (`frontend/`, design reference in `design/`); DECISIONS R1–R7.
+- **Playwright:** 14 views × 1440/390 × light/dark (56 screenshots) plus interaction runs. Result: 0 console
+  errors, 0 failed requests, no horizontal scroll at 390 px, and every tap target is 44 px or taller at 390 px.
+- **Interactions checked:** search, category, back button, region, clear filters, `/` shortcut, deals sort
+  (`aria-sort`), watchlist add/pin/export/remove/import, drawer focus trap and Esc, `ww-theme` → `fd-theme`
+  migration, theme persistence, and an error state that names the failed file.
+- **Contrast** (computed, WCAG): lowest text pair 5.21:1 (muted on the review-row tint, light theme); every
+  category color is at least 6.3:1.
+- **Tests:** 354 passed.
