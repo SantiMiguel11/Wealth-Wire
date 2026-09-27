@@ -4,146 +4,130 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Wealth Wire</title>
-<meta name="description" content="Personal news wire for the U.S. wealth management and RIA industry">
+<title>Fiduciary Duty</title>
+<meta name="description" content="Daily news for wealth management and RIAs">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script>
-  // Apply the theme before first paint: saved choice, else system preference.
+  // Theme before first paint: saved choice (fd-theme; the old ww-theme key is read once), else system preference.
   (function () {
     var t = null;
-    try { t = localStorage.getItem("ww-theme"); } catch (e) {}
+    try {
+      t = localStorage.getItem("fd-theme");
+      if (!t) {
+        t = localStorage.getItem("ww-theme");
+        if (t === "light" || t === "dark") localStorage.setItem("fd-theme", t);
+        localStorage.removeItem("ww-theme");
+      }
+    } catch (e) {}
     if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     document.documentElement.dataset.theme = t;
   })();
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&amp;family=Lora:ital,wght@0,400;0,500;1,400&amp;display=swap">
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <!--
-  Wealth Wire frontend. Reads ONLY the static JSON files under /data/ (see DATA-CONTRACT.md).
+  Fiduciary Duty frontend. Reads ONLY the static JSON files under /data/ (see DATA-CONTRACT.md).
   Everything in this folder can be replaced without touching the Python pipeline.
 -->
-<header class="topbar">
-  <a class="brand" href="/" aria-label="Wealth Wire home">
-    <span class="logo" aria-hidden="true">WW</span>
-    <span class="brand-name">WEALTH<b>WIRE</b></span>
-  </a>
-  <nav class="tabs" role="tablist" aria-label="Sections">
-    <a role="tab" href="/?tab=feed" data-tab="feed">Feed</a>
-    <a role="tab" href="/?tab=digest" data-tab="digest">Digest</a>
-    <a role="tab" href="/?tab=mna" data-tab="mna">M&amp;A</a>
-    <a role="tab" href="/?tab=archive" data-tab="archive">Archive</a>
-    <a role="tab" href="/?tab=sources" data-tab="sources">Sources</a>
-  </nav>
-  <div class="status">
-    <span id="demo-chip" class="chip chip-demo" hidden title="The data came from offline fixture feeds (synthetic test data), not live sources">DEMO DATA</span>
-    <span id="ingest-status" class="mono muted"></span>
-    <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle dark mode" title="Toggle dark / light">
-      <svg class="i-sun" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      <svg class="i-moon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-    </button>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead wrap">
+  <div class="dateline">
+    <div class="dateline-left">
+      <span id="today-date" class="dateline-date"></span>
+      <span id="updated"></span>
+      <span id="demo-note" hidden>Demo data</span>
+    </div>
+    <div class="dateline-right">
+      <button id="watch-open" class="textbtn" type="button" aria-haspopup="dialog" aria-controls="drawer">Watchlist (0)</button>
+      <button id="theme-toggle" class="textbtn" type="button">Dark mode</button>
+    </div>
   </div>
+  <div class="nameplate">
+    <a class="wordmark" href="/" data-nav>Fiduciary Duty</a>
+    <span class="masthead-line">Daily news for wealth management and RIAs</span>
+  </div>
+  <nav class="sections" role="tablist" aria-label="Sections">
+    <a role="tab" href="/" data-tab="today" data-nav>Today</a>
+    <a role="tab" href="/?tab=feed" data-tab="feed" data-nav>Feed</a>
+    <a role="tab" href="/?tab=mna" data-tab="mna" data-nav>Deals</a>
+    <a role="tab" href="/?tab=archive" data-tab="archive" data-nav>Archive</a>
+  </nav>
 </header>
 
-<main id="app">
-  <!-- FEED -->
+<main id="main" class="wrap" tabindex="-1">
+  <section id="view-today" class="view" hidden></section>
   <section id="view-feed" class="view" hidden>
-    <form id="filters" class="filters" autocomplete="off" role="search">
-      <div class="f-search">
-        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <input id="q" name="q" type="search" placeholder="Search headlines" aria-label="Search">
-        <kbd class="hint">/</kbd>
+    <div class="cols">
+      <div class="col-main">
+        <div class="page-head">
+          <h1 class="page-title">Feed</h1>
+          <span id="feed-count" class="meta-line"></span>
+        </div>
+        <form id="filters" class="filters" role="search" autocomplete="off">
+          <input id="q" class="input grow" type="search" placeholder="Search headlines, firms and outlets" aria-label="Search headlines, firms and outlets" aria-keyshortcuts="/">
+          <select id="source" class="input" aria-label="Outlet"><option value="">All outlets</option></select>
+          <select id="when" class="input" aria-label="Date">
+            <option value="">Any date</option><option value="today">Today</option><option value="3d">Last 3 days</option>
+            <option value="week">This week</option><option value="range">Date range…</option>
+          </select>
+          <select id="region" class="input" aria-label="Region"><option value="">All regions</option></select>
+          <span id="range" class="range" hidden>
+            <label>From <input id="from" class="input" type="date"></label>
+            <label>To <input id="to" class="input" type="date"></label>
+          </span>
+          <label class="check"><input id="watch" type="checkbox"> Watchlist only</label>
+        </form>
+        <div id="cats" class="cat-toggles" role="group" aria-label="Categories"></div>
+        <div id="feed-list" aria-live="polite"></div>
+        <button id="more" class="btn more" type="button" hidden>Load more</button>
       </div>
-      <label class="f-field"><span>Source</span>
-        <select id="source" name="source" aria-label="Source"><option value="">All sources</option></select>
-      </label>
-      <label class="f-field"><span>Region</span>
-        <select id="region" name="region" aria-label="Region or state"><option value="">All regions</option></select>
-      </label>
-      <label class="f-field f-date"><span>From</span><input id="from" name="from" type="date" aria-label="From date"></label>
-      <label class="f-field f-date"><span>To</span><input id="to" name="to" type="date" aria-label="To date"></label>
-      <label class="f-toggle"><input id="watch" name="watch" type="checkbox"><span>Watchlist only</span></label>
-      <button id="clear" type="button" class="btn-ghost">Clear</button>
-      <div id="cat-chips" class="cat-chips" role="group" aria-label="Categories"></div>
-    </form>
-
-    <div class="layout">
-      <div class="feed-col">
-        <div id="feed-summary" class="summary mono"></div>
-        <div id="feed-error"></div>
-        <section id="pinned" class="pinned" hidden aria-label="Watchlist stories">
-          <h2 class="section-h"><span class="pin-dot"></span>Watchlist <span id="pinned-count" class="mono muted"></span></h2>
-          <div id="pinned-list" class="cards"></div>
-        </section>
-        <div id="feed-list" class="cards" aria-live="polite"></div>
-        <div class="more-wrap"><button id="more" type="button" class="btn" hidden>Load more</button></div>
-      </div>
-      <aside class="sidebar">
-        <section class="panel">
-          <h2 class="panel-h">Trending firms <span class="muted mono">7d</span></h2>
-          <ol id="trending" class="trending"></ol>
-        </section>
-        <section class="panel" id="watch-panel">
-          <h2 class="panel-h">Watchlist <span class="muted mono">this browser</span></h2>
-          <ul id="watchlist" class="watchlist"></ul>
-          <form id="watch-add" class="watch-add" autocomplete="off">
-            <input id="watch-name" placeholder="Firm name" aria-label="Firm name" required maxlength="80">
-            <input id="watch-aliases" placeholder="Aliases, comma-separated" aria-label="Aliases" maxlength="300">
-            <button class="btn" type="submit">Add firm</button>
-          </form>
-          <div class="watch-io">
-            <button id="watch-export" class="btn-ghost" type="button">Export JSON</button>
-            <label class="btn-ghost file-btn">Import JSON<input id="watch-import" type="file" accept="application/json,.json" hidden></label>
-          </div>
-          <p id="watch-msg" class="form-msg" role="status"></p>
-          <p class="form-msg">Stored only in this browser; never sent anywhere.</p>
-        </section>
-      </aside>
+      <aside class="col-side" id="feed-side" aria-label="Trending firms"></aside>
     </div>
   </section>
-
-  <!-- DIGEST -->
-  <section id="view-digest" class="view" hidden><div id="digest"></div></section>
-
-  <!-- ARCHIVE -->
-  <section id="view-archive" class="view" hidden><div id="archive"></div></section>
-
-  <!-- WEEKLY RECAP -->
-  <section id="view-weekly" class="view" hidden><div id="weekly"></div></section>
-
-  <!-- M&A -->
-  <section id="view-mna" class="view" hidden>
-    <div class="view-head">
-      <h1 class="view-title">M&amp;A tracker</h1>
-      <div class="seg" role="group" aria-label="Confidence filter">
-        <a href="/?tab=mna" data-conf="">All</a>
-        <a href="/?tab=mna&amp;conf=high" data-conf="high">High confidence</a>
-        <a href="/?tab=mna&amp;conf=low" data-conf="low">Low confidence</a>
-      </div>
-    </div>
-    <p class="note">One row per story. Fields that can't be read unambiguously from the headlines are left blank and the row is marked <span class="conf conf-low">LOW</span> — nothing is guessed. A matching press release raises confidence.</p>
-    <div id="mna-wrap" class="table-wrap"></div>
-  </section>
-
-  <!-- SOURCES -->
-  <section id="view-sources" class="view" hidden>
-    <div class="view-head"><h1 class="view-title">Sources</h1></div>
-    <p class="note">Status from the latest refresh.</p>
-    <div id="sources-wrap" class="table-wrap"></div>
-  </section>
-
-  <!-- FIRM PAGE (/firm/<slug>) -->
-  <section id="view-firm" class="view" hidden><div id="firm"></div></section>
+  <section id="view-mna" class="view" hidden></section>
+  <section id="view-archive" class="view" hidden></section>
+  <section id="view-weekly" class="view" hidden></section>
+  <section id="view-sources" class="view" hidden></section>
+  <section id="view-firm" class="view" hidden></section>
 </main>
 
-<footer class="site-footer">
-  <span id="footer-note">Summaries written with Claude from outlet headlines.</span>
-  <span id="footer-refresh" class="mono muted"></span>
+<footer class="wrap">
+  <div class="footer-in">
+    <span id="footer-note">Summaries written with Claude from outlet headlines.</span>
+    <nav class="footer-links" aria-label="Site"><a href="/?tab=sources" data-nav>Sources</a></nav>
+  </div>
 </footer>
 
-<template id="tpl-skeleton">
-  <div class="card skeleton" aria-hidden="true"><div class="sk sk-meta"></div><div class="sk sk-title"></div><div class="sk sk-line"></div></div>
-</template>
+<div id="drawer-backdrop" class="backdrop" hidden></div>
+<aside id="drawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" hidden>
+  <div class="drawer-inner">
+    <div class="drawer-head">
+      <h2 id="drawer-title">Watchlist</h2>
+      <button id="drawer-close" class="textbtn" type="button">Close</button>
+    </div>
+    <p class="drawer-note">Stories that mention these firms are pinned to the top of Today and marked in the Feed.
+      Matching ignores case; aliases under three characters are skipped.</p>
+    <ul id="watchlist" class="watch-rows"></ul>
+    <form id="watch-add" class="watch-form" autocomplete="off">
+      <label for="watch-name">Firm name</label>
+      <input id="watch-name" class="input" placeholder="e.g. Harborview Wealth Partners" required>
+      <label for="watch-aliases">Aliases, comma-separated</label>
+      <input id="watch-aliases" class="input" placeholder="e.g. Harborview">
+      <div class="watch-actions">
+        <button class="btn" type="submit">Add firm</button>
+        <span id="watch-msg" class="watch-msg" role="status" aria-live="polite"></span>
+      </div>
+    </form>
+    <div class="watch-io">
+      <label class="textbtn file">Import JSON<input id="watch-import" type="file" accept="application/json,.json"></label>
+      <button id="watch-export" class="textbtn" type="button">Export JSON</button>
+    </div>
+  </div>
+</aside>
 
 <script src="/app.js"></script>
 </body>

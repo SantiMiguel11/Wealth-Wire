@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/classical-e7ea592a-e271-48ff-9bc4-7abd5cec5afd/styles.css">
+<script src="_ds/classical-e7ea592a-e271-48ff-9bc4-7abd5cec5afd/_ds_bundle.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&amp;family=Cormorant+SC:wght@500;600&amp;family=Lora:ital,wght@0,400;0,500;1,400&amp;display=swap">
+<style>
+body { margin: 0; background: var(--color-neutral-300); }
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--fd-accent-ink); }
+button { font: inherit; color: inherit; }
+select.input { appearance: none; -webkit-appearance: none; padding-right: 26px; cursor: pointer; }
+</style>
+</helmet>
+<div style="min-height:100vh; background:var(--color-neutral-300);">
+<div data-fd-frame="1" style="{{ frameStyle }}">
+
+<header style="padding: 0 clamp(16px,3.4cqi,56px);">
+  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:6px 18px; padding:10px 0 9px; border-bottom:1px solid var(--color-divider); font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:500; letter-spacing:.07em; text-transform:uppercase; color:var(--fd-muted);">
+    <div style="display:flex; flex-wrap:wrap; gap:4px 14px;">
+      <span style="color:var(--color-text);">Friday, September 25, 2026</span>
+      <span>Updated 7:17 AM PT</span>
+    </div>
+    <div style="display:flex; gap:18px;">
+      <button onClick="{{ openDrawer }}" style="background:none; border:0; padding:0; cursor:pointer; letter-spacing:inherit; text-transform:inherit; color:var(--fd-muted);" style-hover="color: var(--fd-accent-ink);">Watchlist ({{ watchCount }})</button>
+      <button onClick="{{ toggleTheme }}" style="background:none; border:0; padding:0; cursor:pointer; letter-spacing:inherit; text-transform:inherit; color:var(--fd-muted);" style-hover="color: var(--fd-accent-ink);">{{ themeLabel }}</button>
+    </div>
+  </div>
+
+  <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 28px; padding: clamp(14px,1.9cqi,28px) 0 clamp(10px,1.2cqi,16px);">
+    <button onClick="{{ goToday }}" style="background:none; border:0; padding:0; cursor:pointer; color:var(--color-text); text-align:left;">
+      <sc-if value="{{ wmSerif }}" hint-placeholder-val="{{ true }}"><span style="display:block; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(40px,4.9cqi,72px); line-height:.95; letter-spacing:-.012em;">Fiduciary Duty</span></sc-if>
+      <sc-if value="{{ wmCaps }}"><span style="display:block; font-family:'Cormorant SC',serif; font-weight:600; font-size:clamp(34px,4.2cqi,62px); line-height:1; letter-spacing:.07em;">Fiduciary Duty</span></sc-if>
+      <sc-if value="{{ wmCond }}"><span style="display:block; font-family:'Barlow Condensed',sans-serif; font-weight:500; font-size:clamp(36px,4.4cqi,64px); line-height:.95; letter-spacing:.03em; text-transform:uppercase;">Fiduciary Duty</span></sc-if>
+    </button>
+    <span style="font-family:var(--font-body); font-style:italic; font-size:clamp(14px,1.1cqi,16px); color:var(--fd-ink2);">Daily news for wealth management and RIAs</span>
+  </div>
+
+  <nav style="display:flex; gap:clamp(18px,2.2cqi,32px); border-top:1px solid var(--color-text); border-bottom:1px solid var(--color-divider); box-shadow: 0 -3px 0 -2px var(--color-text); margin-top:2px;">
+    <sc-for list="{{ nav }}" as="n" hint-placeholder-count="4">
+      <button onClick="{{ n.go }}" style="background:none; border:0; border-bottom:2px solid {{ n.rule }}; margin-bottom:-1px; padding:11px 0 9px; cursor:pointer; font-family:'Barlow Condensed',sans-serif; font-size:15px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:{{ n.color }};" style-hover="color: var(--color-text);">{{ n.label }}</button>
+    </sc-for>
+  </nav>
+</header>
+
+<main style="padding: 0 clamp(16px,3.4cqi,56px) 48px;">
+
+<!-- TODAY -->
+<sc-if value="{{ isToday }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex; flex-wrap:wrap; gap:36px clamp(32px,4cqi,64px); padding-top:clamp(20px,2.4cqi,36px);">
+  <div style="flex:1 1 560px; min-width:0; max-width:780px;">
+    <div style="font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--fd-accent-ink);">Today in wealth management</div>
+    <p style="margin:10px 0 12px; font-family:var(--font-body); font-size:clamp(17px,1.4cqi,20px); line-height:1.55; color:var(--color-text); text-wrap:pretty;">Harborview Wealth Partners had the busiest two days of any buyer: it agreed to acquire $1.2B Summit Ridge Advisors on Thursday and landed a $2.1B wirehouse breakaway team overnight. The SEC opened a 60-day comment period on custody rules for crypto assets, and the Fed held rates while signaling one more cut this year.</p>
+    <div style="font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:500; letter-spacing:.07em; text-transform:uppercase; color:var(--fd-muted); padding-bottom:22px;">{{ digestMeta }}</div>
+
+    <sc-if value="{{ hasPinned }}">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; border-top:1px solid var(--color-text); padding-top:8px; font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.1em; text-transform:uppercase;">
+        <span>From your watchlist</span>
+        <button onClick="{{ openDrawer }}" style="background:none; border:0; padding:0; cursor:pointer; font-weight:500; letter-spacing:inherit; text-transform:inherit; color:var(--fd-muted);" style-hover="color: var(--fd-accent-ink);">Edit</button>
+      </div>
+      <sc-for list="{{ pinned }}" as="s" hint-placeholder-count="3">
+        <article style="display:grid; grid-template-columns:clamp(30px,4cqi,58px) minmax(0,1fr); column-gap:clamp(8px,1.2cqi,18px); padding:18px 0 20px; border-bottom:1px solid var(--color-divider);">
+          <div style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(22px,2.1cqi,30px); line-height:1; color:var(--fd-accent-ink); font-variant-numeric:tabular-nums lining-nums;">{{ s.n }}</div>
+          <div style="min-width:0;">
+            <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:3px 12px; font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;">
+              <span style="color:var(--fd-accent-ink);">Watchlist · {{ s.watchName }}</span>
+              <span style="color:{{ s.catColor }};">{{ s.cat }}</span>
+              <span style="color:var(--fd-muted); font-weight:500;">{{ s.stamp }}</span>
+              <sc-if value="{{ s.hasAum }}"><span style="margin-left:auto; font-size:17px; letter-spacing:.02em; color:var(--color-text); font-variant-numeric:tabular-nums;">{{ s.aum }} <span style="font-size:12px; font-weight:500; letter-spacing:.08em; color:var(--fd-muted);">{{ s.aumNote }}</span></span></sc-if>
+            </div>
+            <h3 style="margin:6px 0 7px; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(22px,1.95cqi,28px); line-height:1.12; letter-spacing:-.008em; text-wrap:pretty;"><a href="{{ s.leadUrl }}" target="_blank" rel="noopener">{{ s.h }}</a></h3>
+            <p style="margin:0 0 7px; font-family:var(--font-body); font-size:15.5px; line-height:1.55; color:var(--fd-ink2); text-wrap:pretty;">{{ s.sum }}</p>
+            <p style="margin:0 0 10px; font-family:var(--font-body); font-size:15.5px; line-height:1.55; color:var(--color-text); text-wrap:pretty;"><em style="color:var(--fd-accent-ink);">Why it matters to advisors:</em> {{ s.why }}</p>
+            <div style="display:flex; flex-wrap:wrap; gap:4px 18px; font-family:var(--font-body); font-size:13px; color:var(--fd-muted);">
+              <span style="display:flex; flex-wrap:wrap; gap:0 6px;">Via <sc-for list="{{ s.outlets }}" as="o"><a href="{{ o.url }}" target="_blank" rel="noopener" style="color:var(--color-text); text-decoration:underline; text-decoration-color:var(--color-divider); text-underline-offset:3px;">{{ o.name }}</a>{{ o.sep }}</sc-for></span>
+              <sc-if value="{{ s.hasFirms }}"><span style="display:flex; flex-wrap:wrap; gap:0 10px;"><sc-for list="{{ s.firmLinks }}" as="f"><button onClick="{{ f.open }}" style="background:none; border:0; padding:0; cursor:pointer; font-size:13px; color:var(--fd-ink2); border-bottom:1px dotted var(--fd-muted);" style-hover="color: var(--fd-accent-ink);">{{ f.name }}</button></sc-for></span></sc-if>
+            </div>
+          </div>
+        </article>
+      </sc-for>
+      <div style="height:26px;"></div>
+    </sc-if>
+
+    <div style="border-top:1px solid var(--color-text); padding-top:8px; font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.1em; text-transform:uppercase;">Top stories</div>
+    <sc-for list="{{ topStories }}" as="s" hint-placeholder-count="5">
+      <article style="display:grid; grid-template-columns:clamp(30px,4cqi,58px) minmax(0,1fr); column-gap:clamp(8px,1.2cqi,18px); padding:18px 0 20px; border-bottom:1px solid var(--color-divider);">
+        <div style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(22px,2.1cqi,30px); line-height:1; color:var(--fd-accent-ink); font-variant-numeric:tabular-nums lining-nums;">{{ s.n }}</div>
+        <div style="min-width:0;">
+          <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:3px 12px; font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;">
+            <span style="color:{{ s.catColor }};">{{ s.cat }}</span>
+            <span style="color:var(--fd-muted); font-weight:500;">{{ s.stamp }}</span>
+            <sc-if value="{{ s.hasAum }}"><span style="margin-left:auto; font-size:17px; letter-spacing:.02em; color:var(--color-text); font-variant-numeric:tabular-nums;">{{ s.aum }} <span style="font-size:12px; font-weight:500; letter-spacing:.08em; color:var(--fd-muted);">{{ s.aumNote }}</span></span></sc-if>
+          </div>
+          <h3 style="margin:6px 0 7px; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(22px,1.95cqi,28px); line-height:1.12; letter-spacing:-.008em; text-wrap:pretty;"><a href="{{ s.leadUrl }}" target="_blank" rel="noopener">{{ s.h }}</a></h3>
+          <p style="margin:0 0 7px; font-family:var(--font-body); font-size:15.5px; line-height:1.55; color:var(--fd-ink2); text-wrap:pretty;">{{ s.sum }}</p>
+          <p style="margin:0 0 10px; font-family:var(--font-body); font-size:15.5px; line-height:1.55; color:var(--color-text); text-wrap:pretty;"><em style="color:var(--fd-accent-ink);">Why it matters to advisors:</em> {{ s.why }}</p>
+          <div style="display:flex; flex-wrap:wrap; gap:4px 18px; font-family:var(--font-body); font-size:13px; color:var(--fd-muted);">
+            <span style="display:flex; flex-wrap:wrap; gap:0 6px;">Via <sc-for list="{{ s.outlets }}" as="o"><a href="{{ o.url }}" target="_blank" rel="noopener" style="color:var(--color-text); text-decoration:underline; text-decoration-color:var(--color-divider); text-underline-offset:3px;">{{ o.name }}</a>{{ o.sep }}</sc-for></span>
+            <sc-if value="{{ s.hasFirms }}"><span style="display:flex; flex-wrap:wrap; gap:0 10px;"><sc-for list="{{ s.firmLinks }}" as="f"><button onClick="{{ f.open }}" style="background:none; border:0; padding:0; cursor:pointer; font-size:13px; color:var(--fd-ink2); border-bottom:1px dotted var(--fd-muted);" style-hover="color: var(--fd-accent-ink);">{{ f.name }}</button></sc-for></span></sc-if>
+          </div>
+        </div>
+      </article>
+    </sc-for>
+    <p style="margin:18px 0 0; font-family:var(--font-body); font-style:italic; font-size:15px; color:var(--fd-ink2);">It's Friday, so the weekly M&amp;A recap is out: 11 deals, $19.2B in headline AUM. <button onClick="{{ goDeals }}" style="background:none; border:0; padding:0; cursor:pointer; font-style:italic; color:var(--fd-accent-ink); text-decoration:underline; text-underline-offset:3px;">Read the recap</button></p>
+  </div>
+
+  <aside style="flex:1 1 240px; min-width:0; max-width:max(300px, calc((760px - 100cqi) * 999));">
+    <div style="border-top:1px solid var(--color-text); padding-top:8px; font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; display:flex; justify-content:space-between;"><span>Trending firms</span><span style="color:var(--fd-muted); font-weight:500;">Stories, 7 days</span></div>
+    <ol style="list-style:none; margin:0 0 28px; padding:0;">
+      <sc-for list="{{ trending }}" as="t" hint-placeholder-count="8">
+        <li style="display:grid; grid-template-columns:22px minmax(0,1fr) auto; gap:8px; align-items:baseline; padding:7px 0; border-bottom:1px solid var(--color-divider);">
+          <span style="font-family:'Barlow Condensed',sans-serif; font-size:13px; color:var(--fd-muted); font-variant-numeric:tabular-nums;">{{ t.rank }}</span>
+          <button onClick="{{ t.open }}" style="background:none; border:0; padding:0; cursor:pointer; text-align:left; font-family:var(--font-body); font-size:14.5px; color:var(--color-text); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" style-hover="color: var(--fd-accent-ink);">{{ t.name }}</button>
+          <span style="font-family:'Barlow Condensed',sans-serif; font-size:15px; font-weight:600; font-variant-numeric:tabular-nums;">{{ t.n }}</span>
+        </li>
+      </sc-for>
+    </ol>
+    <div style="border-top:1px solid var(--color-text); padding-top:8px; font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; display:flex; justify-content:space-between;"><span>Deals this week</span><button onClick="{{ goDeals }}" style="background:none; border:0; padding:0; cursor:pointer; font-weight:500; letter-spacing:inherit; text-transform:inherit; color:var(--fd-muted);" style-hover="color: var(--fd-accent-ink);">All deals</button></div>
+    <sc-for list="{{ sideDeals }}" as="d" hint-placeholder-count="4">
+      <div style="display:grid; grid-template-columns:minmax(0,1fr) auto; gap:2px 10px; padding:8px 0; border-bottom:1px solid var(--color-divider);">
+        <span style="font-family:var(--font-body); font-size:14px; line-height:1.35;">{{ d.acq }} <span style="color:var(--fd-muted);">/</span> {{ d.tgt }}</span>
+        <span style="font-family:'Barlow Condensed',sans-serif; font-size:15px; font-weight:600; font-variant-numeric:tabular-nums; text-align:right;">{{ d.hAum }}</span>
+      </div>
+    </sc-for>
+  </aside>
+</div>
+</sc-if>
+
+<!-- FEED -->
+<sc-if value="{{ isFeed }}">
+<div style="display:flex; flex-wrap:wrap; gap:36px clamp(32px,4cqi,64px); padding-top:clamp(18px,2.2cqi,32px);">
+  <div style="flex:1 1 600px; min-width:0;">
+    <div style="display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:6px 20px; margin-bottom:14px;">
+      <h1 style="margin:0; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(32px,3cqi,44px); line-height:1;">Feed</h1>
+      <span style="font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:500; letter-spacing:.07em; text-transform:uppercase; color:var(--fd-muted);">{{ feedCount }}</span>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:8px 10px; padding-bottom:10px;">
+      <input class="input" type="search" value="{{ q }}" onChange="{{ onQ }}" placeholder="Search headlines, firms and outlets" style="flex:2 1 260px; width:auto; font-family:var(--font-body); background:transparent;">
+      <select class="input" value="{{ fOutlet }}" onChange="{{ onOutlet }}" style="flex:1 1 150px; width:auto; font-family:var(--font-body);"><sc-for list="{{ outletOpts }}" as="o"><option value="{{ o.v }}">{{ o.l }}</option></sc-for></select>
+      <select class="input" value="{{ fDate }}" onChange="{{ onDate }}" style="flex:1 1 120px; width:auto; font-family:var(--font-body);"><sc-for list="{{ dateOpts }}" as="o"><option value="{{ o.v }}">{{ o.l }}</option></sc-for></select>
+      <select class="input" value="{{ fRegion }}" onChange="{{ onRegion }}" style="flex:1 1 150px; width:auto; font-family:var(--font-body);"><sc-for list="{{ regionOpts }}" as="o"><option value="{{ o.v }}">{{ o.l }}</option></sc-for></select>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:4px 16px; padding-bottom:6px; border-bottom:1px solid var(--color-text);">
+      <sc-for list="{{ catFilters }}" as="c" hint-placeholder-count="8">
+        <button onClick="{{ c.pick }}" style="background:none; border:0; border-bottom:1px solid {{ c.rule }}; padding:4px 0 3px; cursor:pointer; font-family:'Barlow Condensed',sans-serif; font-size:13.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:{{ c.color }};">{{ c.label }}</button>
+      </sc-for>
+    </div>
+    <sc-if value="{{ feedEmpty }}"><p style="font-family:var(--font-body); font-style:italic; color:var(--fd-ink2); padding:24px 0;">No stories match these filters. <button onClick="{{ clearFilters }}" style="background:none; border:0; padding:0; cursor:pointer; font-style:italic; color:var(--fd-accent-ink); text-decoration:underline;">Clear filters</button></p></sc-if>
+    <sc-for list="{{ feedGroups }}" as="g" hint-placeholder-count="2">
+      <div style="padding:18px 0 4px; font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--fd-muted); border-bottom:1px solid var(--color-divider);">{{ g.label }}</div>
+      <sc-for list="{{ g.rows }}" as="s" hint-placeholder-count="6">
+        <div style="display:grid; grid-template-columns:clamp(46px,4.6cqi,64px) minmax(0,1fr) auto; column-gap:clamp(8px,1.2cqi,18px); padding:9px 0 10px; border-bottom:1px solid var(--color-divider);">
+          <span style="font-family:'Barlow Condensed',sans-serif; font-size:14px; color:var(--fd-muted); font-variant-numeric:tabular-nums; padding-top:2px; white-space:nowrap;">{{ s.t }}</span>
+          <div style="min-width:0;">
+            <a href="{{ s.leadUrl }}" target="_blank" rel="noopener" style="display:block; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(18px,1.45cqi,20.5px); line-height:1.18; text-wrap:pretty;">{{ s.h }}</a>
+            <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:2px 12px; margin-top:4px; font-size:13px;">
+              <sc-if value="{{ s.isWatch }}"><span style="font-family:'Barlow Condensed',sans-serif; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--fd-accent-ink);">Watchlist</span></sc-if>
+              <span style="font-family:'Barlow Condensed',sans-serif; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:{{ s.catColor }};">{{ s.cat }}</span>
+              <span style="display:flex; flex-wrap:wrap; gap:0 6px; font-family:var(--font-body); color:var(--fd-ink2);"><sc-for list="{{ s.outlets }}" as="o"><a href="{{ o.url }}" target="_blank" rel="noopener" style="text-decoration:underline; text-decoration-color:var(--color-divider); text-underline-offset:3px;">{{ o.short }}</a>{{ o.sep }}</sc-for></span>
+              <sc-if value="{{ s.hasFirms }}"><span style="display:flex; flex-wrap:wrap; gap:0 10px;"><sc-for list="{{ s.firmLinks }}" as="f"><button onClick="{{ f.open }}" style="background:none; border:0; padding:0; cursor:pointer; font-family:var(--font-body); font-size:13px; color:var(--fd-muted); border-bottom:1px dotted var(--fd-muted);" style-hover="color: var(--fd-accent-ink);">{{ f.name }}</button></sc-for></span></sc-if>
+            </div>
+          </div>
+          <span style="font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:600; font-variant-numeric:tabular-nums; text-align:right; padding-top:2px; white-space:nowrap;">{{ s.aum }}</span>
+        </div>
+      </sc-for>
+    </sc-for>
+  </div>
+  <aside style="flex:1 1 240px; min-width:0; max-width:max(280px, calc((760px - 100cqi) * 999)); padding-top:6px;">
+    <div style="border-top:1px solid var(--color-text); padding-top:8px; font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; display:flex; justify-content:space-between;"><span>Trending firms</span><span style="color:var(--fd-muted); font-weight:500;">Stories, 7 days</span></div>
+    <ol style="list-style:none; margin:0; padding:0;">
+      <sc-for list="{{ trending }}" as="t" hint-placeholder-count="8">
+        <li style="display:grid; grid-template-columns:22px minmax(0,1fr) auto; gap:8px; align-items:baseline; padding:7px 0; border-bottom:1px solid var(--color-divider);">
+          <span style="font-family:'Barlow Condensed',sans-serif; font-size:13px; color:var(--fd-muted); font-variant-numeric:tabular-nums;">{{ t.rank }}</span>
+          <button onClick="{{ t.open }}" style="background:none; border:0; padding:0; cursor:pointer; text-align:left; font-family:var(--font-body); font-size:14.5px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" style-hover="color: var(--fd-accent-ink);">{{ t.name }}</button>
+          <span style="font-family:'Barlow Condensed',sans-serif; font-size:15px; font-weight:600; font-variant-numeric:tabular-nums;">{{ t.n }}</span>
+        </li>
+      </sc-for>
+    </ol>
+  </aside>
+</div>
+</sc-if>
+
+<!-- DEALS -->
+<sc-if value="{{ isDeals }}">
+<div style="padding-top:clamp(18px,2.2cqi,32px);">
+  <div style="display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:10px 20px;">
+    <h1 style="margin:0; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(32px,3cqi,44px); line-height:1;">Deals</h1>
+    <div style="display:flex; gap:16px;">
+      <sc-for list="{{ confFilters }}" as="c" hint-placeholder-count="3">
+        <button onClick="{{ c.pick }}" style="background:none; border:0; border-bottom:1px solid {{ c.rule }}; padding:2px 0; cursor:pointer; font-family:'Barlow Condensed',sans-serif; font-size:13.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:{{ c.color }};">{{ c.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+  <p style="margin:10px 0 18px; max-width:760px; font-family:var(--font-body); font-size:14.5px; line-height:1.55; color:var(--fd-ink2); text-wrap:pretty;">RIA mergers, acquisitions and minority investments, one row per story. <em>Headline AUM</em> is the figure stated in coverage. <span style="font-family:'Barlow Condensed',sans-serif; font-style:normal; font-weight:600; letter-spacing:.06em; font-size:13px; color:var(--fd-accent-ink);">SEC</span> AUM is regulatory AUM from the target's latest Form ADV, with its as-of date. Rows the parser couldn't read unambiguously are marked for review and left blank rather than guessed.</p>
+
+  <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+  <table class="table" style="font-family:var(--font-body); font-size:14.5px; border-top:1px solid var(--color-text);">
+    <thead>
+      <tr>
+        <sc-for list="{{ dealCols }}" as="c" hint-placeholder-count="7">
+          <th style="text-align:{{ c.align }}; padding:9px 10px 7px; font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; color:var(--fd-muted); white-space:nowrap;"><button onClick="{{ c.sort }}" style="background:none; border:0; padding:0; cursor:pointer; font:inherit; letter-spacing:inherit; text-transform:uppercase; color:{{ c.color }};">{{ c.label }} <span style="display:inline-block; width:8px;">{{ c.arrow }}</span></button></th>
+        </sc-for>
+      </tr>
+    </thead>
+    <tbody>
+      <sc-for list="{{ deals }}" as="d" hint-placeholder-count="8">
+        <tr style="background:{{ d.bg }};">
+          <td style="padding:10px; font-family:'Barlow Condensed',sans-serif; font-size:15px; font-variant-numeric:tabular-nums; white-space:nowrap; vertical-align:top; color:var(--fd-ink2);">{{ d.date }}</td>
+          <td style="padding:10px; vertical-align:top;"><button onClick="{{ d.openAcq }}" style="background:none; border:0; padding:0; cursor:pointer; text-align:left; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:18px; line-height:1.2; color:{{ d.acqColor }};" style-hover="color: var(--fd-accent-ink);">{{ d.acq }}</button></td>
+          <td style="padding:10px; vertical-align:top;">
+            <button onClick="{{ d.openTgt }}" style="background:none; border:0; padding:0; cursor:pointer; text-align:left; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:18px; line-height:1.2; color:{{ d.tgtColor }};" style-hover="color: var(--fd-accent-ink);">{{ d.tgt }}</button>
+            <sc-if value="{{ d.isLow }}"><div style="margin-top:4px; font-size:13px; font-style:italic; line-height:1.4; color:var(--fd-accent-ink);">Needs review: {{ d.note }}</div></sc-if>
+          </td>
+          <td style="padding:10px; vertical-align:top; font-family:'Barlow Condensed',sans-serif; font-size:13.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--fd-muted); white-space:nowrap;">{{ d.type }}</td>
+          <td style="padding:10px; vertical-align:top; text-align:right; font-family:'Barlow Condensed',sans-serif; font-size:17px; font-weight:600; font-variant-numeric:tabular-nums; white-space:nowrap;">{{ d.hAum }}</td>
+          <td style="padding:10px; vertical-align:top; text-align:right; white-space:nowrap;">
+            <div style="font-family:'Barlow Condensed',sans-serif; font-size:17px; font-weight:500; font-variant-numeric:tabular-nums; color:var(--fd-accent-ink);">{{ d.sAum }}</div>
+            <div style="font-family:'Barlow Condensed',sans-serif; font-size:12.5px; letter-spacing:.04em; color:var(--fd-muted);">{{ d.sAsOf }}</div>
+          </td>
+          <td style="padding:10px; vertical-align:top; font-size:13px; color:var(--fd-ink2);"><span style="display:flex; flex-wrap:wrap; gap:0 6px;"><sc-for list="{{ d.srcs }}" as="o"><a href="{{ o.url }}" target="_blank" rel="noopener" style="text-decoration:underline; text-decoration-color:var(--color-divider); text-underline-offset:3px;">{{ o.short }}</a>{{ o.sep }}</sc-for></span></td>
+        </tr>
+      </sc-for>
+    </tbody>
+  </table>
+  </sc-if>
+
+  <sc-if value="{{ mobile }}">
+    <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; padding:8px 0; border-top:1px solid var(--color-text); border-bottom:1px solid var(--color-divider); font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--fd-muted);">
+      <span>Sort by</span>
+      <select class="input" value="{{ sortKey }}" onChange="{{ onSortSelect }}" style="width:auto; min-height:30px; padding:3px 26px 3px 8px; font-family:var(--font-body); font-size:13px; text-transform:none; letter-spacing:0;"><sc-for list="{{ sortOpts }}" as="o"><option value="{{ o.v }}">{{ o.l }}</option></sc-for></select>
+    </div>
+    <sc-for list="{{ deals }}" as="d" hint-placeholder-count="6">
+      <div style="padding:12px 10px 13px; margin:0 -10px; border-bottom:1px solid var(--color-divider); background:{{ d.bg }};">
+        <div style="display:flex; justify-content:space-between; gap:10px; font-family:'Barlow Condensed',sans-serif; font-size:13px; letter-spacing:.07em; text-transform:uppercase; color:var(--fd-muted);"><span>{{ d.date }} · {{ d.type }}</span></div>
+        <div style="margin:3px 0 8px; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:20px; line-height:1.2;">{{ d.acq }} <span style="font-weight:400; font-style:italic; color:var(--fd-muted);">{{ d.verb }}</span> {{ d.tgt }}</div>
+        <div style="display:grid; grid-template-columns:auto minmax(0,1fr); gap:3px 14px; font-size:13.5px; font-family:var(--font-body);">
+          <span style="font-family:'Barlow Condensed',sans-serif; font-size:12.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--fd-muted);">Headline AUM</span>
+          <span style="text-align:right; font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:600; font-variant-numeric:tabular-nums;">{{ d.hAum }}</span>
+          <span style="font-family:'Barlow Condensed',sans-serif; font-size:12.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--fd-muted);">SEC AUM</span>
+          <span style="text-align:right; font-family:'Barlow Condensed',sans-serif; font-size:16px; font-variant-numeric:tabular-nums; color:var(--fd-accent-ink);">{{ d.sAum }} <span style="font-size:12.5px; color:var(--fd-muted);">{{ d.sAsOf }}</span></span>
+          <span style="font-family:'Barlow Condensed',sans-serif; font-size:12.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--fd-muted);">Sources</span>
+          <span style="text-align:right; color:var(--fd-ink2);">{{ d.srcText }}</span>
+        </div>
+        <sc-if value="{{ d.isLow }}"><div style="margin-top:6px; font-size:13px; font-style:italic; line-height:1.4; color:var(--fd-accent-ink);">Needs review: {{ d.note }}</div></sc-if>
+      </div>
+    </sc-for>
+  </sc-if>
+</div>
+</sc-if>
+
+<!-- FIRM -->
+<sc-if value="{{ isFirm }}">
+<div style="padding-top:clamp(18px,2.2cqi,32px); max-width:980px;">
+  <button onClick="{{ goBack }}" style="background:none; border:0; padding:0; cursor:pointer; font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:var(--fd-muted);" style-hover="color: var(--fd-accent-ink);">← Back</button>
+  <div style="display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:8px 24px; margin-top:10px;">
+    <h1 style="margin:0; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(34px,3.6cqi,52px); line-height:1.02; letter-spacing:-.01em;">{{ firm.name }}</h1>
+    <button class="btn btn-secondary" onClick="{{ toggleFirmWatch }}" style="font-family:'Barlow Condensed',sans-serif; font-size:14px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;">{{ firmWatchLabel }}</button>
+  </div>
+  <div style="margin-top:6px; font-family:var(--font-body); font-style:italic; font-size:16px; color:var(--fd-ink2);">{{ firm.place }}</div>
+  <dl style="display:flex; flex-wrap:wrap; margin:20px 0 0; border-top:1px solid var(--color-text); border-bottom:1px solid var(--color-divider);">
+    <div style="flex:1 1 200px; padding:10px 20px 12px 0;">
+      <dt style="font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--fd-muted);">SEC-reported AUM</dt>
+      <dd style="margin:2px 0 0; font-family:'Barlow Condensed',sans-serif; font-size:30px; font-weight:500; font-variant-numeric:tabular-nums; line-height:1.1;">{{ firm.aum }}</dd>
+      <dd style="margin:0; font-size:13px; color:var(--fd-muted); font-family:var(--font-body);">{{ firm.asOf }}</dd>
+    </div>
+    <div style="flex:1 1 200px; padding:10px 20px 12px 0;">
+      <dt style="font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--fd-muted);">CRD number</dt>
+      <dd style="margin:2px 0 0; font-family:'Barlow Condensed',sans-serif; font-size:30px; font-weight:500; font-variant-numeric:tabular-nums; line-height:1.1;">{{ firm.crd }}</dd>
+      <dd style="margin:0; font-size:13px; font-family:var(--font-body);"><sc-if value="{{ firm.hasCrd }}"><a href="{{ firm.secUrl }}" target="_blank" rel="noopener" style="color:var(--fd-accent-ink); text-decoration:underline; text-underline-offset:3px;">SEC adviser page ↗</a></sc-if></dd>
+    </div>
+    <div style="flex:1 1 200px; padding:10px 0 12px 0;">
+      <dt style="font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--fd-muted);">Coverage, 7 days</dt>
+      <dd style="margin:2px 0 0; font-family:'Barlow Condensed',sans-serif; font-size:30px; font-weight:500; font-variant-numeric:tabular-nums; line-height:1.1;">{{ firm.storyCount }}</dd>
+      <dd style="margin:0; font-size:13px; color:var(--fd-muted); font-family:var(--font-body);">{{ firm.dealCount }}</dd>
+    </div>
+  </dl>
+  <sc-if value="{{ firm.hasAliases }}"><p style="margin:10px 0 0; font-size:13.5px; font-family:var(--font-body); color:var(--fd-muted);">Also matched as {{ firm.aliases }}</p></sc-if>
+
+  <div style="margin-top:30px; border-top:1px solid var(--color-text); padding-top:8px; font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.1em; text-transform:uppercase;">Stories</div>
+  <sc-for list="{{ firm.stories }}" as="s" hint-placeholder-count="2">
+    <div style="display:grid; grid-template-columns:clamp(58px,6cqi,86px) minmax(0,1fr) auto; column-gap:clamp(8px,1.2cqi,18px); padding:10px 0 11px; border-bottom:1px solid var(--color-divider);">
+      <span style="font-family:'Barlow Condensed',sans-serif; font-size:14px; color:var(--fd-muted); font-variant-numeric:tabular-nums; padding-top:2px;">{{ s.day }}</span>
+      <div style="min-width:0;">
+        <a href="{{ s.leadUrl }}" target="_blank" rel="noopener" style="display:block; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(18px,1.5cqi,21px); line-height:1.18;">{{ s.h }}</a>
+        <p style="margin:3px 0 4px; font-family:var(--font-body); font-size:14.5px; line-height:1.5; color:var(--fd-ink2);">{{ s.sum }}</p>
+        <div style="display:flex; flex-wrap:wrap; gap:2px 12px; font-size:13px;">
+          <span style="font-family:'Barlow Condensed',sans-serif; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:{{ s.catColor }};">{{ s.cat }}</span>
+          <span style="display:flex; flex-wrap:wrap; gap:0 6px; font-family:var(--font-body); color:var(--fd-ink2);"><sc-for list="{{ s.outlets }}" as="o"><a href="{{ o.url }}" target="_blank" rel="noopener" style="text-decoration:underline; text-decoration-color:var(--color-divider); text-underline-offset:3px;">{{ o.short }}</a>{{ o.sep }}</sc-for></span>
+        </div>
+      </div>
+      <span style="font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:600; font-variant-numeric:tabular-nums; text-align:right; padding-top:2px;">{{ s.aum }}</span>
+    </div>
+  </sc-for>
+
+  <sc-if value="{{ firm.hasDeals }}">
+    <div style="margin-top:30px; border-top:1px solid var(--color-text); padding-top:8px; font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.1em; text-transform:uppercase;">Deals</div>
+    <sc-for list="{{ firm.deals }}" as="d">
+      <div style="display:grid; grid-template-columns:clamp(58px,6cqi,86px) minmax(0,1fr) auto; column-gap:clamp(8px,1.2cqi,18px); padding:10px 0 11px; border-bottom:1px solid var(--color-divider); align-items:baseline;">
+        <span style="font-family:'Barlow Condensed',sans-serif; font-size:14px; color:var(--fd-muted); font-variant-numeric:tabular-nums;">{{ d.date }}</span>
+        <span style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:19px; line-height:1.2;">{{ d.acq }} <span style="font-weight:400; font-style:italic; color:var(--fd-muted);">{{ d.verb }}</span> {{ d.tgt }}</span>
+        <span style="text-align:right; white-space:nowrap;"><span style="font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:600; font-variant-numeric:tabular-nums;">{{ d.hAum }}</span> <span style="font-family:'Barlow Condensed',sans-serif; font-size:15px; color:var(--fd-accent-ink); font-variant-numeric:tabular-nums;">{{ d.sAumShort }}</span></span>
+      </div>
+    </sc-for>
+  </sc-if>
+</div>
+</sc-if>
+
+<!-- ARCHIVE -->
+<sc-if value="{{ isArchive }}">
+<div style="padding-top:clamp(18px,2.2cqi,32px); display:flex; flex-wrap:wrap; gap:36px clamp(32px,4cqi,64px);">
+  <div style="flex:1 1 560px; min-width:0; max-width:780px;">
+    <h1 style="margin:0 0 16px; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(32px,3cqi,44px); line-height:1;">Archive</h1>
+    <sc-for list="{{ archiveWeeks }}" as="w" hint-placeholder-count="1">
+      <div style="border-top:1px solid var(--color-text); padding-top:8px; font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.1em; text-transform:uppercase;">{{ w.label }}</div>
+      <sc-for list="{{ w.days }}" as="a" hint-placeholder-count="4">
+        <button onClick="{{ goToday }}" style="display:grid; grid-template-columns:clamp(84px,8cqi,120px) minmax(0,1fr); gap:4px clamp(10px,1.4cqi,20px); width:100%; text-align:left; background:none; border:0; border-bottom:1px solid var(--color-divider); padding:12px 0 13px; cursor:pointer;" style-hover="background: color-mix(in srgb, var(--color-text) 3%, transparent);">
+          <span style="font-family:'Barlow Condensed',sans-serif; font-size:14px; letter-spacing:.06em; text-transform:uppercase; color:var(--fd-muted); line-height:1.35;">{{ a.dow }}<br>{{ a.date }}</span>
+          <span style="min-width:0;">
+            <span style="display:block; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(18px,1.55cqi,22px); line-height:1.2; color:var(--color-text); text-wrap:pretty;">{{ a.lead }}</span>
+            <span style="display:block; margin-top:3px; font-family:'Barlow Condensed',sans-serif; font-size:13px; letter-spacing:.07em; text-transform:uppercase; color:var(--fd-muted);">{{ a.meta }}</span>
+          </span>
+        </button>
+      </sc-for>
+    </sc-for>
+    <p style="margin:16px 0 0; font-family:var(--font-body); font-style:italic; font-size:14px; color:var(--fd-muted);">The archive begins Tuesday, September 22, 2026.</p>
+  </div>
+  <aside style="flex:1 1 240px; min-width:0; max-width:max(300px, calc((760px - 100cqi) * 999)); padding-top:4px;">
+    <div style="border-top:1px solid var(--color-text); padding-top:8px; font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.1em; text-transform:uppercase;">Friday M&amp;A recaps</div>
+    <button onClick="{{ goDeals }}" style="display:block; width:100%; text-align:left; background:none; border:0; border-bottom:1px solid var(--color-divider); padding:10px 0 12px; cursor:pointer;">
+      <span style="display:block; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:20px; line-height:1.2; color:var(--color-text);">Week of September 21</span>
+      <span style="display:block; margin-top:2px; font-family:var(--font-body); font-size:14px; line-height:1.45; color:var(--fd-ink2);">11 deals, $19.2B in headline AUM. Harborview, Crestline and Atlas each announced more than one.</span>
+      <span style="display:block; margin-top:4px; font-family:'Barlow Condensed',sans-serif; font-size:13px; letter-spacing:.07em; text-transform:uppercase; color:var(--fd-muted);">Published Fri, Sep 25</span>
+    </button>
+  </aside>
+</div>
+</sc-if>
+
+<!-- SOURCES -->
+<sc-if value="{{ isSources }}">
+<div style="padding-top:clamp(18px,2.2cqi,32px); max-width:1040px;">
+  <h1 style="margin:0; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(32px,3cqi,44px); line-height:1;">Sources</h1>
+  <p style="margin:10px 0 18px; font-family:var(--font-body); font-size:14.5px; color:var(--fd-ink2); max-width:680px;">Status from the last run, Friday, Sep 25 at 7:17 AM PT. Only headline, link, date and a short description are stored; gated outlets contribute headlines only.</p>
+  <div style="border-top:1px solid var(--color-text);">
+    <sc-for list="{{ sources }}" as="r" hint-placeholder-count="11">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:2px 16px; padding:9px 0 10px; border-bottom:1px solid var(--color-divider); align-items:baseline;">
+        <a href="{{ r.url }}" target="_blank" rel="noopener" style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:18px;">{{ r.name }}</a>
+        <span style="font-family:'Barlow Condensed',sans-serif; font-size:14px; letter-spacing:.06em; text-transform:uppercase; color:var(--fd-muted);">{{ r.method }}</span>
+        <span style="font-family:'Barlow Condensed',sans-serif; font-size:14px; font-variant-numeric:tabular-nums; color:var(--fd-ink2);">{{ r.items }}</span>
+        <span style="font-family:var(--font-body); font-size:13.5px; color:{{ r.statusColor }}; font-style:{{ r.statusStyle }};">{{ r.status }}</span>
+      </div>
+    </sc-for>
+  </div>
+</div>
+</sc-if>
+
+<!-- MASTHEAD STUDIES -->
+<sc-if value="{{ isStudies }}">
+<div style="padding-top:clamp(18px,2.2cqi,32px);">
+  <h1 style="margin:0 0 6px; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(32px,3cqi,44px); line-height:1;">Wordmark</h1>
+  <p style="margin:0 0 18px; font-family:var(--font-body); font-size:14.5px; color:var(--fd-ink2);">Three settings of the name, each with the masthead line. Click one to use it above.</p>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap:14px;">
+    <sc-for list="{{ studies }}" as="w" hint-placeholder-count="6">
+      <button onClick="{{ w.pick }}" style="{{ w.style }}">
+        <span style="font-family:'Barlow Condensed',sans-serif; font-size:12.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--fd-muted);">{{ w.label }}</span>
+        <span style="display:block; margin-top:26px; border-bottom:1px solid var(--color-text); padding-bottom:12px;">
+          <span style="{{ w.markStyle }}">Fiduciary Duty</span>
+          <span style="display:block; margin-top:8px; font-family:var(--font-body); font-style:italic; font-size:14px; color:var(--fd-ink2);">Daily news for wealth management and RIAs</span>
+        </span>
+      </button>
+    </sc-for>
+  </div>
+</div>
+</sc-if>
+
+</main>
+
+<footer style="margin:0 clamp(16px,3.4cqi,56px); padding:14px 0 28px; border-top:1px solid var(--color-text); display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 24px; font-family:var(--font-body); font-size:13px; color:var(--fd-muted);">
+  <span>Summaries written with Claude from outlet headlines.</span>
+  <span style="display:flex; gap:18px; font-family:'Barlow Condensed',sans-serif; font-size:13px; letter-spacing:.08em; text-transform:uppercase;">
+    <button onClick="{{ goSources }}" style="background:none; border:0; padding:0; cursor:pointer; letter-spacing:inherit; text-transform:inherit; color:var(--fd-muted);" style-hover="color: var(--fd-accent-ink);">Sources</button>
+    <button onClick="{{ goStudies }}" style="background:none; border:0; padding:0; cursor:pointer; letter-spacing:inherit; text-transform:inherit; color:var(--fd-muted);" style-hover="color: var(--fd-accent-ink);">Wordmark</button>
+  </span>
+</footer>
+
+<!-- WATCHLIST DRAWER -->
+<sc-if value="{{ drawer }}">
+  <div onClick="{{ closeDrawer }}" style="position:absolute; inset:0; background:color-mix(in srgb, var(--color-neutral-900) 28%, transparent);"></div>
+  <div style="position:absolute; top:0; right:0; bottom:0; width:min(420px, 100%); background:var(--color-bg); border-left:1px solid var(--color-divider); box-shadow:var(--shadow-lg);">
+    <div style="position:sticky; top:0; max-height:100vh; overflow:auto; padding:18px 22px 28px;">
+      <div style="display:flex; justify-content:space-between; align-items:baseline;">
+        <h2 style="margin:0; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:32px;">Watchlist</h2>
+        <button onClick="{{ closeDrawer }}" style="background:none; border:0; padding:0; cursor:pointer; font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--fd-muted);" style-hover="color: var(--fd-accent-ink);">Close</button>
+      </div>
+      <p style="margin:6px 0 16px; font-family:var(--font-body); font-size:13.5px; line-height:1.5; color:var(--fd-ink2);">Stories that mention these firms are pinned to the top of Today and marked in the Feed. Matching ignores case; aliases under three characters are skipped.</p>
+      <div style="border-top:1px solid var(--color-text);">
+        <sc-for list="{{ watchRows }}" as="w" hint-placeholder-count="4">
+          <div style="display:flex; justify-content:space-between; gap:12px; align-items:baseline; padding:9px 0 10px; border-bottom:1px solid var(--color-divider);">
+            <span style="min-width:0;">
+              <span style="display:block; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:19px; line-height:1.2;">{{ w.name }}</span>
+              <sc-if value="{{ w.hasAliases }}"><span style="display:block; font-family:var(--font-body); font-size:13px; color:var(--fd-muted);">Also: {{ w.aliases }}</span></sc-if>
+            </span>
+            <button onClick="{{ w.remove }}" style="background:none; border:0; padding:0; cursor:pointer; font-family:'Barlow Condensed',sans-serif; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--fd-muted); flex:none;" style-hover="color: var(--fd-accent-ink);">Remove</button>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top:18px; display:grid; gap:8px;">
+        <div class="field"><label style="font-family:'Barlow Condensed',sans-serif; font-size:13px; letter-spacing:.08em; text-transform:uppercase;">Firm name</label><input class="input" value="{{ wName }}" onChange="{{ onWName }}" placeholder="e.g. Harborview Wealth Partners" style="font-family:var(--font-body);"></div>
+        <div class="field"><label style="font-family:'Barlow Condensed',sans-serif; font-size:13px; letter-spacing:.08em; text-transform:uppercase;">Aliases, comma-separated</label><input class="input" value="{{ wAlias }}" onChange="{{ onWAlias }}" placeholder="e.g. Harborview" style="font-family:var(--font-body);"></div>
+        <div style="display:flex; align-items:center; gap:12px; margin-top:4px;">
+          <button class="btn btn-primary" onClick="{{ addWatch }}" style="font-family:'Barlow Condensed',sans-serif; font-size:14px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;">Add firm</button>
+          <span style="font-family:var(--font-body); font-size:13px; font-style:italic; color:var(--fd-accent-ink);">{{ wMsg }}</span>
+        </div>
+      </div>
+      <div style="margin-top:22px; padding-top:10px; border-top:1px solid var(--color-divider); display:flex; gap:18px; font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;">
+        <label style="cursor:pointer; color:var(--fd-ink2);">Import YAML<input type="file" accept=".yaml,.yml,.txt" onChange="{{ importWatch }}" style="display:none;"></label>
+        <button onClick="{{ exportWatch }}" style="background:none; border:0; padding:0; cursor:pointer; letter-spacing:inherit; text-transform:inherit; font-weight:inherit; color:var(--fd-ink2);" style-hover="color: var(--fd-accent-ink);">Export watchlist.yaml</button>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'light'|'dark'&quot;},&quot;viewport&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Fluid&quot;,&quot;Desktop 1440&quot;,&quot;Mobile 390&quot;],&quot;default&quot;:&quot;Fluid&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;wordmark&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Serif&quot;,&quot;Small caps&quot;,&quot;Condensed&quot;],&quot;default&quot;:&quot;Serif&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+const O = {
+  cw: { name: 'Citywire RIA', short: 'Citywire', url: 'https://citywire.com/ria' },
+  wm: { name: 'WealthManagement.com', short: 'WealthManagement.com', url: 'https://www.wealthmanagement.com' },
+  fa: { name: 'Financial Advisor Magazine', short: 'FA Magazine', url: 'https://www.fa-mag.com' },
+  inn: { name: 'InvestmentNews', short: 'InvestmentNews', url: 'https://www.investmentnews.com' },
+  ta: { name: 'ThinkAdvisor', short: 'ThinkAdvisor', url: 'https://www.thinkadvisor.com' },
+  rb: { name: 'RIABiz', short: 'RIABiz', url: 'https://riabiz.com' },
+  fp: { name: 'Financial Planning', short: 'Financial Planning', url: 'https://www.financial-planning.com' },
+  ah: { name: 'AdvisorHub', short: 'AdvisorHub', url: 'https://www.advisorhub.com' },
+  ki: { name: 'Kitces', short: 'Kitces', url: 'https://www.kitces.com' },
+  sec: { name: 'SEC Press Releases', short: 'SEC', url: 'https://www.sec.gov/newsroom/press-releases' },
+  fn: { name: 'FINRA News', short: 'FINRA', url: 'https://www.finra.org/media-center/newsreleases' },
+};
+const CATS = ['M&A', 'People Moves', 'Regulation', 'Wealthtech', 'Products & Funds', 'Markets', 'Other'];
+const CATV = { 'M&A': '--cat-mna', 'People Moves': '--cat-people', 'Regulation': '--cat-reg', 'Wealthtech': '--cat-tech', 'Products & Funds': '--cat-prod', 'Markets': '--cat-mkt', 'Other': '--cat-other' };
+const DAYS = { 25: 'Friday, September 25', 24: 'Thursday, September 24', 23: 'Wednesday, September 23', 22: 'Tuesday, September 22' };
+const S = [
+  { id: 's5', d: 25, t: '1:00 AM', cat: 'People Moves', h: '$2.1B wirehouse team breaks away to join Harborview Wealth Partners', out: [['cw','1:00 AM'],['ta','Thu 11:00 PM'],['ah','Thu 9:00 PM']], firms: ['Harborview Wealth Partners'], aum: '$2.1B', region: 'Midwest',
+    sum: 'A four-advisor wirehouse team serving ultra-high-net-worth clients in Chicago left for Harborview Wealth Partners, citing technology and independence.',
+    why: 'Breakaways this size are landing at acquirers with platforms, not standalone RIAs. That is the competitive set for recruiting now.' },
+  { id: 's1', d: 25, t: '12:00 AM', cat: 'M&A', h: 'Bear Mountain Capital makes minority investment in Willowbrook Wealth', out: [['cw','12:00 AM'],['rb','7:00 AM']], firms: ['Bear Mountain Capital', 'Willowbrook Wealth'], aum: '$1.1B',
+    sum: 'Bear Mountain Capital took a minority stake in Willowbrook Wealth, a $1.1B multifamily office that will use the capital to fund succession.',
+    why: 'Minority capital lets founders fund succession without selling control; expect more multifamily offices to choose it over an outright sale.' },
+  { id: 's11', d: 25, t: '6:00 AM', cat: 'Regulation', h: 'SEC announces enforcement results for fiscal year 2026', out: [['sec','6:00 AM']], firms: [], sum: 'The agency filed 612 enforcement actions in fiscal 2026.' },
+  { id: 's12', d: 25, t: '7:00 AM', cat: 'Other', h: 'What the next generation of RIA founders wants from custodians', out: [['rb','7:00 AM']], firms: [] },
+  { id: 's10', d: 25, t: '4:00 AM', cat: 'People Moves', h: 'Alder Street team with $400M joins Bluewater Private Wealth', out: [['inn','5:00 AM'],['ah','4:00 AM']], firms: ['Alder Street Securities', 'Bluewater Private Wealth'], aum: '$400M',
+    sum: 'A father-son team managing $400M left Alder Street Securities after 22 years at the broker-dealer for Bluewater Private Wealth.',
+    why: 'Long-tenured broker-dealer teams are still moving, and the $400M range is where RIAs compete hardest on transition terms.' },
+  { id: 's7', d: 25, t: '3:00 AM', cat: 'Markets', h: 'Fed holds rates steady, signals one more cut this year', out: [['inn','3:00 AM'],['fa','3:30 AM'],['wm','4:00 AM']], firms: [],
+    sum: 'The Fed held rates steady and signaled one more cut before year-end; markets rallied on the decision.',
+    why: 'Expect client questions on cash yields and bond duration; WealthManagement.com collected strategist guidance on both.' },
+  { id: 's6', d: 24, t: '6:00 PM', cat: 'Regulation', h: 'SEC proposes custody rule changes for crypto assets', out: [['fp','6:00 PM'],['wm','8:00 PM'],['ta','10:00 PM']], firms: [],
+    sum: 'The SEC proposed changes to the custody rule for crypto assets that would narrow the definition of a qualified custodian. Comments are open for 60 days.',
+    why: 'Advisors holding or recommending digital assets should confirm their custodian would still qualify, and can comment before the period closes.' },
+  { id: 's2', d: 24, t: '1:00 PM', cat: 'Products & Funds', h: 'Goldman Sachs Asset Management launches two active ETFs', out: [['wm','1:00 PM'],['fa','2:00 PM'],['ta','4:00 PM']], firms: ['Goldman Sachs Asset Management'],
+    sum: 'Goldman Sachs Asset Management listed two active ETFs on NYSE Arca targeting short-duration income, with expense ratios of 0.35% and 0.45%.',
+    why: 'Another active option for the cash-alternative sleeve as clients reconsider money-market yields after the Fed hold.' },
+  { id: 's19', d: 24, t: '5:00 PM', cat: 'Markets', h: 'S&P 500 notches record as tech rally broadens', out: [['fa','5:00 PM']], firms: [], sum: 'Equities rose for a fifth straight session.' },
+  { id: 's18', d: 24, t: '7:00 PM', cat: 'M&A', h: 'Two Texas RIAs combine in deal creating $3B firm', out: [['cw','7:00 PM']], firms: [], aum: '$3.0B', region: 'Southwest', sum: 'The firms, based in Austin and Dallas, did not disclose terms.' },
+  { id: 's13', d: 24, t: '3:00 PM', cat: 'M&A', h: 'Lakeshore Financial Group agrees to be acquired by Atlas Wealth Management', out: [['inn','3:00 PM']], firms: ['Lakeshore Financial Group', 'Atlas Wealth Management'], aum: '$640M', region: 'Midwest', sum: "Lakeshore, with $640 million in assets, is Atlas's second Midwest deal." },
+  { id: 's9', d: 24, t: '11:00 AM', cat: 'M&A', h: 'PE-backed Crestline Wealth to buy Riverbend Financial and Aspen Grove Advisors', out: [['ta','11:00 AM'],['fa','12:00 PM']], firms: ['Crestline Wealth', 'Riverbend Financial', 'Aspen Grove Advisors', 'Granite Peak Partners'], aum: '$1.9B', aumNote: 'combined',
+    sum: 'Crestline Wealth, backed by Granite Peak Partners, agreed to buy Riverbend Financial and Aspen Grove Advisors, adding a combined $1.9B in client assets.',
+    why: "Granite Peak is also behind this week's Sequoia Point recap, making it one of the more active PE sponsors in the channel." },
+  { id: 's16', d: 24, t: '9:00 AM', cat: 'Wealthtech', h: 'Ledgerline launches AI meeting-notes assistant for RIAs', out: [['cw','9:00 AM'],['ta','10:00 AM'],['wm','11:00 AM']], firms: ['Ledgerline'], sum: 'The tool integrates with major CRMs, starts at $95 per advisor per month and follows a $40 million funding round.' },
+  { id: 's8', d: 24, t: '3:00 AM', cat: 'M&A', h: 'Harborview Wealth Partners acquires $1.2B Summit Ridge Advisors', out: [['cw','3:00 AM'],['ta','5:00 AM'],['wm','7:00 AM'],['rb','1:00 PM']], firms: ['Harborview Wealth Partners', 'Summit Ridge Advisors'], aum: '$1.2B',
+    sum: 'Denver-based Harborview agreed to acquire Summit Ridge Advisors, a $1.2B RIA with 14 advisors that keeps its brand and leadership. It is Harborview’s fifth deal this year and should close in the fourth quarter.',
+    why: 'Keeping the target’s brand and leadership is now a standard term for consolidators competing on more than price.' },
+  { id: 's20', d: 24, t: '7:00 AM', cat: 'People Moves', h: 'Pinecrest Wealth names Dana Ortiz CEO ahead of Northgate merger', out: [['fp','7:00 AM']], firms: ['Pinecrest Wealth', 'Northgate Advisors'], sum: 'Ortiz previously served as president of the firm.' },
+  { id: 's14', d: 24, t: '4:00 AM', cat: 'Regulation', h: 'FINRA fines broker-dealer $1.5M over supervision lapses', out: [['inn','4:00 AM'],['fp','6:00 AM']], firms: [], sum: 'The firm failed to review 1.2 million alerts and neither admitted nor denied the findings.' },
+  { id: 's17', d: 24, t: '3:00 AM', cat: 'Regulation', h: 'SEC charges New Jersey adviser with misappropriating client funds', out: [['sec','3:00 AM']], firms: [], region: 'Northeast', sum: 'The adviser allegedly diverted $1.4 million from elderly clients.' },
+  { id: 's15', d: 24, t: '1:00 AM', cat: 'Products & Funds', h: 'Interval funds see record inflows as advisors chase private credit', out: [['fp','1:00 AM']], firms: [], sum: 'Interval fund assets topped $100 billion for the first time.' },
+  { id: 's3', d: 24, t: '12:00 AM', cat: 'People Moves', h: 'Coldstream hires former Kestrel Advisors CIO to lead investments', out: [['cw','12:00 AM']], firms: ['Coldstream Wealth Management', 'Kestrel Advisors'], region: 'Pacific Northwest',
+    sum: 'Coldstream Wealth Management hired the former chief investment officer of Kestrel Advisors to lead investments and deepen its investment committee.',
+    why: 'A senior CIO hire at a firm this size points to more in-house portfolio management and less reliance on outsourced models.' },
+  { id: 's4', d: 23, t: '11:00 PM', cat: 'People Moves', h: 'Pugh Capital Management expands fixed income team', out: [['wm','11:00 PM']], firms: ['Pugh Capital Management'], region: 'Pacific Northwest',
+    sum: 'The Seattle firm added two portfolio managers to its fixed income team.',
+    why: 'Fixed income depth is back in demand as advisors revisit duration ahead of the cut the Fed signaled.' },
+  { id: 's21', d: 23, t: '5:00 PM', cat: 'M&A', h: 'Blue Heron Capital takes minority stake in Oakmont Family Office', out: [['fa','5:00 PM'],['fp','8:00 PM']], firms: ['Blue Heron Capital', 'Oakmont Family Office'], aum: '$2.3B', sum: 'Oakmont oversees $2.3 billion for 60 ultra-high-net-worth families.' },
+  { id: 's22', d: 23, t: '7:00 PM', cat: 'Products & Funds', h: 'Vantage Street unveils model portfolios for tax-aware investors', out: [['inn','7:00 PM']], firms: ['Vantage Street'], sum: 'The models use direct indexing sleeves.' },
+  { id: 's23', d: 23, t: '11:00 AM', cat: 'Regulation', h: 'SEC charges Ohio adviser in $3M cherry-picking scheme', out: [['sec','11:00 AM'],['inn','2:00 PM'],['ta','4:00 PM']], firms: [], region: 'Midwest', sum: 'The SEC said the adviser allocated profitable trades to his own accounts and losing trades to clients.' },
+  { id: 's24', d: 23, t: '1:00 PM', cat: 'M&A', h: 'Serial acquirer strikes again with $600M buy in Arizona', out: [['rb','1:00 PM']], firms: [], aum: '$600M', region: 'Southwest' },
+  { id: 's25', d: 23, t: '5:00 AM', cat: 'M&A', h: 'Meridian Capital Partners adds $850M Cedar Lane Private Wealth', out: [['cw','5:00 AM'],['inn','8:00 AM']], firms: ['Meridian Capital Partners', 'Cedar Lane Private Wealth'], aum: '$850M', region: 'Southeast', sum: "Cedar Lane, an $850M RIA in Charlotte, becomes Meridian's first Southeast office." },
+  { id: 's26', d: 23, t: '7:00 AM', cat: 'Wealthtech', h: 'Arbor Clearing rolls out new advisor portal', out: [['fa','7:00 AM']], firms: ['Arbor Clearing'], sum: "The custodian's portal adds digital account opening." },
+  { id: 's27', d: 23, t: '1:00 AM', cat: 'M&A', h: 'Sequoia Point Wealth completes recapitalization with Granite Peak Partners', out: [['fp','1:00 AM']], firms: ['Sequoia Point Wealth', 'Granite Peak Partners'], aum: '$2.8B', sum: 'The firm says the deal gives next-generation advisors a path to equity.' },
+  { id: 's28', d: 22, t: '11:00 PM', cat: 'People Moves', h: 'Former Goldman Sachs advisors launch Tidewater Family Office', out: [['fa','11:00 PM']], firms: ['Goldman Sachs', 'Tidewater Family Office'], region: 'Northeast', sum: "The founders previously worked in Goldman's private wealth unit in New York." },
+  { id: 's29', d: 22, t: '7:00 PM', cat: 'M&A', h: 'Northgate Advisors and Pinecrest Wealth merge to form $4.5B firm', out: [['ta','7:00 PM'],['wm','9:00 PM']], firms: ['Northgate Advisors', 'Pinecrest Wealth'], aum: '$4.5B', aumNote: 'combined', sum: 'Both founders will serve as co-CEOs of the combined RIA, which keeps the Northgate name.' },
+  { id: 's30', d: 22, t: '5:00 PM', cat: 'Other', h: 'Coldstream Wealth Management opens Portland office', out: [['wm','5:00 PM']], firms: ['Coldstream Wealth Management'], region: 'Pacific Northwest', sum: "The office is the firm's fifth in the Pacific Northwest." },
+  { id: 's31', d: 22, t: '3:00 PM', cat: 'Other', h: 'InvestmentNews announces 2026 Excellence Awards winners', out: [['inn','3:00 PM']], firms: [], sum: 'Winners will be honored in New York in November.' },
+  { id: 's32', d: 22, t: '11:00 AM', cat: 'M&A', h: 'Atlas Wealth Management acquires Brookfield Row Advisory', out: [['inn','11:00 AM']], firms: ['Atlas Wealth Management', 'Brookfield Row Advisory'], aum: '$300M', region: 'Midwest', sum: 'Atlas adds a $300M practice in Minneapolis.' },
+];
+const ORDER = { '12:00 AM': 0 };
+const tnum = (t) => { const m = t.replace(/^\w{3} /, '').match(/(\d+):(\d+) (AM|PM)/); let h = +m[1] % 12; if (m[3] === 'PM') h += 12; return h * 60 + +m[2]; };
+S.forEach(s => { s.ts = s.d * 10000 + tnum(s.t); });
+const DIGEST = ['s1', 's2', 's3', 's4', 's5', 's8', 's6', 's7', 's9', 's10'];
+const DEALS = [
+  { acq: 'Bear Mountain Capital', tgt: 'Willowbrook Wealth', type: 'Minority', verb: 'invests in', h: 1.1, s: 1.06, asOf: 'Mar 31, 2026', d: 25, src: ['cw', 'rb'] },
+  { acq: 'Harborview Wealth Partners', tgt: 'Summit Ridge Advisors', type: 'Acquisition', verb: 'acquires', h: 1.2, s: 1.18, asOf: 'Mar 31, 2026', d: 24, src: ['cw', 'ta', 'wm', 'rb'] },
+  { acq: 'Crestline Wealth', tgt: 'Riverbend Financial', type: 'Acquisition', verb: 'to buy', h: null, s: 0.74, asOf: 'Dec 31, 2025', d: 24, src: ['ta', 'fa'], low: 'the $1.9B figure covers two targets and is not split between them.' },
+  { acq: 'Crestline Wealth', tgt: 'Aspen Grove Advisors', type: 'Acquisition', verb: 'to buy', h: null, s: 1.12, asOf: 'Mar 31, 2026', d: 24, src: ['ta', 'fa'], low: 'the $1.9B figure covers two targets and is not split between them.' },
+  { acq: 'Atlas Wealth Management', tgt: 'Lakeshore Financial Group', type: 'Acquisition', verb: 'acquires', h: 0.64, s: 0.655, asOf: 'Mar 31, 2026', d: 24, src: ['inn'] },
+  { acq: null, tgt: null, type: 'Merger', verb: 'and', h: 3.0, s: null, d: 24, src: ['cw'], low: 'the headline does not name either firm ("Two Texas RIAs").' },
+  { acq: 'Blue Heron Capital', tgt: 'Oakmont Family Office', type: 'Minority', verb: 'invests in', h: 2.3, s: null, d: 23, src: ['fa', 'fp'] },
+  { acq: 'Meridian Capital Partners', tgt: 'Cedar Lane Private Wealth', type: 'Acquisition', verb: 'acquires', h: 0.85, s: 0.842, asOf: 'Mar 31, 2026', d: 23, src: ['cw', 'inn'] },
+  { acq: null, tgt: null, type: 'Acquisition', verb: 'acquires', h: 0.6, s: null, d: 23, src: ['rb'], low: 'acquirer and target are not named ("Serial acquirer … in Arizona").' },
+  { acq: 'Granite Peak Partners', tgt: 'Sequoia Point Wealth', type: 'Recap', verb: 'recapitalizes', h: 2.8, s: 2.71, asOf: 'Dec 31, 2025', d: 23, src: ['fp'] },
+  { acq: 'Northgate Advisors', tgt: 'Pinecrest Wealth', type: 'Merger', verb: 'merges with', h: 4.5, s: 2.6, asOf: 'Mar 31, 2026', d: 22, src: ['ta', 'wm'] },
+  { acq: 'Atlas Wealth Management', tgt: 'Brookfield Row Advisory', type: 'Acquisition', verb: 'acquires', h: 0.3, s: 0.31, asOf: 'Mar 31, 2026', d: 22, src: ['inn'] },
+];
+const FIRMS = {
+  'Harborview Wealth Partners': { place: 'Denver, Colorado · Registered investment adviser', aum: 6.4, asOf: 'Form ADV, as of Mar 31, 2026', crd: '298114' },
+  'Coldstream Wealth Management': { place: 'Bellevue, Washington · Registered investment adviser', aum: 8.9, asOf: 'Form ADV, as of Mar 31, 2026', crd: '107593' },
+  'Pugh Capital Management': { place: 'Seattle, Washington · Registered investment adviser', aum: 6.2, asOf: 'Form ADV, as of Mar 31, 2026', crd: '106233' },
+  'Atlas Wealth Management': { place: 'Minneapolis, Minnesota · Registered investment adviser', aum: 4.8, asOf: 'Form ADV, as of Mar 31, 2026', crd: '287450' },
+  'Meridian Capital Partners': { place: 'Richmond, Virginia · Registered investment adviser', aum: 5.3, asOf: 'Form ADV, as of Dec 31, 2025', crd: '301877' },
+  'Summit Ridge Advisors': { place: 'Boulder, Colorado · Registered investment adviser', aum: 1.18, asOf: 'Form ADV, as of Mar 31, 2026', crd: '164502' },
+  'Willowbrook Wealth': { place: 'Greenwich, Connecticut · Registered investment adviser', aum: 1.06, asOf: 'Form ADV, as of Mar 31, 2026', crd: '171288' },
+};
+const fmt = (b) => b == null ? '—' : b >= 1 ? '$' + (b >= 10 ? b.toFixed(0) : b.toFixed(b * 10 % 1 ? 2 : 1)) + 'B' : '$' + Math.round(b * 1000) + 'M';
+const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const THEMES = {
+  light: { '--fd-ink2': '#46433f', '--fd-muted': '#66625d', '--fd-accent-ink': 'var(--color-accent-700)', '--fd-low': 'color-mix(in srgb, var(--color-accent-200) 38%, transparent)',
+    '--cat-mna': 'oklch(0.47 0.09 55)', '--cat-people': 'oklch(0.45 0.07 250)', '--cat-reg': 'oklch(0.46 0.09 22)', '--cat-tech': 'oklch(0.45 0.07 305)', '--cat-prod': 'oklch(0.45 0.07 150)', '--cat-mkt': 'oklch(0.45 0.06 205)', '--cat-other': '#66625d', colorScheme: 'light' },
+  dark: { '--color-bg': '#171614', '--color-surface': '#201e1c', '--color-text': '#e8e4dd', '--color-divider': 'color-mix(in srgb, #e8e4dd 15%, transparent)', '--color-accent': '#d3a45e',
+    '--fd-ink2': '#c8c2b9', '--fd-muted': '#a09a91', '--fd-accent-ink': 'var(--color-accent-400)', '--fd-low': 'color-mix(in srgb, var(--color-accent-800) 34%, transparent)',
+    '--cat-mna': 'oklch(0.78 0.08 60)', '--cat-people': 'oklch(0.78 0.06 250)', '--cat-reg': 'oklch(0.76 0.08 25)', '--cat-tech': 'oklch(0.78 0.06 305)', '--cat-prod': 'oklch(0.78 0.07 150)', '--cat-mkt': 'oklch(0.78 0.05 205)', '--cat-other': '#a09a91', colorScheme: 'dark' },
+};
+const WM = {
+  Serif: { fontFamily: "'Cormorant Garamond', serif", fontWeight: 500, fontSize: 56, lineHeight: 0.95, letterSpacing: '-0.012em' },
+  'Small caps': { fontFamily: "'Cormorant SC', serif", fontWeight: 600, fontSize: 48, lineHeight: 1, letterSpacing: '0.07em' },
+  Condensed: { fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 500, fontSize: 52, lineHeight: 0.95, letterSpacing: '0.03em', textTransform: 'uppercase' },
+};
+
+class Component extends DCLogic {
+  state = {
+    screen: 'today', prev: 'today', firm: null, dark: null, drawer: false, wm: null,
+    watch: [{ name: 'Pugh Capital', aliases: [] }, { name: 'Coldstream', aliases: ['Coldstream Wealth Management'] }, { name: 'Bear Mountain Capital', aliases: [] }, { name: 'Goldman Sachs', aliases: ['Goldman Sachs Wealth Management', 'Goldman'] }],
+    q: '', fOutlet: '', fDate: 'all', fRegion: '', fCat: '', sortKey: 'date', sortDir: -1, conf: 'all', width: 1200, wName: '', wAlias: '', wMsg: '',
+  };
+  measure = () => {
+    const el = document.querySelector('[data-fd-frame]');
+    if (el && el !== this.obsEl && window.ResizeObserver) { this.ro && this.ro.disconnect(); this.obsEl = el; this.ro = new ResizeObserver(() => this.measure()); this.ro.observe(el); }
+    const w = el ? el.getBoundingClientRect().width : 0;
+    if (w > 0 && Math.abs(w - this.state.width) > 2) this.setState({ width: w });
+  };
+  componentDidMount() {
+    window.addEventListener('resize', this.measure);
+    setTimeout(this.measure, 0); requestAnimationFrame(this.measure); setTimeout(this.measure, 300);
+  }
+  componentWillUnmount() { this.ro && this.ro.disconnect(); window.removeEventListener('resize', this.measure); }
+  componentDidUpdate(pp) {
+    this.measure();
+    if (pp.theme !== this.props.theme && this.state.dark !== null) this.setState({ dark: null });
+    if (pp.wordmark !== this.props.wordmark && this.state.wm !== null) this.setState({ wm: null });
+  }
+  go(screen, firm) {
+    this.setState(s => ({ screen, firm: firm ?? s.firm, prev: s.screen === 'firm' ? s.prev : s.screen, drawer: false }));
+    try { window.scrollTo(0, 0); } catch (e) {}
+  }
+  matchWatch(s) {
+    const hay = (s.h + ' ' + s.firms.join(' ')).toLowerCase();
+    for (const w of this.state.watch) for (const n of [w.name, ...w.aliases]) {
+      if (n.length >= 3 && new RegExp('\\b' + esc(n.toLowerCase()) + '\\b').test(hay)) return w.name;
+    }
+    return null;
+  }
+  vm(s, i) {
+    const w = this.matchWatch(s);
+    return {
+      ...s, n: String(i + 1).padStart(2, '0'), catColor: `var(${CATV[s.cat]})`, isWatch: !!w, watchName: w,
+      hasAum: !!s.aum, aum: s.aum || '', aumNote: s.aumNote || 'AUM', day: DAYS[s.d].split(', ')[1].replace('September', 'Sep'),
+      stamp: s.d === 25 ? s.t : DAYS[s.d].slice(0, 3) + ' ' + s.t, leadUrl: O[s.out[0][0]].url,
+      outlets: s.out.map(([k], j) => ({ ...O[k], sep: j < s.out.length - 1 ? '·' : '' })),
+      firmLinks: s.firms.map(f => ({ name: f, open: () => this.go('firm', f) })), hasFirms: s.firms.length > 0,
+    };
+  }
+  dealVm(d) {
+    return {
+      ...d, acq: d.acq || 'Not named', tgt: d.tgt || 'Not named', acqColor: d.acq ? 'var(--color-text)' : 'var(--fd-muted)', tgtColor: d.tgt ? 'var(--color-text)' : 'var(--fd-muted)',
+      date: 'Sep ' + d.d, hAum: d.h == null ? '—' : fmt(d.h), sAum: d.s == null ? '—' : fmt(d.s), sAsOf: d.s == null ? 'No ADV match' : d.asOf, sAumShort: d.s == null ? '' : 'SEC ' + fmt(d.s),
+      isLow: !!d.low, note: d.low, bg: d.low ? 'var(--fd-low)' : 'transparent',
+      srcs: d.src.map((k, j) => ({ ...O[k], sep: j < d.src.length - 1 ? '·' : '' })), srcText: d.src.map(k => O[k].short).join(', '),
+      openAcq: () => d.acq && this.go('firm', d.acq), openTgt: () => d.tgt && this.go('firm', d.tgt),
+    };
+  }
+  sortedDeals() {
+    const { sortKey: k, sortDir: dir, conf } = this.state;
+    const val = (d) => k === 'date' ? d.d : k === 'acq' ? (d.acq || '~') : k === 'tgt' ? (d.tgt || '~') : k === 'h' ? (d.h ?? -1) : k === 's' ? (d.s ?? -1) : d.type;
+    return DEALS.filter(d => conf === 'all' || (conf === 'low' ? d.low : !d.low))
+      .slice().sort((a, b) => { const x = val(a), y = val(b); return (typeof x === 'string' ? x.localeCompare(y) : x - y) * dir; });
+  }
+  renderVals() {
+    const st = this.state;
+    const dark = st.dark ?? (this.props.theme === 'dark');
+    const vp = this.props.viewport ?? 'Fluid';
+    const wm = st.wm ?? this.props.wordmark ?? 'Serif';
+    const mobile = vp === 'Mobile 390' || (vp !== 'Desktop 1440' && st.width > 0 && st.width < 720);
+    const frameStyle = {
+      ...THEMES[dark ? 'dark' : 'light'], position: 'relative', containerType: 'inline-size', background: 'var(--color-bg)', color: 'var(--color-text)', fontFamily: 'var(--font-body)',
+      minHeight: vp === 'Mobile 390' ? 844 : '100vh', width: vp === 'Mobile 390' ? 390 : vp === 'Desktop 1440' ? 1440 : '100%', margin: vp === 'Mobile 390' ? '24px auto' : '0 auto',
+      boxShadow: vp === 'Mobile 390' ? 'var(--shadow-md)' : 'none', overflow: 'hidden',
+    };
+    const scr = st.screen;
+    const navDefs = [['Today', 'today'], ['Feed', 'feed'], ['Deals', 'deals'], ['Archive', 'archive']];
+    const nav = navDefs.map(([label, k]) => ({ label, go: () => this.go(k), rule: scr === k ? 'var(--color-accent)' : 'transparent', color: scr === k ? 'var(--color-text)' : 'var(--fd-muted)' }));
+
+    const dig = DIGEST.map(id => S.find(s => s.id === id));
+    const watched = dig.filter(s => this.matchWatch(s)), rest = dig.filter(s => !this.matchWatch(s));
+    const pinned = watched.map((s, i) => this.vm(s, i)), topStories = rest.map((s, i) => this.vm(s, i + watched.length));
+
+    const q = st.q.trim().toLowerCase();
+    const minDay = { all: 0, today: 25, d3: 23, week: 21 }[st.fDate];
+    const feed = S.slice().sort((a, b) => b.ts - a.ts).filter(s =>
+      s.d >= minDay && (!st.fOutlet || s.out.some(o => o[0] === st.fOutlet)) && (!st.fRegion || s.region === st.fRegion) && (!st.fCat || s.cat === st.fCat) &&
+      (!q || (s.h + ' ' + (s.sum || '') + ' ' + s.firms.join(' ') + ' ' + s.out.map(o => O[o[0]].name).join(' ')).toLowerCase().includes(q)));
+    const groups = [];
+    feed.forEach(s => { let g = groups.find(x => x.d === s.d); if (!g) groups.push(g = { d: s.d, label: DAYS[s.d], rows: [] }); g.rows.push(this.vm(s, 0)); });
+    const outletsCovered = new Set(feed.flatMap(s => s.out.map(o => o[0]))).size;
+
+    const cols = [['Date', 'date', 'left'], ['Acquirer', 'acq', 'left'], ['Target', 'tgt', 'left'], ['Type', 'type', 'left'], ['Headline AUM', 'h', 'right'], ['SEC AUM', 's', 'right'], ['Sources', null, 'left']];
+    const dealCols = cols.map(([label, k, align]) => ({ label, align, color: st.sortKey === k ? 'var(--color-text)' : 'inherit', arrow: st.sortKey === k ? (st.sortDir < 0 ? '↓' : '↑') : '',
+      sort: () => k && this.setState(s => ({ sortKey: k, sortDir: s.sortKey === k ? -s.sortDir : (k === 'date' || k === 'h' || k === 's' ? -1 : 1) })) }));
+
+    let firm = null;
+    if (scr === 'firm' && st.firm) {
+      const name = st.firm, f = FIRMS[name] || {};
+      const stories = S.filter(s => s.firms.includes(name) || s.h.includes(name)).sort((a, b) => b.ts - a.ts).map((s, i) => this.vm(s, i));
+      const deals = DEALS.filter(d => d.acq === name || d.tgt === name).map(d => this.dealVm(d));
+      const w = st.watch.find(x => x.name === name || name.startsWith(x.name));
+      firm = { name, place: f.place || 'Location not on file · Not matched to a Form ADV filing', aum: f.aum ? fmt(f.aum) : '—', asOf: f.asOf || 'No SEC filing matched', crd: f.crd || '—', hasCrd: !!f.crd,
+        secUrl: f.crd ? `https://adviserinfo.sec.gov/firm/summary/${f.crd}` : '', stories, deals, hasDeals: deals.length > 0,
+        storyCount: stories.length + (stories.length === 1 ? ' story' : ' stories'), dealCount: deals.length ? deals.length + (deals.length === 1 ? ' deal' : ' deals') + ' in the tracker' : 'No deals in the tracker',
+        hasAliases: !!(w && w.aliases.length), aliases: w ? w.aliases.join(', ') : '', watched: !!w };
+    }
+
+    const setF = (k) => (e) => this.setState({ [k]: e.target.value });
+    const studies = [];
+    ['Serif', 'Small caps', 'Condensed'].forEach(k => ['light', 'dark'].forEach(t => studies.push({
+      label: k + ' · ' + t + (wm === k ? ' · in use' : ''), pick: () => this.setState({ wm: k }), markStyle: { ...WM[k], display: 'block', color: 'var(--color-text)' },
+      style: { ...THEMES[t], textAlign: 'left', cursor: 'pointer', padding: '16px 22px 22px', background: 'var(--color-bg)', color: 'var(--color-text)', border: '1px solid ' + (wm === k ? 'var(--color-accent)' : 'var(--color-divider)'), borderRadius: 'var(--radius-sm)' },
+    })));
+
+    return {
+      frameStyle, nav, mobile, desktop: !mobile,
+      wmSerif: wm === 'Serif', wmCaps: wm === 'Small caps', wmCond: wm === 'Condensed',
+      themeLabel: dark ? 'Light mode' : 'Dark mode', toggleTheme: () => this.setState({ dark: !dark }),
+      watchCount: st.watch.length, openDrawer: () => this.setState({ drawer: true, wMsg: '' }), closeDrawer: () => this.setState({ drawer: false }), drawer: st.drawer,
+      isToday: scr === 'today', isFeed: scr === 'feed', isDeals: scr === 'deals', isFirm: scr === 'firm', isArchive: scr === 'archive', isSources: scr === 'sources', isStudies: scr === 'studies',
+      goToday: () => this.go('today'), goDeals: () => this.go('deals'), goSources: () => this.go('sources'), goStudies: () => this.go('studies'), goBack: () => this.go(st.prev || 'today'),
+      pinned, topStories, hasPinned: pinned.length > 0,
+      digestMeta: `${dig.length} stories · ${pinned.length} from your watchlist · About two minutes`,
+      trending: [['Harborview Wealth Partners', 2], ['Goldman Sachs', 2], ['Atlas Wealth Management', 2], ['Coldstream Wealth Management', 2], ['Crestline Wealth', 1], ['Granite Peak Partners', 2], ['Northgate Advisors', 2], ['Pinecrest Wealth', 2], ['Meridian Capital Partners', 1], ['Blue Heron Capital', 1]]
+        .map(([name, n], i) => ({ name, n, rank: String(i + 1).padStart(2, '0'), open: () => this.go('firm', name) })),
+      sideDeals: DEALS.filter(d => d.acq && d.h).slice(0, 5).map(d => this.dealVm(d)),
+      q: st.q, onQ: setF('q'), fOutlet: st.fOutlet, onOutlet: setF('fOutlet'), fDate: st.fDate, onDate: setF('fDate'), fRegion: st.fRegion, onRegion: setF('fRegion'),
+      outletOpts: [{ v: '', l: 'All outlets' }, ...Object.entries(O).map(([v, o]) => ({ v, l: o.name }))],
+      dateOpts: [{ v: 'all', l: 'Any date' }, { v: 'today', l: 'Today' }, { v: 'd3', l: 'Last 3 days' }, { v: 'week', l: 'This week' }],
+      regionOpts: [{ v: '', l: 'All regions' }, ...['Pacific Northwest', 'Northeast', 'Southeast', 'Midwest', 'Southwest'].map(v => ({ v, l: v }))],
+      catFilters: ['', ...CATS].map(c => ({ label: c || 'All', pick: () => this.setState({ fCat: c }), rule: st.fCat === c ? 'currentColor' : 'transparent', color: c ? `var(${CATV[c]})` : 'var(--color-text)' })),
+      feedGroups: groups, feedEmpty: feed.length === 0, clearFilters: () => this.setState({ q: '', fOutlet: '', fDate: 'all', fRegion: '', fCat: '' }),
+      feedCount: `${feed.length} stories · ${outletsCovered} outlets · Newest first`,
+      confFilters: [['All', 'all'], ['Confirmed', 'high'], ['Needs review', 'low']].map(([label, k]) => ({ label, pick: () => this.setState({ conf: k }), rule: st.conf === k ? 'var(--color-accent)' : 'transparent', color: st.conf === k ? 'var(--color-text)' : 'var(--fd-muted)' })),
+      dealCols, deals: this.sortedDeals().map(d => this.dealVm(d)), sortKey: st.sortKey,
+      sortOpts: [{ v: 'date', l: 'Newest' }, { v: 'h', l: 'Headline AUM' }, { v: 's', l: 'SEC AUM' }, { v: 'acq', l: 'Acquirer' }, { v: 'tgt', l: 'Target' }],
+      onSortSelect: (e) => { const k = e.target.value; this.setState({ sortKey: k, sortDir: k === 'acq' || k === 'tgt' ? 1 : -1 }); },
+      firm: firm || { stories: [], deals: [] }, firmWatchLabel: firm && firm.watched ? 'On your watchlist · Remove' : 'Add to watchlist',
+      toggleFirmWatch: () => { if (!firm) return; this.setState(s => ({ watch: firm.watched ? s.watch.filter(x => !(x.name === firm.name || firm.name.startsWith(x.name))) : [...s.watch, { name: firm.name, aliases: [] }] })); },
+      archiveWeeks: [{ label: 'Week of September 21', days: [
+        { dow: 'Friday', date: 'Sep 25', lead: 'Harborview buys Summit Ridge and lands a $2.1B breakaway team; SEC proposes crypto custody changes', meta: '10 stories · Weekly M&A recap' },
+        { dow: 'Thursday', date: 'Sep 24', lead: 'Crestline agrees to buy two RIAs; Atlas adds Lakeshore in the Midwest', meta: '9 stories' },
+        { dow: 'Wednesday', date: 'Sep 23', lead: 'Northgate and Pinecrest merge to form a $4.5B firm; SEC charges Ohio adviser in cherry-picking case', meta: '8 stories' },
+        { dow: 'Tuesday', date: 'Sep 22', lead: 'Atlas acquires Brookfield Row Advisory; Coldstream opens a fifth Pacific Northwest office', meta: '6 stories' },
+      ].map(a => ({ ...a })) }],
+      sources: [
+        ['cw', 'Discovered feed', 7], ['wm', 'RSS', 8], ['fa', 'Discovered feed', 7], ['inn', 'Discovered feed', 9], ['ta', 'RSS', 8], ['rb', 'Listing page', 4, 'OK · 1 date estimated'],
+        ['fp', 'Atom', 6], ['ah', 'RSS · gated', 2, 'OK · headlines only'], ['ki', 'RSS', 10], ['sec', 'RSS', 3], ['fn', 'Listing page', 0, 'Failed · robots.txt disallows the news listing'],
+      ].map(([k, method, n, status]) => ({ ...O[k], method, items: n + ' items', status: status || 'OK', statusColor: n === 0 ? 'var(--fd-accent-ink)' : 'var(--fd-ink2)', statusStyle: n === 0 ? 'italic' : 'normal' })),
+      studies,
+      watchRows: st.watch.map(w => ({ name: w.name, aliases: w.aliases.join(', '), hasAliases: w.aliases.length > 0, remove: () => this.setState(s => ({ watch: s.watch.filter(x => x !== w) })) })),
+      wName: st.wName, wAlias: st.wAlias, wMsg: st.wMsg, onWName: setF('wName'), onWAlias: setF('wAlias'),
+      addWatch: () => {
+        const name = st.wName.trim();
+        if (!name) return this.setState({ wMsg: 'Enter a firm name.' });
+        if (st.watch.some(w => w.name.toLowerCase() === name.toLowerCase())) return this.setState({ wMsg: 'Already on the list.' });
+        const aliases = st.wAlias.split(',').map(a => a.trim()).filter(a => a.length >= 3);
+        this.setState(s => ({ watch: [...s.watch, { name, aliases }], wName: '', wAlias: '', wMsg: 'Added ' + name + '.' }));
+      },
+      exportWatch: () => {
+        const y = 'firms:\n' + st.watch.map(w => `  - name: ${w.name}\n    aliases:${w.aliases.length ? '\n' + w.aliases.map(a => '      - ' + a).join('\n') : ' []'}`).join('\n') + '\n';
+        const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([y], { type: 'text/yaml' })); a.download = 'watchlist.yaml'; a.click();
+      },
+      importWatch: (e) => {
+        const file = e.target.files && e.target.files[0]; if (!file) return;
+        file.text().then(txt => {
+          const out = []; let cur = null;
+          txt.split('\n').forEach(l => { const n = l.match(/-\s*name:\s*(.+)/); const a = l.match(/^\s{4,}-\s*(.+)/); if (n) out.push(cur = { name: n[1].trim(), aliases: [] }); else if (a && cur) cur.aliases.push(a[1].trim()); });
+          this.setState(out.length ? { watch: out, wMsg: `Imported ${out.length} firms.` } : { wMsg: 'No firms found in that file.' });
+        });
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>
