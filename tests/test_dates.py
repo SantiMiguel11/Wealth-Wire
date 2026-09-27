@@ -1,8 +1,8 @@
 from datetime import datetime, timezone
 
-from wealthwire.dates import parse_date, sane_published
-from wealthwire.parse import parse_feed
-from wealthwire.discover import parse_listing
+from fiduciarywire.dates import parse_date, sane_published
+from fiduciarywire.parse import parse_feed
+from fiduciarywire.discover import parse_listing
 
 FETCHED = datetime(2026, 9, 25, 18, 0, tzinfo=timezone.utc)
 

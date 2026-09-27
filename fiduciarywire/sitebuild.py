@@ -35,7 +35,7 @@ VERCEL_JSON = {
         {"source": "/data/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=0, must-revalidate"}]},
     ],
 }
-LIVE_README = """# live branch (generated — do not edit)
+LIVE_README = """# Fiduciary Wire — live branch (generated — do not edit)
 
 Rebuilt and force-pushed as a single orphan commit by `.github/workflows/refresh-site.yml` on `main`.
 

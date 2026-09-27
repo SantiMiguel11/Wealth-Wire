@@ -1,16 +1,15 @@
 """Local preview server: builds the static site and serves it exactly as Vercel would.
 
-    python -m wealthwire serve           # build from the current data dir, then serve http://localhost:8000
+    python -m fiduciarywire serve           # build from the current data dir, then serve http://localhost:8000
 
 There is no API — the frontend reads /data/*.json like it does in production. /firm/<slug> falls back to
-index.html (Vercel does the same with a rewrite). With WEALTHWIRE_NO_BACKGROUND unset, the server
+index.html (Vercel does the same with a rewrite). With FIDUCIARYWIRE_NO_BACKGROUND unset, the server
 re-ingests and rebuilds in the background every `server.reingest_interval_hours`.
 """
 from __future__ import annotations
 
 import asyncio
 import logging
-import os
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -21,7 +20,7 @@ from fastapi.staticfiles import StaticFiles
 from . import paths
 from .config import load_config
 
-log = logging.getLogger("wealthwire.server")
+log = logging.getLogger("fiduciarywire.server")
 
 
 def site_dir() -> Path:
@@ -49,7 +48,7 @@ async def _refresh_loop(hours: float) -> None:
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     task = None
-    if os.environ.get("WEALTHWIRE_NO_BACKGROUND") != "1":
+    if paths.env("NO_BACKGROUND") != "1":
         task = asyncio.create_task(_refresh_loop(float(load_config()["server"]["reingest_interval_hours"])))
     yield
     if task:
@@ -58,7 +57,7 @@ async def lifespan(app: FastAPI):
 
 def create_app(root: Path | None = None) -> FastAPI:
     root = root or site_dir()
-    app = FastAPI(title="Wealth Wire (static preview)", lifespan=lifespan, docs_url=None, redoc_url=None, openapi_url=None)
+    app = FastAPI(title="Fiduciary Wire (static preview)", lifespan=lifespan, docs_url=None, redoc_url=None, openapi_url=None)
 
     @app.get("/firm/{slug}", include_in_schema=False)
     def firm_page(slug: str):

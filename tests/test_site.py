@@ -5,9 +5,9 @@ from pathlib import Path
 
 import pytest
 
-from wealthwire import paths
-from wealthwire.contract import RULES, schema_for, validate_data_dir
-from wealthwire.sitebuild import build_site
+from fiduciarywire import paths
+from fiduciarywire.contract import RULES, schema_for, validate_data_dir
+from fiduciarywire.sitebuild import build_site
 
 from .conftest import NOW
 
@@ -61,7 +61,7 @@ def test_frontend_reads_only_static_data():
     assert "/api/" not in js
     # nothing in the frontend folder refers to the pipeline
     for p in (ROOT / "frontend").iterdir():
-        assert "wealthwire" not in p.read_text(errors="ignore").lower().replace("wealth wire", "")
+        assert "fiduciarywire" not in p.read_text(errors="ignore").lower().replace("fiduciary wire", "")
 
 
 def test_vercel_config(built):
@@ -76,15 +76,15 @@ def test_vercel_config(built):
 def test_local_server_serves_site_and_firm_fallback(built):
     from fastapi.testclient import TestClient
 
-    from wealthwire.server import create_app
+    from fiduciarywire.server import create_app
 
     import os
-    os.environ["WEALTHWIRE_NO_BACKGROUND"] = "1"
+    os.environ["FIDUCIARYWIRE_NO_BACKGROUND"] = "1"
     with TestClient(create_app(built / "site")) as c:
         assert c.get("/").status_code == 200
         assert c.get("/data/meta.json").json()["schema_version"] == 1
         r = c.get("/firm/anything-123")
-        assert r.status_code == 200 and "<title>Fiduciary Duty</title>" in r.text
+        assert r.status_code == 200 and "<title>Fiduciary Wire</title>" in r.text
         assert r.headers["x-robots-tag"] == "noindex, nofollow"
 
 

@@ -308,7 +308,7 @@ def main() -> None:
     import sys
 
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-    from wealthwire.gnews import feed_url as gnews_url
+    from fiduciarywire.gnews import feed_url as gnews_url
 
     def gnews_item(title, outlet, home, hours, salt=""):
         h = hashlib.sha1((title + salt).encode()).hexdigest()[:24]

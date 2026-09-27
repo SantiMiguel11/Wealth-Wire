@@ -4,8 +4,8 @@ from pathlib import Path
 
 import pytest
 
-from wealthwire.firmeval import evaluate
-from wealthwire.firms import SecMatcher, aliases_for, load_curated, normalize, pretty_name
+from fiduciarywire.firmeval import evaluate
+from fiduciarywire.firms import SecMatcher, aliases_for, load_curated, normalize, pretty_name
 
 FIX = Path(__file__).parent / "fixtures"
 
@@ -120,7 +120,7 @@ def test_brand_resolution_and_curated_ampersand():
 
 
 def test_teasers_ignore_single_word_generated_aliases():
-    from wealthwire.pipeline import firms_in_text
+    from fiduciarywire.pipeline import firms_in_text
 
     rows = GUARD_ROWS + [{"crd": "11", "legal_name": "FRAZIER MANAGEMENT, L.L.C.", "business_name": "FRAZIER HEALTHCARE PARTNERS", "aum_usd": 1e9}]
     m = SecMatcher(rows, {})

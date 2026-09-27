@@ -5,9 +5,9 @@ from zoneinfo import ZoneInfo
 
 import yaml
 
-from wealthwire import db
-from wealthwire.dates import to_iso
-from wealthwire.window import rank_clusters, top_window
+from fiduciarywire import db
+from fiduciarywire.dates import to_iso
+from fiduciarywire.window import rank_clusters, top_window
 
 ROOT = Path(__file__).resolve().parent.parent
 PT = ZoneInfo("America/Los_Angeles")
@@ -85,7 +85,7 @@ def test_rank_by_outlets_then_recency():
 
 
 def test_top_stories_only_new_since_window(ingested):
-    from wealthwire.sitebuild import collect
+    from fiduciarywire.sitebuild import collect
 
     from .conftest import NOW
 

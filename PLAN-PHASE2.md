@@ -1,8 +1,12 @@
-# Wealth Wire — Phase 2 plan
+# Fiduciary Wire — Phase 2 plan
+
+> **Name history.** This project was called Wealth Wire, then Fiduciary Duty (the 2026-09-27 redesign), and is now
+> **Fiduciary Wire**. On 2026-09-27 the names, commands and paths in this file were updated to the current ones so
+> they still work; RENAME.md lists what changed and what deliberately keeps an old name.
 
 ## Where phase 1 left off
 
-- **Pipeline:** `python -m wealthwire ingest` fetches 11 sources into SQLite and recomputes the derived data
+- **Pipeline:** `python -m fiduciarywire ingest` fetches 11 sources into SQLite and recomputes the derived data
   (categories, regex firms, clusters, M&A).
 - **Build:** `scripts/build_preview.py --site` inlines the UI plus a JSON snapshot into one `index.html`,
   and a "fetch shim" fakes the old FastAPI endpoints in the browser.
@@ -14,11 +18,11 @@
 
 ```
 main (source only)                                live (one orphan commit per refresh, force-pushed)
-├─ wealthwire/            pipeline (Python)        ├─ site/          ← Vercel serves only this
+├─ fiduciarywire/            pipeline (Python)        ├─ site/          ← Vercel serves only this
 │   ingest, sources (feed, google_news, wire)      │   index.html, app.js, style.css (copied from frontend/)
 │   sec.py (IA data), firms.py (matcher)            │   data/*.json   ← the public data contract
 │   refresh.py (orchestration), state.py            ├─ state/         ← never served
-│   sitebuild.py (emits site/data/*.json)           │   wealthwire.db (items incl. teasers, SEC firms)
+│   sitebuild.py (emits site/data/*.json)           │   fiduciarywire.db (items incl. teasers, SEC firms)
 │   aidigest.py, weekly.py, alerts.py               │   digests/*.md, SOURCES.md, firm_eval.json
 ├─ frontend/              the only rendering code   └─ vercel.json   (outputDirectory site, noindex, rewrites)
 ├─ schemas/*.schema.json  JSON Schemas for data/*
@@ -31,13 +35,13 @@ The workflow calls these in order:
 
 | step | command | notes |
 |---|---|---|
-| restore | `python -m wealthwire state restore _prev` | copies DB and archives out of the previous `live` tree |
-| ingest | `python -m wealthwire ingest` | includes the monthly SEC check (§4), wires (§5), Google News (§6) |
-| prepare AI input | `python -m wealthwire digest-input` | writes `_work/digest_input.json`; on Pacific Fridays also `_work/weekly_input.json` |
+| restore | `python -m fiduciarywire state restore _prev` | copies DB and archives out of the previous `live` tree |
+| ingest | `python -m fiduciarywire ingest` | includes the monthly SEC check (§4), wires (§5), Google News (§6) |
+| prepare AI input | `python -m fiduciarywire digest-input` | writes `_work/digest_input.json`; on Pacific Fridays also `_work/weekly_input.json` |
 | AI | `anthropics/claude-code-action@v1` | skipped with a notice when no secret; `continue-on-error: true` |
-| finalize | `python -m wealthwire digest-finalize` | validates the Claude output → digest archive, or falls back |
-| build | `python -m wealthwire build-site _live` | writes `site/data/*.json`, copies `frontend/`, runs the privacy check (fails closed) |
-| alert | `python -m wealthwire alert` | watchlist email; skips quietly when secrets are missing |
+| finalize | `python -m fiduciarywire digest-finalize` | validates the Claude output → digest archive, or falls back |
+| build | `python -m fiduciarywire build-site _live` | writes `site/data/*.json`, copies `frontend/`, runs the privacy check (fails closed) |
+| alert | `python -m fiduciarywire alert` | watchlist email; skips quietly when secrets are missing |
 | publish | shell | orphan commit → force-push `live` |
 
 ### Data contract (`site/data/`)

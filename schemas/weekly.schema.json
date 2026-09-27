@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://wealth-wire/schemas/weekly.schema.json",
+  "$id": "https://fiduciary-wire/schemas/weekly.schema.json",
   "title": "weekly/<YYYY-Www>.json",
   "description": "Weekly M&A recap (generated on Friday refreshes).",
   "type": "object",

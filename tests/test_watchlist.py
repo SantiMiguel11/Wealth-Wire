@@ -1,6 +1,6 @@
 import pytest
 
-from wealthwire.watchlist import Firm, Matcher
+from fiduciarywire.watchlist import Firm, Matcher
 
 
 SEED = [
@@ -45,7 +45,7 @@ def test_short_aliases_never_match():
 
 
 def test_parse_watchlist_json_formats():
-    from wealthwire.watchlist import parse_watchlist
+    from fiduciarywire.watchlist import parse_watchlist
 
     exported = '{"version":1,"firms":[{"name":"Goldman Sachs","aliases":["Goldman"]},{"name":" Pugh  Capital "}]}'
     firms = parse_watchlist(exported)

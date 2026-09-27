@@ -1,8 +1,9 @@
 """Filesystem locations.
 
-Config (the editable YAML files) lives in the repo root unless WEALTHWIRE_CONFIG points elsewhere.
+Config (the editable YAML files) lives in the repo root unless FIDUCIARYWIRE_CONFIG points elsewhere
+(the pre-rename WEALTHWIRE_* variable names are still read as a fallback).
 Runtime data (SQLite DB, SOURCES.md, digests/, weekly/, _work/) lives in the repo root unless
-WEALTHWIRE_HOME points elsewhere — used for the offline demo dataset, tests and the refresh workflow.
+FIDUCIARYWIRE_HOME points elsewhere — used for the offline demo dataset, tests and the refresh workflow.
 """
 from __future__ import annotations
 
@@ -14,16 +15,26 @@ FRONTEND_DIR = ROOT / "frontend"      # the only rendering code; copied verbatim
 SCHEMAS_DIR = ROOT / "schemas"        # JSON Schemas for site/data/*.json
 
 
+DB_NAME = "fiduciarywire.db"
+LEGACY_DB_NAMES = ("wealthwire.db",)  # the project's earlier name; moved to DB_NAME on first use
+
+
+def env(name: str) -> str | None:
+    """FIDUCIARYWIRE_<name>, falling back to the pre-rename WEALTHWIRE_<name> so old shells and scheduled tasks
+    keep working."""
+    return os.environ.get("FIDUCIARYWIRE_" + name) or os.environ.get("WEALTHWIRE_" + name)
+
+
 def config_dir() -> Path:
-    return Path(os.environ.get("WEALTHWIRE_CONFIG") or ROOT)
+    return Path(env("CONFIG") or ROOT)
 
 
 def data_home() -> Path:
-    return Path(os.environ.get("WEALTHWIRE_HOME") or ROOT)
+    return Path(env("HOME") or ROOT)
 
 
 def db_path() -> Path:
-    return data_home() / "data" / "wealthwire.db"
+    return data_home() / "data" / DB_NAME
 
 
 def sources_md_path() -> Path:

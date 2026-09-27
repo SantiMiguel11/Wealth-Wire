@@ -1,7 +1,7 @@
 # Refresh: fetch the news on GitHub's machines, (optionally) have Claude write the digest, rebuild the static
 # site, and force-push it to the `live` branch as a single orphan commit. Vercel deploys `live`.
 # Also runs when source code on main changes, and on demand from the Actions tab ("Run workflow").
-name: Refresh site
+name: Fiduciary Wire refresh
 
 on:
   schedule:
@@ -19,7 +19,7 @@ on:
     branches: [main]
     paths:
       - "*.yaml"
-      - "wealthwire/**"
+      - "fiduciarywire/**"
       - "frontend/**"
       - "schemas/**"
       - "requirements.txt"
@@ -58,15 +58,15 @@ jobs:
 
       - name: Restore state from the previous live commit
         run: |
-          python -m wealthwire state fetch _prev
-          python -m wealthwire state restore _prev
+          python -m fiduciarywire state fetch _prev
+          python -m fiduciarywire state restore _prev
 
       - name: Ingest
-        run: python -m wealthwire ingest || echo "::warning::no source ingested successfully — see state/SOURCES.md on the live branch"
+        run: python -m fiduciarywire ingest || echo "::warning::no source ingested successfully — see state/SOURCES.md on the live branch"
 
       - name: Prepare the digest input (top 15 stories; weekly M&A input on Pacific Fridays)
         id: dinput
-        run: python -m wealthwire digest-input
+        run: python -m fiduciarywire digest-input
 
       # Claude writes the summaries from headlines and teasers only (prompts/digest.md). It gets file
       # Read/Write and nothing else: no shell, no web. Skipped on code pushes (only scheduled and manual runs
@@ -99,23 +99,23 @@ jobs:
           echo "::notice::AI digest skipped: no CLAUDE_CODE_OAUTH_TOKEN or ANTHROPIC_API_KEY secret (see MANUAL-STEPS.md). The site shows the plain ranked list."
 
       - name: Validate the digest (falls back to the plain list if invalid)
-        run: python -m wealthwire digest-finalize | tee -a "$GITHUB_STEP_SUMMARY"
+        run: python -m fiduciarywire digest-finalize | tee -a "$GITHUB_STEP_SUMMARY"
 
       - name: Firm-matching quality report (real SEC data; kept in private state)
         continue-on-error: true
-        run: python -m wealthwire eval-firms
+        run: python -m fiduciarywire eval-firms
 
       - name: Build site (public data + private state)
-        run: python -m wealthwire build-site _live
+        run: python -m fiduciarywire build-site _live
 
       - name: Publish to the live branch (single orphan commit)
-        run: python -m wealthwire publish _live --remote-url "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" --message "Refresh $(date -u +%Y-%m-%dT%H:%MZ)"
+        run: python -m fiduciarywire publish _live --remote-url "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" --message "Refresh $(date -u +%Y-%m-%dT%H:%MZ)"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Watchlist email (optional; skipped unless WATCHLIST_JSON, RESEND_API_KEY and ALERT_EMAIL are set)
         continue-on-error: true
-        run: python -m wealthwire alert
+        run: python -m fiduciarywire alert
         env:
           WATCHLIST_JSON: ${{ secrets.WATCHLIST_JSON }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
@@ -131,7 +131,7 @@ jobs:
         if: always()
         run: |
           {
-            echo "### Wealth Wire refresh"
+            echo "### Fiduciary Wire refresh"
             test -f SOURCES.md && sed -n '1,/^## Failures/p' SOURCES.md | head -40
             test -f wire_stats.csv && { echo; echo "Wire feeds this run (full history: state/wire_stats.csv on live):"; echo '```'; grep "^$(tail -n1 wire_stats.csv | cut -d, -f1)," wire_stats.csv | cut -d, -f2- | sed 's#https://www.globenewswire.com/RssFeed/keyword/##; s#/feedTitle/[^,]*##'; echo '```'; }
             test -f firm_eval.json && python -c "import json;r=json.load(open('firm_eval.json'));print(f\"\\nFirm matching: precision {r['precision']}, recall {r['recall']} on {r['headlines']} labeled headlines (SEC file {r['sec_data_date']})\")"

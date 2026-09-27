@@ -1,5 +1,9 @@
 # Decisions log
 
+> **Name history.** This project was called Wealth Wire, then Fiduciary Duty (the 2026-09-27 redesign), and is now
+> **Fiduciary Wire**. On 2026-09-27 the names, commands and paths in this file were updated to the current ones so
+> they still work; RENAME.md lists what changed and what deliberately keeps an old name.
+
 Each entry: **decision** — alternatives considered — why.
 
 ## Environment
@@ -9,7 +13,7 @@ Each entry: **decision** — alternatives considered — why.
    `ProxyError: 403 Forbidden` from the sandbox's egress proxy (pypi.org worked). Alternatives: stop and ask
    (the brief says don't), or fake live results (dishonest). Chosen: build the real network path in full,
    run it live once so SOURCES.md records the actual failure reason, and develop/test/screenshot with an
-   offline fixture mode (`python -m wealthwire ingest --fixtures tests/fixtures/demo`) that routes the
+   offline fixture mode (`python -m fiduciarywire ingest --fixtures tests/fixtures/demo`) that routes the
    same code path through an `httpx.MockTransport`. On a normal machine `./run.sh` hits the real sites.
 2. **Headline pairs for clustering were written by hand instead of harvested from ingestion**, because of #1.
    They follow the headline styles of the seeded outlets (sentence case vs. title case, "| Outlet" suffixes,
@@ -104,8 +108,8 @@ Each entry: **decision** — alternatives considered — why.
     anything ingested between the command's ingest and its write is not skipped next time.
 23. **Local date for the digest filename is written into new_stories.json (`local_date`)** so the command
     needs no `date` shell permission.
-24. **`python -m wealthwire` re-executes itself under `./.venv/bin/python`** when imported by an interpreter
-    that lacks the dependencies. That lets the settings allow exactly `python -m wealthwire ingest` while the
+24. **`python -m fiduciarywire` re-executes itself under `./.venv/bin/python`** when imported by an interpreter
+    that lacks the dependencies. That lets the settings allow exactly `python -m fiduciarywire ingest` while the
     scheduled task works regardless of which `python` is on PATH.
 25. **Generated files are git-ignored**: `data/`, `new_stories.json`, `digests/*.md`, `digests/.last_digest`,
     `.venv/`. SOURCES.md and screenshots are committed as documentation.
@@ -137,7 +141,7 @@ P1. **Build order differs from the brief's numbering.** Every feature publishes 
     so §7 (state round trip) and §9 (data files + schemas + frontend split) came first, then §1, §3, §4, §5+§6,
     §2+§8. Each section is still its own commit. See PLAN-PHASE2.md.
 P2. **The FastAPI JSON API is gone; the frontend reads only `/data/*.json`.** The brief makes the static files
-    the only interface. `python -m wealthwire serve` now builds the static site and serves it with the same
+    the only interface. `python -m fiduciarywire serve` now builds the static site and serves it with the same
     `/firm/<slug>` fallback Vercel uses. That keeps local preview identical to production. `run.sh` still works.
 P3. **The refresh is a sequence of CLI steps** (`state fetch/restore`, `ingest`, `digest-input`,
     `digest-finalize`, `build-site`, `alert`, `publish`) instead of shell in the workflow, so the round trip is
@@ -373,11 +377,11 @@ F11. **Wire stats file.** Every run appends one row per wire feed to `wire_stats
      - source_new_items (new after merging the feeds; a release in two keyword feeds counts once).
      The run summary prints that run's rows. Disabled wires write no rows.
 
-## Fiduciary Duty redesign (2026-09-27)
+## Fiduciary Wire redesign (2026-09-27)
 
-R1. **Frontend only.** `frontend/` was rewritten from `design/Fiduciary Duty.dc.html`. The pipeline, `schemas/`,
+R1. **Frontend only.** `frontend/` was rewritten from `design/Fiduciary Wire.dc.html`. The pipeline, `schemas/`,
     the data contract's fields, the refresh workflow and the Vercel settings are unchanged. The repo and
-    Python package keep the working name "Wealth Wire".
+    Python package keep the working name "Fiduciary Wire".
 R2. **Where the prototype and the brief differ, the brief wins:**
     - the watchlist drawer imports and exports **JSON**, the contract's format, not the prototype's YAML;
     - the prototype's "Wordmark" studies page is a design tool, so it isn't shipped;
@@ -398,3 +402,32 @@ R6. **Accessibility is measured, not assumed.**
 R7. **Screenshots use the real fonts.** The test browser fetches Google Fonts through a cached route in
     `scripts/screenshots.py`, because this build sandbox's HTTPS proxy isn't trusted by Chromium. Production is
     unaffected.
+
+## Rename to Fiduciary Wire (2026-09-27)
+
+N1. **The Python package is renamed** (`wealthwire` → `fiduciarywire`), because every reference could be updated
+    safely in this one change: imports, tests, scripts, both workflows, `run.sh`, `.claude/` permissions and docs.
+    Nothing outside the repo imports it. Data and settings from the old name aren't stranded:
+    - `WEALTHWIRE_*` environment variables are still read when the `FIDUCIARYWIRE_*` ones are unset;
+    - an existing `data/wealthwire.db` (with its WAL/SHM files) is renamed to `fiduciarywire.db` on first use;
+    - `state restore` accepts a `live` commit that still carries `state/wealthwire.db`. The current one does, and
+      the rename's first refresh proved it.
+    Tests: `tests/test_rename_compat.py`.
+N2. **Browser storage moves to `fw-watchlist` and `fw-theme`.** The old keys contain old-name abbreviations
+    (`ww-` = Wealth Wire, `fd-` = Fiduciary Duty). On first load each old value is copied to the new key, only if
+    the new key is empty, and the old key is removed. So existing watchlists and theme choices survive, and a stale
+    old key can never overwrite a newer watchlist. `scripts/screenshots.py` tests this in a real browser.
+N3. **Reference documents** (this file, the audits and plans) were updated to the current name and commands, so
+    their instructions still work. Each carries one "name history" note. A few sentences whose meaning depended on
+    the old name were rewritten by hand (R1 here; README's repository note).
+N4. **Unchanged on purpose:**
+    - the GitHub repository name and the Vercel project name, which are external and handled by MANUAL-STEPS §5;
+    - the `live` branch;
+    - secret names (none contained an old name);
+    - archived digest content;
+    - the User-Agent version (`0.1`, the current version); only the product token changed, to `FiduciaryWire/0.1`.
+N5. **Workflow display names now carry the product name** ("Fiduciary Wire refresh", "Fiduciary Wire feed probe").
+    The files are still `refresh-site.yml` and `probe-feeds.yml`, so run history, `workflow_dispatch` by filename
+    and schedules are unaffected.
+N6. **Open Graph tags were added** (`og:site_name`, `og:title`, `og:description`, `og:type`) and
+    `application-name`. There were none before. `noindex, nofollow` is unchanged.

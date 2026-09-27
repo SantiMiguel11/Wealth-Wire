@@ -4,9 +4,9 @@ from datetime import timedelta
 
 import pytest
 
-from wealthwire import paths
-from wealthwire.categorize import Categorizer
-from wealthwire.ingest import append_wire_stats, run_ingest
+from fiduciarywire import paths
+from fiduciarywire.categorize import Categorizer
+from fiduciarywire.ingest import append_wire_stats, run_ingest
 
 from .conftest import DEMO, NOW
 
@@ -38,7 +38,7 @@ def test_stats_append_across_runs_and_prune(ingested):
 
 
 def test_stats_file_travels_with_state(ingested, tmp_path):
-    from wealthwire import state
+    from fiduciarywire import state
 
     state.save(tmp_path / "out")
     assert (tmp_path / "out" / "state" / "wire_stats.csv").exists()
@@ -49,10 +49,10 @@ def test_stats_file_travels_with_state(ingested, tmp_path):
 
 def test_wire_feed_disallowed_by_robots_is_skipped(home, monkeypatch):
     """Business Wire's robots.txt disallows its feed path; wire feeds are robots-checked like pages."""
-    from wealthwire.config import Source
-    from wealthwire.fetch import Fetcher
-    from wealthwire.ingest import SourceIngester
-    from wealthwire import db
+    from fiduciarywire.config import Source
+    from fiduciarywire.fetch import Fetcher
+    from fiduciarywire.ingest import SourceIngester
+    from fiduciarywire import db
 
     fetcher = Fetcher("test", per_host_delay=0)
     monkeypatch.setattr(fetcher.robots, "check", lambda url: (False, "robots.txt disallows /rss/home/"))
@@ -73,8 +73,8 @@ def test_wire_feed_disallowed_by_robots_is_skipped(home, monkeypatch):
     ("Family Office Partners Names Jason Mok as Director of Family Office Services", True),  # "Names X" ≠ "Named to"
 ])
 def test_award_releases_are_dropped(ingested, title, keep):
-    from wealthwire import db
-    from wealthwire.firms import SecMatcher
-    from wealthwire.wires import keep_wire_item
+    from fiduciarywire import db
+    from fiduciarywire.firms import SecMatcher
+    from fiduciarywire.wires import keep_wire_item
 
     assert keep_wire_item(title, "a registered investment adviser", SecMatcher.from_db(db.connect()), Categorizer())[0] is keep

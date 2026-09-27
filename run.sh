@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Wealth Wire: create the venv if missing, install requirements, run one ingestion, start the server.
+# Fiduciary Wire: create the venv if missing, install requirements, run one ingestion, start the server.
 set -euo pipefail
 cd "$(dirname "$0")"
 
@@ -23,9 +23,9 @@ if [ ! -f .venv/.requirements.stamp ] || [ requirements.txt -nt .venv/.requireme
 fi
 
 echo "→ ingesting (this takes a minute: ≥2s between requests to the same host)"
-.venv/bin/python -m wealthwire ingest || echo "!! ingestion reported no successful sources — see SOURCES.md. Starting the server anyway."
+.venv/bin/python -m fiduciarywire ingest || echo "!! ingestion reported no successful sources — see SOURCES.md. Starting the server anyway."
 
-HOST="${WEALTHWIRE_HOST:-127.0.0.1}"
-PORT="${WEALTHWIRE_PORT:-8000}"
-echo "→ Wealth Wire at http://localhost:${PORT}  (re-ingests every 2 hours; Ctrl-C to stop)"
-exec .venv/bin/python -m wealthwire serve --host "$HOST" --port "$PORT"
+HOST="${FIDUCIARYWIRE_HOST:-${WEALTHWIRE_HOST:-127.0.0.1}}"
+PORT="${FIDUCIARYWIRE_PORT:-${WEALTHWIRE_PORT:-8000}}"
+echo "→ Fiduciary Wire at http://localhost:${PORT}  (re-ingests every 2 hours; Ctrl-C to stop)"
+exec .venv/bin/python -m fiduciarywire serve --host "$HOST" --port "$PORT"

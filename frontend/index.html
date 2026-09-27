@@ -4,20 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Fiduciary Duty</title>
+<title>Fiduciary Wire</title>
 <meta name="description" content="Daily news for wealth management and RIAs">
+<meta name="application-name" content="Fiduciary Wire">
+<meta property="og:site_name" content="Fiduciary Wire">
+<meta property="og:title" content="Fiduciary Wire">
+<meta property="og:description" content="Daily news for wealth management and RIAs">
+<meta property="og:type" content="website">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script>
-  // Theme before first paint: saved choice (fd-theme; the old ww-theme key is read once), else system preference.
+  // Theme before first paint: saved choice, else system preference. The pre-rename keys (fd-theme, then ww-theme)
+  // are read once and moved to fw-theme; app.js does the same for the watchlist (ww-watchlist → fw-watchlist).
   (function () {
     var t = null;
     try {
-      t = localStorage.getItem("fd-theme");
-      if (!t) {
-        t = localStorage.getItem("ww-theme");
-        if (t === "light" || t === "dark") localStorage.setItem("fd-theme", t);
-        localStorage.removeItem("ww-theme");
-      }
+      t = localStorage.getItem("fw-theme");
+      ["fd-theme", "ww-theme"].forEach(function (old) {
+        var v = localStorage.getItem(old);
+        if (t === null && (v === "light" || v === "dark")) { t = v; localStorage.setItem("fw-theme", v); }
+        localStorage.removeItem(old);
+      });
     } catch (e) {}
     if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     document.documentElement.dataset.theme = t;
@@ -30,7 +36,7 @@
 </head>
 <body>
 <!--
-  Fiduciary Duty frontend. Reads ONLY the static JSON files under /data/ (see DATA-CONTRACT.md).
+  Fiduciary Wire frontend. Reads ONLY the static JSON files under /data/ (see DATA-CONTRACT.md).
   Everything in this folder can be replaced without touching the Python pipeline.
 -->
 <a class="skip" href="#main">Skip to content</a>
@@ -47,7 +53,7 @@
     </div>
   </div>
   <div class="nameplate">
-    <a class="wordmark" href="/" data-nav>Fiduciary Duty</a>
+    <a class="wordmark" href="/" data-nav>Fiduciary Wire</a>
     <span class="masthead-line">Daily news for wealth management and RIAs</span>
   </div>
   <nav class="sections" role="tablist" aria-label="Sections">

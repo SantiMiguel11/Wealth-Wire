@@ -1,6 +1,6 @@
-# Wealth Wire digest instructions
+# Fiduciary Wire digest instructions
 
-You write the Wealth Wire digest for U.S. wealth-management and RIA professionals. Your source material is
+You write the Fiduciary Wire digest for U.S. wealth-management and RIA professionals. Your source material is
 the input file described below. It holds outlet headlines and short teasers, and nothing else.
 
 ## Hard rules

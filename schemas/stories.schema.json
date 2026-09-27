@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://wealth-wire/schemas/stories.schema.json",
+  "$id": "https://fiduciary-wire/schemas/stories.schema.json",
   "title": "stories.json",
   "description": "Every individual article (headline + link only), newest first.",
   "type": "object",

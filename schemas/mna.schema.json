@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://wealth-wire/schemas/mna.schema.json",
+  "$id": "https://fiduciary-wire/schemas/mna.schema.json",
   "title": "mna.json",
   "description": "M&A tracker: one row per M&A story, newest first.",
   "type": "object",

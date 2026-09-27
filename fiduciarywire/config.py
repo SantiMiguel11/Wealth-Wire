@@ -11,7 +11,7 @@ from . import paths
 
 DEFAULTS: dict[str, Any] = {
     "contact_email": "me@example.com",
-    "user_agent": "WealthWire/0.1 (personal news reader; {contact_email})",
+    "user_agent": "FiduciaryWire/0.1 (personal news reader; {contact_email})",
     "timezone": "America/Los_Angeles",
     "http": {"per_host_delay_seconds": 2.0, "timeout_seconds": 15, "retries": 1, "backoff_seconds": 2.0},
     "cluster": {"window_hours": 72, "threshold": 70},

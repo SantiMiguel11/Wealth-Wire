@@ -1,7 +1,7 @@
 import pytest
 
-from wealthwire.config import load_stoplist
-from wealthwire.extract import extract_aum, extract_firms, firm_spans, parse_aum
+from fiduciarywire.config import load_stoplist
+from fiduciarywire.extract import extract_aum, extract_firms, firm_spans, parse_aum
 
 
 @pytest.mark.parametrize(
@@ -88,9 +88,9 @@ def test_watchlist_alias_mapped_to_display_name():
 
 
 def test_trending_firms(ingested):
-    from wealthwire import db
-    from wealthwire.config import load_config
-    from wealthwire.sitebuild import Snapshot
+    from fiduciarywire import db
+    from fiduciarywire.config import load_config
+    from fiduciarywire.sitebuild import Snapshot
 
     from .conftest import NOW
 

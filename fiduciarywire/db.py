@@ -132,9 +132,27 @@ def _migrate(conn: sqlite3.Connection) -> None:
     conn.commit()
 
 
+def adopt_legacy_db(path: Path) -> bool:
+    """One-time rename of a database left under the project's earlier name (data/wealthwire.db → fiduciarywire.db),
+    with its WAL/SHM side files, so an existing local install keeps its history."""
+    if path.exists():
+        return False
+    for old in paths.LEGACY_DB_NAMES:
+        legacy = path.with_name(old)
+        if legacy.exists():
+            for suffix in ("", "-wal", "-shm"):
+                side = legacy.with_name(legacy.name + suffix)
+                if side.exists():
+                    side.rename(path.with_name(path.name + suffix))
+            return True
+    return False
+
+
 def connect(path: Path | None = None) -> sqlite3.Connection:
     path = path or paths.db_path()
     path.parent.mkdir(parents=True, exist_ok=True)
+    if path == paths.db_path():
+        adopt_legacy_db(path)
     conn = sqlite3.connect(path, timeout=30)
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA journal_mode=WAL")

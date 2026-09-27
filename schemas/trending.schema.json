@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://wealth-wire/schemas/trending.schema.json",
+  "$id": "https://fiduciary-wire/schemas/trending.schema.json",
   "title": "trending.json",
   "description": "Firms ranked by number of distinct stories mentioning them in the last `days` days.",
   "type": "object",

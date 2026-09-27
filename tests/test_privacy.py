@@ -6,8 +6,8 @@ from pathlib import Path
 
 import pytest
 
-from wealthwire import paths
-from wealthwire.sitebuild import PrivacyError, build_site, privacy_check
+from fiduciarywire import paths
+from fiduciarywire.sitebuild import PrivacyError, build_site, privacy_check
 
 from .conftest import NOW
 
@@ -32,7 +32,7 @@ def test_no_database_files_in_deployed_output(built):
     assert bad == []
     assert all(not p.read_bytes().startswith(b"SQLite format 3") for p in site.rglob("*") if p.is_file())
     # the DB does travel in the private state/ directory, which Vercel never serves
-    assert (built / "state" / "wealthwire.db").exists()
+    assert (built / "state" / "fiduciarywire.db").exists()
     assert json.loads((built / "vercel.json").read_text())["outputDirectory"] == "site"
 
 

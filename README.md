@@ -1,6 +1,6 @@
-# Fiduciary Duty
+# Fiduciary Wire
 
-Daily news for wealth management and RIAs. Fiduciary Duty pulls headlines from trade outlets, SEC and FINRA
+Daily news for wealth management and RIAs. Fiduciary Wire pulls headlines from trade outlets, SEC and FINRA
 releases, and press-release wires. It then:
 - removes duplicates and groups the same story across outlets;
 - sorts stories into categories;
@@ -8,8 +8,8 @@ releases, and press-release wires. It then:
 - tracks RIA M&A;
 - has Claude write a short digest of the day's top stories.
 
-It runs by itself on GitHub Actions and is served as a static site by Vercel. (The code and repository keep
-the project's working name, Wealth Wire.)
+It runs by itself on GitHub Actions and is served as a static site by Vercel. The project was earlier called
+Wealth Wire, then Fiduciary Duty; the GitHub repository keeps its original name, `Wealth-Wire` (see RENAME.md).
 
 ![Today](screenshots/today-desktop-light.png)
 
@@ -49,7 +49,7 @@ GitHub Actions (weekdays ~6:00, 12:00, 17:00 PT; weekends ~8:00 PT; or "Run work
 
 Four sections across the top, **Today · Feed · Deals · Archive**, with the date, the time of the last
 refresh, the watchlist and the light/dark switch in the dateline above the nameplate. The design reference
-is `design/Fiduciary Duty.dc.html`.
+is `design/Fiduciary Wire.dc.html`.
 
 - **Today** (`/`) is the digest: a short "Today in wealth management" opener, then the day's top stories,
   numbered, each with a one-sentence summary and "Why it matters to advisors". Stories about firms on your
@@ -128,15 +128,15 @@ Its permissions are limited to those commands and to reading and writing files u
 
 ```bash
 ./run.sh                                  # makes .venv, installs, ingests once, serves http://localhost:8000
-python -m wealthwire --help               # all commands (ingest, build-site, serve, digest-input, …)
+python -m fiduciarywire --help               # all commands (ingest, build-site, serve, digest-input, …)
 ```
 
 Offline demo with the fixture data (no network):
 
 ```bash
-export WEALTHWIRE_HOME=demo WEALTHWIRE_NOW=2026-09-25T18:00:00Z   # fixtures are dated around this instant
-python -m wealthwire ingest --fixtures tests/fixtures/demo
-python -m wealthwire serve
+export FIDUCIARYWIRE_HOME=demo FIDUCIARYWIRE_NOW=2026-09-25T18:00:00Z   # fixtures are dated around this instant
+python -m fiduciarywire ingest --fixtures tests/fixtures/demo
+python -m fiduciarywire serve
 ```
 
 ## Replacing the frontend
@@ -155,13 +155,13 @@ to:
    `meta.footer_note`.
 
 Replace the files in `frontend/` (any static output works; if you use a build tool, commit its output into
-`frontend/`). Nothing in `wealthwire/`, `schemas/` or the workflow needs to change.
+`frontend/`). Nothing in `fiduciarywire/`, `schemas/` or the workflow needs to change.
 
 **Test locally against real data:**
 
 ```bash
-python -m wealthwire state fetch _prev && python -m wealthwire state restore _prev   # pull the live DB
-python -m wealthwire serve            # builds site/data from it and serves http://localhost:8000
+python -m fiduciarywire state fetch _prev && python -m fiduciarywire state restore _prev   # pull the live DB
+python -m fiduciarywire serve            # builds site/data from it and serves http://localhost:8000
 ```
 
 Or run fully offline on the demo data (see above). `python -m pytest tests/test_site.py` checks that the
@@ -174,7 +174,7 @@ pip install -r requirements.txt
 python -m pytest                   # 354 tests, no network (fixture feeds + httpx MockTransport)
 python scripts/screenshots.py      # Playwright: 14 views × 1440/390 × light/dark, interactions, tap targets; fails on console errors
 python scripts/make_fixtures.py    # regenerate the offline fixture sites
-python -m wealthwire eval-firms    # firm-matching precision/recall on the 75 labeled headlines
+python -m fiduciarywire eval-firms    # firm-matching precision/recall on the 75 labeled headlines
 ```
 
 - Phase 2 plan: [PLAN-PHASE2.md](PLAN-PHASE2.md).

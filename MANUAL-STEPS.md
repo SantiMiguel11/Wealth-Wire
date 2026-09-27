@@ -1,6 +1,7 @@
 # Manual steps
 
-Everything below is done in a web browser, apart from one optional command in step 2. Each feature that
+Everything below is done in a web browser, apart from one optional command in step 2 and optional terminal
+checks in step 5 (each has a browser alternative). Each feature that
 needs a secret is optional. Without the secret, the refresh still runs and the run log shows a notice saying
 what was skipped.
 
@@ -10,6 +11,7 @@ what was skipped.
 | 2. Add a Claude secret | AI-written digest and weekly paragraph | optional |
 | 3. Add the watchlist email secrets | email when new stories match your firms | optional |
 | 4. Check the Vercel and Actions settings | already done in phase 1; verify only | check |
+| 5. Point fiduciarywire.com at the site | the new name's domain; old `*.vercel.app` URL redirects to it | when you have the domain |
 
 ---
 
@@ -54,13 +56,13 @@ of the two secrets below. If both are set, the OAuth token is used.
 
 ### Option B: `ANTHROPIC_API_KEY`, pay per use through the API
 
-1. Open https://console.anthropic.com/settings/keys, then click **Create Key**, name it `wealth-wire`, and copy
+1. Open https://console.anthropic.com/settings/keys, then click **Create Key**, name it `fiduciary-wire`, and copy
    the key (`sk-ant-api…`).
 2. Make sure the account has credit: **Settings** → **Billing**. Each digest uses a small amount.
 3. Add it as described in steps 2–4 of Option A, with the name `ANTHROPIC_API_KEY`.
 
 **Check it worked:**
-1. Open **Actions** → **Refresh site** → **Run workflow** (branch `main`) → **Run workflow**.
+1. Open **Actions** → **Fiduciary Wire refresh** → **Run workflow** (branch `main`) → **Run workflow**.
 2. When the run finishes, open it. The summary should show `digest: ok: N stories`, and the Digest tab on the
    site should show "Today in wealth management".
 3. If it says `fallback: …`, the reason is right there. The site still works either way.
@@ -75,10 +77,10 @@ email. The email is only sent when **all three** secrets below are set.
 1. **Create a Resend account.** Sign up at https://resend.com with the email address you want alerts sent to.
    Resend's shared sender (`onboarding@resend.dev`) can only deliver to your account's own address, so use
    that address.
-2. **Create an API key.** In Resend, go to **API Keys** → **Create API Key**, name it `wealth-wire`, choose
+2. **Create an API key.** In Resend, go to **API Keys** → **Create API Key**, name it `fiduciary-wire`, choose
    **Sending access**, and click **Add**. Copy the key (`re_…`).
-3. **Export your watchlist.** On the Wealth Wire site, add your firms in the Watchlist panel, click
-   **Export JSON**, and open the downloaded `wealth-wire-watchlist.json` in a text editor. Copy all of it.
+3. **Export your watchlist.** On the Fiduciary Wire site, add your firms in the Watchlist panel, click
+   **Export JSON**, and open the downloaded `fiduciary-wire-watchlist.json` in a text editor. Copy all of it.
 4. **Add three repository secrets.** Use the same page as step 2 above: **New repository secret** for each.
 
    | Name | Value |
@@ -89,8 +91,8 @@ email. The email is only sent when **all three** secrets below are set.
 
 5. **Optional repository variables.** On the same page, open the **Variables** tab → **New repository
    variable**.
-   - `SITE_URL`: your Vercel URL, e.g. `https://wealth-wire.vercel.app`, adds a link to the email.
-   - `ALERT_FROM`: e.g. `Wealth Wire <alerts@yourdomain.com>`. Set this only after verifying a domain in
+   - `SITE_URL`: your Vercel URL, e.g. `https://fiduciarywire.com` (see §5), adds a link to the email.
+   - `ALERT_FROM`: e.g. `Fiduciary Wire <alerts@yourdomain.com>`. Set this only after verifying a domain in
      Resend (**Domains** → **Add Domain**).
 
 The watchlist secret is only read in memory during the email step. It is never written to a file, and it
@@ -114,9 +116,64 @@ your browser. If you change it on the site, export it again and update `WATCHLIS
 
 ---
 
+## 5. Use fiduciarywire.com (after the rename to Fiduciary Wire)
+
+You need to own `fiduciarywire.com` at a registrar (Namecheap, Cloudflare, GoDaddy, Squarespace…). Everything else is
+in the Vercel dashboard and takes about 10 minutes plus DNS propagation.
+
+**A. Add the domain to the existing project**
+1. Open https://vercel.com/dashboard and click the project (it is still named **wealth-wire**, which is fine).
+2. Click **Settings** → **Domains**.
+3. Click **Add Domain**, type `fiduciarywire.com` and click **Add**.
+4. When Vercel asks, choose **Connect to an environment → Production** (production is the `live` branch), and
+   accept its recommendation to also add `www.fiduciarywire.com` **redirecting to** `fiduciarywire.com`.
+5. Vercel now shows the DNS records it needs, usually:
+   - an **A** record for `@` (the bare domain) pointing to the IP address Vercel shows;
+   - a **CNAME** record for `www` pointing to the target Vercel shows (`cname.vercel-dns.com` or a
+     project-specific value).
+   Copy the values exactly as Vercel displays them. Alternatively, switch the domain's nameservers to the ones
+   Vercel lists (`ns1.vercel-dns.com`, `ns2.vercel-dns.com`) and Vercel manages DNS itself.
+6. At your registrar, open the DNS settings for `fiduciarywire.com`, delete any existing parking A/CNAME records
+   for `@` and `www`, and add the records from step 5. Save.
+7. Back in **Settings → Domains**, wait until both domains show **Valid Configuration** (minutes to a few hours).
+   Vercel issues the HTTPS certificate automatically.
+
+**B. Make it the primary domain**
+1. Still in **Settings → Domains**, make sure `fiduciarywire.com` has **no redirect** set and is assigned to
+   **Production**. That makes it the address every other domain points to.
+2. If an older custom domain is listed, click **Edit** on it, choose **Redirect to another domain**, select
+   `fiduciarywire.com`, keep **308 Permanent Redirect**, and **Save**.
+3. On GitHub, set the repository variable used by the email link: https://github.com/SantiMiguel11/Wealth-Wire/settings/variables/actions
+   → **New repository variable** (or edit it) → name `SITE_URL`, value `https://fiduciarywire.com`.
+
+**C. Redirect the old `*.vercel.app` address**
+1. In **Settings → Domains**, find the project's Vercel address (for example `wealth-wire.vercel.app`).
+2. Click **Edit** next to it, choose **Redirect to another domain**, select `fiduciarywire.com`,
+   choose **308 Permanent Redirect**, and click **Save**.
+3. Note: per-deployment preview URLs (`…-<hash>-….vercel.app`) can't be redirected. They are unlisted and
+   the site asks search engines not to index them either.
+
+**D. Check it (and that the site is still hidden from search engines)**
+Run these in any terminal, or open the URLs in a browser and use DevTools → Network → the document → Headers:
+- `curl -sI https://fiduciarywire.com | grep -i -E "^HTTP|x-robots-tag"` should show `HTTP/2 200` and
+  `x-robots-tag: noindex, nofollow`.
+- `curl -s https://fiduciarywire.com/robots.txt` should show `User-agent: *` and `Disallow: /`.
+- `curl -s https://fiduciarywire.com | grep -i robots` should show `<meta name="robots" content="noindex, nofollow">`.
+- `curl -sI https://www.fiduciarywire.com` and `curl -sI https://wealth-wire.vercel.app` (your old address)
+  should both answer `308` with `location: https://fiduciarywire.com/`.
+- Open https://fiduciarywire.com in a browser: the masthead reads **Fiduciary Wire**, and a firm page such as
+  `/firm/<slug>` loads (the rewrite lives in `vercel.json` on the `live` branch, so it works on any domain).
+
+**Secrets and variables.** None of the secret names contain an old project name, so nothing to rename:
+`CLAUDE_CODE_OAUTH_TOKEN`, `ANTHROPIC_API_KEY`, `WATCHLIST_JSON`, `RESEND_API_KEY`, `ALERT_EMAIL`, and the variables
+`ALERT_FROM`, `SITE_URL` stay as they are. If you set `ALERT_FROM` to something like `Wealth Wire <…>`, change the
+display name to `Fiduciary Wire <…>`.
+
+---
+
 ## Everyday use
 
-- **Refresh now:** **Actions** → **Refresh site** → **Run workflow**.
+- **Refresh now:** **Actions** → **Fiduciary Wire refresh** → **Run workflow**.
 - **Schedule:** weekdays about 6:00, 12:00 and 17:00 Pacific, and weekends about 8:00. During winter
   (standard time) each run is an hour earlier; see the comments in `.github/workflows/refresh-site.yml`.
 - **See what happened:** open any run. The summary lists each source's status, the digest status and the

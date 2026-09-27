@@ -7,9 +7,9 @@ import httpx
 import openpyxl
 import pytest
 
-from wealthwire import db
-from wealthwire.fetch import Fetcher
-from wealthwire.sec import DEFAULT_PAGE, discover_files, maybe_update, parse_zip
+from fiduciarywire import db
+from fiduciarywire.fetch import Fetcher
+from fiduciarywire.sec import DEFAULT_PAGE, discover_files, maybe_update, parse_zip
 
 from .conftest import NOW
 
@@ -84,13 +84,13 @@ class Site:
 def test_monthly_update_and_cache(home):
     conn = db.connect()
     site = Site(zip_csv())
-    f = Fetcher("WealthWire/0.1 (test; me@example.com)", per_host_delay=0, transport=httpx.MockTransport(site))
+    f = Fetcher("FiduciaryWire/0.1 (test; me@example.com)", per_host_delay=0, transport=httpx.MockTransport(site))
     cfg = {"sec": {"allow_small_file": True}}
     t0 = datetime(2026, 9, 26, tzinfo=timezone.utc)
     st = maybe_update(conn, f, t0, cfg)
     assert st["status"] == "updated" and st["firms"] == 2 and st["data_date"] == "2026-09-01"
     assert any(u.endswith("ia090126.zip") for u in site.requests)
-    assert all("WealthWire" in f.client.headers["user-agent"] for _ in [0])
+    assert all("FiduciaryWire/" in f.client.headers["user-agent"] for _ in [0])
     # within check_days: no network at all
     n = len(site.requests)
     assert maybe_update(conn, f, t0 + timedelta(days=5), cfg)["status"] == "cached" and len(site.requests) == n
@@ -116,7 +116,7 @@ def test_small_file_rejected_in_production(home):
 # ---- demo integration: verified firms, SEC AUM, regions, firm pages --------------------------------
 @pytest.fixture
 def files(ingested):
-    from wealthwire.sitebuild import collect
+    from fiduciarywire.sitebuild import collect
 
     return collect(db.connect(), NOW)
 

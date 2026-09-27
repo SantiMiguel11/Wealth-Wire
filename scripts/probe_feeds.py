@@ -19,14 +19,14 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from wealthwire import db  # noqa: E402
-from wealthwire.categorize import Categorizer  # noqa: E402
-from wealthwire.config import load_categories, load_config  # noqa: E402
-from wealthwire.dates import utcnow  # noqa: E402
-from wealthwire.fetch import Fetcher  # noqa: E402
-from wealthwire.firms import SecMatcher  # noqa: E402
-from wealthwire.parse import parse_feed  # noqa: E402
-from wealthwire.wires import WEALTH_TERMS, keep_wire_item  # noqa: E402
+from fiduciarywire import db  # noqa: E402
+from fiduciarywire.categorize import Categorizer  # noqa: E402
+from fiduciarywire.config import load_categories, load_config  # noqa: E402
+from fiduciarywire.dates import utcnow  # noqa: E402
+from fiduciarywire.fetch import Fetcher  # noqa: E402
+from fiduciarywire.firms import SecMatcher  # noqa: E402
+from fiduciarywire.parse import parse_feed  # noqa: E402
+from fiduciarywire.wires import WEALTH_TERMS, keep_wire_item  # noqa: E402
 
 HREF = re.compile(r"""<a\b[^>]*href\s*=\s*["']([^"']+)["'][^>]*>(.*?)</a>""", re.I | re.S)
 

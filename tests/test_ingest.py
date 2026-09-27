@@ -3,9 +3,9 @@ from datetime import timedelta
 
 import httpx
 
-from wealthwire import db, paths
-from wealthwire.fetch import Fetcher, FixtureTransport
-from wealthwire.ingest import run_ingest
+from fiduciarywire import db, paths
+from fiduciarywire.fetch import Fetcher, FixtureTransport
+from fiduciarywire.ingest import run_ingest
 
 from .conftest import DEMO, NOW
 
@@ -97,8 +97,8 @@ def test_sources_md_written(ingested):
 
 
 def _discover(src, now=NOW):
-    from wealthwire.config import Source
-    from wealthwire.ingest import SourceIngester
+    from fiduciarywire.config import Source
+    from fiduciarywire.ingest import SourceIngester
 
     conn = db.connect()
     f = Fetcher("UA test@example.com", per_host_delay=0, conn=conn, transport=FixtureTransport(DEMO))
@@ -136,7 +136,7 @@ def test_listing_titles_stripped_of_source_suffix(ingested):
 
 def test_user_agent_sent(home):
     transport = FixtureTransport(DEMO)
-    f = Fetcher("WealthWire/0.1 (personal news reader; me@example.com)", per_host_delay=0, transport=transport)
+    f = Fetcher("FiduciaryWire/0.1 (personal news reader; me@example.com)", per_host_delay=0, transport=transport)
     f.get("https://www.kitces.com/feed/")
     assert "me@example.com" in transport.requests[0].headers["user-agent"]
 

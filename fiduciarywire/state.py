@@ -5,7 +5,7 @@ The `live` branch is a single orphan commit, force-pushed on every refresh:
     live/
       vercel.json        Vercel config (serve site/ only)
       site/              the public website — the only thing Vercel deploys
-      state/             private carry-over: wealthwire.db, digests/*.md|json, weekly/*.json, SOURCES.md
+      state/             private carry-over: fiduciarywire.db, digests/*.md|json, weekly/*.json, SOURCES.md
 
 `fetch_previous` pulls that tree down, `restore` copies state/ into the data dir, the refresh runs,
 `save` writes state/ back into the output tree and `publish` force-pushes it as a new orphan commit.
@@ -47,10 +47,13 @@ def restore(prev: Path) -> dict:
     restored = {"db": False, "digests": 0, "weekly": 0}
     if not state.is_dir():
         return restored
-    if (state / "wealthwire.db").exists():
+    # a `live` commit written before the rename carries the database under its old name
+    src = next((state / n for n in (paths.DB_NAME, *paths.LEGACY_DB_NAMES) if (state / n).exists()), None)
+    if src:
         paths.db_path().parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy(state / "wealthwire.db", paths.db_path())
+        shutil.copy(src, paths.db_path())
         restored["db"] = True
+        restored["db_file"] = src.name
     if (state / "wire_stats.csv").exists():  # appended to by every run, so it must carry forward
         shutil.copy(state / "wire_stats.csv", paths.wire_stats_path())
         restored["wire_stats"] = True
@@ -70,7 +73,7 @@ def save(out: Path) -> Path:
     if state.exists():
         shutil.rmtree(state)
     state.mkdir(parents=True)
-    db.backup_to(state / "wealthwire.db")
+    db.backup_to(state / paths.DB_NAME)
     for sub, source in (("digests", paths.digests_dir()), ("weekly", paths.weekly_dir())):
         if source.is_dir():
             (state / sub).mkdir(exist_ok=True)

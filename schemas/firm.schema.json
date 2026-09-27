@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://wealth-wire/schemas/firm.schema.json",
+  "$id": "https://fiduciary-wire/schemas/firm.schema.json",
   "title": "firms/<slug>.json",
   "description": "Firm page: SEC facts, every story and every M&A row as acquirer or target.",
   "type": "object",

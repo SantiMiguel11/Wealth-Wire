@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://wealth-wire/schemas/digest.schema.json",
+  "$id": "https://fiduciary-wire/schemas/digest.schema.json",
   "title": "digest.json / digests/<date>.json",
   "description": "The current Top Stories / digest (digest.json) and archived AI digests (digests/YYYY-MM-DD.json). ai=false means no valid AI digest for this refresh: items are the plain ranked list with null summaries.",
   "type": "object",

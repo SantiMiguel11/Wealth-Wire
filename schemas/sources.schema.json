@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://wealth-wire/schemas/sources.schema.json",
+  "$id": "https://fiduciary-wire/schemas/sources.schema.json",
   "title": "sources.json",
   "description": "Per-source status from the latest refresh.",
   "type": "object",

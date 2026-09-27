@@ -1,5 +1,9 @@
 # Phase 2 audit
 
+> **Name history.** This project was called Wealth Wire, then Fiduciary Duty (the 2026-09-27 redesign), and is now
+> **Fiduciary Wire**. On 2026-09-27 the names, commands and paths in this file were updated to the current ones so
+> they still work; RENAME.md lists what changed and what deliberately keeps an old name.
+
 State on 2026-09-27. Verified with:
 - the test suite: 334 tests, network mocked, all passing;
 - a local refresh on the offline fixtures;
@@ -198,7 +202,7 @@ the "No Claude secret" notice ran. So there is no Claude output or validator res
 secret is added (MANUAL-STEPS §2), the next scheduled or manual run will produce it, and it will be recorded
 here with the validator's verdict.
 
-# Fiduciary Duty redesign (2026-09-27)
+# Fiduciary Wire redesign (2026-09-27)
 
 - **Scope:** frontend only, per the brief (`frontend/`, design reference in `design/`); DECISIONS R1–R7.
 - **Playwright:** 14 views × 1440/390 × light/dark (56 screenshots) plus interaction runs. Result: 0 console

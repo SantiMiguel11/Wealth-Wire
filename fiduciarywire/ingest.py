@@ -16,7 +16,7 @@ from .discover import common_feed_urls, find_alternate_feeds, parse_listing
 from .fetch import Fetcher, FixtureTransport
 from .parse import Item, looks_like_feed, parse_feed
 
-log = logging.getLogger("wealthwire.ingest")
+log = logging.getLogger("fiduciarywire.ingest")
 _LOCK = threading.Lock()
 
 

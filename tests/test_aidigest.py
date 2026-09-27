@@ -4,11 +4,11 @@ from datetime import timedelta
 
 import pytest
 
-from wealthwire import db, paths
-from wealthwire.aidigest import (INPUT, OUTPUT, WEEKLY_INPUT, WEEKLY_OUTPUT, build_inputs, finalize,
+from fiduciarywire import db, paths
+from fiduciarywire.aidigest import (INPUT, OUTPUT, WEEKLY_INPUT, WEEKLY_OUTPUT, build_inputs, finalize,
                                  validate_digest, validate_weekly)
-from wealthwire.contract import validate_data_dir
-from wealthwire.sitebuild import FOOTER_NOTE, build_site
+from fiduciarywire.contract import validate_data_dir
+from fiduciarywire.sitebuild import FOOTER_NOTE, build_site
 
 from .conftest import NOW
 
@@ -203,7 +203,7 @@ def test_no_weekly_input_on_other_days(ingested):
 
 
 def test_cli_commands_never_fail(ingested, capsys):
-    from wealthwire.__main__ import main
+    from fiduciarywire.__main__ import main
 
     assert main(["digest-input"]) == 0
     assert main(["digest-finalize"]) == 0
@@ -233,7 +233,7 @@ def test_workflow_runs_claude_safely():
     assert "ANTHROPIC_API_KEY" in claude["with"]["anthropic_api_key"]
     order = [names.index(n) for n in names if n.startswith(("Prepare the digest", "Write the digest", "Validate the digest", "Build site"))]
     assert order == sorted(order) and len(order) == 4
-    alert = next(s for s in steps if s.get("run", "").strip() == "python -m wealthwire alert")
+    alert = next(s for s in steps if s.get("run", "").strip() == "python -m fiduciarywire alert")
     assert alert["continue-on-error"] is True
     assert steps.index(alert) > names.index("Publish to the live branch (single orphan commit)")
 

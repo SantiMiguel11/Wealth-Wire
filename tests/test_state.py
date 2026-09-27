@@ -3,10 +3,10 @@ import sqlite3
 import subprocess
 from datetime import timedelta
 
-from wealthwire import paths
-from wealthwire.ingest import run_ingest
-from wealthwire.sitebuild import build_site
-from wealthwire.state import fetch_previous, publish, restore
+from fiduciarywire import paths
+from fiduciarywire.ingest import run_ingest
+from fiduciarywire.sitebuild import build_site
+from fiduciarywire.state import fetch_previous, publish, restore
 
 from .conftest import DEMO, NOW
 
@@ -47,10 +47,10 @@ def test_live_round_trip(home, tmp_path, monkeypatch):
     log = git("log", "--oneline", "live", cwd=remote).strip().splitlines()
     assert log == [log[0]] and "Refresh 2" in log[0]
     tree = git("ls-tree", "-r", "--name-only", "live", cwd=remote).split()
-    assert "state/wealthwire.db" in tree and "vercel.json" in tree
+    assert "state/fiduciarywire.db" in tree and "vercel.json" in tree
     assert not any(t.startswith("site/") and t.endswith((".db", ".sqlite")) for t in tree)
     # the previous-success marker travelled too (drives the Top Stories window)
     restore_dir = tmp_path / "prev2"
     fetch_previous(restore_dir, repo_dir=repo)
-    con = sqlite3.connect(restore_dir / "state" / "wealthwire.db")
+    con = sqlite3.connect(restore_dir / "state" / "fiduciarywire.db")
     assert con.execute("SELECT value FROM meta WHERE key='previous_success'").fetchone()[0] == "2026-09-26T00:00:00Z"

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://wealth-wire/schemas/digests-index.schema.json",
+  "$id": "https://fiduciary-wire/schemas/digests-index.schema.json",
   "title": "digests/index.json",
   "description": "Archive: past AI digests (newest first) and weekly M&A recaps.",
   "type": "object",

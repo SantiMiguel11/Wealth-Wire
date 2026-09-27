@@ -1,5 +1,5 @@
-from wealthwire.parse import parse_feed
-from wealthwire.text import clean_description, strip_html, truncate
+from fiduciarywire.parse import parse_feed
+from fiduciarywire.text import clean_description, strip_html, truncate
 
 from .test_dates import FETCHED
 

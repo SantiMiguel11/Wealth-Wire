@@ -37,9 +37,9 @@ select.input { appearance: none; -webkit-appearance: none; padding-right: 26px; 
 
   <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 28px; padding: clamp(14px,1.9cqi,28px) 0 clamp(10px,1.2cqi,16px);">
     <button onClick="{{ goToday }}" style="background:none; border:0; padding:0; cursor:pointer; color:var(--color-text); text-align:left;">
-      <sc-if value="{{ wmSerif }}" hint-placeholder-val="{{ true }}"><span style="display:block; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(40px,4.9cqi,72px); line-height:.95; letter-spacing:-.012em;">Fiduciary Duty</span></sc-if>
-      <sc-if value="{{ wmCaps }}"><span style="display:block; font-family:'Cormorant SC',serif; font-weight:600; font-size:clamp(34px,4.2cqi,62px); line-height:1; letter-spacing:.07em;">Fiduciary Duty</span></sc-if>
-      <sc-if value="{{ wmCond }}"><span style="display:block; font-family:'Barlow Condensed',sans-serif; font-weight:500; font-size:clamp(36px,4.4cqi,64px); line-height:.95; letter-spacing:.03em; text-transform:uppercase;">Fiduciary Duty</span></sc-if>
+      <sc-if value="{{ wmSerif }}" hint-placeholder-val="{{ true }}"><span style="display:block; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(40px,4.9cqi,72px); line-height:.95; letter-spacing:-.012em;">Fiduciary Wire</span></sc-if>
+      <sc-if value="{{ wmCaps }}"><span style="display:block; font-family:'Cormorant SC',serif; font-weight:600; font-size:clamp(34px,4.2cqi,62px); line-height:1; letter-spacing:.07em;">Fiduciary Wire</span></sc-if>
+      <sc-if value="{{ wmCond }}"><span style="display:block; font-family:'Barlow Condensed',sans-serif; font-weight:500; font-size:clamp(36px,4.4cqi,64px); line-height:.95; letter-spacing:.03em; text-transform:uppercase;">Fiduciary Wire</span></sc-if>
     </button>
     <span style="font-family:var(--font-body); font-style:italic; font-size:clamp(14px,1.1cqi,16px); color:var(--fd-ink2);">Daily news for wealth management and RIAs</span>
   </div>
@@ -371,7 +371,7 @@ select.input { appearance: none; -webkit-appearance: none; padding-right: 26px; 
       <button onClick="{{ w.pick }}" style="{{ w.style }}">
         <span style="font-family:'Barlow Condensed',sans-serif; font-size:12.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--fd-muted);">{{ w.label }}</span>
         <span style="display:block; margin-top:26px; border-bottom:1px solid var(--color-text); padding-bottom:12px;">
-          <span style="{{ w.markStyle }}">Fiduciary Duty</span>
+          <span style="{{ w.markStyle }}">Fiduciary Wire</span>
           <span style="display:block; margin-top:8px; font-family:var(--font-body); font-style:italic; font-size:14px; color:var(--fd-ink2);">Daily news for wealth management and RIAs</span>
         </span>
       </button>

@@ -6,7 +6,7 @@ curated alias. Alias resolution only depends on the registrants that generate an
 headlines against this slice gives exactly the same result as against the full file; the script verifies that
 and fails otherwise.
 
-    python scripts/build_eval_dictionary.py path/to/wealthwire.db     # e.g. state/wealthwire.db from `live`
+    python scripts/build_eval_dictionary.py path/to/fiduciarywire.db     # e.g. state/fiduciarywire.db from `live`
 """
 from __future__ import annotations
 
@@ -20,8 +20,8 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from wealthwire.config import load_stoplist  # noqa: E402
-from wealthwire.firms import SecMatcher, aliases_for, load_curated, normalize  # noqa: E402
+from fiduciarywire.config import load_stoplist  # noqa: E402
+from fiduciarywire.firms import SecMatcher, aliases_for, load_curated, normalize  # noqa: E402
 
 SETS = [ROOT / "tests/fixtures/firm_headlines.yaml", ROOT / "tests/fixtures/firm_headlines_heldout.yaml"]
 OUT = ROOT / "tests/fixtures/sec_firms_real_subset.csv"

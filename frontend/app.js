@@ -1,4 +1,4 @@
-/* Fiduciary Duty frontend — vanilla JS, no build step.
+/* Fiduciary Wire frontend — vanilla JS, no build step.
    Reads ONLY the static files under /data/ described in DATA-CONTRACT.md. The URL is the source of truth for
    the current view and filters; the watchlist lives in this browser's localStorage. */
 "use strict";
@@ -27,8 +27,23 @@ const SHORT_OUTLET = {
 const DEAL_TYPE = { acquisition: "Acquisition", stake: "Minority", merger: "Merger", recapitalization: "Recap" };
 const DEAL_VERB = { acquisition: "acquires", stake: "invests in", merger: "merges with", recapitalization: "recapitalizes" };
 const PAGE = 50;
-const WATCH_KEY = "ww-watchlist";
-const THEME_KEY = "fd-theme";
+const WATCH_KEY = "fw-watchlist";
+const THEME_KEY = "fw-theme";
+// Keys used under the project's earlier names (Wealth Wire → "ww-", Fiduciary Duty → "fd-"). Each is copied to
+// the new key once, only if the new key is empty, and then removed, so existing watchlists and themes survive.
+const LEGACY_KEYS = { [WATCH_KEY]: ["ww-watchlist"], [THEME_KEY]: ["fd-theme", "ww-theme"] };
+function migrateStorage() {
+  try {
+    for (const [key, olds] of Object.entries(LEGACY_KEYS)) {
+      for (const old of olds) {
+        const v = localStorage.getItem(old);
+        if (v !== null && localStorage.getItem(key) === null) localStorage.setItem(key, v);
+        localStorage.removeItem(old);
+      }
+    }
+  } catch (e) { /* storage blocked: nothing to migrate */ }
+}
+migrateStorage();
 
 /* ---------- data layer: /data/*.json only ---------- */
 const cache = new Map();
@@ -283,7 +298,7 @@ async function route() {
   const current = s.tab === "weekly" || (s.tab === "today" && s.date) ? "archive" : s.tab;
   for (const a of document.querySelectorAll(".sections a")) a.setAttribute("aria-selected", String(a.dataset.tab === current));
   const TITLES = { feed: "Feed", mna: "Deals", archive: "Archive", weekly: "Weekly M&A recap", sources: "Sources" };
-  document.title = (TITLES[s.tab] ? TITLES[s.tab] + " · " : "") + "Fiduciary Duty";
+  document.title = (TITLES[s.tab] ? TITLES[s.tab] + " · " : "") + "Fiduciary Wire";
   if (!META) {
     const view = $("#view-" + s.tab);
     const target = s.tab === "feed" ? $("#feed-list") : view;
@@ -580,7 +595,7 @@ async function renderFirm(s) {
         el("button", { type: "button", onclick: () => renderFirm(s) }, "Retry"))));
     return;
   }
-  document.title = f.name + " · Fiduciary Duty";
+  document.title = f.name + " · Fiduciary Wire";
   const place = [f.city, f.state ? (STATE_NAMES[f.state] || f.state) : null].filter(Boolean).join(", ");
   const watched = firmWatched(f);
   const deals = f.deals || [];
@@ -816,7 +831,7 @@ function init() {
   });
   $("#watch-export").addEventListener("click", () => {
     const blob = new Blob([JSON.stringify({ version: 1, firms: WATCH }, null, 2)], { type: "application/json" });
-    const a = el("a", { href: URL.createObjectURL(blob), download: "fiduciary-duty-watchlist.json" });
+    const a = el("a", { href: URL.createObjectURL(blob), download: "fiduciary-wire-watchlist.json" });
     document.body.append(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(a.href), 1000);
   });

@@ -12,7 +12,7 @@ Spellings found: `wealthwire` ×170, `Wealth Wire` ×26, `WEALTHWIRE` ×21, `Fid
 ## Paths containing an old name
 
 - `wealthwire/` (Python package directory, 30 files)
-- `design/Fiduciary Duty.dc.html`
+- `design/Fiduciary Wire.dc.html`
 
 ## Text hits (file:line)
 
@@ -68,7 +68,7 @@ Spellings found: `wealthwire` ×170, `Wealth Wire` ×26, `WEALTHWIRE` ×21, `Fid
 - 108: `that lacks the dependencies. That lets the settings allow exactly 'python -m wealthwire ingest' while the`
 - 140: `the only interface. 'python -m wealthwire serve' now builds the static site and serves it with the same`
 - 376: `## Fiduciary Duty redesign (2026-09-27)`
-- 378: `R1. **Frontend only.** 'frontend/' was rewritten from 'design/Fiduciary Duty.dc.html'. The pipeline, 'schemas/',`
+- 378: `R1. **Frontend only.** 'frontend/' was rewritten from 'design/Fiduciary Wire.dc.html'. The pipeline, 'schemas/',`
 - 380: `Python package keep the working name "Wealth Wire".`
 
 ### `MANUAL-STEPS.md` (10)
@@ -109,7 +109,7 @@ Spellings found: `wealthwire` ×170, `Wealth Wire` ×26, `WEALTHWIRE` ×21, `Fid
 - 1: `# Fiduciary Duty`
 - 3: `Daily news for wealth management and RIAs. Fiduciary Duty pulls headlines from trade outlets, SEC and FINRA`
 - 12: `the project's working name, Wealth Wire.)`
-- 52: `is 'design/Fiduciary Duty.dc.html'.`
+- 52: `is 'design/Fiduciary Wire.dc.html'.`
 - 131: `python -m wealthwire --help               # all commands (ingest, build-site, serve, digest-input, …)`
 - 137: `export WEALTHWIRE_HOME=demo WEALTHWIRE_NOW=2026-09-25T18:00:00Z   # fixtures are dated around this instant`
 - 138: `python -m wealthwire ingest --fixtures tests/fixtures/demo`
@@ -124,7 +124,7 @@ Spellings found: `wealthwire` ×170, `Wealth Wire` ×26, `WEALTHWIRE` ×21, `Fid
 - 1: `# Wealth Wire runtime configuration.`
 - 5: `user_agent: "WealthWire/0.1 (personal news reader; {contact_email})"`
 
-### `design/Fiduciary Duty.dc.html` (4)
+### `design/Fiduciary Wire.dc.html` (4)
 
 - 40: `<sc-if value="{{ wmSerif }}" hint-placeholder-val="{{ true }}"><span style="display:block; font-family:'Cormorant Garamond',serif; font-weight:500; fo…`
 - 41: `<sc-if value="{{ wmCaps }}"><span style="display:block; font-family:'Cormorant SC',serif; font-weight:600; font-size:clamp(34px,4.2cqi,62px); line-hei…`
@@ -482,3 +482,54 @@ Spellings found: `wealthwire` ×170, `Wealth Wire` ×26, `WEALTHWIRE` ×21, `Fid
 - A local clone's `data/wealthwire.db`, if the project was ever run locally.
 - `WEALTHWIRE_*` environment variables in anyone's shell or scheduled task.
 - Browser storage keys in visitors' browsers: `ww-watchlist`, `fd-theme` and the older `ww-theme`.
+
+---
+
+# After the rename (verification, step 4)
+
+The same search was re-run over every tracked file (excluding this file). **No tracked path contains an old name.**
+**No old name appears in user-facing text.** The site, email, digest prompt, generated digest header, User-Agent,
+workflow names, README, MANUAL-STEPS, DATA-CONTRACT and other docs all say "Fiduciary Wire". The tagline is
+unchanged: "Daily news for wealth management and RIAs".
+
+The regression test `tests/test_rename_compat.py::test_public_site_carries_only_the_new_name` builds the site and
+fails on any old name in its HTML, JS, CSS, JSON, SVG or `live` README.
+
+## What changed
+
+| Area | Before | After |
+|---|---|---|
+| Wordmark, `<title>`, meta/Open Graph, footer | Fiduciary Duty | Fiduciary Wire (Open Graph tags added; `noindex` kept) |
+| Python package, CLI | `wealthwire/`, `python -m wealthwire` | `fiduciarywire/`, `python -m fiduciarywire` (all imports, tests, scripts, workflows, `run.sh`, `.claude/`) |
+| Environment variables | `WEALTHWIRE_HOME` / `_CONFIG` / `_NOW` / `_NO_BACKGROUND` / `_HOST` / `_PORT` | `FIDUCIARYWIRE_*` (old names still read as a fallback) |
+| Database file | `data/wealthwire.db`, `state/wealthwire.db` on `live` | `fiduciarywire.db` (an old file is adopted or restored automatically) |
+| Browser storage | `ww-watchlist`, `fd-theme` (+ older `ww-theme`) | `fw-watchlist`, `fw-theme`, with a one-time copy-then-delete migration |
+| User-Agent | `WealthWire/0.1 (personal news reader; <email>)` | `FiduciaryWire/0.1 (personal news reader; santimiguel10@outlook.com)` |
+| Email alert | subject "Wealth Wire: …", sender "Wealth Wire <onboarding@resend.dev>" | "Fiduciary Wire: …", "Fiduciary Wire <onboarding@resend.dev>" |
+| Claude instructions / digest files | "You write the Wealth Wire digest", `# Wealth Wire digest: DATE` | "You write the Fiduciary Wire digest", `# Fiduciary Wire digest: DATE` |
+| Workflows | "Refresh site", "Probe feeds", summary "### Wealth Wire refresh" | "Fiduciary Wire refresh", "Fiduciary Wire feed probe", "### Fiduciary Wire refresh" |
+| JSON Schema `$id`s | `https://wealth-wire/schemas/…` | `https://fiduciary-wire/schemas/…` |
+| Design reference | `design/Fiduciary Duty.dc.html` | `design/Fiduciary Wire.dc.html` (wordmark text updated) |
+| Watchlist export filename | `fiduciary-duty-watchlist.json` | `fiduciary-wire-watchlist.json` (import accepts any file) |
+
+## Remaining mentions, all intentional
+
+| Where | Why it keeps an old name |
+|---|---|
+| `DECISIONS.md`, `AUDIT.md`, `AUDIT-PHASE2.md`, `PLAN.md`, `PLAN-PHASE2.md` line 3; `README.md` line 12 | One name-history note per document, so older references (commits, issues) still make sense. |
+| `https://github.com/SantiMiguel11/Wealth-Wire…` in `MANUAL-STEPS.md` and `AUDIT-PHASE2.md` | The GitHub repository really is named `Wealth-Wire`. Renaming it is outside this change; GitHub would redirect, but the links are correct as they are. |
+| `wealth-wire` / `wealth-wire.vercel.app` in `MANUAL-STEPS.md` §5 | The Vercel project and its current address really have that name. The steps tell you to redirect that address to fiduciarywire.com. |
+| `ALERT_FROM` example in `MANUAL-STEPS.md` §5 | It tells you how to update a sender name you may have set by hand. |
+| `fiduciarywire/paths.py`, `fiduciarywire/db.py`, `run.sh` | Compatibility: `WEALTHWIRE_*` env vars are still read as a fallback, and an existing `wealthwire.db` is adopted once. |
+| `frontend/app.js` line 32 | A comment explaining the one-time storage-key migration (`ww-`/`fd-` → `fw-`). |
+| `tests/test_rename_compat.py` | Tests that the old env vars, old database file, old `live` state file and old browser keys still work, and that no old name leaks into the site. |
+
+## Outside the repository (unchanged, by decision)
+
+- **GitHub repository name** `SantiMiguel11/Wealth-Wire`. Unchanged; workflows use `${GITHUB_REPOSITORY}`, so a later
+  rename wouldn't break them.
+- **Vercel project name** `wealth-wire`. Unchanged; the domain move is in MANUAL-STEPS §5.
+- **The `live` branch.** Never renamed. Its current commit still holds `state/wealthwire.db`, which the next refresh
+  restores and then republishes as `state/fiduciarywire.db`.
+- **Past digests.** There are no archived digests yet. When there are, their content is left as written; only the
+  site chrome around them changed.

@@ -270,7 +270,7 @@ def _read(path: Path):
 def render_markdown(d: dict, sec_date: str | None) -> str:
     from .sitebuild import FOOTER_NOTE
 
-    lines = [f"# Wealth Wire digest: {d['date']}", "", f"**Today in wealth management.** {d['opener']}", ""]
+    lines = [f"# Fiduciary Wire digest: {d['date']}", "", f"**Today in wealth management.** {d['opener']}", ""]
     for n, it in enumerate(d["items"], 1):
         meta = [it["category"], f"{it['outlet_count']} outlet{'s' if it['outlet_count'] != 1 else ''}"]
         a = aum_label(it["aum_usd"], it["aum_source"], sec_date)

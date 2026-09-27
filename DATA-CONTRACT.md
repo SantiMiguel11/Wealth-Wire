@@ -1,4 +1,4 @@
-# Wealth Wire data contract
+# Fiduciary Wire data contract
 
 The pipeline publishes everything the site needs as static JSON under **`/data/`**. The frontend (currently
 `frontend/`) reads only these files. Treat this document as a stable API:
@@ -81,7 +81,7 @@ Refresh-level facts.
 | `id` | int | stable cluster id (smallest article id in the cluster) |
 | `headline`, `url` | string | from the earliest article |
 | `category` | string | one of `meta.categories` |
-| `first_published`, `last_published`, `first_seen` | timestamp | `first_seen` = when Wealth Wire first fetched it |
+| `first_published`, `last_published`, `first_seen` | timestamp | `first_seen` = when Fiduciary Wire first fetched it |
 | `outlet_count` | int ≥ 1 | |
 | `sources[]` | `{name, url, published_at, kind}` | every outlet covering the story. `kind`: `feed` \| `wire` (press release) \| `google_news` |
 | `firms[]` | `{name, slug, crd, verified, city, state}` | `verified` = matched in SEC adviser data (`slug`/`crd` set); unverified = regex fallback, `slug` null |
@@ -203,8 +203,10 @@ firms, which have no page to link to.
 
 ## Watchlist (not in the data)
 
-The watchlist is browser-only: `localStorage["ww-watchlist"]` = `{"version":1,"firms":[{"name":"…","aliases":["…"]}]}`,
-with import and export as the same JSON. Matching happens client-side against:
+The watchlist is browser-only: `localStorage["fw-watchlist"]` = `{"version":1,"firms":[{"name":"…","aliases":["…"]}]}`
+(the theme is `localStorage["fw-theme"]`). Keys from the project's earlier names (`ww-watchlist`; `fd-theme`,
+`ww-theme`) are copied to the new keys once, only when the new key is empty, and then removed. Import and export
+use the same JSON. Matching happens client-side against:
 - `clusters[].headline`, case-insensitive on word boundaries, with aliases of 3+ characters;
 - `clusters[].firms[].crd` of any SEC firm (from `firms/index.json`) whose name or legal name starts with a
   watchlist term.

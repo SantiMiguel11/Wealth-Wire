@@ -76,9 +76,9 @@ def prepare_demo() -> dict:
     cfg.mkdir(parents=True)
     for name in ("config.yaml", "sources.yaml", "categories.yaml", "firm_stoplist.yaml", "firm_aliases.yaml"):
         shutil.copy(ROOT / name, cfg / name)
-    env = dict(os.environ, WEALTHWIRE_HOME=str(DEMO_HOME), WEALTHWIRE_CONFIG=str(cfg), WEALTHWIRE_NO_BACKGROUND="1",
-               WEALTHWIRE_NOW=FIXED_NOW)
-    run = lambda *a: subprocess.run([sys.executable, "-m", "wealthwire", *a], cwd=ROOT, env=env, check=True,  # noqa: E731
+    env = dict(os.environ, FIDUCIARYWIRE_HOME=str(DEMO_HOME), FIDUCIARYWIRE_CONFIG=str(cfg), FIDUCIARYWIRE_NO_BACKGROUND="1",
+               FIDUCIARYWIRE_NOW=FIXED_NOW)
+    run = lambda *a: subprocess.run([sys.executable, "-m", "fiduciarywire", *a], cwd=ROOT, env=env, check=True,  # noqa: E731
                                     stdout=subprocess.DEVNULL)
     run("ingest", "--fixtures", str(DEMO_FIXTURES))
     run("digest-input")
@@ -90,7 +90,7 @@ def prepare_demo() -> dict:
 
 def start_server(env: dict) -> tuple[subprocess.Popen, str]:
     port = free_port()
-    proc = subprocess.Popen([sys.executable, "-m", "wealthwire", "serve", "--port", str(port)], cwd=ROOT, env=env,
+    proc = subprocess.Popen([sys.executable, "-m", "fiduciarywire", "serve", "--port", str(port)], cwd=ROOT, env=env,
                             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     base = f"http://127.0.0.1:{port}"
     for _ in range(100):
@@ -155,7 +155,7 @@ def main() -> int:
     problems: list[str] = []
     shots = 0
     scenes = [s for s in SCENES if not args.only or s[0] in args.only.split(",")]
-    seed = f"localStorage.setItem('ww-watchlist', {json.dumps(json.dumps(SAMPLE_WATCHLIST))})"
+    seed = f"localStorage.setItem('fw-watchlist', {json.dumps(json.dumps(SAMPLE_WATCHLIST))})"
     try:
         with sync_playwright() as p:
             browser = launch(p)
@@ -262,8 +262,8 @@ def main() -> int:
                 page.set_input_files("#watch-import", str(imp))
                 imp.unlink()
                 page.wait_for_selector("#watchlist li:has-text('Crestline Wealth')")
-                if page.evaluate("JSON.parse(localStorage.getItem('ww-watchlist')).firms.length") != 2:
-                    problems.append("imported watchlist not stored under ww-watchlist")
+                if page.evaluate("JSON.parse(localStorage.getItem('fw-watchlist')).firms.length") != 2:
+                    problems.append("imported watchlist not stored under fw-watchlist")
                 ctx.close()
             # theme toggle persists in localStorage
             ctx = browser.new_context(ignore_https_errors=True, viewport={"width": 1440, "height": 900}, color_scheme="light")
@@ -271,10 +271,27 @@ def main() -> int:
             page = ctx.new_page()
             page.on("console", lambda m: m.type == "error" and problems.append(f"[toggle] console: {m.text}"))
             page.goto(base + "/")
-            page.evaluate("localStorage.setItem('ww-theme', 'dark')")   # the old key is honored once, then migrated
+            # one-time migration of the pre-rename keys: values move to fw-*, old keys are removed
+            legacy = {"version": 1, "firms": [{"name": "Harborview Wealth Partners", "aliases": ["Harborview"]}]}
+            page.evaluate(f"localStorage.clear(); localStorage.setItem('ww-watchlist', {json.dumps(json.dumps(legacy))});"
+                          " localStorage.setItem('fd-theme', 'dark'); localStorage.setItem('ww-theme', 'light')")
             page.reload()
-            if page.evaluate("document.documentElement.dataset.theme + localStorage.getItem('fd-theme')") != "darkdark":
-                problems.append("old ww-theme choice was not migrated to fd-theme")
+            page.wait_for_selector(".story")
+            got = page.evaluate("""() => ({theme: document.documentElement.dataset.theme, fw: localStorage.getItem('fw-theme'),
+              watch: JSON.parse(localStorage.getItem('fw-watchlist') || 'null'), count: document.getElementById('watch-open').textContent,
+              left: ['ww-watchlist', 'fd-theme', 'ww-theme'].filter((k) => localStorage.getItem(k) !== null)})""")
+            if got["theme"] != "dark" or got["fw"] != "dark":
+                problems.append(f"fd-theme was not migrated to fw-theme: {got}")
+            if not got["watch"] or got["watch"]["firms"][0]["name"] != "Harborview Wealth Partners" or got["count"] != "Watchlist (1)":
+                problems.append(f"ww-watchlist was not migrated to fw-watchlist: {got}")
+            if got["left"]:
+                problems.append(f"old storage keys not removed: {got['left']}")
+            if not page.locator(".story.is-watch").count():
+                problems.append("migrated watchlist did not pin its stories on Today")
+            page.evaluate("localStorage.setItem('ww-watchlist', '{\"firms\":[{\"name\":\"Stale\"}]}')")  # new key wins
+            page.reload()
+            if page.evaluate("JSON.parse(localStorage.getItem('fw-watchlist')).firms[0].name") != "Harborview Wealth Partners":
+                problems.append("a leftover old key overwrote the new watchlist")
             page.click("#theme-toggle")
             page.reload()
             if page.evaluate("document.documentElement.dataset.theme") != "light" or page.text_content("#theme-toggle") != "Dark mode":

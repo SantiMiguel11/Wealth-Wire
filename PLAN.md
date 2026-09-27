@@ -1,4 +1,8 @@
-# Wealth Wire — Plan
+# Fiduciary Wire — Plan
+
+> **Name history.** This project was called Wealth Wire, then Fiduciary Duty (the 2026-09-27 redesign), and is now
+> **Fiduciary Wire**. On 2026-09-27 the names, commands and paths in this file were updated to the current ones so
+> they still work; RENAME.md lists what changed and what deliberately keeps an old name.
 
 A local, single-user news aggregator for the U.S. wealth management / RIA industry.
 Everything runs on the laptop: Python ingestion → SQLite (FTS5) → FastAPI JSON API → one static page.
@@ -9,7 +13,7 @@ No LLM or hosted NLP calls anywhere in the code; all "intelligence" is keyword r
 ```
             sources.yaml ─┐
                           ▼
-  ┌───────────── ingest (python -m wealthwire ingest / every 2h in server) ─────────────┐
+  ┌───────────── ingest (python -m fiduciarywire ingest / every 2h in server) ─────────────┐
   │ fetch.py   polite HTTP: UA w/ contact email, ≥2s per host, 15s timeout,             │
   │            1 retry w/ backoff, ETag/Last-Modified, robots.txt for non-feed fetches  │
   │ discover.py feed_url → cached discovered feed → <link rel=alternate> → /feed,/rss…  │
@@ -33,9 +37,9 @@ means edits to categories.yaml / watchlist.yaml / thresholds apply retroactively
 ## Module layout
 
 ```
-wealthwire/
+fiduciarywire/
   __main__.py     CLI: ingest [--fixtures DIR], serve, recompute
-  paths.py        repo root, config dir (WEALTHWIRE_CONFIG), data dir (WEALTHWIRE_HOME)
+  paths.py        repo root, config dir (FIDUCIARYWIRE_CONFIG), data dir (FIDUCIARYWIRE_HOME)
   config.py       load/validate config.yaml, sources.yaml, categories.yaml, watchlist.yaml, firm_stoplist.yaml
   db.py           schema, connect(), migrations-by-CREATE-IF-NOT-EXISTS
   urls.py         canonicalize()

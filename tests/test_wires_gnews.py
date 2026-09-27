@@ -4,12 +4,12 @@ from datetime import timedelta
 
 import pytest
 
-from wealthwire import db, paths
-from wealthwire.categorize import Categorizer
-from wealthwire.firms import SecMatcher
-from wealthwire.gnews import dedupe_key, feed_url, parse_google_news, strip_outlet_suffix
-from wealthwire.ingest import run_ingest
-from wealthwire.wires import keep_wire_item
+from fiduciarywire import db, paths
+from fiduciarywire.categorize import Categorizer
+from fiduciarywire.firms import SecMatcher
+from fiduciarywire.gnews import dedupe_key, feed_url, parse_google_news, strip_outlet_suffix
+from fiduciarywire.ingest import run_ingest
+from fiduciarywire.wires import keep_wire_item
 
 from .conftest import DEMO, NOW
 
@@ -43,7 +43,7 @@ def test_suffix_and_url_helpers():
 
 
 def test_blocked_outlets_are_never_contacted(home, monkeypatch):
-    from wealthwire import fetch
+    from fiduciarywire import fetch
 
     seen = []
     orig = fetch.FixtureTransport.handle_request
@@ -97,7 +97,7 @@ def test_wire_drop_counts_and_press_release_effects(ingested):
     # 4 keyword feeds: 11 items fetched, 5 kept (4 unique: Harborview is in two feeds), 5 dropped, 1 too old
     assert st["GlobeNewswire"] == (11, 4, 5)
     assert "Business Wire" not in st and "PR Newswire" not in st
-    from wealthwire.sitebuild import collect
+    from fiduciarywire.sitebuild import collect
 
     files = collect(conn, NOW)
     deals = {d["headline"]: d for d in files["mna.json"]["deals"]}

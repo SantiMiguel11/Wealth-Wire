@@ -2,8 +2,8 @@ import sqlite3
 
 import pytest
 
-from wealthwire import paths
-from wealthwire.mna import deal_for_cluster, extract_deal
+from fiduciarywire import paths
+from fiduciarywire.mna import deal_for_cluster, extract_deal
 
 B = 1e9
 M = 1e6
@@ -95,8 +95,8 @@ def test_demo_mna_table(ingested):
 
 
 def test_public_mna_rows(ingested):
-    from wealthwire import db
-    from wealthwire.sitebuild import collect
+    from fiduciarywire import db
+    from fiduciarywire.sitebuild import collect
 
     from .conftest import NOW
 

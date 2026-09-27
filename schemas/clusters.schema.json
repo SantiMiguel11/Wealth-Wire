@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://wealth-wire/schemas/clusters.schema.json",
+  "$id": "https://fiduciary-wire/schemas/clusters.schema.json",
   "title": "clusters.json",
   "description": "One entry per story (a cluster of articles from different outlets), newest activity first.",
   "type": "object",

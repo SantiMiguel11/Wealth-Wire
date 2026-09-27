@@ -1,6 +1,6 @@
 import pytest
 
-from wealthwire.categorize import Categorizer
+from fiduciarywire.categorize import Categorizer
 
 
 @pytest.fixture(scope="module")

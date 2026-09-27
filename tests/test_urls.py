@@ -1,6 +1,6 @@
 import pytest
 
-from wealthwire.urls import canonicalize
+from fiduciarywire.urls import canonicalize
 
 
 @pytest.mark.parametrize(
@@ -37,7 +37,7 @@ def test_variants_collapse_to_one():
 
 
 def test_clean_link_keeps_path_but_drops_tracking():
-    from wealthwire.urls import clean_link
+    from fiduciarywire.urls import clean_link
 
     assert clean_link("https://www.ThinkAdvisor.com/2026/09/24/x/?utm_source=rss&id=3#comments") == "https://www.ThinkAdvisor.com/2026/09/24/x/?id=3"
     assert clean_link("https://www.investmentnews.com/a/1?fbclid=abc") == "https://www.investmentnews.com/a/1"

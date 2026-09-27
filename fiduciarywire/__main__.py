@@ -1,4 +1,4 @@
-"""CLI: python -m wealthwire <command>; see --help."""
+"""CLI: python -m fiduciarywire <command>; see --help."""
 from __future__ import annotations
 
 import os
@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parent.parent
 
 def _ensure_deps() -> None:
     """If this interpreter lacks the dependencies but the project venv exists, re-exec inside it.
-    Lets `python -m wealthwire ingest` work from a scheduled task whatever `python` is on PATH."""
+    Lets `python -m fiduciarywire ingest` work from a scheduled task whatever `python` is on PATH."""
     try:
         import bleach, fastapi, feedparser, httpx, rapidfuzz, yaml  # noqa: F401
     except ImportError:
@@ -18,7 +18,7 @@ def _ensure_deps() -> None:
         in_venv = Path(sys.prefix).resolve() == (ROOT / ".venv").resolve()
         if venv_py.exists() and not in_venv:
             os.chdir(ROOT)
-            os.execv(str(venv_py), [str(venv_py), "-m", "wealthwire", *sys.argv[1:]])
+            os.execv(str(venv_py), [str(venv_py), "-m", "fiduciarywire", *sys.argv[1:]])
         raise SystemExit("Missing dependencies. Run ./run.sh once (creates .venv) or: pip install -r requirements.txt")
 
 
@@ -26,7 +26,7 @@ def main(argv: list[str] | None = None) -> int:
     _ensure_deps()
     import argparse
 
-    parser = argparse.ArgumentParser(prog="python -m wealthwire", description="Wealth Wire news aggregator")
+    parser = argparse.ArgumentParser(prog="python -m fiduciarywire", description="Fiduciary Wire news aggregator")
     sub = parser.add_subparsers(dest="cmd", required=True)
     p = sub.add_parser("ingest", help="fetch all sources once, recompute, write SOURCES.md")
     p.add_argument("--fixtures", type=Path, help="offline mode: serve requests from a fixture dir (routes.yaml)")

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://wealth-wire/schemas/meta.schema.json",
+  "$id": "https://fiduciary-wire/schemas/meta.schema.json",
   "title": "meta.json",
   "description": "Refresh metadata and per-source status. Read first by every view.",
   "type": "object",

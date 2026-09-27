@@ -2,7 +2,7 @@
 # with the firms they name. `firms` are lowercase name keys: a detected SEC firm is correct when a key is
 # contained in its normalized name (e.g. "lpl" ⊂ "lpl financial"). Empty list = no adviser firm is named
 # (tricky negatives: common words, people's surnames, "Partners" used as a verb, regulators, tech vendors).
-# Used by tests/test_firms.py (fixture SEC dictionary) and `python -m wealthwire eval-firms` (real SEC data).
+# Used by tests/test_firms.py (fixture SEC dictionary) and `python -m fiduciarywire eval-firms` (real SEC data).
 headlines:
   - {text: "Mercer Advisors hires Goldman alum Cynthia Loh as first-ever chief platform officer", firms: [mercer advisors, goldman sachs]}
   - {text: "Savvy Wealth Launches Custodial Platform for RIAs", firms: [savvy]}

@@ -5,10 +5,10 @@ from pathlib import Path
 import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from wealthwire.cluster import ClusterItem, score  # noqa: E402
-from wealthwire.config import load_stoplist  # noqa: E402
-from wealthwire.categorize import Categorizer  # noqa: E402
-from wealthwire.extract import extract_firms  # noqa: E402
+from fiduciarywire.cluster import ClusterItem, score  # noqa: E402
+from fiduciarywire.config import load_stoplist  # noqa: E402
+from fiduciarywire.categorize import Categorizer  # noqa: E402
+from fiduciarywire.extract import extract_firms  # noqa: E402
 
 pairs = yaml.safe_load((Path(__file__).resolve().parent.parent / "tests/fixtures/cluster_pairs.yaml").read_text())
 stop = load_stoplist()

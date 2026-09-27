@@ -6,9 +6,9 @@ from pathlib import Path
 
 import pytest
 
-from wealthwire.config import load_stoplist
-from wealthwire.firmeval import evaluate
-from wealthwire.firms import SecMatcher, load_curated
+from fiduciarywire.config import load_stoplist
+from fiduciarywire.firmeval import evaluate
+from fiduciarywire.firms import SecMatcher, load_curated
 
 FIX = Path(__file__).parent / "fixtures"
 

@@ -1,7 +1,7 @@
 # On-demand check of candidate feeds from GitHub's network (the build sandbox can't reach these hosts).
 # Read-only: restores the SEC data from `live` so the wealth filter can be applied, prints results, publishes
 # nothing. Run from the Actions tab or the API; `urls` adds extra feed URLs to try.
-name: Probe feeds
+name: Fiduciary Wire feed probe
 
 on:
   workflow_dispatch:
@@ -35,8 +35,8 @@ jobs:
           pip install -r /tmp/requirements.txt
       - name: Restore SEC data from live (for the wealth filter)
         run: |
-          python -m wealthwire state fetch _prev
-          python -m wealthwire state restore _prev
+          python -m fiduciarywire state fetch _prev
+          python -m fiduciarywire state restore _prev
       - name: Probe
         env:
           EXTRA: ${{ inputs.urls }}

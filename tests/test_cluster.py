@@ -4,11 +4,11 @@ from pathlib import Path
 import pytest
 import yaml
 
-from wealthwire import paths
-from wealthwire.categorize import Categorizer
-from wealthwire.cluster import ClusterItem, cluster, normalize_title, score
-from wealthwire.config import load_config, load_stoplist
-from wealthwire.extract import extract_firms
+from fiduciarywire import paths
+from fiduciarywire.categorize import Categorizer
+from fiduciarywire.cluster import ClusterItem, cluster, normalize_title, score
+from fiduciarywire.config import load_config, load_stoplist
+from fiduciarywire.extract import extract_firms
 
 PAIRS = yaml.safe_load((Path(__file__).parent / "fixtures" / "cluster_pairs.yaml").read_text())
 THRESHOLD = float(load_config()["cluster"]["threshold"])
@@ -65,8 +65,8 @@ def test_demo_clusters(ingested):
 
 
 def test_public_card_lists_all_sources(ingested):
-    from wealthwire import db
-    from wealthwire.sitebuild import collect
+    from fiduciarywire import db
+    from fiduciarywire.sitebuild import collect
 
     from .conftest import NOW
 

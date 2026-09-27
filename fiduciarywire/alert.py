@@ -21,7 +21,7 @@ from .firms import pretty_name
 from .watchlist import Matcher, parse_watchlist
 
 RESEND_URL = "https://api.resend.com/emails"
-DEFAULT_FROM = "Wealth Wire <onboarding@resend.dev>"
+DEFAULT_FROM = "Fiduciary Wire <onboarding@resend.dev>"
 MAX_STORIES = 40
 REQUIRED = ("WATCHLIST_JSON", "RESEND_API_KEY", "ALERT_EMAIL")
 
@@ -59,7 +59,7 @@ def new_matches(conn: sqlite3.Connection, matcher: Matcher) -> list[dict]:
 
 def compose(matches: list[dict], site_url: str | None = None) -> tuple[str, str, str]:
     n = len(matches)
-    subject = f"Wealth Wire: {n} new {'story' if n == 1 else 'stories'} on your watchlist"
+    subject = f"Fiduciary Wire: {n} new {'story' if n == 1 else 'stories'} on your watchlist"
     shown = matches[:MAX_STORIES]
     text, rows = [], []
     for m in shown:
@@ -71,11 +71,11 @@ def compose(matches: list[dict], site_url: str | None = None) -> tuple[str, str,
             + " · ".join(f"<a href='{html.escape(s['url'], quote=True)}'>{html.escape(s['name'])}</a>" for s in m["sources"])
             + "</li>")
     more = f"\n…and {n - len(shown)} more on the site." if n > len(shown) else ""
-    footer = f"\n\nOpen Wealth Wire: {site_url}" if site_url else ""
+    footer = f"\n\nOpen Fiduciary Wire: {site_url}" if site_url else ""
     body_text = "New stories matching your watchlist:\n\n" + "\n".join(text) + more + footer
     body_html = ("<p>New stories matching your watchlist:</p><ul style='padding-left:18px'>" + "".join(rows) + "</ul>"
                  + (f"<p>…and {n - len(shown)} more on the site.</p>" if more else "")
-                 + (f"<p><a href='{html.escape(site_url, quote=True)}'>Open Wealth Wire</a></p>" if site_url else ""))
+                 + (f"<p><a href='{html.escape(site_url, quote=True)}'>Open Fiduciary Wire</a></p>" if site_url else ""))
     return subject, body_text, body_html
 
 

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://wealth-wire/schemas/firms-index.schema.json",
+  "$id": "https://fiduciary-wire/schemas/firms-index.schema.json",
   "title": "firms/index.json",
   "description": "SEC-verified firms mentioned in at least one story.",
   "type": "object",

@@ -22,14 +22,14 @@ def home(tmp_path, monkeypatch):
         shutil.copy(ROOT / name, cfg / name)
     data = tmp_path / "home"
     data.mkdir()
-    monkeypatch.setenv("WEALTHWIRE_CONFIG", str(cfg))
-    monkeypatch.setenv("WEALTHWIRE_HOME", str(data))
+    monkeypatch.setenv("FIDUCIARYWIRE_CONFIG", str(cfg))
+    monkeypatch.setenv("FIDUCIARYWIRE_HOME", str(data))
     return data
 
 
 @pytest.fixture
 def ingested(home):
-    from wealthwire.ingest import run_ingest
+    from fiduciarywire.ingest import run_ingest
 
     summary = run_ingest(fixtures=DEMO, now=NOW, quiet=True)
     return home, summary

@@ -1,8 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python -m wealthwire digest-input)",
-      "Bash(python -m wealthwire digest-finalize)",
+      "Bash(python -m fiduciarywire digest-input)",
+      "Bash(python -m fiduciarywire digest-finalize)",
       "Read(./prompts/digest.md)",
       "Read(./_work/**)",
       "Write(./_work/digest_output.json)",
