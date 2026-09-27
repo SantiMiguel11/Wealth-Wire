@@ -117,3 +117,14 @@ def test_brand_resolution_and_curated_ampersand():
     m = SecMatcher(GUARD_ROWS, {"&Partners": "&PARTNERS"})
     assert [m.display(c) for c in m.firms_in("Succession drives advisory team to Carson Group")] == ["Carson Group Investing"]
     assert m.firms_in("$744 Million Wells Fargo Team Joins &Partners in Missouri") == ["10"]
+
+
+def test_teasers_ignore_single_word_generated_aliases():
+    from wealthwire.pipeline import firms_in_text
+
+    rows = GUARD_ROWS + [{"crd": "11", "legal_name": "FRAZIER MANAGEMENT, L.L.C.", "business_name": "FRAZIER HEALTHCARE PARTNERS", "aum_usd": 1e9}]
+    m = SecMatcher(rows, {})
+    teaser = "Jennifer Frazier becomes president of the firm's Carson Group division."
+    verified = lambda body: [f["name"] for f in firms_in_text(teaser, set(), m, body=body) if f["verified"]]  # noqa: E731
+    assert "Frazier Healthcare Partners" in verified(False)   # a headline-style single-word match
+    assert verified(True) == ["Carson Group Investing"]       # teaser: multi-word aliases only

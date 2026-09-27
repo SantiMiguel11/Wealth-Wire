@@ -289,3 +289,11 @@ P29. **Firm matching was tuned against the real September 2026 SEC file** (17,14
      - the ambiguous "Horizon".
      Known false positive: "Luma", a fintech that shares its name with Luma Capital. The labeled set is small,
      so the precision and recall figures show direction, not a guarantee.
+P30. **In teasers, only multi-word or curated aliases count.** Teasers name people far more often than
+     headlines do ("Jennifer Frazier becomes president…" matched Frazier Healthcare Partners on the live
+     site). Single-word generated aliases ("captrust", "verdence") still match in headlines.
+P31. **The phase 2 docs set was finalized:**
+     - README rewritten for the Actions + Vercel design;
+     - MANUAL-STEPS.md for secrets and settings;
+     - AUDIT-PHASE2.md for results.
+     `run.sh` stays as the optional local path.

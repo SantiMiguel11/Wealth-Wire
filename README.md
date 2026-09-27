@@ -1,156 +1,137 @@
 # Wealth Wire
 
-A local news wire for the U.S. wealth management / RIA industry. It pulls headlines from trade outlets,
-removes duplicates, sorts stories into categories, groups the same story across outlets, pulls out firms
-and AUM, tracks RIA M&A, highlights your watchlist, and feeds a two-minute morning digest.
+A news wire for the U.S. wealth-management and RIA industry. It pulls headlines from trade outlets, SEC and
+FINRA releases, and press-release wires. It then:
+- removes duplicates and groups the same story across outlets;
+- sorts stories into categories;
+- recognizes SEC-registered advisers and their AUM;
+- tracks RIA M&A;
+- has Claude write a short digest of the day's top stories.
 
-Everything runs on your machine. The code makes **no LLM or API calls**. It stores only headline, link,
-date, source and a description of at most 300 characters, and never logs in or reads past a paywall.
+It runs by itself on GitHub Actions and is served as a static site by Vercel.
 
 ![Feed](screenshots/feed-desktop-light.png)
 
-| M&A tracker | Digest | Mobile (dark) |
+| Digest | Firm page (mobile) | Weekly M&A recap (dark) |
 |---|---|---|
-| ![M&A](screenshots/mna-desktop-light.png) | ![Digest](screenshots/digest-desktop-light.png) | ![Mobile](screenshots/feed-mobile-dark.png) |
+| ![Digest](screenshots/digest-desktop-light.png) | ![Firm](screenshots/firm-mobile-light.png) | ![Weekly](screenshots/weekly-mobile-dark.png) |
 
-> The screenshots use the offline **demo dataset**: synthetic fixture feeds, marked with a DEMO DATA badge
-> in the UI. See [Known limitations](#known-limitations).
+> The screenshots use the offline **demo dataset**: synthetic fixture feeds and a synthetic SEC file, shown
+> with a DEMO DATA badge.
 
-## Website (no terminal needed)
+**What needs you:** [MANUAL-STEPS.md](MANUAL-STEPS.md) covers making the repo private and the optional
+secrets for the Claude digest and the watchlist email. Each step is click-by-click. Without the secrets,
+everything else runs and those features are skipped with a notice.
 
-The easiest way to use Wealth Wire is the self-updating website:
+## How it works
 
-1. **Every 3 days** (7:17am Pacific), GitHub Actions (`.github/workflows/refresh-site.yml`) runs the ingestion on GitHub's
-   machines, rebuilds a static copy of the app, and force-pushes it to the **`live`** branch. The branch
-   carries the database forward, so history accumulates.
-2. **Vercel** serves the `live` branch. Its `vercel.json` tells Vercel to publish the `site/` folder as-is,
-   with no build step.
-
-The public page shows headlines, links to the original articles, source, date, category, firms and AUM.
-Publisher descriptions and paywalled sources are left out; both are controlled by the `site:` section of
-`config.yaml`. The page asks search engines not to index it (`noindex` + `robots.txt`). The watchlist is
-read-only there: edit `watchlist.yaml` on github.com and the site updates within minutes, because a push
-to `main` triggers a refresh. To refresh on demand, go to the Actions tab → **Refresh site** → **Run workflow**.
-
-The `vercel.json` on `main` turns off Vercel deployments for code branches; the `live` branch has its own
-`vercel.json`, which publishes `site/`. One-time Vercel setup: **Add New → Project →** import this repo → under **Settings → Environments →
-Production**, set the branch to `live`. Every refresh after that deploys automatically.
-
-## Run it on your own computer (optional)
-
-```bash
-./run.sh
+```
+GitHub Actions (weekdays ~6:00, 12:00, 17:00 PT; weekends ~8:00 PT; or "Run workflow")
+  1. restore state from the `live` branch        (database, digest archive)
+  2. ingest: RSS feeds, Google News RSS, wires   (+ SEC adviser file, checked monthly)
+  3. digest-input → Claude (claude-code-action) → digest-finalize (validate, archive, or fall back)
+  4. build the static site + private state; privacy and data-contract checks
+  5. force-push one orphan commit to `live`      (Vercel deploys it)
+  6. optional watchlist email (Resend)
 ```
 
-`run.sh` needs Python 3.11 or newer. It:
+- **`main`** holds the source code only.
+- **`live`** is one commit, replaced every run. It contains:
+  - `site/`, the public website Vercel serves;
+  - `state/`, private carry-over: the SQLite DB, digest archive, `SOURCES.md` and the firm-matching report;
+  - `vercel.json`, which publishes only `site/`, adds `X-Robots-Tag: noindex` and routes `/firm/<slug>`.
+- The public site holds only headlines, links, outlets, dates, categories, firms, AUM, M&A rows and digest
+  text. Publisher teasers and the database never leave `state/`: every build scans the output and fails if
+  either shows up.
 
-1. creates `.venv/` if it's missing,
-2. installs `requirements.txt`,
-3. runs one ingestion (about a minute, because it waits at least 2s between requests to the same host),
-4. starts the app at **http://localhost:8000**.
+## Using the site
 
-While the server runs, it re-ingests every 2 hours.
+- **Feed** has one card per story, with every outlet that covered it. You can filter by:
+  - search;
+  - source;
+  - region ("Pacific Northwest" = WA/OR/ID) or a single state;
+  - date range;
+  - category chips.
+  Filters live in the URL.
+- **Watchlist** lives only in your browser (`localStorage`):
+  - Add firms with optional aliases. A firm's SEC-registered names are matched too.
+  - Matching is case-insensitive and on word boundaries.
+  - Matching stories are highlighted, pinned for 7 days, and ranked first in Top Stories and the digest.
+  - **Export JSON / Import JSON** moves the list between browsers. The same file is the `WATCHLIST_JSON`
+    email secret.
+- **Digest** shows the top stories since the last refresh (at least 24h), ranked by outlet count, then
+  recency. Once a Claude secret is set, each story gets a one-sentence summary and "Why it matters to
+  advisors", under a short "Today in wealth management" opener. If Claude's output fails validation, the
+  plain ranked list is shown with a link to the last good digest.
+- **Archive** lists past digests and the Friday **weekly M&A recaps**: deal count, total disclosed AUM, most
+  active acquirers, a Claude paragraph and the deal table.
+- **M&A** has one row per deal: acquirer, target, target AUM, type, sources and confidence.
+  - A matching press release raises the confidence.
+  - Low-confidence rows are tinted and explain why.
+  - AUM missing from the headline falls back to the SEC-reported figure, labeled with its date.
+- **Firm pages** (`/firm/<slug>`) show name, city/state, SEC-reported AUM, CRD with an IAPD link, and every
+  story and deal for that firm. Trending Firms links to them.
+- **Sources** shows each source's method and last-run status, including the exact failure reason and how
+  many wire items the wealth filter dropped.
 
-Other commands (`python -m wealthwire` switches to `.venv` automatically when it exists):
+## Sources
 
-```bash
-python -m wealthwire ingest       # one ingestion: fetch, dedupe, recompute, write SOURCES.md + new_stories.json
-python -m wealthwire serve        # web app only
-python -m wealthwire recompute    # re-run categories/clusters/extraction after editing the YAML rules
-```
+Listed in `sources.yaml`; live status in the Sources tab and `state/SOURCES.md` on `live`.
 
-### Offline demo (no network)
+| Kind | Sources | Notes |
+|---|---|---|
+| RSS (direct or discovered) | WealthManagement.com, InvestmentNews, RIABiz, Financial Planning, Kitces, SEC press releases, FINRA, AdvisorHub | AdvisorHub is gated (headline only) and left off the public site |
+| Google News RSS | ThinkAdvisor, Financial Advisor Magazine, Citywire RIA | These outlets block automated readers. Items are attributed to the outlet, with Google's redirect links left unresolved. |
+| Press-release wires | PR Newswire, GlobeNewswire, Business Wire | Kept only if they mention wealth management AND name an SEC-registered firm or read as M&A or a people move |
+| SEC adviser data | Monthly Form ADV extract | Checked at most every 25 days; downloaded only when newer |
 
-```bash
-WEALTHWIRE_HOME=demo python -m wealthwire ingest --fixtures tests/fixtures/demo
-WEALTHWIRE_HOME=demo WEALTHWIRE_NO_BACKGROUND=1 python -m wealthwire serve
-```
+Rules for every request:
+- a User-Agent with the contact email;
+- robots.txt respected;
+- at least 2s between requests to the same host;
+- 15s timeout, one retry;
+- conditional GET.
 
-`WEALTHWIRE_HOME` holds the runtime data: `data/wealthwire.db`, `SOURCES.md`, `new_stories.json` and
-`digests/`. `WEALTHWIRE_CONFIG` holds the YAML files. Both default to the repo root.
+It never logs in, never reads past a paywall, and never fetches article pages.
 
-## Using it
+## Configuration
 
-- **Feed** lists one card per story, newest activity first. Each card shows every outlet that covered it
-  (with links and times), the category chip, the firms mentioned, and the AUM when one is stated.
-- **Search** is FTS5 full-text over headlines and descriptions, with stemming and prefix match on the last
-  word. Press `/` to focus the box.
-- **Filters** cover source, category (multi-select chips), date range and watchlist-only. All filter state
-  lives in the URL, so views can be bookmarked and the back button works.
-- **Watchlist** stories from the last 7 days are highlighted and pinned above the feed. You can add or
-  remove firms in the sidebar; changes are written back to `watchlist.yaml`.
-- **Trending firms** ranks firms by the number of distinct stories (not articles) mentioning them in the
-  last 7 days.
-- **M&A** has one row per M&A story: acquirer, target, target AUM, deal type, date, linked sources and
-  confidence. Low-confidence rows are tinted red, say why, and can be filtered.
-- **Digest** renders the newest `digests/YYYY-MM-DD.md`. If none exists yet, it says so and shows the top 10
-  stories from `new_stories.json`.
-- **Sources** shows each source's status from the last run: method, URL, item counts and the exact reason
-  for any failure. The same table is in `SOURCES.md`.
-- **Theme** follows your system setting. The toggle overrides it and is remembered in the browser.
-
-## Configuration (all editable, all committed)
-
-| file | what it controls |
+| File | Controls |
 |---|---|
-| `config.yaml` | `contact_email` / `user_agent`, `timezone` (default America/Los_Angeles), per-host delay, timeout, retries, cluster window (72h) and threshold (70), re-ingest interval, digest fallback window |
-| `sources.yaml` | per source: `name`, `homepage`, `feed_url` (blank = discover), `gated`, `listing_url` (optional fallback), `enabled` |
-| `watchlist.yaml` | `firms: [{name, aliases}]`. Matching is case-insensitive on word boundaries; aliases under 3 characters are ignored |
-| `categories.yaml` | ordered category rules: `any` phrases, `unless` guards, `title_only`. Plain phrases, or `re:` for a regex. First match wins |
-| `firm_stoplist.yaml` | capitalized phrases the firm extractor must never report ("Private Wealth", "Financial Planning", …) |
+| `config.yaml` | contact email / User-Agent, timezone, politeness settings, clustering, `site:` (public-output options), `sec:` (SEC file checks) |
+| `sources.yaml` | per source: `name`, `homepage`, `feed_url`, `kind` (`feed` / `google_news` / `wire`), `query`, `gated`, `listing_url`, `max_age_days`, `enabled` |
+| `categories.yaml` | ordered keyword rules for categories |
+| `firm_aliases.yaml` | curated brand aliases ("Vanguard", "LPL", "Merrill") mapped to SEC names |
+| `firm_stoplist.yaml` | capitalized phrases the fallback firm extractor must never report |
+| `prompts/digest.md` | Claude's instructions for the digest and the weekly paragraph |
 
-After editing `categories.yaml`, `firm_stoplist.yaml` or the cluster settings, run `python -m wealthwire recompute`,
-or just wait for the next ingestion. Derived data is always recomputed from the stored items, so rule changes
-apply to history too.
+A push to `main` that changes any of these triggers a refresh. That run rebuilds the site but doesn't
+rewrite the digest.
 
-### Adding a source
+## The `/digest` command (Claude Code, optional)
 
-Add an entry to `sources.yaml`. If you know the RSS/Atom URL, put it in `feed_url`. Otherwise leave it
-blank and ingestion tries, in order:
+The scheduled workflow writes the digest. If you have Claude Code and a local copy of the data, `/digest`
+does the same locally:
+1. it runs `digest-input`;
+2. it follows `prompts/digest.md`;
+3. it runs `digest-finalize`, which applies the same validation as the workflow.
 
-1. the configured feed,
-2. a feed discovered on an earlier run,
-3. `<link rel="alternate">` on the homepage / listing page,
-4. `/feed`, `/feed/`, `/rss`, `/rss.xml`, `/feed.xml`, `/atom.xml`,
-5. parsing the public `listing_url` (headline, link and date only).
+Its permissions are limited to those commands and to reading and writing files under `_work/`.
 
-Every non-feed fetch checks `robots.txt` first. Set `gated: true` for paywalled outlets; only headline, link,
-date and source are then stored.
+## Run it on your computer (optional)
 
-## The `/digest` command (Claude Code)
-
-`.claude/commands/digest.md` tells Claude Code to:
-
-1. run `python -m wealthwire ingest`,
-2. read `new_stories.json`: the stories first seen since `digests/.last_digest` (or the last 24h), ranked by
-   watchlist hits, then number of outlets, then recency,
-3. write `digests/YYYY-MM-DD.md` with a **Watchlist Hits** section first (or "None today"), then the top 10
-   stories. Each story gets its linked sources, a one-sentence summary based only on the headlines and
-   descriptions in the file, and a "Why it matters to advisors:" line,
-4. update `digests/.last_digest`.
-
-Permissions are pre-approved for exactly those actions and nothing else: the ingest command, reading
-`new_stories.json`, and writing under `digests/`. They are listed in both `.claude/settings.json` and the
-command's `allowed-tools` frontmatter.
-
-> **One-time step:** Claude Code ignores a project's `.claude/settings.json` allow rules until you have
-> trusted the folder. Run `claude` once in the repo and accept the trust prompt. The command's own
-> `allowed-tools` frontmatter already covers `/digest`, so it works either way. It was verified headless:
-> `claude -p "/digest"` finished with 0 permission denials.
-
-### Scheduling it as a weekday routine
-
-cron (macOS or Linux), 6:44am on weekdays:
-
-```cron
-44 6 * * 1-5  cd /path/to/Wealth-Wire && /usr/local/bin/claude -p "/digest" >> digests/cron.log 2>&1
+```bash
+./run.sh                                  # makes .venv, installs, ingests once, serves http://localhost:8000
+python -m wealthwire --help               # all commands (ingest, build-site, serve, digest-input, …)
 ```
 
-Use the full path to `claude` (`which claude`), because cron has a minimal `PATH`. On macOS, give cron
-(or your terminal) Full Disk Access if the repo is under a protected folder. A launchd agent or the
-scheduled-tasks feature of the Claude desktop app works the same way. The job only needs to run
-`claude -p "/digest"` from the repo folder. Open the Digest tab afterwards (the server doesn't have to run
-for the digest to be written).
+Offline demo with the fixture data (no network):
+
+```bash
+export WEALTHWIRE_HOME=demo WEALTHWIRE_NOW=2026-09-25T18:00:00Z   # fixtures are dated around this instant
+python -m wealthwire ingest --fixtures tests/fixtures/demo
+python -m wealthwire serve
+```
 
 ## Replacing the frontend
 
@@ -177,45 +158,43 @@ python -m wealthwire state fetch _prev && python -m wealthwire state restore _pr
 python -m wealthwire serve            # builds site/data from it and serves http://localhost:8000
 ```
 
-Or run fully offline on the fixture data:
-`WEALTHWIRE_HOME=demo python -m wealthwire ingest --fixtures tests/fixtures/demo && WEALTHWIRE_HOME=demo python -m wealthwire serve`.
-`python -m pytest tests/test_site.py` checks that the generated data still matches the contract.
+Or run fully offline on the demo data (see above). `python -m pytest tests/test_site.py` checks that the
+generated data still matches the contract.
 
 ## Development
 
 ```bash
 pip install -r requirements.txt
-python -m pytest                   # 238 tests, no network: saved fixture feeds + httpx MockTransport
-python scripts/screenshots.py      # Playwright: 9 views × 1440/390 × light/dark → screenshots/, fails on console errors
-python scripts/tune_cluster.py     # print clustering scores for tests/fixtures/cluster_pairs.yaml
-python scripts/make_fixtures.py    # regenerate the offline fixture site
+python -m pytest                   # 334 tests, no network (fixture feeds + httpx MockTransport)
+python scripts/screenshots.py      # Playwright: 13 views × 1440/390 × light/dark, interactions; fails on console errors
+python scripts/make_fixtures.py    # regenerate the offline fixture sites
+python -m wealthwire eval-firms    # firm-matching precision/recall on the 75 labeled headlines
 ```
 
-Architecture, schema and test plan are in [PLAN.md](PLAN.md). Every judgment call is in
-[DECISIONS.md](DECISIONS.md). The acceptance audit is in [AUDIT.md](AUDIT.md).
+- Phase 2 plan: [PLAN-PHASE2.md](PLAN-PHASE2.md).
+- Every judgment call: [DECISIONS.md](DECISIONS.md).
+- Results: [AUDIT-PHASE2.md](AUDIT-PHASE2.md), plus the phase 1 [AUDIT.md](AUDIT.md).
+- Data contract: [DATA-CONTRACT.md](DATA-CONTRACT.md).
 
 ## Known limitations
 
-- **Live sources were not reachable from the environment this was built in.** Its egress proxy returned
-  403 for every news domain, so [SOURCES.md](SOURCES.md) currently records `network proxy refused connection
-  (403 Forbidden)` for all 11 sources. Each network path (configured RSS, `<link rel=alternate>`
-  discovery, common paths, listing fallback, robots disallow, gated, conditional GET) is exercised against
-  fixture sites in the tests. The seeded feed URLs follow each platform's known patterns but are unverified.
-  Your first `./run.sh` will show the real status per source; fix any failing one in `sources.yaml`. Likely
-  problems on a real network:
-  - bot protection (Cloudflare/Akamai 403s),
-  - JavaScript-rendered listing pages with no parseable headlines,
-  - `robots.txt` disallowing the listing pages. FINRA and some publishers disallow crawling news sections;
-    that is recorded as the failure reason and respected.
-- **Extraction is heuristic.** Categories are keyword rules. Firm names are capitalized spans that contain
-  a firm word ("Wealth", "Capital", "Advisors", …), so names without one ("Hightower", "LPL") are only
-  found through the watchlist or M&A patterns. AUM needs a `$` figure with asset context nearby, so fines,
-  prices and funding rounds are excluded. The M&A table reads headline grammar only; anything ambiguous is
-  left blank and marked low confidence instead of guessed.
-- **Clustering is fuzzy title matching.** Two different stories that differ by a single proper noun (e.g.
-  two teams with identical AUM joining the same firm on the same day) can merge. That case is documented
-  in `tests/fixtures/cluster_pairs.yaml`. Stories more than 72h apart never merge.
-- **Watchlist aliases are literal.** The "Goldman" alias you asked for also matches a person named Goldman.
-- **Dates without a machine-readable timestamp** (some listing pages) fall back to the fetch time and are
-  flagged `published_estimated`.
-- **Single user, no auth.** The server binds to 127.0.0.1. Don't expose it to a network.
+- **Google News RSS returns HTTP 503 to GitHub's runners.** Google blocks many datacenter IP ranges. The
+  spec rules out any workaround, so ThinkAdvisor, FA Magazine and Citywire stay failed on the Sources tab
+  until Google serves those runners again. The code path is tested on fixtures.
+- **The Business Wire feed URL currently returns an empty feed.** Business Wire publishes no stable public
+  wealth-management feed. Replace `feed_url` in `sources.yaml` if you find a working category feed.
+- **The wire filter is strict on purpose.** On the first live runs it kept 0 of 40 wire items. Press releases
+  about wealth-management deals get through; general financial PR doesn't.
+- **Firm matching is heuristic.** On 75 labeled real headlines against the real SEC file it scores
+  precision 0.98 and recall 0.93. Brands that are ordinary words ("Horizon") or firms that aren't
+  SEC-registered advisers (broker-dealers, Prudential) are missed. The same text as a real adviser's name
+  (Luma) can mismatch. Unmatched capitalized firm names still come from a fallback extractor and are marked
+  unverified, with no firm page.
+- **SEC data is monthly.** AUM is the regulatory AUM from the latest file and is labeled with its date.
+- **The Claude digest and the email only run once you add their secrets.** Neither was exercised live
+  before handing over; see AUDIT-PHASE2.md.
+- **The schedule drifts an hour in winter.** GitHub cron is UTC, anchored to Pacific Daylight Time.
+- **Clustering is fuzzy title matching.** Two different stories that differ only by a proper noun can
+  merge. Stories more than 72h apart never merge.
+- **The watchlist is per browser.** Use Export/Import to move it; the email uses its own copy in
+  `WATCHLIST_JSON`.

@@ -32,10 +32,14 @@ def group_items(items: list[dict], cfg: dict) -> list[list[dict]]:
     return [[by_id[c.id] for c in g] for g in groups]
 
 
-def firms_in_text(text: str, stoplist: set[str], sec: SecMatcher) -> list[dict]:
-    """SEC-verified firms first; regex-extracted names only for firms the SEC data doesn't cover (unverified)."""
+def firms_in_text(text: str, stoplist: set[str], sec: SecMatcher, body: bool = False) -> list[dict]:
+    """SEC-verified firms first; regex-extracted names only for firms the SEC data doesn't cover (unverified).
+    body=True (teasers): single-word generated aliases are ignored, because teasers name people far more often
+    than headlines do ("…named Jane Frazier president" is not Frazier Healthcare Partners)."""
     out: list[dict] = []
     matches = sec.match(text)
+    if body:
+        matches = [m for m in matches if " " in m.alias or m.alias in sec.curated]
     verified_aliases = [m.alias for m in matches]
     for crd in dict.fromkeys(m.crd for m in matches):
         out.append({"name": sec.display(crd), "crd": crd, "verified": True})
@@ -67,7 +71,7 @@ def extract_item(it: dict, stoplist: set[str], sec: SecMatcher) -> None:
     title = firms_in_text(it["title"], stoplist, sec)
     firms = [dict(f, in_title=True) for f in title]
     keys = {f["crd"] or f["name"].lower() for f in firms}
-    for f in firms_in_text(it["description"], stoplist, sec):
+    for f in firms_in_text(it["description"], stoplist, sec, body=True):
         if (f["crd"] or f["name"].lower()) not in keys:
             keys.add(f["crd"] or f["name"].lower())
             firms.append(dict(f, in_title=False))

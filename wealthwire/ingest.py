@@ -296,7 +296,7 @@ def write_sources_md(runs: list[SourceRun], now: datetime, cfg: dict, demo: bool
 
 
 def run_ingest(fixtures: Path | None = None, now: datetime | None = None, quiet: bool = False) -> dict:
-    """Ingest every enabled source, recompute derived data, regenerate SOURCES.md and new_stories.json."""
+    """Ingest every enabled source, recompute derived data, regenerate SOURCES.md."""
     from .pipeline import recompute  # local import: pipeline imports heavy modules
 
     with _LOCK:
