@@ -70,6 +70,18 @@ cleveland|detroit|minneapolis|st louis|nashville|charlotte|san francisco|los ang
 salt lake|kansas city|baltimore|manhattan|brooklyn|boise|spokane|tacoma|omaha|tulsa|cincinnati|columbus|
 indianapolis|milwaukee|richmond|raleigh|tampa|orlando|jacksonville|new orleans|san antonio|sacramento|honolulu
 """.replace("\n", "").split("|")) - {""}
+# Subject rule: a single-word alias that is otherwise too risky (a dictionary word like "Concurrent", or a short
+# acronym like "EQT") may match only as the headline's grammatical subject: first token (or right after a
+# "Label:" prefix), immediately followed by one of these verbs, and only when one registrant dominates the alias.
+SUBJECT_VERBS = frozenset("""
+adds add acquires acquire buys buy hires hire lands names taps opens expands agrees completes announces sells
+merges partners joins promotes appoints raises closes invests poaches recruits loses unveils launches debuts
+strikes inks nabs snags bolsters welcomes grabs picks takes files settles
+""".split())
+# Acronyms that start countless headlines and are never the adviser they may coincide with.
+ACRONYM_STOP = frozenset("sec finra dol irs cftc fdic occ fed nasaa cfpb etf etfs ria rias ipo ceo cio cfo coo ai us uk eu gdp "
+                         "cpi fomc nyse otc amex bd bds hnw uhnw esg".split())
+SUBJECT_DOMINANCE = 0.85  # "Mercer" (72–81% for Mercer Investments vs Mercer Advisors) stays ambiguous
 LEGAL_SUFFIX = re.compile(r"(?:[\s,]+(?:llc|l\.l\.c\.?|inc\.?|incorporated|corp\.?|corporation|co\.?|company|ltd\.?|limited|"
                           r"l\.?p\.?|llp|l\.l\.p\.?|pllc|p\.c\.|pc|na|n\.a\.|plc))+\.?\s*$", re.I)
 BOUNDARY = re.compile(r"[:;,!?|\"“”‘()\[\]—–]|\s-\s")
@@ -124,7 +136,7 @@ def pretty_name(name: str) -> str:
         words = []
         for w in base.split():
             core = re.sub(r"[^A-Z]", "", w)
-            keep = (len(core) <= 3 and not re.search(r"[AEIOU]", core)) or w in {"LPL", "RBC", "UBS", "BNY", "EP", "SEIA"}
+            keep = (len(core) <= 3 and not re.search(r"[AEIOU]", core)) or w in {"LPL", "RBC", "UBS", "BNY", "EP", "SEIA", "EQT"}
             words.append(w if keep else ("and" if w == "AND" else w.capitalize()))
         base = " ".join(words)
     return base
@@ -182,8 +194,10 @@ class FirmMatch:
 
 
 class SecMatcher:
-    def __init__(self, rows: list[dict], curated: dict[str, str] | None = None):
+    def __init__(self, rows: list[dict], curated: dict[str, str] | None = None, stop: set[str] | None = None):
         self.firms = {r["crd"]: r for r in rows}
+        stop_aliases = {" ".join(t for t in normalize(x).split() if t != "|") for x in (stop or set())}
+        self.subject_only: dict[str, str] = {}  # alias → crd, usable only under the subject rule
         self.curated_unresolved: list[str] = []
         candidates: dict[str, list[tuple[str, bool]]] = {}  # alias → [(crd, is_full_name)]
         for r in rows:
@@ -195,8 +209,19 @@ class SecMatcher:
         self.alias_to_crd: dict[str, str] = {}
         for alias, cands in candidates.items():
             toks = alias.split()
+            if alias in stop_aliases:
+                continue  # firm_stoplist.yaml: phrases that are never a firm ("Financial Decisions", outlet names)
             if len(toks) == 1 and (not distinctive(toks[0]) or len(toks[0]) <= 3 or toks[0] in SURNAMES):
-                continue  # "summit", "mercer" (words), "powell" (surname), "mcp" (acronym) never match alone
+                # "summit", "mercer" (words), "powell" (surname), "mcp" (acronym) never match alone,
+                # except under the subject rule when one registrant clearly owns the name
+                t = toks[0]
+                if len(t) >= 3 and t not in GENERIC and t not in SURNAMES and t not in GEO and t not in ACRONYM_STOP:
+                    crds = {c for c, _ in cands}
+                    aum = {c: self.firms[c].get("aum_usd") or 0 for c in crds}
+                    top = max(crds, key=lambda c: (aum[c], c))
+                    if sum(aum.values()) > 0 and aum[top] >= SUBJECT_DOMINANCE * sum(aum.values()):
+                        self.subject_only[alias] = top
+                continue
             if all(len(t) <= 2 for t in toks if t not in ("and", "of", "the")):
                 continue  # "m and a" (M & A Consulting) would match every "M&A" headline
             if alias in GEO:
@@ -227,21 +252,25 @@ class SecMatcher:
                 continue
             self.alias_to_crd[a] = crd
             self.curated.add(a)
+            self.subject_only.pop(a, None)
         self.automaton = ahocorasick.Automaton()
-        for alias in self.alias_to_crd:
+        for alias in {**self.subject_only, **self.alias_to_crd}:
             self.automaton.add_word(f" {alias} ", alias)
-        if self.alias_to_crd:
+        if self.alias_to_crd or self.subject_only:
             self.automaton.make_automaton()
 
     @classmethod
     def from_db(cls, conn: sqlite3.Connection, curated: dict[str, str] | None = None) -> "SecMatcher":
-        return cls([dict(r) for r in conn.execute("SELECT * FROM sec_firms")], load_curated() if curated is None else curated)
+        from .config import load_stoplist
+
+        return cls([dict(r) for r in conn.execute("SELECT * FROM sec_firms")], load_curated() if curated is None else curated,
+                   load_stoplist())
 
     def __len__(self) -> int:
         return len(self.alias_to_crd)
 
     def match(self, text: str) -> list[FirmMatch]:
-        if not self.alias_to_crd or not text:
+        if not (self.alias_to_crd or self.subject_only) or not text:
             return []
         toks = tokenize(text)
         padded = " " + " ".join(n for _, n in toks) + " "
@@ -257,6 +286,18 @@ class SecMatcher:
             ti = starts[s]
             words = alias.split()
             n = len(words)
+            orig = [o for o, _ in toks]
+            if alias not in self.alias_to_crd:  # subject-only alias
+                at_start = ti == 0 or toks[ti - 1][1] == "|"
+                nxt = toks[ti + 1][1] if ti + 1 < len(toks) else ""
+                shape_ok = orig[ti].isupper() if len(alias) <= 3 else orig[ti][:1].isupper()
+                if at_start and nxt in SUBJECT_VERBS and shape_ok:
+                    found.append(FirmMatch(self.subject_only[alias], alias, ti, ti + 1))
+                continue
+            if (alias not in self.curated and n >= 2 and all(w in GENERIC or is_word(w) for w in words)
+                    and ti + n < len(toks) and _acronym(orig[ti + n])
+                    and orig[ti + n].lower() not in {"llc", "lp", "llp", "inc", "ria", "pc"}):
+                continue  # "Blue Ocean ATS": a word-only alias running into an acronym is a longer, different name
             needs_caps = n == 1 or alias in self.curated or all(w in GENERIC or is_word(w) for w in words)
             if needs_caps and not _capitalized([o for o, _ in toks], ti, n):
                 continue
@@ -280,6 +321,10 @@ class SecMatcher:
     def display(self, crd: str) -> str:
         f = self.firms[crd]
         return pretty_name(f.get("business_name") or f.get("legal_name"))
+
+
+def _acronym(token: str) -> bool:
+    return 2 <= len(token) <= 5 and token.isalpha() and token.isupper()
 
 
 def _capitalized(tokens: list[str], i: int, n: int) -> bool:

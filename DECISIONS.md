@@ -297,3 +297,49 @@ P31. **The phase 2 docs set was finalized:**
      - MANUAL-STEPS.md for secrets and settings;
      - AUDIT-PHASE2.md for results.
      `run.sh` stays as the optional local path.
+
+## Follow-ups (2026-09-27)
+
+F1. **Held-out firm eval ("Set A").**
+    - 162 real headlines from the live DB, excluding every headline in `firm_headlines.yaml`. This is every
+      remaining headline, not a sample.
+    - Labeling rule: a mention counts only if the named organization has an SEC-registered adviser under
+      that brand in the real file, checked row by row. Keys are specific ("orion portfolio"), so a same-prefix
+      wrong entity scores as an error.
+    - Not labeled:
+      - regulators, media, people;
+      - fintechs with no adviser (Pontera, Hamachi, FINNY);
+      - broker-dealers absent from the adviser file (American Portfolios, Reid & Rudiger);
+      - name-alikes (Blue Ocean ATS, Arch, the fintech Flourish);
+      - brands registered under another name (MassMutual → MML).
+    - Honesty caveat: on 2026-09-27 I had inspected the matcher's output over this same corpus while tuning,
+      so pre-fix precision (0.957) is biased upward. Recall (0.900) wasn't tuned on it.
+    - A truly blind "Set B" is built from headlines first fetched after the tuning commit, once ≥75 exist; see
+      AUDIT-PHASE2.md.
+F2. **Scored before changing anything**, on logic `a6a9741` against the real 2026-09-01 SEC file: precision
+    0.957, recall 0.900 (45 TP, 2 FP, 5 FN).
+F3. **Subject rule.** A single-word alias that is otherwise rejected (a dictionary word like "Concurrent", or a
+    3-letter acronym like "EQT") may match only when all of these hold:
+    - it is the headline's first token, or follows a "Label:" prefix;
+    - the next word is a news/deal verb (adds, buys, raises, lands…);
+    - it is capitalized, or all caps for acronyms;
+    - one registrant holds ≥85% of the AUM of every registrant sharing the alias.
+    Regulator and common acronyms (SEC, FINRA, DOL, ETF, RIA…) are excluded. 85% rather than 80% keeps "Mercer"
+    ambiguous: Mercer Investments vs Mercer Advisors is 72% in the real file and 81% in the fixtures. This
+    also fixed a known old-set miss: "Advisor moves: RBC lands…".
+F4. **Other held-out fixes:**
+    - curated "Bain Capital" and "Orion" (verified SEC names);
+    - `firm_stoplist.yaml` now also removes SEC aliases ("Financial Decisions"; outlet names like "Financial
+      Planning");
+    - a word-only alias running straight into an ALL-CAPS token is treated as a longer, different name ("Blue
+      Ocean ATS" ≠ Blue Ocean Capital);
+    - "EQT" is kept upper-case in display names.
+    Still missed on purpose: "…not-for-sale Savvy stake…", since a curated "Savvy" would fire on Title Case
+    "How Savvy Advisors…" headlines.
+F5. **Regression test on real data.** `tests/fixtures/sec_firms_real_subset.csv` holds the 594 real SEC
+    registrants that generate any alias occurring in the 237 labeled headlines, plus curated targets.
+    `scripts/build_eval_dictionary.py` proves the slice reproduces full-file matching exactly on every labeled
+    headline. `tests/test_firms_real.py` pins both sets' precision/recall and the follow-up cases.
+F6. **`gh` is not installed in this build environment.** Workflows are triggered with the GitHub API
+    (`workflow_dispatch` via the GitHub MCP tool), which is the same event `gh workflow run` sends. Run logs are
+    read the same way.

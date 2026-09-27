@@ -1,0 +1,176 @@
+# HELD-OUT firm-detection set (follow-up 1). 162 real headlines from the live site's refreshes of 2026-09-26/27,
+# excluding every headline in firm_headlines.yaml. Newest first. Labeled by hand on 2026-09-27.
+#
+# Labeling rule: a mention is labeled only if the named organization has an SEC-registered investment adviser
+# under that brand in the real SEC file (2026-09-01), checked row by row. Keys are lowercase substrings of the
+# registered name, specific enough to reject a same-prefix wrong entity ("orion portfolio", not "orion").
+# Not labeled: regulators, media, people, fintechs with no SEC adviser (Pontera, Hamachi, FINNY, Arch),
+# broker-dealers not in the adviser file (American Portfolios, Reid & Rudiger), organizations that only share a
+# name with an unrelated adviser (Blue Ocean ATS vs Blue Ocean Capital, the fintech Flourish), and brands whose
+# advisers register under another name (MassMutual → MML).
+#
+# Caveat: not fully blind. On 2026-09-27 the matcher's output over this corpus was inspected while tuning
+# (false positives were fixed), so precision here is biased upward; recall was not tuned on it.
+headlines:
+  - {text: "Advisor Compensation Climbs As Firm Growth Hits A Decade Low", firms: []}
+  - {text: "Rich People Fleeing Private Credit Haven't Learned Their Lesson", firms: []}
+  - {text: "Blended Families Present Unique Financial, Estate Planning Issues", firms: []}
+  - {text: "Corient buys $2.6bn Cayman Islands-based family office", firms: [corient]}
+  - {text: "Private Equity Firms Cling To Assets For Longer, Upending Business Model", firms: []}
+  - {text: "$10bn SignatureFD pursuing first-ever outside investor: Sources", firms: [signaturefd]}
+  - {text: "Hightower Advisor CEO names two new presidents -- one to revamp the old rollup business, the other to develop the new single-system unit -- both with the objective of kindling buyer interest without a conglomerate discount", firms: [hightower]}
+  - {text: "What climate finance means for portfolios", firms: []}
+  - {text: "Talking Trusts & Estates for Advisors: When to Use Revocable Trusts vs. Alternative Strategies", firms: []}
+  - {text: "Defrauded funds fail to seize convicted advisor's $5.1M in accounts", firms: []}
+  - {text: "The WealthStack Podcast: How AI Is Modernizing Private Markets with Arch’s Ryan Eisenman", firms: []}
+  - {text: "The Real Disruption Behind PEPs", firms: []}
+  - {text: "FINNY pivots to a 'pay-as-you-grow' revenue-share model", firms: []}
+  - {text: "Communication isn't a soft skill. The research is clear", firms: []}
+  - {text: "Gold's rally drivers remain intact despite price surges", firms: []}
+  - {text: "AI-powered tools reshape wealth management tech stack for advisors", firms: []}
+  - {text: "Private markets advice is evolving - are advisors keeping up?", firms: []}
+  - {text: "Young Americans are rewriting what financial success looks like", firms: []}
+  - {text: "SpaceX entry drives index reshuffle as market concentration rises", firms: []}
+  - {text: "US retirement ranking slides to 24th as debt and inflation squeeze savers", firms: []}
+  - {text: "Climate change is a retirement planning issue, says sustainable investing pioneer", firms: []}
+  - {text: "RIA deal momentum slows, threatening record-breaking run", firms: []}
+  - {text: "Lawmakers Want Probe Of Comments Supporting DOL’s 401(k) Alts Rule", firms: []}
+  - {text: "Why advisors are rethinking entity structures for clients — and maybe themselves", firms: []}
+  - {text: "Powering retirement for Wall Street", firms: []}
+  - {text: "Building RIA internship programs that become top talent pipelines", firms: []}
+  - {text: "Altruist opens pre-IPO deals to RIA clients as AI listings loom", firms: [altruist]}
+  - {text: "Active ETFs reshape how advisors build portfolios", firms: []}
+  - {text: "ETFs come of age", firms: []}
+  - {text: "Vanguard Fined $950K Over Cost-Basis Reporting Errors", firms: [vanguard]}
+  - {text: "Advisors favor quality and value ETFs as leverage risks build", firms: []}
+  - {text: "AI-Driven Financial Planning is a Minefield", firms: []}
+  - {text: "IRS sets per diem rates for travelers for 2026-2027", firms: []}
+  - {text: "Market Brief: Emerging Markets Shrug Off Higher Rates With Record Borrowing Spree", firms: []}
+  - {text: "Alternative ETFs boom in 2026", firms: []}
+  - {text: "Ask Your Wealth Management Concierge", firms: []}
+  - {text: "Funding for alternative investment distribution continues to swamp SaaS solutions", firms: []}
+  - {text: "A 7-point decision framework for equity comp", firms: []}
+  - {text: "More ETFs, more opportunity, more homework", firms: []}
+  - {text: "Wealth transfer planning must go beyond the will, advisors say", firms: []}
+  - {text: "Best Places to Work 2027: Nominations now open", firms: []}
+  - {text: "Institutional crypto adoption is stickier than markets assumed, Bitwise finds", firms: [bitwise]}
+  - {text: "Edelman Financial Engines names Tina Wilson chief retirement officer", firms: [edelman financial engines]}
+  - {text: "Fidelity Investments just cast a wider net for RIA custody revenues by backstopping Savvy Wealth's (expected mid-2027 ) custody launch -- hastened by the lean-in of 'multi-billion-AUM' RIA prospects, the company says", firms: [fidelity, savvy]}
+  - {text: "How Fiscal Sponsorship Can Streamline Philanthropic Giving", firms: []}
+  - {text: "Social Security bill offers blue-collar workers full benefits at 60", firms: []}
+  - {text: "America's wealth boom is creating a new generation of underinsured clients", firms: []}
+  - {text: "SEC Alleges Man Defrauded Law Enforcement Members In South Florida Scheme", firms: []}
+  - {text: "The Opportunity Hiding in Plain Sight", firms: []}
+  - {text: "Creating a Lifetime Stretch Through a Charitable Remainder Unitrust", firms: []}
+  - {text: "Commuting the Income Interest of Charitable Trusts", firms: []}
+  - {text: "Five Misconceptions About Donor-Advised Funds", firms: []}
+  - {text: "Fed rate hike could cool RIA deal prices, but not for everyone", firms: []}
+  - {text: "Charitable Giving in Retirement", firms: []}
+  - {text: "On the Cover: October 2026", firms: []}
+  - {text: "Note From the Editor: October 2026", firms: []}
+  - {text: "SEC Publishes Updated Market Statistics, Highlighting Increase in IPOs and Proceeds Raised", firms: []}
+  - {text: "Savvy Wealth opens its custodial platform to outside RIAs", firms: [savvy]}
+  - {text: "Focused on the Future: Creating Lasting Advisory Practices Through Client Experience and Continuity with Jim Mellin", firms: []}
+  - {text: "Savvy Wealth to Offer Fidelity-Based ‘Custody’ Platform to Outside RIAs", firms: [savvy, fidelity]}
+  - {text: "The Associate in the Server Closet: On-Premises AI", firms: []}
+  - {text: "Tax Law Update: October 2026", firms: []}
+  - {text: "Trump Administration Planning Sweeping Audit of Left-Wing Nonprofits", firms: []}
+  - {text: "Ameriprise, Broker to Pay Edward Jones $4.8M in Trade-Secrets Dispute", firms: [ameriprise, edward jones]}
+  - {text: "How to Value Fossils and Other Non-Traditional Collectibles", firms: []}
+  - {text: "Lululemon Founder Headed for Divorce: What’s at Stake?", firms: []}
+  - {text: "Protecting Gifts to Institutions at Risk of Failing", firms: []}
+  - {text: "SEC Charges South Florida Resident and His Company for Alleged Investment Scheme Defrauding Law Enforcement", firms: []}
+  - {text: "Corient Buys $2.6B Family Office in First Cayman Islands Move", firms: [corient]}
+  - {text: "Captrust adds $1.2B Long Island firms in New York double deal", firms: [captrust]}
+  - {text: "The Great Wealth Transfer: Separating the myth from the reality", firms: []}
+  - {text: "Wavvest launches in-house RIA", firms: [wavvest]}
+  - {text: "401(k) Real Talk Episode 209: September 23, 2026", firms: []}
+  - {text: "Applying Fiduciary Principles To Demonstrate Value And Build Client Trust During 401(k) Rollover Conversations", firms: []}
+  - {text: "Cerity Partners to merge with $1.4B Shufro Rose advisory teams", firms: [cerity partners, shufro rose]}
+  - {text: "CFTC warns prediction market exchanges on 'mention markets'", firms: []}
+  - {text: "Schwab's poach of $8-billion Ameriprise breakaway extends its wild 2026 rout of the once impenetrable fortress to four $1-billion-plus teams with help from high-multiple market", firms: [schwab, ameriprise]}
+  - {text: "At Future Proof, wealth management industry weighs realities of the AI revolution", firms: []}
+  - {text: "Indy B-D rep linked to troubled Texas real estate deal", firms: []}
+  - {text: "FINRA Fines American Portfolios $1.6M, Alleging UIT Lapses", firms: []}
+  - {text: "Schwab's surprise unveiling of Anthropic deal at Future Proof shows it has an AI ace up its sleeve, but it may take five years or more to catch up with Altruist, if at all, say two analysts", firms: [schwab, altruist]}
+  - {text: "Helping Clients Navigate Tariff Whiplash", firms: []}
+  - {text: "SEC Censures OTC Link LLC for Repeated Compliance Failures Related to Regulation SCI", firms: []}
+  - {text: "SEC accuses fund operator of defrauding investors in $9.6M mobile home scheme", firms: []}
+  - {text: "FINRA orders American Portfolios to pay $1.6 million over UIT failures", firms: []}
+  - {text: "Do Index Funds Really Make Stocks More Volatile?", firms: []}
+  - {text: "Views from 6,230: What's Next in the Evolution of ETFs?", firms: []}
+  - {text: "RIA founders should invest early and stay nimble", firms: []}
+  - {text: "Leveraging Video The Right Way To Add $1M Of New Revenue In Less Than 12 Months: #FASuccess Ep 508 With Nate Hoskin", firms: []}
+  - {text: "AI financial advice sparks demand for human advisors among Gen Z", firms: []}
+  - {text: "Oil shock threatens to lock in higher rates through 2027", firms: []}
+  - {text: "Private market allocations in 401(k) plans can lift retirement outcomes", firms: []}
+  - {text: "Infrastructure and emerging markets top global asset owner wish lists", firms: []}
+  - {text: "Schwab loses $4.5 million lawsuit to teachers who bought structured products", firms: [schwab]}
+  - {text: "Schwab, Anthropic block model training in Claude deal", firms: [schwab]}
+  - {text: "Concurrent adds $425 million Houston team as breakaway wave continues", firms: [concurrent investment advisors]}
+  - {text: "What advisors need to know as Trump and Xi meet this week", firms: []}
+  - {text: "Democratic lawmakers demand probe into DOL 401(k) rule comments", firms: []}
+  - {text: "Nearly 30% of social media finance videos lead investors astray: study", firms: []}
+  - {text: "Financial planning is becoming advisors' best tool for long-term client loyalty", firms: []}
+  - {text: "Retirement assets hit $51.2 trillion as savers keep contributing", firms: []}
+  - {text: "Taking Equity In An Acquiring Aggregator: Weighing The Growth Opportunities Against Valuation And Illiquidity Risks", firms: []}
+  - {text: "Global M&A value rises 15%, with highest sentiment in financial sector", firms: []}
+  - {text: "Paramount in advanced settlement talks over $81 billion Warner Bros. deal", firms: []}
+  - {text: "AI chatbots give wrong financial answers most of the time, study finds", firms: []}
+  - {text: "US debt crisis nears tipping point, watchdog warns Congress", firms: []}
+  - {text: "EQT raises Perpetual takeover bid for the fourth time", firms: [eqt]}
+  - {text: "Private markets are testing the wealth stack", firms: []}
+  - {text: "Weekend Reading For Financial Planners (September 19–20)", firms: []}
+  - {text: "Ritik Malhotra sells not-for-sale Savvy stake for $100 million after Utah Jazz owner showed up big for his LPL-disruption-by-AI play -- and Mark Casady re-upped at the new price as well", firms: [savvy, lpl]}
+  - {text: "SEC Issues “Innovation Exemption” to Facilitate the Trading of Tokenized NMS Stock and Request for Comment", firms: []}
+  - {text: "Breaking Bad News To A Client About Prior Problematic Financial Decisions: Kitces & Carl 199", firms: []}
+  - {text: "'No rush' Peter Mallouk is doing wild 'gap' deals as he rides out RIA seller's market and his Creative Planning keeps 'billions' of purchasing power 'locked-and-loaded' for 'perfect' moment", firms: [creative planning]}
+  - {text: "David Fortunato makes his third pivot after cash management cross-selling fails to yield ample robo investors -- a bolt-on discount brokerage will join its digital home-lending unit in a true Silicon Valley mashup", firms: []}
+  - {text: "SEC Proposes Rescission of Shareholder Proposal Rule and Reforms to Proxy Solicitation Process", firms: []}
+  - {text: "Managing Legacy Investments: 6 Best Practices To Reduce RIA Fiduciary And Compliance Risk", firms: []}
+  - {text: "Schwab scores exclusive (for now) contract with Anthropic and takes AI 'driver's seat' in RIA custody, analyst says, though others counter that it's generic and late-coming", firms: [schwab]}
+  - {text: "Growing Bigger For Succession And Then Intentionally Downsizing For A Simpler Lifestyle Practice: #FASuccess Ep 507 With Carolyn McClanahan", firms: []}
+  - {text: "SEC Grants Exemptive Relief from Certain Inline XBRL Filing or Submission Requirements", firms: []}
+  - {text: "A 4-Step Guide To Reducing Advisor Turnover By Recruiting Career Changers", firms: []}
+  - {text: "Marty Bicknell commits $175 million to install 700 'AI' bots to revolutionize RIA automation; the gamble isn't AI but whether advisors, clients, staff and leadership will embrace the change, analyst says", firms: []}
+  - {text: "Weekend Reading For Financial Planners (September 12–13)", firms: []}
+  - {text: "CEO Jason Wenk says Altruist's AI 'Hazel' is ready for its second act, a financial planning service that will blow away the market with one big caveat -- advisors must be ready to provide PDFs, if rivals refuse API access", firms: [altruist]}
+  - {text: "Joint Readout of Principals’ Meeting of U.S. and UK Authorities Regarding Central Counterparty Resolution", firms: []}
+  - {text: "Amid a flood of warnings about dangers of rogue AI, Hamachi steps in with newly patented system to protect sensitive RIA client data from AI breaches", firms: []}
+  - {text: "SEC Charges Founder and His Two New Jersey-Based Companies in Alleged $16 Million Ponzi Scheme", firms: []}
+  - {text: "Bain Capital (mostly) funds Envestnet buy of Vestmark to surpass $10 trillion and define 'adaptive modularity' strategy, leaving Orion a clear RIA lane", firms: [bain capital, envestnet, vestmark, orion portfolio]}
+  - {text: "Compliance Issues When Clients Won’t Take Your Advice: Duty To Follow Instructions, When To Refuse, And When To Exit The Relationship", firms: []}
+  - {text: "Schwab Wealth Advisory (SWA) unveils 'corkage' fee on third-party SMAs, typically .35%, as slew of changes add to 'elegant' master plan to convert DIY book to fees", firms: [schwab wealth advisory]}
+  - {text: "MassMutual helps Flourish find white knight buyer and regain 'standalone' status just months ahead of Phase II rollout that makes its 1,300 RIA clients more like a giant virtual private bank", firms: []}
+  - {text: "SEC seeks to rescind 2010 'pay-to-play' rule, paving the way for investment advisors to again bid for public pension contracts while making political donations to officials with influence over pension awards", firms: []}
+  - {text: "SEC Proposes Rescission of Political Contribution Rule for Investment Advisers", firms: []}
+  - {text: "SEC Investor Advisory Committee to Host Sept. 10 Meeting", firms: []}
+  - {text: "RIABIZ INTERVIEW: Jason Wenk tells RIABiz one big unnoticed reason why he sold to Vanguard, and the Bogle-ish scenario he envisions for his eventual departure decades hence", firms: [vanguard]}
+  - {text: "After Fidelity shutdown its password-sharing business model last year, Pontera's new tack is a 'non-discretionary service' while it waits out a CFPB decision on bank data-sharing fees and offers APIs to all comers", firms: [fidelity]}
+  - {text: "SEC Announces Agenda and Panelists for Roundtable on Preparations for 24-Hour Trading", firms: []}
+  - {text: "SEC Charges San Francisco Bay Area Private Fund Executives with Multimillion Dollar Ponzi-Like Scheme", firms: []}
+  - {text: "SEC Proposes to Modernize Rules for Registered Transfer Agents", firms: []}
+  - {text: "SEC and FDA Announce MOU to Bolster Cooperation and Ensure Market Integrity", firms: []}
+  - {text: "Vanguard Group and Altruist can win RIA hearts, no problem, experts say, but the bro-cultural chasm – 2,700 miles apart and two ways of defining 'client-first' – will determine if they can make the marriage work", firms: [vanguard, altruist]}
+  - {text: "SEC Proposes Amendments to Exchange Act Rule 3a12-8 to Add European Union Debt Obligations", firms: []}
+  - {text: "SEC: 38 Entities Feigned Legitimacy as U.S. Advisers Through False Filings to Lure Retail Investors", firms: []}
+  - {text: "Vanguard struck with Altruist take-out after Schwab (and Fidelity) zapped it with ETF 'platform' fees, lightning bolts that clearly woke a sleeping monster that could redraw the competitive landscape for RIA custody, with massive 'Vanguard effect,' analysts say", firms: [vanguard, altruist, schwab, fidelity]}
+  - {text: "Wells Fargo follows Morgan Stanley out the door, prompting Forbes and Shook to freeze all 2026 advisor rankings amid fallout from $6-million editor payout", firms: [wells fargo, morgan stanley]}
+  - {text: "SEC Charges Former Executives With Fraud in Connection With $1.9 Billion Collapse of Subprime Auto Lender Tricolor", firms: []}
+  - {text: "SEC Proposes New Regulation Crypto Assets", firms: []}
+  - {text: "SEC Charges Boiler Room Operator and Three Entities with Defrauding Retail Investors in $74 Million Pre-IPO Investment Scam", firms: []}
+  - {text: "SEC Charges Toms River Trio in Connection with Alleged $47 Million Fraud Targeting Orthodox Jewish Communities", firms: []}
+  - {text: "SEC Charges Private Fund Adviser Adit Ventures Management, Its CEO and Affiliated General Partners in Alleged Fraud", firms: [adit ventures]}
+  - {text: "SEC Establishes Financial Reporting and Accounting Unit in Enforcement Division", firms: []}
+  - {text: "FINRA Fines UBS Financial $20 Million for Anti-Money Laundering Violations", firms: [ubs financial]}
+  - {text: "SEC Announces Continuation of Small Business Advisory Committee Meeting", firms: []}
+  - {text: "Small Business Forum’s Report to Congress Highlights Recommendations to Improve Capital-Raising Policy", firms: []}
+  - {text: "SEC Announces Roundtable on Preparations for 24-Hour Trading", firms: []}
+  - {text: "FINRA Foundation Research Reveals Gaps in Fraud Awareness That May Leave Americans Vulnerable", firms: []}
+  - {text: "FINRA Announces Results of Board of Governors Elections", firms: []}
+  - {text: "FINRA Taps Christine Kieffer to Lead Investor Education Efforts", firms: []}
+  - {text: "FINRA Expels Reid & Rudiger, Bars Cofounders", firms: []}
+  - {text: "Report From FINRA Board of Governors Meeting – June 2026", firms: []}
+  - {text: "FINRA Publishes 2026 Industry Snapshot", firms: []}
+  - {text: "FINRA Fines Pictet Overseas and Blue Ocean ATS for AML and Supervisory Violations Involving Low-Priced Securities", firms: [pictet]}
+  - {text: "FINRA Announces Review of Higher-Risk Structured Products", firms: []}
