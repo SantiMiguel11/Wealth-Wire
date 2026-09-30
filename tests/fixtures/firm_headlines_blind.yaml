@@ -1,0 +1,144 @@
+# BLIND firm-detection set B (follow-up 1). 133 real headlines first fetched by the live site after 2026-09-27T00:10Z
+# (i.e. after every change to the matching logic; the last one is commit 6cc63a3) through 2026-09-30T18:25Z, excluding
+# every headline in firm_headlines.yaml and firm_headlines_heldout.yaml. The matcher's output on these headlines was
+# never looked at before scoring. Labeled by hand on 2026-09-30 with the rule in DECISIONS F1: a mention counts only
+# if the named organization has an SEC-registered adviser under that brand in the real SEC file (2026-09-01),
+# checked row by row. Not labeled: firms absent from the file (Meristead Wealth launched after it; Ecclesiastes
+# Wealth Partners), consultants/vendors with no adviser (DeVoe, Arch, Jump, Income Lab, Pontera, DTCC), people.
+# Judgment calls: 'Wells FiNet' = Wells Fargo; 'BNY Pershing' = BNY (Pershing Square would be wrong); 'Carson' =
+# Carson Group; 'Hightower Signature Wealth' = Hightower (a match to Signature Wealth Management Partners counts as
+# an error because it can't be confirmed as the same firm); a 'former LPL broker' names LPL.
+headlines:
+  - {text: "$1.3 Billion UBS Duo Joins Wells FiNet Practice in Ohio", firms: [ubs financial, wells fargo]}
+  - {text: "Morgan Stanley Bank Analyst Graseck to Retire After 40 Years", firms: [morgan stanley]}
+  - {text: "$1.3B UBS Team Departs for Wells Fargo's FiNet", firms: [ubs financial, wells fargo]}
+  - {text: "SEC Charges Two Individuals With Orchestrating Fraud Scheme That Targeted Veterans", firms: []}
+  - {text: "Five Key Developments for Estate Planners and Litigators", firms: []}
+  - {text: "Market Brief: Hiring Rebounds as Fed Weighs Its Next Rate Move", firms: []}
+  - {text: "Wealth Enhancement Pens Largest Deal to Date with $22B RWA Partners", firms: [wealth enhancement, rwa wealth partners]}
+  - {text: "Wealth Enhancement agrees to buy $22B RWA Wealth Partners in family office play", firms: [wealth enhancement, rwa wealth partners]}
+  - {text: "Wall Street Regulator Moves to Expand Access to Private Funds", firms: []}
+  - {text: "'Very little has changed': ETF experts weigh IRS' 351 crackdown", firms: []}
+  - {text: "Family Feud Brewing Over Dolly Parton’s Estate", firms: []}
+  - {text: "SEC Proposes Amendments to Expand Responsible Retailization of Private Markets", firms: []}
+  - {text: "Rockefeller Scoops Up $6.2 Million Truist Team in North Carolina", firms: [rockefeller, truist]}
+  - {text: "Estate Planning for Clients with Non-Traditional Heirs", firms: []}
+  - {text: "Trump ETF Brand, Dan Ives Mark Yorkville’s Push on Wall Street", firms: [yorkville]}
+  - {text: "Judge voids NYC pied-à-terre tax rollout, orders city to start over", firms: []}
+  - {text: "CD marketplace debuts RIA referral program", firms: []}
+  - {text: "Celebrity Estates Replay: Lessons from Rob Reiner’s Estate", firms: []}
+  - {text: "Turning A Revocable Trust Into a Working Plan", firms: []}
+  - {text: "PCE inflation gauge cools, but further rate hikes from Fed loom", firms: []}
+  - {text: "RIA moves: Hightower Signature Wealth adds New England reach with $752M Sandy Cove Advisors", firms: [hightower, sandy cove]}
+  - {text: "401(k) Real Talk Episode 210: September 30, 2026", firms: []}
+  - {text: "Edward Jones to Develop Retirement Plan Management Tech", firms: [edward jones]}
+  - {text: "Trusts & Estates: October 2026 Digital Edition", firms: []}
+  - {text: "Eaglebrook Launches Direct Indexing for Cryptocurrencies", firms: [eaglebrook]}
+  - {text: "5 ways to keep next-generation heirs in-house", firms: []}
+  - {text: "Household costs putting more pressure on retirement savings: Goldman Sachs", firms: [goldman sachs]}
+  - {text: "Wealth managers see payoff in leaving cash as Fed hikes", firms: []}
+  - {text: "Minimizing The Impact Of The New 0.5%-Of-AGI Floor On Charitable Contributions And 2/37ths Reduction Of Itemized Deductions", firms: []}
+  - {text: "Single-country ETFs surge as investors target AI, reform plays", firms: []}
+  - {text: "Weekend equity trading is coming - what advisors need to know", firms: []}
+  - {text: "RIA moves: Carson, Mesirow and DayMark add planning teams across three states", firms: [carson group, mesirow, daymark wealth]}
+  - {text: "Kestra lands $550M Texas planning firm Ecclesiastes Wealth Partners", firms: [kestra]}
+  - {text: "Higher rates to bolster US wealth managers' cash earnings, Fitch says", firms: []}
+  - {text: "A referral business newcomer seeks to link CD investors with advisors", firms: []}
+  - {text: "XYPN Adds Income Lab as Member Benefit", firms: [xypn]}
+  - {text: "XYPN Partners With Jump to Bring AI Tools to Its Advisors", firms: [xypn]}
+  - {text: "XYPN Partners with Jump to Help Advisors Harness the Next Generation of Compliant AI-Powered Growth", firms: [xypn]}
+  - {text: "RIA Deals on Track to Fall in Q3: DeVoe", firms: []}
+  - {text: "ESG is out of fashion. The risks remain", firms: []}
+  - {text: "Carnegie Investment Counsel sued over valuation suppression", firms: [carnegie investment counsel]}
+  - {text: "Wells Fargo Tells Most Producing Managers to Choose Between Clients and Management", firms: [wells fargo]}
+  - {text: "How RIA consolidation and slow organic growth is changing compensation", firms: []}
+  - {text: "Arch pushes AI portfolio monitoring into pre-investment due diligence", firms: []}
+  - {text: "Why advisors should get involved when clients take out a mortgage", firms: []}
+  - {text: "Driving Better Advisor and Client Outcomes Through Technology Modernization", firms: []}
+  - {text: "SEC Charges Firms With $15M WhatsApp, Crypto Frauds", firms: []}
+  - {text: "$4.5M raised on trust alone: SEC alleges affinity fraud in merchant lending", firms: []}
+  - {text: "Treasury sets auto-enrollment rules for Trump Accounts, potentially adding 60 million more children", firms: []}
+  - {text: "Bigger than football: How Winston Justice went from NFL to RIA", firms: []}
+  - {text: "$57.6bn LPL OSJ Private Advisor Group names first chief client officer", firms: [lpl, private advisor group]}
+  - {text: "New York court lets UBS pursue Highland Capital founder over unpaid judgments", firms: [ubs financial, highland capital]}
+  - {text: "Treasuries Head Into Seasonally Poor October After Selloff", firms: []}
+  - {text: "Newsletters", firms: []}
+  - {text: "Waverly Acquires $1.7 Billion Virginia RIA", firms: [waverly advisors]}
+  - {text: "BNY Pershing Sunsetting Wove Wealth Platform", firms: [bny]}
+  - {text: "FINRA bars former LPL broker for stealing $1.7 million from customers", firms: [lpl]}
+  - {text: "FINRA Bars Former LPL Rep For Taking $1.7M From Clients", firms: [lpl]}
+  - {text: "Stifel Pays $30 Million to Settle Another Claim Tied to Former Star Broker", firms: [stifel]}
+  - {text: "The Changing Geography of Investment Risk", firms: []}
+  - {text: "Qualified Small Business Stock Tax Breaks Explained", firms: []}
+  - {text: "15 Investment Must Reads for This Week (Sept. 29, 2026)", firms: []}
+  - {text: "IRS targets 351 ETF conversions in new guidance on tax strategies", firms: []}
+  - {text: "Raymond James Launches Public/Private Model Portfolios for HNW Clients", firms: [raymond james]}
+  - {text: "Finra Bars Ex-LPL Broker for Stealing $1.7M From Clients", firms: [lpl]}
+  - {text: "Adhesion Wealth Launches Custom Models on its UMA Platform", firms: [adhesion wealth]}
+  - {text: "Waverly Advisors buys $1.7B Richmond RIA", firms: [waverly advisors]}
+  - {text: "‘Black Holes’ for Capital-Gains Tax Come Under Treasury Fire", firms: []}
+  - {text: "Tax-Slashing Strategy Popularized By Largest Hedge Fund Faces IRS Crackdown", firms: []}
+  - {text: "Market Brief: Nvidia Looks to Insurers to Help Finance the AI Buildout", firms: []}
+  - {text: "SEC Charges Multiple Entities in Fraud Schemes Totaling at Least $15 Million That Used WhatsApp and Other Platforms to Lure Investors", firms: []}
+  - {text: "Anthropic's landmark IPO filing shows 12-fold revenue jump, $518B compute bill", firms: []}
+  - {text: "Morgan Stanley Builds Crypto Lab to Test Future of Wall Street", firms: [morgan stanley]}
+  - {text: "Slant and FinTurk debut new forms tools", firms: []}
+  - {text: "What selling your business doesn't tell you until it's too late", firms: []}
+  - {text: "Business owners want integrated advice – and almost half aren't getting it", firms: []}
+  - {text: "FINRA Bars Broker for Misappropriating $1.7 Million from Customers’ Accounts", firms: []}
+  - {text: "FINRA Foundation and AFCPE® Select the 2026 FINRA Foundation Military Spouse Fellows", firms: []}
+  - {text: "Systematizing Your Differentiated Service As A (True) Retirement Expert While Scaling To $850M Of AUM: #FASuccess Ep 509 With Dana Anspach", firms: []}
+  - {text: "Apriem Advisors Earns Three National and Regional Recognitions in 2026", firms: [apriem]}
+  - {text: "K-shaped wealth gap pauses for first time in three years, Equifax data shows", firms: []}
+  - {text: "Goldman Sachs succession plan: John Waldron set to take the top job", firms: [goldman sachs]}
+  - {text: "Where a client's parent lives may decide who pays for the nursing home", firms: []}
+  - {text: "Raymond James launches guided portfolios for high-net-worth advisor market", firms: [raymond james]}
+  - {text: "Northwestern Mutual targets ultra-wealthy with new family office unit", firms: [northwestern mutual]}
+  - {text: "Northwestern Mutual Launches Family Office Services", firms: [northwestern mutual]}
+  - {text: "Merrill Lynch creates hefty new 'data' and 'shelf' fees and offers third-party managers who pay them a leg up when its 'thundering herd' recommends investments -- but stops short of leveling the playing field, analysts say", firms: [merrill]}
+  - {text: "Firms push to make private markets more like publics", firms: []}
+  - {text: "Navigating the pitfalls and perks of private-placement life insurance", firms: []}
+  - {text: "How AI Accelerates Growth for Forward-Thinking Firms", firms: []}
+  - {text: "IRS Threatens Crackdown on Array of Wall Street Tax Dodges", firms: []}
+  - {text: "SEC Fines Zoe Financial $450K Over Conflict of Interest Charges", firms: [zoe financial]}
+  - {text: "SEC fines Zoe Financial $450K over undisclosed referral conflict", firms: [zoe financial]}
+  - {text: "Vibe Coding Didn't Cause the Hugging Face Attack. It Explains Why Nobody Saw It Coming.", firms: []}
+  - {text: "For RIA custody, Betterment's platform fees will begin at 0.20%", firms: [betterment]}
+  - {text: "Why RIA M&A Deals Keep Getting Bigger, and What It Means for Your Firm", firms: []}
+  - {text: "Junior advisors still in demand as AI reshapes RIA training", firms: []}
+  - {text: "SEC accuses trucking operator of running $127 million Ponzi scheme", firms: []}
+  - {text: "An Inversion Of The U.S. Yield Curve Becomes New Risk As Fed Hikes", firms: []}
+  - {text: "Serial acquirers 'moving up market' amid RIA M&A slowdown", firms: []}
+  - {text: "Ameriprise to Pay Advisors for Sending Clients to Virtual Advice Unit", firms: [ameriprise]}
+  - {text: "Insurer and Wealth Manager HUB Rebrands Ahead of Planned IPO", firms: [hub investment partners]}
+  - {text: "Senate vote on NIL bill could reshape college athletes' paydays", firms: []}
+  - {text: "SEC Charges Registered Investment Adviser Zoe Financial for Failure to Disclose Conflict of Interest", firms: [zoe financial]}
+  - {text: "'I'm done': Pandemic memories push business owners toward the exit", firms: []}
+  - {text: "SEC Commissioner Hester Peirce To Resign This Week", firms: []}
+  - {text: "SEC Sends ‘Critical’ Reminder on Hard-to-Value Private Assets", firms: []}
+  - {text: "Morgan Stanley Says Dallas Expansion Plan Includes 3,800 Jobs", firms: [morgan stanley]}
+  - {text: "Developing Advisors Who Stay", firms: []}
+  - {text: "Northern Trust bulks up family office team with New York hires", firms: [northern trust]}
+  - {text: "SMArtX rejected acquisition offer from CAIS to pursue cap raise: Sources", firms: [smartx, cais advisors]}
+  - {text: "UBS Snags Merrill Duo Producing $7.5M in Silicon Valley", firms: [ubs financial, merrill]}
+  - {text: "Financial Planning's September CE quiz now live for subscribers", firms: []}
+  - {text: "Custom model portfolio race widens as Adhesion Wealth adds Fidelity", firms: [adhesion wealth, fidelity]}
+  - {text: "Major Obstacles Inhibit Widespread Adoption of Retirement Income in DC Plans", firms: []}
+  - {text: "Market Brief: Bond Heavyweights Split on What 5% Treasury Yields Mean for Investors", firms: []}
+  - {text: "Views from 6,230: New Opportunities Emerging in Municipal Bonds", firms: []}
+  - {text: "AI tax breaks draw Warren probe of Meta, Google, Amazon, Microsoft", firms: []}
+  - {text: "Pontera announces non-discretionary 401(K) management tool", firms: []}
+  - {text: "DTCC Invests in iCapital, Announces Partnership", firms: [icapital]}
+  - {text: "Adhesion Wealth Launches Custom Model Solutions for RIAs", firms: [adhesion wealth]}
+  - {text: "Dividend growth investing gains ground as market concentration rises", firms: []}
+  - {text: "What Really Drives Client Referrals", firms: []}
+  - {text: "S&P 500 CEO pay hits $17.5M as equity awards reshape executive compensation", firms: []}
+  - {text: "RIA M&A slowdown threatens record streak, DeVoe says", firms: []}
+  - {text: "Diamonds may not be forever, at least in value terms", firms: []}
+  - {text: "Stansberry spinoff Meristead Wealth debuts as national RIA near $1.4B AUM", firms: [stansberry]}
+  - {text: "Wealthy Without A Plan: How To Get Women Clients On The Right Track", firms: []}
+  - {text: "AM Best Downgrades A-Cap Annuity Issuers Atlantic Coast Life and Sentinel Security", firms: []}
+  - {text: "Wedbush Welcomes Wealth Management Leader Jim McDermott as Managing Director, Investments in Chicago", firms: [wedbush]}
+  - {text: "Callan Family Office Appoints Chuck Moore as Director of Data Solutions & Reporting", firms: [callan family office]}
+  - {text: "Meristead Wealth Launches as a National RIA Managing Close to $1.4B in Assets", firms: []}
+  - {text: "More Than Half of Advisors Using AI Save 4+ Hours a Week, AssetMark Research Finds", firms: [assetmark]}

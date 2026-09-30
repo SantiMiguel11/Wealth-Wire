@@ -154,10 +154,21 @@ Fixed during review:
 corpus while tuning (fixing false positives such as "Members", "Focused" and "Frazier") before this set was
 built. Recall wasn't tuned on it.
 
-**Blind set B.** A truly blind score needs headlines first fetched after the tuning commit. When the set was
-built, only 6 such headlines existed. Set B will be labeled and scored the same way, without changing the
-logic first, once 75 or more new headlines have accumulated from the scheduled refreshes. It will be
-reported here.
+**Blind set B:** `tests/fixtures/firm_headlines_blind.yaml`.
+- 133 real headlines first fetched by the live site between 2026-09-27T00:10Z and 2026-09-30T18:25Z, i.e.
+  after the last change to the matching logic (`6cc63a3`), excluding every headline in the other two sets.
+- 66 labeled firm mentions; 80 headlines name no adviser. Same labeling rule (DECISIONS F1).
+- The matcher's output on these headlines was never looked at before this score was taken (check-in of
+  2026-09-30, logic as of `9ab9ef2`, real SEC file of 2026-09-01).
+
+| | Precision | Recall | TP / FP / FN |
+|---|---:|---:|---:|
+| **Blind B, logic unchanged — the blind real score** | **0.902** | **0.833** | 55 / 6 / 11 |
+| Same run, held-out A (in-sample) | 1.000 | 0.980 | 49 / 0 / 1 |
+| Same run, original 75 | 0.984 | 0.940 | 63 / 1 / 4 |
+
+So the honest out-of-sample number is about **0.90 precision / 0.83 recall**, well under the in-sample
+figures. Set A's pre-fix 0.957 / 0.900 was the better guide. The B fixes are listed under "Set B errors" below.
 
 Pre-fix errors on set A, and what was done:
 
