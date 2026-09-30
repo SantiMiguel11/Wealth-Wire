@@ -168,7 +168,35 @@ built. Recall wasn't tuned on it.
 | Same run, original 75 | 0.984 | 0.940 | 63 / 1 / 4 |
 
 So the honest out-of-sample number is about **0.90 precision / 0.83 recall**, well under the in-sample
-figures. Set A's pre-fix 0.957 / 0.900 was the better guide. The B fixes are listed under "Set B errors" below.
+figures. Set A's pre-fix 0.957 / 0.900 was the better guide.
+
+Set B errors, and what was done (DECISIONS F12–F15):
+
+| Headline | Error | Fix |
+|---|---|---|
+| …HUB Rebrands Ahead of Planned IPO | FP Planned Solutions; missed HUB | "planned" now counts as a word. HUB **not fixed** (3 letters, mostly an insurer) |
+| DTCC Invests in iCapital… | missed iCapital (lowercase first letter) | CamelCase counts as capitalized |
+| …Carson, Mesirow and DayMark add… | missed DayMark (dictionary word, not headline start) | a CamelCase subject-only alias matches anywhere |
+| …John Waldron set to take the top job | FP Waldron Private Wealth | single-word alias after a given name = person |
+| Wedbush Welcomes … Jim McDermott… | FP McDermott Investment Advisors | same |
+| Hightower Signature Wealth adds… | FP Signature Wealth Management Partners | a name directly after a firm name is its sub-brand |
+| Five Key Developments for Estate Planners… | FP Estate Planners Group | stoplist |
+| XYPN … Harness the Next Generation of… (×3 XYPN) | missed XYPN; FP Next Generation Investing | curated "XYPN"; stoplist |
+| Northern Trust bulks up family office team… | missed | curated (a general dominance rule was tried and reverted: +117 aliases, some bad) |
+| …LPL OSJ Private Advisor Group names… | missed (every word generic) | curated |
+| $1.3 Billion UBS Duo Joins Wells FiNet… | missed Wells Fargo | curated "Wells FiNet" |
+| …$22B RWA Partners | missed | **not fixed**: "RWA" also means risk-weighted / real-world assets |
+| …UBS pursue Highland Capital founder… | missed | **not fixed**: would also fire on the VC Highland Capital Partners |
+
+| After the fixes (in-sample) | Precision | Recall | TP / FP / FN |
+|---|---:|---:|---:|
+| Blind B | 1.000 | 0.955 | 63 / 0 / 3 |
+| Held-out A | 1.000 | 0.980 | 49 / 0 / 1 |
+| Original 75 | 0.984 | 0.940 | 63 / 1 / 4 |
+
+Across all 370 headlines (every title in the live DB plus the three sets), the fixes changed exactly 13
+results, all corrections. Each rule was first checked against that list, which is how two bad drafts were
+caught: CamelCase first matched "APIs" and "SaaS", and the given-name list first included "Mark".
 
 Pre-fix errors on set A, and what was done:
 
@@ -184,9 +212,9 @@ Pre-fix errors on set A, and what was done:
 Across all 235 real headlines, the fixes changed exactly 6 results, all corrections. That includes one
 old-set miss fixed as a side effect ("Advisor moves: RBC lands…").
 
-**Regression test.** `tests/test_firms_real.py` runs both sets against
-`tests/fixtures/sec_firms_real_subset.csv`, the 594 real SEC registrants needed to reproduce full-file
-matching exactly. `scripts/build_eval_dictionary.py` verifies that equality when it rebuilds the slice.
+**Regression test.** `tests/test_firms_real.py` runs all three sets against
+`tests/fixtures/sec_firms_real_subset.csv`, the 785 real SEC registrants needed to reproduce full-file
+matching exactly (rebuilt 2026-09-30 to cover set B). `scripts/build_eval_dictionary.py` verifies that equality when it rebuilds the slice.
 
 ## 2 and 3. Press-release wires, verified from GitHub's network
 

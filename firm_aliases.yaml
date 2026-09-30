@@ -34,3 +34,8 @@ aliases:
   Bain Capital: Bain Capital Private Equity, LP
   Orion: Orion Portfolio Solutions, LLC
   BNY: BNY Mellon Securities Corporation
+  # Blind set B (2026-09-30): brands the generated aliases can't reach
+  Northern Trust: Northern Trust Investments, Incorporated   # "trust" is generic and three registrants share the prefix
+  Private Advisor Group: Private Advisor Group, LLC          # every word generic
+  XYPN: XY Investment Solutions, LLC                         # business name "XYPN Sapphire"
+  Wells FiNet: Wells Fargo Advisors Financial Network, LLC

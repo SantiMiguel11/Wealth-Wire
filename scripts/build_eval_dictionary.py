@@ -23,7 +23,7 @@ sys.path.insert(0, str(ROOT))
 from fiduciarywire.config import load_stoplist  # noqa: E402
 from fiduciarywire.firms import SecMatcher, aliases_for, load_curated, normalize  # noqa: E402
 
-SETS = [ROOT / "tests/fixtures/firm_headlines.yaml", ROOT / "tests/fixtures/firm_headlines_heldout.yaml"]
+SETS = [ROOT / "tests/fixtures" / n for n in ("firm_headlines.yaml", "firm_headlines_heldout.yaml", "firm_headlines_blind.yaml")]
 OUT = ROOT / "tests/fixtures/sec_firms_real_subset.csv"
 COLS = ["crd", "sec_number", "legal_name", "business_name", "city", "state", "aum_usd", "data_date"]
 

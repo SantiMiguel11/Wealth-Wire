@@ -56,6 +56,24 @@ kelley spencer hawkins arnold pierce peirce hansen peters santos hart bradley kn
 armstrong hudson carroll lane riley andrews alvarado ray delgado berry perkins hoffman johnston matthews pena
 richards contreras willis carpenter lawrence sandoval gensler atkins yellen bessent forbes shook
 """.split())
+# Common given names (minus ones that are also everyday words: Mark, Bill, Frank, Grace…): a single-word alias
+# right after one is a person ("John Waldron", "Jim McDermott").
+FIRST_NAMES = frozenset("""
+james john robert michael william david richard joseph thomas charles christopher daniel matthew anthony donald
+steven steve paul andrew andy joshua kenneth ken kevin brian george timothy tim ronald ron edward ed jason jeffrey
+jeff ryan jacob gary nicholas nick eric jonathan stephen larry justin scott brandon benjamin ben samuel sam gregory
+greg alexander patrick raymond dennis jerry tyler aaron jose adam henry nathan douglas doug zachary
+peter kyle walter ethan jeremy harold keith roger noah gerald carl terry sean arthur lawrence
+jesse dylan bryan joe billy bruce albert willie gabriel logan alan juan wayne roy ralph randy eugene vincent
+russell elijah louis bobby philip phil johnny bob jim jimmy mike chris dave dan tom tony rick matt joel
+mary patricia jennifer linda elizabeth barbara susan jessica sarah karen nancy lisa betty margaret sandra ashley
+kimberly emily donna michelle dorothy amanda melissa deborah stephanie rebecca sharon laura cynthia kathleen
+amy shirley angela helen anna brenda pamela nicole emma samantha katherine christine debra rachel catherine carolyn
+janet ruth maria heather diane julie joyce olivia kelly christina lauren joan evelyn judith megan
+cheryl andrea hannah martha jacqueline frances gloria ann teresa kathryn sara janice alice doris abigail
+julia judy denise marilyn beverly danielle theresa sophia marie diana brittany natalie isabella
+alexis kayla jane kate katie beth meg liz
+""".split())
 # Places that name many advisers but, alone, almost always mean the place ("Wisconsin advisory team",
 # "Long Island firms", "Stop Wall Street Looting Act").
 GEO = frozenset("""
@@ -163,6 +181,10 @@ def is_word(token: str) -> bool:
         stems += [token[:-2], token[:-1]]
     if token.endswith("ing"):
         stems += [token[:-3], token[:-3] + "e"]
+    for suffix in ("ed", "ing"):  # doubled final consonant: "planned", "planning" (not "-er": Coller, Wimmer)
+        base = token[:-len(suffix)]
+        if token.endswith(suffix) and len(base) >= 4 and base[-1] == base[-2] and base[-1] not in "aeiou":
+            stems.append(base[:-1])
     return any(len(st) >= 3 and st in words for st in stems)
 
 
@@ -291,13 +313,15 @@ class SecMatcher:
                 at_start = ti == 0 or toks[ti - 1][1] == "|"
                 nxt = toks[ti + 1][1] if ti + 1 < len(toks) else ""
                 shape_ok = orig[ti].isupper() if len(alias) <= 3 else orig[ti][:1].isupper()
-                if at_start and nxt in SUBJECT_VERBS and shape_ok:
+                if (at_start and nxt in SUBJECT_VERBS and shape_ok) or _camel(orig[ti]):  # "DayMark" is never the word
                     found.append(FirmMatch(self.subject_only[alias], alias, ti, ti + 1))
                 continue
             if (alias not in self.curated and n >= 2 and all(w in GENERIC or is_word(w) for w in words)
                     and ti + n < len(toks) and _acronym(orig[ti + n])
                     and orig[ti + n].lower() not in {"llc", "lp", "llp", "inc", "ria", "pc"}):
                 continue  # "Blue Ocean ATS": a word-only alias running into an acronym is a longer, different name
+            if n == 1 and alias not in self.curated and ti > 0 and orig[ti - 1].lower() in FIRST_NAMES:
+                continue  # "John Waldron", "Jim McDermott": a person
             needs_caps = n == 1 or alias in self.curated or all(w in GENERIC or is_word(w) for w in words)
             if needs_caps and not _capitalized([o for o, _ in toks], ti, n):
                 continue
@@ -312,7 +336,10 @@ class SecMatcher:
                 continue
             taken |= span
             out.append(m)
-        return sorted(out, key=lambda m: m.start_token)
+        out.sort(key=lambda m: m.start_token)
+        # "Hightower Signature Wealth", "BNY Pershing": a name directly after another firm's name (no punctuation
+        # between) is that firm's sub-brand or unit, not a second firm
+        return [m for i, m in enumerate(out) if i == 0 or out[i - 1].end_token != m.start_token]
 
     def firms_in(self, text: str) -> list[str]:
         """Distinct CRDs mentioned in text, in order of appearance."""
@@ -334,6 +361,12 @@ def _capitalized(tokens: list[str], i: int, n: int) -> bool:
     for w in span:
         if w.lower() in {"and", "of", "the", "for", "in", "&"}:
             continue
-        if not (w[:1].isupper() or w[:1].isdigit()):
+        if not (w[:1].isupper() or w[:1].isdigit() or _camel(w)):  # "iCapital", "eMoney"
             return False
     return True
+
+
+def _camel(token: str) -> bool:
+    """A capital inside a mixed-case word ("DayMark", "iCapital", "FiNet"): a brand spelling."""
+    return (len(token) >= 4 and token.isalpha() and bool(re.search(r"[a-z][A-Z][a-z]", token))
+            and not re.match(r"(?:Mc|Mac|De|La|Van)[A-Z]", token))  # not "APIs", "SaaS", "McDermott"

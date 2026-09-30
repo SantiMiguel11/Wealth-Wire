@@ -377,6 +377,43 @@ F11. **Wire stats file.** Every run appends one row per wire feed to `wire_stats
      - source_new_items (new after merging the feeds; a release in two keyword feeds counts once).
      The run summary prints that run's rows. Disabled wires write no rows.
 
+## Blind firm eval, set B (2026-09-30 check-in)
+
+F12. **Set B is blind.** 133 headlines first fetched after 2026-09-27T00:10Z (after the last matching change,
+     `6cc63a3`) through the 2026-09-30T18:25Z refresh, excluding every headline in the other two sets. That was
+     all of them, not a sample. Labeled under the F1 rule by looking up names in the SEC table only; the matcher
+     was not run on them until the labels were final.
+     - Judgment calls, written in the fixture header before scoring: "Wells FiNet" = Wells Fargo; "BNY Pershing"
+       = BNY; "Hightower Signature Wealth" = Hightower, so matching Signature Wealth Management Partners is an
+       error; "XYPN" counts because XY Investment Solutions' SEC business name is "XYPN Sapphire".
+     - Scored first, on unchanged logic (`9ab9ef2`): precision 0.902, recall 0.833 (55 TP / 6 FP / 11 FN).
+       That score was committed alone (`b2dfb80`) before any fix.
+F13. **General fixes, checked on every title in the live DB plus all three sets (370 headlines). Only
+     corrections changed.**
+     - `is_word` knows doubled-consonant inflections ("planned", "planning"), so "Planned IPO" ≠ Planned
+       Solutions. Not "-er": it turned real brands (Coller, Wimmer) into words.
+     - A CamelCase token (lower→Upper→lower, e.g. "DayMark", "iCapital") is a brand spelling. It counts as
+       capitalized, and a subject-only alias written that way matches anywhere. "APIs", "SaaS" and
+       "McDermott" don't qualify.
+     - A single-word alias right after a common given name is a person ("John Waldron", "Jim McDermott").
+       Given names that are everyday words (Mark, Bill, Frank, Grace, Rose…) are left off the list. The
+       first draft included them and dropped "Dan Ives Mark Yorkville's…".
+     - A firm name directly after another firm's name, with no punctuation between, is the first firm's
+       sub-brand ("Hightower Signature Wealth"). The later match is dropped.
+F14. **Tried and reverted: brand-prefix dominance.** Letting a shared prefix with a generic word ("Northern
+     Trust", "Highland Capital") go to a registrant with ≥85% of the AUM fixed those two cases. It also added
+     117 aliases across the SEC file, including "Strategic Investment", "Man Solutions", "Retirement Income" and
+     surname-led names. Two examples don't justify that. Instead:
+     - curated aliases: Northern Trust, Private Advisor Group (every word is generic), XYPN, Wells FiNet;
+     - stoplist: "Estate Planners", "Next Generation".
+F15. **Still missed on purpose (set B):**
+     - "RWA Partners": "RWA" also means risk-weighted and real-world assets;
+     - "HUB": 3 letters, and HUB is mainly an insurer;
+     - "Highland Capital": a curated alias would also fire on the venture firm Highland Capital Partners.
+     The regression slice now covers all three sets (785 registrants, rebuilt from the 2026-09-30 live DB), and
+     `tests/test_firms_real.py` pins set B at ≥0.98 / ≥0.95. An old synthetic test used "Jennifer Frazier" as a
+     firm match; it now uses a non-name example and also checks the person rule.
+
 ## Fiduciary Wire redesign (2026-09-27)
 
 R1. **Frontend only.** `frontend/` was rewritten from `design/Fiduciary Wire.dc.html`. The pipeline, `schemas/`,

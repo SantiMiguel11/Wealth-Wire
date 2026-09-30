@@ -171,7 +171,7 @@ generated data still matches the contract.
 
 ```bash
 pip install -r requirements.txt
-python -m pytest                   # 354 tests, no network (fixture feeds + httpx MockTransport)
+python -m pytest                   # 371 tests, no network (fixture feeds + httpx MockTransport)
 python scripts/screenshots.py      # Playwright: 14 views × 1440/390 × light/dark, interactions, tap targets; fails on console errors
 python scripts/make_fixtures.py    # regenerate the offline fixture sites
 python -m fiduciarywire eval-firms    # firm-matching precision/recall on the 75 labeled headlines
@@ -192,9 +192,10 @@ python -m fiduciarywire eval-firms    # firm-matching precision/recall on the 75
   offers no keyword feed (every subject feed probed was off-topic or the all-news firehose), so it is disabled;
   Business Wire's robots.txt disallows its feeds, so it was removed. `state/wire_stats.csv` on `live` records,
   per feed and run, what was fetched, too old, filtered out and kept.
-- **Firm matching is heuristic.** On 75 labeled real headlines against the real SEC file it scores
-  precision 0.98 and recall 0.93. Brands that are ordinary words ("Horizon") or firms that aren't
-  SEC-registered advisers (broker-dealers, Prudential) are missed. The same text as a real adviser's name
+- **Firm matching is heuristic.** On 133 real headlines it had never seen (blind set B, AUDIT-PHASE2.md §1),
+  against the real SEC file, it scored precision 0.90 and recall 0.83 before the fixes those errors prompted.
+  Expect roughly that on new headlines, not the higher in-sample scores the tests pin. Brands that are ordinary
+  words ("Horizon") or firms that aren't SEC-registered advisers (broker-dealers, Prudential) are missed. The same text as a real adviser's name
   (Luma) can mismatch. Unmatched capitalized firm names still come from a fallback extractor and are marked
   unverified, with no firm page.
 - **SEC data is monthly.** AUM is the regulatory AUM from the latest file and is labeled with its date.

@@ -124,7 +124,8 @@ def test_teasers_ignore_single_word_generated_aliases():
 
     rows = GUARD_ROWS + [{"crd": "11", "legal_name": "FRAZIER MANAGEMENT, L.L.C.", "business_name": "FRAZIER HEALTHCARE PARTNERS", "aum_usd": 1e9}]
     m = SecMatcher(rows, {})
-    teaser = "Jennifer Frazier becomes president of the firm's Carson Group division."
+    teaser = "Former Frazier partner becomes president of the firm's Carson Group division."
     verified = lambda body: [f["name"] for f in firms_in_text(teaser, set(), m, body=body) if f["verified"]]  # noqa: E731
     assert "Frazier Healthcare Partners" in verified(False)   # a headline-style single-word match
     assert verified(True) == ["Carson Group Investing"]       # teaser: multi-word aliases only
+    assert m.firms_in("Jennifer Frazier becomes president") == []   # after a given name it's a person, even in headlines
