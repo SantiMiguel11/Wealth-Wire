@@ -1,0 +1,91 @@
+{
+ "schema_version": 1,
+ "slug": "wealth-enhancement-advisory-services-116407",
+ "name": "Wealth Enhancement Advisory Services",
+ "legal_name": "Wealth Enhancement Advisory Services",
+ "crd": "116407",
+ "sec_number": "801-60749",
+ "city": "Plymouth",
+ "state": "MN",
+ "sec_aum_usd": 122186725110.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/116407",
+ "stories": [
+  {
+   "cluster_id": 349,
+   "headline": "Wealth Enhancement agrees to buy $22B RWA Wealth Partners in family office play",
+   "url": "https://www.investmentnews.com/ria-news/wealth-enhancement-agrees-to-buy-22b-rwa-wealth-partners-in-family-office-play/268419",
+   "category": "M&A",
+   "last_published": "2026-09-30T16:05:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/wealth-enhancement-agrees-to-buy-22b-rwa-wealth-partners-in-family-office-play/268419"
+    }
+   ]
+  },
+  {
+   "cluster_id": 339,
+   "headline": "Wealth Enhancement Pens Largest Deal to Date with $22B RWA Partners",
+   "url": "https://www.wealthmanagement.com/ria-news/wealth-enhancement-pens-largest-deal-to-date-with-22b-rwa-partners",
+   "category": "M&A",
+   "last_published": "2026-09-30T16:05:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/wealth-enhancement-pens-largest-deal-to-date-with-22b-rwa-partners"
+    }
+   ]
+  },
+  {
+   "cluster_id": 43,
+   "headline": "Cerity Partners Adds $1.4B in Teams from Shufro Rose & Co.",
+   "url": "https://www.wealthmanagement.com/ria-news/cerity-partners-adds-14b-in-teams-from-shufro-rose",
+   "category": "People Moves",
+   "last_published": "2026-09-23T10:36:00Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/cerity-partners-adds-14b-in-teams-from-shufro-rose"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/cerity-partners-merges-with-14b-shufro-rose-advisory-teams/268310"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 349,
+   "date": "2026-09-30T16:05:00Z",
+   "headline": "Wealth Enhancement agrees to buy $22B RWA Wealth Partners in family office play",
+   "acquirer": {
+    "name": "Wealth Enhancement",
+    "slug": "wealth-enhancement-advisory-services-116407",
+    "crd": "116407"
+   },
+   "target": {
+    "name": "RWA Wealth Partners",
+    "slug": "rwa-wealth-partners-156984",
+    "crd": "156984"
+   },
+   "target_aum_usd": 22000000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/wealth-enhancement-agrees-to-buy-22b-rwa-wealth-partners-in-family-office-play/268419"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "kestra-advisory-services-283330",
+ "name": "Kestra Advisory Services",
+ "legal_name": "Kestra Advisory Services",
+ "crd": "283330",
+ "sec_number": "801-56126",
+ "city": "Austin",
+ "state": "TX",
+ "sec_aum_usd": 79798091767.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/283330",
+ "stories": [
+  {
+   "cluster_id": 358,
+   "headline": "Kestra lands $550M Texas planning firm Ecclesiastes Wealth Partners",
+   "url": "https://www.investmentnews.com/independent-broker-dealers/kestra-lands-550m-texas-planning-firm-ecclesiastes-wealth-partners/268412",
+   "category": "Other",
+   "last_published": "2026-09-30T10:34:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/kestra-lands-550m-texas-planning-firm-ecclesiastes-wealth-partners/268412"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

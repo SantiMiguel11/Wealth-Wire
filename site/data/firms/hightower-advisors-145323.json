@@ -1,0 +1,86 @@
+{
+ "schema_version": 1,
+ "slug": "hightower-advisors-145323",
+ "name": "Hightower Advisors",
+ "legal_name": "Hightower Advisors",
+ "crd": "145323",
+ "sec_number": "801-69625",
+ "city": "Chicago",
+ "state": "IL",
+ "sec_aum_usd": 198577009283.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/145323",
+ "stories": [
+  {
+   "cluster_id": 444,
+   "headline": "Deals & Moves: HB Wealth Adds Family Trio, Hightower Signature Acquires Externally",
+   "url": "https://www.wealthmanagement.com/ria-news/deals-moves-cerity-pens-third-deal-of-week-hightower-signature-acquires-externally",
+   "category": "M&A",
+   "last_published": "2026-10-02T15:45:52Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/deals-moves-cerity-pens-third-deal-of-week-hightower-signature-acquires-externally"
+    }
+   ]
+  },
+  {
+   "cluster_id": 352,
+   "headline": "RIA moves: Hightower Signature Wealth adds New England reach with $752M Sandy Cove Advisors",
+   "url": "https://www.investmentnews.com/ria-news/ria-moves-hightower-signature-wealth-adds-new-england-reach-with-752m-sandy-cove-advisors/268414",
+   "category": "Other",
+   "last_published": "2026-09-30T13:30:23Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/ria-moves-hightower-signature-wealth-adds-new-england-reach-with-752m-sandy-cove-advisors/268414"
+    }
+   ]
+  },
+  {
+   "cluster_id": 144,
+   "headline": "Hightower Advisor CEO names two new presidents -- one to revamp the old rollup business, the other to develop the new single-system unit -- both with the objective of kindling buyer interest without a conglomerate discount",
+   "url": "https://riabiz.com/a/2026/9/26/hightower-advisor-ceo-names-two-new-presidents-one-to-revamp-the-old-rollup-business-the-other-to-develop-the-new-single-system-unit-both-with-the-objective-of-kindling-buyer-interest-without-a-conglomerate-discount",
+   "category": "People Moves",
+   "last_published": "2026-09-26T03:22:49Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/26/hightower-advisor-ceo-names-two-new-presidents-one-to-revamp-the-old-rollup-business-the-other-to-develop-the-new-single-system-unit-both-with-the-objective-of-kindling-buyer-interest-without-a-conglomerate-discount"
+    }
+   ]
+  },
+  {
+   "cluster_id": 44,
+   "headline": "Hightower Advisors Hires Vanguard Executive as New President",
+   "url": "https://www.wealthmanagement.com/ria-news/hightower-advisors-names-marco-de-freitas-president",
+   "category": "People Moves",
+   "last_published": "2026-09-22T17:29:24Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/hightower-advisors-names-marco-de-freitas-president"
+    }
+   ]
+  },
+  {
+   "cluster_id": 122,
+   "headline": "Hightower taps Vanguard vet as president, shuffles Signature Wealth leadership",
+   "url": "https://www.investmentnews.com/ria-news/hightower-taps-vanguard-vet-as-president-shuffles-signature-wealth-leadership/268286",
+   "category": "People Moves",
+   "last_published": "2026-09-22T13:09:08Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/hightower-taps-vanguard-vet-as-president-shuffles-signature-wealth-leadership/268286"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "pictet-asset-management-105205",
+ "name": "Pictet Asset Management",
+ "legal_name": "Pictet Asset Management",
+ "crd": "105205",
+ "sec_number": "801-15143",
+ "city": "London",
+ "state": null,
+ "sec_aum_usd": 24402650973.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/105205",
+ "stories": [
+  {
+   "cluster_id": 228,
+   "headline": "FINRA Fines Pictet Overseas and Blue Ocean ATS for AML and Supervisory Violations Involving Low-Priced Securities",
+   "url": "https://www.finra.org/media-center/newsreleases/2026/finra-fines-pictet-overseas-and-blue-ocean-ats-aml-and-supervisory",
+   "category": "Regulation",
+   "last_published": "2026-05-20T12:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "FINRA News",
+     "url": "https://www.finra.org/media-center/newsreleases/2026/finra-fines-pictet-overseas-and-blue-ocean-ats-aml-and-supervisory"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,44 @@
+{
+ "schema_version": 1,
+ "slug": "betterment-149117",
+ "name": "Betterment",
+ "legal_name": "Betterment",
+ "crd": "149117",
+ "sec_number": "801-70171",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 69524492986.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/149117",
+ "stories": [
+  {
+   "cluster_id": 281,
+   "headline": "For RIA custody, Betterment's platform fees will begin at 0.20%",
+   "url": "https://www.financial-planning.com/news/for-ria-custody-betterments-platform-fees-begin-at-0-20",
+   "category": "Wealthtech",
+   "last_published": "2026-09-28T20:15:25Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Financial Planning",
+     "url": "https://www.financial-planning.com/news/for-ria-custody-betterments-platform-fees-begin-at-0-20"
+    }
+   ]
+  },
+  {
+   "cluster_id": 13,
+   "headline": "Betterment Advisor Solutions Launches AI Document Reader",
+   "url": "https://www.wealthmanagement.com/artificial-intelligence/betterment-launches-ai-document-reader-for-advisors",
+   "category": "Wealthtech",
+   "last_published": "2026-09-24T16:16:18Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/artificial-intelligence/betterment-launches-ai-document-reader-for-advisors"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

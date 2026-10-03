@@ -1,0 +1,58 @@
+{
+ "schema_version": 1,
+ "slug": "ameriprise-financial-services-6363",
+ "name": "Ameriprise Financial Services",
+ "legal_name": "Ameriprise Financial Services",
+ "crd": "6363",
+ "sec_number": "801-28543",
+ "city": "Minneapolis",
+ "state": "MN",
+ "sec_aum_usd": 660474421776.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/6363",
+ "stories": [
+  {
+   "cluster_id": 70,
+   "headline": "Ameriprise, advisor on the hook to pay Edward Jones $4.7 million in trade secrets lawsuit",
+   "url": "https://www.investmentnews.com/regulation-legal-compliance/ameriprise-advisor-on-the-hook-to-pay-edward-jones-47-million-in-trade-secrets-lawsuit/268350",
+   "category": "Regulation",
+   "last_published": "2026-09-24T19:03:58Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/ameriprise-advisor-on-the-hook-to-pay-edward-jones-47-million-in-trade-secrets-lawsuit/268350"
+    }
+   ]
+  },
+  {
+   "cluster_id": 91,
+   "headline": "Ameriprise runs advisor ads on ESPN, Golf Channel, CBS",
+   "url": "https://www.investmentnews.com/independent-broker-dealers/ameriprise-runs-advisor-ads-on-espn-golf-channel-cbs/268329",
+   "category": "Other",
+   "last_published": "2026-09-23T22:34:33Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/ameriprise-runs-advisor-ads-on-espn-golf-channel-cbs/268329"
+    }
+   ]
+  },
+  {
+   "cluster_id": 146,
+   "headline": "Schwab's poach of $8-billion Ameriprise breakaway extends its wild 2026 rout of the once impenetrable fortress to four $1-billion-plus teams with help from high-multiple market",
+   "url": "https://riabiz.com/a/2026/9/23/schwabs-poach-of-8-billion-ameriprise-breakaway-extends-its-wild-2026-rout-of-the-once-impenetrable-fortress-to-four-1-billion-plus-teams-with-help-from-high-multiple-market",
+   "category": "People Moves",
+   "last_published": "2026-09-23T05:19:39Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/23/schwabs-poach-of-8-billion-ameriprise-breakaway-extends-its-wild-2026-rout-of-the-once-impenetrable-fortress-to-four-1-billion-plus-teams-with-help-from-high-multiple-market"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

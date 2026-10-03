@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "adit-ventures-management-283262",
+ "name": "Adit Ventures Management",
+ "legal_name": "Adit Ventures Management",
+ "crd": "283262",
+ "sec_number": "801-130108",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 465858315.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/283262",
+ "stories": [
+  {
+   "cluster_id": 215,
+   "headline": "SEC Charges Private Fund Adviser Adit Ventures Management, Its CEO and Affiliated General Partners in Alleged Fraud",
+   "url": "https://www.sec.gov/newsroom/press-releases/2026-73-sec-charges-private-fund-adviser-adit-ventures-management-its-ceo-affiliated-general-partners",
+   "category": "Regulation",
+   "last_published": "2026-08-10T18:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "SEC Press Releases",
+     "url": "https://www.sec.gov/newsroom/press-releases/2026-73-sec-charges-private-fund-adviser-adit-ventures-management-its-ceo-affiliated-general-partners"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

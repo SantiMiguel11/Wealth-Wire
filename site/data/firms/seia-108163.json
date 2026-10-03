@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "seia-108163",
+ "name": "SEIA",
+ "legal_name": "Signature Estate & Investment Advisors",
+ "crd": "108163",
+ "sec_number": "801-56288",
+ "city": "Los Angeles",
+ "state": "CA",
+ "sec_aum_usd": 22537603576.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/108163",
+ "stories": [
+  {
+   "cluster_id": 50,
+   "headline": "SEIA Partners With Invent to Unify Data Systems",
+   "url": "https://www.wealthmanagement.com/artificial-intelligence/seia-partners-with-invent-to-unify-data-systems",
+   "category": "Wealthtech",
+   "last_published": "2026-09-22T10:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/artificial-intelligence/seia-partners-with-invent-to-unify-data-systems"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

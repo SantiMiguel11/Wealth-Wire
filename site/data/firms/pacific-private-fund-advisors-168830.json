@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "pacific-private-fund-advisors-168830",
+ "name": "Pacific Private Fund Advisors",
+ "legal_name": "Pacific Private Fund Advisors",
+ "crd": "168830",
+ "sec_number": "801-78581",
+ "city": "Newport Beach",
+ "state": "CA",
+ "sec_aum_usd": 12236752285.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/168830",
+ "stories": [
+  {
+   "cluster_id": 206,
+   "headline": "SEC Charges San Francisco Bay Area Private Fund Executives with Multimillion Dollar Ponzi-Like Scheme",
+   "url": "https://www.sec.gov/newsroom/press-releases/2026-82-sec-charges-san-francisco-bay-area-private-fund-executives-multimillion-dollar-ponzi-scheme",
+   "category": "Regulation",
+   "last_published": "2026-09-01T17:52:32Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "SEC Press Releases",
+     "url": "https://www.sec.gov/newsroom/press-releases/2026-82-sec-charges-san-francisco-bay-area-private-fund-executives-multimillion-dollar-ponzi-scheme"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

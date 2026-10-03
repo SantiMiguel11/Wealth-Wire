@@ -1,0 +1,48 @@
+{
+ "schema_version": 1,
+ "slug": "mercer-advisors-private-asset-management-327830",
+ "name": "Mercer Advisors Private Asset Management",
+ "legal_name": "Mercer Advisors Private Asset Management",
+ "crd": "327830",
+ "sec_number": "801-129203",
+ "city": "Denver",
+ "state": "CO",
+ "sec_aum_usd": 205589000.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/327830",
+ "stories": [
+  {
+   "cluster_id": 25,
+   "headline": "People Moves: Edelman Financial Engines Names Chief Retirement Officer",
+   "url": "https://www.wealthmanagement.com/ria-news/major-wealth-firms-announce-leadership-changes",
+   "category": "People Moves",
+   "last_published": "2026-09-24T10:30:00Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/major-wealth-firms-announce-leadership-changes"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/edelman-financial-engines-names-tina-wilson-chief-retirement-officer/268330"
+    }
+   ]
+  },
+  {
+   "cluster_id": 118,
+   "headline": "Mercer Advisors hires Goldman alum Cynthia Loh as first-ever chief platform officer",
+   "url": "https://www.investmentnews.com/ria-news/mercer-advisors-hires-goldman-alum-cynthia-loh-as-first-ever-chief-platform-officer/268291",
+   "category": "People Moves",
+   "last_published": "2026-09-22T17:33:55Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/mercer-advisors-hires-goldman-alum-cynthia-loh-as-first-ever-chief-platform-officer/268291"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

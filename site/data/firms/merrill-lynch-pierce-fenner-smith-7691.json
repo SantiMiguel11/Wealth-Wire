@@ -1,0 +1,72 @@
+{
+ "schema_version": 1,
+ "slug": "merrill-lynch-pierce-fenner-smith-7691",
+ "name": "Merrill Lynch, Pierce, Fenner & Smith",
+ "legal_name": "Merrill Lynch, Pierce, Fenner & Smith",
+ "crd": "7691",
+ "sec_number": "801-14235",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 1781568171479.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/7691",
+ "stories": [
+  {
+   "cluster_id": 415,
+   "headline": "Merrill to pay $39 million in cash sweep settlement",
+   "url": "https://www.investmentnews.com/regulation-legal-compliance/merrill-to-pay-39-million-in-cash-sweep-settlement/268453",
+   "category": "Regulation",
+   "last_published": "2026-10-02T17:18:39Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/merrill-to-pay-39-million-in-cash-sweep-settlement/268453"
+    }
+   ]
+  },
+  {
+   "cluster_id": 278,
+   "headline": "Merrill Lynch creates hefty new 'data' and 'shelf' fees and offers third-party managers who pay them a leg up when its 'thundering herd' recommends investments -- but stops short of leveling the playing field, analysts say",
+   "url": "https://riabiz.com/a/2026/9/29/merrill-lynch-creates-hefty-new-data-and-shelf-fees-and-offers-third-party-managers-who-pay-them-a-leg-up-when-its-thundering-herd-recommends-investments-but-stops-short-of-leveling-the-playing-field-analysts-say",
+   "category": "Wealthtech",
+   "last_published": "2026-09-29T05:07:10Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/29/merrill-lynch-creates-hefty-new-data-and-shelf-fees-and-offers-third-party-managers-who-pay-them-a-leg-up-when-its-thundering-herd-recommends-investments-but-stops-short-of-leveling-the-playing-field-analysts-say"
+    }
+   ]
+  },
+  {
+   "cluster_id": 51,
+   "headline": "Advisor moves: Raymond James lands $1.25B team as Merrill loses two",
+   "url": "https://www.investmentnews.com/independent-broker-dealers/advisor-moves-raymond-james-lands-125b-team-as-merrill-loses-two/268368",
+   "category": "People Moves",
+   "last_published": "2026-09-25T19:55:56Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/advisor-moves-raymond-james-lands-125b-team-as-merrill-loses-two/268368"
+    }
+   ]
+  },
+  {
+   "cluster_id": 94,
+   "headline": "Advisor moves: RBC lands $2B BofA Private Bank duo in La Jolla",
+   "url": "https://www.investmentnews.com/wirehouses/advisor-moves-rbc-lands-2b-bofa-private-bank-duo-in-la-jolla/268327",
+   "category": "Other",
+   "last_published": "2026-09-23T19:49:13Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/wirehouses/advisor-moves-rbc-lands-2b-bofa-private-bank-duo-in-la-jolla/268327"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

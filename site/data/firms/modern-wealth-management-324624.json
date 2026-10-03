@@ -1,0 +1,73 @@
+{
+ "schema_version": 1,
+ "slug": "modern-wealth-management-324624",
+ "name": "Modern Wealth Management",
+ "legal_name": "Modern Wealth Management",
+ "crd": "324624",
+ "sec_number": "801-127231",
+ "city": "Kansas City",
+ "state": "MO",
+ "sec_aum_usd": 10904051242.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/324624",
+ "stories": [
+  {
+   "cluster_id": 3,
+   "headline": "Deals & Moves: LPL Financial Adds Two Utah Advisory Teams With $1B",
+   "url": "https://www.wealthmanagement.com/ibd-news/deals-moves-lpl-financial-adds-two-utah-advisory-teams-with-1b",
+   "category": "People Moves",
+   "last_published": "2026-09-25T15:18:39Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ibd-news/deals-moves-lpl-financial-adds-two-utah-advisory-teams-with-1b"
+    }
+   ]
+  },
+  {
+   "cluster_id": 88,
+   "headline": "Modern Wealth acquires California RIA in sixth deal of 2026",
+   "url": "https://www.investmentnews.com/ria-news/modern-wealth-acquires-california-ria-in-sixth-deal-of-2026/268333",
+   "category": "M&A",
+   "last_published": "2026-09-24T10:37:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/modern-wealth-acquires-california-ria-in-sixth-deal-of-2026/268333"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 88,
+   "date": "2026-09-24T10:37:00Z",
+   "headline": "Modern Wealth acquires California RIA in sixth deal of 2026",
+   "acquirer": {
+    "name": "Modern Wealth",
+    "slug": "modern-wealth-management-324624",
+    "crd": "324624"
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target unclear (descriptive, not a name: 'California RIA')",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/modern-wealth-acquires-california-ria-in-sixth-deal-of-2026/268333"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

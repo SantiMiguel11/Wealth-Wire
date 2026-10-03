@@ -1,0 +1,44 @@
+{
+ "schema_version": 1,
+ "slug": "morgan-stanley-149777",
+ "name": "Morgan Stanley",
+ "legal_name": "Morgan Stanley Smith Barney",
+ "crd": "149777",
+ "sec_number": "801-70103",
+ "city": "Purchase",
+ "state": "NY",
+ "sec_aum_usd": 1961887313229.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/149777",
+ "stories": [
+  {
+   "cluster_id": 405,
+   "headline": "Morgan Stanley advisor with $1B pedigree joins upstate New York RIA",
+   "url": "https://www.investmentnews.com/wirehouses/morgan-stanley-advisor-with-1b-book-joins-upstate-new-york-ria/268427",
+   "category": "People Moves",
+   "last_published": "2026-10-01T10:41:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/wirehouses/morgan-stanley-advisor-with-1b-book-joins-upstate-new-york-ria/268427"
+    }
+   ]
+  },
+  {
+   "cluster_id": 163,
+   "headline": "Wells Fargo follows Morgan Stanley out the door, prompting Forbes and Shook to freeze all 2026 advisor rankings amid fallout from $6-million editor payout",
+   "url": "https://riabiz.com/a/2026/8/26/wells-fargo-follows-morgan-stanley-out-the-door-prompting-forbes-and-shook-to-freeze-all-2026-advisor-rankings-amid-fallout-from-6-million-editor-payout",
+   "category": "Other",
+   "last_published": "2026-08-26T13:57:03Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/8/26/wells-fargo-follows-morgan-stanley-out-the-door-prompting-forbes-and-shook-to-freeze-all-2026-advisor-rankings-amid-fallout-from-6-million-editor-payout"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

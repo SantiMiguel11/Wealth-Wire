@@ -1,0 +1,67 @@
+{
+ "schema_version": 1,
+ "slug": "captrust-175112",
+ "name": "Captrust",
+ "legal_name": "Capfinancial Partners",
+ "crd": "175112",
+ "sec_number": "801-62193",
+ "city": "Raleigh",
+ "state": "NC",
+ "sec_aum_usd": 1236704853633.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/175112",
+ "stories": [
+  {
+   "cluster_id": 39,
+   "headline": "Captrust Adds $1.2B in Double Deal for Long Island Firms",
+   "url": "https://www.wealthmanagement.com/ria-news/captrust-acquires-two-new-york-rias-with-12b",
+   "category": "M&A",
+   "last_published": "2026-09-23T14:43:41Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/captrust-acquires-two-new-york-rias-with-12b"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/captrust-adds-12b-long-island-duo-in-new-york-double-deal/268316"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 39,
+   "date": "2026-09-23T10:00:00Z",
+   "headline": "Captrust Adds $1.2B in Double Deal for Long Island Firms",
+   "acquirer": {
+    "name": "Captrust",
+    "slug": "captrust-175112",
+    "crd": "175112"
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 1200000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target unclear (not a proper name: 'in Double Deal')",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/captrust-acquires-two-new-york-rias-with-12b"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/captrust-adds-12b-long-island-duo-in-new-york-double-deal/268316"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

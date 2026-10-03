@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "envestnet-pmc-111694",
+ "name": "Envestnet PMC",
+ "legal_name": "Envestnet Asset Management",
+ "crd": "111694",
+ "sec_number": "801-57260",
+ "city": "Berwyn",
+ "state": "PA",
+ "sec_aum_usd": 614933249744.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/111694",
+ "stories": [
+  {
+   "cluster_id": 154,
+   "headline": "Bain Capital (mostly) funds Envestnet buy of Vestmark to surpass $10 trillion and define 'adaptive modularity' strategy, leaving Orion a clear RIA lane",
+   "url": "https://riabiz.com/a/2026/9/10/bain-capital-mostly-funds-envestnet-buy-of-vestmark-to-surpass-10-trillion-and-define-adaptive-modularity-strategy-leaving-orion-a-clear-ria-lane",
+   "category": "Regulation",
+   "last_published": "2026-09-10T12:51:50Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/10/bain-capital-mostly-funds-envestnet-buy-of-vestmark-to-surpass-10-trillion-and-define-adaptive-modularity-strategy-leaving-orion-a-clear-ria-lane"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

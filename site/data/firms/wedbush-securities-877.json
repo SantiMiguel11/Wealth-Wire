@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "wedbush-securities-877",
+ "name": "Wedbush Securities",
+ "legal_name": "Wedbush Securities",
+ "crd": "877",
+ "sec_number": "801-6358",
+ "city": "Pasadena",
+ "state": "CA",
+ "sec_aum_usd": 5684848455.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/877",
+ "stories": [
+  {
+   "cluster_id": 237,
+   "headline": "Wedbush Welcomes Wealth Management Leader Jim McDermott as Managing Director, Investments in Chicago",
+   "url": "https://www.globenewswire.com/news-release/2026/09/24/3368301/32619/en/wedbush-welcomes-wealth-management-leader-jim-mcdermott-as-managing-director-investments-in-chicago.html",
+   "category": "Other",
+   "last_published": "2026-09-24T12:30:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "GlobeNewswire",
+     "url": "https://www.globenewswire.com/news-release/2026/09/24/3368301/32619/en/wedbush-welcomes-wealth-management-leader-jim-mcdermott-as-managing-director-investments-in-chicago.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

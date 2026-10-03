@@ -1,0 +1,81 @@
+{
+ "schema_version": 1,
+ "slug": "concurrent-investment-advisors-323135",
+ "name": "Concurrent Investment Advisors",
+ "legal_name": "Concurrent Investment Advisors",
+ "crd": "323135",
+ "sec_number": "801-126555",
+ "city": "Tampa",
+ "state": "FL",
+ "sec_aum_usd": 15727990844.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/323135",
+ "stories": [
+  {
+   "cluster_id": 387,
+   "headline": "Concurrent Makes First RIA Platform Acquisition With $5.4B Spire Investment Partners",
+   "url": "https://www.wealthmanagement.com/ria-news/concurrent-makes-first-ria-platform-acquisition-with-5-4b-spire",
+   "category": "M&A",
+   "last_published": "2026-10-01T16:05:16Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/concurrent-makes-first-ria-platform-acquisition-with-5-4b-spire"
+    },
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPdVliMDhRQmxBZVJBSDJneHVTM1dRNVJoTTZYVFVGaUlyRGNMSV9nTGpEa1B3cWJfeFFNaTlOQTQyYVVqeWhGUVFyRVZHdGhsQ1R1VWxIZWFIbWtnMzBpNHpaMUFXRS1SQUlMR1kydkhrR0ZKYUdkemxGQW01VjdxT0s2M2dxTm1qSG5sLXdn?oc=5"
+    }
+   ]
+  },
+  {
+   "cluster_id": 132,
+   "headline": "Concurrent adds $425 million Houston team as breakaway wave continues",
+   "url": "https://www.investmentnews.com/independent-broker-dealers/concurrent-adds-425-million-houston-team-as-breakaway-wave-continues/268278",
+   "category": "People Moves",
+   "last_published": "2026-09-21T19:06:21Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/concurrent-adds-425-million-houston-team-as-breakaway-wave-continues/268278"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 387,
+   "date": "2026-10-01T10:00:00Z",
+   "headline": "Concurrent Makes First RIA Platform Acquisition With $5.4B Spire Investment Partners",
+   "acquirer": {
+    "name": "Concurrent",
+    "slug": "concurrent-investment-advisors-323135",
+    "crd": "323135"
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 5400000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target unclear (not a proper name: 'platform biz')",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/concurrent-makes-first-ria-platform-acquisition-with-5-4b-spire"
+    },
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPdVliMDhRQmxBZVJBSDJneHVTM1dRNVJoTTZYVFVGaUlyRGNMSV9nTGpEa1B3cWJfeFFNaTlOQTQyYVVqeWhGUVFyRVZHdGhsQ1R1VWxIZWFIbWtnMzBpNHpaMUFXRS1SQUlMR1kydkhrR0ZKYUdkemxGQW01VjdxT0s2M2dxTm1qSG5sLXdn?oc=5"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

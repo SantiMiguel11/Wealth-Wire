@@ -1,0 +1,48 @@
+{
+ "schema_version": 1,
+ "slug": "ep-wealth-advisors-111147",
+ "name": "EP Wealth Advisors",
+ "legal_name": "EP Wealth Advisors",
+ "crd": "111147",
+ "sec_number": "801-29358",
+ "city": "Torrance",
+ "state": "CA",
+ "sec_aum_usd": 45145000000.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/111147",
+ "stories": [
+  {
+   "cluster_id": 25,
+   "headline": "People Moves: Edelman Financial Engines Names Chief Retirement Officer",
+   "url": "https://www.wealthmanagement.com/ria-news/major-wealth-firms-announce-leadership-changes",
+   "category": "People Moves",
+   "last_published": "2026-09-24T10:30:00Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/major-wealth-firms-announce-leadership-changes"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/edelman-financial-engines-names-tina-wilson-chief-retirement-officer/268330"
+    }
+   ]
+  },
+  {
+   "cluster_id": 121,
+   "headline": "EP Wealth adds CFO, elevates client chief as growth accelerates",
+   "url": "https://www.investmentnews.com/ria-news/ep-wealth-adds-cfo-elevates-client-chief-as-growth-accelerates/268288",
+   "category": "Markets",
+   "last_published": "2026-09-22T13:30:35Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/ep-wealth-adds-cfo-elevates-client-chief-as-growth-accelerates/268288"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

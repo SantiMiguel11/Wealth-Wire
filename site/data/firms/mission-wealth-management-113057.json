@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "mission-wealth-management-113057",
+ "name": "Mission Wealth Management",
+ "legal_name": "Mission Wealth Management",
+ "crd": "113057",
+ "sec_number": "801-61230",
+ "city": "Santa Barbara",
+ "state": "CA",
+ "sec_aum_usd": 17001545425.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/113057",
+ "stories": [
+  {
+   "cluster_id": 11,
+   "headline": "RIA Edge Podcast: How Mission Wealth Scales Without Sacrificing Client Experience with Matt Adams",
+   "url": "https://www.wealthmanagement.com/ria-edge/ria-edge-podcast-how-mission-wealth-scales-without-sacrificing-client-experience-with-matt-adams",
+   "category": "Wealthtech",
+   "last_published": "2026-09-24T16:41:07Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-edge/ria-edge-podcast-how-mission-wealth-scales-without-sacrificing-client-experience-with-matt-adams"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

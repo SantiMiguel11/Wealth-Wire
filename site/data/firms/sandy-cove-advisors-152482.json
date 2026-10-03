@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "sandy-cove-advisors-152482",
+ "name": "Sandy Cove Advisors",
+ "legal_name": "Sandy Cove Advisors",
+ "crd": "152482",
+ "sec_number": "801-107724",
+ "city": "Hingham",
+ "state": "MA",
+ "sec_aum_usd": 684905062.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/152482",
+ "stories": [
+  {
+   "cluster_id": 352,
+   "headline": "RIA moves: Hightower Signature Wealth adds New England reach with $752M Sandy Cove Advisors",
+   "url": "https://www.investmentnews.com/ria-news/ria-moves-hightower-signature-wealth-adds-new-england-reach-with-752m-sandy-cove-advisors/268414",
+   "category": "Other",
+   "last_published": "2026-09-30T13:30:23Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/ria-moves-hightower-signature-wealth-adds-new-england-reach-with-752m-sandy-cove-advisors/268414"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

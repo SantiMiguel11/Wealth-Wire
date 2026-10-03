@@ -1,0 +1,216 @@
+{
+ "schema_version": 1,
+ "date": "2026-10-03",
+ "generated_at": "2026-10-03T18:39:05Z",
+ "ai": false,
+ "opener": null,
+ "items": [
+  {
+   "cluster_id": 470,
+   "headline": "'They were probably getting overused': Advice CIOs weigh limits on long-short SMAs",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNSHcwZWpvbVI4Q2lxV3RlWGNybTg4S25lUm5JbUFIMEFGS3d4VVFTZ2dOWFRkLWlyYTFjSDFuZ3lGMWp2SFRiNWduQmRPUUVZSkx6dmlMT0g3ZFI5dUhpejJDakc2MjByTW5OY2w0RXpnYjRfUjF2VFNGbEFkT0VmbFpJVGgwemlTT0J6b09EOVVWeGlnenBuNXd5NW9ZVUd0ZlZfaGtXTWpSemNwVzZBQkx4dERzZlN0Z0E?oc=5",
+   "category": "Products & Funds",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNSHcwZWpvbVI4Q2lxV3RlWGNybTg4S25lUm5JbUFIMEFGS3d4VVFTZ2dOWFRkLWlyYTFjSDFuZ3lGMWp2SFRiNWduQmRPUUVZSkx6dmlMT0g3ZFI5dUhpejJDakc2MjByTW5OY2w0RXpnYjRfUjF2VFNGbEFkT0VmbFpJVGgwemlTT0J6b09EOVVWeGlnenBuNXd5NW9ZVUd0ZlZfaGtXTWpSemNwVzZBQkx4dERzZlN0Z0E?oc=5"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 471,
+   "headline": "What the largest wealth managers need from their CEO",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNcW1MRzlQemdOM1ZudGh2NWRFeG9lVm0tTDVjdXhDbUMweHlXN1RuenpYUkN1WVVhQ0hURUQ0bWYySjRpNEUycjA2MXkxSG9GYTFhOHVwWGM3UFRRY092MHNhaHJuMGNDOUhCaG9Eb185bXV5N3hXUDgtSEw0dldweXhhUTk5WXNsOXoyQ1gxdDJ3cnBianc?oc=5",
+   "category": "Other",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNcW1MRzlQemdOM1ZudGh2NWRFeG9lVm0tTDVjdXhDbUMweHlXN1RuenpYUkN1WVVhQ0hURUQ0bWYySjRpNEUycjA2MXkxSG9GYTFhOHVwWGM3UFRRY092MHNhaHJuMGNDOUhCaG9Eb185bXV5N3hXUDgtSEw0dldweXhhUTk5WXNsOXoyQ1gxdDJ3cnBianc?oc=5"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 462,
+   "headline": "Concurrent eyes $3B to $10B RIA platforms after Spire buy",
+   "url": "https://www.investmentnews.com/ria-news/concurrent-eyes-3b-to-10b-ria-platforms-after-spire-buy/268455",
+   "category": "Other",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/concurrent-eyes-3b-to-10b-ria-platforms-after-spire-buy/268455"
+    }
+   ],
+   "firms": [],
+   "aum_usd": 10000000000.0,
+   "aum_source": "headline",
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 467,
+   "headline": "Ask an Advisor: How do you help child-free clients plan?",
+   "url": "https://www.financial-planning.com/list/ask-an-advisor-how-do-you-help-child-free-clients-plan",
+   "category": "Other",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Financial Planning",
+     "url": "https://www.financial-planning.com/list/ask-an-advisor-how-do-you-help-child-free-clients-plan"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 461,
+   "headline": "SEC Crypto Custody Proposal Draws Divisive Reactions",
+   "url": "https://www.wealthmanagement.com/regulation-compliance/sec-proposes-self-custody-rules-for-crypto-assets",
+   "category": "Regulation",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/regulation-compliance/sec-proposes-self-custody-rules-for-crypto-assets"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 468,
+   "headline": "SEC seeks to ease advisors' custody burdens with discretionary trading",
+   "url": "https://www.financial-planning.com/news/sec-seeks-to-ease-advisors-custody-burdens-with-discretionary-trading",
+   "category": "Regulation",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Financial Planning",
+     "url": "https://www.financial-planning.com/news/sec-seeks-to-ease-advisors-custody-burdens-with-discretionary-trading"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 415,
+   "headline": "Merrill to pay $39 million in cash sweep settlement",
+   "url": "https://www.investmentnews.com/regulation-legal-compliance/merrill-to-pay-39-million-in-cash-sweep-settlement/268453",
+   "category": "Regulation",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/merrill-to-pay-39-million-in-cash-sweep-settlement/268453"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Merrill Lynch, Pierce, Fenner & Smith",
+     "slug": "merrill-lynch-pierce-fenner-smith-7691"
+    }
+   ],
+   "aum_usd": 1781568171479.0,
+   "aum_source": "sec",
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 464,
+   "headline": "SEC accuses fund advisor of defrauding SpaceX, OpenAI investors",
+   "url": "https://www.investmentnews.com/regulation-legal-compliance/sec-accuses-fund-adviser-of-defrauding-spacex-openai-investors/268452",
+   "category": "Regulation",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/sec-accuses-fund-adviser-of-defrauding-spacex-openai-investors/268452"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 460,
+   "headline": "'They were probably getting overused': Mega-RIA CIOs weigh limits on long-short SMAs",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOSFA1RU44Tm1lU256UXotZDlfYU9BNmFEYzVqay0wX0JxT05pNFAxLWhORDh3QkpGYk5wVTNRMzZ6WGh0am5ieW14UUNSRW1ZSUIwYkd3SE50WXFpZVlCZ1cwc01EcjdlLWVUSDBVdGxtZGtQak95dE1vRUJQX0ZXa0hDcXpFMG1wWjhGT2drWXdMYVZVX1UzU0dMUlhySFk5eDJiaTU1WFBkT3pZTzdxeFAxLUhiODhNV21tSQ?oc=5",
+   "category": "Products & Funds",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOSFA1RU44Tm1lU256UXotZDlfYU9BNmFEYzVqay0wX0JxT05pNFAxLWhORDh3QkpGYk5wVTNRMzZ6WGh0am5ieW14UUNSRW1ZSUIwYkd3SE50WXFpZVlCZ1cwc01EcjdlLWVUSDBVdGxtZGtQak95dE1vRUJQX0ZXa0hDcXpFMG1wWjhGT2drWXdMYVZVX1UzU0dMUlhySFk5eDJiaTU1WFBkT3pZTzdxeFAxLUhiODhNV21tSQ?oc=5"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 465,
+   "headline": "Author",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1sSHAyMjZuT2s3V0JWQlhiaEZLQzNycHl1NnE4YXZ2YTFQcDZBU2tNM0Y4SThkeWtpR2VMcjh0bjBPMzQ5N2VaNTJoNEtGaE9rOUZkcnlHbDdZMVZuQW5mRGNfbU9PUG9pdTlpaXIzLVkwbGdiMHc?oc=5",
+   "category": "Other",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "ThinkAdvisor",
+     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1sSHAyMjZuT2s3V0JWQlhiaEZLQzNycHl1NnE4YXZ2YTFQcDZBU2tNM0Y4SThkeWtpR2VMcjh0bjBPMzQ5N2VaNTJoNEtGaE9rOUZkcnlHbDdZMVZuQW5mRGNfbU9PUG9pdTlpaXIzLVkwbGdiMHc?oc=5"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 469,
+   "headline": "Playbook for Trump's $26B school choice program released",
+   "url": "https://www.financial-planning.com/articles/playbook-for-trumps-26b-school-choice-program-released",
+   "category": "Regulation",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Financial Planning",
+     "url": "https://www.financial-planning.com/articles/playbook-for-trumps-26b-school-choice-program-released"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  }
+ ],
+ "more": [],
+ "window_start": "2026-10-02T18:39:05Z",
+ "last_good_digest": null,
+ "footer_note": "Summaries written with Claude from outlet headlines."
+}

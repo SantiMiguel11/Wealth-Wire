@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "stifel-capital-management-328365",
+ "name": "Stifel Capital Management",
+ "legal_name": "Stifel Capital Management",
+ "crd": "328365",
+ "sec_number": "801-129003",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 4199937688.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/328365",
+ "stories": [
+  {
+   "cluster_id": 306,
+   "headline": "Stifel settles massive $30 million complaint involving star broker’s sale of structured products",
+   "url": "https://www.investmentnews.com/regulation-legal-compliance/stifel-settles-massive-30-million-complaint-involving-star-brokers-sale-of-structured-products/268422",
+   "category": "M&A",
+   "last_published": "2026-09-30T18:31:43Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/stifel-settles-massive-30-million-complaint-involving-star-brokers-sale-of-structured-products/268422"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

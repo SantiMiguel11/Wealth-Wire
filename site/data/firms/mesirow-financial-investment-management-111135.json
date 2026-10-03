@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "mesirow-financial-investment-management-111135",
+ "name": "Mesirow Financial Investment Management",
+ "legal_name": "Mesirow Financial Investment Management",
+ "crd": "111135",
+ "sec_number": "801-27047",
+ "city": "Chicago",
+ "state": "IL",
+ "sec_aum_usd": 50438375000.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/111135",
+ "stories": [
+  {
+   "cluster_id": 357,
+   "headline": "RIA moves: Carson, Mesirow and DayMark add planning teams across three states",
+   "url": "https://www.investmentnews.com/ria-news/ria-moves-carson-mesirow-and-daymark-add-planning-teams-across-three-states/268411",
+   "category": "People Moves",
+   "last_published": "2026-09-30T10:36:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/ria-moves-carson-mesirow-and-daymark-add-planning-teams-across-three-states/268411"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

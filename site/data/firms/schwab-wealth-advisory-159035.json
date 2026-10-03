@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "schwab-wealth-advisory-159035",
+ "name": "Schwab Wealth Advisory",
+ "legal_name": "Schwab Wealth Advisory",
+ "crd": "159035",
+ "sec_number": "801-72795",
+ "city": "San Francisco",
+ "state": "CA",
+ "sec_aum_usd": 0.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/159035",
+ "stories": [
+  {
+   "cluster_id": 155,
+   "headline": "Schwab Wealth Advisory (SWA) unveils 'corkage' fee on third-party SMAs, typically .35%, as slew of changes add to 'elegant' master plan to convert DIY book to fees",
+   "url": "https://riabiz.com/a/2026/9/9/schwab-wealth-advisory-swa-unveils-corkage-fee-on-third-party-smas-typically-35-as-slew-of-changes-add-to-elegant-master-plan-to-convert-diy-book-to-fees",
+   "category": "Products & Funds",
+   "last_published": "2026-09-09T02:50:10Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/9/schwab-wealth-advisory-swa-unveils-corkage-fee-on-third-party-smas-typically-35-as-slew-of-changes-add-to-elegant-master-plan-to-convert-diy-book-to-fees"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

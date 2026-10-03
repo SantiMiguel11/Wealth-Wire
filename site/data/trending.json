@@ -1,0 +1,112 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-10-03T18:39:05Z",
+ "days": 7,
+ "firms": [
+  {
+   "name": "Fidelity Management & Research",
+   "slug": "fidelity-management-research-108281",
+   "crd": "108281",
+   "verified": true,
+   "stories": 5
+  },
+  {
+   "name": "Goldman Sachs Asset Management",
+   "slug": "goldman-sachs-asset-management-107738",
+   "crd": "107738",
+   "verified": true,
+   "stories": 3
+  },
+  {
+   "name": "LPL Financial",
+   "slug": "lpl-financial-6413",
+   "crd": "6413",
+   "verified": true,
+   "stories": 3
+  },
+  {
+   "name": "Carson Group Investing",
+   "slug": "carson-group-investing-291744",
+   "crd": "291744",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "Charles Schwab",
+   "slug": "charles-schwab-5393",
+   "crd": "5393",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "Goldman Sachs",
+   "slug": "goldman-sachs-361",
+   "crd": "361",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "HB Wealth",
+   "slug": "hb-wealth-316731",
+   "crd": "316731",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "Hightower Advisors",
+   "slug": "hightower-advisors-145323",
+   "crd": "145323",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "Merrill Lynch, Pierce, Fenner & Smith",
+   "slug": "merrill-lynch-pierce-fenner-smith-7691",
+   "crd": "7691",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "UBS Financial Services",
+   "slug": "ubs-financial-services-8174",
+   "crd": "8174",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "Wealth Enhancement Advisory Services",
+   "slug": "wealth-enhancement-advisory-services-116407",
+   "crd": "116407",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "Xypn Sapphire",
+   "slug": "xypn-sapphire-285967",
+   "crd": "285967",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "Adhesion Wealth Advisor Solutions",
+   "slug": "adhesion-wealth-advisor-solutions-143593",
+   "crd": "143593",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Apriem Advisors",
+   "slug": "apriem-advisors-108188",
+   "crd": "108188",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Betterment",
+   "slug": "betterment-149117",
+   "crd": "149117",
+   "verified": true,
+   "stories": 1
+  }
+ ]
+}

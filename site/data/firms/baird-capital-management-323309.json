@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "baird-capital-management-323309",
+ "name": "Baird Capital Management",
+ "legal_name": "Baird Capital Management",
+ "crd": "323309",
+ "sec_number": "801-126808",
+ "city": "Milwaukee",
+ "state": "WI",
+ "sec_aum_usd": 737854000.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/323309",
+ "stories": [
+  {
+   "cluster_id": 87,
+   "headline": "Advisor moves: Raymond James, Baird add significant teams in latest recruiting push",
+   "url": "https://www.investmentnews.com/independent-broker-dealers/advisor-moves-raymond-james-baird-add-significant-teams-in-latest-recruiting-push/268332",
+   "category": "People Moves",
+   "last_published": "2026-09-24T10:40:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/advisor-moves-raymond-james-baird-add-significant-teams-in-latest-recruiting-push/268332"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

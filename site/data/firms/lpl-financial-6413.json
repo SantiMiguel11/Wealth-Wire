@@ -1,0 +1,136 @@
+{
+ "schema_version": 1,
+ "slug": "lpl-financial-6413",
+ "name": "LPL Financial",
+ "legal_name": "LPL Financial",
+ "crd": "6413",
+ "sec_number": "801-10970",
+ "city": "Fort Mill",
+ "state": "SC",
+ "sec_aum_usd": 819117829825.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/6413",
+ "stories": [
+  {
+   "cluster_id": 426,
+   "headline": "NFL referee Shawn Hochuli doubles as LPL-affiliated financial advisor",
+   "url": "https://www.investmentnews.com/independent-broker-dealers/nfl-referee-shawn-hochuli-doubles-as-lpl-affiliated-financial-advisor/268439",
+   "category": "Other",
+   "last_published": "2026-10-01T19:26:27Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/nfl-referee-shawn-hochuli-doubles-as-lpl-affiliated-financial-advisor/268439"
+    }
+   ]
+  },
+  {
+   "cluster_id": 317,
+   "headline": "$57.6bn LPL OSJ Private Advisor Group names first chief client officer",
+   "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQMnIwWDJURkU0OGNVUmtpWEpWMlFocEpjaUJOMV9jRm9YSHVsLUsyaVpnSUZQM19nMUFOdVlLRF90QWhWZERkNGV6SUVUOS1XZS1sMTM0Y2FpWExhWnJHUll3ZTY3akxDWXJuQVdMQ2kyYXpRSC1BckljMVJ1c0hhbWY2VWszR2c5NGJsVldHQVRIYWEtSGJ1VjItN0o2bi1kb0ptbWVWM1hZRC14SjF2NFlaemhEeUQ5d25uVVBwcDV0MHpTc0tGaXFWeDN4ZHdKUEFFU2ZnZnBCUGJPNnV2enRWLThWbk5qalgta09Oako0dEsyUmJzV0lKMDJEUUtZ?oc=5",
+   "category": "People Moves",
+   "last_published": "2026-09-29T18:52:47Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQMnIwWDJURkU0OGNVUmtpWEpWMlFocEpjaUJOMV9jRm9YSHVsLUsyaVpnSUZQM19nMUFOdVlLRF90QWhWZERkNGV6SUVUOS1XZS1sMTM0Y2FpWExhWnJHUll3ZTY3akxDWXJuQVdMQ2kyYXpRSC1BckljMVJ1c0hhbWY2VWszR2c5NGJsVldHQVRIYWEtSGJ1VjItN0o2bi1kb0ptbWVWM1hZRC14SjF2NFlaemhEeUQ5d25uVVBwcDV0MHpTc0tGaXFWeDN4ZHdKUEFFU2ZnZnBCUGJPNnV2enRWLThWbk5qalgta09Oako0dEsyUmJzV0lKMDJEUUtZ?oc=5"
+    }
+   ]
+  },
+  {
+   "cluster_id": 284,
+   "headline": "FINRA Bars Broker for Misappropriating $1.7 Million from Customers’ Accounts",
+   "url": "https://www.finra.org/media-center/newsreleases/2026/finra-bars-broker-misappropriating-1.7m-from-customers-accounts",
+   "category": "Regulation",
+   "last_published": "2026-09-29T17:40:54Z",
+   "outlet_count": 3,
+   "sources": [
+    {
+     "name": "FINRA News",
+     "url": "https://www.finra.org/media-center/newsreleases/2026/finra-bars-broker-misappropriating-1.7m-from-customers-accounts"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/regulation-compliance/finra-bars-former-lpl-rep-over-17m-theft"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/finra-bars-former-lpl-broker-for-stealing-17-million-from-customers/268395"
+    }
+   ]
+  },
+  {
+   "cluster_id": 3,
+   "headline": "Deals & Moves: LPL Financial Adds Two Utah Advisory Teams With $1B",
+   "url": "https://www.wealthmanagement.com/ibd-news/deals-moves-lpl-financial-adds-two-utah-advisory-teams-with-1b",
+   "category": "People Moves",
+   "last_published": "2026-09-25T15:18:39Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ibd-news/deals-moves-lpl-financial-adds-two-utah-advisory-teams-with-1b"
+    }
+   ]
+  },
+  {
+   "cluster_id": 8,
+   "headline": "Raymond James Attracts Two Teams Totaling $1.75B",
+   "url": "https://www.wealthmanagement.com/ibd-news/raymond-james-adds-175b-in-teams-this-week",
+   "category": "People Moves",
+   "last_published": "2026-09-24T21:00:24Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ibd-news/raymond-james-adds-175b-in-teams-this-week"
+    }
+   ]
+  },
+  {
+   "cluster_id": 75,
+   "headline": "Advisor moves: LPL welcomes back RayJay advisor trio in Texas",
+   "url": "https://www.investmentnews.com/independent-broker-dealers/advisor-moves-lpl-welcomes-back-rayjay-advisor-trio-in-texas/268345",
+   "category": "Other",
+   "last_published": "2026-09-24T16:01:37Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/advisor-moves-lpl-welcomes-back-rayjay-advisor-trio-in-texas/268345"
+    }
+   ]
+  },
+  {
+   "cluster_id": 117,
+   "headline": "LPL adds $1 billion Salt Lake City teams from Northwestern Mutual",
+   "url": "https://www.investmentnews.com/independent-broker-dealers/lpl-adds-1-billion-salt-lake-city-teams-from-northwestern-mutual/268294",
+   "category": "People Moves",
+   "last_published": "2026-09-22T19:18:11Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/lpl-adds-1-billion-salt-lake-city-teams-from-northwestern-mutual/268294"
+    }
+   ]
+  },
+  {
+   "cluster_id": 148,
+   "headline": "Ritik Malhotra sells not-for-sale Savvy stake for $100 million after Utah Jazz owner showed up big for his LPL-disruption-by-AI play -- and Mark Casady re-upped at the new price as well",
+   "url": "https://riabiz.com/a/2026/9/18/ritik-malhotra-sells-not-for-sale-savvy-stake-for-100-million-after-utah-jazz-owner-showed-up-big-for-his-lpl-disruption-by-ai-play-and-mark-casady-re-upped-at-the-new-price-as-well",
+   "category": "M&A",
+   "last_published": "2026-09-18T02:58:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/18/ritik-malhotra-sells-not-for-sale-savvy-stake-for-100-million-after-utah-jazz-owner-showed-up-big-for-his-lpl-disruption-by-ai-play-and-mark-casady-re-upped-at-the-new-price-as-well"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

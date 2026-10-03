@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "onepoint-bfg-wealth-partners-318366",
+ "name": "Onepoint BFG Wealth Partners",
+ "legal_name": "Bleakley Financial Group",
+ "crd": "318366",
+ "sec_number": "801-123232",
+ "city": "Parsippany",
+ "state": "NJ",
+ "sec_aum_usd": 15127499616.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/318366",
+ "stories": [
+  {
+   "cluster_id": 444,
+   "headline": "Deals & Moves: HB Wealth Adds Family Trio, Hightower Signature Acquires Externally",
+   "url": "https://www.wealthmanagement.com/ria-news/deals-moves-cerity-pens-third-deal-of-week-hightower-signature-acquires-externally",
+   "category": "M&A",
+   "last_published": "2026-10-02T15:45:52Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/deals-moves-cerity-pens-third-deal-of-week-hightower-signature-acquires-externally"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

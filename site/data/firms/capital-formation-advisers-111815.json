@@ -1,0 +1,44 @@
+{
+ "schema_version": 1,
+ "slug": "capital-formation-advisers-111815",
+ "name": "Capital Formation Advisers",
+ "legal_name": "Capital Formation Advisers",
+ "crd": "111815",
+ "sec_number": "801-55098",
+ "city": null,
+ "state": null,
+ "sec_aum_usd": 68447213.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/111815",
+ "stories": [
+  {
+   "cluster_id": 217,
+   "headline": "SEC Announces Continuation of Small Business Advisory Committee Meeting",
+   "url": "https://www.sec.gov/newsroom/press-releases/2026-71-sec-announces-continuation-small-business-advisory-committee-meeting",
+   "category": "Regulation",
+   "last_published": "2026-07-30T13:53:38Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "SEC Press Releases",
+     "url": "https://www.sec.gov/newsroom/press-releases/2026-71-sec-announces-continuation-small-business-advisory-committee-meeting"
+    }
+   ]
+  },
+  {
+   "cluster_id": 218,
+   "headline": "Small Business Forum’s Report to Congress Highlights Recommendations to Improve Capital-Raising Policy",
+   "url": "https://www.sec.gov/newsroom/press-releases/2026-70-small-business-forums-report-congress-highlights-recommendations-improve-capital-raising-policy",
+   "category": "Regulation",
+   "last_published": "2026-07-27T19:59:17Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "SEC Press Releases",
+     "url": "https://www.sec.gov/newsroom/press-releases/2026-70-small-business-forums-report-congress-highlights-recommendations-improve-capital-raising-policy"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

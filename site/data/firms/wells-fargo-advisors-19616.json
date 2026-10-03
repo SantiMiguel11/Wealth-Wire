@@ -1,0 +1,62 @@
+{
+ "schema_version": 1,
+ "slug": "wells-fargo-advisors-19616",
+ "name": "Wells Fargo Advisors",
+ "legal_name": "Wells Fargo Clearing Services",
+ "crd": "19616",
+ "sec_number": "801-37967",
+ "city": "St. Louis",
+ "state": "MO",
+ "sec_aum_usd": 671421842699.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/19616",
+ "stories": [
+  {
+   "cluster_id": 337,
+   "headline": "$1.3B UBS Team Departs for Wells Fargo's FiNet",
+   "url": "https://www.wealthmanagement.com/wirehouse-news/-1-3b-ubs-team-departs-for-wells-fargo-s-finet",
+   "category": "People Moves",
+   "last_published": "2026-10-01T13:03:42Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/wirehouse-news/-1-3b-ubs-team-departs-for-wells-fargo-s-finet"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/advisor-moves-13b-advisor-team-joins-wells-fargo-finet-practice-in-ohio/268431"
+    }
+   ]
+  },
+  {
+   "cluster_id": 89,
+   "headline": "Wells Fargo names COO Scott Powell as its next chief risk officer",
+   "url": "https://www.investmentnews.com/wirehouses/wells-fargo-names-coo-scott-powell-as-its-next-chief-risk-officer/268331",
+   "category": "People Moves",
+   "last_published": "2026-09-24T10:31:32Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/wirehouses/wells-fargo-names-coo-scott-powell-as-its-next-chief-risk-officer/268331"
+    }
+   ]
+  },
+  {
+   "cluster_id": 163,
+   "headline": "Wells Fargo follows Morgan Stanley out the door, prompting Forbes and Shook to freeze all 2026 advisor rankings amid fallout from $6-million editor payout",
+   "url": "https://riabiz.com/a/2026/8/26/wells-fargo-follows-morgan-stanley-out-the-door-prompting-forbes-and-shook-to-freeze-all-2026-advisor-rankings-amid-fallout-from-6-million-editor-payout",
+   "category": "Other",
+   "last_published": "2026-08-26T13:57:03Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/8/26/wells-fargo-follows-morgan-stanley-out-the-door-prompting-forbes-and-shook-to-freeze-all-2026-advisor-rankings-amid-fallout-from-6-million-editor-payout"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "grenda-group-170241",
+ "name": "Grenda Group",
+ "legal_name": "Grenda Group",
+ "crd": "170241",
+ "sec_number": "801-79075",
+ "city": "Buffalo",
+ "state": "NY",
+ "sec_aum_usd": 34660653.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/170241",
+ "stories": [
+  {
+   "cluster_id": 100,
+   "headline": "SEC strips Grenda Group of adviser registration over concealed bar",
+   "url": "https://www.investmentnews.com/regulation-legal-compliance/sec-strips-grenda-group-of-adviser-registration-over-concealed-bar/268319",
+   "category": "Regulation",
+   "last_published": "2026-09-23T16:10:01Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/sec-strips-grenda-group-of-adviser-registration-over-concealed-bar/268319"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

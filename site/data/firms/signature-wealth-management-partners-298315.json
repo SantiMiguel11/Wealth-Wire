@@ -1,0 +1,44 @@
+{
+ "schema_version": 1,
+ "slug": "signature-wealth-management-partners-298315",
+ "name": "Signature Wealth Management Partners",
+ "legal_name": "Signature Wealth Management Partners",
+ "crd": "298315",
+ "sec_number": "801-113932",
+ "city": "Montvale",
+ "state": "NJ",
+ "sec_aum_usd": 454218720.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/298315",
+ "stories": [
+  {
+   "cluster_id": 44,
+   "headline": "Hightower Advisors Hires Vanguard Executive as New President",
+   "url": "https://www.wealthmanagement.com/ria-news/hightower-advisors-names-marco-de-freitas-president",
+   "category": "People Moves",
+   "last_published": "2026-09-22T17:29:24Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/hightower-advisors-names-marco-de-freitas-president"
+    }
+   ]
+  },
+  {
+   "cluster_id": 122,
+   "headline": "Hightower taps Vanguard vet as president, shuffles Signature Wealth leadership",
+   "url": "https://www.investmentnews.com/ria-news/hightower-taps-vanguard-vet-as-president-shuffles-signature-wealth-leadership/268286",
+   "category": "People Moves",
+   "last_published": "2026-09-22T13:09:08Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/hightower-taps-vanguard-vet-as-president-shuffles-signature-wealth-leadership/268286"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

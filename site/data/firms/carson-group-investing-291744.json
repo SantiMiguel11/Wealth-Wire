@@ -1,0 +1,58 @@
+{
+ "schema_version": 1,
+ "slug": "carson-group-investing-291744",
+ "name": "Carson Group Investing",
+ "legal_name": "Carson Group Investing",
+ "crd": "291744",
+ "sec_number": "801-113561",
+ "city": "Omaha",
+ "state": "NE",
+ "sec_aum_usd": 2048522707.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/291744",
+ "stories": [
+  {
+   "cluster_id": 444,
+   "headline": "Deals & Moves: HB Wealth Adds Family Trio, Hightower Signature Acquires Externally",
+   "url": "https://www.wealthmanagement.com/ria-news/deals-moves-cerity-pens-third-deal-of-week-hightower-signature-acquires-externally",
+   "category": "M&A",
+   "last_published": "2026-10-02T15:45:52Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/deals-moves-cerity-pens-third-deal-of-week-hightower-signature-acquires-externally"
+    }
+   ]
+  },
+  {
+   "cluster_id": 357,
+   "headline": "RIA moves: Carson, Mesirow and DayMark add planning teams across three states",
+   "url": "https://www.investmentnews.com/ria-news/ria-moves-carson-mesirow-and-daymark-add-planning-teams-across-three-states/268411",
+   "category": "People Moves",
+   "last_published": "2026-09-30T10:36:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/ria-moves-carson-mesirow-and-daymark-add-planning-teams-across-three-states/268411"
+    }
+   ]
+  },
+  {
+   "cluster_id": 112,
+   "headline": "Succession drives Wisconsin advisory team to Carson Group",
+   "url": "https://www.investmentnews.com/ria-news/succession-drives-wisconsin-advisory-team-to-carson-group/268309",
+   "category": "People Moves",
+   "last_published": "2026-09-23T10:30:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/succession-drives-wisconsin-advisory-team-to-carson-group/268309"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

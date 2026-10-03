@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "assetmark-109018",
+ "name": "Assetmark",
+ "legal_name": "Assetmark",
+ "crd": "109018",
+ "sec_number": "801-56323",
+ "city": "Concord",
+ "state": "CA",
+ "sec_aum_usd": 91760148020.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/109018",
+ "stories": [
+  {
+   "cluster_id": 239,
+   "headline": "More Than Half of Advisors Using AI Save 4+ Hours a Week, AssetMark Research Finds",
+   "url": "https://www.globenewswire.com/news-release/2026/09/15/3362022/0/en/more-than-half-of-advisors-using-ai-save-4-hours-a-week-assetmark-research-finds.html",
+   "category": "Wealthtech",
+   "last_published": "2026-09-15T12:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "GlobeNewswire",
+     "url": "https://www.globenewswire.com/news-release/2026/09/15/3362022/0/en/more-than-half-of-advisors-using-ai-save-4-hours-a-week-assetmark-research-finds.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

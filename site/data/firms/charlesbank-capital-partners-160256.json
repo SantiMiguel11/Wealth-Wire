@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "charlesbank-capital-partners-160256",
+ "name": "Charlesbank Capital Partners",
+ "legal_name": "Charlesbank Capital Partners",
+ "crd": "160256",
+ "sec_number": "801-73437",
+ "city": "Boston",
+ "state": "MA",
+ "sec_aum_usd": 21060828047.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/160256",
+ "stories": [
+  {
+   "cluster_id": 1,
+   "headline": "Q&A: Charlesbank's David Katz on Building RIA Institutions",
+   "url": "https://www.wealthmanagement.com/ria-news/charlesbanks-katz-on-building-ria-institutions",
+   "category": "Other",
+   "last_published": "2026-09-25T20:17:40Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/charlesbanks-katz-on-building-ria-institutions"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

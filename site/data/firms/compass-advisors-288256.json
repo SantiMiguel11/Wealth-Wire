@@ -1,0 +1,34 @@
+{
+ "schema_version": 1,
+ "slug": "compass-advisors-288256",
+ "name": "Compass Advisors",
+ "legal_name": "Compass Advisory Group",
+ "crd": "288256",
+ "sec_number": "801-110409",
+ "city": "Melville",
+ "state": "NY",
+ "sec_aum_usd": 767495362.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/288256",
+ "stories": [
+  {
+   "cluster_id": 39,
+   "headline": "Captrust Adds $1.2B in Double Deal for Long Island Firms",
+   "url": "https://www.wealthmanagement.com/ria-news/captrust-acquires-two-new-york-rias-with-12b",
+   "category": "M&A",
+   "last_published": "2026-09-23T14:43:41Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/captrust-acquires-two-new-york-rias-with-12b"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/captrust-adds-12b-long-island-duo-in-new-york-double-deal/268316"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

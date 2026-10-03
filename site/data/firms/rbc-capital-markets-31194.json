@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "rbc-capital-markets-31194",
+ "name": "RBC Capital Markets",
+ "legal_name": "RBC Capital Markets",
+ "crd": "31194",
+ "sec_number": "801-13059",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 310428968904.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/31194",
+ "stories": [
+  {
+   "cluster_id": 94,
+   "headline": "Advisor moves: RBC lands $2B BofA Private Bank duo in La Jolla",
+   "url": "https://www.investmentnews.com/wirehouses/advisor-moves-rbc-lands-2b-bofa-private-bank-duo-in-la-jolla/268327",
+   "category": "Other",
+   "last_published": "2026-09-23T19:49:13Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/wirehouses/advisor-moves-rbc-lands-2b-bofa-private-bank-duo-in-la-jolla/268327"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

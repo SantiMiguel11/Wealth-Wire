@@ -1,0 +1,85 @@
+{
+ "schema_version": 1,
+ "slug": "cerity-partners-151559",
+ "name": "Cerity Partners",
+ "legal_name": "Cerity Partners",
+ "crd": "151559",
+ "sec_number": "801-70719",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 161675524141.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/151559",
+ "stories": [
+  {
+   "cluster_id": 390,
+   "headline": "Cerity Partners adds Bay Area, Minneapolis firms in latest double-deal",
+   "url": "https://www.investmentnews.com/ria-news/cerity-partners-adds-bay-area-minneapolis-firms-in-latest-double-deal/268437",
+   "category": "M&A",
+   "last_published": "2026-10-01T18:00:11Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/cerity-partners-adds-bay-area-minneapolis-firms-in-latest-double-deal/268437"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/cerity-partners-merges-with-two-rias-worth-17b"
+    }
+   ]
+  },
+  {
+   "cluster_id": 43,
+   "headline": "Cerity Partners Adds $1.4B in Teams from Shufro Rose & Co.",
+   "url": "https://www.wealthmanagement.com/ria-news/cerity-partners-adds-14b-in-teams-from-shufro-rose",
+   "category": "People Moves",
+   "last_published": "2026-09-23T10:36:00Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/cerity-partners-adds-14b-in-teams-from-shufro-rose"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/cerity-partners-merges-with-14b-shufro-rose-advisory-teams/268310"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 390,
+   "date": "2026-10-01T17:54:00Z",
+   "headline": "Cerity Partners adds Bay Area, Minneapolis firms in latest double-deal",
+   "acquirer": {
+    "name": "Cerity Partners",
+    "slug": "cerity-partners-151559",
+    "crd": "151559"
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target unclear (multiple parties or unclear apposition)",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/cerity-partners-adds-bay-area-minneapolis-firms-in-latest-double-deal/268437"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/cerity-partners-merges-with-two-rias-worth-17b"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}
