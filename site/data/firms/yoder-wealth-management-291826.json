@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "yoder-wealth-management-291826",
+ "name": "Yoder Wealth Management",
+ "legal_name": "Yoder Wealth Management",
+ "crd": "291826",
+ "sec_number": "801-115215",
+ "city": "Walnut Creek",
+ "state": "CA",
+ "sec_aum_usd": 331204663.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/291826",
+ "stories": [
+  {
+   "cluster_id": 545,
+   "headline": "Creating Effective Discovery Meetings To Convert 100% Of (High-Value) Prospects Into Clients: #FASuccess Ep 510 With Michael Yoder",
+   "url": "https://feeds.feedblitz.com/~/971044718/0/kitcesnerdseyeview~Creating-Effective-Discovery-Meetings-To-Convert-Of-HighValue-Prospects-Into-Clients-FASuccess-Ep-With-Michael-Yoder/",
+   "category": "Other",
+   "last_published": "2026-10-06T11:06:06Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Kitces",
+     "url": "https://feeds.feedblitz.com/~/971044718/0/kitcesnerdseyeview~Creating-Effective-Discovery-Meetings-To-Convert-Of-HighValue-Prospects-Into-Clients-FASuccess-Ep-With-Michael-Yoder/"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,38 @@
+{
+ "schema_version": 1,
+ "slug": "forge-global-advisors-284722",
+ "name": "Forge Global Advisors",
+ "legal_name": "Forge Global Advisors",
+ "crd": "284722",
+ "sec_number": "801-116933",
+ "city": "San Francisco",
+ "state": "CA",
+ "sec_aum_usd": 2458638402.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/284722",
+ "stories": [
+  {
+   "cluster_id": 527,
+   "headline": "Schwab sells alts custodian Forge Trust to Alto, citing capability overlap",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNNHBUZmdyWXcwTkhJOExRVXdPRTB5YmY4OENLU2JRS3VGU3huenptcXFwUktrM1c1VTRNcy1zRERmT19NSnR1Ri14Ym9HY3lhX3hGRFF4eVBUdFNwVGtmODBFSWlUN2w1VkJqbTVYZHdTNGt2bnpiYjlDd3oxZUxCNEFTZ2FpZzk2NmFwcmxETTlCTG5hcHpFd0JycmF6RXF2T1Z2SmJQcTVlRERQMTB6MXh3?oc=5",
+   "category": "M&A",
+   "last_published": "2026-10-07T19:00:15Z",
+   "outlet_count": 3,
+   "sources": [
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNNHBUZmdyWXcwTkhJOExRVXdPRTB5YmY4OENLU2JRS3VGU3huenptcXFwUktrM1c1VTRNcy1zRERmT19NSnR1Ri14Ym9HY3lhX3hGRFF4eVBUdFNwVGtmODBFSWlUN2w1VkJqbTVYZHdTNGt2bnpiYjlDd3oxZUxCNEFTZ2FpZzk2NmFwcmxETTlCTG5hcHpFd0JycmF6RXF2T1Z2SmJQcTVlRERQMTB6MXh3?oc=5"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/retirement-planning/alto-to-buy-forge-trust-from-schwab-in-self-directed-ira-push/268489"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/alternative-investments/schwab-sells-forge-trust-to-self-directed-ira-platform-alto"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "icapital-122816",
+ "name": "Icapital",
+ "legal_name": "Icapital",
+ "crd": "122816",
+ "sec_number": "801-61527",
+ "city": "Boston",
+ "state": "MA",
+ "sec_aum_usd": 1452570340.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/122816",
+ "stories": [
+  {
+   "cluster_id": 246,
+   "headline": "DTCC Invests in iCapital, Announces Partnership",
+   "url": "https://www.wealthmanagement.com/alternative-investments/dtcc-invests-in-icapital-announces-partnership",
+   "category": "Wealthtech",
+   "last_published": "2026-09-28T12:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/alternative-investments/dtcc-invests-in-icapital-announces-partnership"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

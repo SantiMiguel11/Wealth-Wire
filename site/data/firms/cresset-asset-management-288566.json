@@ -1,0 +1,34 @@
+{
+ "schema_version": 1,
+ "slug": "cresset-asset-management-288566",
+ "name": "Cresset Asset Management",
+ "legal_name": "Cresset Asset Management",
+ "crd": "288566",
+ "sec_number": "801-110753",
+ "city": "Chicago",
+ "state": "IL",
+ "sec_aum_usd": 78936263960.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/288566",
+ "stories": [
+  {
+   "cluster_id": 610,
+   "headline": "Cresset taps former Blackstone strategist Joe Zidle for markets role",
+   "url": "https://www.investmentnews.com/ria-news/cresset-taps-former-blackstone-strategist-joe-zidle-for-markets-role/268535",
+   "category": "People Moves",
+   "last_published": "2026-10-08T18:45:54Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/cresset-taps-former-blackstone-strategist-joe-zidle-for-markets-role/268535"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/career-moves/people-moves-cresset-appoints-blackstone-alum-joe-zidle-chief-market-strategist"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

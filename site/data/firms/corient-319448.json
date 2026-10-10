@@ -1,0 +1,75 @@
+{
+ "schema_version": 1,
+ "slug": "corient-319448",
+ "name": "Corient",
+ "legal_name": "Corient Private Wealth",
+ "crd": "319448",
+ "sec_number": "801-124978",
+ "city": "Miami",
+ "state": "FL",
+ "sec_aum_usd": 165252436553.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/319448",
+ "stories": [
+  {
+   "cluster_id": 35,
+   "headline": "Corient enters Cayman Islands with $2.6B FortCay acquisition",
+   "url": "https://www.investmentnews.com/ria-news/corient-enters-cayman-islands-with-26b-fortcay-acquisition/268315",
+   "category": "M&A",
+   "last_published": "2026-09-24T14:30:12Z",
+   "outlet_count": 3,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/corient-enters-cayman-islands-with-26b-fortcay-acquisition/268315"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/career-moves/corient-acquires-26b-cayman-islands-family-office"
+    },
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQUUhfM3VfOTdXTzB0NFdkcV9GSkV5ZkdYTGJ1ZEQ2b1dzaVAwU3VsVHRIY2ZNbnJ4eEx4MExtVk9DVEFOTUpwZFdyVHFiTGl1SGtteTBNU2ZuaDQ3a0VjS0lxcVNIaXJKLWQyWlZ5YnhBOTFVZ0pCVjYtSjF6b3JLbnUzVVFoSUt6STN1WHM3b3QwWTI0NnZz?oc=5"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 35,
+   "date": "2026-09-23T13:31:18Z",
+   "headline": "Corient enters Cayman Islands with $2.6B FortCay acquisition",
+   "acquirer": {
+    "name": "Corient",
+    "slug": "corient-319448",
+    "crd": "319448"
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 2600000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target unclear (generic description: 'Family Office')",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/corient-enters-cayman-islands-with-26b-fortcay-acquisition/268315"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/career-moves/corient-acquires-26b-cayman-islands-family-office"
+    },
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQUUhfM3VfOTdXTzB0NFdkcV9GSkV5ZkdYTGJ1ZEQ2b1dzaVAwU3VsVHRIY2ZNbnJ4eEx4MExtVk9DVEFOTUpwZFdyVHFiTGl1SGtteTBNU2ZuaDQ3a0VjS0lxcVNIaXJKLWQyWlZ5YnhBOTFVZ0pCVjYtSjF6b3JLbnUzVVFoSUt6STN1WHM3b3QwWTI0NnZz?oc=5"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

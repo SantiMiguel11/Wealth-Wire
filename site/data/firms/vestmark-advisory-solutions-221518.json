@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "vestmark-advisory-solutions-221518",
+ "name": "Vestmark Advisory Solutions",
+ "legal_name": "Vestmark Advisory Solutions",
+ "crd": "221518",
+ "sec_number": "801-114077",
+ "city": "Wakefield",
+ "state": "MA",
+ "sec_aum_usd": 49854767353.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/221518",
+ "stories": [
+  {
+   "cluster_id": 154,
+   "headline": "Bain Capital (mostly) funds Envestnet buy of Vestmark to surpass $10 trillion and define 'adaptive modularity' strategy, leaving Orion a clear RIA lane",
+   "url": "https://riabiz.com/a/2026/9/10/bain-capital-mostly-funds-envestnet-buy-of-vestmark-to-surpass-10-trillion-and-define-adaptive-modularity-strategy-leaving-orion-a-clear-ria-lane",
+   "category": "Regulation",
+   "last_published": "2026-09-10T12:51:50Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/10/bain-capital-mostly-funds-envestnet-buy-of-vestmark-to-surpass-10-trillion-and-define-adaptive-modularity-strategy-leaving-orion-a-clear-ria-lane"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

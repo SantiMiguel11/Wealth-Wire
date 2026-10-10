@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "pathstone-151736",
+ "name": "Pathstone",
+ "legal_name": "Pathstone Family Office",
+ "crd": "151736",
+ "sec_number": "801-70776",
+ "city": "Englewood",
+ "state": "NJ",
+ "sec_aum_usd": 110295873738.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/151736",
+ "stories": [
+  {
+   "cluster_id": 659,
+   "headline": "RIA Edge 100: Pathstone’s Unusual Growth Engine Includes Skiing, Fly Fishing Trips",
+   "url": "https://www.wealthmanagement.com/ria-edge/ria-edge-100-pathstone-s-unusual-growth-engine-includes-skiing-fly-fishing-trips",
+   "category": "Other",
+   "last_published": "2026-10-09T13:19:10Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-edge/ria-edge-100-pathstone-s-unusual-growth-engine-includes-skiing-fly-fishing-trips"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

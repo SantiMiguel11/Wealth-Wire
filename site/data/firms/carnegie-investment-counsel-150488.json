@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "carnegie-investment-counsel-150488",
+ "name": "Carnegie Investment Counsel",
+ "legal_name": "Carnegie Capital Asset Management",
+ "crd": "150488",
+ "sec_number": "801-70242",
+ "city": "Pepper Pike",
+ "state": "OH",
+ "sec_aum_usd": 7513187008.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/150488",
+ "stories": [
+  {
+   "cluster_id": 320,
+   "headline": "Carnegie Investment Counsel sued over valuation suppression",
+   "url": "https://www.investmentnews.com/regulation-legal-compliance/carnegie-investment-counsel-sued-over-valuation-suppression/268408",
+   "category": "Regulation",
+   "last_published": "2026-09-29T21:31:19Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/carnegie-investment-counsel-sued-over-valuation-suppression/268408"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

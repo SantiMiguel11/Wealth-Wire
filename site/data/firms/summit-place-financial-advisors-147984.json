@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "summit-place-financial-advisors-147984",
+ "name": "Summit Place Financial Advisors",
+ "legal_name": "Summit Place Financial Advisors",
+ "crd": "147984",
+ "sec_number": "801-96169",
+ "city": "Summit",
+ "state": "NJ",
+ "sec_aum_usd": 300404815.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/147984",
+ "stories": [
+  {
+   "cluster_id": 621,
+   "headline": "At Women Advisor Summit, Summit Place’s Liz Miller will offer key steps to advisor success",
+   "url": "https://www.investmentnews.com/practice-management/at-women-advisor-summit-summit-places-liz-miller-will-offer-key-steps-to-advisor-success/268541",
+   "category": "Other",
+   "last_published": "2026-10-08T18:05:27Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/practice-management/at-women-advisor-summit-summit-places-liz-miller-will-offer-key-steps-to-advisor-success/268541"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

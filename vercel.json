@@ -1,0 +1,32 @@
+{
+  "buildCommand": "echo static site",
+  "installCommand": "echo no install",
+  "framework": null,
+  "outputDirectory": "site",
+  "rewrites": [
+    {
+      "source": "/firm/:slug",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/data/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ]
+}

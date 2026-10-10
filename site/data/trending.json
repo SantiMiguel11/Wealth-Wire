@@ -1,0 +1,112 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-10-10T19:13:57Z",
+ "days": 7,
+ "firms": [
+  {
+   "name": "Fidelity Management & Research",
+   "slug": "fidelity-management-research-108281",
+   "crd": "108281",
+   "verified": true,
+   "stories": 8
+  },
+  {
+   "name": "Charles Schwab",
+   "slug": "charles-schwab-5393",
+   "crd": "5393",
+   "verified": true,
+   "stories": 4
+  },
+  {
+   "name": "Wells Fargo Advisors",
+   "slug": "wells-fargo-advisors-19616",
+   "crd": "19616",
+   "verified": true,
+   "stories": 4
+  },
+  {
+   "name": "Betterment",
+   "slug": "betterment-149117",
+   "crd": "149117",
+   "verified": true,
+   "stories": 3
+  },
+  {
+   "name": "Hightower Advisors",
+   "slug": "hightower-advisors-145323",
+   "crd": "145323",
+   "verified": true,
+   "stories": 3
+  },
+  {
+   "name": "Morningstar Investment Management",
+   "slug": "morningstar-investment-management-108031",
+   "crd": "108031",
+   "verified": true,
+   "stories": 3
+  },
+  {
+   "name": "Alphacore Capital",
+   "slug": "alphacore-capital-174346",
+   "crd": "174346",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "Altruist",
+   "slug": "altruist-299398",
+   "crd": "299398",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "Arax Advisory Partners",
+   "slug": "arax-advisory-partners-133535",
+   "crd": "133535",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "BNY Mellon Securities",
+   "slug": "bny-mellon-securities-231",
+   "crd": "231",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "Mather Group",
+   "slug": "mather-group-156005",
+   "crd": "156005",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "Merit Financial Advisors",
+   "slug": "merit-financial-advisors-142457",
+   "crd": "142457",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "Merrill Lynch, Pierce, Fenner & Smith",
+   "slug": "merrill-lynch-pierce-fenner-smith-7691",
+   "crd": "7691",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "Xypn Sapphire",
+   "slug": "xypn-sapphire-285967",
+   "crd": "285967",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "Ameriprise Financial Services",
+   "slug": "ameriprise-financial-services-6363",
+   "crd": "6363",
+   "verified": true,
+   "stories": 1
+  }
+ ]
+}

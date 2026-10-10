@@ -1,0 +1,193 @@
+{
+ "schema_version": 1,
+ "slug": "altruist-299398",
+ "name": "Altruist",
+ "legal_name": "Altruist",
+ "crd": "299398",
+ "sec_number": "801-117757",
+ "city": "Culver City",
+ "state": "CA",
+ "sec_aum_usd": 0.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/299398",
+ "stories": [
+  {
+   "cluster_id": 474,
+   "headline": "Altruist Adds Donor-Advised Funds to Platform",
+   "url": "https://www.wealthmanagement.com/advisor-support-platforms/altruist-adds-donor-advised-funds-to-platform",
+   "category": "Wealthtech",
+   "last_published": "2026-10-06T13:29:48Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/advisor-support-platforms/altruist-adds-donor-advised-funds-to-platform"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/goria/custodian/altruist-adds-donor-advised-funds-with-no-minimums-for-advisors/268481"
+    }
+   ]
+  },
+  {
+   "cluster_id": 508,
+   "headline": "Schwab's Jon Beatty is one custody head offering a port in the storm after Fidelity unmoors its sub-$100M RIAs and Altruist's Jason Wenk , Apex's Bill Capuzzi and TradePMR's R. Scott Victoria are among others",
+   "url": "https://riabiz.com/a/2026/10/5/schwabs-jon-beatty-is-one-custody-head-offering-a-port-in-the-storm-after-fidelity-unmoors-its-sub-100m-rias-and-altruists-jason-wenk-apexs-bill-capuzzi-and-tradepmrs-r-scott-victoria-are-among-others",
+   "category": "Regulation",
+   "last_published": "2026-10-06T02:44:58Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/10/5/schwabs-jon-beatty-is-one-custody-head-offering-a-port-in-the-storm-after-fidelity-unmoors-its-sub-100m-rias-and-altruists-jason-wenk-apexs-bill-capuzzi-and-tradepmrs-r-scott-victoria-are-among-others"
+    }
+   ]
+  },
+  {
+   "cluster_id": 5,
+   "headline": "WealthStack Roundup: Northwestern Mutual Adopts Jump's AI Suite",
+   "url": "https://www.wealthmanagement.com/advisor-support-platforms/northwestern-mutual-adopts-jumps-ai-suite",
+   "category": "Wealthtech",
+   "last_published": "2026-09-25T16:02:02Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/advisor-support-platforms/northwestern-mutual-adopts-jumps-ai-suite"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/fintech/fintech-bytes-northwestern-mutual-picks-jump-for-enterprise-ai/268362"
+    }
+   ]
+  },
+  {
+   "cluster_id": 72,
+   "headline": "Altruist opens pre-IPO deals to RIA clients as AI listings loom",
+   "url": "https://www.investmentnews.com/goria/custodian/altruist-opens-pre-ipo-deals-to-ria-clients-as-ai-listings-loom/268348",
+   "category": "M&A",
+   "last_published": "2026-09-24T18:21:40Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/goria/custodian/altruist-opens-pre-ipo-deals-to-ria-clients-as-ai-listings-loom/268348"
+    }
+   ]
+  },
+  {
+   "cluster_id": 114,
+   "headline": "Altruist is acquired by Vanguard to vertically integrate asset management and custody",
+   "url": "https://www.investmentnews.com/advisor-tech/altruist-is-acquired-by-vanguard-to-vertically-integrate-asset-management-and-custody/268306",
+   "category": "M&A",
+   "last_published": "2026-09-22T21:11:03Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/advisor-tech/altruist-is-acquired-by-vanguard-to-vertically-integrate-asset-management-and-custody/268306"
+    }
+   ]
+  },
+  {
+   "cluster_id": 147,
+   "headline": "Schwab's surprise unveiling of Anthropic deal at Future Proof shows it has an AI ace up its sleeve, but it may take five years or more to catch up with Altruist, if at all, say two analysts",
+   "url": "https://riabiz.com/a/2026/9/22/schwabs-surprise-unveiling-of-anthropic-deal-at-future-proof-shows-it-has-an-ai-ace-up-its-sleeve-but-it-may-take-five-years-or-more-to-catch-up-with-altruist-if-at-all-say-two-analysts",
+   "category": "M&A",
+   "last_published": "2026-09-22T17:16:36Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/22/schwabs-surprise-unveiling-of-anthropic-deal-at-future-proof-shows-it-has-an-ai-ace-up-its-sleeve-but-it-may-take-five-years-or-more-to-catch-up-with-altruist-if-at-all-say-two-analysts"
+    }
+   ]
+  },
+  {
+   "cluster_id": 158,
+   "headline": "CEO Jason Wenk says Altruist's AI 'Hazel' is ready for its second act, a financial planning service that will blow away the market with one big caveat -- advisors must be ready to provide PDFs, if rivals refuse API access",
+   "url": "https://riabiz.com/a/2026/9/3/ceo-jason-wenk-says-altruists-ai-hazel-is-ready-for-its-second-act-a-financial-planning-service-that-will-blow-away-the-market-with-one-big-caveat-advisors-must-be-ready-to-provide-pdfs-if-rivals-refuse-api-access",
+   "category": "Wealthtech",
+   "last_published": "2026-09-11T15:42:07Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/3/ceo-jason-wenk-says-altruists-ai-hazel-is-ready-for-its-second-act-a-financial-planning-service-that-will-blow-away-the-market-with-one-big-caveat-advisors-must-be-ready-to-provide-pdfs-if-rivals-refuse-api-access"
+    }
+   ]
+  },
+  {
+   "cluster_id": 160,
+   "headline": "RIABIZ INTERVIEW: Jason Wenk tells RIABiz one big unnoticed reason why he sold to Vanguard, and the Bogle-ish scenario he envisions for his eventual departure decades hence",
+   "url": "https://riabiz.com/a/2026/9/1/riabiz-interview-jason-wenk-tells-riabiz-one-big-unnoticed-reason-why-he-sold-to-vanguard-and-the-bogle-ish-scenario-he-envisions-for-his-eventual-departure-decades-hence",
+   "category": "People Moves",
+   "last_published": "2026-09-02T17:18:05Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/1/riabiz-interview-jason-wenk-tells-riabiz-one-big-unnoticed-reason-why-he-sold-to-vanguard-and-the-bogle-ish-scenario-he-envisions-for-his-eventual-departure-decades-hence"
+    }
+   ]
+  },
+  {
+   "cluster_id": 161,
+   "headline": "Vanguard Group and Altruist can win RIA hearts, no problem, experts say, but the bro-cultural chasm – 2,700 miles apart and two ways of defining 'client-first' – will determine if they can make the marriage work",
+   "url": "https://riabiz.com/a/2026/8/28/vanguard-group-and-altruist-can-win-ria-hearts-no-problem-experts-say-but-the-bro-cultural-chasm-2700-miles-apart-and-two-ways-of-defining-client-first-will-determine-if-they-can-make-the-marriage-work",
+   "category": "Wealthtech",
+   "last_published": "2026-08-29T13:38:51Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/8/28/vanguard-group-and-altruist-can-win-ria-hearts-no-problem-experts-say-but-the-bro-cultural-chasm-2700-miles-apart-and-two-ways-of-defining-client-first-will-determine-if-they-can-make-the-marriage-work"
+    }
+   ]
+  },
+  {
+   "cluster_id": 162,
+   "headline": "Vanguard struck with Altruist take-out after Schwab (and Fidelity) zapped it with ETF 'platform' fees, lightning bolts that clearly woke a sleeping monster that could redraw the competitive landscape for RIA custody, with massive 'Vanguard effect,' analysts say",
+   "url": "https://riabiz.com/a/2026/8/27/vanguard-struck-with-altruist-take-out-after-schwab-and-fidelity-zapped-it-with-etf-platform-fees-lightning-bolts-that-clearly-woke-a-sleeping-monster-that-could-redraw-the-competitive-landscape-for-ria-custody-with-massive-vanguard-effect-analysts-say",
+   "category": "Wealthtech",
+   "last_published": "2026-08-27T16:40:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/8/27/vanguard-struck-with-altruist-take-out-after-schwab-and-fidelity-zapped-it-with-etf-platform-fees-lightning-bolts-that-clearly-woke-a-sleeping-monster-that-could-redraw-the-competitive-landscape-for-ria-custody-with-massive-vanguard-effect-analysts-say"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 114,
+   "date": "2026-09-22T21:11:03Z",
+   "headline": "Altruist is acquired by Vanguard to vertically integrate asset management and custody",
+   "acquirer": {
+    "name": "Vanguard",
+    "slug": "vanguard-group-105958",
+    "crd": "105958"
+   },
+   "target": {
+    "name": "Altruist",
+    "slug": "altruist-299398",
+    "crd": "299398"
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/advisor-tech/altruist-is-acquired-by-vanguard-to-vertically-integrate-asset-management-and-custody/268306"
+    }
+   ],
+   "role": "target"
+  }
+ ]
+}

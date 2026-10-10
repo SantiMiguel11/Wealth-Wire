@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "alliancebernstein-108477",
+ "name": "Alliancebernstein",
+ "legal_name": "Alliancebernstein",
+ "crd": "108477",
+ "sec_number": "801-56720",
+ "city": "Nashville",
+ "state": "TN",
+ "sec_aum_usd": 763401000000.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/108477",
+ "stories": [
+  {
+   "cluster_id": 57,
+   "headline": "People moves: AllianceBernstein names Onur Erzan as next CEO",
+   "url": "https://www.investmentnews.com/fintech/people-moves-alliancebernstein-names-onur-erzan-as-next-ceo/268360",
+   "category": "People Moves",
+   "last_published": "2026-09-25T14:41:01Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/fintech/people-moves-alliancebernstein-names-onur-erzan-as-next-ceo/268360"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

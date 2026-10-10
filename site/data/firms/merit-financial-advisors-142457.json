@@ -1,0 +1,72 @@
+{
+ "schema_version": 1,
+ "slug": "merit-financial-advisors-142457",
+ "name": "Merit Financial Advisors",
+ "legal_name": "Merit Financial Group",
+ "crd": "142457",
+ "sec_number": "801-67462",
+ "city": "Alpharetta",
+ "state": "GA",
+ "sec_aum_usd": 23875298692.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/142457",
+ "stories": [
+  {
+   "cluster_id": 623,
+   "headline": "RIA moves: Merit, Hightower and Trilogy announce billion-dollar additions",
+   "url": "https://www.investmentnews.com/ria-news/ria-moves-merit-hightower-and-trilogy-announce-billion-dollar-additions/268538",
+   "category": "Other",
+   "last_published": "2026-10-08T17:27:25Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/ria-moves-merit-hightower-and-trilogy-announce-billion-dollar-additions/268538"
+    }
+   ]
+  },
+  {
+   "cluster_id": 594,
+   "headline": "Merit Financial Snags 10th Commonwealth Advisor",
+   "url": "https://www.wealthmanagement.com/ria-news/merit-financial-snags-10th-commonwealth-advisor",
+   "category": "Other",
+   "last_published": "2026-10-07T19:29:21Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/merit-financial-snags-10th-commonwealth-advisor"
+    }
+   ]
+  },
+  {
+   "cluster_id": 116,
+   "headline": "Kay Lynn Mayhue named Merit CEO, still seeks 'big splash' deal",
+   "url": "https://www.investmentnews.com/goria/practice-management/kay-lynn-mayhue-named-merit-ceo-still-seeks-big-splash-deal/268300",
+   "category": "M&A",
+   "last_published": "2026-09-22T19:52:40Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/goria/practice-management/kay-lynn-mayhue-named-merit-ceo-still-seeks-big-splash-deal/268300"
+    }
+   ]
+  },
+  {
+   "cluster_id": 49,
+   "headline": "$33B Merit President Mayhue to Take CEO Role as Founder Kent Becomes Executive Chair",
+   "url": "https://www.wealthmanagement.com/ria-news/-33b-merit-president-mayhue-takes-ceo-role-as-founder-kent-moves-to-executive-chair",
+   "category": "Products & Funds",
+   "last_published": "2026-09-22T13:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/-33b-merit-president-mayhue-takes-ceo-role-as-founder-kent-moves-to-executive-chair"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "osaic-wealth-23131",
+ "name": "Osaic Wealth",
+ "legal_name": "Osaic Wealth",
+ "crd": "23131",
+ "sec_number": "801-54859",
+ "city": "Scottsdale",
+ "state": "AZ",
+ "sec_aum_usd": 234858518740.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/23131",
+ "stories": [
+  {
+   "cluster_id": 580,
+   "headline": "Advisor moves: Osaic draws Equitable advisor overseeing $245 million in assets",
+   "url": "https://www.investmentnews.com/independent-broker-dealers/advisor-moves-osaic-draws-equitable-advisor-overseeing-245-million-in-assets/268518",
+   "category": "Other",
+   "last_published": "2026-10-07T18:11:49Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/advisor-moves-osaic-draws-equitable-advisor-overseeing-245-million-in-assets/268518"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

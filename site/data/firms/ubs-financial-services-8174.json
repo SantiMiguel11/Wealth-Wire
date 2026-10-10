@@ -1,0 +1,80 @@
+{
+ "schema_version": 1,
+ "slug": "ubs-financial-services-8174",
+ "name": "UBS Financial Services",
+ "legal_name": "UBS Financial Services",
+ "crd": "8174",
+ "sec_number": "801-7163",
+ "city": "Weehawken",
+ "state": "NJ",
+ "sec_aum_usd": 915793138114.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/8174",
+ "stories": [
+  {
+   "cluster_id": 687,
+   "headline": "Merrill, UBS record net advisor losses for first half of 2026: Report",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPSHZXQlBFMkxrUmhacXROcEdqbFhZV0VOdEJOUlBadVF3TFVTZFprYV9GbmU5MTJFS3c1NXN2MUNlY2x2eGlMamxTT1FJdlNTbGh5VjdVSXF1QkZqQjEtcGtfaHplbEQ4aVdFSTYzQVIxbzE2T0tZUVd0OGg5TUF1RThzbTVSN2szMFE5WktfSXVnOUl0UTlwNjd1cWdON3VTTWpkR1FoQzY5dw?oc=5",
+   "category": "Other",
+   "last_published": "2026-10-08T19:49:25Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPSHZXQlBFMkxrUmhacXROcEdqbFhZV0VOdEJOUlBadVF3TFVTZFprYV9GbmU5MTJFS3c1NXN2MUNlY2x2eGlMamxTT1FJdlNTbGh5VjdVSXF1QkZqQjEtcGtfaHplbEQ4aVdFSTYzQVIxbzE2T0tZUVd0OGg5TUF1RThzbTVSN2szMFE5WktfSXVnOUl0UTlwNjd1cWdON3VTTWpkR1FoQzY5dw?oc=5"
+    }
+   ]
+  },
+  {
+   "cluster_id": 337,
+   "headline": "$1.3B UBS Team Departs for Wells Fargo's FiNet",
+   "url": "https://www.wealthmanagement.com/wirehouse-news/-1-3b-ubs-team-departs-for-wells-fargo-s-finet",
+   "category": "People Moves",
+   "last_published": "2026-10-01T13:03:42Z",
+   "outlet_count": 3,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/wirehouse-news/-1-3b-ubs-team-departs-for-wells-fargo-s-finet"
+    },
+    {
+     "name": "Financial Advisor Magazine",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQSGF5eFlOYTNsYzVUT20yUjFDSWpUZzIwUFBJUWRvMEhfNUU4SFZyYWV6Z24tNlJlb1o0OEotZWpWeUozdG5veGRNcjZxcEF4ck9laFZGTjhncFMyMVhjR0NvSHNJT3NwOWJXcUF1cGtEUEZTT2tKNzY3bHZaaGtzOGJKTFAwNzlGTGNlVDVvaHptaXhnOVVaQ3ZPVW56djd4WWc?oc=5"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/advisor-moves-13b-advisor-team-joins-wells-fargo-finet-practice-in-ohio/268431"
+    }
+   ]
+  },
+  {
+   "cluster_id": 325,
+   "headline": "New York court lets UBS pursue Highland Capital founder over unpaid judgments",
+   "url": "https://www.investmentnews.com/regulation-legal-compliance/new-york-court-lets-ubs-pursue-highland-capital-founder-over-unpaid-judgments/268393",
+   "category": "Regulation",
+   "last_published": "2026-09-29T15:42:06Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/new-york-court-lets-ubs-pursue-highland-capital-founder-over-unpaid-judgments/268393"
+    }
+   ]
+  },
+  {
+   "cluster_id": 221,
+   "headline": "FINRA Fines UBS Financial $20 Million for Anti-Money Laundering Violations",
+   "url": "https://www.finra.org/media-center/newsreleases/2026/finra-fines-ubs-financial-20-million-anti-money-laundering",
+   "category": "Regulation",
+   "last_published": "2026-08-03T12:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "FINRA News",
+     "url": "https://www.finra.org/media-center/newsreleases/2026/finra-fines-ubs-financial-20-million-anti-money-laundering"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

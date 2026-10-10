@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "bluespring-wealth-management-152667",
+ "name": "Bluespring Wealth Management",
+ "legal_name": "Bluespring Wealth Management",
+ "crd": "152667",
+ "sec_number": "801-70998",
+ "city": "Austin",
+ "state": "TX",
+ "sec_aum_usd": 5430907207.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/152667",
+ "stories": [
+  {
+   "cluster_id": 583,
+   "headline": "Bluespring Wealth builds $1B team with Family Wealth Counseling deal",
+   "url": "https://www.investmentnews.com/ria-news/bluespring-wealth-builds-1b-team-with-family-wealth-counseling-deal/268511",
+   "category": "People Moves",
+   "last_published": "2026-10-07T14:10:41Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/bluespring-wealth-builds-1b-team-with-family-wealth-counseling-deal/268511"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

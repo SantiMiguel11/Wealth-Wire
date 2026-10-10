@@ -1,0 +1,110 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-10-10T19:13:57Z",
+ "last_refresh": "2026-10-10T19:13:40Z",
+ "previous_refresh": "2026-10-10T05:39:47Z",
+ "top_window_start": "2026-10-09T19:13:57Z",
+ "timezone": "America/Los_Angeles",
+ "demo": false,
+ "counts": {
+  "stories": 632,
+  "clusters": 583,
+  "deals": 51,
+  "firms": 121
+ },
+ "sources_ok": 11,
+ "sources_total": 12,
+ "sources": [
+  {
+   "name": "Citywire RIA",
+   "ok": true,
+   "method": "Google News RSS",
+   "items_last_run": 100
+  },
+  {
+   "name": "WealthManagement.com",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 50
+  },
+  {
+   "name": "Financial Advisor Magazine",
+   "ok": true,
+   "method": "Google News RSS",
+   "items_last_run": 100
+  },
+  {
+   "name": "InvestmentNews",
+   "ok": true,
+   "method": "discovered RSS",
+   "items_last_run": 87
+  },
+  {
+   "name": "ThinkAdvisor",
+   "ok": true,
+   "method": "Google News RSS",
+   "items_last_run": 59
+  },
+  {
+   "name": "RIABiz",
+   "ok": true,
+   "method": "discovered RSS",
+   "items_last_run": 0
+  },
+  {
+   "name": "Financial Planning",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 10
+  },
+  {
+   "name": "Kitces",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 0
+  },
+  {
+   "name": "SEC Press Releases",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 0
+  },
+  {
+   "name": "FINRA News",
+   "ok": true,
+   "method": "discovered RSS",
+   "items_last_run": 0
+  },
+  {
+   "name": "PR Newswire",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 20
+  },
+  {
+   "name": "GlobeNewswire",
+   "ok": false,
+   "method": "failed",
+   "items_last_run": 0
+  }
+ ],
+ "categories": [
+  "M&A",
+  "People Moves",
+  "Regulation",
+  "Wealthtech",
+  "Products & Funds",
+  "Markets",
+  "Other"
+ ],
+ "sec": {
+  "data_date": "2026-09-01",
+  "firm_count": 17149
+ },
+ "digest": {
+  "date": "2026-10-10",
+  "ai": false,
+  "last_good_date": null
+ },
+ "footer_note": "Summaries written with Claude from outlet headlines."
+}

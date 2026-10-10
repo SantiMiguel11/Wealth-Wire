@@ -1,0 +1,44 @@
+{
+ "schema_version": 1,
+ "slug": "bitwise-investment-manager-317943",
+ "name": "Bitwise Investment Manager",
+ "legal_name": "Bitwise Investment Manager",
+ "crd": "317943",
+ "sec_number": "801-126704",
+ "city": "San Francisco",
+ "state": "CA",
+ "sec_aum_usd": 721822353.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/317943",
+ "stories": [
+  {
+   "cluster_id": 10,
+   "headline": "Bitwise Partners with Vise for Crypto Model Rollout",
+   "url": "https://www.wealthmanagement.com/crypto/bitwise-vise-roll-out-crypto-model-portfolios",
+   "category": "Products & Funds",
+   "last_published": "2026-09-24T18:31:34Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/crypto/bitwise-vise-roll-out-crypto-model-portfolios"
+    }
+   ]
+  },
+  {
+   "cluster_id": 86,
+   "headline": "Institutional crypto adoption is stickier than markets assumed, Bitwise finds",
+   "url": "https://www.investmentnews.com/alternatives/institutional-crypto-adoption-is-stickier-than-markets-assumed-bitwise-finds/268334",
+   "category": "Products & Funds",
+   "last_published": "2026-09-24T10:43:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/alternatives/institutional-crypto-adoption-is-stickier-than-markets-assumed-bitwise-finds/268334"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

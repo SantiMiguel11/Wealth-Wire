@@ -1,0 +1,104 @@
+{
+ "schema_version": 1,
+ "slug": "raymond-james-associates-705",
+ "name": "Raymond James & Associates",
+ "legal_name": "Raymond James & Associates",
+ "crd": "705",
+ "sec_number": "801-10418",
+ "city": "St. Petersburg",
+ "state": "FL",
+ "sec_aum_usd": 500955604975.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/705",
+ "stories": [
+  {
+   "cluster_id": 619,
+   "headline": "Four Practices Bring $1B to Ascentis Independent From Raymond James",
+   "url": "https://www.wealthmanagement.com/ria-news/four-practices-bring-1b-to-ascentis-from-raymond-james",
+   "category": "Wealthtech",
+   "last_published": "2026-10-08T10:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/four-practices-bring-1b-to-ascentis-from-raymond-james"
+    }
+   ]
+  },
+  {
+   "cluster_id": 288,
+   "headline": "Raymond James launches guided portfolios for high-net-worth advisor market",
+   "url": "https://www.investmentnews.com/independent-broker-dealers/raymond-james-launches-guided-portfolios-for-high-net-worth-advisor-market/268389",
+   "category": "Products & Funds",
+   "last_published": "2026-09-29T15:50:08Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/raymond-james-launches-guided-portfolios-for-high-net-worth-advisor-market/268389"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/alternative-investments/raymond-james-launches-public-private-model-portfolios-for-hnw-clients"
+    }
+   ]
+  },
+  {
+   "cluster_id": 51,
+   "headline": "Advisor moves: Raymond James lands $1.25B team as Merrill loses two",
+   "url": "https://www.investmentnews.com/independent-broker-dealers/advisor-moves-raymond-james-lands-125b-team-as-merrill-loses-two/268368",
+   "category": "People Moves",
+   "last_published": "2026-09-25T19:55:56Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/advisor-moves-raymond-james-lands-125b-team-as-merrill-loses-two/268368"
+    }
+   ]
+  },
+  {
+   "cluster_id": 8,
+   "headline": "Raymond James Attracts Two Teams Totaling $1.75B",
+   "url": "https://www.wealthmanagement.com/ibd-news/raymond-james-adds-175b-in-teams-this-week",
+   "category": "People Moves",
+   "last_published": "2026-09-24T21:00:24Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ibd-news/raymond-james-adds-175b-in-teams-this-week"
+    }
+   ]
+  },
+  {
+   "cluster_id": 75,
+   "headline": "Advisor moves: LPL welcomes back RayJay advisor trio in Texas",
+   "url": "https://www.investmentnews.com/independent-broker-dealers/advisor-moves-lpl-welcomes-back-rayjay-advisor-trio-in-texas/268345",
+   "category": "Other",
+   "last_published": "2026-09-24T16:01:37Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/advisor-moves-lpl-welcomes-back-rayjay-advisor-trio-in-texas/268345"
+    }
+   ]
+  },
+  {
+   "cluster_id": 87,
+   "headline": "Advisor moves: Raymond James, Baird add significant teams in latest recruiting push",
+   "url": "https://www.investmentnews.com/independent-broker-dealers/advisor-moves-raymond-james-baird-add-significant-teams-in-latest-recruiting-push/268332",
+   "category": "People Moves",
+   "last_published": "2026-09-24T10:40:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/advisor-moves-raymond-james-baird-add-significant-teams-in-latest-recruiting-push/268332"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,310 @@
+{
+ "schema_version": 1,
+ "slug": "fidelity-management-research-108281",
+ "name": "Fidelity Management & Research",
+ "legal_name": "Fidelity Management & Research",
+ "crd": "108281",
+ "sec_number": "801-7884",
+ "city": "Boston",
+ "state": "MA",
+ "sec_aum_usd": 5685041930529.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/108281",
+ "stories": [
+  {
+   "cluster_id": 684,
+   "headline": "Weekend Reading For Financial Planners (October 10–11)",
+   "url": "https://feeds.feedblitz.com/~/971196662/0/kitcesnerdseyeview~Weekend-Reading-For-Financial-Planners-October-%e2%80%93/",
+   "category": "Wealthtech",
+   "last_published": "2026-10-09T18:08:49Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Kitces",
+     "url": "https://feeds.feedblitz.com/~/971196662/0/kitcesnerdseyeview~Weekend-Reading-For-Financial-Planners-October-%e2%80%93/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 681,
+   "headline": "How RIAs can beat the clock when leaving Fidelity custody",
+   "url": "https://www.financial-planning.com/news/how-rias-can-beat-the-clock-when-leaving-fidelity-custody",
+   "category": "Other",
+   "last_published": "2026-10-09T11:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Financial Planning",
+     "url": "https://www.financial-planning.com/news/how-rias-can-beat-the-clock-when-leaving-fidelity-custody"
+    }
+   ]
+  },
+  {
+   "cluster_id": 647,
+   "headline": "Betterment waives fee to win custody business from Fidelity RIAs",
+   "url": "https://www.investmentnews.com/goria/custodian/betterment-waives-platform-fee-for-fidelity-rias-through-2028/268546",
+   "category": "Other",
+   "last_published": "2026-10-08T22:14:47Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/goria/custodian/betterment-waives-platform-fee-for-fidelity-rias-through-2028/268546"
+    }
+   ]
+  },
+  {
+   "cluster_id": 606,
+   "headline": "XY Planning recruiting spikes as RIA M&A refugees flee rollups that dangle downer contracts -- Amazon, Google, and Fidelity are the second set of X factors feeding the boom",
+   "url": "https://riabiz.com/a/2026/10/8/xy-planning-recruiting-spikes-as-ria-ma-refugees-flee-rollups-that-dangle-downer-contracts-amazon-google-and-fidelity-are-the-second-set-of-x-factors-feeding-the-boom",
+   "category": "M&A",
+   "last_published": "2026-10-08T01:34:28Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/10/8/xy-planning-recruiting-spikes-as-ria-ma-refugees-flee-rollups-that-dangle-downer-contracts-amazon-google-and-fidelity-are-the-second-set-of-x-factors-feeding-the-boom"
+    }
+   ]
+  },
+  {
+   "cluster_id": 689,
+   "headline": "Nearly 1,000 RIAs affected by Fidelity's new asset minimum: Report",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQc0dkcEpnLThIOTR5N3V0ZEFIZGIyT2YxM0JMRUJIQ3FqeS05Y3lnY0laVWYyV0dkeGtzbk5GV1ZVSTloTEE3d0c0T1BHazNaY1FZOGdoQUZRWDdIajh1aWNPaEVpWkl5cjdPYnRaTHBkaUNnZDRLd2FEQXJ3eXhUOGxraDd6cnYwTWdRUE1QWW9rcGZDRkhJUU53aUZjZGdCSVRPNQ?oc=5",
+   "category": "Other",
+   "last_published": "2026-10-07T22:12:47Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQc0dkcEpnLThIOTR5N3V0ZEFIZGIyT2YxM0JMRUJIQ3FqeS05Y3lnY0laVWYyV0dkeGtzbk5GV1ZVSTloTEE3d0c0T1BHazNaY1FZOGdoQUZRWDdIajh1aWNPaEVpWkl5cjdPYnRaTHBkaUNnZDRLd2FEQXJ3eXhUOGxraDd6cnYwTWdRUE1QWW9rcGZDRkhJUU53aUZjZGdCSVRPNQ?oc=5"
+    }
+   ]
+  },
+  {
+   "cluster_id": 489,
+   "headline": "Fidelity's $100M RIA custody minimum lands amid long-short SMA curbs",
+   "url": "https://www.investmentnews.com/goria/custodian/fidelitys-100m-ria-custody-minimum-lands-amid-long-short-sma-curbs/268473",
+   "category": "Products & Funds",
+   "last_published": "2026-10-07T19:18:59Z",
+   "outlet_count": 4,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/goria/custodian/fidelitys-100m-ria-custody-minimum-lands-amid-long-short-sma-curbs/268473"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/custodians-ria-platforms-are-hunting-for-fidelity-clients-on-heels-of-100m-minimum"
+    },
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOQlRKZExCeDdIMEpTbWM1cHc3aGhGQmJDamptT3ZSb3RHM3I3YURKUDhfeXJqUnpkbm51UUt5M3pYNWwtT0M0anRJR1ByMlNRbU94VnZHZTk5SFlhdFlXYXNhSjI3WTF0eVRyZklraTk0dlZfb2wtVzJZSU1sZ1NiV1BrLWMyNDlsUExmbXpXQVVRLURTWWM4SU5ta08zRmJhVm9OcGZDaUlOS3hDT1lN?oc=5"
+    },
+    {
+     "name": "Financial Planning",
+     "url": "https://www.financial-planning.com/news/3-ways-rias-can-respond-to-fidelitys-new-100m-minimum"
+    }
+   ]
+  },
+  {
+   "cluster_id": 589,
+   "headline": "Dropped by Fidelity? Here are RIAs' custody options",
+   "url": "https://www.financial-planning.com/list/dropped-by-fidelity-here-are-rias-custody-options",
+   "category": "Other",
+   "last_published": "2026-10-07T09:30:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Financial Planning",
+     "url": "https://www.financial-planning.com/list/dropped-by-fidelity-here-are-rias-custody-options"
+    }
+   ]
+  },
+  {
+   "cluster_id": 508,
+   "headline": "Schwab's Jon Beatty is one custody head offering a port in the storm after Fidelity unmoors its sub-$100M RIAs and Altruist's Jason Wenk , Apex's Bill Capuzzi and TradePMR's R. Scott Victoria are among others",
+   "url": "https://riabiz.com/a/2026/10/5/schwabs-jon-beatty-is-one-custody-head-offering-a-port-in-the-storm-after-fidelity-unmoors-its-sub-100m-rias-and-altruists-jason-wenk-apexs-bill-capuzzi-and-tradepmrs-r-scott-victoria-are-among-others",
+   "category": "Regulation",
+   "last_published": "2026-10-06T02:44:58Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/10/5/schwabs-jon-beatty-is-one-custody-head-offering-a-port-in-the-storm-after-fidelity-unmoors-its-sub-100m-rias-and-altruists-jason-wenk-apexs-bill-capuzzi-and-tradepmrs-r-scott-victoria-are-among-others"
+    }
+   ]
+  },
+  {
+   "cluster_id": 690,
+   "headline": "Fidelity To Small RIAs: Find Another Custodian",
+   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9uSVlvbVFtb0NLeVUxTl9Bdllsc2pJWmdtOXZjamVHYVQ4dGozMjVnekZkQnRwZlJFTllRUm53YXpST3dxY3JKalVZSlFSSVJqQWJpYllZblYtQTFQbjYwZUFEc2lyMWdrOXZPaFFNTGhuQWJxajU4UkJtLXg?oc=5",
+   "category": "Other",
+   "last_published": "2026-10-02T04:22:46Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Financial Advisor Magazine",
+     "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9uSVlvbVFtb0NLeVUxTl9Bdllsc2pJWmdtOXZjamVHYVQ4dGozMjVnekZkQnRwZlJFTllRUm53YXpST3dxY3JKalVZSlFSSVJqQWJpYllZblYtQTFQbjYwZUFEc2lyMWdrOXZPaFFNTGhuQWJxajU4UkJtLXg?oc=5"
+    }
+   ]
+  },
+  {
+   "cluster_id": 439,
+   "headline": "Fidelity's move to kick sub-$100-million RIAs off its platform is 'bizarre,' Kitces says; it’s likely to backfire, Chalekian says; yet, the Fidelity-Savvy deal last week may soften any blow",
+   "url": "https://riabiz.com/a/2026/10/2/fidelitys-move-to-kick-sub-100-million-rias-off-its-platform-is-bizarre-kitces-says-its-likely-to-backfire-chalekian-says-yet-the-fidelity-savvy-deal-last-week-may-soften-any-blow",
+   "category": "M&A",
+   "last_published": "2026-10-02T02:24:19Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/10/2/fidelitys-move-to-kick-sub-100-million-rias-off-its-platform-is-bizarre-kitces-says-its-likely-to-backfire-chalekian-says-yet-the-fidelity-savvy-deal-last-week-may-soften-any-blow"
+    }
+   ]
+  },
+  {
+   "cluster_id": 389,
+   "headline": "Fidelity to Raise RIA Custody Asset Minimum to $100M",
+   "url": "https://www.wealthmanagement.com/ria-news/fidelity-to-raise-custody-asset-minimum-to-100m",
+   "category": "Wealthtech",
+   "last_published": "2026-10-01T22:09:11Z",
+   "outlet_count": 3,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/fidelity-to-raise-custody-asset-minimum-to-100m"
+    },
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQSW9jWWFuUFlSeUNxQmRvUnlWdkpXNmpUT3dsbU9iSE1OX3hqNGNlY2s2bHBZMGRRV1VTbWlxcXR3aWhsdXR4bXUxTjA3VmtPcUZiR0dyOFZ1bUtiOXBOVjlBYjVUTFJHLUJRS1dNRjlKM25yQU5XV3J0bDRmVWZVbzBua0RTYjJvcWVXWloxekp4NlJMLURlbk5XYURpcUVnSV9KRE1oQjBLQQ?oc=5"
+    },
+    {
+     "name": "Financial Planning",
+     "url": "https://www.financial-planning.com/news/fidelity-says-it-will-end-custody-relationships-with-rias-under-100m"
+    }
+   ]
+  },
+  {
+   "cluster_id": 433,
+   "headline": "Pontera 'reframes' itself from 401(k) workaround agent to trusted gatekeeper of AI agents -- possibly solving impasse with Fidelity -- as Schwab unleashes 'Charley,' its new AI agent 'foundation' for millions of clients",
+   "url": "https://riabiz.com/a/2026/10/1/pontera-reframes-itself-from-401k-workaround-agent-to-trusted-gatekeeper-of-ai-agents-possibly-solving-impasse-with-fidelity-as-schwab-unleashes-charley-its-new-ai-agent-foundation-for-millions-of-clients",
+   "category": "Wealthtech",
+   "last_published": "2026-10-01T21:37:48Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/10/1/pontera-reframes-itself-from-401k-workaround-agent-to-trusted-gatekeeper-of-ai-agents-possibly-solving-impasse-with-fidelity-as-schwab-unleashes-charley-its-new-ai-agent-foundation-for-millions-of-clients"
+    }
+   ]
+  },
+  {
+   "cluster_id": 409,
+   "headline": "Pontera 'reframes' itself from 401(k) workaround agent to trusted gatekeeper of AI agents -- possibly solving impasse with Fidelity -- as Schwab unleashes 'Charley' agent as its new 'foundation",
+   "url": "https://riabiz.com/a/2026/10/1/pontera-reframes-itself-from-401k-workaround-agent-to-trusted-gatekeeper-of-ai-agents-possibly-solving-impasse-with-fidelity-as-schwab-unleashes-charley-agent-as-its-new-foundation",
+   "category": "Wealthtech",
+   "last_published": "2026-10-01T15:29:12Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/10/1/pontera-reframes-itself-from-401k-workaround-agent-to-trusted-gatekeeper-of-ai-agents-possibly-solving-impasse-with-fidelity-as-schwab-unleashes-charley-agent-as-its-new-foundation"
+    }
+   ]
+  },
+  {
+   "cluster_id": 252,
+   "headline": "Adhesion Wealth Launches Custom Model Solutions for RIAs",
+   "url": "https://www.globenewswire.com/news-release/2026/09/28/3369813/0/en/adhesion-wealth-launches-custom-model-solutions-for-rias.html",
+   "category": "Products & Funds",
+   "last_published": "2026-09-29T15:24:29Z",
+   "outlet_count": 3,
+   "sources": [
+    {
+     "name": "GlobeNewswire",
+     "url": "https://www.globenewswire.com/news-release/2026/09/28/3369813/0/en/adhesion-wealth-launches-custom-model-solutions-for-rias.html"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/goria/tamps/custom-model-portfolio-race-widens-as-adhesion-wealth-adds-fidelity/268377"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/investing-strategies/adhesion-wealth-launches-custom-models-with-fidelity"
+    }
+   ]
+  },
+  {
+   "cluster_id": 145,
+   "headline": "Fidelity Investments just cast a wider net for RIA custody revenues by backstopping Savvy Wealth's (expected mid-2027 ) custody launch -- hastened by the lean-in of 'multi-billion-AUM' RIA prospects, the company says",
+   "url": "https://riabiz.com/a/2026/9/24/fidelity-investments-just-cast-a-wider-net-for-ria-custody-revenues-by-backstopping-savvy-wealths-expected-mid-2027-custody-launch-hastened-by-the-lean-in-of-multi-billion-aum-ria-prospects-the-company-says",
+   "category": "Other",
+   "last_published": "2026-09-24T04:16:53Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/24/fidelity-investments-just-cast-a-wider-net-for-ria-custody-revenues-by-backstopping-savvy-wealths-expected-mid-2027-custody-launch-hastened-by-the-lean-in-of-multi-billion-aum-ria-prospects-the-company-says"
+    }
+   ]
+  },
+  {
+   "cluster_id": 158,
+   "headline": "CEO Jason Wenk says Altruist's AI 'Hazel' is ready for its second act, a financial planning service that will blow away the market with one big caveat -- advisors must be ready to provide PDFs, if rivals refuse API access",
+   "url": "https://riabiz.com/a/2026/9/3/ceo-jason-wenk-says-altruists-ai-hazel-is-ready-for-its-second-act-a-financial-planning-service-that-will-blow-away-the-market-with-one-big-caveat-advisors-must-be-ready-to-provide-pdfs-if-rivals-refuse-api-access",
+   "category": "Wealthtech",
+   "last_published": "2026-09-11T15:42:07Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/3/ceo-jason-wenk-says-altruists-ai-hazel-is-ready-for-its-second-act-a-financial-planning-service-that-will-blow-away-the-market-with-one-big-caveat-advisors-must-be-ready-to-provide-pdfs-if-rivals-refuse-api-access"
+    }
+   ]
+  },
+  {
+   "cluster_id": 155,
+   "headline": "Schwab Wealth Advisory (SWA) unveils 'corkage' fee on third-party SMAs, typically .35%, as slew of changes add to 'elegant' master plan to convert DIY book to fees",
+   "url": "https://riabiz.com/a/2026/9/9/schwab-wealth-advisory-swa-unveils-corkage-fee-on-third-party-smas-typically-35-as-slew-of-changes-add-to-elegant-master-plan-to-convert-diy-book-to-fees",
+   "category": "Products & Funds",
+   "last_published": "2026-09-09T02:50:10Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/9/schwab-wealth-advisory-swa-unveils-corkage-fee-on-third-party-smas-typically-35-as-slew-of-changes-add-to-elegant-master-plan-to-convert-diy-book-to-fees"
+    }
+   ]
+  },
+  {
+   "cluster_id": 159,
+   "headline": "After Fidelity shutdown its password-sharing business model last year, Pontera's new tack is a 'non-discretionary service' while it waits out a CFPB decision on bank data-sharing fees and offers APIs to all comers",
+   "url": "https://riabiz.com/a/2026/9/2/after-fidelity-shutdown-its-password-sharing-business-model-last-year-ponteras-new-tack-is-a-non-discretionary-service-while-it-waits-out-a-cfpb-decision-on-bank-data-sharing-fees-and-offers-apis-to-all-comers",
+   "category": "Wealthtech",
+   "last_published": "2026-09-02T11:49:48Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/2/after-fidelity-shutdown-its-password-sharing-business-model-last-year-ponteras-new-tack-is-a-non-discretionary-service-while-it-waits-out-a-cfpb-decision-on-bank-data-sharing-fees-and-offers-apis-to-all-comers"
+    }
+   ]
+  },
+  {
+   "cluster_id": 162,
+   "headline": "Vanguard struck with Altruist take-out after Schwab (and Fidelity) zapped it with ETF 'platform' fees, lightning bolts that clearly woke a sleeping monster that could redraw the competitive landscape for RIA custody, with massive 'Vanguard effect,' analysts say",
+   "url": "https://riabiz.com/a/2026/8/27/vanguard-struck-with-altruist-take-out-after-schwab-and-fidelity-zapped-it-with-etf-platform-fees-lightning-bolts-that-clearly-woke-a-sleeping-monster-that-could-redraw-the-competitive-landscape-for-ria-custody-with-massive-vanguard-effect-analysts-say",
+   "category": "Wealthtech",
+   "last_published": "2026-08-27T16:40:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/8/27/vanguard-struck-with-altruist-take-out-after-schwab-and-fidelity-zapped-it-with-etf-platform-fees-lightning-bolts-that-clearly-woke-a-sleeping-monster-that-could-redraw-the-competitive-landscape-for-ria-custody-with-massive-vanguard-effect-analysts-say"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

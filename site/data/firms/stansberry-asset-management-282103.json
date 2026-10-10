@@ -1,0 +1,44 @@
+{
+ "schema_version": 1,
+ "slug": "stansberry-asset-management-282103",
+ "name": "Stansberry Asset Management",
+ "legal_name": "Stansberry Asset Management",
+ "crd": "282103",
+ "sec_number": "801-107061",
+ "city": "Westlake",
+ "state": "TX",
+ "sec_aum_usd": 1291272483.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/282103",
+ "stories": [
+  {
+   "cluster_id": 259,
+   "headline": "Stansberry spinoff Meristead Wealth debuts as national RIA near $1.4B AUM",
+   "url": "https://www.investmentnews.com/ria-news/stansberry-spinoff-meristead-wealth-debuts-as-national-ria-near-14b-aum/268375",
+   "category": "Products & Funds",
+   "last_published": "2026-09-28T10:25:26Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/stansberry-spinoff-meristead-wealth-debuts-as-national-ria-near-14b-aum/268375"
+    }
+   ]
+  },
+  {
+   "cluster_id": 236,
+   "headline": "Meristead Wealth Launches as a National RIA Managing Close to $1.4B in Assets",
+   "url": "https://www.globenewswire.com/news-release/2026/09/22/3366225/0/en/meristead-wealth-launches-as-a-national-ria-managing-close-to-1-4b-in-assets.html",
+   "category": "Products & Funds",
+   "last_published": "2026-09-22T12:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "GlobeNewswire",
+     "url": "https://www.globenewswire.com/news-release/2026/09/22/3366225/0/en/meristead-wealth-launches-as-a-national-ria-managing-close-to-1-4b-in-assets.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

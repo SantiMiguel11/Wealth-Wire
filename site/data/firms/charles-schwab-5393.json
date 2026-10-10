@@ -1,0 +1,232 @@
+{
+ "schema_version": 1,
+ "slug": "charles-schwab-5393",
+ "name": "Charles Schwab",
+ "legal_name": "Charles Schwab",
+ "crd": "5393",
+ "sec_number": "801-29938",
+ "city": "San Francisco",
+ "state": "CA",
+ "sec_aum_usd": 0.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/5393",
+ "stories": [
+  {
+   "cluster_id": 489,
+   "headline": "Fidelity's $100M RIA custody minimum lands amid long-short SMA curbs",
+   "url": "https://www.investmentnews.com/goria/custodian/fidelitys-100m-ria-custody-minimum-lands-amid-long-short-sma-curbs/268473",
+   "category": "Products & Funds",
+   "last_published": "2026-10-07T19:18:59Z",
+   "outlet_count": 4,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/goria/custodian/fidelitys-100m-ria-custody-minimum-lands-amid-long-short-sma-curbs/268473"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/custodians-ria-platforms-are-hunting-for-fidelity-clients-on-heels-of-100m-minimum"
+    },
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOQlRKZExCeDdIMEpTbWM1cHc3aGhGQmJDamptT3ZSb3RHM3I3YURKUDhfeXJqUnpkbm51UUt5M3pYNWwtT0M0anRJR1ByMlNRbU94VnZHZTk5SFlhdFlXYXNhSjI3WTF0eVRyZklraTk0dlZfb2wtVzJZSU1sZ1NiV1BrLWMyNDlsUExmbXpXQVVRLURTWWM4SU5ta08zRmJhVm9OcGZDaUlOS3hDT1lN?oc=5"
+    },
+    {
+     "name": "Financial Planning",
+     "url": "https://www.financial-planning.com/news/3-ways-rias-can-respond-to-fidelitys-new-100m-minimum"
+    }
+   ]
+  },
+  {
+   "cluster_id": 527,
+   "headline": "Schwab sells alts custodian Forge Trust to Alto, citing capability overlap",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNNHBUZmdyWXcwTkhJOExRVXdPRTB5YmY4OENLU2JRS3VGU3huenptcXFwUktrM1c1VTRNcy1zRERmT19NSnR1Ri14Ym9HY3lhX3hGRFF4eVBUdFNwVGtmODBFSWlUN2w1VkJqbTVYZHdTNGt2bnpiYjlDd3oxZUxCNEFTZ2FpZzk2NmFwcmxETTlCTG5hcHpFd0JycmF6RXF2T1Z2SmJQcTVlRERQMTB6MXh3?oc=5",
+   "category": "M&A",
+   "last_published": "2026-10-07T19:00:15Z",
+   "outlet_count": 3,
+   "sources": [
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNNHBUZmdyWXcwTkhJOExRVXdPRTB5YmY4OENLU2JRS3VGU3huenptcXFwUktrM1c1VTRNcy1zRERmT19NSnR1Ri14Ym9HY3lhX3hGRFF4eVBUdFNwVGtmODBFSWlUN2w1VkJqbTVYZHdTNGt2bnpiYjlDd3oxZUxCNEFTZ2FpZzk2NmFwcmxETTlCTG5hcHpFd0JycmF6RXF2T1Z2SmJQcTVlRERQMTB6MXh3?oc=5"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/retirement-planning/alto-to-buy-forge-trust-from-schwab-in-self-directed-ira-push/268489"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/alternative-investments/schwab-sells-forge-trust-to-self-directed-ira-platform-alto"
+    }
+   ]
+  },
+  {
+   "cluster_id": 561,
+   "headline": "Schwab is opening its SMA marketplace to a Houston start-up's 'cash' option that lets advisors chase 7.5% yields on FDIC-insured cash -- with a few wrinkles",
+   "url": "https://riabiz.com/a/2026/10/7/schwab-is-opening-its-sma-marketplace-to-a-houston-start-ups-cash-option-that-lets-advisors-chase-75-yields-on-fdic-insured-cash-with-a-few-wrinkles",
+   "category": "Products & Funds",
+   "last_published": "2026-10-07T01:13:57Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/10/7/schwab-is-opening-its-sma-marketplace-to-a-houston-start-ups-cash-option-that-lets-advisors-chase-75-yields-on-fdic-insured-cash-with-a-few-wrinkles"
+    }
+   ]
+  },
+  {
+   "cluster_id": 508,
+   "headline": "Schwab's Jon Beatty is one custody head offering a port in the storm after Fidelity unmoors its sub-$100M RIAs and Altruist's Jason Wenk , Apex's Bill Capuzzi and TradePMR's R. Scott Victoria are among others",
+   "url": "https://riabiz.com/a/2026/10/5/schwabs-jon-beatty-is-one-custody-head-offering-a-port-in-the-storm-after-fidelity-unmoors-its-sub-100m-rias-and-altruists-jason-wenk-apexs-bill-capuzzi-and-tradepmrs-r-scott-victoria-are-among-others",
+   "category": "Regulation",
+   "last_published": "2026-10-06T02:44:58Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/10/5/schwabs-jon-beatty-is-one-custody-head-offering-a-port-in-the-storm-after-fidelity-unmoors-its-sub-100m-rias-and-altruists-jason-wenk-apexs-bill-capuzzi-and-tradepmrs-r-scott-victoria-are-among-others"
+    }
+   ]
+  },
+  {
+   "cluster_id": 433,
+   "headline": "Pontera 'reframes' itself from 401(k) workaround agent to trusted gatekeeper of AI agents -- possibly solving impasse with Fidelity -- as Schwab unleashes 'Charley,' its new AI agent 'foundation' for millions of clients",
+   "url": "https://riabiz.com/a/2026/10/1/pontera-reframes-itself-from-401k-workaround-agent-to-trusted-gatekeeper-of-ai-agents-possibly-solving-impasse-with-fidelity-as-schwab-unleashes-charley-its-new-ai-agent-foundation-for-millions-of-clients",
+   "category": "Wealthtech",
+   "last_published": "2026-10-01T21:37:48Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/10/1/pontera-reframes-itself-from-401k-workaround-agent-to-trusted-gatekeeper-of-ai-agents-possibly-solving-impasse-with-fidelity-as-schwab-unleashes-charley-its-new-ai-agent-foundation-for-millions-of-clients"
+    }
+   ]
+  },
+  {
+   "cluster_id": 409,
+   "headline": "Pontera 'reframes' itself from 401(k) workaround agent to trusted gatekeeper of AI agents -- possibly solving impasse with Fidelity -- as Schwab unleashes 'Charley' agent as its new 'foundation",
+   "url": "https://riabiz.com/a/2026/10/1/pontera-reframes-itself-from-401k-workaround-agent-to-trusted-gatekeeper-of-ai-agents-possibly-solving-impasse-with-fidelity-as-schwab-unleashes-charley-agent-as-its-new-foundation",
+   "category": "Wealthtech",
+   "last_published": "2026-10-01T15:29:12Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/10/1/pontera-reframes-itself-from-401k-workaround-agent-to-trusted-gatekeeper-of-ai-agents-possibly-solving-impasse-with-fidelity-as-schwab-unleashes-charley-agent-as-its-new-foundation"
+    }
+   ]
+  },
+  {
+   "cluster_id": 165,
+   "headline": "RIAs working with Schwab get higher-yielding option for clients' cash",
+   "url": "https://www.financial-planning.com/news/rias-working-with-schwab-get-higher-yielding-option-for-clients-cash",
+   "category": "Wealthtech",
+   "last_published": "2026-09-25T20:34:37Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Financial Planning",
+     "url": "https://www.financial-planning.com/news/rias-working-with-schwab-get-higher-yielding-option-for-clients-cash"
+    }
+   ]
+  },
+  {
+   "cluster_id": 146,
+   "headline": "Schwab's poach of $8-billion Ameriprise breakaway extends its wild 2026 rout of the once impenetrable fortress to four $1-billion-plus teams with help from high-multiple market",
+   "url": "https://riabiz.com/a/2026/9/23/schwabs-poach-of-8-billion-ameriprise-breakaway-extends-its-wild-2026-rout-of-the-once-impenetrable-fortress-to-four-1-billion-plus-teams-with-help-from-high-multiple-market",
+   "category": "People Moves",
+   "last_published": "2026-09-23T05:19:39Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/23/schwabs-poach-of-8-billion-ameriprise-breakaway-extends-its-wild-2026-rout-of-the-once-impenetrable-fortress-to-four-1-billion-plus-teams-with-help-from-high-multiple-market"
+    }
+   ]
+  },
+  {
+   "cluster_id": 147,
+   "headline": "Schwab's surprise unveiling of Anthropic deal at Future Proof shows it has an AI ace up its sleeve, but it may take five years or more to catch up with Altruist, if at all, say two analysts",
+   "url": "https://riabiz.com/a/2026/9/22/schwabs-surprise-unveiling-of-anthropic-deal-at-future-proof-shows-it-has-an-ai-ace-up-its-sleeve-but-it-may-take-five-years-or-more-to-catch-up-with-altruist-if-at-all-say-two-analysts",
+   "category": "M&A",
+   "last_published": "2026-09-22T17:16:36Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/22/schwabs-surprise-unveiling-of-anthropic-deal-at-future-proof-shows-it-has-an-ai-ace-up-its-sleeve-but-it-may-take-five-years-or-more-to-catch-up-with-altruist-if-at-all-say-two-analysts"
+    }
+   ]
+  },
+  {
+   "cluster_id": 130,
+   "headline": "Schwab loses $4.5 million lawsuit to teachers who bought structured products",
+   "url": "https://www.investmentnews.com/regulation-legal-compliance/schwab-loses-45-million-lawsuit-to-teachers-who-bought-structured-products/268279",
+   "category": "M&A",
+   "last_published": "2026-09-21T19:35:04Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/schwab-loses-45-million-lawsuit-to-teachers-who-bought-structured-products/268279"
+    }
+   ]
+  },
+  {
+   "cluster_id": 131,
+   "headline": "Schwab, Anthropic block model training in Claude deal",
+   "url": "https://www.investmentnews.com/goria/custodian/anthropic-barred-from-model-training-in-schwabs-claude-deal/268277",
+   "category": "M&A",
+   "last_published": "2026-09-21T19:33:09Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/goria/custodian/anthropic-barred-from-model-training-in-schwabs-claude-deal/268277"
+    }
+   ]
+  },
+  {
+   "cluster_id": 151,
+   "headline": "Schwab scores exclusive (for now) contract with Anthropic and takes AI 'driver's seat' in RIA custody, analyst says, though others counter that it's generic and late-coming",
+   "url": "https://riabiz.com/a/2026/9/15/schwab-scores-exclusive-for-now-contract-with-anthropic-and-takes-ai-drivers-seat-in-ria-custody-analyst-says-though-others-counter-that-its-generic-and-late-coming",
+   "category": "Wealthtech",
+   "last_published": "2026-09-15T21:22:05Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/15/schwab-scores-exclusive-for-now-contract-with-anthropic-and-takes-ai-drivers-seat-in-ria-custody-analyst-says-though-others-counter-that-its-generic-and-late-coming"
+    }
+   ]
+  },
+  {
+   "cluster_id": 155,
+   "headline": "Schwab Wealth Advisory (SWA) unveils 'corkage' fee on third-party SMAs, typically .35%, as slew of changes add to 'elegant' master plan to convert DIY book to fees",
+   "url": "https://riabiz.com/a/2026/9/9/schwab-wealth-advisory-swa-unveils-corkage-fee-on-third-party-smas-typically-35-as-slew-of-changes-add-to-elegant-master-plan-to-convert-diy-book-to-fees",
+   "category": "Products & Funds",
+   "last_published": "2026-09-09T02:50:10Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/9/schwab-wealth-advisory-swa-unveils-corkage-fee-on-third-party-smas-typically-35-as-slew-of-changes-add-to-elegant-master-plan-to-convert-diy-book-to-fees"
+    }
+   ]
+  },
+  {
+   "cluster_id": 162,
+   "headline": "Vanguard struck with Altruist take-out after Schwab (and Fidelity) zapped it with ETF 'platform' fees, lightning bolts that clearly woke a sleeping monster that could redraw the competitive landscape for RIA custody, with massive 'Vanguard effect,' analysts say",
+   "url": "https://riabiz.com/a/2026/8/27/vanguard-struck-with-altruist-take-out-after-schwab-and-fidelity-zapped-it-with-etf-platform-fees-lightning-bolts-that-clearly-woke-a-sleeping-monster-that-could-redraw-the-competitive-landscape-for-ria-custody-with-massive-vanguard-effect-analysts-say",
+   "category": "Wealthtech",
+   "last_published": "2026-08-27T16:40:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/8/27/vanguard-struck-with-altruist-take-out-after-schwab-and-fidelity-zapped-it-with-etf-platform-fees-lightning-bolts-that-clearly-woke-a-sleeping-monster-that-could-redraw-the-competitive-landscape-for-ria-custody-with-massive-vanguard-effect-analysts-say"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,44 @@
+{
+ "schema_version": 1,
+ "slug": "arax-advisory-partners-133535",
+ "name": "Arax Advisory Partners",
+ "legal_name": "Arax Advisory Partners",
+ "crd": "133535",
+ "sec_number": "801-67165",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 26524973206.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/133535",
+ "stories": [
+  {
+   "cluster_id": 548,
+   "headline": "$41bn Arax appoints new COO",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPU3NLUHR5NlI2VU1mdGtVMFB6RjFHczFOU0ZUYlptSVBGbmdEMUEtTFRORXFaZm5pWWhxRU5rWU1teF8yaE5kZkRiVFFoVjlFRjRyUXN2emF2M3NHVkpyMWQ1UEVnaGxEODV0WlFDNHdSNUU5OTNmLWhFSml0TlYzMkNMR1JFbkc2eGp3NnRpVWZYOUFkc0FKN0Z5dkZRZW9vYkNGbXZ3THVrU2JuZFdWaG5xWnNjZnlFR09sLU1ZNTc4UU1Db3Nn?oc=5",
+   "category": "People Moves",
+   "last_published": "2026-10-06T18:37:10Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPU3NLUHR5NlI2VU1mdGtVMFB6RjFHczFOU0ZUYlptSVBGbmdEMUEtTFRORXFaZm5pWWhxRU5rWU1teF8yaE5kZkRiVFFoVjlFRjRyUXN2emF2M3NHVkpyMWQ1UEVnaGxEODV0WlFDNHdSNUU5OTNmLWhFSml0TlYzMkNMR1JFbkc2eGp3NnRpVWZYOUFkc0FKN0Z5dkZRZW9vYkNGbXZ3THVrU2JuZFdWaG5xWnNjZnlFR09sLU1ZNTc4UU1Db3Nn?oc=5"
+    }
+   ]
+  },
+  {
+   "cluster_id": 528,
+   "headline": "Arax CFO Diego Galan gets expanded mandate as COO",
+   "url": "https://www.investmentnews.com/ria-news/arax-cfo-diego-galan-gets-expanded-mandate-as-coo/268484",
+   "category": "People Moves",
+   "last_published": "2026-10-06T15:51:47Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/arax-cfo-diego-galan-gets-expanded-mandate-as-coo/268484"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

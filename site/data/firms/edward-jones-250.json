@@ -1,0 +1,58 @@
+{
+ "schema_version": 1,
+ "slug": "edward-jones-250",
+ "name": "Edward Jones",
+ "legal_name": "Edward D. Jones",
+ "crd": "250",
+ "sec_number": "801-3297",
+ "city": "St. Louis",
+ "state": "MO",
+ "sec_aum_usd": 1013608323988.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/250",
+ "stories": [
+  {
+   "cluster_id": 577,
+   "headline": "401(k) Real Talk Episode 211: October 7, 2026",
+   "url": "https://www.wealthmanagement.com/rpa-news/401-k-real-talk-episode-211-october-7-2026",
+   "category": "Other",
+   "last_published": "2026-10-07T13:18:55Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/rpa-news/401-k-real-talk-episode-211-october-7-2026"
+    }
+   ]
+  },
+  {
+   "cluster_id": 346,
+   "headline": "Edward Jones to Develop Retirement Plan Management Tech",
+   "url": "https://www.wealthmanagement.com/rpa-news/edward-jones-launches-ai-powered-retirement-tool",
+   "category": "Other",
+   "last_published": "2026-09-30T13:03:47Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/rpa-news/edward-jones-launches-ai-powered-retirement-tool"
+    }
+   ]
+  },
+  {
+   "cluster_id": 70,
+   "headline": "Ameriprise, advisor on the hook to pay Edward Jones $4.7 million in trade secrets lawsuit",
+   "url": "https://www.investmentnews.com/regulation-legal-compliance/ameriprise-advisor-on-the-hook-to-pay-edward-jones-47-million-in-trade-secrets-lawsuit/268350",
+   "category": "Regulation",
+   "last_published": "2026-09-24T19:03:58Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/ameriprise-advisor-on-the-hook-to-pay-edward-jones-47-million-in-trade-secrets-lawsuit/268350"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

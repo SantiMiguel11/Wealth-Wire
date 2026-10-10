@@ -1,0 +1,38 @@
+{
+ "schema_version": 1,
+ "slug": "wealthspire-retirement-advisory-121254",
+ "name": "Wealthspire Retirement Advisory",
+ "legal_name": "Wealthspire Retirement",
+ "crd": "121254",
+ "sec_number": "801-66107",
+ "city": "Aliso Viejo",
+ "state": "CA",
+ "sec_aum_usd": 38609440509.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/121254",
+ "stories": [
+  {
+   "cluster_id": 526,
+   "headline": "Wealthspire Announces $2.9B Sports and Entertainment Practice",
+   "url": "https://www.wealthmanagement.com/ria-news/wealthspire-launches-sports-and-entertainment-practice",
+   "category": "Other",
+   "last_published": "2026-10-07T06:28:48Z",
+   "outlet_count": 3,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/wealthspire-launches-sports-and-entertainment-practice"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/wealthspire-plans-nil-program-with-new-sports-and-entertainment-unit/268493"
+    },
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQNjREZlBmWGNPLW9mcXA1ZkR6dWEtNzNKQk1RVTkwTlhwUGI3TGowTHh1cExRWWlPNmh6eEcyb3o4ZklFcTN2WmEtVHZ3RS1LUWRoZ1JpOVRHNjFsSFVPaWRNTlhPSTdjMFVoWngzdldoUnB6QmFqSGQ3Wnl6RG0zSFE0TEh5Ti1Ya2U5dlhSck5XMGRJMnZIMWVhamk?oc=5"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

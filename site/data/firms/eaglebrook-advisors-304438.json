@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "eaglebrook-advisors-304438",
+ "name": "Eaglebrook Advisors",
+ "legal_name": "Eaglebrook Advisors",
+ "crd": "304438",
+ "sec_number": "801-122813",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 341960847.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/304438",
+ "stories": [
+  {
+   "cluster_id": 348,
+   "headline": "Eaglebrook Launches Direct Indexing for Cryptocurrencies",
+   "url": "https://www.wealthmanagement.com/crypto/eaglebrook-launches-direct-indexing-for-crypto",
+   "category": "Products & Funds",
+   "last_published": "2026-09-30T13:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/crypto/eaglebrook-launches-direct-indexing-for-crypto"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

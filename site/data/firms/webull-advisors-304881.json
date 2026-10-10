@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "webull-advisors-304881",
+ "name": "Webull Advisors",
+ "legal_name": "Webull Advisors",
+ "crd": "304881",
+ "sec_number": "801-117281",
+ "city": "St Petersburg",
+ "state": "FL",
+ "sec_aum_usd": 48858729.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/304881",
+ "stories": [
+  {
+   "cluster_id": 664,
+   "headline": "Class action alleges Webull misled investors about China operations",
+   "url": "https://www.investmentnews.com/regulation-legal-compliance/class-action-alleges-webull-misled-investors-about-china-operations/268559",
+   "category": "Other",
+   "last_published": "2026-10-09T16:29:05Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/class-action-alleges-webull-misled-investors-about-china-operations/268559"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

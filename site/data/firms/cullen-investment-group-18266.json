@@ -1,0 +1,75 @@
+{
+ "schema_version": 1,
+ "slug": "cullen-investment-group-18266",
+ "name": "Cullen Investment Group",
+ "legal_name": "Cullen Investment Group",
+ "crd": "18266",
+ "sec_number": "801-61265",
+ "city": "Lafayette",
+ "state": "LA",
+ "sec_aum_usd": 909951360.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/18266",
+ "stories": [
+  {
+   "cluster_id": 522,
+   "headline": "Aspen Standard Wealth buys $1B Louisiana RIA Cullen Investment Group",
+   "url": "https://www.investmentnews.com/ria-news/aspen-standard-wealth-buys-1b-louisiana-ria-cullen-investment-group/268482",
+   "category": "M&A",
+   "last_published": "2026-10-06T18:37:10Z",
+   "outlet_count": 3,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/aspen-standard-wealth-buys-1b-louisiana-ria-cullen-investment-group/268482"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/aspen-standard-wealth-acquires-louisiana-ria"
+    },
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNWm53aklCV2o5ajMwR21ObzliV0VjYzg4dWdMaS12QzhNeDFCOTBZXzdDZGhFZHJXNnNKcEdVZmsxZmNxZ0FqY2RGLVlmYlVyazE1b3ZyV25KSWIyVnZ4V3lkY01rSlc4TS1VNUxNNU41OHlWVVBEX2I2eS1TMTFWMUVmTENYNTIyeWxOTVdhXzUyMXBaTHJvNHVOZlVHOGtURjYzZmVMeVZoXzc2d2I1V0FyU3l1S0tDN0t1QU1rVHVkTmRTcG80Mkd3R0NLTEtJaUxkOHlVN1E1akU?oc=5"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 522,
+   "date": "2026-10-06T15:01:21Z",
+   "headline": "Aspen Standard Wealth buys $1B Louisiana RIA Cullen Investment Group",
+   "acquirer": {
+    "name": "Aspen Standard Wealth",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Cullen Investment Group",
+    "slug": "cullen-investment-group-18266",
+    "crd": "18266"
+   },
+   "target_aum_usd": 1000000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/aspen-standard-wealth-buys-1b-louisiana-ria-cullen-investment-group/268482"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/aspen-standard-wealth-acquires-louisiana-ria"
+    },
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNWm53aklCV2o5ajMwR21ObzliV0VjYzg4dWdMaS12QzhNeDFCOTBZXzdDZGhFZHJXNnNKcEdVZmsxZmNxZ0FqY2RGLVlmYlVyazE1b3ZyV25KSWIyVnZ4V3lkY01rSlc4TS1VNUxNNU41OHlWVVBEX2I2eS1TMTFWMUVmTENYNTIyeWxOTVdhXzUyMXBaTHJvNHVOZlVHOGtURjYzZmVMeVZoXzc2d2I1V0FyU3l1S0tDN0t1QU1rVHVkTmRTcG80Mkd3R0NLTEtJaUxkOHlVN1E1akU?oc=5"
+    }
+   ],
+   "role": "target"
+  }
+ ]
+}

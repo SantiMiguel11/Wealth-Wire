@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "navellier-associates-107568",
+ "name": "Navellier & Associates",
+ "legal_name": "Navellier & Associates",
+ "crd": "107568",
+ "sec_number": "801-30582",
+ "city": "Reno",
+ "state": "NV",
+ "sec_aum_usd": 1101937000.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/107568",
+ "stories": [
+  {
+   "cluster_id": 101,
+   "headline": "SEC gives Navellier's firm 60 days to wind down, bars founder",
+   "url": "https://www.investmentnews.com/regulation-legal-compliance/sec-gives-navelliers-firm-60-days-to-wind-down-bars-founder/268318",
+   "category": "Regulation",
+   "last_published": "2026-09-23T16:07:22Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/sec-gives-navelliers-firm-60-days-to-wind-down-bars-founder/268318"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

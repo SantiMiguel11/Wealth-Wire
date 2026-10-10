@@ -1,0 +1,58 @@
+{
+ "schema_version": 1,
+ "slug": "goldman-sachs-361",
+ "name": "Goldman Sachs",
+ "legal_name": "Goldman Sachs",
+ "crd": "361",
+ "sec_number": "801-16048",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 133644228926.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/361",
+ "stories": [
+  {
+   "cluster_id": 454,
+   "headline": "Wealth advisors should adapt services as financial strain hits high earners: Goldman",
+   "url": "https://www.financial-planning.com/news/even-some-high-earners-face-financial-strain-in-saving-for-retirement-goldman",
+   "category": "Other",
+   "last_published": "2026-10-02T09:30:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Financial Planning",
+     "url": "https://www.financial-planning.com/news/even-some-high-earners-face-financial-strain-in-saving-for-retirement-goldman"
+    }
+   ]
+  },
+  {
+   "cluster_id": 410,
+   "headline": "How John Waldron could make his mark as Goldman's next CEO",
+   "url": "https://www.financial-planning.com/news/how-john-waldron-could-make-his-mark-as-goldmans-next-ceo",
+   "category": "Other",
+   "last_published": "2026-10-01T18:27:24Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Financial Planning",
+     "url": "https://www.financial-planning.com/news/how-john-waldron-could-make-his-mark-as-goldmans-next-ceo"
+    }
+   ]
+  },
+  {
+   "cluster_id": 118,
+   "headline": "Mercer Advisors hires Goldman alum Cynthia Loh as first-ever chief platform officer",
+   "url": "https://www.investmentnews.com/ria-news/mercer-advisors-hires-goldman-alum-cynthia-loh-as-first-ever-chief-platform-officer/268291",
+   "category": "People Moves",
+   "last_published": "2026-09-22T17:33:55Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/mercer-advisors-hires-goldman-alum-cynthia-loh-as-first-ever-chief-platform-officer/268291"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

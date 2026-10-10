@@ -1,0 +1,38 @@
+{
+ "schema_version": 1,
+ "slug": "adhesion-wealth-advisor-solutions-143593",
+ "name": "Adhesion Wealth Advisor Solutions",
+ "legal_name": "Atria Investments",
+ "crd": "143593",
+ "sec_number": "801-67829",
+ "city": "Charlotte",
+ "state": "NC",
+ "sec_aum_usd": 11048554773.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/143593",
+ "stories": [
+  {
+   "cluster_id": 252,
+   "headline": "Adhesion Wealth Launches Custom Model Solutions for RIAs",
+   "url": "https://www.globenewswire.com/news-release/2026/09/28/3369813/0/en/adhesion-wealth-launches-custom-model-solutions-for-rias.html",
+   "category": "Products & Funds",
+   "last_published": "2026-09-29T15:24:29Z",
+   "outlet_count": 3,
+   "sources": [
+    {
+     "name": "GlobeNewswire",
+     "url": "https://www.globenewswire.com/news-release/2026/09/28/3369813/0/en/adhesion-wealth-launches-custom-model-solutions-for-rias.html"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/goria/tamps/custom-model-portfolio-race-widens-as-adhesion-wealth-adds-fidelity/268377"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/investing-strategies/adhesion-wealth-launches-custom-models-with-fidelity"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

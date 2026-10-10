@@ -1,0 +1,66 @@
+{
+ "schema_version": 1,
+ "slug": "northwestern-mutual-investment-management-307865",
+ "name": "Northwestern Mutual Investment Management",
+ "legal_name": "Northwestern Mutual Investment Management",
+ "crd": "307865",
+ "sec_number": "801-119948",
+ "city": "Milwaukee",
+ "state": "WI",
+ "sec_aum_usd": 323078339738.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/307865",
+ "stories": [
+  {
+   "cluster_id": 291,
+   "headline": "Northwestern Mutual Launches Family Office Services",
+   "url": "https://www.wealthmanagement.com/high-net-worth/northwestern-mutual-launches-family-office-services",
+   "category": "People Moves",
+   "last_published": "2026-09-29T10:30:00Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/high-net-worth/northwestern-mutual-launches-family-office-services"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/practice-management/northwestern-mutual-targets-ultra-wealthy-with-new-family-office-unit/268385"
+    }
+   ]
+  },
+  {
+   "cluster_id": 5,
+   "headline": "WealthStack Roundup: Northwestern Mutual Adopts Jump's AI Suite",
+   "url": "https://www.wealthmanagement.com/advisor-support-platforms/northwestern-mutual-adopts-jumps-ai-suite",
+   "category": "Wealthtech",
+   "last_published": "2026-09-25T16:02:02Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/advisor-support-platforms/northwestern-mutual-adopts-jumps-ai-suite"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/fintech/fintech-bytes-northwestern-mutual-picks-jump-for-enterprise-ai/268362"
+    }
+   ]
+  },
+  {
+   "cluster_id": 117,
+   "headline": "LPL adds $1 billion Salt Lake City teams from Northwestern Mutual",
+   "url": "https://www.investmentnews.com/independent-broker-dealers/lpl-adds-1-billion-salt-lake-city-teams-from-northwestern-mutual/268294",
+   "category": "People Moves",
+   "last_published": "2026-09-22T19:18:11Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/lpl-adds-1-billion-salt-lake-city-teams-from-northwestern-mutual/268294"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

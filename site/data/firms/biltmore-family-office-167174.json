@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "biltmore-family-office-167174",
+ "name": "Biltmore Family Office",
+ "legal_name": "Biltmore Family Office",
+ "crd": "167174",
+ "sec_number": "801-78011",
+ "city": "Charlotte",
+ "state": "NC",
+ "sec_aum_usd": 3467117434.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/167174",
+ "stories": [
+  {
+   "cluster_id": 655,
+   "headline": "House Foster Family Office Announces Inaugural Royal Weekend at the Millennium Biltmore Los Angeles",
+   "url": "https://www.globenewswire.com/news-release/2026/10/08/3377491/0/en/house-foster-family-office-announces-inaugural-royal-weekend-at-the-millennium-biltmore-los-angeles.html",
+   "category": "Other",
+   "last_published": "2026-10-08T14:50:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "GlobeNewswire",
+     "url": "https://www.globenewswire.com/news-release/2026/10/08/3377491/0/en/house-foster-family-office-announces-inaugural-royal-weekend-at-the-millennium-biltmore-los-angeles.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

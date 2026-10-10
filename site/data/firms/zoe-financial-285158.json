@@ -1,0 +1,38 @@
+{
+ "schema_version": 1,
+ "slug": "zoe-financial-285158",
+ "name": "Zoe Financial",
+ "legal_name": "Zoe Financial",
+ "crd": "285158",
+ "sec_number": "801-117745",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 283473191.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/285158",
+ "stories": [
+  {
+   "cluster_id": 268,
+   "headline": "SEC Charges Registered Investment Adviser Zoe Financial for Failure to Disclose Conflict of Interest",
+   "url": "https://www.sec.gov/newsroom/press-releases/2026-94-sec-charges-registered-investment-adviser-zoe-financial-failure-disclose-conflict-interest",
+   "category": "Regulation",
+   "last_published": "2026-09-28T20:45:33Z",
+   "outlet_count": 3,
+   "sources": [
+    {
+     "name": "SEC Press Releases",
+     "url": "https://www.sec.gov/newsroom/press-releases/2026-94-sec-charges-registered-investment-adviser-zoe-financial-failure-disclose-conflict-interest"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/sec-fines-zoe-financial-450k-over-undisclosed-referral-conflict/268384"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/regulation-compliance/sec-fines-zoe-financial-450k-over-conflicts"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

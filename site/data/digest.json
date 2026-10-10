@@ -1,0 +1,86 @@
+{
+ "schema_version": 1,
+ "date": "2026-10-10",
+ "generated_at": "2026-10-10T19:13:57Z",
+ "ai": false,
+ "opener": null,
+ "items": [
+  {
+   "cluster_id": 691,
+   "headline": "Pershing reveal of 'Wove' kerfuffle during corporate restructuring last June raises questions about the No. 3 RIA custodian's direction; the task now lies with new RIA head Adam Vos",
+   "url": "https://riabiz.com/a/2026/10/10/pershing-reveal-of-wove-kerfuffle-during-corporate-restructuring-last-june-raises-questions-about-the-no-3-ria-custodians-direction-the-task-now-lies-with-new-ria-head-adam-vos",
+   "category": "Wealthtech",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/10/10/pershing-reveal-of-wove-kerfuffle-during-corporate-restructuring-last-june-raises-questions-about-the-no-3-ria-custodians-direction-the-task-now-lies-with-new-ria-head-adam-vos"
+    }
+   ],
+   "firms": [
+    {
+     "name": "BNY Mellon Securities",
+     "slug": "bny-mellon-securities-231"
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 687,
+   "headline": "Merrill, UBS record net advisor losses for first half of 2026: Report",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPSHZXQlBFMkxrUmhacXROcEdqbFhZV0VOdEJOUlBadVF3TFVTZFprYV9GbmU5MTJFS3c1NXN2MUNlY2x2eGlMamxTT1FJdlNTbGh5VjdVSXF1QkZqQjEtcGtfaHplbEQ4aVdFSTYzQVIxbzE2T0tZUVd0OGg5TUF1RThzbTVSN2szMFE5WktfSXVnOUl0UTlwNjd1cWdON3VTTWpkR1FoQzY5dw?oc=5",
+   "category": "Other",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPSHZXQlBFMkxrUmhacXROcEdqbFhZV0VOdEJOUlBadVF3TFVTZFprYV9GbmU5MTJFS3c1NXN2MUNlY2x2eGlMamxTT1FJdlNTbGh5VjdVSXF1QkZqQjEtcGtfaHplbEQ4aVdFSTYzQVIxbzE2T0tZUVd0OGg5TUF1RThzbTVSN2szMFE5WktfSXVnOUl0UTlwNjd1cWdON3VTTWpkR1FoQzY5dw?oc=5"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Merrill Lynch, Pierce, Fenner & Smith",
+     "slug": "merrill-lynch-pierce-fenner-smith-7691"
+    },
+    {
+     "name": "UBS Financial Services",
+     "slug": "ubs-financial-services-8174"
+    }
+   ],
+   "aum_usd": 915793138114.0,
+   "aum_source": "sec",
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 689,
+   "headline": "Nearly 1,000 RIAs affected by Fidelity's new asset minimum: Report",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQc0dkcEpnLThIOTR5N3V0ZEFIZGIyT2YxM0JMRUJIQ3FqeS05Y3lnY0laVWYyV0dkeGtzbk5GV1ZVSTloTEE3d0c0T1BHazNaY1FZOGdoQUZRWDdIajh1aWNPaEVpWkl5cjdPYnRaTHBkaUNnZDRLd2FEQXJ3eXhUOGxraDd6cnYwTWdRUE1QWW9rcGZDRkhJUU53aUZjZGdCSVRPNQ?oc=5",
+   "category": "Other",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQc0dkcEpnLThIOTR5N3V0ZEFIZGIyT2YxM0JMRUJIQ3FqeS05Y3lnY0laVWYyV0dkeGtzbk5GV1ZVSTloTEE3d0c0T1BHazNaY1FZOGdoQUZRWDdIajh1aWNPaEVpWkl5cjdPYnRaTHBkaUNnZDRLd2FEQXJ3eXhUOGxraDd6cnYwTWdRUE1QWW9rcGZDRkhJUU53aUZjZGdCSVRPNQ?oc=5"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Fidelity Management & Research",
+     "slug": "fidelity-management-research-108281"
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  }
+ ],
+ "more": [],
+ "window_start": "2026-10-09T19:13:57Z",
+ "last_good_digest": null,
+ "footer_note": "Summaries written with Claude from outlet headlines."
+}

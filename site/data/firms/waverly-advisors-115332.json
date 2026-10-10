@@ -1,0 +1,59 @@
+{
+ "schema_version": 1,
+ "slug": "waverly-advisors-115332",
+ "name": "Waverly Advisors",
+ "legal_name": "Waverly Advisors",
+ "crd": "115332",
+ "sec_number": "801-60741",
+ "city": "Birmingham",
+ "state": "AL",
+ "sec_aum_usd": 29872072116.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/115332",
+ "stories": [
+  {
+   "cluster_id": 295,
+   "headline": "Waverly Advisors buys $1.7B Richmond RIA",
+   "url": "https://www.investmentnews.com/ria-news/waverly-advisors-buys-17b-richmond-ria/268392",
+   "category": "M&A",
+   "last_published": "2026-09-29T15:06:39Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/waverly-advisors-buys-17b-richmond-ria/268392"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 295,
+   "date": "2026-09-29T15:06:39Z",
+   "headline": "Waverly Advisors buys $1.7B Richmond RIA",
+   "acquirer": {
+    "name": "Waverly Advisors",
+    "slug": "waverly-advisors-115332",
+    "crd": "115332"
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 1700000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target unclear (descriptive, not a name: 'Richmond RIA')",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/waverly-advisors-buys-17b-richmond-ria/268392"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "schema_version": 1,
+ "slug": "savvy-318493",
+ "name": "Savvy",
+ "legal_name": "Savvy Advisors",
+ "crd": "318493",
+ "sec_number": "801-123656",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 5001044474.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/318493",
+ "stories": [
+  {
+   "cluster_id": 145,
+   "headline": "Fidelity Investments just cast a wider net for RIA custody revenues by backstopping Savvy Wealth's (expected mid-2027 ) custody launch -- hastened by the lean-in of 'multi-billion-AUM' RIA prospects, the company says",
+   "url": "https://riabiz.com/a/2026/9/24/fidelity-investments-just-cast-a-wider-net-for-ria-custody-revenues-by-backstopping-savvy-wealths-expected-mid-2027-custody-launch-hastened-by-the-lean-in-of-multi-billion-aum-ria-prospects-the-company-says",
+   "category": "Other",
+   "last_published": "2026-09-24T04:16:53Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/24/fidelity-investments-just-cast-a-wider-net-for-ria-custody-revenues-by-backstopping-savvy-wealths-expected-mid-2027-custody-launch-hastened-by-the-lean-in-of-multi-billion-aum-ria-prospects-the-company-says"
+    }
+   ]
+  },
+  {
+   "cluster_id": 38,
+   "headline": "Savvy Wealth Launches Custodial Platform for RIAs",
+   "url": "https://www.wealthmanagement.com/artificial-intelligence/savvy-wealth-launches-custodial-platform-for-rias",
+   "category": "Wealthtech",
+   "last_published": "2026-09-23T18:14:11Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/artificial-intelligence/savvy-wealth-launches-custodial-platform-for-rias"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/goria/custodian/savvy-wealth-opens-its-custodial-platform-to-outside-rias/268321"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

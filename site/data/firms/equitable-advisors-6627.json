@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "equitable-advisors-6627",
+ "name": "Equitable Advisors",
+ "legal_name": "Equitable Advisors",
+ "crd": "6627",
+ "sec_number": "801-14065",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 42484170010.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/6627",
+ "stories": [
+  {
+   "cluster_id": 28,
+   "headline": "Focused on the Future: Creating Lasting Advisory Practices Through Client Experience and Continuity with Jim Mellin",
+   "url": "https://www.wealthmanagement.com/business-planning/focused-on-the-future-creating-lasting-advisory-practices-through-client-experience-and-continuity-with-jim-mellin",
+   "category": "Products & Funds",
+   "last_published": "2026-09-23T17:51:34Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/business-planning/focused-on-the-future-creating-lasting-advisory-practices-through-client-experience-and-continuity-with-jim-mellin"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

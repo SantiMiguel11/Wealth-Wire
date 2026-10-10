@@ -1,0 +1,44 @@
+{
+ "schema_version": 1,
+ "slug": "northern-trust-investments-105780",
+ "name": "Northern Trust Investments",
+ "legal_name": "Northern Trust Investments",
+ "crd": "105780",
+ "sec_number": "801-33358",
+ "city": "Chicago",
+ "state": "IL",
+ "sec_aum_usd": 1245248223540.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/105780",
+ "stories": [
+  {
+   "cluster_id": 496,
+   "headline": "Northern Trust nabs Citi and BNY veterans in continuing Northeast push",
+   "url": "https://www.investmentnews.com/wirehouses/northern-trust-nabs-citi-and-bny-veterans-in-continuing-northeast-push/268466",
+   "category": "Other",
+   "last_published": "2026-10-05T15:29:09Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/wirehouses/northern-trust-nabs-citi-and-bny-veterans-in-continuing-northeast-push/268466"
+    }
+   ]
+  },
+  {
+   "cluster_id": 251,
+   "headline": "Northern Trust bulks up family office team with New York hires",
+   "url": "https://www.investmentnews.com/independent-broker-dealers/northern-trust-bulks-up-family-office-team-with-new-york-hires/268379",
+   "category": "People Moves",
+   "last_published": "2026-09-28T15:43:42Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/northern-trust-bulks-up-family-office-team-with-new-york-hires/268379"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "ascentis-independent-advisors-322879",
+ "name": "Ascentis Independent Advisors",
+ "legal_name": "Ascentis Independent Advisors",
+ "crd": "322879",
+ "sec_number": "801-126441",
+ "city": "Dallas",
+ "state": "TX",
+ "sec_aum_usd": 2094861769.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/322879",
+ "stories": [
+  {
+   "cluster_id": 619,
+   "headline": "Four Practices Bring $1B to Ascentis Independent From Raymond James",
+   "url": "https://www.wealthmanagement.com/ria-news/four-practices-bring-1b-to-ascentis-from-raymond-james",
+   "category": "Wealthtech",
+   "last_published": "2026-10-08T10:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/four-practices-bring-1b-to-ascentis-from-raymond-james"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

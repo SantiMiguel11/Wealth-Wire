@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "charles-schwab-investment-management-106753",
+ "name": "Charles Schwab Investment Management",
+ "legal_name": "Charles Schwab Investment Management",
+ "crd": "106753",
+ "sec_number": "801-35905",
+ "city": "San Francisco",
+ "state": "CA",
+ "sec_aum_usd": 1721025914896.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/106753",
+ "stories": [
+  {
+   "cluster_id": 508,
+   "headline": "Schwab's Jon Beatty is one custody head offering a port in the storm after Fidelity unmoors its sub-$100M RIAs and Altruist's Jason Wenk , Apex's Bill Capuzzi and TradePMR's R. Scott Victoria are among others",
+   "url": "https://riabiz.com/a/2026/10/5/schwabs-jon-beatty-is-one-custody-head-offering-a-port-in-the-storm-after-fidelity-unmoors-its-sub-100m-rias-and-altruists-jason-wenk-apexs-bill-capuzzi-and-tradepmrs-r-scott-victoria-are-among-others",
+   "category": "Regulation",
+   "last_published": "2026-10-06T02:44:58Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/10/5/schwabs-jon-beatty-is-one-custody-head-offering-a-port-in-the-storm-after-fidelity-unmoors-its-sub-100m-rias-and-altruists-jason-wenk-apexs-bill-capuzzi-and-tradepmrs-r-scott-victoria-are-among-others"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

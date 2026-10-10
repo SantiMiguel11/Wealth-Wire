@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "principal-asset-management-109002",
+ "name": "Principal Asset Management",
+ "legal_name": "Principal Global Investors",
+ "crd": "109002",
+ "sec_number": "801-55959",
+ "city": "Des Moines",
+ "state": "IA",
+ "sec_aum_usd": 427712721629.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/109002",
+ "stories": [
+  {
+   "cluster_id": 98,
+   "headline": "Workers allege Principal Financial ran $4.59B 401(k) as a fee machine",
+   "url": "https://www.investmentnews.com/regulation-legal-compliance/workers-allege-principal-financial-ran-459b-401k-as-a-fee-machine/268324",
+   "category": "Other",
+   "last_published": "2026-09-23T18:41:24Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/workers-allege-principal-financial-ran-459b-401k-as-a-fee-machine/268324"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

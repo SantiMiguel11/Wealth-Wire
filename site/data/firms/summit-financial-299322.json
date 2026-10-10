@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "summit-financial-299322",
+ "name": "Summit Financial",
+ "legal_name": "Summit Financial",
+ "crd": "299322",
+ "sec_number": "801-114377",
+ "city": "Parsippany",
+ "state": "NJ",
+ "sec_aum_usd": 22470472144.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/299322",
+ "stories": [
+  {
+   "cluster_id": 570,
+   "headline": "Focused on the Future: How RIA Leaders Can Prepare for Growth, Technology and AI with Stan Gregor",
+   "url": "https://www.wealthmanagement.com/growth-strategies/focused-on-the-future-how-ria-leaders-can-prepare-for-growth-technology-and-ai-with-stan-gregor",
+   "category": "Wealthtech",
+   "last_published": "2026-10-07T16:26:49Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/growth-strategies/focused-on-the-future-how-ria-leaders-can-prepare-for-growth-technology-and-ai-with-stan-gregor"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

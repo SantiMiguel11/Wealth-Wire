@@ -1,0 +1,1424 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-10-10T19:13:57Z",
+ "sec_aum_as_of": "2026-09-01",
+ "deals": [
+  {
+   "cluster_id": 663,
+   "date": "2026-10-09T16:56:43Z",
+   "headline": "Inspired Healthcare sale price of properties is 59% of $1.2 billion sold by advisors",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/inspired-healthcare-sale-price-of-properties-is-59-of-12-billion-sold-by-advisors/268557"
+    }
+   ]
+  },
+  {
+   "cluster_id": 665,
+   "date": "2026-10-09T16:24:55Z",
+   "headline": "Investors accuse Netcapital of inflating revenue through sham deals",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/investors-accuse-netcapital-of-inflating-revenue-through-sham-deals/268558"
+    }
+   ]
+  },
+  {
+   "cluster_id": 660,
+   "date": "2026-10-09T13:00:00Z",
+   "headline": "Deals & Moves: The Mather Group, AlphaCore Snag $400M RIAs",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/deals-moves-the-mather-group-alphacore-snag-400m-rias"
+    }
+   ]
+  },
+  {
+   "cluster_id": 672,
+   "date": "2026-10-09T11:14:52Z",
+   "headline": "Pre-sale financial planning is where advisors prove their value",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/practice-management/how-financial-advisors-can-prove-their-value-before-the-big-financial-decision/268458"
+    }
+   ]
+  },
+  {
+   "cluster_id": 674,
+   "date": "2026-10-09T10:36:00Z",
+   "headline": "RIA moves: Carson Group enters New Jersey with $410M Foran Financial Group deal",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/goria/practice-management/ria-moves-carson-group-enters-new-jersey-with-410m-foran-financial-group-deal/268552"
+    }
+   ]
+  },
+  {
+   "cluster_id": 613,
+   "date": "2026-10-08T15:18:36Z",
+   "headline": "Mercer Advisors Completes $1.9B Debt Refinancing, Adds $340M Credit Facility",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Credit Facility",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 340000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "acquirer unclear (not a proper name: 'Mercer Advisors Completes $1.9B Debt Refinancing')",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/mercer-advisors-completes-19-billion-refinancing"
+    }
+   ]
+  },
+  {
+   "cluster_id": 637,
+   "date": "2026-10-08T15:03:46Z",
+   "headline": "XY Planning recruiting spikes as RIA M&A refugees flee rollups that dangle downer contracts",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/10/8/xy-planning-recruiting-spikes-as-ria-ma-refugees-flee-rollups-that-dangle-downer-contracts"
+    }
+   ]
+  },
+  {
+   "cluster_id": 606,
+   "date": "2026-10-08T01:34:28Z",
+   "headline": "XY Planning recruiting spikes as RIA M&A refugees flee rollups that dangle downer contracts -- Amazon, Google, and Fidelity are the second set of X factors feeding the boom",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/10/8/xy-planning-recruiting-spikes-as-ria-ma-refugees-flee-rollups-that-dangle-downer-contracts-amazon-google-and-fidelity-are-the-second-set-of-x-factors-feeding-the-boom"
+    }
+   ]
+  },
+  {
+   "cluster_id": 581,
+   "date": "2026-10-07T16:02:59Z",
+   "headline": "AlphaCore adds $400M Blue Rock in Mid-Atlantic push",
+   "acquirer": {
+    "name": "AlphaCore",
+    "slug": "alphacore-capital-174346",
+    "crd": "174346"
+   },
+   "target": {
+    "name": "Blue Rock",
+    "slug": "blue-rock-financial-group-298558",
+    "crd": "298558"
+   },
+   "target_aum_usd": 400000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/alphacore-adds-400m-blue-rock-in-mid-atlantic-push/268514"
+    }
+   ]
+  },
+  {
+   "cluster_id": 519,
+   "date": "2026-10-06T17:44:52Z",
+   "headline": "$1.1B Hightower Naples Joins Flagship Firm The Bahnsen Group",
+   "acquirer": {
+    "name": "Hightower’s Bahnsen Group",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 1100000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target unclear (descriptive, not a name: 'Naples Practice')",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/the-bahnsen-group-acquires-hightower-naples"
+    }
+   ]
+  },
+  {
+   "cluster_id": 527,
+   "date": "2026-10-06T15:32:56Z",
+   "headline": "Schwab sells alts custodian Forge Trust to Alto, citing capability overlap",
+   "acquirer": {
+    "name": "Alto",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Forge Trust",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNNHBUZmdyWXcwTkhJOExRVXdPRTB5YmY4OENLU2JRS3VGU3huenptcXFwUktrM1c1VTRNcy1zRERmT19NSnR1Ri14Ym9HY3lhX3hGRFF4eVBUdFNwVGtmODBFSWlUN2w1VkJqbTVYZHdTNGt2bnpiYjlDd3oxZUxCNEFTZ2FpZzk2NmFwcmxETTlCTG5hcHpFd0JycmF6RXF2T1Z2SmJQcTVlRERQMTB6MXh3?oc=5"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/retirement-planning/alto-to-buy-forge-trust-from-schwab-in-self-directed-ira-push/268489"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/alternative-investments/schwab-sells-forge-trust-to-self-directed-ira-platform-alto"
+    }
+   ]
+  },
+  {
+   "cluster_id": 522,
+   "date": "2026-10-06T15:01:21Z",
+   "headline": "Aspen Standard Wealth buys $1B Louisiana RIA Cullen Investment Group",
+   "acquirer": {
+    "name": "Aspen Standard Wealth",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Cullen Investment Group",
+    "slug": "cullen-investment-group-18266",
+    "crd": "18266"
+   },
+   "target_aum_usd": 1000000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/aspen-standard-wealth-buys-1b-louisiana-ria-cullen-investment-group/268482"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/aspen-standard-wealth-acquires-louisiana-ria"
+    },
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNWm53aklCV2o5ajMwR21ObzliV0VjYzg4dWdMaS12QzhNeDFCOTBZXzdDZGhFZHJXNnNKcEdVZmsxZmNxZ0FqY2RGLVlmYlVyazE1b3ZyV25KSWIyVnZ4V3lkY01rSlc4TS1VNUxNNU41OHlWVVBEX2I2eS1TMTFWMUVmTENYNTIyeWxOTVdhXzUyMXBaTHJvNHVOZlVHOGtURjYzZmVMeVZoXzc2d2I1V0FyU3l1S0tDN0t1QU1rVHVkTmRTcG80Mkd3R0NLTEtJaUxkOHlVN1E1akU?oc=5"
+    }
+   ]
+  },
+  {
+   "cluster_id": 475,
+   "date": "2026-10-05T21:20:34Z",
+   "headline": "Cresset Aims for $13.1B Trust Business with National Advisors Trust Deal",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/cresset-aims-for-13-1b-trust-business-with-deal-for-national-advisors-trust"
+    }
+   ]
+  },
+  {
+   "cluster_id": 444,
+   "date": "2026-10-02T15:45:52Z",
+   "headline": "Deals & Moves: HB Wealth Adds Family Trio, Hightower Signature Acquires Externally",
+   "acquirer": {
+    "name": "HB Wealth",
+    "slug": "hb-wealth-316731",
+    "crd": "316731"
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target unclear (multiple parties or unclear apposition)",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/deals-moves-cerity-pens-third-deal-of-week-hightower-signature-acquires-externally"
+    }
+   ]
+  },
+  {
+   "cluster_id": 448,
+   "date": "2026-10-02T13:00:00Z",
+   "headline": "Beyond sell or inherit: A third exit for appreciated property",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/opinion/beyond-sell-or-inherit-a-third-exit-for-appreciated-property/268449"
+    }
+   ]
+  },
+  {
+   "cluster_id": 439,
+   "date": "2026-10-02T02:24:19Z",
+   "headline": "Fidelity's move to kick sub-$100-million RIAs off its platform is 'bizarre,' Kitces says; it’s likely to backfire, Chalekian says; yet, the Fidelity-Savvy deal last week may soften any blow",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/10/2/fidelitys-move-to-kick-sub-100-million-rias-off-its-platform-is-bizarre-kitces-says-its-likely-to-backfire-chalekian-says-yet-the-fidelity-savvy-deal-last-week-may-soften-any-blow"
+    }
+   ]
+  },
+  {
+   "cluster_id": 390,
+   "date": "2026-10-01T17:54:00Z",
+   "headline": "Cerity Partners adds Bay Area, Minneapolis firms in latest double-deal",
+   "acquirer": {
+    "name": "Cerity Partners",
+    "slug": "cerity-partners-151559",
+    "crd": "151559"
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target unclear (multiple parties or unclear apposition)",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/cerity-partners-adds-bay-area-minneapolis-firms-in-latest-double-deal/268437"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/cerity-partners-merges-with-two-rias-worth-17b"
+    }
+   ]
+  },
+  {
+   "cluster_id": 387,
+   "date": "2026-10-01T10:00:00Z",
+   "headline": "Concurrent Makes First RIA Platform Acquisition With $5.4B Spire Investment Partners",
+   "acquirer": {
+    "name": "Concurrent",
+    "slug": "concurrent-investment-advisors-323135",
+    "crd": "323135"
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 5400000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target unclear (not a proper name: 'platform biz')",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/concurrent-makes-first-ria-platform-acquisition-with-5-4b-spire"
+    },
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPdVliMDhRQmxBZVJBSDJneHVTM1dRNVJoTTZYVFVGaUlyRGNMSV9nTGpEa1B3cWJfeFFNaTlOQTQyYVVqeWhGUVFyRVZHdGhsQ1R1VWxIZWFIbWtnMzBpNHpaMUFXRS1SQUlMR1kydkhrR0ZKYUdkemxGQW01VjdxT0s2M2dxTm1qSG5sLXdn?oc=5"
+    }
+   ]
+  },
+  {
+   "cluster_id": 369,
+   "date": "2026-09-30T19:14:24Z",
+   "headline": "Merchant Takes Stake in $97B Australian Wealth Firm",
+   "acquirer": {
+    "name": "Merchant",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 97000000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "stake",
+   "confidence": "low",
+   "note": "target unclear (descriptive, not a name: 'Australian Wealth Firm')",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/merchant-investment-takes-2559m-stake-in-ironbark"
+    }
+   ]
+  },
+  {
+   "cluster_id": 349,
+   "date": "2026-09-30T16:05:00Z",
+   "headline": "Wealth Enhancement agrees to buy $22B RWA Wealth Partners in family office play",
+   "acquirer": {
+    "name": "Wealth Enhancement",
+    "slug": "wealth-enhancement-advisory-services-116407",
+    "crd": "116407"
+   },
+   "target": {
+    "name": "RWA Wealth Partners",
+    "slug": "rwa-wealth-partners-156984",
+    "crd": "156984"
+   },
+   "target_aum_usd": 22000000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/wealth-enhancement-agrees-to-buy-22b-rwa-wealth-partners-in-family-office-play/268419"
+    }
+   ]
+  },
+  {
+   "cluster_id": 339,
+   "date": "2026-09-30T16:05:00Z",
+   "headline": "Wealth Enhancement Pens Largest Deal to Date with $22B RWA Partners",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/wealth-enhancement-pens-largest-deal-to-date-with-22b-rwa-partners"
+    }
+   ]
+  },
+  {
+   "cluster_id": 352,
+   "date": "2026-09-30T13:30:23Z",
+   "headline": "RIA moves: Hightower Signature Wealth adds New England reach with $752M Sandy Cove Advisors",
+   "acquirer": {
+    "name": "Hightower Signature Wealth",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 752000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target unclear (not a proper name: 'England reach')",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/ria-moves-hightower-signature-wealth-adds-new-england-reach-with-752m-sandy-cove-advisors/268414"
+    },
+    {
+     "name": "Financial Advisor Magazine",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOVnVQU2sxU2hLckJJUjMwZXBaaS1aalJjVDhGTzVMcDc4T3MyWHprZDV4dERFeHBhakxMcUk0WFdEYUg4dXQ0Vms0QTNVRGk2dERIdXk0cVVPek9iMXkzeXROQXdsMWt4VnM5Z1dNVGpTSE5pWk5YeFl4NTFYUWR6TGFoX3R6SFctN3dzRlIyaGpnbXhOSk5XdldCNzJfNlBw?oc=5"
+    }
+   ]
+  },
+  {
+   "cluster_id": 306,
+   "date": "2026-09-29T17:13:33Z",
+   "headline": "Stifel settles massive $30 million complaint involving star broker’s sale of structured products",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/stifel-settles-massive-30-million-complaint-involving-star-brokers-sale-of-structured-products/268422"
+    }
+   ]
+  },
+  {
+   "cluster_id": 295,
+   "date": "2026-09-29T15:06:39Z",
+   "headline": "Waverly Advisors buys $1.7B Richmond RIA",
+   "acquirer": {
+    "name": "Waverly Advisors",
+    "slug": "waverly-advisors-115332",
+    "crd": "115332"
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 1700000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target unclear (descriptive, not a name: 'Richmond RIA')",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/waverly-advisors-buys-17b-richmond-ria/268392"
+    }
+   ]
+  },
+  {
+   "cluster_id": 272,
+   "date": "2026-09-28T20:03:26Z",
+   "headline": "Why RIA M&A Deals Keep Getting Bigger, and What It Means for Your Firm",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/growth-strategies/ria-deal-size-grows-as-advisory-firms-mature"
+    }
+   ]
+  },
+  {
+   "cluster_id": 248,
+   "date": "2026-09-28T19:55:47Z",
+   "headline": "Serial acquirers 'moving up market' amid RIA M&A slowdown",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/goria/practice-management/serial-acquirers-moving-up-market-amid-ria-ma-slowdown/268383"
+    }
+   ]
+  },
+  {
+   "cluster_id": 240,
+   "date": "2026-09-28T15:31:04Z",
+   "headline": "SMArtX rejected acquisition offer from CAIS to pursue cap raise: Sources",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNeEU4blBCbWlJYlk2V1loMnNKc1VyY19mY1kyUjRPT0VoWnB4dDRldmhMLXVqdE1YZnpsX0tPaDBQV1VQb3BBb2pZMGoxN0JKYVhUVElnMDE0TnJRSTFfNzM5LU9tZURfdC15cmlJMGxZTjFrYTd6TjBmTWM1UU1RNnZpZ180VTJndXZVWTU1b2NKaU42SlVieXdlTmFIXzNLOThLMm5DaDdmSkxKa2xJ?oc=5"
+    }
+   ]
+  },
+  {
+   "cluster_id": 257,
+   "date": "2026-09-28T10:37:00Z",
+   "headline": "RIA M&A slowdown threatens record streak, DeVoe says",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/ria-ma-slowdown-threatens-record-streak-devoe-says/268371"
+    }
+   ]
+  },
+  {
+   "cluster_id": 52,
+   "date": "2026-09-25T18:46:22Z",
+   "headline": "Verdence plans CTO hire, national push after largest acquisition",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/verdence-plans-cto-hire-national-push-after-largest-acquisition/268366"
+    }
+   ]
+  },
+  {
+   "cluster_id": 169,
+   "date": "2026-09-24T21:13:12Z",
+   "headline": "RIA deal momentum slows, threatening record-breaking run",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Financial Planning",
+     "url": "https://www.financial-planning.com/news/ria-deal-momentum-slows-threatening-record-breaking-run"
+    }
+   ]
+  },
+  {
+   "cluster_id": 332,
+   "date": "2026-09-24T19:27:08Z",
+   "headline": "RIA Deals on Track to Fall in Q3: DeVoe",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "ThinkAdvisor",
+     "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOZjQxc3ZnYk85YlVjd3lRU3l1dEZCTFB2ajQ2dmhGdFRxOGt5UVRrRS1MeG9BRVktcU1wN0FSWjVtSlpEYlhzRU1vbFdybGNBdnZqZDAyTTlZdlBfSXdzVTFOZjJ4eW9aengzNFZmMkhEa2xGRFhsSWk4d3JOWEZkRVlFVm1LUQ?oc=5"
+    }
+   ]
+  },
+  {
+   "cluster_id": 72,
+   "date": "2026-09-24T18:21:40Z",
+   "headline": "Altruist opens pre-IPO deals to RIA clients as AI listings loom",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/goria/custodian/altruist-opens-pre-ipo-deals-to-ria-clients-as-ai-listings-loom/268348"
+    }
+   ]
+  },
+  {
+   "cluster_id": 14,
+   "date": "2026-09-24T16:00:00Z",
+   "headline": "RIA M&A Activity Plummets 19% in Q3",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/ria-ma-activity-slows-19-in-third-quarter"
+    }
+   ]
+  },
+  {
+   "cluster_id": 88,
+   "date": "2026-09-24T10:37:00Z",
+   "headline": "Modern Wealth acquires California RIA in sixth deal of 2026",
+   "acquirer": {
+    "name": "Modern Wealth",
+    "slug": "modern-wealth-management-324624",
+    "crd": "324624"
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target unclear (descriptive, not a name: 'California RIA')",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/modern-wealth-acquires-california-ria-in-sixth-deal-of-2026/268333"
+    }
+   ]
+  },
+  {
+   "cluster_id": 97,
+   "date": "2026-09-23T19:00:00Z",
+   "headline": "Fed rate hike could cool RIA deal prices, but not for everyone",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/practice-management/fed-rate-hike-could-cool-ria-deal-prices-but-not-for-everyone/268323"
+    }
+   ]
+  },
+  {
+   "cluster_id": 33,
+   "date": "2026-09-23T16:51:05Z",
+   "headline": "Lululemon Founder Headed for Divorce: What’s at Stake?",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/high-net-worth/lululemon-founder-headed-for-divorce-what-s-at-stake-"
+    }
+   ]
+  },
+  {
+   "cluster_id": 36,
+   "date": "2026-09-23T15:27:17Z",
+   "headline": "Wealth Services Firm Horizon Buys OCIO Provider",
+   "acquirer": {
+    "name": "Wealth Services Firm Horizon",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "OCIO Provider",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/investing-strategies/wealth-services-firm-horizon-buys-ocio-provider"
+    }
+   ]
+  },
+  {
+   "cluster_id": 35,
+   "date": "2026-09-23T13:31:18Z",
+   "headline": "Corient enters Cayman Islands with $2.6B FortCay acquisition",
+   "acquirer": {
+    "name": "Corient",
+    "slug": "corient-319448",
+    "crd": "319448"
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 2600000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target unclear (generic description: 'Family Office')",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/corient-enters-cayman-islands-with-26b-fortcay-acquisition/268315"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/career-moves/corient-acquires-26b-cayman-islands-family-office"
+    },
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQUUhfM3VfOTdXTzB0NFdkcV9GSkV5ZkdYTGJ1ZEQ2b1dzaVAwU3VsVHRIY2ZNbnJ4eEx4MExtVk9DVEFOTUpwZFdyVHFiTGl1SGtteTBNU2ZuaDQ3a0VjS0lxcVNIaXJKLWQyWlZ5YnhBOTFVZ0pCVjYtSjF6b3JLbnUzVVFoSUt6STN1WHM3b3QwWTI0NnZz?oc=5"
+    }
+   ]
+  },
+  {
+   "cluster_id": 39,
+   "date": "2026-09-23T10:00:00Z",
+   "headline": "Captrust Adds $1.2B in Double Deal for Long Island Firms",
+   "acquirer": {
+    "name": "Captrust",
+    "slug": "captrust-175112",
+    "crd": "175112"
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 1200000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target unclear (not a proper name: 'in Double Deal')",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/captrust-acquires-two-new-york-rias-with-12b"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/captrust-adds-12b-long-island-duo-in-new-york-double-deal/268316"
+    }
+   ]
+  },
+  {
+   "cluster_id": 114,
+   "date": "2026-09-22T21:11:03Z",
+   "headline": "Altruist is acquired by Vanguard to vertically integrate asset management and custody",
+   "acquirer": {
+    "name": "Vanguard",
+    "slug": "vanguard-group-105958",
+    "crd": "105958"
+   },
+   "target": {
+    "name": "Altruist",
+    "slug": "altruist-299398",
+    "crd": "299398"
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/advisor-tech/altruist-is-acquired-by-vanguard-to-vertically-integrate-asset-management-and-custody/268306"
+    }
+   ]
+  },
+  {
+   "cluster_id": 115,
+   "date": "2026-09-22T20:11:22Z",
+   "headline": "Indy B-D rep linked to troubled Texas real estate deal",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/indy-b-d-rep-linked-to-troubled-texas-real-estate-deal/268293"
+    }
+   ]
+  },
+  {
+   "cluster_id": 116,
+   "date": "2026-09-22T19:52:40Z",
+   "headline": "Kay Lynn Mayhue named Merit CEO, still seeks 'big splash' deal",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/goria/practice-management/kay-lynn-mayhue-named-merit-ceo-still-seeks-big-splash-deal/268300"
+    }
+   ]
+  },
+  {
+   "cluster_id": 147,
+   "date": "2026-09-22T17:16:36Z",
+   "headline": "Schwab's surprise unveiling of Anthropic deal at Future Proof shows it has an AI ace up its sleeve, but it may take five years or more to catch up with Altruist, if at all, say two analysts",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/22/schwabs-surprise-unveiling-of-anthropic-deal-at-future-proof-shows-it-has-an-ai-ace-up-its-sleeve-but-it-may-take-five-years-or-more-to-catch-up-with-altruist-if-at-all-say-two-analysts"
+    }
+   ]
+  },
+  {
+   "cluster_id": 186,
+   "date": "2026-09-22T11:07:30Z",
+   "headline": "Leveraging Video The Right Way To Add $1M Of New Revenue In Less Than 12 Months: #FASuccess Ep 508 With Nate Hoskin",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Kitces",
+     "url": "https://feeds.feedblitz.com/~/969470318/0/kitcesnerdseyeview~Leveraging-Video-The-Right-Way-To-Add-M-Of-New-Revenue-In-Less-Than-Months-FASuccess-Ep-With-Nate-Hoskin/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 130,
+   "date": "2026-09-21T19:35:04Z",
+   "headline": "Schwab loses $4.5 million lawsuit to teachers who bought structured products",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/schwab-loses-45-million-lawsuit-to-teachers-who-bought-structured-products/268279"
+    }
+   ]
+  },
+  {
+   "cluster_id": 131,
+   "date": "2026-09-21T19:33:09Z",
+   "headline": "Schwab, Anthropic block model training in Claude deal",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/goria/custodian/anthropic-barred-from-model-training-in-schwabs-claude-deal/268277"
+    }
+   ]
+  },
+  {
+   "cluster_id": 187,
+   "date": "2026-09-21T11:03:30Z",
+   "headline": "Taking Equity In An Acquiring Aggregator: Weighing The Growth Opportunities Against Valuation And Illiquidity Risks",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Kitces",
+     "url": "https://feeds.feedblitz.com/~/969413843/0/kitcesnerdseyeview~Taking-Equity-In-An-Acquiring-Aggregator-Weighing-The-Growth-Opportunities-Against-Valuation-And-Illiquidity-Risks/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 138,
+   "date": "2026-09-21T10:40:00Z",
+   "headline": "Global M&A value rises 15%, with highest sentiment in financial sector",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/mergers-acquisitions/global-ma-value-rises-15-with-highest-sentiment-in-financial-sector/268269"
+    }
+   ]
+  },
+  {
+   "cluster_id": 139,
+   "date": "2026-09-21T10:39:00Z",
+   "headline": "Paramount in advanced settlement talks over $81 billion Warner Bros. deal",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/equities/paramount-in-advanced-settlement-talks-over-81-billion-warner-bros-deal/268271"
+    }
+   ]
+  },
+  {
+   "cluster_id": 148,
+   "date": "2026-09-18T02:58:20Z",
+   "headline": "Ritik Malhotra sells not-for-sale Savvy stake for $100 million after Utah Jazz owner showed up big for his LPL-disruption-by-AI play -- and Mark Casady re-upped at the new price as well",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/18/ritik-malhotra-sells-not-for-sale-savvy-stake-for-100-million-after-utah-jazz-owner-showed-up-big-for-his-lpl-disruption-by-ai-play-and-mark-casady-re-upped-at-the-new-price-as-well"
+    }
+   ]
+  },
+  {
+   "cluster_id": 149,
+   "date": "2026-09-17T03:00:09Z",
+   "headline": "'No rush' Peter Mallouk is doing wild 'gap' deals as he rides out RIA seller's market and his Creative Planning keeps 'billions' of purchasing power 'locked-and-loaded' for 'perfect' moment",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/17/no-rush-peter-mallouk-is-doing-wild-gap-deals-as-he-rides-out-ria-sellers-market-and-his-creative-planning-keeps-billions-of-purchasing-power-locked-and-loaded-for-perfect-moment"
+    }
+   ]
+  }
+ ]
+}

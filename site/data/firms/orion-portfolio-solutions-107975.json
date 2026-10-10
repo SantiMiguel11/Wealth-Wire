@@ -1,0 +1,44 @@
+{
+ "schema_version": 1,
+ "slug": "orion-portfolio-solutions-107975",
+ "name": "Orion Portfolio Solutions",
+ "legal_name": "Orion Portfolio Solutions",
+ "crd": "107975",
+ "sec_number": "801-57265",
+ "city": "Omaha",
+ "state": "NE",
+ "sec_aum_usd": 64842135351.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/107975",
+ "stories": [
+  {
+   "cluster_id": 646,
+   "headline": "Wealthtech Vendors Scramble as Orion Introduces Data Access Fees",
+   "url": "https://www.wealthmanagement.com/advisor-support-platforms/wealthtech-vendors-scramble-as-orion-introduces-data-access-fees",
+   "category": "Wealthtech",
+   "last_published": "2026-10-08T20:38:46Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/advisor-support-platforms/wealthtech-vendors-scramble-as-orion-introduces-data-access-fees"
+    }
+   ]
+  },
+  {
+   "cluster_id": 154,
+   "headline": "Bain Capital (mostly) funds Envestnet buy of Vestmark to surpass $10 trillion and define 'adaptive modularity' strategy, leaving Orion a clear RIA lane",
+   "url": "https://riabiz.com/a/2026/9/10/bain-capital-mostly-funds-envestnet-buy-of-vestmark-to-surpass-10-trillion-and-define-adaptive-modularity-strategy-leaving-orion-a-clear-ria-lane",
+   "category": "Regulation",
+   "last_published": "2026-09-10T12:51:50Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/10/bain-capital-mostly-funds-envestnet-buy-of-vestmark-to-surpass-10-trillion-and-define-adaptive-modularity-strategy-leaving-orion-a-clear-ria-lane"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

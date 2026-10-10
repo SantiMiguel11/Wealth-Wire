@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "signaturefd-112758",
+ "name": "Signaturefd",
+ "legal_name": "Signaturefd",
+ "crd": "112758",
+ "sec_number": "801-60393",
+ "city": "Atlanta",
+ "state": "GA",
+ "sec_aum_usd": 9675890922.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/112758",
+ "stories": [
+  {
+   "cluster_id": 230,
+   "headline": "$10bn SignatureFD pursuing first-ever outside investor: Sources",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQSFVScmdYTmpnV0tfUFdkV0lpeWNBc19JOExLd3Q4NS1fT1RhNGRyWTVLRXpGZU45OXV4ZXFUM2kycmxoWVF1aWFvU3phZWJLS0JLanRZWld5bHlYZktvZXJWS2t5WldwVmwySDVtYzRWX3lxR3BtTjN5NTZMNlBReGxHdXZ0V0QzenZPd0YzZ1VNZWRJS1R4OF9CNUs3bkw4V2c?oc=5",
+   "category": "Other",
+   "last_published": "2026-09-18T23:49:59Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQSFVScmdYTmpnV0tfUFdkV0lpeWNBc19JOExLd3Q4NS1fT1RhNGRyWTVLRXpGZU45OXV4ZXFUM2kycmxoWVF1aWFvU3phZWJLS0JLanRZWld5bHlYZktvZXJWS2t5WldwVmwySDVtYzRWX3lxR3BtTjN5NTZMNlBReGxHdXZ0V0QzenZPd0YzZ1VNZWRJS1R4OF9CNUs3bkw4V2c?oc=5"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

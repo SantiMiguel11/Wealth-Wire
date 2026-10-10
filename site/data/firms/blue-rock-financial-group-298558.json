@@ -1,0 +1,59 @@
+{
+ "schema_version": 1,
+ "slug": "blue-rock-financial-group-298558",
+ "name": "Blue Rock Financial Group",
+ "legal_name": "Dravo Bay",
+ "crd": "298558",
+ "sec_number": "801-117998",
+ "city": "Rehoboth Beach",
+ "state": "DE",
+ "sec_aum_usd": 381821487.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/298558",
+ "stories": [
+  {
+   "cluster_id": 581,
+   "headline": "AlphaCore adds $400M Blue Rock in Mid-Atlantic push",
+   "url": "https://www.investmentnews.com/ria-news/alphacore-adds-400m-blue-rock-in-mid-atlantic-push/268514",
+   "category": "M&A",
+   "last_published": "2026-10-07T16:02:59Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/alphacore-adds-400m-blue-rock-in-mid-atlantic-push/268514"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 581,
+   "date": "2026-10-07T16:02:59Z",
+   "headline": "AlphaCore adds $400M Blue Rock in Mid-Atlantic push",
+   "acquirer": {
+    "name": "AlphaCore",
+    "slug": "alphacore-capital-174346",
+    "crd": "174346"
+   },
+   "target": {
+    "name": "Blue Rock",
+    "slug": "blue-rock-financial-group-298558",
+    "crd": "298558"
+   },
+   "target_aum_usd": 400000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/alphacore-adds-400m-blue-rock-in-mid-atlantic-push/268514"
+    }
+   ],
+   "role": "target"
+  }
+ ]
+}

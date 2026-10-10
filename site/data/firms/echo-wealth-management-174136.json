@@ -1,0 +1,34 @@
+{
+ "schema_version": 1,
+ "slug": "echo-wealth-management-174136",
+ "name": "Echo Wealth Management",
+ "legal_name": "Echo Wealth Management",
+ "crd": "174136",
+ "sec_number": "801-117873",
+ "city": "Plymouth",
+ "state": "MN",
+ "sec_aum_usd": 288189706.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/174136",
+ "stories": [
+  {
+   "cluster_id": 390,
+   "headline": "Cerity Partners adds Bay Area, Minneapolis firms in latest double-deal",
+   "url": "https://www.investmentnews.com/ria-news/cerity-partners-adds-bay-area-minneapolis-firms-in-latest-double-deal/268437",
+   "category": "M&A",
+   "last_published": "2026-10-01T18:00:11Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/cerity-partners-adds-bay-area-minneapolis-firms-in-latest-double-deal/268437"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/cerity-partners-merges-with-two-rias-worth-17b"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

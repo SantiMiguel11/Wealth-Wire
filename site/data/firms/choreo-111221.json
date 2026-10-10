@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "choreo-111221",
+ "name": "Choreo",
+ "legal_name": "Choreo",
+ "crd": "111221",
+ "sec_number": "801-57236",
+ "city": "Rockford",
+ "state": "IL",
+ "sec_aum_usd": 19138746524.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/111221",
+ "stories": [
+  {
+   "cluster_id": 96,
+   "headline": "Choreo taps Beemo AI agents to speed proposals, scale onboarding",
+   "url": "https://www.investmentnews.com/transformation/choreo-taps-beemo-ai-agents-to-draft-proposals-scale-onboarding/268322",
+   "category": "People Moves",
+   "last_published": "2026-09-23T19:11:09Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/transformation/choreo-taps-beemo-ai-agents-to-draft-proposals-scale-onboarding/268322"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

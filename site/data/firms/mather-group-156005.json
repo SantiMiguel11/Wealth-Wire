@@ -1,0 +1,44 @@
+{
+ "schema_version": 1,
+ "slug": "mather-group-156005",
+ "name": "Mather Group",
+ "legal_name": "Mather Group",
+ "crd": "156005",
+ "sec_number": "801-72156",
+ "city": "Chicago",
+ "state": "IL",
+ "sec_aum_usd": 13446388872.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/156005",
+ "stories": [
+  {
+   "cluster_id": 670,
+   "headline": "RIA moves: The Mather Group deepens DFW presence with Legacy Partnership",
+   "url": "https://www.investmentnews.com/ria-news/ria-moves-the-mather-group-deepens-dfw-presence-with-legacy-partnership/268553",
+   "category": "Other",
+   "last_published": "2026-10-09T13:29:45Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/ria-moves-the-mather-group-deepens-dfw-presence-with-legacy-partnership/268553"
+    }
+   ]
+  },
+  {
+   "cluster_id": 660,
+   "headline": "Deals & Moves: The Mather Group, AlphaCore Snag $400M RIAs",
+   "url": "https://www.wealthmanagement.com/ria-news/deals-moves-the-mather-group-alphacore-snag-400m-rias",
+   "category": "M&A",
+   "last_published": "2026-10-09T13:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/deals-moves-the-mather-group-alphacore-snag-400m-rias"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

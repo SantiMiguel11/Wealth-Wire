@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "bain-capital-private-equity-145653",
+ "name": "Bain Capital Private Equity",
+ "legal_name": "Bain Capital Private Equity",
+ "crd": "145653",
+ "sec_number": "801-69069",
+ "city": "Boston",
+ "state": "MA",
+ "sec_aum_usd": 96429353000.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/145653",
+ "stories": [
+  {
+   "cluster_id": 154,
+   "headline": "Bain Capital (mostly) funds Envestnet buy of Vestmark to surpass $10 trillion and define 'adaptive modularity' strategy, leaving Orion a clear RIA lane",
+   "url": "https://riabiz.com/a/2026/9/10/bain-capital-mostly-funds-envestnet-buy-of-vestmark-to-surpass-10-trillion-and-define-adaptive-modularity-strategy-leaving-orion-a-clear-ria-lane",
+   "category": "Regulation",
+   "last_published": "2026-09-10T12:51:50Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/10/bain-capital-mostly-funds-envestnet-buy-of-vestmark-to-surpass-10-trillion-and-define-adaptive-modularity-strategy-leaving-orion-a-clear-ria-lane"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

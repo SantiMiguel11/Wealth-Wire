@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "smartx-advisory-solutions-297680",
+ "name": "Smartx Advisory Solutions",
+ "legal_name": "Smartx Advisory Solutions",
+ "crd": "297680",
+ "sec_number": "801-113795",
+ "city": "West Palm Beach",
+ "state": "FL",
+ "sec_aum_usd": 26993430437.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/297680",
+ "stories": [
+  {
+   "cluster_id": 240,
+   "headline": "SMArtX rejected acquisition offer from CAIS to pursue cap raise: Sources",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNeEU4blBCbWlJYlk2V1loMnNKc1VyY19mY1kyUjRPT0VoWnB4dDRldmhMLXVqdE1YZnpsX0tPaDBQV1VQb3BBb2pZMGoxN0JKYVhUVElnMDE0TnJRSTFfNzM5LU9tZURfdC15cmlJMGxZTjFrYTd6TjBmTWM1UU1RNnZpZ180VTJndXZVWTU1b2NKaU42SlVieXdlTmFIXzNLOThLMm5DaDdmSkxKa2xJ?oc=5",
+   "category": "M&A",
+   "last_published": "2026-09-28T15:31:04Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNeEU4blBCbWlJYlk2V1loMnNKc1VyY19mY1kyUjRPT0VoWnB4dDRldmhMLXVqdE1YZnpsX0tPaDBQV1VQb3BBb2pZMGoxN0JKYVhUVElnMDE0TnJRSTFfNzM5LU9tZURfdC15cmlJMGxZTjFrYTd6TjBmTWM1UU1RNnZpZ180VTJndXZVWTU1b2NKaU42SlVieXdlTmFIXzNLOThLMm5DaDdmSkxKa2xJ?oc=5"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

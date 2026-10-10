@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "burney-106945",
+ "name": "Burney",
+ "legal_name": "Burney",
+ "crd": "106945",
+ "sec_number": "801-10232",
+ "city": "Reston",
+ "state": "VA",
+ "sec_aum_usd": 3588662390.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/106945",
+ "stories": [
+  {
+   "cluster_id": 564,
+   "headline": "How $4bn Burney Company's president is planning for his own succession",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOT0h2QmhpQjV3d3hzb1FDRUpTYmZ5NVJxQjhDSlljbVpnVzdlWVVHeVJPVmdIZ0hiRUR5T05HcXR0alNmeXZPcFE3b0lhVmZqaFNhVzBXczQzclh3NGVjN3poU1RRVEpwRWdwejZvcldkaTNzRU12cGZzTy1tandZQU1Gc1NLZ1NLZk1YTnVxd25SdzFnSDBOOVFadWNUbUZyejVzWlRQbVNoTlU?oc=5",
+   "category": "Other",
+   "last_published": "2026-10-06T15:32:56Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOT0h2QmhpQjV3d3hzb1FDRUpTYmZ5NVJxQjhDSlljbVpnVzdlWVVHeVJPVmdIZ0hiRUR5T05HcXR0alNmeXZPcFE3b0lhVmZqaFNhVzBXczQzclh3NGVjN3poU1RRVEpwRWdwejZvcldkaTNzRU12cGZzTy1tandZQU1Gc1NLZ1NLZk1YTnVxd25SdzFnSDBOOVFadWNUbUZyejVzWlRQbVNoTlU?oc=5"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

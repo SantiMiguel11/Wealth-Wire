@@ -1,0 +1,44 @@
+{
+ "schema_version": 1,
+ "slug": "bryn-mawr-trust-advisors-285359",
+ "name": "Bryn Mawr Trust Advisors",
+ "legal_name": "Bryn Mawr Trust Advisors",
+ "crd": "285359",
+ "sec_number": "801-108434",
+ "city": "Philadelphia",
+ "state": "PA",
+ "sec_aum_usd": 3513817710.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/285359",
+ "stories": [
+  {
+   "cluster_id": 616,
+   "headline": "Talking Trusts & Estates for Advisors: Advantages and Disadvantages of Putting an Inherited IRA Into a CRUT",
+   "url": "https://www.wealthmanagement.com/estate-planning/talking-trusts-estates-for-advisors-advantages-and-disadvantages-of-putting-an-inherited-ira-into-a-crut",
+   "category": "Other",
+   "last_published": "2026-10-08T13:40:23Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/estate-planning/talking-trusts-estates-for-advisors-advantages-and-disadvantages-of-putting-an-inherited-ira-into-a-crut"
+    }
+   ]
+  },
+  {
+   "cluster_id": 2,
+   "headline": "Talking Trusts & Estates for Advisors: When to Use Revocable Trusts vs. Alternative Strategies",
+   "url": "https://www.wealthmanagement.com/estate-planning/talking-trusts-estates-for-advisors-when-to-use-revocable-trusts-vs-alternative-strategies",
+   "category": "Products & Funds",
+   "last_published": "2026-09-25T16:24:38Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/estate-planning/talking-trusts-estates-for-advisors-when-to-use-revocable-trusts-vs-alternative-strategies"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

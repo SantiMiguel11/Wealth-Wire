@@ -1,0 +1,58 @@
+{
+ "schema_version": 1,
+ "slug": "morningstar-investment-management-108031",
+ "name": "Morningstar Investment Management",
+ "legal_name": "Morningstar Investment Management",
+ "crd": "108031",
+ "sec_number": "801-56896",
+ "city": "Chicago",
+ "state": "IL",
+ "sec_aum_usd": 87824400000.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/108031",
+ "stories": [
+  {
+   "cluster_id": 600,
+   "headline": "Morningstar rolls out agentic AI platform built on its research",
+   "url": "https://www.investmentnews.com/fintech/morningstar-rolls-out-agentic-ai-platform-built-on-its-research/268519",
+   "category": "Wealthtech",
+   "last_published": "2026-10-07T19:18:38Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/fintech/morningstar-rolls-out-agentic-ai-platform-built-on-its-research/268519"
+    }
+   ]
+  },
+  {
+   "cluster_id": 587,
+   "headline": "Mesirow taps Morningstar veteran to lead investment solutions",
+   "url": "https://www.investmentnews.com/ria-news/mesirow-taps-morningstar-veteran-to-lead-investment-solutions/268506",
+   "category": "People Moves",
+   "last_published": "2026-10-07T10:42:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/mesirow-taps-morningstar-veteran-to-lead-investment-solutions/268506"
+    }
+   ]
+  },
+  {
+   "cluster_id": 484,
+   "headline": "Morningstar: Geopolitical Tensions, Inflation Top List of Advisors’ Market Concerns",
+   "url": "https://www.wealthmanagement.com/investing-strategies/advisors-spend-too-much-time-on-investments",
+   "category": "Markets",
+   "last_published": "2026-10-05T11:30:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/investing-strategies/advisors-spend-too-much-time-on-investments"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

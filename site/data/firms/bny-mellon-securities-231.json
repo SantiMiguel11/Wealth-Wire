@@ -1,0 +1,72 @@
+{
+ "schema_version": 1,
+ "slug": "bny-mellon-securities-231",
+ "name": "BNY Mellon Securities",
+ "legal_name": "BNY Mellon Securities",
+ "crd": "231",
+ "sec_number": "801-54739",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 8448676677.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/231",
+ "stories": [
+  {
+   "cluster_id": 691,
+   "headline": "Pershing reveal of 'Wove' kerfuffle during corporate restructuring last June raises questions about the No. 3 RIA custodian's direction; the task now lies with new RIA head Adam Vos",
+   "url": "https://riabiz.com/a/2026/10/10/pershing-reveal-of-wove-kerfuffle-during-corporate-restructuring-last-june-raises-questions-about-the-no-3-ria-custodians-direction-the-task-now-lies-with-new-ria-head-adam-vos",
+   "category": "Wealthtech",
+   "last_published": "2026-10-10T02:36:46Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/10/10/pershing-reveal-of-wove-kerfuffle-during-corporate-restructuring-last-june-raises-questions-about-the-no-3-ria-custodians-direction-the-task-now-lies-with-new-ria-head-adam-vos"
+    }
+   ]
+  },
+  {
+   "cluster_id": 496,
+   "headline": "Northern Trust nabs Citi and BNY veterans in continuing Northeast push",
+   "url": "https://www.investmentnews.com/wirehouses/northern-trust-nabs-citi-and-bny-veterans-in-continuing-northeast-push/268466",
+   "category": "Other",
+   "last_published": "2026-10-05T15:29:09Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/wirehouses/northern-trust-nabs-citi-and-bny-veterans-in-continuing-northeast-push/268466"
+    }
+   ]
+  },
+  {
+   "cluster_id": 283,
+   "headline": "BNY Pershing Sunsetting Wove Wealth Platform",
+   "url": "https://www.wealthmanagement.com/ria-news/bny-pershing-revamping-wove-wealth-platform",
+   "category": "Wealthtech",
+   "last_published": "2026-09-29T17:57:57Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/bny-pershing-revamping-wove-wealth-platform"
+    }
+   ]
+  },
+  {
+   "cluster_id": 53,
+   "headline": "Private business owners selling now are often unprepared, BNY survey says",
+   "url": "https://www.investmentnews.com/practice-management/private-business-owners-selling-now-are-often-unprepared-bny-survey-says/268367",
+   "category": "Other",
+   "last_published": "2026-09-25T18:31:47Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/practice-management/private-business-owners-selling-now-are-often-unprepared-bny-survey-says/268367"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

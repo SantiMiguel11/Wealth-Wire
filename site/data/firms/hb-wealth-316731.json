@@ -1,0 +1,87 @@
+{
+ "schema_version": 1,
+ "slug": "hb-wealth-316731",
+ "name": "HB Wealth",
+ "legal_name": "HB Wealth Management",
+ "crd": "316731",
+ "sec_number": "801-122595",
+ "city": "Atlanta",
+ "state": "GA",
+ "sec_aum_usd": 30158401942.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/316731",
+ "stories": [
+  {
+   "cluster_id": 444,
+   "headline": "Deals & Moves: HB Wealth Adds Family Trio, Hightower Signature Acquires Externally",
+   "url": "https://www.wealthmanagement.com/ria-news/deals-moves-cerity-pens-third-deal-of-week-hightower-signature-acquires-externally",
+   "category": "M&A",
+   "last_published": "2026-10-02T15:45:52Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/deals-moves-cerity-pens-third-deal-of-week-hightower-signature-acquires-externally"
+    }
+   ]
+  },
+  {
+   "cluster_id": 453,
+   "headline": "HB Wealth enters Texas with physician-focused advisory team",
+   "url": "https://www.investmentnews.com/ria-news/hb-wealth-enters-texas-with-physician-focused-advisory-team/268444",
+   "category": "People Moves",
+   "last_published": "2026-10-02T10:33:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/hb-wealth-enters-texas-with-physician-focused-advisory-team/268444"
+    }
+   ]
+  },
+  {
+   "cluster_id": 558,
+   "headline": "HB Wealth Expands In Texas With Addition Of $700M AUM Firm Catering To Physicians",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQdWNmYmdkUERwUDltUjJzcHpuQzNvLUpiYjJrcE5YQVdVYW1yaU1rblVIVXViNDJadU95WFppeTR1dEpkemFFaXNqdm5SMXpJVS1pSUNhSmpYYnhXcVN4ME02b05aQVB0Qm9Xd19LLUNGb1M0MUt5dGFwTFNKRjEwXzFDZDU2VkR4ZURocGpfRnpxSlV4Nlp0U2tCWGd1RUo2bFpXSk1hMA?oc=5",
+   "category": "Other",
+   "last_published": "2026-10-01T20:35:41Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Financial Advisor Magazine",
+     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQdWNmYmdkUERwUDltUjJzcHpuQzNvLUpiYjJrcE5YQVdVYW1yaU1rblVIVXViNDJadU95WFppeTR1dEpkemFFaXNqdm5SMXpJVS1pSUNhSmpYYnhXcVN4ME02b05aQVB0Qm9Xd19LLUNGb1M0MUt5dGFwTFNKRjEwXzFDZDU2VkR4ZURocGpfRnpxSlV4Nlp0U2tCWGd1RUo2bFpXSk1hMA?oc=5"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 444,
+   "date": "2026-10-02T15:45:52Z",
+   "headline": "Deals & Moves: HB Wealth Adds Family Trio, Hightower Signature Acquires Externally",
+   "acquirer": {
+    "name": "HB Wealth",
+    "slug": "hb-wealth-316731",
+    "crd": "316731"
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target unclear (multiple parties or unclear apposition)",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/deals-moves-cerity-pens-third-deal-of-week-hightower-signature-acquires-externally"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

@@ -1,0 +1,402 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-10-10T05:39:57Z",
+ "week": "2026-W41",
+ "start": "2026-10-05",
+ "end": "2026-10-09",
+ "deals": [
+  {
+   "cluster_id": 663,
+   "date": "2026-10-09T16:56:43Z",
+   "headline": "Inspired Healthcare sale price of properties is 59% of $1.2 billion sold by advisors",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/inspired-healthcare-sale-price-of-properties-is-59-of-12-billion-sold-by-advisors/268557"
+    }
+   ]
+  },
+  {
+   "cluster_id": 665,
+   "date": "2026-10-09T16:24:55Z",
+   "headline": "Investors accuse Netcapital of inflating revenue through sham deals",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/regulation-legal-compliance/investors-accuse-netcapital-of-inflating-revenue-through-sham-deals/268558"
+    }
+   ]
+  },
+  {
+   "cluster_id": 660,
+   "date": "2026-10-09T13:00:00Z",
+   "headline": "Deals & Moves: The Mather Group, AlphaCore Snag $400M RIAs",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/deals-moves-the-mather-group-alphacore-snag-400m-rias"
+    }
+   ]
+  },
+  {
+   "cluster_id": 672,
+   "date": "2026-10-09T11:14:52Z",
+   "headline": "Pre-sale financial planning is where advisors prove their value",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/practice-management/how-financial-advisors-can-prove-their-value-before-the-big-financial-decision/268458"
+    }
+   ]
+  },
+  {
+   "cluster_id": 674,
+   "date": "2026-10-09T10:36:00Z",
+   "headline": "RIA moves: Carson Group enters New Jersey with $410M Foran Financial Group deal",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/goria/practice-management/ria-moves-carson-group-enters-new-jersey-with-410m-foran-financial-group-deal/268552"
+    }
+   ]
+  },
+  {
+   "cluster_id": 613,
+   "date": "2026-10-08T15:18:36Z",
+   "headline": "Mercer Advisors Completes $1.9B Debt Refinancing, Adds $340M Credit Facility",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Credit Facility",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 340000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "acquirer unclear (not a proper name: 'Mercer Advisors Completes $1.9B Debt Refinancing')",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/mercer-advisors-completes-19-billion-refinancing"
+    }
+   ]
+  },
+  {
+   "cluster_id": 637,
+   "date": "2026-10-08T15:03:46Z",
+   "headline": "XY Planning recruiting spikes as RIA M&A refugees flee rollups that dangle downer contracts",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/10/8/xy-planning-recruiting-spikes-as-ria-ma-refugees-flee-rollups-that-dangle-downer-contracts"
+    }
+   ]
+  },
+  {
+   "cluster_id": 606,
+   "date": "2026-10-08T01:34:28Z",
+   "headline": "XY Planning recruiting spikes as RIA M&A refugees flee rollups that dangle downer contracts -- Amazon, Google, and Fidelity are the second set of X factors feeding the boom",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/10/8/xy-planning-recruiting-spikes-as-ria-ma-refugees-flee-rollups-that-dangle-downer-contracts-amazon-google-and-fidelity-are-the-second-set-of-x-factors-feeding-the-boom"
+    }
+   ]
+  },
+  {
+   "cluster_id": 581,
+   "date": "2026-10-07T16:02:59Z",
+   "headline": "AlphaCore adds $400M Blue Rock in Mid-Atlantic push",
+   "acquirer": {
+    "name": "AlphaCore",
+    "slug": "alphacore-capital-174346",
+    "crd": "174346"
+   },
+   "target": {
+    "name": "Blue Rock",
+    "slug": "blue-rock-financial-group-298558",
+    "crd": "298558"
+   },
+   "target_aum_usd": 400000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/alphacore-adds-400m-blue-rock-in-mid-atlantic-push/268514"
+    }
+   ]
+  },
+  {
+   "cluster_id": 519,
+   "date": "2026-10-06T17:44:52Z",
+   "headline": "$1.1B Hightower Naples Joins Flagship Firm The Bahnsen Group",
+   "acquirer": {
+    "name": "Hightower’s Bahnsen Group",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 1100000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target unclear (descriptive, not a name: 'Naples Practice')",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/the-bahnsen-group-acquires-hightower-naples"
+    }
+   ]
+  },
+  {
+   "cluster_id": 527,
+   "date": "2026-10-06T15:32:56Z",
+   "headline": "Schwab sells alts custodian Forge Trust to Alto, citing capability overlap",
+   "acquirer": {
+    "name": "Alto",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Forge Trust",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNNHBUZmdyWXcwTkhJOExRVXdPRTB5YmY4OENLU2JRS3VGU3huenptcXFwUktrM1c1VTRNcy1zRERmT19NSnR1Ri14Ym9HY3lhX3hGRFF4eVBUdFNwVGtmODBFSWlUN2w1VkJqbTVYZHdTNGt2bnpiYjlDd3oxZUxCNEFTZ2FpZzk2NmFwcmxETTlCTG5hcHpFd0JycmF6RXF2T1Z2SmJQcTVlRERQMTB6MXh3?oc=5"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/retirement-planning/alto-to-buy-forge-trust-from-schwab-in-self-directed-ira-push/268489"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/alternative-investments/schwab-sells-forge-trust-to-self-directed-ira-platform-alto"
+    }
+   ]
+  },
+  {
+   "cluster_id": 522,
+   "date": "2026-10-06T15:01:21Z",
+   "headline": "Aspen Standard Wealth buys $1B Louisiana RIA Cullen Investment Group",
+   "acquirer": {
+    "name": "Aspen Standard Wealth",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Cullen Investment Group",
+    "slug": "cullen-investment-group-18266",
+    "crd": "18266"
+   },
+   "target_aum_usd": 1000000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/aspen-standard-wealth-buys-1b-louisiana-ria-cullen-investment-group/268482"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/aspen-standard-wealth-acquires-louisiana-ria"
+    },
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNWm53aklCV2o5ajMwR21ObzliV0VjYzg4dWdMaS12QzhNeDFCOTBZXzdDZGhFZHJXNnNKcEdVZmsxZmNxZ0FqY2RGLVlmYlVyazE1b3ZyV25KSWIyVnZ4V3lkY01rSlc4TS1VNUxNNU41OHlWVVBEX2I2eS1TMTFWMUVmTENYNTIyeWxOTVdhXzUyMXBaTHJvNHVOZlVHOGtURjYzZmVMeVZoXzc2d2I1V0FyU3l1S0tDN0t1QU1rVHVkTmRTcG80Mkd3R0NLTEtJaUxkOHlVN1E1akU?oc=5"
+    }
+   ]
+  },
+  {
+   "cluster_id": 475,
+   "date": "2026-10-05T21:20:34Z",
+   "headline": "Cresset Aims for $13.1B Trust Business with National Advisors Trust Deal",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": null,
+   "confidence": "low",
+   "note": "no deal pattern matched the headlines",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/cresset-aims-for-13-1b-trust-business-with-deal-for-national-advisors-trust"
+    }
+   ]
+  }
+ ],
+ "total_disclosed_aum_usd": 2840000000.0,
+ "disclosed_aum_deals": 4,
+ "top_acquirers": [
+  {
+   "name": "AlphaCore",
+   "slug": "alphacore-capital-174346",
+   "deals": 1
+  },
+  {
+   "name": "Alto",
+   "slug": null,
+   "deals": 1
+  },
+  {
+   "name": "Aspen Standard Wealth",
+   "slug": null,
+   "deals": 1
+  },
+  {
+   "name": "Hightower’s Bahnsen Group",
+   "slug": null,
+   "deals": 1
+  }
+ ],
+ "paragraph": null,
+ "ai": false
+}

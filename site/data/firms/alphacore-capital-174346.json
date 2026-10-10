@@ -1,0 +1,73 @@
+{
+ "schema_version": 1,
+ "slug": "alphacore-capital-174346",
+ "name": "Alphacore Capital",
+ "legal_name": "Alphacore Capital",
+ "crd": "174346",
+ "sec_number": "801-108468",
+ "city": "La Jolla",
+ "state": "CA",
+ "sec_aum_usd": 12959408390.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/174346",
+ "stories": [
+  {
+   "cluster_id": 660,
+   "headline": "Deals & Moves: The Mather Group, AlphaCore Snag $400M RIAs",
+   "url": "https://www.wealthmanagement.com/ria-news/deals-moves-the-mather-group-alphacore-snag-400m-rias",
+   "category": "M&A",
+   "last_published": "2026-10-09T13:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/deals-moves-the-mather-group-alphacore-snag-400m-rias"
+    }
+   ]
+  },
+  {
+   "cluster_id": 581,
+   "headline": "AlphaCore adds $400M Blue Rock in Mid-Atlantic push",
+   "url": "https://www.investmentnews.com/ria-news/alphacore-adds-400m-blue-rock-in-mid-atlantic-push/268514",
+   "category": "M&A",
+   "last_published": "2026-10-07T16:02:59Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/alphacore-adds-400m-blue-rock-in-mid-atlantic-push/268514"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 581,
+   "date": "2026-10-07T16:02:59Z",
+   "headline": "AlphaCore adds $400M Blue Rock in Mid-Atlantic push",
+   "acquirer": {
+    "name": "AlphaCore",
+    "slug": "alphacore-capital-174346",
+    "crd": "174346"
+   },
+   "target": {
+    "name": "Blue Rock",
+    "slug": "blue-rock-financial-group-298558",
+    "crd": "298558"
+   },
+   "target_aum_usd": 400000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/alphacore-adds-400m-blue-rock-in-mid-atlantic-push/268514"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

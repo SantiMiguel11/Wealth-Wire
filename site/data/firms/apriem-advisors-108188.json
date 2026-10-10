@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "apriem-advisors-108188",
+ "name": "Apriem Advisors",
+ "legal_name": "Apriem Advisors",
+ "crd": "108188",
+ "sec_number": "801-55371",
+ "city": "Irvine",
+ "state": "CA",
+ "sec_aum_usd": 1483716736.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/108188",
+ "stories": [
+  {
+   "cluster_id": 314,
+   "headline": "Apriem Advisors Earns Three National and Regional Recognitions in 2026",
+   "url": "https://www.globenewswire.com/news-release/2026/09/29/3370664/0/en/apriem-advisors-earns-three-national-and-regional-recognitions-in-2026.html",
+   "category": "Regulation",
+   "last_published": "2026-09-29T11:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "GlobeNewswire",
+     "url": "https://www.globenewswire.com/news-release/2026/09/29/3370664/0/en/apriem-advisors-earns-three-national-and-regional-recognitions-in-2026.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

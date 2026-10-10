@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "great-lakes-advisors-110757",
+ "name": "Great Lakes Advisors",
+ "legal_name": "Great Lakes Advisors",
+ "crd": "110757",
+ "sec_number": "801-16937",
+ "city": "Chicago",
+ "state": "IL",
+ "sec_aum_usd": 16158030371.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/110757",
+ "stories": [
+  {
+   "cluster_id": 3,
+   "headline": "Deals & Moves: LPL Financial Adds Two Utah Advisory Teams With $1B",
+   "url": "https://www.wealthmanagement.com/ibd-news/deals-moves-lpl-financial-adds-two-utah-advisory-teams-with-1b",
+   "category": "People Moves",
+   "last_published": "2026-09-25T15:18:39Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ibd-news/deals-moves-lpl-financial-adds-two-utah-advisory-teams-with-1b"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

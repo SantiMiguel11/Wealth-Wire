@@ -1,0 +1,76 @@
+{
+ "schema_version": 1,
+ "slug": "xypn-sapphire-285967",
+ "name": "Xypn Sapphire",
+ "legal_name": "XY Investment Solutions",
+ "crd": "285967",
+ "sec_number": "801-118916",
+ "city": "Bozeman",
+ "state": "MT",
+ "sec_aum_usd": 1253476799.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/285967",
+ "stories": [
+  {
+   "cluster_id": 637,
+   "headline": "XY Planning recruiting spikes as RIA M&A refugees flee rollups that dangle downer contracts",
+   "url": "https://riabiz.com/a/2026/10/8/xy-planning-recruiting-spikes-as-ria-ma-refugees-flee-rollups-that-dangle-downer-contracts",
+   "category": "M&A",
+   "last_published": "2026-10-08T15:03:46Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/10/8/xy-planning-recruiting-spikes-as-ria-ma-refugees-flee-rollups-that-dangle-downer-contracts"
+    }
+   ]
+  },
+  {
+   "cluster_id": 606,
+   "headline": "XY Planning recruiting spikes as RIA M&A refugees flee rollups that dangle downer contracts -- Amazon, Google, and Fidelity are the second set of X factors feeding the boom",
+   "url": "https://riabiz.com/a/2026/10/8/xy-planning-recruiting-spikes-as-ria-ma-refugees-flee-rollups-that-dangle-downer-contracts-amazon-google-and-fidelity-are-the-second-set-of-x-factors-feeding-the-boom",
+   "category": "M&A",
+   "last_published": "2026-10-08T01:34:28Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/10/8/xy-planning-recruiting-spikes-as-ria-ma-refugees-flee-rollups-that-dangle-downer-contracts-amazon-google-and-fidelity-are-the-second-set-of-x-factors-feeding-the-boom"
+    }
+   ]
+  },
+  {
+   "cluster_id": 331,
+   "headline": "XYPN Partners With Jump to Bring AI Tools to Its Advisors",
+   "url": "https://www.wealthmanagement.com/artificial-intelligence/xypn-partners-with-jump-to-bring-ai-tools-to-advisors",
+   "category": "People Moves",
+   "last_published": "2026-09-30T00:00:00Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/artificial-intelligence/xypn-partners-with-jump-to-bring-ai-tools-to-advisors"
+    },
+    {
+     "name": "GlobeNewswire",
+     "url": "https://www.globenewswire.com/news-release/2026/09/30/3371472/0/en/xypn-partners-with-jump-to-help-advisors-harness-the-next-generation-of-compliant-ai-powered-growth.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 330,
+   "headline": "XYPN Adds Income Lab as Member Benefit",
+   "url": "https://www.wealthmanagement.com/advisor-support-platforms/xypn-adds-income-lab-as-member-benefit",
+   "category": "Wealthtech",
+   "last_published": "2026-09-30T00:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/advisor-support-platforms/xypn-adds-income-lab-as-member-benefit"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

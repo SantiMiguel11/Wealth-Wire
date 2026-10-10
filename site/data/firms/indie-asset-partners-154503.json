@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "indie-asset-partners-154503",
+ "name": "Indie Asset Partners",
+ "legal_name": "Indie Asset Partners",
+ "crd": "154503",
+ "sec_number": "801-71728",
+ "city": "Carmel",
+ "state": "IN",
+ "sec_aum_usd": 685212417.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/154503",
+ "stories": [
+  {
+   "cluster_id": 632,
+   "headline": "Advisor moves: Indie platforms add teams with $1.5B in assets",
+   "url": "https://www.investmentnews.com/ria-news/advisor-moves-indie-platforms-add-teams-with-15b-in-assets/268527",
+   "category": "People Moves",
+   "last_published": "2026-10-08T10:30:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/advisor-moves-indie-platforms-add-teams-with-15b-in-assets/268527"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

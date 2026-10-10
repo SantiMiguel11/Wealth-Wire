@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "blackrock-fund-advisors-105247",
+ "name": "Blackrock Fund Advisors",
+ "legal_name": "Blackrock Fund Advisors",
+ "crd": "105247",
+ "sec_number": "801-22609",
+ "city": "San Francisco",
+ "state": "CA",
+ "sec_aum_usd": 4282224366957.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/105247",
+ "stories": [
+  {
+   "cluster_id": 588,
+   "headline": "BlackRock study exposes advice gap as women's wealth surges",
+   "url": "https://www.investmentnews.com/practice-management/blackrock-study-exposes-advice-gap-as-womens-wealth-surges/268507",
+   "category": "Other",
+   "last_published": "2026-10-07T10:33:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/practice-management/blackrock-study-exposes-advice-gap-as-womens-wealth-surges/268507"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

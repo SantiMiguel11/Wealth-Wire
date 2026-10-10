@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "moldenhauer-associates-337303",
+ "name": "Moldenhauer & Associates",
+ "legal_name": "Buffalo Business & Estate Services",
+ "crd": "337303",
+ "sec_number": "801-134292",
+ "city": "Orchard Park",
+ "state": "NY",
+ "sec_aum_usd": 764911010.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/337303",
+ "stories": [
+  {
+   "cluster_id": 594,
+   "headline": "Merit Financial Snags 10th Commonwealth Advisor",
+   "url": "https://www.wealthmanagement.com/ria-news/merit-financial-snags-10th-commonwealth-advisor",
+   "category": "Other",
+   "last_published": "2026-10-07T19:29:21Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/merit-financial-snags-10th-commonwealth-advisor"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

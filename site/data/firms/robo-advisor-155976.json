@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "robo-advisor-155976",
+ "name": "Robo Advisor",
+ "legal_name": "Robo Advisor",
+ "crd": "155976",
+ "sec_number": "801-72066",
+ "city": "Lake Mary",
+ "state": "FL",
+ "sec_aum_usd": 0.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/155976",
+ "stories": [
+  {
+   "cluster_id": 150,
+   "headline": "David Fortunato makes his third pivot after cash management cross-selling fails to yield ample robo investors -- a bolt-on discount brokerage will join its digital home-lending unit in a true Silicon Valley mashup",
+   "url": "https://riabiz.com/a/2026/9/16/david-fortunato-makes-his-third-pivot-after-cash-management-cross-selling-fails-to-yield-ample-robo-investors-a-bolt-on-discount-brokerage-will-join-its-digital-home-lending-unit-in-a-true-silicon-valley-mashup",
+   "category": "People Moves",
+   "last_published": "2026-09-16T18:39:52Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/16/david-fortunato-makes-his-third-pivot-after-cash-management-cross-selling-fails-to-yield-ample-robo-investors-a-bolt-on-discount-brokerage-will-join-its-digital-home-lending-unit-in-a-true-silicon-valley-mashup"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,782 @@
+{
+ "headlines": 75,
+ "expected_mentions": 67,
+ "true_positives": 63,
+ "false_positives": 1,
+ "false_negatives": 4,
+ "precision": 0.984,
+ "recall": 0.94,
+ "f1": 0.962,
+ "sec_firms_in_dictionary": 17149,
+ "rows": [
+  {
+   "headline": "Mercer Advisors hires Goldman alum Cynthia Loh as first-ever chief platform officer",
+   "expected": [
+    "mercer advisors",
+    "goldman sachs"
+   ],
+   "found": [
+    "Mercer Advisors Private Asset Management",
+    "Goldman Sachs"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Savvy Wealth Launches Custodial Platform for RIAs",
+   "expected": [
+    "savvy"
+   ],
+   "found": [
+    "Savvy"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "FINRA Orders American Portfolios to Pay $1.2 Million in Restitution and $400,000 in Fines for UIT Supervision Failures",
+   "expected": [
+    "american portfolios"
+   ],
+   "found": [],
+   "false_positives": [],
+   "missed": [
+    "american portfolios"
+   ]
+  },
+  {
+   "headline": "FINRA fines Vanguard $950,000 over decade of cost basis errors",
+   "expected": [
+    "vanguard"
+   ],
+   "found": [
+    "Vanguard Group"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "People Moves: Edelman Financial Engines Names Chief Retirement Officer",
+   "expected": [
+    "edelman financial engines"
+   ],
+   "found": [
+    "Edelman Financial Engines"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Corient enters Cayman Islands with $2.6B FortCay acquisition",
+   "expected": [
+    "corient"
+   ],
+   "found": [
+    "Corient"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Captrust Adds $1.2B in Double Deal for Long Island Firms",
+   "expected": [
+    "captrust"
+   ],
+   "found": [
+    "Captrust"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Cerity Partners Adds $1.4B in Teams from Shufro Rose & Co.",
+   "expected": [
+    "cerity partners",
+    "shufro rose"
+   ],
+   "found": [
+    "Cerity Partners",
+    "Shufro, Rose"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "RIAs working with Schwab get higher-yielding option for clients' cash",
+   "expected": [
+    "schwab"
+   ],
+   "found": [
+    "Charles Schwab"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Q&A: Charlesbank's David Katz on Building RIA Institutions",
+   "expected": [
+    "charlesbank"
+   ],
+   "found": [
+    "Charlesbank Capital Partners"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "SEC Commissioner Peirce to leave agency",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Advisor moves: Raymond James lands $1.25B team as Merrill loses two",
+   "expected": [
+    "raymond james",
+    "merrill"
+   ],
+   "found": [
+    "Raymond James & Associates",
+    "Merrill Lynch, Pierce, Fenner & Smith"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "RIA Dealmaking Dips Almost 20%, Threatening Record Streak: DeVoe",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "JPMorgan Tweaks Data-Sharing Notices in Battle With Fintechs",
+   "expected": [
+    "j p morgan"
+   ],
+   "found": [
+    "J.P. Morgan Securities"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Verdence plans CTO hire, national push after largest acquisition",
+   "expected": [
+    "verdence"
+   ],
+   "found": [
+    "Verdence Capital Advisors"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Private business owners selling now are often unprepared, BNY survey says",
+   "expected": [
+    "bny"
+   ],
+   "found": [
+    "BNY Mellon Securities"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Weekend Reading For Financial Planners (September 26\u201327)",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Judge Upholds Broker\u2019s $4.25 Million Award in J.P. Morgan \u2018Deli Platter\u2019 Dispute",
+   "expected": [
+    "j p morgan"
+   ],
+   "found": [
+    "J.P. Morgan Securities"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Never a losing day: CFTC alleges $950 million forex Ponzi scheme",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Fintech bytes: Northwestern Mutual picks Jump for enterprise AI",
+   "expected": [
+    "northwestern mutual"
+   ],
+   "found": [
+    "Northwestern Mutual Investment Management"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Deals & Moves: LPL Financial Adds Two Utah Advisory Teams With $1B",
+   "expected": [
+    "lpl"
+   ],
+   "found": [
+    "LPL Financial"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "People moves: AllianceBernstein names Onur Erzan as next CEO",
+   "expected": [
+    "alliancebernstein"
+   ],
+   "found": [
+    "Alliancebernstein"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "5 ways financial advisors can sharpen their listening skills",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "WealthStack Roundup: Northwestern Mutual Adopts Jump's AI Suite",
+   "expected": [
+    "northwestern mutual"
+   ],
+   "found": [
+    "Northwestern Mutual Investment Management"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Market Brief: Corporate Earnings Are Growing Much Faster Than the Economy",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Why Quality Investing May Be Entering a Rare Opportunity",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Private equity faces challenge from Warren's revived Stop Wall Street Looting Act",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Prudential Wealth Advisors teams up with InvestmentNews for Women Advisor Summit and Women to Watch Awards",
+   "expected": [
+    "prudential"
+   ],
+   "found": [],
+   "false_positives": [],
+   "missed": [
+    "prudential"
+   ]
+  },
+  {
+   "headline": "Obama headlines Creative Planning event as RIA crosses 1,000 employee equity partners",
+   "expected": [
+    "creative planning"
+   ],
+   "found": [
+    "Creative Planning"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "CFP Board survey: Social Security, Medicare fears top client concerns",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Raymond James Attracts Two Teams Totaling $1.75B",
+   "expected": [
+    "raymond james"
+   ],
+   "found": [
+    "Raymond James & Associates"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "\u2018Dumbfounded\u2019 Arbitrator Slams Client\u2019s Elder Abuse Claim Against Wells Vet",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Ameriprise, advisor on the hook to pay Edward Jones $4.7 million in trade secrets lawsuit",
+   "expected": [
+    "ameriprise",
+    "edward jones"
+   ],
+   "found": [
+    "Ameriprise Financial Services",
+    "Edward Jones"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Bitwise Partners with Vise for Crypto Model Rollout",
+   "expected": [
+    "bitwise"
+   ],
+   "found": [
+    "Bitwise Investment Manager"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "$744 Million Wells Fargo Team Joins &Partners in Missouri",
+   "expected": [
+    "wells fargo",
+    "and partners"
+   ],
+   "found": [
+    "Wells Fargo Advisors",
+    "&partners"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "RIA Edge Podcast: How Mission Wealth Scales Without Sacrificing Client Experience with Matt Adams",
+   "expected": [
+    "mission wealth"
+   ],
+   "found": [
+    "Mission Wealth Management"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "The Diamond Podcast for Financial Advisors: David Bahnsen on Building a $10.5B Business Worth Selling",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Betterment Advisor Solutions Launches AI Document Reader",
+   "expected": [
+    "betterment"
+   ],
+   "found": [
+    "Betterment"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Advisor moves: LPL welcomes back RayJay advisor trio in Texas",
+   "expected": [
+    "lpl",
+    "raymond james"
+   ],
+   "found": [
+    "LPL Financial",
+    "Raymond James & Associates"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "RIA M&A Activity Plummets 19% in Q3",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Prudential Advisors has become Prudential Wealth Advisors in 'milestone' move",
+   "expected": [
+    "prudential"
+   ],
+   "found": [],
+   "false_positives": [],
+   "missed": [
+    "prudential"
+   ]
+  },
+  {
+   "headline": "Private Markets Boost TDF Returns, CFA Institute Study Finds",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Fed's Williams sees another rate hike as Treasury rout deepens",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "SEC alleges Florida operator faked fund returns targeting police retirees",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Wells Fargo names COO Scott Powell as its next chief risk officer",
+   "expected": [
+    "wells fargo"
+   ],
+   "found": [
+    "Wells Fargo Advisors"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Fidelity Investments just cast a wider net for RIA custody revenues by backstopping Savvy Wealth's (expected mid-2027 ) custody launch",
+   "expected": [
+    "fidelity",
+    "savvy"
+   ],
+   "found": [
+    "Fidelity Management & Research",
+    "Savvy"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Ameriprise runs advisor ads on ESPN, Golf Channel, CBS",
+   "expected": [
+    "ameriprise"
+   ],
+   "found": [
+    "Ameriprise Financial Services"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Advisor moves: RBC lands $2B BofA Private Bank duo in La Jolla",
+   "expected": [
+    "rbc",
+    "merrill"
+   ],
+   "found": [
+    "RBC Capital Markets",
+    "Merrill Lynch, Pierce, Fenner & Smith"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Fear of Meta\u2019s Muse whacks share prices of financial advice firms: Reports",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Choreo taps Beemo AI agents to speed proposals, scale onboarding",
+   "expected": [
+    "choreo"
+   ],
+   "found": [
+    "Choreo"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Workers allege Principal Financial ran $4.59B 401(k) as a fee machine",
+   "expected": [
+    "principal"
+   ],
+   "found": [
+    "Principal Asset Management"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "SEC strips Grenda Group of adviser registration over concealed bar",
+   "expected": [
+    "grenda"
+   ],
+   "found": [
+    "Grenda Group"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "SEC gives Navellier's firm 60 days to wind down, bars founder",
+   "expected": [
+    "navellier"
+   ],
+   "found": [
+    "Navellier & Associates"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Americana Partners launches family office group for UHNW clients",
+   "expected": [
+    "americana partners"
+   ],
+   "found": [
+    "Americana Partners"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Wealth Services Firm Horizon Buys OCIO Provider",
+   "expected": [
+    "horizon"
+   ],
+   "found": [],
+   "false_positives": [],
+   "missed": [
+    "horizon"
+   ]
+  },
+  {
+   "headline": "Succession drives Wisconsin advisory team to Carson Group",
+   "expected": [
+    "carson"
+   ],
+   "found": [
+    "Carson Group Investing"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Schwab's poach of $8-billion Ameriprise breakaway extends its wild 2026 rout",
+   "expected": [
+    "schwab",
+    "ameriprise"
+   ],
+   "found": [
+    "Charles Schwab",
+    "Ameriprise Financial Services"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Altruist is acquired by Vanguard to vertically integrate asset management and custody",
+   "expected": [
+    "altruist",
+    "vanguard"
+   ],
+   "found": [
+    "Altruist",
+    "Vanguard Group"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Kay Lynn Mayhue named Merit CEO, still seeks 'big splash' deal",
+   "expected": [
+    "merit"
+   ],
+   "found": [
+    "Merit Financial Advisors"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "LPL adds $1 billion Salt Lake City teams from Northwestern Mutual",
+   "expected": [
+    "lpl",
+    "northwestern mutual"
+   ],
+   "found": [
+    "LPL Financial",
+    "Northwestern Mutual Investment Management"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Hightower Advisors Hires Vanguard Executive as New President",
+   "expected": [
+    "hightower",
+    "vanguard"
+   ],
+   "found": [
+    "Hightower Advisors",
+    "Vanguard Group"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "EP Wealth adds CFO, elevates client chief as growth accelerates",
+   "expected": [
+    "ep wealth"
+   ],
+   "found": [
+    "EP Wealth Advisors"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Hightower taps Vanguard vet as president, shuffles Signature Wealth leadership",
+   "expected": [
+    "hightower",
+    "vanguard",
+    "signature wealth"
+   ],
+   "found": [
+    "Hightower Advisors",
+    "Vanguard Group",
+    "Signature Wealth Management Partners"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "$33B Merit President Mayhue to Take CEO Role as Founder Kent Becomes Executive Chair",
+   "expected": [
+    "merit"
+   ],
+   "found": [
+    "Merit Financial Advisors"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Composition Wealth names general counsel and head of advisors in leadership push",
+   "expected": [
+    "composition wealth"
+   ],
+   "found": [
+    "Composition Wealth"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "SEIA Partners With Invent to Unify Data Systems",
+   "expected": [
+    "seia"
+   ],
+   "found": [
+    "SEIA"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Modern Wealth acquires California RIA in sixth deal of 2026",
+   "expected": [
+    "modern wealth"
+   ],
+   "found": [
+    "Modern Wealth Management"
+   ],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Luma adds first ETFs to its platform as advisors push for unified income tools",
+   "expected": [],
+   "found": [
+    "Luma Capital"
+   ],
+   "false_positives": [
+    "Luma Capital"
+   ],
+   "missed": []
+  },
+  {
+   "headline": "Annuity income eases retirement anxiety and market fear, advisors say",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Family offices pivot to public equities as succession pressure mounts",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Tips From the Pros: Lewis Shouldn\u2019t be a Loser",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Milemarker Launches Advisory Firm MCP AI Server",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Charitable Gift Annuities",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Why female financial advisors are slow to embrace independence",
+   "expected": [],
+   "found": [],
+   "false_positives": [],
+   "missed": []
+  },
+  {
+   "headline": "Advisor moves: Raymond James, Baird add significant teams in latest recruiting push",
+   "expected": [
+    "raymond james",
+    "baird"
+   ],
+   "found": [
+    "Raymond James & Associates",
+    "Baird Capital Management"
+   ],
+   "false_positives": [],
+   "missed": []
+  }
+ ],
+ "sec_data_date": "2026-09-01",
+ "curated_unresolved": []
+}

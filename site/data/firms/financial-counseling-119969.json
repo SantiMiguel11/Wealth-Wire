@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "financial-counseling-119969",
+ "name": "Financial Counseling",
+ "legal_name": "Financial Counseling",
+ "crd": "119969",
+ "sec_number": "801-114518",
+ "city": "Springboro",
+ "state": "OH",
+ "sec_aum_usd": 100125000.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/119969",
+ "stories": [
+  {
+   "cluster_id": 313,
+   "headline": "FINRA Foundation and AFCPE® Select the 2026 FINRA Foundation Military Spouse Fellows",
+   "url": "https://www.finra.org/media-center/newsreleases/2026/finra-foundation-and-afcper-select-2026-finra-foundation-military",
+   "category": "Regulation",
+   "last_published": "2026-09-29T12:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "FINRA News",
+     "url": "https://www.finra.org/media-center/newsreleases/2026/finra-foundation-and-afcper-select-2026-finra-foundation-military"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}
