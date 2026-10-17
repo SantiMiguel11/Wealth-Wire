@@ -10,6 +10,14 @@ on:
         description: "Extra feed URLs to probe (space-separated)"
         required: false
         default: ""
+      candidates:
+        description: "Candidates file"
+        required: false
+        default: "scripts/probe_candidates.yaml"
+      titles:
+        description: "Sample titles printed per feed"
+        required: false
+        default: "6"
       only_extra:
         description: "Probe only the extra URLs"
         type: boolean
@@ -41,6 +49,8 @@ jobs:
         env:
           EXTRA: ${{ inputs.urls }}
           ONLY: ${{ inputs.only_extra }}
+          CANDIDATES: ${{ inputs.candidates }}
+          TITLES: ${{ inputs.titles }}
         run: |
           flag=""; [ "$ONLY" = "true" ] && flag="--only-extra"
-          python scripts/probe_feeds.py --extra "$EXTRA" $flag | tee -a "$GITHUB_STEP_SUMMARY"
+          python scripts/probe_feeds.py --extra "$EXTRA" --candidates "${CANDIDATES:-scripts/probe_candidates.yaml}" --titles "${TITLES:-6}" $flag | tee -a "$GITHUB_STEP_SUMMARY"

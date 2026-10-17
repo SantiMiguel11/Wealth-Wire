@@ -37,8 +37,10 @@ def main() -> int:
     ap.add_argument("--grep", default=r"financ|invest|merger|acqui|wealth|asset|bank|advis",
                     help="only list directory links whose text or URL matches (case-insensitive)")
     ap.add_argument("--only-extra", action="store_true")
+    ap.add_argument("--candidates", default="scripts/probe_candidates.yaml", help="YAML with directories/feeds/gnews_queries")
+    ap.add_argument("--titles", type=int, default=6, help="sample titles printed per feed")
     args = ap.parse_args()
-    cand = yaml.safe_load((ROOT / "scripts/probe_candidates.yaml").read_text())
+    cand = yaml.safe_load((ROOT / args.candidates).read_text())
     cfg = load_config()
     fetcher = Fetcher(cfg["user_agent"], per_host_delay=float(cfg["http"]["per_host_delay_seconds"]),
                       timeout=float(cfg["http"]["timeout_seconds"]), retries=1)
@@ -70,7 +72,10 @@ def main() -> int:
             for u, t in list(shown.items())[:80]:
                 print(f"   - [{t[:60]}] {u}")
 
+    from fiduciarywire.gnews import feed_url as gnews_url
+
     feeds = ([] if args.only_extra else list(cand.get("feeds", []))) + args.extra.split()
+    feeds += [gnews_url(q) for q in cand.get("gnews_queries", []) or []]
     for url in feeds:
         print(f"\n## FEED {url}")
         ok, why = fetcher.robots.check(url)
@@ -88,8 +93,8 @@ def main() -> int:
         newest = max((i.published_at for i in items), default="—")
         print(f"   HTTP {res.status} · feed title {title!r} · {len(items)} items · newest {newest} · "
               f"wealth terms {len(wealth)} · kept by filter {len(kept)}")
-        for i in items[:6]:
-            print(f"   · {i.published_at[:10]} {i.title[:110]}")
+        for i in items[:args.titles]:
+            print(f"   · {i.published_at[:10]} {i.title[:200]}")
         for i in kept[:10]:
             print(f"   ✓ kept: {i.title[:110]}")
     fetcher.close()

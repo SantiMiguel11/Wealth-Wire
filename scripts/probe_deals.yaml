@@ -1,0 +1,30 @@
+# Candidate all-industry M&A deal sources (probed from GitHub by probe-feeds.yml with candidates=scripts/probe_deals.yaml).
+directories: []
+feeds:
+  # Press-release wires: M&A subject feeds (all industries)
+  - https://www.prnewswire.com/rss/financial-services-latest-news/acquisitions-mergers-and-takeovers-list.rss
+  - https://www.prnewswire.com/rss/news-releases-list.rss
+  - https://www.globenewswire.com/RssFeed/subjectcode/27-Mergers%20and%20Acquisitions/feedTitle/GlobeNewswire%20-%20Mergers%20and%20Acquisitions
+  - https://www.globenewswire.com/RssFeed/keyword/definitive%20agreement/feedTitle/GlobeNewswire%20-%20definitive%20agreement
+  - https://www.globenewswire.com/RssFeed/keyword/acquisition/feedTitle/GlobeNewswire%20-%20acquisition
+  # Trade outlets with deal coverage
+  - https://www.pehub.com/feed/
+  - https://techcrunch.com/tag/mergers-and-acquisitions/feed/
+  - https://www.themiddlemarket.com/feed
+  - https://www.bankingdive.com/feeds/news/
+  - https://www.paymentsdive.com/feeds/news/
+  - https://www.biopharmadive.com/feeds/news/
+  - https://www.healthcaredive.com/feeds/news/
+  - https://www.retaildive.com/feeds/news/
+  - https://www.utilitydive.com/feeds/news/
+  - https://www.supplychaindive.com/feeds/news/
+  - https://www.cfodive.com/feeds/news/
+  - https://www.fiercebiotech.com/rss/xml
+gnews_queries:
+  - '"to acquire" OR acquires OR "agrees to buy" when:1d'
+  - '"merger agreement" OR "definitive agreement" OR "completes acquisition" when:1d'
+  - '"investment bank" (acquire OR acquisition OR merger OR "to buy") when:3d'
+  - '(RIA OR "wealth management" OR "wealth manager") (acquires OR acquisition OR "to buy") when:3d'
+  - '(bank OR bancorp) ("to acquire" OR merger OR "to buy") when:2d'
+  - '(software OR AI OR cybersecurity OR tech) ("to acquire" OR acquires OR "to buy") when:1d'
+  - '(biotech OR pharma OR healthcare) ("to acquire" OR acquires OR "to buy") when:1d'
