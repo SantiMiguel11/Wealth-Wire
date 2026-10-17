@@ -292,13 +292,16 @@ def render_markdown(d: dict, sec_date: str | None) -> str:
 
     lines = [f"# Fiduciary Wire digest: {d['date']}", "", f"**Today in deals.** {d['opener']}", ""]
     for n, it in enumerate(d["items"], 1):
-        meta = [it["category"], f"{it['outlet_count']} outlet{'s' if it['outlet_count'] != 1 else ''}"]
+        meta = [", ".join(it.get("industries") or [it["category"]]), f"{it['outlet_count']} outlet{'s' if it['outlet_count'] != 1 else ''}"]
+        deal = it.get("deal") or {}
+        if deal.get("stage"):
+            meta.append(deal["stage"].capitalize() + (f", {fmt_aum(deal['value_usd'])}" if deal.get("value_usd") else ""))
         a = aum_label(it["aum_usd"], it["aum_source"], sec_date)
         if a:
             meta.append(a)
         lines += [f"## {n}. {it['headline']}", " · ".join(meta),
                   "Sources: " + " · ".join(f"[{s['name']}]({s['url']})" for s in it["sources"]), "",
-                  it["summary"], "", f"**Why it matters to advisors:** {it['why_it_matters']}", ""]
+                  it["summary"], "", f"**Why it matters:** {it['why_it_matters']}", ""]
     lines += ["---", f"_{FOOTER_NOTE}_", ""]
     return "\n".join(lines)
 

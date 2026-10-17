@@ -59,7 +59,7 @@ def test_public_site_carries_only_the_new_name(ingested, tmp_path):
     site = tmp_path / "out" / "site"
     index = (site / "index.html").read_text()
     assert "<title>Fiduciary Wire</title>" in index and ">Fiduciary Wire</a>" in index
-    assert "Daily news for wealth management and RIAs" in index
+    assert "Daily M&amp;A deals across industries" in index
     assert '<meta property="og:site_name" content="Fiduciary Wire">' in index
     assert '<meta name="robots" content="noindex, nofollow">' in index
     for p in [*site.rglob("*.html"), *site.rglob("*.js"), *site.rglob("*.css"), *site.rglob("*.json"), *site.rglob("*.svg"),

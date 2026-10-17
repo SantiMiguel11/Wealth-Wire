@@ -166,6 +166,19 @@ select.input option { background: var(--bg); color: var(--text); }
 .cat-toggles button { background: none; border: 0; border-bottom: 1px solid transparent; padding: 4px 0 3px; font-family: var(--font-meta); font-size: 13.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
 .cat-toggles button[aria-pressed="true"] { border-bottom-color: currentColor; }
 .cat-toggles .all { color: var(--text); }
+/* industry filter: under the section tabs on Today, Feed and Deals */
+.ind-bar { margin-top: 2px; padding: 8px 0 7px; border-bottom: 1px solid var(--rule); gap: 2px 18px; }
+.ind-bar button { font-size: 13px; }
+.ind-bar .n { margin-left: 5px; font-weight: 500; color: var(--muted); letter-spacing: .02em; }
+/* deal stage + stated price */
+.deal-line { display: inline-flex; align-items: baseline; gap: 8px; font-family: var(--font-meta); font-size: 13px; letter-spacing: .07em; text-transform: uppercase; }
+.stage { font-weight: 600; color: var(--ink2); }
+.stage-completed { color: var(--cat-prod); }
+.stage-rumored, .stage-bid { color: var(--cat-mna); }
+.stage-terminated { color: var(--cat-reg); text-decoration: line-through; text-decoration-thickness: 1px; }
+.price { color: var(--text); }
+.deals-table td.ind .cat { display: block; white-space: nowrap; }
+.rank-list .rank.cat { font-size: 10px; }
 .btn {
   display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 6px 16px;
   background: transparent; color: var(--text); border: 1px solid var(--accent); border-radius: 3px;
@@ -302,4 +315,10 @@ select.input option { background: var(--bg); color: var(--text); }
   .deals-table { display: none; }
   .deal-cards { display: block; }
   .sort-bar { display: flex; }
+}
+@media (max-width: 700px) {
+  /* one swipeable row of industry chips instead of four wrapped rows */
+  .ind-bar { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; gap: 0 18px; }
+  .ind-bar::-webkit-scrollbar { display: none; }
+  .ind-bar button { flex: 0 0 auto; white-space: nowrap; }
 }

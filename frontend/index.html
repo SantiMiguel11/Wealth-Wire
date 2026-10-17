@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Fiduciary Wire</title>
-<meta name="description" content="Daily news for wealth management and RIAs">
+<meta name="description" content="Daily M&amp;A deals across industries, from investment banking and RIAs to tech">
 <meta name="application-name" content="Fiduciary Wire">
 <meta property="og:site_name" content="Fiduciary Wire">
 <meta property="og:title" content="Fiduciary Wire">
-<meta property="og:description" content="Daily news for wealth management and RIAs">
+<meta property="og:description" content="Daily M&amp;A deals across industries, from investment banking and RIAs to tech">
 <meta property="og:type" content="website">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script>
@@ -54,7 +54,7 @@
   </div>
   <div class="nameplate">
     <a class="wordmark" href="/" data-nav>Fiduciary Wire</a>
-    <span class="masthead-line">Daily news for wealth management and RIAs</span>
+    <span class="masthead-line">Daily M&amp;A deals across industries</span>
   </div>
   <nav class="sections" role="tablist" aria-label="Sections">
     <a role="tab" href="/" data-tab="today" data-nav>Today</a>
@@ -62,6 +62,7 @@
     <a role="tab" href="/?tab=mna" data-tab="mna" data-nav>Deals</a>
     <a role="tab" href="/?tab=archive" data-tab="archive" data-nav>Archive</a>
   </nav>
+  <div id="ind-bar" class="cat-toggles ind-bar" role="group" aria-label="Filter by industry" hidden></div>
 </header>
 
 <main id="main" class="wrap" tabindex="-1">
@@ -74,7 +75,7 @@
           <span id="feed-count" class="meta-line"></span>
         </div>
         <form id="filters" class="filters" role="search" autocomplete="off">
-          <input id="q" class="input grow" type="search" placeholder="Search headlines, firms and outlets" aria-label="Search headlines, firms and outlets" aria-keyshortcuts="/">
+          <input id="q" class="input grow" type="search" placeholder="Search deals, companies and outlets" aria-label="Search deals, companies and outlets" aria-keyshortcuts="/">
           <select id="source" class="input" aria-label="Outlet"><option value="">All outlets</option></select>
           <select id="when" class="input" aria-label="Date">
             <option value="">Any date</option><option value="today">Today</option><option value="3d">Last 3 days</option>
@@ -87,7 +88,6 @@
           </span>
           <label class="check"><input id="watch" type="checkbox"> Watchlist only</label>
         </form>
-        <div id="cats" class="cat-toggles" role="group" aria-label="Categories"></div>
         <div id="feed-list" aria-live="polite"></div>
         <button id="more" class="btn more" type="button" hidden>Load more</button>
       </div>
@@ -115,16 +115,16 @@
       <h2 id="drawer-title">Watchlist</h2>
       <button id="drawer-close" class="textbtn" type="button">Close</button>
     </div>
-    <p class="drawer-note">Stories that mention these firms are pinned to the top of Today and marked in the Feed.
+    <p class="drawer-note">Deals that mention these companies are pinned to the top of Today and marked in the Feed.
       Matching ignores case; aliases under three characters are skipped.</p>
     <ul id="watchlist" class="watch-rows"></ul>
     <form id="watch-add" class="watch-form" autocomplete="off">
-      <label for="watch-name">Firm name</label>
+      <label for="watch-name">Company name</label>
       <input id="watch-name" class="input" placeholder="e.g. Harborview Wealth Partners" required>
       <label for="watch-aliases">Aliases, comma-separated</label>
       <input id="watch-aliases" class="input" placeholder="e.g. Harborview">
       <div class="watch-actions">
-        <button class="btn" type="submit">Add firm</button>
+        <button class="btn" type="submit">Add company</button>
         <span id="watch-msg" class="watch-msg" role="status" aria-live="polite"></span>
       </div>
     </form>

@@ -65,7 +65,7 @@ def test_valid_output_is_archived_and_published(prepared, tmp_path):
     for name in ("2026-09-25.json", "2026-09-25.md", "latest.json"):
         assert (ddir / name).exists()
     md = (ddir / "2026-09-25.md").read_text()
-    assert "**Why it matters to advisors:**" in md and FOOTER_NOTE in md and OPENER in md
+    assert "**Why it matters:**" in md and FOOTER_NOTE in md and OPENER in md
     conn.close()
     build_site(tmp_path / "out", NOW, write_state=False)
     data = tmp_path / "out" / "site" / "data"

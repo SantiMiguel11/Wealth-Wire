@@ -7,10 +7,20 @@ const $ = (sel, root = document) => root.querySelector(sel);
 const TZ = "America/Los_Angeles";
 const TABS = ["today", "feed", "mna", "archive", "weekly", "sources"];
 const TAB_ALIASES = { digest: "today", deals: "mna" };
+// Industry → tag color (meta.json lists the industries; unknown ones fall back to the neutral color)
 const CAT_CLASS = {
-  "M&A": "cat-mna", "People Moves": "cat-people", "Regulation": "cat-reg", "Wealthtech": "cat-tech",
-  "Products & Funds": "cat-prod", "Markets": "cat-mkt", "Other": "cat-other",
+  "Investment Banking": "cat-mna", "Wealth Management & RIAs": "cat-people", "Banking": "cat-mkt", "Insurance": "cat-reg",
+  "Fintech & Payments": "cat-tech", "Private Equity & Asset Management": "cat-prod", "Healthcare & Life Sciences": "cat-reg",
+  "Technology": "cat-tech", "Energy & Utilities": "cat-mna", "Industrials": "cat-mkt", "Consumer & Retail": "cat-prod",
+  "Real Estate": "cat-people", "Media & Telecom": "cat-tech", "Business Services": "cat-mkt", "Other": "cat-other",
 };
+// Short labels for tight spots (chips, table cells)
+const IND_SHORT = {
+  "Wealth Management & RIAs": "Wealth & RIAs", "Private Equity & Asset Management": "PE & Asset Mgmt",
+  "Healthcare & Life Sciences": "Healthcare", "Fintech & Payments": "Fintech", "Energy & Utilities": "Energy",
+  "Consumer & Retail": "Consumer", "Media & Telecom": "Media & Telecom",
+};
+const STAGE = { announced: "Announced", completed: "Completed", rumored: "Rumored", bid: "Bid", terminated: "Called off" };
 const REGIONS = { "Pacific Northwest": ["WA", "OR", "ID"] };
 const STATE_NAMES = {
   AL: "Alabama", AK: "Alaska", AZ: "Arizona", AR: "Arkansas", CA: "California", CO: "Colorado", CT: "Connecticut", DE: "Delaware",
@@ -26,6 +36,7 @@ const SHORT_OUTLET = {
 };
 const DEAL_TYPE = { acquisition: "Acquisition", stake: "Minority", merger: "Merger", recapitalization: "Recap" };
 const DEAL_VERB = { acquisition: "acquires", stake: "invests in", merger: "merges with", recapitalization: "recapitalizes" };
+const SHOW_INDUSTRIES = ["today", "feed", "mna"];
 const PAGE = 50;
 const WATCH_KEY = "fw-watchlist";
 const THEME_KEY = "fw-theme";
@@ -111,6 +122,7 @@ const fmtTime = (ts) => F.time.format(new Date(ts));
 function addDays(d, n) { const x = dateOnly(d); x.setUTCDate(x.getUTCDate() + n); return x.toISOString().slice(0, 10); }
 function mondayOf(d) { const x = dateOnly(d); const wd = (x.getUTCDay() + 6) % 7; return addDays(d, -wd); }
 const todayKey = () => dayKey(Date.now());
+const refreshKey = () => (META && META.last_refresh ? dayKey(META.last_refresh) : todayKey()); // "this week" = up to the last refresh
 function fmtAum(v) {
   if (v == null || !isFinite(v) || v <= 0) return "—";
   const trim = (x) => x.toFixed(2).replace(/\.?0+$/, "");
@@ -121,7 +133,16 @@ function fmtAum(v) {
 const short = (name) => SHORT_OUTLET[name] || name;
 
 /* ---------- small components ---------- */
-function catTag(c) { return el("span", { class: "cat " + (CAT_CLASS[c] || "cat-other") }, c || "Other"); }
+function catTag(c) { return el("span", { class: "cat " + (CAT_CLASS[c] || "cat-other"), title: c || "Other" }, IND_SHORT[c] || c || "Other"); }
+const industriesOf = (c) => (c && c.industries && c.industries.length ? c.industries : [c && c.category ? c.category : "Other"]);
+function indTags(c) { return industriesOf(c).slice(0, 2).map(catTag); }
+function dealLine(d, { price = true } = {}) { // "Completed · $2.1B" — stage always, stated price when there is one
+  if (!d) return null;
+  return el("span", { class: "deal-line" },
+    el("span", { class: "stage stage-" + (d.stage || "announced") }, STAGE[d.stage] || "Announced"),
+    price && d.value_usd ? el("span", { class: "price", title: "Stated deal value" }, fmtAum(d.value_usd)) : null);
+}
+const matchesIndustry = (c, sel) => !sel.length || industriesOf(c).some((i) => sel.includes(i));
 function aumFig(v, source, asOf, compact) {
   if (!v) return null;
   if (source === "sec") {
@@ -219,7 +240,8 @@ function readState() {
   if (!TABS.includes(tab)) tab = "today";
   return {
     tab: firm ? "firm" : tab, slug: firm ? decodeURIComponent(firm[1]) : "",
-    q: p.get("q") || "", source: p.get("source") || "", category: (p.get("category") || "").split(",").filter(Boolean),
+    q: p.get("q") || "", source: p.get("source") || "",
+    industry: (p.get("industry") || p.get("category") || "").split(",").filter(Boolean),   // "category" = links from before
     region: p.get("region") || "", when: p.get("when") || "", from: p.get("from") || "", to: p.get("to") || "",
     watch: p.get("watch") === "1", conf: p.get("conf") || "", sort: p.get("sort") || "date", dir: p.get("dir") === "asc" ? 1 : -1,
     date: p.get("date") || "", week: p.get("week") || "",
@@ -228,10 +250,10 @@ function readState() {
 function stateUrl(s) {
   const p = new URLSearchParams();
   if (s.tab !== "today") p.set("tab", s.tab);
+  if (SHOW_INDUSTRIES.includes(s.tab) && s.industry.length) p.set("industry", s.industry.join(","));
   if (s.tab === "feed") {
     if (s.q) p.set("q", s.q);
     if (s.source) p.set("source", s.source);
-    if (s.category.length) p.set("category", s.category.join(","));
     if (s.region) p.set("region", s.region);
     if (s.when) p.set("when", s.when);
     if (s.when === "range" && s.from) p.set("from", s.from);
@@ -264,7 +286,7 @@ function go(href) {
   history.pushState(null, "", href);
   route();
 }
-function clearFilters() { feedShown = PAGE; writeState({ tab: "feed", q: "", source: "", category: [], region: "", when: "", from: "", to: "", watch: false }); }
+function clearFilters() { feedShown = PAGE; writeState({ tab: "feed", q: "", source: "", industry: [], region: "", when: "", from: "", to: "", watch: false }); }
 
 /* ---------- core data + chrome ---------- */
 async function loadCore() {
@@ -278,6 +300,28 @@ async function loadCore() {
   compileWatch();
   renderChrome();
   fillFeedControls();
+  fillIndustryBar();
+}
+function fillIndustryBar() { // one chip per industry that has deals, with its count
+  const counts = new Map();
+  for (const c of CLUSTERS) for (const i of industriesOf(c)) counts.set(i, (counts.get(i) || 0) + 1);
+  const names = ((META && (META.industries || META.categories)) || Object.keys(CAT_CLASS)).filter((i) => counts.get(i));
+  put($("#ind-bar"), el("button", { type: "button", class: "all", "data-ind": "" }, "All industries"),
+    names.map((i) => el("button", { type: "button", class: CAT_CLASS[i] || "cat-other", "data-ind": i, title: i },
+      IND_SHORT[i] || i, el("span", { class: "n" }, String(counts.get(i))))));
+}
+function syncIndustryBar(s) {
+  // the section tabs keep the industry selection when you move between Today, Feed and Deals
+  const blank = { q: "", source: "", region: "", when: "", from: "", to: "", watch: false, conf: "", sort: "date", dir: -1, date: "", week: "" };
+  for (const a of document.querySelectorAll(".sections a[data-tab]")) {
+    if (SHOW_INDUSTRIES.includes(a.dataset.tab)) a.setAttribute("href", stateUrl({ ...blank, tab: a.dataset.tab, industry: s.industry }));
+  }
+  const bar = $("#ind-bar");
+  bar.hidden = !SHOW_INDUSTRIES.includes(s.tab) || !!(s.tab === "today" && s.date);
+  for (const b of bar.querySelectorAll("button")) {
+    const i = b.dataset.ind;
+    b.setAttribute("aria-pressed", String(i ? s.industry.includes(i) : !s.industry.length));
+  }
 }
 function renderChrome() {
   $("#today-date").textContent = F.long.format(new Date());
@@ -305,6 +349,7 @@ async function route() {
     put(target, ...skeletons(5));
     try { await loadCore(); } catch (e) { put(target, errorState(e, () => location.reload())); return; }
   }
+  syncIndustryBar(s);
   ({ today: renderToday, feed: renderFeed, mna: renderDeals, archive: renderArchive, weekly: renderWeekly, sources: renderSources, firm: renderFirm })[s.tab](s);
 }
 
@@ -313,23 +358,37 @@ async function trendingBlock() {
   const t = await optional("trending.json", { firms: [], days: 7 });
   const list = (t.firms || []).slice(0, 10);
   return [
-    sectionHead("Trending firms", el("span", { class: "muted", style: "font-weight:500" }, `Stories, ${t.days || 7} days`)),
+    sectionHead("Active advisers", el("span", { class: "muted", style: "font-weight:500" }, `Deals, ${t.days || 7} days`)),
     list.length ? el("ol", { class: "rank-list" }, list.map((f, i) => el("li", {},
       el("span", { class: "rank" }, pad2(i + 1)),
       f.slug ? nav(`/firm/${encodeURIComponent(f.slug)}`, f.name, "name") : el("span", { class: "name" }, f.name),
-      el("span", { class: "n" }, f.stories)))) : el("p", { class: "side-empty" }, "No firm mentions this week yet."),
+      el("span", { class: "n" }, f.stories)))) : el("p", { class: "side-empty" }, "No SEC-registered advisers in this week's deals yet."),
   ];
 }
-async function dealsThisWeekBlock() {
-  const m = await optional("mna.json", { deals: [] });
-  const since = addDays(todayKey(), -7);
-  const rows = (m.deals || []).filter((d) => dayKey(d.date) >= since && d.acquirer.name).slice(0, 5);
+function industriesBlock(s) { // deals per industry over the last seven days; each links to that filter
+  const since = addDays(refreshKey(), -7);
+  const counts = new Map();
+  for (const c of CLUSTERS) if (dayKey(c.last_published) >= since) for (const i of industriesOf(c)) counts.set(i, (counts.get(i) || 0) + 1);
+  const ranked = [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
   return [
-    sectionHead("Deals this week", nav("/?tab=mna", "All deals", "textbtn")),
+    sectionHead("Deals by industry", el("span", { class: "muted", style: "font-weight:500" }, "7 days")),
+    ranked.length ? el("ol", { class: "rank-list" }, ranked.map(([i, n]) => el("li", {},
+      el("span", { class: "rank cat " + (CAT_CLASS[i] || "cat-other") }, "●"),
+      nav(`/?tab=feed&industry=${encodeURIComponent(i)}`, i, "name", { "aria-current": String(s.industry.includes(i)) }),
+      el("span", { class: "n" }, n)))) : el("p", { class: "side-empty" }, "No deals in the last seven days."),
+  ];
+}
+async function dealsThisWeekBlock(s) {
+  const m = await optional("mna.json", { deals: [] });
+  const since = addDays(refreshKey(), -7);
+  const rows = (m.deals || []).filter((d) => dayKey(d.date) >= since && (d.value_usd || headlineAum(d)) && matchesIndustry(d, s.industry))
+    .sort((a, b) => (b.value_usd || 0) - (a.value_usd || 0)).slice(0, 6);
+  return [
+    sectionHead("Largest deals this week", nav("/?tab=mna", "All deals", "textbtn")),
     rows.length ? rows.map((d) => nav("/?tab=mna", [
       el("span", {}, d.acquirer.name || "Not named", " ", el("span", { class: "muted" }, "/"), " ", d.target.name || "Not named"),
-      el("span", { class: "aum" }, headlineAum(d) ? fmtAum(headlineAum(d)) : ""),
-    ], "side-deal")) : el("p", { class: "side-empty" }, "No deals in the last seven days."),
+      d.value_usd ? el("span", { class: "aum price" }, fmtAum(d.value_usd)) : el("span", { class: "aum", title: "Target AUM" }, fmtAum(headlineAum(d)) + " AUM"),
+    ], "side-deal")) : el("p", { class: "side-empty" }, "No deals with a stated price or AUM in the last seven days."),
   ];
 }
 
@@ -348,12 +407,12 @@ function storyItem(it, n, ai, dayOf) {
     el("div", { class: "story-body" },
       el("div", { class: "story-kicker" },
         hits.length ? el("span", { class: "watch-mark" }, "Watchlist · " + hits.join(", ")) : null,
-        catTag(it.category),
+        indTags(c || it), dealLine((c && c.deal) || it.deal),
         c ? el("time", { class: "stamp", datetime: c.first_published }, stamp(c.first_published, dayOf)) : null,
         it.aum_usd ? el("span", { class: "aum-wrap" }, aumFig(it.aum_usd, it.aum_source, (c && c.sec_aum_as_of) || SEC_DATE)) : null),
       el("h3", {}, ext(it.url, it.headline)),
       ai && it.summary ? el("p", { class: "sum" }, it.summary) : null,
-      ai && it.why_it_matters ? el("p", { class: "why" }, el("em", {}, "Why it matters to advisors:"), " ", it.why_it_matters) : null,
+      ai && it.why_it_matters ? el("p", { class: "why" }, el("em", {}, "Why it matters:"), " ", it.why_it_matters) : null,
       el("div", { class: "story-foot" }, outletList(it.sources), firmChips(firms))));
 }
 async function renderToday(s) {
@@ -363,44 +422,50 @@ async function renderToday(s) {
   try { d = s.date ? await data(`digests/${s.date}.json`) : await data("digest.json"); } catch (e) {
     put(box, errorState(e, () => renderToday(s))); return;
   }
-  const items = d.items || [];
+  const sel = s.date ? [] : s.industry;
+  const inSel = (it) => matchesIndustry(CL_BY_ID.get(it.cluster_id) || it, sel);
+  const all = d.items || [];
+  const items = all.filter(inSel);
   const watched = [], rest = [];
   for (const it of items) (itemHits(it).length ? watched : rest).push(it);
   const ai = !!d.ai;
   const main = el("div", { class: "col-main" });
-  main.append(el("div", { class: "kicker" }, s.date ? "Digest · " + fmtDate(d.date, U.long) : "Today in wealth management"));
-  if (ai && d.opener) main.append(el("p", { class: "opener" }, d.opener));
-  else {
+  main.append(el("div", { class: "kicker" }, s.date ? "Digest · " + fmtDate(d.date, U.long) : "Today in deals"));
+  if (ai && d.opener && !sel.length) main.append(el("p", { class: "opener" }, d.opener));
+  else if (!ai) {
     const last = d.last_good_digest;
     main.append(el("p", { class: "note", style: "margin:10px 0 12px" },
-      "The day's summaries aren't available, so the stories below are ranked by how many outlets covered them.",
+      "The day's summaries aren't available, so the deals below are ranked by how many outlets covered them.",
       last && last.date !== d.date ? [" ", nav(`/?tab=today&date=${last.date}`, `Read the last written digest (${fmtDate(last.date, U.long)})`), "."] : null));
   }
   main.append(el("div", { class: "meta-line digest-meta" },
-    `${plural(items.length, "story", "stories")} · ${watched.length} from your watchlist · About two minutes`));
+    sel.length ? `${plural(items.length, "deal")} in ${sel.map((i) => IND_SHORT[i] || i).join(", ")} · of ${all.length} today`
+      : `${plural(items.length, "deal")} · ${watched.length} from your watchlist · About two minutes`));
   let n = 0;
   if (watched.length) {
     main.append(sectionHead("From your watchlist", el("button", { class: "textbtn", type: "button", onclick: openDrawer }, "Edit")));
     watched.forEach((it) => main.append(storyItem(it, ++n, ai, d.date)));
     main.append(el("div", { class: "section-gap" }));
   }
-  main.append(sectionHead("Top stories"));
-  if (!rest.length && !watched.length) main.append(el("p", { class: "state" }, "No new stories since the previous refresh."));
+  main.append(sectionHead("Top deals"));
+  if (!rest.length && !watched.length) main.append(sel.length
+    ? el("p", { class: "state" }, "No deals in these industries in today's digest. ", nav(stateUrl({ ...s, tab: "feed" }), "See all of them in the Feed"))
+    : el("p", { class: "state" }, "No new deals since the previous refresh."));
   rest.forEach((it) => main.append(storyItem(it, ++n, ai, d.date)));
-  const more = d.more || [];
+  const more = (d.more || []).filter(inSel);
   if (more.length) {
-    main.append(el("div", { class: "section-gap" }), sectionHead("More stories"));
+    main.append(el("div", { class: "section-gap" }), sectionHead("More deals"));
     more.forEach((it) => main.append(feedRow(CL_BY_ID.get(it.cluster_id) || itemAsCluster(it))));
   }
   const friday = await fridayLine(d.date);
   if (friday) main.append(friday);
-  const side = el("aside", { class: "col-side", "aria-label": "Trending firms and deals" });
+  const side = el("aside", { class: "col-side", "aria-label": "Deals by industry and largest deals" });
   put(box, el("div", { class: "cols" }, main, side));
-  put(side, await trendingBlock(), await dealsThisWeekBlock());
+  put(side, industriesBlock(s), await dealsThisWeekBlock(s), await trendingBlock());
 }
 function itemAsCluster(it) {
-  return { id: it.cluster_id, headline: it.headline, url: it.url, category: it.category, sources: it.sources || [],
-    firms: it.firms || [], aum_usd: it.aum_usd, aum_source: it.aum_source, sec_aum_as_of: SEC_DATE, last_published: null };
+  return { id: it.cluster_id, headline: it.headline, url: it.url, category: it.category, industries: it.industries, deal: it.deal,
+    sources: it.sources || [], firms: it.firms || [], aum_usd: it.aum_usd, aum_source: it.aum_source, sec_aum_as_of: SEC_DATE, last_published: null };
 }
 async function fridayLine(date) {
   if (!date || U.wday.format(dateOnly(date)) !== "Friday") return null;
@@ -409,7 +474,7 @@ async function fridayLine(date) {
   if (!w) return null;
   const rec = await optional(`weekly/${w.week}.json`, null);
   const n = rec ? rec.deals.length : w.deal_count;
-  const total = rec && rec.total_disclosed_aum_usd ? `, ${fmtAum(rec.total_disclosed_aum_usd)} in headline AUM` : "";
+  const total = rec && rec.total_disclosed_value_usd ? `, ${fmtAum(rec.total_disclosed_value_usd)} in disclosed prices` : "";
   return el("p", { class: "note friday" }, `It's Friday, so the weekly M&A recap is out: ${plural(n, "deal")}${total}. `,
     nav(`/?tab=weekly&week=${w.week}`, "Read the recap"));
 }
@@ -422,9 +487,6 @@ function fillFeedControls() {
   const states = [...new Set(CLUSTERS.flatMap((c) => c.states || []))].sort((a, b) => (STATE_NAMES[a] || a).localeCompare(STATE_NAMES[b] || b));
   put($("#region"), el("option", { value: "" }, "All regions"), el("option", { value: "Pacific Northwest" }, "Pacific Northwest"),
     states.map((st) => el("option", { value: st }, STATE_NAMES[st] || st)));
-  const cats = (META && META.categories) || Object.keys(CAT_CLASS);
-  put($("#cats"), el("button", { type: "button", class: "all", "data-cat": "" }, "All"),
-    cats.map((c) => el("button", { type: "button", class: CAT_CLASS[c] || "cat-other", "data-cat": c }, c)));
 }
 function whenCutoff(when) {
   const t = todayKey();
@@ -440,7 +502,7 @@ function filterClusters(s) {
   const from = s.when === "range" && s.from ? s.from : null;
   const to = s.when === "range" && s.to ? s.to : null;
   return CLUSTERS.filter((c) => {
-    if (s.category.length && !s.category.includes(c.category)) return false;
+    if (!matchesIndustry(c, s.industry)) return false;
     if (s.source && !c.sources.some((x) => x.name === s.source)) return false;
     if (states && !(c.states || []).some((st) => states.includes(st))) return false;
     const day = dayKey(c.last_published);
@@ -448,7 +510,8 @@ function filterClusters(s) {
     if (from && day < from) return false;
     if (to && dayKey(c.first_published) > to) return false;
     if (terms.length) {
-      const words = [c.headline, ...c.firms.map((f) => f.name), ...c.sources.map((x) => x.name)].join(" ").toLowerCase().match(/[\w$&.'-]+/g) || [];
+      const words = [c.headline, ...c.firms.map((f) => f.name), ...c.sources.map((x) => x.name), ...industriesOf(c),
+        ...(c.deal ? [c.deal.acquirer, c.deal.target] : [])].filter(Boolean).join(" ").toLowerCase().match(/[\w$&.'-]+/g) || [];
       if (!terms.every((t) => words.some((w) => w.startsWith(t)))) return false;
     }
     if (s.watch && !watchHits(c).length) return false;
@@ -464,14 +527,16 @@ function highlight(text, q) {
 function feedRow(c, { q = "", timeLabel } = {}) {
   const hits = watchHits(c);
   const t = timeLabel !== undefined ? timeLabel : (c.last_published ? fmtTime(c.last_published) : "");
+  const price = c.deal && c.deal.value_usd;
   return el("div", { class: "row" + (hits.length ? " is-watch" : "") },
     el("span", { class: "t" }, c.last_published ? el("time", { datetime: c.last_published }, t) : t),
     el("div", { class: "row-main" },
       el("a", { class: "row-h", href: safeUrl(c.url), target: "_blank", rel: "noopener" }, ...highlight(c.headline, q)),
       el("div", { class: "row-meta" },
         hits.length ? el("span", { class: "watch-mark", title: "Watchlist: " + hits.join(", ") }, "Watchlist") : null,
-        catTag(c.category), outletList(c.sources, { prefix: false, shortNames: true }), firmChips(c.firms))),
-    c.aum_usd ? aumFig(c.aum_usd, c.aum_source, c.sec_aum_as_of || SEC_DATE, true) : el("span"));
+        indTags(c), dealLine(c.deal, { price: false }), outletList(c.sources, { prefix: false, shortNames: true }), firmChips(c.firms))),
+    price ? el("span", { class: "aum price", title: "Stated deal value" }, fmtAum(price), el("span", { class: "aum-note" }, " price"))
+      : c.aum_usd ? aumFig(c.aum_usd, c.aum_source, c.sec_aum_as_of || SEC_DATE, true) : el("span"));
 }
 function syncFeedControls(s) {
   if (document.activeElement !== $("#q")) $("#q").value = s.q;
@@ -481,21 +546,17 @@ function syncFeedControls(s) {
   $("#range").hidden = s.when !== "range";
   $("#from").value = s.from; $("#to").value = s.to;
   $("#watch").checked = s.watch;
-  for (const b of document.querySelectorAll("#cats button")) {
-    const c = b.dataset.cat;
-    b.setAttribute("aria-pressed", String(c ? s.category.includes(c) : !s.category.length));
-  }
 }
 async function renderFeed(s, append = false) {
   syncFeedControls(s);
   const list = filterClusters(s);
   const outlets = new Set(list.flatMap((c) => c.sources.map((x) => x.name))).size;
-  $("#feed-count").textContent = `${plural(list.length, "story", "stories")} · ${plural(outlets, "outlet")} · Newest first`;
+  $("#feed-count").textContent = `${plural(list.length, "deal")} · ${plural(outlets, "outlet")} · Newest first`;
   const box = $("#feed-list");
   if (!append) feedShown = PAGE;
   if (!list.length) {
-    const filtered = s.q || s.source || s.category.length || s.region || s.when || s.watch;
-    put(box, emptyState(CLUSTERS.length ? (filtered ? "No stories match these filters." : "No stories yet.") : "No stories yet. The next refresh will fill this in.", !!filtered));
+    const filtered = s.q || s.source || s.industry.length || s.region || s.when || s.watch;
+    put(box, emptyState(CLUSTERS.length ? (filtered ? "No deals match these filters." : "No deals yet.") : "No deals yet. The next refresh will fill this in.", !!filtered));
   } else {
     const frag = [];
     let day = null;
@@ -507,8 +568,7 @@ async function renderFeed(s, append = false) {
     put(box, ...frag);
   }
   $("#more").hidden = feedShown >= list.length;
-  const side = $("#feed-side");
-  if (!side.dataset.done) { side.dataset.done = "1"; put(side, ...(await trendingBlock())); }
+  put($("#feed-side"), industriesBlock(s), ...(await trendingBlock()));
 }
 
 /* ---------- Deals ---------- */
@@ -522,10 +582,20 @@ function party(p) {
   if (!p || !p.name) return el("span", { class: "party none" }, "Not named");
   return p.slug ? nav(`/firm/${encodeURIComponent(p.slug)}`, p.name, "party") : el("span", { class: "party" }, p.name);
 }
+// Target AUM: the figure stated in coverage, else the target's SEC-reported (Form ADV) AUM
+const targetAum = (d) => (headlineAum(d) ? { v: headlineAum(d), sec: false } : d._sec.v ? { v: d._sec.v, sec: true, asOf: d._sec.asOf } : { v: null });
 const SORTS = {
   date: (d) => d.date, acq: (d) => (d.acquirer.name || "~").toLowerCase(), tgt: (d) => (d.target.name || "~").toLowerCase(),
-  type: (d) => DEAL_TYPE[d.deal_type] || "~", h: (d) => headlineAum(d) ?? -1, s: (d) => d._sec.v ?? -1,
+  ind: (d) => industriesOf(d)[0], type: (d) => DEAL_TYPE[d.deal_type] || "~", stage: (d) => STAGE[d.stage] || "~",
+  p: (d) => d.value_usd ?? -1, a: (d) => targetAum(d).v ?? -1,
 };
+const NUMERIC_SORT = ["date", "p", "a"];
+function aumCell(d) {
+  const t = targetAum(d);
+  if (!t.v) return el("span", { class: "aum muted" }, "—");
+  return t.sec ? el("span", { class: "aum aum-sec", title: `SEC-reported AUM (as of ${fmtDate(t.asOf)})` }, fmtAum(t.v), el("span", { class: "asof" }, "SEC " + fmtDate(t.asOf, U.md)))
+    : el("span", { class: "aum", title: "AUM stated in coverage" }, fmtAum(t.v));
+}
 function sortDeals(rows, key, dir) {
   const f = SORTS[key] || SORTS.date;
   return rows.slice().sort((a, b) => { const x = f(a), y = f(b); return (typeof x === "string" ? x.localeCompare(y) : x - y) * dir; });
@@ -533,32 +603,34 @@ function sortDeals(rows, key, dir) {
 function dealsBlock(rows, asOf, sort, onSort) {
   rows = rows.map((d) => ({ ...d, _sec: secAum(d, asOf) }));
   const sorted = sortDeals(rows, sort.key, sort.dir);
-  const cols = [["Date", "date"], ["Acquirer", "acq"], ["Target", "tgt"], ["Type", "type"], ["Headline AUM", "h", "r"], ["SEC AUM", "s", "r"], ["Sources", null]];
+  const cols = [["Date", "date"], ["Acquirer", "acq"], ["Target", "tgt"], ["Industry", "ind"], ["Type", "type"], ["Stage", "stage"],
+    ["Price", "p", "r"], ["Target AUM", "a", "r"], ["Sources", null]];
   const table = el("table", { class: "deals-table" },
     el("thead", {}, el("tr", {}, cols.map(([label, key, align]) => {
       const active = key && sort.key === key;
       return el("th", { class: align || null, scope: "col", "aria-sort": active ? (sort.dir < 0 ? "descending" : "ascending") : null },
-        key ? el("button", { type: "button", onclick: () => onSort(key, active ? -sort.dir : (["date", "h", "s"].includes(key) ? -1 : 1)) },
+        key ? el("button", { type: "button", onclick: () => onSort(key, active ? -sort.dir : (NUMERIC_SORT.includes(key) ? -1 : 1)) },
           label, " ", el("span", { class: "arrow", "aria-hidden": "true" }, active ? (sort.dir < 0 ? "↓" : "↑") : "")) : label);
     }))),
     el("tbody", {}, sorted.map((d) => el("tr", { class: d.confidence === "low" ? "is-low" : null },
       el("td", { class: "date" }, F.md.format(new Date(d.date))),
       el("td", {}, party(d.acquirer)),
       el("td", {}, party(d.target), d.confidence === "low" ? el("div", { class: "review" }, "Needs review: " + (d.note || "the parser couldn't read this headline unambiguously.")) : null),
+      el("td", { class: "ind" }, indTags(d)),
       el("td", { class: "deal-type" }, DEAL_TYPE[d.deal_type] || "—"),
-      el("td", { class: "r" }, el("span", { class: "aum" }, fmtAum(headlineAum(d)))),
-      el("td", { class: "r" }, el("span", { class: "aum aum-sec" }, fmtAum(d._sec.v)),
-        el("span", { class: "asof" }, d._sec.v ? (d._sec.asOf ? fmtDate(d._sec.asOf) : "") : "No ADV match")),
+      el("td", {}, dealLine({ stage: d.stage }, { price: false })),
+      el("td", { class: "r" }, el("span", { class: "aum price" }, fmtAum(d.value_usd))),
+      el("td", { class: "r" }, aumCell(d)),
       el("td", { class: "deal-srcs" }, outletList(d.sources, { prefix: false, shortNames: true }))))));
-  const sortSel = el("select", { class: "input", "aria-label": "Sort deals by", onchange: (e) => onSort(e.target.value, ["acq", "tgt", "type"].includes(e.target.value) ? 1 : -1) },
-    [["date", "Newest"], ["h", "Headline AUM"], ["s", "SEC AUM"], ["acq", "Acquirer"], ["tgt", "Target"]].map(([v, l]) => el("option", { value: v, selected: sort.key === v }, l)));
+  const sortSel = el("select", { class: "input", "aria-label": "Sort deals by", onchange: (e) => onSort(e.target.value, NUMERIC_SORT.includes(e.target.value) ? -1 : 1) },
+    [["date", "Newest"], ["p", "Price"], ["a", "Target AUM"], ["ind", "Industry"], ["acq", "Acquirer"], ["tgt", "Target"]].map(([v, l]) => el("option", { value: v, selected: sort.key === v }, l)));
   const cards = el("div", { class: "deal-cards" }, sorted.map((d) => el("div", { class: "deal-card" + (d.confidence === "low" ? " is-low" : "") },
-    el("div", { class: "dc-top" }, F.md.format(new Date(d.date)), " · ", DEAL_TYPE[d.deal_type] || "Deal"),
+    el("div", { class: "dc-top" }, F.md.format(new Date(d.date)), " · ", DEAL_TYPE[d.deal_type] || "Deal", " · ", indTags(d)),
     el("div", { class: "dc-line" }, party(d.acquirer), " ", el("span", { class: "verb" }, DEAL_VERB[d.deal_type] || "and"), " ", party(d.target)),
     el("dl", {},
-      el("dt", {}, "Headline AUM"), el("dd", {}, el("span", { class: "aum" }, fmtAum(headlineAum(d)))),
-      el("dt", {}, "SEC AUM"), el("dd", {}, el("span", { class: "aum aum-sec" }, fmtAum(d._sec.v)), " ",
-        el("span", { class: "asof", style: "display:inline" }, d._sec.v ? fmtDate(d._sec.asOf) : "No ADV match")),
+      el("dt", {}, "Stage"), el("dd", {}, dealLine({ stage: d.stage }, { price: false })),
+      el("dt", {}, "Price"), el("dd", {}, el("span", { class: "aum price" }, fmtAum(d.value_usd))),
+      el("dt", {}, "Target AUM"), el("dd", {}, aumCell(d)),
       el("dt", {}, "Sources"), el("dd", {}, (d.sources || []).map((x) => short(x.name)).join(", "))),
     d.confidence === "low" ? el("div", { class: "review" }, "Needs review: " + (d.note || "")) : null)));
   return [el("div", { class: "sort-bar" }, el("span", {}, "Sort by"), sortSel), table, cards];
@@ -568,17 +640,21 @@ async function renderDeals(s) {
   put(box, ...skeletons(5));
   let m;
   try { m = await data("mna.json"); } catch (e) { put(box, errorState(e, () => renderDeals(s))); return; }
-  const rows = (m.deals || []).filter((d) => !s.conf || d.confidence === s.conf);
+  const rows = (m.deals || []).filter((d) => (!s.conf || d.confidence === s.conf) && matchesIndustry(d, s.industry));
+  const keep = (conf) => stateUrl({ ...s, tab: "mna", conf });
   const seg = el("div", { class: "seg", role: "group", "aria-label": "Confidence" },
-    [["All", ""], ["Confirmed", "high"], ["Needs review", "low"]].map(([l, v]) => nav(v ? `/?tab=mna&conf=${v}` : "/?tab=mna", l, null, { "aria-current": String(s.conf === v) })));
-  put(box, 
+    [["All", ""], ["Confirmed", "high"], ["Needs review", "low"]].map(([l, v]) => nav(keep(v), l, null, { "aria-current": String(s.conf === v) })));
+  put(box,
     el("div", { class: "page-head" }, el("h1", { class: "page-title" }, "Deals"), seg),
-    el("p", { class: "prose", style: "margin:0 0 18px" }, "RIA mergers, acquisitions and minority investments, one row per story. ",
-      el("em", {}, "Headline AUM"), " is the figure stated in coverage. SEC AUM is regulatory AUM from the target's latest Form ADV, with its as-of date. ",
+    el("p", { class: "prose", style: "margin:0 0 18px" }, "Mergers, acquisitions and stakes across industries, one row per deal. ",
+      el("em", {}, "Price"), " is the deal value stated in coverage. ", el("em", {}, "Target AUM"),
+      " applies to wealth and asset-management deals: the figure stated in coverage, or the target's SEC-reported AUM from Form ADV. ",
       "Rows the parser couldn't read unambiguously are marked for review and left blank rather than guessed."),
+    s.industry.length ? el("p", { class: "meta-line", style: "margin:-8px 0 14px" }, `${plural(rows.length, "deal")} in ${s.industry.join(", ")}`) : null,
     rows.length ? el("div", {}, dealsBlock(rows, m.sec_aum_as_of || SEC_DATE, { key: s.sort, dir: s.dir },
       (key, dir) => writeState({ tab: "mna", sort: key, dir }, true)))
-      : el("p", { class: "state" }, s.conf ? "No deals with this status. " : "No deals yet. ", s.conf ? nav("/?tab=mna", "Show all deals") : null));
+      : el("p", { class: "state" }, s.conf || s.industry.length ? "No deals match these filters. " : "No deals yet. ",
+        s.conf || s.industry.length ? nav("/?tab=mna", "Show all deals") : null));
 }
 
 /* ---------- Firm page ---------- */
@@ -612,18 +688,19 @@ async function renderFirm(s) {
         el("dd", {}, f.sec_aum_as_of ? `Form ADV, as of ${fmtDate(f.sec_aum_as_of)}` : "No AUM reported")),
       el("div", {}, el("dt", {}, "CRD number"), el("dd", { class: "big" }, f.crd || "—"),
         el("dd", {}, f.iapd_url ? ext(f.iapd_url, "SEC adviser page ↗") : null)),
-      el("div", {}, el("dt", {}, "Coverage"), el("dd", { class: "big" }, plural(stories.length, "story", "stories")),
+      el("div", {}, el("dt", {}, "Coverage"), el("dd", { class: "big" }, plural(stories.length, "deal")),
         el("dd", {}, deals.length ? plural(deals.length, "deal") + " in the tracker" : "No deals in the tracker"))),
-    el("div", { class: "block-gap" }, sectionHead("Stories"),
+    el("div", { class: "block-gap" }, sectionHead("Coverage"),
       stories.length ? stories.map((st) => feedRow(CL_BY_ID.get(st.cluster_id) || { ...st, id: st.cluster_id, firms: [], aum_usd: null },
-        { timeLabel: st.last_published ? F.md.format(new Date(st.last_published)) : "" })) : el("p", { class: "state" }, "No stories yet.")),
+        { timeLabel: st.last_published ? F.md.format(new Date(st.last_published)) : "" })) : el("p", { class: "state" }, "No deals yet.")),
     deals.length ? el("div", { class: "block-gap" }, sectionHead("Deals"), deals.map((d) => {
       const sec = secAum(d, SEC_DATE);
       return el("div", { class: "firm-deal" + (d.confidence === "low" ? " is-low" : "") },
         el("span", { class: "t" }, F.md.format(new Date(d.date))),
         el("span", { class: "line" }, party(d.acquirer), " ", el("span", { class: "verb" }, DEAL_VERB[d.deal_type] || "and"), " ", party(d.target),
           el("span", { class: "role" }, d.role === "acquirer" ? (d.deal_type === "merger" ? "Party" : "Acquirer") : "Target")),
-        el("span", { class: "figs" }, el("span", { class: "aum" }, headlineAum(d) ? fmtAum(headlineAum(d)) : ""), " ",
+        el("span", { class: "figs" }, d.value_usd ? el("span", { class: "aum price" }, fmtAum(d.value_usd)) : null, " ",
+          el("span", { class: "aum" }, headlineAum(d) ? fmtAum(headlineAum(d)) : ""), " ",
           sec.v ? el("span", { class: "aum aum-sec", title: `SEC-reported AUM (as of ${fmtDate(sec.asOf)})` }, "SEC " + fmtAum(sec.v)) : null));
     })) : null));
 }
@@ -655,11 +732,11 @@ async function renderArchive() {
   for (const [monday, days] of weeks) {
     main.append(sectionHead("Week of " + fmtDate(monday, U.mdLong)));
     for (const d of days) {
-      const lead = el("span", { class: "lead" }, plural(d.item_count, "story", "stories"));
+      const lead = el("span", { class: "lead" }, plural(d.item_count, "deal"));
       const recap = fridays.get(d.date);
       main.append(nav(`/?tab=today&date=${d.date}`, [
         el("span", { class: "when" }, fmtDate(d.date, U.wday), el("br"), fmtDate(d.date, U.md)),
-        el("span", {}, lead, el("span", { class: "meta-line" }, plural(d.item_count, "story", "stories") + (recap ? " · Weekly M&A recap" : ""))),
+        el("span", {}, lead, el("span", { class: "meta-line" }, plural(d.item_count, "deal") + (recap ? " · Weekly M&A recap" : ""))),
       ], "arch-row"));
       optional(`digests/${d.date}.json`, null).then((full) => {
         if (!full) return;
@@ -679,7 +756,7 @@ async function renderArchive() {
       el("span", { class: "meta-line" }, "Published " + fmtDate(w.end, U.wdayShort) + ", " + fmtDate(w.end, U.md)),
     ], "recap-link"));
     optional(`weekly/${w.week}.json`, null).then((r) => {
-      if (r && r.total_disclosed_aum_usd) desc.textContent = `${plural(r.deals.length, "deal")}, ${fmtAum(r.total_disclosed_aum_usd)} in headline AUM.`;
+      if (r && r.total_disclosed_value_usd) desc.textContent = `${plural(r.deals.length, "deal")}, ${fmtAum(r.total_disclosed_value_usd)} in disclosed prices.`;
     });
   }
   put(box, el("div", { class: "cols" }, main, side));
@@ -703,13 +780,17 @@ async function renderWeekly(s) {
     el("div", { class: "meta-line", style: "margin-top:6px" }, fmtDate(w.start, U.long) + " – " + fmtDate(w.end, U.long)),
     w.ai && w.paragraph ? el("p", { class: "opener", style: "max-width:780px" }, w.paragraph) : null,
     el("dl", { class: "facts stats" },
-      el("div", {}, el("dt", {}, "Deals"), el("dd", { class: "big" }, String(w.deals.length))),
-      el("div", {}, el("dt", {}, "Headline AUM"), el("dd", { class: "big" }, fmtAum(w.total_disclosed_aum_usd)),
+      el("div", {}, el("dt", {}, "Deals"), el("dd", { class: "big" }, String(w.deals.length)),
+        el("dd", {}, (w.industry_counts || []).slice(0, 3).map((x) => `${IND_SHORT[x.industry] || x.industry} ${x.deals}`).join(" · ") || null)),
+      w.total_disclosed_value_usd != null || w.disclosed_value_deals != null
+        ? el("div", {}, el("dt", {}, "Disclosed prices"), el("dd", { class: "big" }, fmtAum(w.total_disclosed_value_usd)),
+          el("dd", {}, `from ${plural(w.disclosed_value_deals || 0, "deal")} with a stated price`)) : null,
+      el("div", {}, el("dt", {}, "RIA target AUM"), el("dd", { class: "big" }, fmtAum(w.total_disclosed_aum_usd)),
         el("dd", {}, `from ${plural(w.disclosed_aum_deals, "deal")} with disclosed AUM`)),
       el("div", {}, el("dt", {}, "Most active"), el("dd", { class: "big", style: "font-size:20px; padding-top:6px" },
         top.length ? top.map((t, i) => [t, i < top.length - 1 ? ", " : ""]) : "—"))),
     w.deals.length ? dealsBlock(w.deals, SEC_DATE, weeklySort, (key, dir) => { weeklySort = { key, dir }; renderWeekly(s); })
-      : el("p", { class: "state" }, "No RIA deals were tracked this week.")));
+      : el("p", { class: "state" }, "No deals were tracked this week.")));
 }
 
 /* ---------- Sources ---------- */
@@ -721,11 +802,12 @@ async function renderSources() {
   const last = META && META.last_refresh ? `${F.long.format(new Date(META.last_refresh))} at ${fmtTime(META.last_refresh)} PT` : "not yet run";
   put(box, el("div", { style: "max-width:1040px" },
     el("h1", { class: "page-title" }, "Sources"),
-    el("p", { class: "prose", style: "margin:10px 0 18px" }, `Status from the last run, ${last}. Only the headline, link, date and a short description are stored; gated outlets contribute headlines only.`),
+    el("p", { class: "prose", style: "margin:10px 0 18px" }, `Status from the last run, ${last}. Only headlines that announce a deal are kept; everything else is dropped. `
+      + "Only the headline, link, date and a short description are stored; gated outlets contribute headlines only."),
     el("div", { class: "src-list" }, (d.sources || []).map((r) => el("div", { class: "src-row" },
       r.homepage ? ext(r.homepage, r.name, "name") : el("span", { class: "name" }, r.name),
       el("span", { class: "method" }, r.method || "—"),
-      el("span", { class: "items" }, plural(r.items_last_run || 0, "item")),
+      el("span", { class: "items" }, plural(r.items_last_run || 0, "item") + (r.enabled && r.ok && r.dropped_last_run ? ` · ${r.dropped_last_run} not deals` : "")),
       !r.enabled ? el("span", { class: "off" }, "Disabled")
         : r.ok ? el("span", { class: "ok" }, "OK")
           : el("span", { class: "fail" }, r.reason || "Failed"))))));
@@ -806,12 +888,12 @@ function init() {
   $("#from").addEventListener("change", (e) => writeState({ tab: "feed", when: "range", from: e.target.value }));
   $("#to").addEventListener("change", (e) => writeState({ tab: "feed", when: "range", to: e.target.value }));
   $("#watch").addEventListener("change", (e) => { feedShown = PAGE; writeState({ tab: "feed", watch: e.target.checked }); });
-  $("#cats").addEventListener("click", (e) => {
-    const b = e.target.closest("button[data-cat]");
+  $("#ind-bar").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-ind]");
     if (!b) return;
-    const cur = readState().category, cat = b.dataset.cat;
+    const st = readState(), ind = b.dataset.ind, cur = st.industry;
     feedShown = PAGE;
-    writeState({ tab: "feed", category: !cat ? [] : cur.includes(cat) ? cur.filter((c) => c !== cat) : [...cur, cat] });
+    writeState({ industry: !ind ? [] : cur.includes(ind) ? cur.filter((c) => c !== ind) : [...cur, ind] });
   });
   $("#more").addEventListener("click", () => { feedShown += PAGE; renderFeed(readState(), true); });
   $("#watch-open").addEventListener("click", openDrawer);

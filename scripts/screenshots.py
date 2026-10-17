@@ -35,13 +35,15 @@ SCENES = [
     # name, path + query string ("{firm}" = a firm page slug)
     ("today", "/"),
     ("feed", "/?tab=feed"),
-    ("feed-filtered", "/?tab=feed&category=M%26A,People+Moves&source=Citywire+RIA"),
+    ("feed-filtered", "/?tab=feed&industry=Investment+Banking,Wealth+Management+%26+RIAs"),
+    ("today-industry", "/?industry=Technology,Healthcare+%26+Life+Sciences"),
     ("region", "/?tab=feed&region=Pacific+Northwest"),
-    ("search", "/?tab=feed&q=custody+rule"),
+    ("search", "/?tab=feed&q=northwind"),
     ("watchlist", "/?tab=feed&watch=1"),
     ("firm", "/firm/{firm}"),
     ("deals", "/?tab=mna"),
     ("deals-review", "/?tab=mna&conf=low"),
+    ("deals-industry", "/?tab=mna&industry=Wealth+Management+%26+RIAs"),
     ("archive", "/?tab=archive"),
     ("archive-day", "/?tab=today&date=2026-09-25"),
     ("weekly", "/?tab=weekly&week=2026-W39"),
@@ -209,13 +211,25 @@ def main() -> int:
                 page.goto(base + "/?tab=feed")
                 page.wait_for_selector("#feed-list .row")
                 if vp_name == "desktop":
-                    page.fill("#q", "custody")
-                    page.wait_for_url("**q=custody**")
+                    page.fill("#q", "northwind")
+                    page.wait_for_url("**q=northwind**")
                     page.wait_for_function("document.querySelectorAll('#feed-list .row').length >= 1")
-                    page.click('#cats button[data-cat="Regulation"]')
-                    page.wait_for_url("**category=Regulation**")
+                    page.click('#ind-bar button[data-ind="Banking"]')
+                    page.wait_for_url("**industry=Banking**")
                     page.go_back()
-                    page.wait_for_function("!location.search.includes('category')")
+                    page.wait_for_function("!location.search.includes('industry')")
+                    # the industry filter follows you from Feed to Deals and Today
+                    page.click('#ind-bar button[data-ind="Technology"]')
+                    page.wait_for_url("**industry=Technology**")
+                    page.click(".sections a[data-tab='mna']")
+                    page.wait_for_url("**tab=mna&industry=Technology**")
+                    page.wait_for_selector(".deals-table tbody tr")
+                    if page.locator(".deals-table tbody tr").count() != 2:
+                        problems.append("Technology filter on Deals should leave 2 rows")
+                    page.click('#ind-bar button[data-ind=""]')
+                    page.wait_for_function("!location.search.includes('industry')")
+                    page.goto(base + "/?tab=feed")
+                    page.wait_for_selector("#feed-list .row")
                     page.select_option("#region", "Pacific Northwest")
                     page.wait_for_url("**region=Pacific**")
                     page.fill("#q", "zzzznotaword")
@@ -226,8 +240,8 @@ def main() -> int:
                     if page.evaluate("document.activeElement.id") != "q":
                         problems.append("'/' shortcut did not focus the search box")
                     page.goto(base + "/?tab=mna")
-                    page.click("th button:has-text('Headline AUM')")
-                    page.wait_for_url("**sort=h**")
+                    page.click("th button:has-text('Price')")
+                    page.wait_for_url("**sort=p**")
                     if page.get_attribute("th[aria-sort]", "aria-sort") != "descending":
                         problems.append("deals sort did not set aria-sort")
                 page.goto(base + "/")
