@@ -1,0 +1,28 @@
+# Second round of all-industry deal sources (Google News search and GlobeNewswire are robots-disallowed).
+directories:
+  - https://www.prnewswire.com/rss/
+feeds:
+  - https://rss.nytimes.com/services/xml/rss/nyt/Dealbook.xml
+  - https://rss.nytimes.com/services/xml/rss/nyt/Business.xml
+  - https://feeds.a.dj.com/rss/WSJcomUSBusiness.xml
+  - https://feeds.a.dj.com/rss/RSSMarketsMain.xml
+  - https://www.cnbc.com/id/10000664/device/rss/rss.html
+  - https://www.cnbc.com/id/10001147/device/rss/rss.html
+  - https://www.ft.com/companies?format=rss
+  - https://pitchbook.com/news/rss
+  - https://middlemarketgrowth.org/feed/
+  - https://news.crunchbase.com/feed/
+  - https://www.fiercehealthcare.com/rss/xml
+  - https://www.fiercepharma.com/rss/xml
+  - https://www.insurancejournal.com/rss/news/
+  - https://www.reinsurancene.ws/feed/
+  - https://www.finextra.com/rss/headlines.aspx
+  - https://www.americanbanker.com/feed
+  - https://www.privateequitywire.co.uk/feed/
+  - https://www.privateequityinternational.com/feed/
+  - https://seekingalpha.com/tag/m-a.xml
+  - https://finance.yahoo.com/news/rssindex
+  - https://www.investmentnews.com/feed
+  - https://citywire.com/ria/rss
+  - https://www.thinkadvisor.com/feed/
+  - https://www.fa-mag.com/rss
