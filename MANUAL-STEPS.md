@@ -35,7 +35,7 @@ access to this repo and doesn't care about visibility. To double-check:
    list.
 
 GitHub Actions minutes: private repos on the free plan include 2,000 minutes a month. A refresh takes about
-2–4 minutes, and there are about 80 runs a month, so usage is roughly 250 minutes.
+2–4 minutes, and there are about 120 runs a month, so usage is roughly 350 minutes.
 
 ---
 
@@ -63,8 +63,8 @@ of the two secrets below. If both are set, the OAuth token is used.
 
 **Check it worked:**
 1. Open **Actions** → **Fiduciary Wire refresh** → **Run workflow** (branch `main`) → **Run workflow**.
-2. When the run finishes, open it. The summary should show `digest: ok: N stories`, and the Digest tab on the
-   site should show "Today in wealth management".
+2. When the run finishes, open it. The summary should show `digest: ok: N stories`, and the Today tab on the
+   site should show "Today in deals" with a summary under each deal.
 3. If it says `fallback: …`, the reason is right there. The site still works either way.
 
 ---
@@ -174,8 +174,11 @@ display name to `Fiduciary Wire <…>`.
 ## Everyday use
 
 - **Refresh now:** **Actions** → **Fiduciary Wire refresh** → **Run workflow**.
-- **Schedule:** weekdays about 6:00, 12:00 and 17:00 Pacific, and weekends about 8:00. During winter
-  (standard time) each run is an hour earlier; see the comments in `.github/workflows/refresh-site.yml`.
+- **Schedule:** it runs by itself. Weekdays every 3 hours (about 6:00, 9:00, 12:00, 15:00 and 18:00 Pacific),
+  weekends about 8:00. You never have to re-run anything by hand. During winter (standard time) each run is an
+  hour earlier; see the comments in `.github/workflows/refresh-site.yml`.
+- **Change what counts:** industries and their keywords are in `industries.yaml`; sources (and each source's
+  industry) in `sources.yaml`. Editing either on `main` triggers a refresh.
 - **See what happened:** open any run. The summary lists each source's status, the digest status and the
   firm-matching score.
 - **Nothing to maintain.** The SEC adviser file is checked monthly and downloaded only when a new one is out.

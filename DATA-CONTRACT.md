@@ -57,7 +57,8 @@ Refresh-level facts.
 | `counts` | `{stories, clusters, deals, firms}` | integers |
 | `sources_ok`, `sources_total` | int | |
 | `sources[]` | `{name, ok, method, items_last_run}` | compact status for the header/filter; full detail in `sources.json` |
-| `categories[]` | string | category names in display order |
+| `categories[]` | string | same as `industries[]` (kept for older readers) |
+| `industries[]` | string | industry names in display order (from `industries.yaml`; "Other" last) |
 | `sec` | `{data_date, firm_count}` | date of the SEC adviser file in use (null if none yet) |
 | `digest` | `{date, ai, last_good_date}` | whether today's digest is AI-written, and the last good one |
 | `footer_note` | string | "Summaries written with Claude from outlet headlines." |
@@ -80,7 +81,9 @@ Refresh-level facts.
 |---|---|---|
 | `id` | int | stable cluster id (smallest article id in the cluster) |
 | `headline`, `url` | string | from the earliest article |
-| `category` | string | one of `meta.categories` |
+| `category` | string | the primary industry (one of `meta.industries`; `meta.categories` is the same list) |
+| `industries` | string[] | every industry the deal touches, primary first (filter on these) |
+| `deal` | object \| null | `{acquirer, target, type, stage, value_usd}`: parties (null when the headline doesn't name one), `type` as in `mna.json`, `stage` = `announced` \| `completed` \| `rumored` \| `bid` \| `terminated`, `value_usd` = stated price or null |
 | `first_published`, `last_published`, `first_seen` | timestamp | `first_seen` = when Fiduciary Wire first fetched it |
 | `outlet_count` | int ≥ 1 | |
 | `sources[]` | `{name, url, published_at, kind}` | every outlet covering the story. `kind`: `feed` \| `wire` (press release) \| `google_news` |
@@ -155,6 +158,8 @@ The index is `{schema_version, generated_at, weekly[]}`. Each recap:
 | `total_disclosed_aum_usd` | number \| null | sum of target AUM over deals whose AUM came from a headline (SEC-reported fallbacks excluded) |
 | `disclosed_aum_deals` | int | how many deals contributed to that sum |
 | `top_acquirers[]` | `{name, slug, deals}` | most active acquirers this week |
+| `total_disclosed_value_usd`, `disclosed_value_deals` | number \| null, int | sum of stated prices and how many deals had one (recaps from 2026-10-17 on) |
+| `industry_counts[]` | `{industry, deals}` | deals per industry this week (recaps from 2026-10-17 on) |
 | `paragraph` | string \| null | Claude-written summary; null if unavailable (numbers are always present) |
 | `ai` | bool | |
 
@@ -174,6 +179,9 @@ The index is `{schema_version, generated_at, weekly[]}`. Each recap:
 | `confidence` | `"high"` \| `"low"` | low rows are visibly flagged; `note` says why |
 | `note` | string | |
 | `press_release` | bool | a matching press release raised confidence |
+| `stage` | string | `announced` \| `completed` \| `rumored` \| `bid` \| `terminated` (the most advanced any headline reports) |
+| `value_usd` | number \| null | stated deal price (never AUM) |
+| `industries` | string[] | as on the cluster |
 | `sources[]` | `{name, url}` | |
 
 ## `firms/index.json` and `firms/<slug>.json`

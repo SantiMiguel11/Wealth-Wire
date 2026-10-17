@@ -468,3 +468,90 @@ N5. **Workflow display names now carry the product name** ("Fiduciary Wire refre
     and schedules are unaffected.
 N6. **Open Graph tags were added** (`og:site_name`, `og:title`, `og:description`, `og:type`) and
     `application-name`. There were none before. `noindex, nofollow` is unchanged.
+
+## Deals only, across industries (2026-10-17)
+
+The user asked for M&A deals across all industries, filterable by industry (investment banking, RIAs,
+tech…), and no general news.
+
+D1. **What the live site was showing.** On 2026-10-17 the live database held 881 headlines in 802 stories.
+    Only 63 were tagged M&A, and most of those were commentary ("RIA M&A drops 17% in Q3"); 7 parsed as a
+    deal with both parties. The other 739 were general news.
+D2. **Deals only, everywhere.** Every item from every source goes through `deals.classify`; non-deals are
+    never stored. The next recompute deletes stored non-deals (the old general news), so the switch cleans
+    the live database in one run. A headline counts when it parses as a deal event with at least one named
+    party: acquire / buy / merge / take private / carve out / stake / recapitalization / bid / talks / sale
+    to. Rejected even with a deal verb:
+    - commentary and statistics ("M&A volume", "Q3 deals", questions, interviews, podcasts);
+    - 13F position changes ("Raises Stake in Apple", "New Stake"), buybacks, refinancings, IPOs, funding
+      rounds, licensing pacts, purchases of goods ("buy up to 1.6 GW");
+    - people moves (team / hires / joins / names CEO) unless a strong deal word is also present;
+    - denials, class-action and "investigation" wire spam, and non-English wire translations.
+D3. **Measured on real headlines, not tuned blind.** 1,314 real headlines (the live database plus every
+    title from the two feed probes) are labeled in `tests/fixtures/deal_headlines.yaml`; 89 are deals.
+    The detector reproduces every label except one known miss ("Panzani and Cerealis Join Forces to Create
+    a Major European Food Group": "join forces" is too often a partnership to accept). Recall checks found
+    and fixed RIA trade-press forms ("…'s 10th Acquisition Is for $1B Louisiana RIA", "adds $1.7B in Double
+    Deal", "Envestnet buy of Vestmark"). Precision fixes: "adds" needs a firm-like target; a figure next to
+    RIA / firm / practice is AUM, not a price. This set is in-sample; expect lower precision on new
+    wording, which the Sources page's per-source drop counts and `state/wire_stats.csv` make visible.
+D4. **Sources.** Every candidate was fetched from GitHub's network with `probe-feeds.yml`
+    (`scripts/probe_deals*.yaml`) before being added.
+    - Added: PR Newswire's all-industry M&A feed (wire); Seeking Alpha M&A (11 deals in 20 items, gated);
+      FT Companies (gated); PE Hub; TechCrunch M&A; Banking Dive, Payments Dive, BioPharma Dive,
+      Healthcare Dive, Retail Dive, Utility Dive, Supply Chain Dive; Fierce Healthcare / Biotech /
+      Pharma; Insurance Journal; Reinsurance News.
+    - Kept, deal-filtered: WealthManagement.com, InvestmentNews, RIABiz, Financial Planning, AdvisorHub.
+    - Disabled: ThinkAdvisor, FA Magazine, Citywire RIA. Their only route was Google News search, and
+      news.google.com/robots.txt disallows `/rss/search` (the probe showed it). The ingester never
+      robots-checked configured Google News feeds. It does now, so re-enabling them is still stopped
+      before any request.
+    - Disabled: GlobeNewswire, whose robots.txt now answers 403 (treated as disallow-all). Also SEC, FINRA
+      and Kitces, which publish no deals.
+    - Rejected after probing: WSJ feeds, PitchBook, Private Equity Wire, Finextra and ThinkAdvisor's own
+      feed (robots or 403); NYT DealBook / Business, CNBC, Crunchbase, ACG/Middle Market Growth and PEI
+      (0 deals in their current items).
+    - No source has been added that needs a login or works around a block.
+D5. **Industries** (`industries.yaml`): Investment Banking, Wealth Management & RIAs, Banking, Insurance,
+    Fintech & Payments, Private Equity & Asset Management, Healthcare & Life Sciences, Technology, Energy &
+    Utilities, Industrials, Consumer & Retail, Real Estate, Media & Telecom, Business Services, Other.
+    - Tags are multi-label: "Thoma Bravo's Proofpoint inks take-private of Varonis" is PE and Technology.
+    - The first match in file order is primary, and file order puts Investment Banking and RIAs first.
+    - Keywords and well-known names come from the headline and the press-release teaser. Single-industry
+      outlets add their industry (`industry:` in sources.yaml).
+    - "Investment bank" never also counts as Banking.
+    - Too-generic words were removed after they mis-tagged demo deals ("brand", "agency", "platform",
+      "startup").
+D6. **One story per deal.** Different outlets word the same deal differently. After the title clustering,
+    stories are merged within 7 days in two cases:
+    - the same target (first word) with a shared or unnamed acquirer;
+    - no named target, but the same acquirer and the same dollar figure.
+    A story's stage is the most advanced any of its headlines reports (rumored < bid < announced <
+    completed; terminated wins). Its price is the first stated deal value.
+D7. **AUM only where it means AUM.** Headline and SEC (Form ADV) AUM are shown only for wealth and
+    asset-management deals; elsewhere a dollar figure is a price. In RIA headlines ("buys $1B Louisiana
+    RIA") the figure stays AUM, not price.
+D8. **Data contract stays version 1, additive only.**
+    - clusters: `industries`, and `deal` {acquirer, target, type, stage, value_usd}.
+    - mna rows: `stage`, `value_usd`, `industries`.
+    - meta: `industries`. `categories` now carries the same list, and a cluster's `category` is its
+      primary industry, so older readers still filter.
+    - weekly: `total_disclosed_value_usd`, `disclosed_value_deals`, `industry_counts`.
+    - New fields are optional in archived files written before the change.
+D9. **The site.**
+    - An industry chip bar on Today, Feed and Deals sets `?industry=` (multi-select, kept across those
+      tabs; old `?category=` links still work).
+    - Every story shows its stage and stated price.
+    - The Deals table adds Industry, Stage and Price, and merges headline and SEC AUM into "Target AUM".
+    - The tagline is now "Daily M&A deals across industries". The rename brief had kept the old tagline,
+      but it describes a product this no longer is.
+    - "Trending firms" became "Active advisers" (SEC-registered advisers in this week's deals). New side
+      blocks: "Deals by industry" and "Largest deals this week".
+D10. **Schedule: every 3 hours on weekdays** (6, 9, 12, 15, 18 Pacific; weekends 8:00). The busiest deal
+     feeds list only their latest 10–20 items, so three runs a day could miss deals. This is about
+     110 runs a month of 1–2 minutes each. If the Claude secret is set, each scheduled run also writes a
+     digest.
+D11. **Removed:** the keyword news categorizer (`categorize.py`, `categories.yaml`) and the wealth-only
+     wire filter (`wires.py`), both replaced by the deal filter and industries. The offline fixture site
+     was regenerated: synthetic deals across industries, plus non-deal noise in every feed that the tests
+     check is dropped.
