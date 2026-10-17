@@ -1,0 +1,522 @@
+{
+ "schema_version": 1,
+ "date": "2026-10-17",
+ "generated_at": "2026-10-17T20:02:55Z",
+ "ai": false,
+ "opener": null,
+ "items": [
+  {
+   "cluster_id": 882,
+   "headline": "Vista Equity Partners strikes deal to carve out HID’s PKI business",
+   "url": "https://www.pehub.com/vista-equity-partners-strikes-deal-to-carve-out-hids-pki-business/",
+   "category": "Private Equity & Asset Management",
+   "industries": [
+    "Private Equity & Asset Management"
+   ],
+   "deal": {
+    "acquirer": "Vista Equity Partners",
+    "target": "PKI",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/vista-equity-partners-strikes-deal-to-carve-out-hids-pki-business/"
+    },
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/assa-abloy-sells-pki-business-unit-to-vista-equity-partners-302911633.html"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Vista Equity Partners Management",
+     "slug": "vista-equity-partners-management-156973"
+    }
+   ],
+   "aum_usd": 106022254910.0,
+   "aum_source": "sec",
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 890,
+   "headline": "Proofpoint to acquire Varonis Systems in $6.3B all-cash deal",
+   "url": "https://seekingalpha.com/news/4653625-proofpoint-to-acquire-varonis-systems-in-6_3b-all-cash-deal?source=feed_tag_m_a",
+   "category": "Private Equity & Asset Management",
+   "industries": [
+    "Private Equity & Asset Management",
+    "Technology"
+   ],
+   "deal": {
+    "acquirer": "Proofpoint",
+    "target": "Varonis Systems",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": 6300000000.0
+   },
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4653625-proofpoint-to-acquire-varonis-systems-in-6_3b-all-cash-deal?source=feed_tag_m_a"
+    },
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/thoma-bravos-proofpoint-inks-6-3bn-take-private-of-data-security-firm-varonis/"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Thoma Bravo",
+     "slug": "thoma-bravo-157041"
+    },
+    {
+     "name": "Wedbush Securities",
+     "slug": "wedbush-securities-877"
+    }
+   ],
+   "aum_usd": 182937300000.0,
+   "aum_source": "sec",
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 912,
+   "headline": "Zocdoc acquires health tech company Sohar Health for automated benefits eligibility checks",
+   "url": "https://www.fiercehealthcare.com/ai-and-machine-learning/zodoc-acquires-health-tech-company-sohar-health-automated-benefits",
+   "category": "Healthcare & Life Sciences",
+   "industries": [
+    "Healthcare & Life Sciences",
+    "Technology"
+   ],
+   "deal": {
+    "acquirer": "Zocdoc",
+    "target": "Sohar Health",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "Fierce Healthcare",
+     "url": "https://www.fiercehealthcare.com/ai-and-machine-learning/zodoc-acquires-health-tech-company-sohar-health-automated-benefits"
+    },
+    {
+     "name": "Healthcare Dive",
+     "url": "https://www.healthcaredive.com/news/zocdoc-acquires-sohar-health-in-latest-push-to-scale-tech-infrastructure/833129/"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 899,
+   "headline": "SoftBank in talks to buy US security group Allied Universal",
+   "url": "https://www.ft.com/content/e44a17f9-5be0-4a78-89fb-41c4578838ca?syn-25a6b1a6=1",
+   "category": "Business Services",
+   "industries": [
+    "Business Services"
+   ],
+   "deal": {
+    "acquirer": "SoftBank",
+    "target": "Allied Universal",
+    "type": "acquisition",
+    "stage": "rumored",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Financial Times Companies",
+     "url": "https://www.ft.com/content/e44a17f9-5be0-4a78-89fb-41c4578838ca?syn-25a6b1a6=1"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 886,
+   "headline": "Arity to Acquire INRIX, Advancing a Connected Vision for the Future of Transportation",
+   "url": "https://www.prnewswire.com/news-releases/arity-to-acquire-inrix-advancing-a-connected-vision-for-the-future-of-transportation-302911491.html",
+   "category": "Industrials",
+   "industries": [
+    "Industrials"
+   ],
+   "deal": {
+    "acquirer": "Arity",
+    "target": "INRIX",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/arity-to-acquire-inrix-advancing-a-connected-vision-for-the-future-of-transportation-302911491.html"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 887,
+   "headline": "Parkview Health announces agreement to acquire Ovation Healthcare to strengthen community healthcare nationwide, advance local affordability",
+   "url": "https://www.prnewswire.com/news-releases/parkview-health-announces-agreement-to-acquire-ovation-healthcare-to-strengthen-community-healthcare-nationwide-advance-local-affordability-302911410.html",
+   "category": "Healthcare & Life Sciences",
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "deal": {
+    "acquirer": "Parkview Health",
+    "target": "Ovation Healthcare",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/parkview-health-announces-agreement-to-acquire-ovation-healthcare-to-strengthen-community-healthcare-nationwide-advance-local-affordability-302911410.html"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Parkview",
+     "slug": "parkview-160171"
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 901,
+   "headline": "Gryphon’s Vivify Specialty Ingredients acquires botanical extracts supplier AuNutra Industries",
+   "url": "https://www.pehub.com/gryphons-vivify-specialty-ingredients-acquires-botanical-extracts-supplier-aunutra-industries/",
+   "category": "Private Equity & Asset Management",
+   "industries": [
+    "Private Equity & Asset Management",
+    "Consumer & Retail"
+   ],
+   "deal": {
+    "acquirer": "Gryphon’s Vivify Specialty Ingredients",
+    "target": "AuNutra Industries",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/gryphons-vivify-specialty-ingredients-acquires-botanical-extracts-supplier-aunutra-industries/"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Gryphon Advisors",
+     "slug": "gryphon-advisors-160185"
+    }
+   ],
+   "aum_usd": 9317854280.0,
+   "aum_source": "sec",
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 902,
+   "headline": "Frazier Healthcare’s LUX Infusion enters Colorado with Suite Health acquisition",
+   "url": "https://www.pehub.com/frazier-healthcares-lux-infusion-enters-colorado-with-suite-health-acquisition/",
+   "category": "Private Equity & Asset Management",
+   "industries": [
+    "Private Equity & Asset Management",
+    "Healthcare & Life Sciences"
+   ],
+   "deal": {
+    "acquirer": "Frazier Healthcare’s LUX Infusion",
+    "target": "Suite Health",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/frazier-healthcares-lux-infusion-enters-colorado-with-suite-health-acquisition/"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Frazier Healthcare Partners",
+     "slug": "frazier-healthcare-partners-157324"
+    }
+   ],
+   "aum_usd": 7718663169.0,
+   "aum_source": "sec",
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 888,
+   "headline": "BorboletaPro Acquires Dulce Lash Artistry and Becomes Preferred Lash and Brow Education Partner of Paul Mitchell Advanced Education",
+   "url": "https://www.prnewswire.com/news-releases/borboletapro-acquires-dulce-lash-artistry-and-becomes-preferred-lash-and-brow-education-partner-of-paul-mitchell-advanced-education-302910769.html",
+   "category": "Consumer & Retail",
+   "industries": [
+    "Consumer & Retail",
+    "Business Services"
+   ],
+   "deal": {
+    "acquirer": "BorboletaPro",
+    "target": "Dulce Lash Artistry",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/borboletapro-acquires-dulce-lash-artistry-and-becomes-preferred-lash-and-brow-education-partner-of-paul-mitchell-advanced-education-302910769.html"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 903,
+   "headline": "Vista to carve out identity security biz amid digital machine identity boom; General Catalyst, ArchiMed, THL bet on cardiometabolic care",
+   "url": "https://www.pehub.com/vista-to-carve-out-identity-security-biz-amid-digital-machine-identity-boom-general-catalyst-archimed-thl-bet-on-cardiometabolic-care/",
+   "category": "Private Equity & Asset Management",
+   "industries": [
+    "Private Equity & Asset Management",
+    "Technology"
+   ],
+   "deal": {
+    "acquirer": "Vista",
+    "target": null,
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/vista-to-carve-out-identity-security-biz-amid-digital-machine-identity-boom-general-catalyst-archimed-thl-bet-on-cardiometabolic-care/"
+    }
+   ],
+   "firms": [
+    {
+     "name": "General Catalyst",
+     "slug": "general-catalyst-162548"
+    },
+    {
+     "name": "Vista Equity Partners Management",
+     "slug": "vista-equity-partners-management-156973"
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 889,
+   "headline": "EP Technology Group Acquires JBI Technologies Inc., Creating New Opportunities for Growth in Hospitality Technology Services",
+   "url": "https://www.prnewswire.com/news-releases/ep-technology-group-acquires-jbi-technologies-inc-creating-new-opportunities-for-growth-in-hospitality-technology-services-302911232.html",
+   "category": "Technology",
+   "industries": [
+    "Technology",
+    "Consumer & Retail"
+   ],
+   "deal": {
+    "acquirer": "EP Technology Group",
+    "target": "JBI Technologies Inc",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/ep-technology-group-acquires-jbi-technologies-inc-creating-new-opportunities-for-growth-in-hospitality-technology-services-302911232.html"
+    }
+   ],
+   "firms": [
+    {
+     "name": "EP Technology Group",
+     "slug": null
+    },
+    {
+     "name": "JBI Technologies",
+     "slug": null
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 904,
+   "headline": "Bluegem to acquire Italian frozen foods group Rispo from Europe Capital Partners",
+   "url": "https://www.pehub.com/bluegem-to-acquire-italian-frozen-foods-group-rispo-from-europe-capital-partners/",
+   "category": "Private Equity & Asset Management",
+   "industries": [
+    "Private Equity & Asset Management",
+    "Consumer & Retail"
+   ],
+   "deal": {
+    "acquirer": "Bluegem",
+    "target": "Rispo",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/bluegem-to-acquire-italian-frozen-foods-group-rispo-from-europe-capital-partners/"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Europe Capital Partners",
+     "slug": null
+    },
+    {
+     "name": "Rispo Group",
+     "slug": null
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 905,
+   "headline": "ECI Partners’ CSL Group buys US IoT eSIM provider SIMPL Wireless",
+   "url": "https://www.pehub.com/eci-partners-csl-group-buys-us-iot-esim-provider-simpl-wireless/",
+   "category": "Private Equity & Asset Management",
+   "industries": [
+    "Private Equity & Asset Management",
+    "Technology",
+    "Media & Telecom"
+   ],
+   "deal": {
+    "acquirer": "ECI Partners’ CSL Group",
+    "target": "SIMPL Wireless",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/eci-partners-csl-group-buys-us-iot-esim-provider-simpl-wireless/"
+    }
+   ],
+   "firms": [
+    {
+     "name": "ECI Partners CSL Group",
+     "slug": null
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 906,
+   "headline": "Greybull Stewardship acquires El Paso textile recycler Mid-West Textile",
+   "url": "https://www.pehub.com/greybull-stewardship-acquires-el-paso-textile-recycler-mid-west-textile/",
+   "category": "Private Equity & Asset Management",
+   "industries": [
+    "Private Equity & Asset Management",
+    "Industrials"
+   ],
+   "deal": {
+    "acquirer": "Greybull Stewardship",
+    "target": "Mid-West Textile",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/greybull-stewardship-acquires-el-paso-textile-recycler-mid-west-textile/"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Greybull Advisors",
+     "slug": "greybull-advisors-317767"
+    }
+   ],
+   "aum_usd": 513589887.0,
+   "aum_source": "sec",
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 891,
+   "headline": "International Seaways to buy Bruton in $370M deal, adding four VLCCs",
+   "url": "https://seekingalpha.com/news/4653783-international-seaways-to-buy-bruton-in-370m-deal-adding-four-vlccs?source=feed_tag_m_a",
+   "category": "Industrials",
+   "industries": [
+    "Industrials"
+   ],
+   "deal": {
+    "acquirer": "International Seaways",
+    "target": "Bruton",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": 370000000.0
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4653783-international-seaways-to-buy-bruton-in-370m-deal-adding-four-vlccs?source=feed_tag_m_a"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  }
+ ],
+ "more": [],
+ "window_start": "2026-10-16T20:02:55Z",
+ "last_good_digest": null,
+ "footer_note": "Summaries written with Claude from outlet headlines."
+}

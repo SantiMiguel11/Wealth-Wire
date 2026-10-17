@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "gtcr-159545",
+ "name": "Gtcr",
+ "legal_name": "Gtcr",
+ "crd": "159545",
+ "sec_number": "801-73424",
+ "city": "Chicago",
+ "state": "IL",
+ "sec_aum_usd": 48641503665.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/159545",
+ "stories": [
+  {
+   "cluster_id": 911,
+   "headline": "CCC Intelligent Solutions Agrees to $6.1B Take-Private Deal with GTCR, Elliott",
+   "url": "https://www.insurancejournal.com/news/national/2026/10/16/889163.htm",
+   "category": "Insurance",
+   "last_published": "2026-10-16T05:05:41Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Insurance Journal",
+     "url": "https://www.insurancejournal.com/news/national/2026/10/16/889163.htm"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,2527 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-10-17T20:02:55Z",
+ "clusters": [
+  {
+   "id": 882,
+   "headline": "Vista Equity Partners strikes deal to carve out HID’s PKI business",
+   "url": "https://www.pehub.com/vista-equity-partners-strikes-deal-to-carve-out-hids-pki-business/",
+   "category": "Private Equity & Asset Management",
+   "industries": [
+    "Private Equity & Asset Management"
+   ],
+   "deal": {
+    "acquirer": "Vista Equity Partners",
+    "target": "PKI",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-16T16:36:33Z",
+   "last_published": "2026-10-17T09:04:00Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/vista-equity-partners-strikes-deal-to-carve-out-hids-pki-business/",
+     "published_at": "2026-10-16T16:36:33Z",
+     "kind": "feed"
+    },
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/assa-abloy-sells-pki-business-unit-to-vista-equity-partners-302911633.html",
+     "published_at": "2026-10-16T20:20:00Z",
+     "kind": "wire"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Vista Equity Partners Management",
+     "slug": "vista-equity-partners-management-156973",
+     "crd": "156973",
+     "verified": true,
+     "city": "San Francisco",
+     "state": "CA"
+    }
+   ],
+   "states": [
+    "CA"
+   ],
+   "aum_usd": 106022254910.0,
+   "aum_source": "sec",
+   "sec_aum_as_of": "2026-09-01",
+   "press_release": true
+  },
+  {
+   "id": 899,
+   "headline": "SoftBank in talks to buy US security group Allied Universal",
+   "url": "https://www.ft.com/content/e44a17f9-5be0-4a78-89fb-41c4578838ca?syn-25a6b1a6=1",
+   "category": "Business Services",
+   "industries": [
+    "Business Services"
+   ],
+   "deal": {
+    "acquirer": "SoftBank",
+    "target": "Allied Universal",
+    "type": "acquisition",
+    "stage": "rumored",
+    "value_usd": null
+   },
+   "first_published": "2026-10-17T02:07:07Z",
+   "last_published": "2026-10-17T02:07:07Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Financial Times Companies",
+     "url": "https://www.ft.com/content/e44a17f9-5be0-4a78-89fb-41c4578838ca?syn-25a6b1a6=1",
+     "published_at": "2026-10-17T02:07:07Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 886,
+   "headline": "Arity to Acquire INRIX, Advancing a Connected Vision for the Future of Transportation",
+   "url": "https://www.prnewswire.com/news-releases/arity-to-acquire-inrix-advancing-a-connected-vision-for-the-future-of-transportation-302911491.html",
+   "category": "Industrials",
+   "industries": [
+    "Industrials"
+   ],
+   "deal": {
+    "acquirer": "Arity",
+    "target": "INRIX",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-16T17:14:00Z",
+   "last_published": "2026-10-16T17:14:00Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/arity-to-acquire-inrix-advancing-a-connected-vision-for-the-future-of-transportation-302911491.html",
+     "published_at": "2026-10-16T17:14:00Z",
+     "kind": "wire"
+    }
+   ],
+   "firms": [],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": true
+  },
+  {
+   "id": 887,
+   "headline": "Parkview Health announces agreement to acquire Ovation Healthcare to strengthen community healthcare nationwide, advance local affordability",
+   "url": "https://www.prnewswire.com/news-releases/parkview-health-announces-agreement-to-acquire-ovation-healthcare-to-strengthen-community-healthcare-nationwide-advance-local-affordability-302911410.html",
+   "category": "Healthcare & Life Sciences",
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "deal": {
+    "acquirer": "Parkview Health",
+    "target": "Ovation Healthcare",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-16T15:48:00Z",
+   "last_published": "2026-10-16T15:48:00Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/parkview-health-announces-agreement-to-acquire-ovation-healthcare-to-strengthen-community-healthcare-nationwide-advance-local-affordability-302911410.html",
+     "published_at": "2026-10-16T15:48:00Z",
+     "kind": "wire"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Parkview",
+     "slug": "parkview-160171",
+     "crd": "160171",
+     "verified": true,
+     "city": "Zurich",
+     "state": null
+    }
+   ],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": true
+  },
+  {
+   "id": 901,
+   "headline": "Gryphon’s Vivify Specialty Ingredients acquires botanical extracts supplier AuNutra Industries",
+   "url": "https://www.pehub.com/gryphons-vivify-specialty-ingredients-acquires-botanical-extracts-supplier-aunutra-industries/",
+   "category": "Private Equity & Asset Management",
+   "industries": [
+    "Private Equity & Asset Management",
+    "Consumer & Retail"
+   ],
+   "deal": {
+    "acquirer": "Gryphon’s Vivify Specialty Ingredients",
+    "target": "AuNutra Industries",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-16T15:11:21Z",
+   "last_published": "2026-10-16T15:11:21Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/gryphons-vivify-specialty-ingredients-acquires-botanical-extracts-supplier-aunutra-industries/",
+     "published_at": "2026-10-16T15:11:21Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Gryphon Advisors",
+     "slug": "gryphon-advisors-160185",
+     "crd": "160185",
+     "verified": true,
+     "city": "San Francisco",
+     "state": "CA"
+    }
+   ],
+   "states": [
+    "CA"
+   ],
+   "aum_usd": 9317854280.0,
+   "aum_source": "sec",
+   "sec_aum_as_of": "2026-09-01",
+   "press_release": false
+  },
+  {
+   "id": 890,
+   "headline": "Proofpoint to acquire Varonis Systems in $6.3B all-cash deal",
+   "url": "https://seekingalpha.com/news/4653625-proofpoint-to-acquire-varonis-systems-in-6_3b-all-cash-deal?source=feed_tag_m_a",
+   "category": "Private Equity & Asset Management",
+   "industries": [
+    "Private Equity & Asset Management",
+    "Technology"
+   ],
+   "deal": {
+    "acquirer": "Proofpoint",
+    "target": "Varonis Systems",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": 6300000000.0
+   },
+   "first_published": "2026-10-15T20:27:44Z",
+   "last_published": "2026-10-16T15:07:33Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4653625-proofpoint-to-acquire-varonis-systems-in-6_3b-all-cash-deal?source=feed_tag_m_a",
+     "published_at": "2026-10-15T20:27:44Z",
+     "kind": "feed"
+    },
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/thoma-bravos-proofpoint-inks-6-3bn-take-private-of-data-security-firm-varonis/",
+     "published_at": "2026-10-16T11:25:29Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Thoma Bravo",
+     "slug": "thoma-bravo-157041",
+     "crd": "157041",
+     "verified": true,
+     "city": "Chicago",
+     "state": "IL"
+    },
+    {
+     "name": "Wedbush Securities",
+     "slug": "wedbush-securities-877",
+     "crd": "877",
+     "verified": true,
+     "city": "Pasadena",
+     "state": "CA"
+    }
+   ],
+   "states": [
+    "CA",
+    "IL"
+   ],
+   "aum_usd": 182937300000.0,
+   "aum_source": "sec",
+   "sec_aum_as_of": "2026-09-01",
+   "press_release": false
+  },
+  {
+   "id": 902,
+   "headline": "Frazier Healthcare’s LUX Infusion enters Colorado with Suite Health acquisition",
+   "url": "https://www.pehub.com/frazier-healthcares-lux-infusion-enters-colorado-with-suite-health-acquisition/",
+   "category": "Private Equity & Asset Management",
+   "industries": [
+    "Private Equity & Asset Management",
+    "Healthcare & Life Sciences"
+   ],
+   "deal": {
+    "acquirer": "Frazier Healthcare’s LUX Infusion",
+    "target": "Suite Health",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-16T14:31:57Z",
+   "last_published": "2026-10-16T14:31:57Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/frazier-healthcares-lux-infusion-enters-colorado-with-suite-health-acquisition/",
+     "published_at": "2026-10-16T14:31:57Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Frazier Healthcare Partners",
+     "slug": "frazier-healthcare-partners-157324",
+     "crd": "157324",
+     "verified": true,
+     "city": "Seattle",
+     "state": "WA"
+    }
+   ],
+   "states": [
+    "WA"
+   ],
+   "aum_usd": 7718663169.0,
+   "aum_source": "sec",
+   "sec_aum_as_of": "2026-09-01",
+   "press_release": false
+  },
+  {
+   "id": 888,
+   "headline": "BorboletaPro Acquires Dulce Lash Artistry and Becomes Preferred Lash and Brow Education Partner of Paul Mitchell Advanced Education",
+   "url": "https://www.prnewswire.com/news-releases/borboletapro-acquires-dulce-lash-artistry-and-becomes-preferred-lash-and-brow-education-partner-of-paul-mitchell-advanced-education-302910769.html",
+   "category": "Consumer & Retail",
+   "industries": [
+    "Consumer & Retail",
+    "Business Services"
+   ],
+   "deal": {
+    "acquirer": "BorboletaPro",
+    "target": "Dulce Lash Artistry",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-16T14:04:00Z",
+   "last_published": "2026-10-16T14:04:00Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/borboletapro-acquires-dulce-lash-artistry-and-becomes-preferred-lash-and-brow-education-partner-of-paul-mitchell-advanced-education-302910769.html",
+     "published_at": "2026-10-16T14:04:00Z",
+     "kind": "wire"
+    }
+   ],
+   "firms": [],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": true
+  },
+  {
+   "id": 903,
+   "headline": "Vista to carve out identity security biz amid digital machine identity boom; General Catalyst, ArchiMed, THL bet on cardiometabolic care",
+   "url": "https://www.pehub.com/vista-to-carve-out-identity-security-biz-amid-digital-machine-identity-boom-general-catalyst-archimed-thl-bet-on-cardiometabolic-care/",
+   "category": "Private Equity & Asset Management",
+   "industries": [
+    "Private Equity & Asset Management",
+    "Technology"
+   ],
+   "deal": {
+    "acquirer": "Vista",
+    "target": null,
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-16T13:35:09Z",
+   "last_published": "2026-10-16T13:35:09Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/vista-to-carve-out-identity-security-biz-amid-digital-machine-identity-boom-general-catalyst-archimed-thl-bet-on-cardiometabolic-care/",
+     "published_at": "2026-10-16T13:35:09Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "General Catalyst",
+     "slug": "general-catalyst-162548",
+     "crd": "162548",
+     "verified": true,
+     "city": "Cambridge",
+     "state": "MA"
+    },
+    {
+     "name": "Vista Equity Partners Management",
+     "slug": "vista-equity-partners-management-156973",
+     "crd": "156973",
+     "verified": true,
+     "city": "San Francisco",
+     "state": "CA"
+    }
+   ],
+   "states": [
+    "CA",
+    "MA"
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 889,
+   "headline": "EP Technology Group Acquires JBI Technologies Inc., Creating New Opportunities for Growth in Hospitality Technology Services",
+   "url": "https://www.prnewswire.com/news-releases/ep-technology-group-acquires-jbi-technologies-inc-creating-new-opportunities-for-growth-in-hospitality-technology-services-302911232.html",
+   "category": "Technology",
+   "industries": [
+    "Technology",
+    "Consumer & Retail"
+   ],
+   "deal": {
+    "acquirer": "EP Technology Group",
+    "target": "JBI Technologies Inc",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-16T13:00:00Z",
+   "last_published": "2026-10-16T13:00:00Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/ep-technology-group-acquires-jbi-technologies-inc-creating-new-opportunities-for-growth-in-hospitality-technology-services-302911232.html",
+     "published_at": "2026-10-16T13:00:00Z",
+     "kind": "wire"
+    }
+   ],
+   "firms": [
+    {
+     "name": "EP Technology Group",
+     "slug": null,
+     "crd": null,
+     "verified": false,
+     "city": null,
+     "state": null
+    },
+    {
+     "name": "JBI Technologies",
+     "slug": null,
+     "crd": null,
+     "verified": false,
+     "city": null,
+     "state": null
+    }
+   ],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": true
+  },
+  {
+   "id": 904,
+   "headline": "Bluegem to acquire Italian frozen foods group Rispo from Europe Capital Partners",
+   "url": "https://www.pehub.com/bluegem-to-acquire-italian-frozen-foods-group-rispo-from-europe-capital-partners/",
+   "category": "Private Equity & Asset Management",
+   "industries": [
+    "Private Equity & Asset Management",
+    "Consumer & Retail"
+   ],
+   "deal": {
+    "acquirer": "Bluegem",
+    "target": "Rispo",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-16T12:18:58Z",
+   "last_published": "2026-10-16T12:18:58Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/bluegem-to-acquire-italian-frozen-foods-group-rispo-from-europe-capital-partners/",
+     "published_at": "2026-10-16T12:18:58Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Europe Capital Partners",
+     "slug": null,
+     "crd": null,
+     "verified": false,
+     "city": null,
+     "state": null
+    },
+    {
+     "name": "Rispo Group",
+     "slug": null,
+     "crd": null,
+     "verified": false,
+     "city": null,
+     "state": null
+    }
+   ],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 905,
+   "headline": "ECI Partners’ CSL Group buys US IoT eSIM provider SIMPL Wireless",
+   "url": "https://www.pehub.com/eci-partners-csl-group-buys-us-iot-esim-provider-simpl-wireless/",
+   "category": "Private Equity & Asset Management",
+   "industries": [
+    "Private Equity & Asset Management",
+    "Technology",
+    "Media & Telecom"
+   ],
+   "deal": {
+    "acquirer": "ECI Partners’ CSL Group",
+    "target": "SIMPL Wireless",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-16T12:10:50Z",
+   "last_published": "2026-10-16T12:10:50Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/eci-partners-csl-group-buys-us-iot-esim-provider-simpl-wireless/",
+     "published_at": "2026-10-16T12:10:50Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "ECI Partners CSL Group",
+     "slug": null,
+     "crd": null,
+     "verified": false,
+     "city": null,
+     "state": null
+    }
+   ],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 906,
+   "headline": "Greybull Stewardship acquires El Paso textile recycler Mid-West Textile",
+   "url": "https://www.pehub.com/greybull-stewardship-acquires-el-paso-textile-recycler-mid-west-textile/",
+   "category": "Private Equity & Asset Management",
+   "industries": [
+    "Private Equity & Asset Management",
+    "Industrials"
+   ],
+   "deal": {
+    "acquirer": "Greybull Stewardship",
+    "target": "Mid-West Textile",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-16T12:05:06Z",
+   "last_published": "2026-10-16T12:05:06Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/greybull-stewardship-acquires-el-paso-textile-recycler-mid-west-textile/",
+     "published_at": "2026-10-16T12:05:06Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Greybull Advisors",
+     "slug": "greybull-advisors-317767",
+     "crd": "317767",
+     "verified": true,
+     "city": "Jackson",
+     "state": "WY"
+    }
+   ],
+   "states": [
+    "WY"
+   ],
+   "aum_usd": 513589887.0,
+   "aum_source": "sec",
+   "sec_aum_as_of": "2026-09-01",
+   "press_release": false
+  },
+  {
+   "id": 891,
+   "headline": "International Seaways to buy Bruton in $370M deal, adding four VLCCs",
+   "url": "https://seekingalpha.com/news/4653783-international-seaways-to-buy-bruton-in-370m-deal-adding-four-vlccs?source=feed_tag_m_a",
+   "category": "Industrials",
+   "industries": [
+    "Industrials"
+   ],
+   "deal": {
+    "acquirer": "International Seaways",
+    "target": "Bruton",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": 370000000.0
+   },
+   "first_published": "2026-10-16T11:53:22Z",
+   "last_published": "2026-10-16T11:53:22Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4653783-international-seaways-to-buy-bruton-in-370m-deal-adding-four-vlccs?source=feed_tag_m_a",
+     "published_at": "2026-10-16T11:53:22Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 892,
+   "headline": "Truist Financial Q3 earnings miss, hit by loan sale; agrees to sell Lightstream to Carlyle",
+   "url": "https://seekingalpha.com/news/4653743-truist-financial-q3-earnings-miss-hit-by-loan-sale-agrees-to-sell-lightstream-to-carlyle?source=feed_tag_m_a",
+   "category": "Banking",
+   "industries": [
+    "Banking",
+    "Private Equity & Asset Management"
+   ],
+   "deal": {
+    "acquirer": "Carlyle",
+    "target": "Lightstream",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-16T11:10:38Z",
+   "last_published": "2026-10-16T11:10:38Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4653743-truist-financial-q3-earnings-miss-hit-by-loan-sale-agrees-to-sell-lightstream-to-carlyle?source=feed_tag_m_a",
+     "published_at": "2026-10-16T11:10:38Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Truist Advisory Services",
+     "slug": "truist-advisory-services-283390",
+     "crd": "283390",
+     "verified": true,
+     "city": "Atlanta",
+     "state": "GA"
+    },
+    {
+     "name": "Carlyle Group",
+     "slug": "carlyle-group-111128",
+     "crd": "111128",
+     "verified": true,
+     "city": "Washington",
+     "state": "DC"
+    }
+   ],
+   "states": [
+    "DC",
+    "GA"
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 911,
+   "headline": "CCC Intelligent Solutions Agrees to $6.1B Take-Private Deal with GTCR, Elliott",
+   "url": "https://www.insurancejournal.com/news/national/2026/10/16/889163.htm",
+   "category": "Insurance",
+   "industries": [
+    "Insurance",
+    "Private Equity & Asset Management"
+   ],
+   "deal": {
+    "acquirer": null,
+    "target": "CCC Intelligent Solutions",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": 6100000000.0
+   },
+   "first_published": "2026-10-16T05:05:41Z",
+   "last_published": "2026-10-16T05:05:41Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Insurance Journal",
+     "url": "https://www.insurancejournal.com/news/national/2026/10/16/889163.htm",
+     "published_at": "2026-10-16T05:05:41Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Gtcr",
+     "slug": "gtcr-159545",
+     "crd": "159545",
+     "verified": true,
+     "city": "Chicago",
+     "state": "IL"
+    },
+    {
+     "name": "Elliott Investment Management",
+     "slug": "elliott-investment-management-307151",
+     "crd": "307151",
+     "verified": true,
+     "city": "West Palm Beach",
+     "state": "FL"
+    }
+   ],
+   "states": [
+    "FL",
+    "IL"
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 894,
+   "headline": "UniCredit wins ECB approval to acquire Commerzbank",
+   "url": "https://seekingalpha.com/news/4653561-unicredit-wins-ecb-approval-to-acquire-commerzbank?source=feed_tag_m_a",
+   "category": "Banking",
+   "industries": [
+    "Banking"
+   ],
+   "deal": {
+    "acquirer": "UniCredit",
+    "target": "Commerzbank",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-15T18:52:08Z",
+   "last_published": "2026-10-15T18:52:08Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4653561-unicredit-wins-ecb-approval-to-acquire-commerzbank?source=feed_tag_m_a",
+     "published_at": "2026-10-15T18:52:08Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 912,
+   "headline": "Zocdoc acquires health tech company Sohar Health for automated benefits eligibility checks",
+   "url": "https://www.fiercehealthcare.com/ai-and-machine-learning/zodoc-acquires-health-tech-company-sohar-health-automated-benefits",
+   "category": "Healthcare & Life Sciences",
+   "industries": [
+    "Healthcare & Life Sciences",
+    "Technology"
+   ],
+   "deal": {
+    "acquirer": "Zocdoc",
+    "target": "Sohar Health",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-14T07:00:00Z",
+   "last_published": "2026-10-15T16:16:10Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "Fierce Healthcare",
+     "url": "https://www.fiercehealthcare.com/ai-and-machine-learning/zodoc-acquires-health-tech-company-sohar-health-automated-benefits",
+     "published_at": "2026-10-14T07:00:00Z",
+     "kind": "feed"
+    },
+    {
+     "name": "Healthcare Dive",
+     "url": "https://www.healthcaredive.com/news/zocdoc-acquires-sohar-health-in-latest-push-to-scale-tech-infrastructure/833129/",
+     "published_at": "2026-10-15T16:16:10Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 913,
+   "headline": "Rush, Endeavor to merge into Illinois powerhouse",
+   "url": "https://www.healthcaredive.com/news/rush-endeavor-to-merge-illinois-hospital-powerhouse/833089/",
+   "category": "Healthcare & Life Sciences",
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "deal": {
+    "acquirer": "Rush",
+    "target": "Endeavor",
+    "type": "merger",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-15T13:22:33Z",
+   "last_published": "2026-10-15T13:22:33Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Healthcare Dive",
+     "url": "https://www.healthcaredive.com/news/rush-endeavor-to-merge-illinois-hospital-powerhouse/833089/",
+     "published_at": "2026-10-15T13:22:33Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 895,
+   "headline": "Labcorp to buy select assets of OPKO’s BioReference Health for up to $872M",
+   "url": "https://seekingalpha.com/news/4653328-labcorp-buy-assets-opkos-bioreference-health?source=feed_tag_m_a",
+   "category": "Healthcare & Life Sciences",
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "deal": {
+    "acquirer": "Labcorp",
+    "target": "OPKO’s BioReference Health",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": 872000000.0
+   },
+   "first_published": "2026-10-15T12:02:25Z",
+   "last_published": "2026-10-15T12:02:25Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4653328-labcorp-buy-assets-opkos-bioreference-health?source=feed_tag_m_a",
+     "published_at": "2026-10-15T12:02:25Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 896,
+   "headline": "AtlasClear to acquire Ark Financial in deal worth up to $24.5M",
+   "url": "https://seekingalpha.com/news/4653335-atlasclear-to-acquire-ark-financial-in-deal-worth-up-to-245m?source=feed_tag_m_a",
+   "category": "Other",
+   "industries": [
+    "Other"
+   ],
+   "deal": {
+    "acquirer": "AtlasClear",
+    "target": "Ark Financial",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": 24500000.0
+   },
+   "first_published": "2026-10-15T11:56:50Z",
+   "last_published": "2026-10-15T11:56:50Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4653335-atlasclear-to-acquire-ark-financial-in-deal-worth-up-to-245m?source=feed_tag_m_a",
+     "published_at": "2026-10-15T11:56:50Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Ark Financial",
+     "slug": null,
+     "crd": null,
+     "verified": false,
+     "city": null,
+     "state": null
+    }
+   ],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 897,
+   "headline": "Canada's Cohere signs deal to acquire AI cybersecurity startup AISLE",
+   "url": "https://seekingalpha.com/news/4653318-canadas-cohere-signs-deal-to-acquire-ai-cybersecurity-startup-aisle?source=feed_tag_m_a",
+   "category": "Technology",
+   "industries": [
+    "Technology"
+   ],
+   "deal": {
+    "acquirer": "Cohere",
+    "target": "AISLE",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-15T11:16:29Z",
+   "last_published": "2026-10-15T11:16:29Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4653318-canadas-cohere-signs-deal-to-acquire-ai-cybersecurity-startup-aisle?source=feed_tag_m_a",
+     "published_at": "2026-10-15T11:16:29Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 898,
+   "headline": "AT&T to sell Mexico wireless business to Televisa-Fintech consortium for $2B",
+   "url": "https://seekingalpha.com/news/4653262-att-to-sell-mexico-wireless-business-to-televisa-fintech-consortium-for-2b?source=feed_tag_m_a",
+   "category": "Fintech & Payments",
+   "industries": [
+    "Fintech & Payments",
+    "Media & Telecom"
+   ],
+   "deal": {
+    "acquirer": "Televisa-Fintech",
+    "target": "AT&T’s Mexico wireless business",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": 2000000000.0
+   },
+   "first_published": "2026-10-15T08:59:09Z",
+   "last_published": "2026-10-15T08:59:09Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4653262-att-to-sell-mexico-wireless-business-to-televisa-fintech-consortium-for-2b?source=feed_tag_m_a",
+     "published_at": "2026-10-15T08:59:09Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 752,
+   "headline": "NYC-Based Tax Firm CohnReznick to Add $8B West Coast Wealth Practice",
+   "url": "https://www.wealthmanagement.com/ria-news/nyc-based-tax-firm-cohnreznick-to-add-8b-west-coast-based-wealth-practice",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs",
+    "Business Services"
+   ],
+   "deal": {
+    "acquirer": "CohnReznick",
+    "target": null,
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-14T14:55:20Z",
+   "last_published": "2026-10-14T14:55:20Z",
+   "first_seen": "2026-10-14T17:57:38Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/nyc-based-tax-firm-cohnreznick-to-add-8b-west-coast-based-wealth-practice",
+     "published_at": "2026-10-14T14:55:20Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "West Coast Wealth",
+     "slug": null,
+     "crd": null,
+     "verified": false,
+     "city": null,
+     "state": null
+    },
+    {
+     "name": "Aldrich Wealth",
+     "slug": "aldrich-wealth-147200",
+     "crd": "147200",
+     "verified": true,
+     "city": "Lake Oswego",
+     "state": "OR"
+    }
+   ],
+   "states": [
+    "OR"
+   ],
+   "aum_usd": 8000000000.0,
+   "aum_source": "headline",
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 914,
+   "headline": "MultiCare, Samaritan combination to close in November",
+   "url": "https://www.healthcaredive.com/news/multicare-samaritan-combination-close-november/832973/",
+   "category": "Healthcare & Life Sciences",
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "deal": {
+    "acquirer": "MultiCare",
+    "target": "Samaritan",
+    "type": "merger",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-14T14:49:50Z",
+   "last_published": "2026-10-14T14:49:50Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Healthcare Dive",
+     "url": "https://www.healthcaredive.com/news/multicare-samaritan-combination-close-november/832973/",
+     "published_at": "2026-10-14T14:49:50Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 759,
+   "headline": "Captrust Adds $3B Hoge-Barrett Group from Truist",
+   "url": "https://www.wealthmanagement.com/ria-news/captrust-adds-3-billion-hoge-barrett-group",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs",
+    "Banking"
+   ],
+   "deal": {
+    "acquirer": "Captrust",
+    "target": "Hoge-Barrett Group",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-14T10:00:00Z",
+   "last_published": "2026-10-14T10:00:00Z",
+   "first_seen": "2026-10-14T17:57:38Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/captrust-adds-3-billion-hoge-barrett-group",
+     "published_at": "2026-10-14T10:00:00Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Captrust",
+     "slug": "captrust-175112",
+     "crd": "175112",
+     "verified": true,
+     "city": "Raleigh",
+     "state": "NC"
+    },
+    {
+     "name": "H Financial Management",
+     "slug": "h-financial-management-148209",
+     "crd": "148209",
+     "verified": true,
+     "city": "Canonsburg",
+     "state": "PA"
+    },
+    {
+     "name": "Truist Advisory Services",
+     "slug": "truist-advisory-services-283390",
+     "crd": "283390",
+     "verified": true,
+     "city": "Atlanta",
+     "state": "GA"
+    }
+   ],
+   "states": [
+    "GA",
+    "NC",
+    "PA"
+   ],
+   "aum_usd": 3000000000.0,
+   "aum_source": "headline",
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 916,
+   "headline": "Agilent spends $240M upfront to buy digital pathology specialist Proscia",
+   "url": "https://www.fiercebiotech.com/medtech/agilent-spends-240m-upfront-buy-digital-pathology-specialist-proscia",
+   "category": "Healthcare & Life Sciences",
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "deal": {
+    "acquirer": "Agilent",
+    "target": "Proscia",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": 240000000.0
+   },
+   "first_published": "2026-10-14T07:00:00Z",
+   "last_published": "2026-10-14T07:00:00Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Fierce Biotech",
+     "url": "https://www.fiercebiotech.com/medtech/agilent-spends-240m-upfront-buy-digital-pathology-specialist-proscia",
+     "published_at": "2026-10-14T07:00:00Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 740,
+   "headline": "Waverly, Apella buy $412M in RIA assets across Oregon, Northeast",
+   "url": "https://www.investmentnews.com/ria-news/waverly-apella-buy-412m-in-ria-assets-across-oregon-northeast/268581",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "deal": {
+    "acquirer": "Waverly",
+    "target": null,
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-13T20:46:29Z",
+   "last_published": "2026-10-13T20:46:29Z",
+   "first_seen": "2026-10-14T04:42:40Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/waverly-apella-buy-412m-in-ria-assets-across-oregon-northeast/268581",
+     "published_at": "2026-10-13T20:46:29Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Waverly Advisors",
+     "slug": "waverly-advisors-115332",
+     "crd": "115332",
+     "verified": true,
+     "city": "Birmingham",
+     "state": "AL"
+    },
+    {
+     "name": "Apella Wealth",
+     "slug": "apella-wealth-171106",
+     "crd": "171106",
+     "verified": true,
+     "city": "West Hartford",
+     "state": "CT"
+    }
+   ],
+   "states": [
+    "AL",
+    "CT"
+   ],
+   "aum_usd": 412000000.0,
+   "aum_source": "headline",
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 908,
+   "headline": "Bumble agrees to a $1.3B acquisition deal as online dating faces a reset",
+   "url": "https://techcrunch.com/2026/10/13/bumble-agrees-to-a-1-3b-acquisition-deal-as-online-dating-faces-a-reset/",
+   "category": "Technology",
+   "industries": [
+    "Technology",
+    "Consumer & Retail"
+   ],
+   "deal": {
+    "acquirer": null,
+    "target": "Bumble",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": 1300000000.0
+   },
+   "first_published": "2026-10-13T14:25:48Z",
+   "last_published": "2026-10-13T14:25:48Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "TechCrunch M&A",
+     "url": "https://techcrunch.com/2026/10/13/bumble-agrees-to-a-1-3b-acquisition-deal-as-online-dating-faces-a-reset/",
+     "published_at": "2026-10-13T14:25:48Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 909,
+   "headline": "Cloudflare acquires Deno to improve its Workers programming model",
+   "url": "https://techcrunch.com/2026/10/10/cloudflare-acquires-deno-to-improve-its-workers-programming-model/",
+   "category": "Technology",
+   "industries": [
+    "Technology"
+   ],
+   "deal": {
+    "acquirer": "Cloudflare",
+    "target": "Deno",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-10T16:25:42Z",
+   "last_published": "2026-10-10T16:25:42Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "TechCrunch M&A",
+     "url": "https://techcrunch.com/2026/10/10/cloudflare-acquires-deno-to-improve-its-workers-programming-model/",
+     "published_at": "2026-10-10T16:25:42Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 674,
+   "headline": "RIA moves: Carson Group enters New Jersey with $410M Foran Financial Group deal",
+   "url": "https://www.investmentnews.com/goria/practice-management/ria-moves-carson-group-enters-new-jersey-with-410m-foran-financial-group-deal/268552",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "deal": {
+    "acquirer": "Carson Group",
+    "target": "Foran Financial Group",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-09T10:36:00Z",
+   "last_published": "2026-10-09T10:36:00Z",
+   "first_seen": "2026-10-09T18:45:52Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/goria/practice-management/ria-moves-carson-group-enters-new-jersey-with-410m-foran-financial-group-deal/268552",
+     "published_at": "2026-10-09T10:36:00Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Carson Group Investing",
+     "slug": "carson-group-investing-291744",
+     "crd": "291744",
+     "verified": true,
+     "city": "Omaha",
+     "state": "NE"
+    },
+    {
+     "name": "Foran Financial Group",
+     "slug": null,
+     "crd": null,
+     "verified": false,
+     "city": null,
+     "state": null
+    }
+   ],
+   "states": [
+    "NE"
+   ],
+   "aum_usd": 410000000.0,
+   "aum_source": "headline",
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 527,
+   "headline": "Schwab sells alts custodian Forge Trust to Alto, citing capability overlap",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNNHBUZmdyWXcwTkhJOExRVXdPRTB5YmY4OENLU2JRS3VGU3huenptcXFwUktrM1c1VTRNcy1zRERmT19NSnR1Ri14Ym9HY3lhX3hGRFF4eVBUdFNwVGtmODBFSWlUN2w1VkJqbTVYZHdTNGt2bnpiYjlDd3oxZUxCNEFTZ2FpZzk2NmFwcmxETTlCTG5hcHpFd0JycmF6RXF2T1Z2SmJQcTVlRERQMTB6MXh3?oc=5",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "deal": {
+    "acquirer": "Alto",
+    "target": "Forge Trust",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-06T15:32:56Z",
+   "last_published": "2026-10-07T19:00:15Z",
+   "first_seen": "2026-10-06T18:53:04Z",
+   "outlet_count": 3,
+   "sources": [
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNNHBUZmdyWXcwTkhJOExRVXdPRTB5YmY4OENLU2JRS3VGU3huenptcXFwUktrM1c1VTRNcy1zRERmT19NSnR1Ri14Ym9HY3lhX3hGRFF4eVBUdFNwVGtmODBFSWlUN2w1VkJqbTVYZHdTNGt2bnpiYjlDd3oxZUxCNEFTZ2FpZzk2NmFwcmxETTlCTG5hcHpFd0JycmF6RXF2T1Z2SmJQcTVlRERQMTB6MXh3?oc=5",
+     "published_at": "2026-10-06T15:32:56Z",
+     "kind": "google_news"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/retirement-planning/alto-to-buy-forge-trust-from-schwab-in-self-directed-ira-push/268489",
+     "published_at": "2026-10-06T18:41:09Z",
+     "kind": "feed"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/alternative-investments/schwab-sells-forge-trust-to-self-directed-ira-platform-alto",
+     "published_at": "2026-10-07T19:00:15Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Charles Schwab",
+     "slug": "charles-schwab-5393",
+     "crd": "5393",
+     "verified": true,
+     "city": "San Francisco",
+     "state": "CA"
+    },
+    {
+     "name": "Forge Global Advisors",
+     "slug": "forge-global-advisors-284722",
+     "crd": "284722",
+     "verified": true,
+     "city": "San Francisco",
+     "state": "CA"
+    }
+   ],
+   "states": [
+    "CA"
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 581,
+   "headline": "AlphaCore adds $400M Blue Rock in Mid-Atlantic push",
+   "url": "https://www.investmentnews.com/ria-news/alphacore-adds-400m-blue-rock-in-mid-atlantic-push/268514",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "deal": {
+    "acquirer": "AlphaCore",
+    "target": "Blue Rock",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-07T16:02:59Z",
+   "last_published": "2026-10-07T16:02:59Z",
+   "first_seen": "2026-10-07T19:18:28Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/alphacore-adds-400m-blue-rock-in-mid-atlantic-push/268514",
+     "published_at": "2026-10-07T16:02:59Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Alphacore Capital",
+     "slug": "alphacore-capital-174346",
+     "crd": "174346",
+     "verified": true,
+     "city": "La Jolla",
+     "state": "CA"
+    },
+    {
+     "name": "Blue Rock Financial Group",
+     "slug": "blue-rock-financial-group-298558",
+     "crd": "298558",
+     "verified": true,
+     "city": "Rehoboth Beach",
+     "state": "DE"
+    }
+   ],
+   "states": [
+    "CA",
+    "DE"
+   ],
+   "aum_usd": 400000000.0,
+   "aum_source": "headline",
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 522,
+   "headline": "Aspen Standard Wealth buys $1B Louisiana RIA Cullen Investment Group",
+   "url": "https://www.investmentnews.com/ria-news/aspen-standard-wealth-buys-1b-louisiana-ria-cullen-investment-group/268482",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "deal": {
+    "acquirer": "Aspen Standard Wealth",
+    "target": "Cullen Investment Group",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-06T15:01:21Z",
+   "last_published": "2026-10-07T14:10:41Z",
+   "first_seen": "2026-10-06T18:53:04Z",
+   "outlet_count": 3,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/aspen-standard-wealth-buys-1b-louisiana-ria-cullen-investment-group/268482",
+     "published_at": "2026-10-06T15:01:21Z",
+     "kind": "feed"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/aspen-standard-wealth-acquires-louisiana-ria",
+     "published_at": "2026-10-06T17:05:29Z",
+     "kind": "feed"
+    },
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNWm53aklCV2o5ajMwR21ObzliV0VjYzg4dWdMaS12QzhNeDFCOTBZXzdDZGhFZHJXNnNKcEdVZmsxZmNxZ0FqY2RGLVlmYlVyazE1b3ZyV25KSWIyVnZ4V3lkY01rSlc4TS1VNUxNNU41OHlWVVBEX2I2eS1TMTFWMUVmTENYNTIyeWxOTVdhXzUyMXBaTHJvNHVOZlVHOGtURjYzZmVMeVZoXzc2d2I1V0FyU3l1S0tDN0t1QU1rVHVkTmRTcG80Mkd3R0NLTEtJaUxkOHlVN1E1akU?oc=5",
+     "published_at": "2026-10-06T18:37:10Z",
+     "kind": "google_news"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Cullen Investment Group",
+     "slug": "cullen-investment-group-18266",
+     "crd": "18266",
+     "verified": true,
+     "city": "Lafayette",
+     "state": "LA"
+    },
+    {
+     "name": "Aspen Standard Wealth",
+     "slug": null,
+     "crd": null,
+     "verified": false,
+     "city": null,
+     "state": null
+    },
+    {
+     "name": "Bluespring Wealth Management",
+     "slug": "bluespring-wealth-management-152667",
+     "crd": "152667",
+     "verified": true,
+     "city": "Austin",
+     "state": "TX"
+    }
+   ],
+   "states": [
+    "LA",
+    "TX"
+   ],
+   "aum_usd": 1000000000.0,
+   "aum_source": "headline",
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 910,
+   "headline": "Paramount closes historic Warner Bros. merger to form Skydance",
+   "url": "https://techcrunch.com/2026/10/06/paramount-closes-historic-warner-bros-merger-to-form-skydance/",
+   "category": "Technology",
+   "industries": [
+    "Technology",
+    "Media & Telecom"
+   ],
+   "deal": {
+    "acquirer": "Paramount",
+    "target": "Warner Bros",
+    "type": "acquisition",
+    "stage": "completed",
+    "value_usd": null
+   },
+   "first_published": "2026-10-06T13:57:32Z",
+   "last_published": "2026-10-06T13:57:32Z",
+   "first_seen": "2026-10-17T20:00:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "TechCrunch M&A",
+     "url": "https://techcrunch.com/2026/10/06/paramount-closes-historic-warner-bros-merger-to-form-skydance/",
+     "published_at": "2026-10-06T13:57:32Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 475,
+   "headline": "Cresset Aims for $13.1B Trust Business with National Advisors Trust Deal",
+   "url": "https://www.wealthmanagement.com/ria-news/cresset-aims-for-13-1b-trust-business-with-deal-for-national-advisors-trust",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "deal": {
+    "acquirer": "Cresset",
+    "target": "National Advisors Trust",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-05T21:20:34Z",
+   "last_published": "2026-10-05T21:20:34Z",
+   "first_seen": "2026-10-06T06:09:34Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/cresset-aims-for-13-1b-trust-business-with-deal-for-national-advisors-trust",
+     "published_at": "2026-10-05T21:20:34Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 390,
+   "headline": "Cerity Partners adds Bay Area, Minneapolis firms in latest double-deal",
+   "url": "https://www.investmentnews.com/ria-news/cerity-partners-adds-bay-area-minneapolis-firms-in-latest-double-deal/268437",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "deal": {
+    "acquirer": "Cerity Partners",
+    "target": null,
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-01T17:54:00Z",
+   "last_published": "2026-10-01T18:00:11Z",
+   "first_seen": "2026-10-01T18:49:05Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/cerity-partners-adds-bay-area-minneapolis-firms-in-latest-double-deal/268437",
+     "published_at": "2026-10-01T17:54:00Z",
+     "kind": "feed"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/cerity-partners-merges-with-two-rias-worth-17b",
+     "published_at": "2026-10-01T18:00:11Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Cerity Partners",
+     "slug": "cerity-partners-151559",
+     "crd": "151559",
+     "verified": true,
+     "city": "New York",
+     "state": "NY"
+    },
+    {
+     "name": "Cornerstone Capital",
+     "slug": "cornerstone-capital-105396",
+     "crd": "105396",
+     "verified": true,
+     "city": "Palo Alto",
+     "state": "CA"
+    },
+    {
+     "name": "Echo Wealth Management",
+     "slug": "echo-wealth-management-174136",
+     "crd": "174136",
+     "verified": true,
+     "city": "Plymouth",
+     "state": "MN"
+    },
+    {
+     "name": "Compass Wealth",
+     "slug": "compass-wealth-282420",
+     "crd": "282420",
+     "verified": true,
+     "city": "St. Louis",
+     "state": "MO"
+    }
+   ],
+   "states": [
+    "CA",
+    "MN",
+    "MO",
+    "NY"
+   ],
+   "aum_usd": 1700000000.0,
+   "aum_source": "headline",
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 387,
+   "headline": "Concurrent Makes First RIA Platform Acquisition With $5.4B Spire Investment Partners",
+   "url": "https://www.wealthmanagement.com/ria-news/concurrent-makes-first-ria-platform-acquisition-with-5-4b-spire",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "deal": {
+    "acquirer": "Concurrent",
+    "target": "Spire Investment Partners",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-10-01T10:00:00Z",
+   "last_published": "2026-10-01T16:05:16Z",
+   "first_seen": "2026-10-01T18:49:05Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/concurrent-makes-first-ria-platform-acquisition-with-5-4b-spire",
+     "published_at": "2026-10-01T10:00:00Z",
+     "kind": "feed"
+    },
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPdVliMDhRQmxBZVJBSDJneHVTM1dRNVJoTTZYVFVGaUlyRGNMSV9nTGpEa1B3cWJfeFFNaTlOQTQyYVVqeWhGUVFyRVZHdGhsQ1R1VWxIZWFIbWtnMzBpNHpaMUFXRS1SQUlMR1kydkhrR0ZKYUdkemxGQW01VjdxT0s2M2dxTm1qSG5sLXdn?oc=5",
+     "published_at": "2026-10-01T16:05:16Z",
+     "kind": "google_news"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Spire Investment Partners",
+     "slug": null,
+     "crd": null,
+     "verified": false,
+     "city": null,
+     "state": null
+    },
+    {
+     "name": "Concurrent Investment Advisors",
+     "slug": "concurrent-investment-advisors-323135",
+     "crd": "323135",
+     "verified": true,
+     "city": "Tampa",
+     "state": "FL"
+    }
+   ],
+   "states": [
+    "FL"
+   ],
+   "aum_usd": 5400000000.0,
+   "aum_source": "headline",
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 352,
+   "headline": "RIA moves: Hightower Signature Wealth adds New England reach with $752M Sandy Cove Advisors",
+   "url": "https://www.investmentnews.com/ria-news/ria-moves-hightower-signature-wealth-adds-new-england-reach-with-752m-sandy-cove-advisors/268414",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "deal": {
+    "acquirer": "Hightower Signature Wealth",
+    "target": "Sandy Cove Advisors",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-09-30T13:30:23Z",
+   "last_published": "2026-09-30T20:35:31Z",
+   "first_seen": "2026-09-30T18:24:40Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/ria-moves-hightower-signature-wealth-adds-new-england-reach-with-752m-sandy-cove-advisors/268414",
+     "published_at": "2026-09-30T13:30:23Z",
+     "kind": "feed"
+    },
+    {
+     "name": "Financial Advisor Magazine",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOVnVQU2sxU2hLckJJUjMwZXBaaS1aalJjVDhGTzVMcDc4T3MyWHprZDV4dERFeHBhakxMcUk0WFdEYUg4dXQ0Vms0QTNVRGk2dERIdXk0cVVPek9iMXkzeXROQXdsMWt4VnM5Z1dNVGpTSE5pWk5YeFl4NTFYUWR6TGFoX3R6SFctN3dzRlIyaGpnbXhOSk5XdldCNzJfNlBw?oc=5",
+     "published_at": "2026-09-30T20:35:31Z",
+     "kind": "google_news"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Hightower Advisors",
+     "slug": "hightower-advisors-145323",
+     "crd": "145323",
+     "verified": true,
+     "city": "Chicago",
+     "state": "IL"
+    },
+    {
+     "name": "Sandy Cove Advisors",
+     "slug": "sandy-cove-advisors-152482",
+     "crd": "152482",
+     "verified": true,
+     "city": "Hingham",
+     "state": "MA"
+    }
+   ],
+   "states": [
+    "IL",
+    "MA"
+   ],
+   "aum_usd": 752000000.0,
+   "aum_source": "headline",
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 369,
+   "headline": "Merchant Takes Stake in $97B Australian Wealth Firm",
+   "url": "https://www.wealthmanagement.com/ria-news/merchant-investment-takes-2559m-stake-in-ironbark",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "deal": {
+    "acquirer": "Merchant",
+    "target": null,
+    "type": "stake",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-09-30T19:14:24Z",
+   "last_published": "2026-09-30T19:14:24Z",
+   "first_seen": "2026-09-30T20:21:36Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/merchant-investment-takes-2559m-stake-in-ironbark",
+     "published_at": "2026-09-30T19:14:24Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Australian Wealth",
+     "slug": null,
+     "crd": null,
+     "verified": false,
+     "city": null,
+     "state": null
+    }
+   ],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 339,
+   "headline": "Wealth Enhancement Pens Largest Deal to Date with $22B RWA Partners",
+   "url": "https://www.wealthmanagement.com/ria-news/wealth-enhancement-pens-largest-deal-to-date-with-22b-rwa-partners",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "deal": {
+    "acquirer": "Wealth Enhancement",
+    "target": "RWA Partners",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-09-30T16:05:00Z",
+   "last_published": "2026-09-30T16:05:00Z",
+   "first_seen": "2026-09-30T18:24:40Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/wealth-enhancement-pens-largest-deal-to-date-with-22b-rwa-partners",
+     "published_at": "2026-09-30T16:05:00Z",
+     "kind": "feed"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/wealth-enhancement-agrees-to-buy-22b-rwa-wealth-partners-in-family-office-play/268419",
+     "published_at": "2026-09-30T16:05:00Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Wealth Enhancement Advisory Services",
+     "slug": "wealth-enhancement-advisory-services-116407",
+     "crd": "116407",
+     "verified": true,
+     "city": "Plymouth",
+     "state": "MN"
+    },
+    {
+     "name": "RWA Partners",
+     "slug": null,
+     "crd": null,
+     "verified": false,
+     "city": null,
+     "state": null
+    },
+    {
+     "name": "Rwa Wealth Partners",
+     "slug": "rwa-wealth-partners-156984",
+     "crd": "156984",
+     "verified": true,
+     "city": "Boston",
+     "state": "MA"
+    }
+   ],
+   "states": [
+    "MA",
+    "MN"
+   ],
+   "aum_usd": 22000000000.0,
+   "aum_source": "headline",
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 358,
+   "headline": "Kestra lands $550M Texas planning firm Ecclesiastes Wealth Partners",
+   "url": "https://www.investmentnews.com/independent-broker-dealers/kestra-lands-550m-texas-planning-firm-ecclesiastes-wealth-partners/268412",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "deal": {
+    "acquirer": "Kestra",
+    "target": "Ecclesiastes Wealth Partners",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-09-30T10:34:00Z",
+   "last_published": "2026-09-30T10:34:00Z",
+   "first_seen": "2026-09-30T18:24:40Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/kestra-lands-550m-texas-planning-firm-ecclesiastes-wealth-partners/268412",
+     "published_at": "2026-09-30T10:34:00Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Kestra Advisory Services",
+     "slug": "kestra-advisory-services-283330",
+     "crd": "283330",
+     "verified": true,
+     "city": "Austin",
+     "state": "TX"
+    },
+    {
+     "name": "Ecclesiastes Wealth Partners",
+     "slug": null,
+     "crd": null,
+     "verified": false,
+     "city": null,
+     "state": null
+    }
+   ],
+   "states": [
+    "TX"
+   ],
+   "aum_usd": 79798091767.0,
+   "aum_source": "sec",
+   "sec_aum_as_of": "2026-09-01",
+   "press_release": false
+  },
+  {
+   "id": 295,
+   "headline": "Waverly Advisors buys $1.7B Richmond RIA",
+   "url": "https://www.investmentnews.com/ria-news/waverly-advisors-buys-17b-richmond-ria/268392",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "deal": {
+    "acquirer": "Waverly Advisors",
+    "target": null,
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-09-29T15:06:39Z",
+   "last_published": "2026-09-29T15:06:39Z",
+   "first_seen": "2026-09-29T18:35:08Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/waverly-advisors-buys-17b-richmond-ria/268392",
+     "published_at": "2026-09-29T15:06:39Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Waverly Advisors",
+     "slug": "waverly-advisors-115332",
+     "crd": "115332",
+     "verified": true,
+     "city": "Birmingham",
+     "state": "AL"
+    }
+   ],
+   "states": [
+    "AL"
+   ],
+   "aum_usd": 1700000000.0,
+   "aum_source": "headline",
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 240,
+   "headline": "SMArtX rejected acquisition offer from CAIS to pursue cap raise: Sources",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNeEU4blBCbWlJYlk2V1loMnNKc1VyY19mY1kyUjRPT0VoWnB4dDRldmhMLXVqdE1YZnpsX0tPaDBQV1VQb3BBb2pZMGoxN0JKYVhUVElnMDE0TnJRSTFfNzM5LU9tZURfdC15cmlJMGxZTjFrYTd6TjBmTWM1UU1RNnZpZ180VTJndXZVWTU1b2NKaU42SlVieXdlTmFIXzNLOThLMm5DaDdmSkxKa2xJ?oc=5",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "deal": {
+    "acquirer": "CAIS",
+    "target": "SMArtX",
+    "type": "acquisition",
+    "stage": "terminated",
+    "value_usd": null
+   },
+   "first_published": "2026-09-28T15:31:04Z",
+   "last_published": "2026-09-28T15:31:04Z",
+   "first_seen": "2026-09-28T20:05:50Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNeEU4blBCbWlJYlk2V1loMnNKc1VyY19mY1kyUjRPT0VoWnB4dDRldmhMLXVqdE1YZnpsX0tPaDBQV1VQb3BBb2pZMGoxN0JKYVhUVElnMDE0TnJRSTFfNzM5LU9tZURfdC15cmlJMGxZTjFrYTd6TjBmTWM1UU1RNnZpZ180VTJndXZVWTU1b2NKaU42SlVieXdlTmFIXzNLOThLMm5DaDdmSkxKa2xJ?oc=5",
+     "published_at": "2026-09-28T15:31:04Z",
+     "kind": "google_news"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Smartx Advisory Solutions",
+     "slug": "smartx-advisory-solutions-297680",
+     "crd": "297680",
+     "verified": true,
+     "city": "West Palm Beach",
+     "state": "FL"
+    },
+    {
+     "name": "Cais Advisors",
+     "slug": "cais-advisors-317466",
+     "crd": "317466",
+     "verified": true,
+     "city": "New York",
+     "state": "NY"
+    }
+   ],
+   "states": [
+    "FL",
+    "NY"
+   ],
+   "aum_usd": 26993430437.0,
+   "aum_source": "sec",
+   "sec_aum_as_of": "2026-09-01",
+   "press_release": false
+  },
+  {
+   "id": 35,
+   "headline": "Corient enters Cayman Islands with $2.6B FortCay acquisition",
+   "url": "https://www.investmentnews.com/ria-news/corient-enters-cayman-islands-with-26b-fortcay-acquisition/268315",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "deal": {
+    "acquirer": "Corient",
+    "target": "FortCay",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-09-23T13:31:18Z",
+   "last_published": "2026-09-24T14:30:12Z",
+   "first_seen": "2026-09-26T07:35:12Z",
+   "outlet_count": 3,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/corient-enters-cayman-islands-with-26b-fortcay-acquisition/268315",
+     "published_at": "2026-09-23T13:31:18Z",
+     "kind": "feed"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/career-moves/corient-acquires-26b-cayman-islands-family-office",
+     "published_at": "2026-09-23T15:54:17Z",
+     "kind": "feed"
+    },
+    {
+     "name": "Citywire RIA",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQUUhfM3VfOTdXTzB0NFdkcV9GSkV5ZkdYTGJ1ZEQ2b1dzaVAwU3VsVHRIY2ZNbnJ4eEx4MExtVk9DVEFOTUpwZFdyVHFiTGl1SGtteTBNU2ZuaDQ3a0VjS0lxcVNIaXJKLWQyWlZ5YnhBOTFVZ0pCVjYtSjF6b3JLbnUzVVFoSUt6STN1WHM3b3QwWTI0NnZz?oc=5",
+     "published_at": "2026-09-24T14:30:12Z",
+     "kind": "google_news"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Corient",
+     "slug": "corient-319448",
+     "crd": "319448",
+     "verified": true,
+     "city": "Miami",
+     "state": "FL"
+    },
+    {
+     "name": "FortCay Family Advisory",
+     "slug": null,
+     "crd": null,
+     "verified": false,
+     "city": null,
+     "state": null
+    }
+   ],
+   "states": [
+    "FL"
+   ],
+   "aum_usd": 2600000000.0,
+   "aum_source": "headline",
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 88,
+   "headline": "Modern Wealth acquires California RIA in sixth deal of 2026",
+   "url": "https://www.investmentnews.com/ria-news/modern-wealth-acquires-california-ria-in-sixth-deal-of-2026/268333",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "deal": {
+    "acquirer": "Modern Wealth",
+    "target": null,
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-09-24T10:37:00Z",
+   "last_published": "2026-09-24T10:37:00Z",
+   "first_seen": "2026-09-26T07:35:12Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/modern-wealth-acquires-california-ria-in-sixth-deal-of-2026/268333",
+     "published_at": "2026-09-24T10:37:00Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Modern Wealth Management",
+     "slug": "modern-wealth-management-324624",
+     "crd": "324624",
+     "verified": true,
+     "city": "Kansas City",
+     "state": "MO"
+    }
+   ],
+   "states": [
+    "MO"
+   ],
+   "aum_usd": 10904051242.0,
+   "aum_source": "sec",
+   "sec_aum_as_of": "2026-09-01",
+   "press_release": false
+  },
+  {
+   "id": 36,
+   "headline": "Wealth Services Firm Horizon Buys OCIO Provider",
+   "url": "https://www.wealthmanagement.com/investing-strategies/wealth-services-firm-horizon-buys-ocio-provider",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "deal": {
+    "acquirer": "Horizon",
+    "target": null,
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-09-23T15:27:17Z",
+   "last_published": "2026-09-23T15:27:17Z",
+   "first_seen": "2026-09-26T07:35:12Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/investing-strategies/wealth-services-firm-horizon-buys-ocio-provider",
+     "published_at": "2026-09-23T15:27:17Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [],
+   "states": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 39,
+   "headline": "Captrust Adds $1.2B in Double Deal for Long Island Firms",
+   "url": "https://www.wealthmanagement.com/ria-news/captrust-acquires-two-new-york-rias-with-12b",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "deal": {
+    "acquirer": "Captrust",
+    "target": null,
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-09-23T10:00:00Z",
+   "last_published": "2026-09-23T14:43:41Z",
+   "first_seen": "2026-09-26T07:35:12Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/captrust-acquires-two-new-york-rias-with-12b",
+     "published_at": "2026-09-23T10:00:00Z",
+     "kind": "feed"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/captrust-adds-12b-long-island-duo-in-new-york-double-deal/268316",
+     "published_at": "2026-09-23T14:43:41Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Captrust",
+     "slug": "captrust-175112",
+     "crd": "175112",
+     "verified": true,
+     "city": "Raleigh",
+     "state": "NC"
+    },
+    {
+     "name": "Compass Advisors",
+     "slug": "compass-advisors-288256",
+     "crd": "288256",
+     "verified": true,
+     "city": "Melville",
+     "state": "NY"
+    },
+    {
+     "name": "Long Island Wealth Management",
+     "slug": "long-island-wealth-management-173363",
+     "crd": "173363",
+     "verified": true,
+     "city": "Melville",
+     "state": "NY"
+    }
+   ],
+   "states": [
+    "NC",
+    "NY"
+   ],
+   "aum_usd": 1200000000.0,
+   "aum_source": "headline",
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 109,
+   "headline": "Cerity Partners to merge with $1.4B Shufro Rose advisory teams",
+   "url": "https://www.investmentnews.com/ria-news/cerity-partners-merges-with-14b-shufro-rose-advisory-teams/268310",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "deal": {
+    "acquirer": "Cerity Partners",
+    "target": "Shufro Rose",
+    "type": "merger",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-09-23T10:36:00Z",
+   "last_published": "2026-09-23T10:36:00Z",
+   "first_seen": "2026-09-26T07:35:12Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/cerity-partners-merges-with-14b-shufro-rose-advisory-teams/268310",
+     "published_at": "2026-09-23T10:36:00Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Cerity Partners",
+     "slug": "cerity-partners-151559",
+     "crd": "151559",
+     "verified": true,
+     "city": "New York",
+     "state": "NY"
+    },
+    {
+     "name": "Shufro, Rose",
+     "slug": "shufro-rose-3403",
+     "crd": "3403",
+     "verified": true,
+     "city": "New York",
+     "state": "NY"
+    }
+   ],
+   "states": [
+    "NY"
+   ],
+   "aum_usd": 1400000000.0,
+   "aum_source": "headline",
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 114,
+   "headline": "Altruist is acquired by Vanguard to vertically integrate asset management and custody",
+   "url": "https://www.investmentnews.com/advisor-tech/altruist-is-acquired-by-vanguard-to-vertically-integrate-asset-management-and-custody/268306",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs",
+    "Private Equity & Asset Management"
+   ],
+   "deal": {
+    "acquirer": "Vanguard",
+    "target": "Altruist",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-09-22T21:11:03Z",
+   "last_published": "2026-09-22T21:11:03Z",
+   "first_seen": "2026-09-26T07:35:12Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/advisor-tech/altruist-is-acquired-by-vanguard-to-vertically-integrate-asset-management-and-custody/268306",
+     "published_at": "2026-09-22T21:11:03Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Altruist",
+     "slug": "altruist-299398",
+     "crd": "299398",
+     "verified": true,
+     "city": "Culver City",
+     "state": "CA"
+    },
+    {
+     "name": "Vanguard Group",
+     "slug": "vanguard-group-105958",
+     "crd": "105958",
+     "verified": true,
+     "city": "Malvern",
+     "state": "PA"
+    }
+   ],
+   "states": [
+    "CA",
+    "PA"
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  },
+  {
+   "id": 142,
+   "headline": "EQT raises Perpetual takeover bid for the fourth time",
+   "url": "https://www.investmentnews.com/alternatives/eqt-raises-perpetual-takeover-bid-for-the-fourth-time/268268",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs",
+    "Private Equity & Asset Management"
+   ],
+   "deal": {
+    "acquirer": "EQT",
+    "target": "Perpetual",
+    "type": "acquisition",
+    "stage": "bid",
+    "value_usd": null
+   },
+   "first_published": "2026-09-21T10:30:00Z",
+   "last_published": "2026-09-21T10:30:00Z",
+   "first_seen": "2026-09-26T07:35:12Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/alternatives/eqt-raises-perpetual-takeover-bid-for-the-fourth-time/268268",
+     "published_at": "2026-09-21T10:30:00Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "EQT Partners",
+     "slug": "eqt-partners-160179",
+     "crd": "160179",
+     "verified": true,
+     "city": "New York",
+     "state": "NY"
+    }
+   ],
+   "states": [
+    "NY"
+   ],
+   "aum_usd": 39196925743.0,
+   "aum_source": "sec",
+   "sec_aum_as_of": "2026-09-01",
+   "press_release": false
+  },
+  {
+   "id": 154,
+   "headline": "Bain Capital (mostly) funds Envestnet buy of Vestmark to surpass $10 trillion and define 'adaptive modularity' strategy, leaving Orion a clear RIA lane",
+   "url": "https://riabiz.com/a/2026/9/10/bain-capital-mostly-funds-envestnet-buy-of-vestmark-to-surpass-10-trillion-and-define-adaptive-modularity-strategy-leaving-orion-a-clear-ria-lane",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs",
+    "Private Equity & Asset Management"
+   ],
+   "deal": {
+    "acquirer": "Envestnet",
+    "target": "Vestmark",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "first_published": "2026-09-10T12:51:50Z",
+   "last_published": "2026-09-10T12:51:50Z",
+   "first_seen": "2026-09-26T07:35:12Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/10/bain-capital-mostly-funds-envestnet-buy-of-vestmark-to-surpass-10-trillion-and-define-adaptive-modularity-strategy-leaving-orion-a-clear-ria-lane",
+     "published_at": "2026-09-10T12:51:50Z",
+     "kind": "feed"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Bain Capital Private Equity",
+     "slug": "bain-capital-private-equity-145653",
+     "crd": "145653",
+     "verified": true,
+     "city": "Boston",
+     "state": "MA"
+    },
+    {
+     "name": "Envestnet PMC",
+     "slug": "envestnet-pmc-111694",
+     "crd": "111694",
+     "verified": true,
+     "city": "Berwyn",
+     "state": "PA"
+    },
+    {
+     "name": "Vestmark Advisory Solutions",
+     "slug": "vestmark-advisory-solutions-221518",
+     "crd": "221518",
+     "verified": true,
+     "city": "Wakefield",
+     "state": "MA"
+    },
+    {
+     "name": "Orion Portfolio Solutions",
+     "slug": "orion-portfolio-solutions-107975",
+     "crd": "107975",
+     "verified": true,
+     "city": "Omaha",
+     "state": "NE"
+    }
+   ],
+   "states": [
+    "MA",
+    "NE",
+    "PA"
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "sec_aum_as_of": null,
+   "press_release": false
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "gryphon-advisors-160185",
+ "name": "Gryphon Advisors",
+ "legal_name": "Gryphon Advisors",
+ "crd": "160185",
+ "sec_number": "801-73543",
+ "city": "San Francisco",
+ "state": "CA",
+ "sec_aum_usd": 9317854280.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/160185",
+ "stories": [
+  {
+   "cluster_id": 901,
+   "headline": "Gryphon’s Vivify Specialty Ingredients acquires botanical extracts supplier AuNutra Industries",
+   "url": "https://www.pehub.com/gryphons-vivify-specialty-ingredients-acquires-botanical-extracts-supplier-aunutra-industries/",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-10-16T15:11:21Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/gryphons-vivify-specialty-ingredients-acquires-botanical-extracts-supplier-aunutra-industries/"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

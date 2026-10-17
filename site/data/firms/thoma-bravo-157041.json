@@ -1,0 +1,34 @@
+{
+ "schema_version": 1,
+ "slug": "thoma-bravo-157041",
+ "name": "Thoma Bravo",
+ "legal_name": "Thoma Bravo",
+ "crd": "157041",
+ "sec_number": "801-73780",
+ "city": "Chicago",
+ "state": "IL",
+ "sec_aum_usd": 182937300000.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/157041",
+ "stories": [
+  {
+   "cluster_id": 890,
+   "headline": "Proofpoint to acquire Varonis Systems in $6.3B all-cash deal",
+   "url": "https://seekingalpha.com/news/4653625-proofpoint-to-acquire-varonis-systems-in-6_3b-all-cash-deal?source=feed_tag_m_a",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-10-16T15:07:33Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4653625-proofpoint-to-acquire-varonis-systems-in-6_3b-all-cash-deal?source=feed_tag_m_a"
+    },
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/thoma-bravos-proofpoint-inks-6-3bn-take-private-of-data-security-firm-varonis/"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

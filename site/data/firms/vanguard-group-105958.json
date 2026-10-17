@@ -1,0 +1,65 @@
+{
+ "schema_version": 1,
+ "slug": "vanguard-group-105958",
+ "name": "Vanguard Group",
+ "legal_name": "Vanguard Group",
+ "crd": "105958",
+ "sec_number": "801-11953",
+ "city": "Malvern",
+ "state": "PA",
+ "sec_aum_usd": 11092665107962.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/105958",
+ "stories": [
+  {
+   "cluster_id": 114,
+   "headline": "Altruist is acquired by Vanguard to vertically integrate asset management and custody",
+   "url": "https://www.investmentnews.com/advisor-tech/altruist-is-acquired-by-vanguard-to-vertically-integrate-asset-management-and-custody/268306",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-09-22T21:11:03Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/advisor-tech/altruist-is-acquired-by-vanguard-to-vertically-integrate-asset-management-and-custody/268306"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 114,
+   "date": "2026-09-22T21:11:03Z",
+   "headline": "Altruist is acquired by Vanguard to vertically integrate asset management and custody",
+   "acquirer": {
+    "name": "Vanguard",
+    "slug": "vanguard-group-105958",
+    "crd": "105958"
+   },
+   "target": {
+    "name": "Altruist",
+    "slug": "altruist-299398",
+    "crd": "299398"
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs",
+    "Private Equity & Asset Management"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/advisor-tech/altruist-is-acquired-by-vanguard-to-vertically-integrate-asset-management-and-custody/268306"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

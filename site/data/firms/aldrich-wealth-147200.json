@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "aldrich-wealth-147200",
+ "name": "Aldrich Wealth",
+ "legal_name": "Aldrich Wealth, Limited Partnership",
+ "crd": "147200",
+ "sec_number": "801-69190",
+ "city": "Lake Oswego",
+ "state": "OR",
+ "sec_aum_usd": 7615331850.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/147200",
+ "stories": [
+  {
+   "cluster_id": 752,
+   "headline": "NYC-Based Tax Firm CohnReznick to Add $8B West Coast Wealth Practice",
+   "url": "https://www.wealthmanagement.com/ria-news/nyc-based-tax-firm-cohnreznick-to-add-8b-west-coast-based-wealth-practice",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-10-14T14:55:20Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/nyc-based-tax-firm-cohnreznick-to-add-8b-west-coast-based-wealth-practice"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

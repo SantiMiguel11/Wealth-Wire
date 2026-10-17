@@ -1,0 +1,120 @@
+{
+ "schema_version": 1,
+ "slug": "vista-equity-partners-management-156973",
+ "name": "Vista Equity Partners Management",
+ "legal_name": "Vista Equity Partners Management",
+ "crd": "156973",
+ "sec_number": "801-73726",
+ "city": "San Francisco",
+ "state": "CA",
+ "sec_aum_usd": 106022254910.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/156973",
+ "stories": [
+  {
+   "cluster_id": 882,
+   "headline": "Vista Equity Partners strikes deal to carve out HID’s PKI business",
+   "url": "https://www.pehub.com/vista-equity-partners-strikes-deal-to-carve-out-hids-pki-business/",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-10-17T09:04:00Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/vista-equity-partners-strikes-deal-to-carve-out-hids-pki-business/"
+    },
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/assa-abloy-sells-pki-business-unit-to-vista-equity-partners-302911633.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 903,
+   "headline": "Vista to carve out identity security biz amid digital machine identity boom; General Catalyst, ArchiMed, THL bet on cardiometabolic care",
+   "url": "https://www.pehub.com/vista-to-carve-out-identity-security-biz-amid-digital-machine-identity-boom-general-catalyst-archimed-thl-bet-on-cardiometabolic-care/",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-10-16T13:35:09Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/vista-to-carve-out-identity-security-biz-amid-digital-machine-identity-boom-general-catalyst-archimed-thl-bet-on-cardiometabolic-care/"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 882,
+   "date": "2026-10-16T16:36:33Z",
+   "headline": "Vista Equity Partners strikes deal to carve out HID’s PKI business",
+   "acquirer": {
+    "name": "Vista Equity Partners",
+    "slug": "vista-equity-partners-management-156973",
+    "crd": "156973"
+   },
+   "target": {
+    "name": "PKI",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/vista-equity-partners-strikes-deal-to-carve-out-hids-pki-business/"
+    },
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/assa-abloy-sells-pki-business-unit-to-vista-equity-partners-302911633.html"
+    }
+   ],
+   "role": "acquirer"
+  },
+  {
+   "cluster_id": 903,
+   "date": "2026-10-16T13:35:09Z",
+   "headline": "Vista to carve out identity security biz amid digital machine identity boom; General Catalyst, ArchiMed, THL bet on cardiometabolic care",
+   "acquirer": {
+    "name": "Vista",
+    "slug": "vista-equity-partners-management-156973",
+    "crd": "156973"
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target not named in the headline",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management",
+    "Technology"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/vista-to-carve-out-identity-security-biz-amid-digital-machine-identity-boom-general-catalyst-archimed-thl-bet-on-cardiometabolic-care/"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "parkview-160171",
+ "name": "Parkview",
+ "legal_name": "Parkview",
+ "crd": "160171",
+ "sec_number": "801-73069",
+ "city": "Zurich",
+ "state": null,
+ "sec_aum_usd": 488483244.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/160171",
+ "stories": [
+  {
+   "cluster_id": 887,
+   "headline": "Parkview Health announces agreement to acquire Ovation Healthcare to strengthen community healthcare nationwide, advance local affordability",
+   "url": "https://www.prnewswire.com/news-releases/parkview-health-announces-agreement-to-acquire-ovation-healthcare-to-strengthen-community-healthcare-nationwide-advance-local-affordability-302911410.html",
+   "category": "Healthcare & Life Sciences",
+   "last_published": "2026-10-16T15:48:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/parkview-health-announces-agreement-to-acquire-ovation-healthcare-to-strengthen-community-healthcare-nationwide-advance-local-affordability-302911410.html"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 887,
+   "date": "2026-10-16T15:48:00Z",
+   "headline": "Parkview Health announces agreement to acquire Ovation Healthcare to strengthen community healthcare nationwide, advance local affordability",
+   "acquirer": {
+    "name": "Parkview Health",
+    "slug": "parkview-160171",
+    "crd": "160171"
+   },
+   "target": {
+    "name": "Ovation Healthcare",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/parkview-health-announces-agreement-to-acquire-ovation-healthcare-to-strengthen-community-healthcare-nationwide-advance-local-affordability-302911410.html"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

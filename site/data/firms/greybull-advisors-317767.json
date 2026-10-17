@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "greybull-advisors-317767",
+ "name": "Greybull Advisors",
+ "legal_name": "Greybull Advisors",
+ "crd": "317767",
+ "sec_number": "801-124891",
+ "city": "Jackson",
+ "state": "WY",
+ "sec_aum_usd": 513589887.0,
+ "sec_aum_as_of": "2026-09-01",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/317767",
+ "stories": [
+  {
+   "cluster_id": 906,
+   "headline": "Greybull Stewardship acquires El Paso textile recycler Mid-West Textile",
+   "url": "https://www.pehub.com/greybull-stewardship-acquires-el-paso-textile-recycler-mid-west-textile/",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-10-16T12:05:06Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/greybull-stewardship-acquires-el-paso-textile-recycler-mid-west-textile/"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

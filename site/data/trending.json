@@ -1,0 +1,112 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-10-17T20:02:55Z",
+ "days": 7,
+ "firms": [
+  {
+   "name": "Truist Advisory Services",
+   "slug": "truist-advisory-services-283390",
+   "crd": "283390",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "Vista Equity Partners Management",
+   "slug": "vista-equity-partners-management-156973",
+   "crd": "156973",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "Aldrich Wealth",
+   "slug": "aldrich-wealth-147200",
+   "crd": "147200",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Apella Wealth",
+   "slug": "apella-wealth-171106",
+   "crd": "171106",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Captrust",
+   "slug": "captrust-175112",
+   "crd": "175112",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Carlyle Group",
+   "slug": "carlyle-group-111128",
+   "crd": "111128",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Elliott Investment Management",
+   "slug": "elliott-investment-management-307151",
+   "crd": "307151",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Frazier Healthcare Partners",
+   "slug": "frazier-healthcare-partners-157324",
+   "crd": "157324",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "General Catalyst",
+   "slug": "general-catalyst-162548",
+   "crd": "162548",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Greybull Advisors",
+   "slug": "greybull-advisors-317767",
+   "crd": "317767",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Gryphon Advisors",
+   "slug": "gryphon-advisors-160185",
+   "crd": "160185",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Gtcr",
+   "slug": "gtcr-159545",
+   "crd": "159545",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "H Financial Management",
+   "slug": "h-financial-management-148209",
+   "crd": "148209",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Parkview",
+   "slug": "parkview-160171",
+   "crd": "160171",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Thoma Bravo",
+   "slug": "thoma-bravo-157041",
+   "crd": "157041",
+   "verified": true,
+   "stories": 1
+  }
+ ]
+}
