@@ -256,12 +256,13 @@ class Snapshot:
         for s in self.sources_cfg.values():
             if s.name in self.exclude:
                 continue
-            st = status.get(s.name, {})
+            st = status.get(s.name, {}) if s.enabled else {}  # a disabled source's old status row is stale
             out.append({"name": s.name, "kind": s.kind, "homepage": s.homepage or None, "enabled": s.enabled,
-                        "ok": bool(st.get("ok")), "method": st.get("method", "not run"),
+                        "ok": bool(st.get("ok")), "method": st.get("method", "not run") if s.enabled else "disabled",
                         "url_used": st.get("url_used") or None, "items_last_run": st.get("items_last_run", 0),
                         "new_last_run": st.get("new_last_run", 0), "dropped_last_run": st.get("dropped_last_run", 0),
-                        "reason": st.get("reason", ""), "last_run_at": st.get("last_run_at") or None})
+                        "reason": st.get("reason", "") if s.enabled else "disabled in sources.yaml",
+                        "last_run_at": st.get("last_run_at") or None})
         return {"schema_version": SCHEMA_VERSION, "generated_at": to_iso(self.now), "sources": out}
 
 

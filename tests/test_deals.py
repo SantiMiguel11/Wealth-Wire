@@ -77,3 +77,22 @@ def test_industries_multi_label_primary_first():
     assert industry.classify("Acme buys Beta") == ["Other"]
     assert industry.classify("Acme buys Beta", hint="Healthcare & Life Sciences") == ["Healthcare & Life Sciences"]
     assert industry.merge([["Other"], ["Technology"], ["Banking", "Technology"]]) == ["Banking", "Technology"]
+
+
+def test_teaser_only_counts_when_the_headline_names_no_industry():
+    assert industry.classify("Zocdoc acquires Sohar Health", "insurance eligibility checks") == ["Healthcare & Life Sciences"]
+    assert industry.classify("Acme buys Beta", "Beta makes payment software") == ["Fintech & Payments", "Technology"]
+
+
+def test_disabled_sources_report_disabled_not_a_stale_status(ingested):
+    from fiduciarywire import db
+    from fiduciarywire.sitebuild import collect
+
+    from .conftest import NOW
+
+    conn = db.connect()
+    conn.execute("INSERT INTO source_status(name, method, url_used, discovered_feed_url, items_last_run, new_last_run, ok, reason, "
+                 "last_run_at, kind, dropped_last_run) VALUES ('ThinkAdvisor','Google News RSS','','',79,0,1,'','2026-09-01T00:00:00Z','google_news',0)")
+    conn.commit()
+    src = {s["name"]: s for s in collect(conn, NOW)["sources.json"]["sources"]}
+    assert (src["ThinkAdvisor"]["ok"], src["ThinkAdvisor"]["method"], src["ThinkAdvisor"]["items_last_run"]) == (False, "disabled", 0)

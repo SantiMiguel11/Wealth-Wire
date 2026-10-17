@@ -171,7 +171,7 @@ generated data still matches the contract.
 
 ```bash
 pip install -r requirements.txt
-python -m pytest                   # 350 tests, no network (fixture feeds + httpx MockTransport)
+python -m pytest                   # 352 tests, no network (fixture feeds + httpx MockTransport)
 python scripts/screenshots.py      # Playwright: 16 views × 1440/390 × light/dark, interactions, tap targets; fails on console errors
 python scripts/make_fixtures.py    # regenerate the offline fixture sites
 python -m fiduciarywire eval-firms    # firm-matching precision/recall on the 75 labeled headlines

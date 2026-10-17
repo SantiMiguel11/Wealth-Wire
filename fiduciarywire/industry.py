@@ -50,11 +50,11 @@ def industry_names() -> list[str]:
 def classify(title: str, description: str = "", hint: str | None = None) -> list[str]:
     """Industries a deal belongs to, primary first. `hint` is the outlet's industry (single-industry outlets)."""
     rules, default = load_rules()
-    found: set[str] = set()
-    for text in (title or "", description or ""):
-        for r in rules:
-            if text and r.any and r.any.search(text) and not (r.unless and r.unless.search(text)):
-                found.add(r.name)
+    def hits(text: str) -> set[str]:
+        return {r.name for r in rules if text and r.any and r.any.search(text) and not (r.unless and r.unless.search(text))}
+
+    # the headline decides; a teaser only when the headline names no industry (teasers mention a lot in passing)
+    found = hits(title or "") or hits(description or "")
     if hint:
         found.add(hint)
     ordered = [r.name for r in rules if r.name in found]
