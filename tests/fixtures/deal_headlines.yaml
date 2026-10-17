@@ -1,0 +1,4230 @@
+# Real headlines labeled deal / not a deal (DECISIONS D3). Sources: the live site's database on 2026-10-17 (wealth
+# trade press, wires) and every title returned by the two feed probes of 2026-10-17 (PR Newswire M&A, PE Hub,
+# TechCrunch M&A, Seeking Alpha M&A, FT Companies, Industry Dive sites, Fierce, Insurance Journal, NYT, CNBC ...).
+# Labels were reviewed by hand. For deals, "acquirer" / "target" are the expected parties ('' = not named in the
+# headline) and "stage" the expected stage. Known misses carry "missed: true" (the test tolerates them, listed).
+headlines:
+- text: ASSA ABLOY sells PKI business unit to Vista Equity Partners
+  source: prnewswire.com
+  deal: true
+  acquirer: Vista Equity Partners
+  target: PKI
+  stage: announced
+- text: Panzani y Cerealis unen sus fuerzas para crear un importante grupo alimentario europeo
+  source: prnewswire.com
+  deal: false
+- text: Hyperscale Data Announces Plan for its askROI Subsidiary to Go Public in the Second or Third Quarter of 2027
+  source: prnewswire.com
+  deal: false
+- text: VBM completa la transacción para establecer una nueva estructura de propiedad del complejo minero Thompson
+  source: prnewswire.com
+  deal: false
+- text: Le groupe CSL acquiert SIMPL Wireless pour proposer son offre « Critical Connectivity® » en Amérique du Nord
+  source: prnewswire.com
+  deal: false
+- text: Arity to Acquire INRIX, Advancing a Connected Vision for the Future of Transportation
+  source: prnewswire.com
+  deal: true
+  acquirer: Arity
+  target: INRIX
+  stage: announced
+- text: Parkview Health announces agreement to acquire Ovation Healthcare to strengthen community healthcare nationwide, advance local affordability
+  source: prnewswire.com
+  deal: true
+  acquirer: Parkview Health
+  target: Ovation Healthcare
+  stage: announced
+- text: Panzani i Cerealis łączą siły, aby stworzyć dużą europejską grupę spożywczą
+  source: prnewswire.com
+  deal: false
+- text: Vale Base Metals finalise la transaction qui établit la nouvelle propriété du complexe minier Thompson.
+  source: prnewswire.com
+  deal: false
+- text: BorboletaPro Acquires Dulce Lash Artistry and Becomes Preferred Lash and Brow Education Partner of Paul Mitchell Advanced Education
+  source: prnewswire.com
+  deal: true
+  acquirer: BorboletaPro
+  target: Dulce Lash Artistry
+  stage: announced
+- text: Panzani et Cerealis s'associent pour créer un grand groupe alimentaire européen.
+  source: prnewswire.com
+  deal: false
+- text: EP Technology Group Acquires JBI Technologies Inc., Creating New Opportunities for Growth in Hospitality Technology Services
+  source: prnewswire.com
+  deal: true
+  acquirer: EP Technology Group
+  target: JBI Technologies Inc
+  stage: announced
+- text: Panzani and Cerealis Join Forces to Create a Major European Food Group
+  source: prnewswire.com
+  deal: true
+  missed: true
+  acquirer: Panzani
+  target: Cerealis
+  stage: announced
+- text: Boxwood Partners' Patrick Galleher Elected to International Franchise Association Board of Directors
+  source: prnewswire.com
+  deal: false
+- text: Vale Base Metals completes transaction to establish new ownership of Thompson Mine Complex
+  source: prnewswire.com
+  deal: false
+- text: Huawei presenta la soluzione Stellar Intelligent Network aggiornata per l'Europa, basata sulla filosofia della "connettività sicura e intelligente"
+  source: prnewswire.com
+  deal: false
+- text: Huawei onthult een verbeterde Stellar Intelligent Network-oplossing voor de Europese regio, gebaseerd op de filosofie van "veilige en intelligente connectiviteit"
+  source: prnewswire.com
+  deal: false
+- text: Huawei, "Güvenli ve Akıllı Bağlantı" Felsefesi Kapsamında Avrupa Bölgesi İçin Geliştirilmiş Stellar Akıllı Ağ Çözümünü Tanıttı
+  source: prnewswire.com
+  deal: false
+- text: Huawei predstavuje vylepšené inteligentné sieťové riešenie Stellar pre európsky región v rámci filozofie „Bezpečné a inteligentné pripojenie"
+  source: prnewswire.com
+  deal: false
+- text: 'AVEX SHAREHOLDER ACTION REMINDER: Faruqi & Faruqi, LLP Reminds AEVEX Investors of Securities Class Action Lawsuit Deadline on October 20, 2026'
+  source: prnewswire.com
+  deal: false
+- text: Huawei представляет обновленное решение Stellar Intelligent Network Solution для европейского региона в рамках философии «Безопасное и интеллектуальное подключение»
+  source: prnewswire.com
+  deal: false
+- text: Valley Community Healthcare to Host Two Voter Events in October
+  source: prnewswire.com
+  deal: false
+- text: AGFUND erhält internationale Auszeichnung für herausragende Leistungen im Bereich inklusives Bankwesen und soziale Wirkung
+  source: prnewswire.com
+  deal: false
+- text: 'Sicurezza basata sull''intelligence per Macao: CTM e Huawei collaborano per rafforzare la sicurezza delle reti nell''era dell''intelligenza artificiale'
+  source: prnewswire.com
+  deal: false
+- text: 'Op inlichtingen gebaseerde beveiliging voor Macao: CTM en Huawei werken samen om de netwerkbeveiliging in het AI-tijdperk te versterken'
+  source: prnewswire.com
+  deal: false
+- text: DOCS Investors Have Opportunity to Lead Doximity, Inc. Securities Fraud Lawsuit
+  source: prnewswire.com
+  deal: false
+- text: 'Makao için Zeka Odaklı Güvenlik: CTM ve Huawei, Yapay Zeka Çağı''nda Ağ Güvenliğini Güçlendirmek İçin İşbirliği Yaptı'
+  source: prnewswire.com
+  deal: false
+- text: 'KI-gestützte Sicherheit für Macau: CTM und Huawei kooperieren, um die Netzwerksicherheit im Zeitalter der KI zu stärken'
+  source: prnewswire.com
+  deal: false
+- text: Безопасность на основе искуственного интеллекта для Макао -- CTM и Huawei заключают партнерское соглашение для усиления безопасности сети в эпоху ИИ
+  source: prnewswire.com
+  deal: false
+- text: LG Electronics Kicks Off UAE Winter Roadshow for the All-New LG OLED EVO W6 Wallpaper TV
+  source: prnewswire.com
+  deal: false
+- text: 'Weifang: A National Historical and Cultural City Where Diverse Cultures Blend and Flourish'
+  source: prnewswire.com
+  deal: false
+- text: Masimo's smartSET™ FDA Clearance Offers Breakthrough Innovation in Pulse Oximetry to Help Improve Critical Patient Outcomes
+  source: prnewswire.com
+  deal: false
+- text: 'HYLN SHAREHOLDER ACTION REMINDER: Faruqi & Faruqi, LLP Reminds Hyliion Investors of Securities Class Action Lawsuit Deadline on October 27, 2026'
+  source: prnewswire.com
+  deal: false
+- text: 'SHAREHOLDER ACTION REMINDER: Faruqi & Faruqi, LLP Reminds Innventure (NASDAQ: INV) Investors of Securities Class Action Lawsuit Deadline on October 27, 2026'
+  source: prnewswire.com
+  deal: false
+- text: 'DAVA SHAREHOLDER ACTION REMINDER: Faruqi & Faruqi, LLP Reminds Endava plc (NASDAQ: DAVA) Investors of Securities Class Action Lawsuit Deadline on November 30, 2026'
+  source: prnewswire.com
+  deal: false
+- text: Vista Equity Partners strikes deal to carve out HID’s PKI business
+  source: pehub.com
+  deal: true
+  acquirer: Vista Equity Partners
+  target: HID’s PKI
+  stage: announced
+- text: Hamilton Lane names Hartley Rogers co-CEO as Erik Hirsch becomes executive co-chairman
+  source: pehub.com
+  deal: false
+- text: Gryphon’s Vivify Specialty Ingredients acquires botanical extracts supplier AuNutra Industries
+  source: pehub.com
+  deal: true
+  acquirer: Gryphon’s Vivify Specialty Ingredients
+  target: AuNutra Industries
+  stage: announced
+- text: Frazier Healthcare’s LUX Infusion enters Colorado with Suite Health acquisition
+  source: pehub.com
+  deal: true
+  acquirer: Frazier Healthcare’s LUX Infusion
+  target: Suite Health
+  stage: announced
+- text: Vista to carve out identity security biz amid digital machine identity boom; General Catalyst, ArchiMed, THL bet on cardiometabolic care
+  source: pehub.com
+  deal: true
+  acquirer: Vista
+  target: ''
+  stage: announced
+- text: Bluegem to acquire Italian frozen foods group Rispo from Europe Capital Partners
+  source: pehub.com
+  deal: true
+  acquirer: Bluegem
+  target: Rispo
+  stage: announced
+- text: ECI Partners’ CSL Group buys US IoT eSIM provider SIMPL Wireless
+  source: pehub.com
+  deal: true
+  acquirer: ECI Partners’ CSL Group
+  target: SIMPL Wireless
+  stage: announced
+- text: Greybull Stewardship acquires El Paso textile recycler Mid-West Textile
+  source: pehub.com
+  deal: true
+  acquirer: Greybull Stewardship
+  target: Mid-West Textile
+  stage: announced
+- text: Thoma Bravo’s Proofpoint inks $6.3bn take-private of data security firm Varonis
+  source: pehub.com
+  deal: true
+  acquirer: Thoma Bravo’s Proofpoint
+  target: Varonis
+  stage: announced
+- text: 'PE eyes cardiometabolic care amid GLP-1 boom, outpatient shifts: 6 deals'
+  source: pehub.com
+  deal: false
+- text: Bumble agrees to a $1.3B acquisition deal as online dating faces a reset
+  source: techcrunch.com
+  deal: true
+  acquirer: ''
+  target: Bumble
+  stage: announced
+- text: Cloudflare acquires Deno to improve its Workers programming model
+  source: techcrunch.com
+  deal: true
+  acquirer: Cloudflare
+  target: Deno
+  stage: announced
+- text: Uber is spending $2.3B to get into catering
+  source: techcrunch.com
+  deal: false
+- text: Paramount closes historic Warner Bros. merger to form Skydance
+  source: techcrunch.com
+  deal: true
+  acquirer: Paramount
+  target: Warner Bros
+  stage: completed
+- text: Paramount and Warner Bros. Discovery to become Skydance
+  source: techcrunch.com
+  deal: false
+- text: OpenAI buys smartphone camera maker Glass Imaging for $300 million, report says
+  source: techcrunch.com
+  deal: true
+  acquirer: OpenAI
+  target: Glass Imaging
+  stage: rumored
+- text: Superhuman acquires YC-backed notetaker Fathom as productivity platforms push for agentic work
+  source: techcrunch.com
+  deal: true
+  acquirer: Superhuman
+  target: Fathom
+  stage: announced
+- text: Bending Spoons to buy collaboration tools maker Miro for $1.36B, 90% less than its 2022 valuation
+  source: techcrunch.com
+  deal: true
+  acquirer: Bending Spoons
+  target: Miro
+  stage: announced
+- text: AI research startup Listen Labs scrubbed a $1.5B funding round for Salesforce talks
+  source: techcrunch.com
+  deal: false
+- text: DOJ wants more answers on Fox’s $22B Roku deal
+  source: techcrunch.com
+  deal: true
+  acquirer: Fox
+  target: Roku
+  stage: announced
+- text: Nvidia confirms it will buy Hugging Face for $12.9 billion
+  source: techcrunch.com
+  deal: true
+  acquirer: Nvidia
+  target: Hugging Face
+  stage: announced
+- text: Palo Alto Networks paid $500M for Thrive-backed Console, sources say
+  source: techcrunch.com
+  deal: true
+  acquirer: Palo Alto Networks
+  target: Console
+  stage: rumored
+- text: Adobe acquires Indian market intelligence startup Rilo
+  source: techcrunch.com
+  deal: true
+  acquirer: Adobe
+  target: Rilo
+  stage: announced
+- text: GoPro to be acquired for $285M, will remain a public company
+  source: techcrunch.com
+  deal: true
+  acquirer: ''
+  target: GoPro
+  stage: announced
+- text: India’s Unacademy sells to rival upGrad for $206M, about 94% less than its peak valuation
+  source: techcrunch.com
+  deal: true
+  acquirer: upGrad
+  target: Unacademy
+  stage: announced
+- text: Gamma acquires Accel-backed design startup Lica
+  source: techcrunch.com
+  deal: true
+  acquirer: Gamma
+  target: Lica
+  stage: announced
+- text: Hugging Face reportedly in talks to be acquired for $13B
+  source: techcrunch.com
+  deal: true
+  acquirer: ''
+  target: Hugging Face
+  stage: rumored
+- text: US nutrition startup Berry Street merges with India’s Healthify as GLP-1 trends upwards
+  source: techcrunch.com
+  deal: true
+  acquirer: Berry Street
+  target: Healthify
+  stage: announced
+- text: Cognition CEO denies report that SpaceX tried to acquire the startup
+  source: techcrunch.com
+  deal: false
+- text: Stripe will reportedly acquire AI gateway startup OpenRouter for $7B+
+  source: techcrunch.com
+  deal: true
+  acquirer: Stripe
+  target: OpenRouter
+  stage: rumored
+- text: Epstein bill would push regulators to disclose bank probes
+  source: bankingdive.com
+  deal: false
+- text: NYDFS fines Swedish bank SEB $33M over AML issues
+  source: bankingdive.com
+  deal: false
+- text: Truist consumer-bank chief is out in leadership shakeup
+  source: bankingdive.com
+  deal: false
+- text: 'Dive Deposits: JPMorgan denies Trump’s ‘bare’ blacklist claim'
+  source: bankingdive.com
+  deal: false
+- text: U.S. Bank doubles down on small-biz growth
+  source: bankingdive.com
+  deal: false
+- text: Apple Bank CEO seeks to ‘punch through to consciousness’
+  source: bankingdive.com
+  deal: false
+- text: What Wells Fargo, Citi and Goldman Sachs’ CEOs are saying about AI
+  source: bankingdive.com
+  deal: false
+- text: SoFi, Figure co-founder raises $19M for newest venture
+  source: bankingdive.com
+  deal: false
+- text: Kraken parent eyes EU license with bank acquisition
+  source: bankingdive.com
+  deal: false
+- text: OCC blasts debanking instances by JPMorgan, others in report
+  source: bankingdive.com
+  deal: false
+- text: Visa, Mastercard urge court to approve fee settlement
+  source: paymentsdive.com
+  deal: false
+- text: Congress should examine EWA bill
+  source: paymentsdive.com
+  deal: false
+- text: Credit card debt ticks up
+  source: paymentsdive.com
+  deal: false
+- text: Stripe agentic commerce revs up
+  source: paymentsdive.com
+  deal: false
+- text: Fiserv ‘reset’ bolsters case, litigants say
+  source: paymentsdive.com
+  deal: false
+- text: Businesses view stablecoins warily
+  source: paymentsdive.com
+  deal: false
+- text: JPMorgan rounds up partners
+  source: paymentsdive.com
+  deal: false
+- text: Upgrade applies for ILC charter
+  source: paymentsdive.com
+  deal: false
+- text: Visa moves ahead in China
+  source: paymentsdive.com
+  deal: false
+- text: Stablecoin startups advance payments
+  source: paymentsdive.com
+  deal: false
+- text: Iambic CEO on taking an AI drug company public
+  source: biopharmadive.com
+  deal: false
+- text: 'This week in charts: Moderna’s massive stock run'
+  source: biopharmadive.com
+  deal: false
+- text: Next-gen RNAi drugmaker City prices $200M IPO
+  source: biopharmadive.com
+  deal: false
+- text: Biogen-backed Estuary nabs $93M for kidney disease gene therapy
+  source: biopharmadive.com
+  deal: false
+- text: Belgian startup revives Galapagos CAR-T research
+  source: biopharmadive.com
+  deal: false
+- text: FDA ‘reset’ continues with new plan for reviewing rare disease drugs
+  source: biopharmadive.com
+  deal: false
+- text: Iambic, an AI drug discovery specialist, banks $150M in an IPO
+  source: biopharmadive.com
+  deal: false
+- text: Experimental Arrowhead RNAi drug hints at Alzheimer’s benefit
+  source: biopharmadive.com
+  deal: false
+- text: Verastem cancer drug shows early promise in small study
+  source: biopharmadive.com
+  deal: false
+- text: CVS to pay $315M to settle opioid prescribing allegations
+  source: biopharmadive.com
+  deal: false
+- text: 3 tips to manage soaring health costs
+  source: healthcaredive.com
+  deal: false
+- text: Trade association sues Trump administration over ACA broker, agent freeze
+  source: healthcaredive.com
+  deal: false
+- text: Zocdoc acquires Sohar Health in latest push to scale tech infrastructure
+  source: healthcaredive.com
+  deal: true
+  acquirer: Zocdoc
+  target: Sohar Health
+  stage: announced
+- text: AMA releases governance framework for agentic AI in healthcare
+  source: healthcaredive.com
+  deal: false
+- text: Rush, Endeavor to merge into Illinois powerhouse
+  source: healthcaredive.com
+  deal: true
+  acquirer: Rush
+  target: Endeavor
+  stage: announced
+- text: Trump administration boots 189,000 deceased, duplicate enrollees off ACA subsidies
+  source: healthcaredive.com
+  deal: false
+- text: Centene joins insurers waiving prior authorizations for top providers
+  source: healthcaredive.com
+  deal: false
+- text: MultiCare, Samaritan combination to close in November
+  source: healthcaredive.com
+  deal: true
+  acquirer: MultiCare
+  target: Samaritan
+  stage: announced
+- text: Halloween without candy? What shoppers are cutting from budgets this year
+  source: retaildive.com
+  deal: false
+- text: Bath & Body Works expands partnership to all Ulta stores for the holidays
+  source: retaildive.com
+  deal: false
+- text: Nordstrom Rack comes back to San Francisco
+  source: retaildive.com
+  deal: false
+- text: 'The Weekly Closeout: The RealReal secures fresh financing, Roots buyout advances'
+  source: retaildive.com
+  deal: false
+- text: Bealls to debut mobile app
+  source: retaildive.com
+  deal: false
+- text: Lululemon restructures raw materials team, lays off 7 people
+  source: retaildive.com
+  deal: false
+- text: Target wants more efficient stores. An upgraded employee app could help.
+  source: retaildive.com
+  deal: false
+- text: Toy prices jump 4.2% ahead of the holidays
+  source: retaildive.com
+  deal: false
+- text: Saks channels ‘main character energy’ for first post-bankruptcy holiday
+  source: retaildive.com
+  deal: false
+- text: Moody’s upgrades retail and apparel outlook as tariffs ease
+  source: retaildive.com
+  deal: false
+- text: FERC proposes easing regulatory pathway for gas pipeline, LNG projects
+  source: utilitydive.com
+  deal: false
+- text: NextEra’s $4M Trump ballroom donation muddies Dominion merger debate, watchdogs say
+  source: utilitydive.com
+  deal: false
+- text: 'Utilities can use AI to solve grid backlogs: AWS energy lead'
+  source: utilitydive.com
+  deal: false
+- text: 'Solar imports from India, Indonesia, Laos injured US manufacturers: ITC'
+  source: utilitydive.com
+  deal: false
+- text: AEP in deal to buy up to 1.6 GW of Mainspring linear generators
+  source: utilitydive.com
+  deal: false
+- text: Best Buy pilots battery-powered vehicles at California distribution sites
+  source: utilitydive.com
+  deal: false
+- text: Reliability standards for AI data centers, crypto miners move closer to adoption
+  source: utilitydive.com
+  deal: false
+- text: 'Fossil fuel generation pipeline rebounds while new clean generation slows: EDF'
+  source: utilitydive.com
+  deal: false
+- text: 'Battery-powered trains coming to Chicago: a first look'
+  source: utilitydive.com
+  deal: false
+- text: PJM plans to study SoftBank’s Ohio AI project under state agreement approach
+  source: utilitydive.com
+  deal: false
+- text: 'From library to logistics: Cathy Morrow Roberson shares career insights'
+  source: supplychaindive.com
+  deal: false
+- text: FMC proposes fees on Spanish-flagged vessels, import restrictions
+  source: supplychaindive.com
+  deal: false
+- text: 'FedEx, UPS delivery prices set for record-high Q4: TD Cowen/AFS'
+  source: supplychaindive.com
+  deal: false
+- text: 5 trends defining consumer electronics supply chains
+  source: supplychaindive.com
+  deal: false
+- text: Unilever puts business results first in factory digital twin rollout
+  source: supplychaindive.com
+  deal: false
+- text: How UNFI tackles higher fuel prices
+  source: supplychaindive.com
+  deal: false
+- text: California diesel prices remain above $8 per gallon as truckers call for relief
+  source: supplychaindive.com
+  deal: false
+- text: GlobalFoundries building $21B New York fabs under US-Japan trade deal
+  source: supplychaindive.com
+  deal: false
+- text: UPS’ Happy Returns comes to TikTok Shop
+  source: supplychaindive.com
+  deal: false
+- text: Warsh says rise of AI will prove ‘very bumpy,’ trigger demand shock
+  source: cfodive.com
+  deal: false
+- text: Dark Matter Tech appoints new CFO in leadership shuffle
+  source: cfodive.com
+  deal: false
+- text: How 10 years at storied Cleveland Foundation changed its CFO — and Ohio
+  source: cfodive.com
+  deal: false
+- text: Super Micro’s CFO is out after change was slow-walked
+  source: cfodive.com
+  deal: false
+- text: Numeral nailed down metrics, then raised $100M
+  source: cfodive.com
+  deal: false
+- text: Intuit deal signals bet on AI demand in revenue management
+  source: cfodive.com
+  deal: false
+- text: Producer prices surge at fastest pace since 2022, adding pressure on Fed
+  source: cfodive.com
+  deal: false
+- text: Judge rebukes Trump officials for intimidating ex-FEMA CFO
+  source: cfodive.com
+  deal: false
+- text: 'CEOs eye C-suite shake-ups as pressures mount: BCG'
+  source: cfodive.com
+  deal: false
+- text: Inflation speeds up to 3.7%, fueled by surging gasoline prices
+  source: cfodive.com
+  deal: false
+- text: China looks to ban foreign acquisitions of critical biopharma platforms
+  source: fiercebiotech.com
+  deal: false
+- text: SimBioSys nabs FDA clearance for Nvidia-powered, MRI-derived breast cancer recurrence tool
+  source: fiercebiotech.com
+  deal: false
+- text: Chutes & Ladders—Bausch + Lomb's returning CEO Saunders exits again
+  source: fiercebiotech.com
+  deal: false
+- text: FDA issues early alert for Edwards Lifesciences’ mitral valve delivery system after reported death, injury
+  source: fiercebiotech.com
+  deal: false
+- text: '‘It’s certainly not easy’: How are Boston biotechs coping with a shallower pool of seed funding?'
+  source: fiercebiotech.com
+  deal: false
+- text: Labcorp, Thrive Global launch latest Thrive 5 health test
+  source: fiercebiotech.com
+  deal: false
+- text: 'Fierce Biotech Fundraising Tracker ''26: Estuary channels $93M series A; OMass obtains $310M'
+  source: fiercebiotech.com
+  deal: false
+- text: Estuary flows out of stealth with $103M to propel kidney disease gene therapies into clinic
+  source: fiercebiotech.com
+  deal: false
+- text: City goes public with $200M IPO, while Frazier Life Sciences takes biotech-focused SPAC to Nasdaq
+  source: fiercebiotech.com
+  deal: false
+- text: OrbiMed’s largest-ever Asian fund contributes to $3B war chest
+  source: fiercebiotech.com
+  deal: false
+- text: Osivax focuses on combo strategy for flu vaccine after phase 2 fail
+  source: fiercebiotech.com
+  deal: false
+- text: AstraZeneca inks $1.5B insitro deal for AI-enabled target discovery of liver, heart disease drugs
+  source: fiercebiotech.com
+  deal: false
+- text: Rebranded Galapagos finally finds buyer for unwanted cell therapy pipeline
+  source: fiercebiotech.com
+  deal: false
+- text: Iambic goes public with $150M IPO to accelerate clinical development of oncology pipeline
+  source: fiercebiotech.com
+  deal: false
+- text: Vanda pauses social anxiety program after ex-Novartis asset flunks phase 3 study
+  source: fiercebiotech.com
+  deal: false
+- text: Why OMass’ $310M series C marks ‘fantastic milestone’ on journey to become ‘Britain’s Big Biotech’
+  source: fiercebiotech.com
+  deal: false
+- text: IQVIA, Veeva expand on existing partnership for speedier clinical trials
+  source: fiercebiotech.com
+  deal: false
+- text: Merck KGaA spinout iOnctura touts PI3K delta inhibitor in metastatic eye cancer
+  source: fiercebiotech.com
+  deal: false
+- text: Verastem CEO claims RAS drug has 'set a new benchmark' for tricky cancer in early readout
+  source: fiercebiotech.com
+  deal: false
+- text: Deep-pocketed Verdiva axes GLP-1 switching trial over ‘market evolution’
+  source: fiercebiotech.com
+  deal: false
+- text: Biomea posts phase 1 data to pitch oral GLP-1 to potential partners, but investors appear unconvinced
+  source: fiercebiotech.com
+  deal: false
+- text: Vir CEO sees ‘opportunity to do more deals’ after striking $1.9B Gilead pact for dual-masked TCEs
+  source: fiercebiotech.com
+  deal: false
+- text: GSK to lay off over 1,200 roles in Belgium as cost-saving program picks up steam
+  source: fiercebiotech.com
+  deal: false
+- text: Zealand inks $1.2B Generate pact to add multispecific proteins to obesity pipeline
+  source: fiercebiotech.com
+  deal: false
+- text: Agilent spends $240M upfront to buy digital pathology specialist Proscia
+  source: fiercebiotech.com
+  deal: true
+  acquirer: Agilent
+  target: Proscia
+  stage: announced
+- text: When Will the Fed Move on Rates?
+  source: rss.nytimes.com
+  deal: false
+- text: The Fallout From the ‘Neocloud’ Wipeout
+  source: rss.nytimes.com
+  deal: false
+- text: What Allegations of Spying at OpenAI Mean for the A.I. Industry
+  source: rss.nytimes.com
+  deal: false
+- text: Sign Up for DealBook
+  source: rss.nytimes.com
+  deal: false
+- text: States Are Stepping Up as the New Antitrust Enforcers
+  source: rss.nytimes.com
+  deal: false
+- text: The Reporter Who Exposed Elizabeth Holmes on Nathan Fielder’s Documentary
+  source: rss.nytimes.com
+  deal: false
+- text: Anthropic Says Revenue Jumped 45% to $16.8 Billion in Third Quarter
+  source: rss.nytimes.com
+  deal: false
+- text: Vance, Altman, Musk, Mamdani, Bieber and More at the DealBook Summit
+  source: rss.nytimes.com
+  deal: false
+- text: Strikes Put Saudi Arabia’s Economy Under Pressure
+  source: rss.nytimes.com
+  deal: false
+- text: What’s Dragging Down A.I. Efficiency? The ‘Verification Tax.’
+  source: rss.nytimes.com
+  deal: false
+- text: The Fallout From OpenAI’s Revenue Surprise
+  source: rss.nytimes.com
+  deal: false
+- text: The Little-Noticed Exception in Trump Accounts
+  source: rss.nytimes.com
+  deal: false
+- text: Why Markets Are Buoyant — and Under Pressure
+  source: rss.nytimes.com
+  deal: false
+- text: U.S. Trade Deficit Hits 17-Month High Despite Trump’s Tariffs
+  source: rss.nytimes.com
+  deal: false
+- text: A New Open-Weight Challenger to Anthropic, Reflection, Emerges
+  source: rss.nytimes.com
+  deal: false
+- text: What’s the Right “Level of Care” for A.I.?
+  source: rss.nytimes.com
+  deal: false
+- text: As A.I. Agents Begin Shopping, Brands Are Changing Their Sales Pitch
+  source: rss.nytimes.com
+  deal: false
+- text: The Latest Challenge to Data Centers? Restive Investors.
+  source: rss.nytimes.com
+  deal: false
+- text: The Global Bond Rout Reaches Worrying New Levels
+  source: rss.nytimes.com
+  deal: false
+- text: Bracing for More Inflation Volatility
+  source: rss.nytimes.com
+  deal: false
+- text: Trump Offers Putin Economic Relief in Hopes That Russia Will Return the Favor
+  source: rss.nytimes.com
+  deal: false
+- text: Corporate Tax Revenue Falls Even as Profits Soar Under Trump
+  source: rss.nytimes.com
+  deal: false
+- text: Can Cereal Be Healthy? Big Companies Are Trying.
+  source: rss.nytimes.com
+  deal: false
+- text: It’s Time to Shop Medicare, and This Year, It’s Extra Important
+  source: rss.nytimes.com
+  deal: false
+- text: Weak Links Start to Show in A.I. Borrowing
+  source: rss.nytimes.com
+  deal: false
+- text: M.L.B. Playoff Ads With Sydney Sweeney and Megan Fox Draw Backlash
+  source: rss.nytimes.com
+  deal: false
+- text: Netflix Hurries to Rewrite Its Narrative With Layoffs and a Sudden Firing
+  source: rss.nytimes.com
+  deal: false
+- text: U.S. Budget Deficit Nears $2 Trillion, a Reality Check for Trump’s Cost Cutting
+  source: rss.nytimes.com
+  deal: false
+- text: You’ve Found a Long-Lost CD. Can You Still Get Your Money?
+  source: rss.nytimes.com
+  deal: false
+- text: Indonesian Stocks Plunge as MSCI Threatens to Drop Market from Indexes
+  source: rss.nytimes.com
+  deal: false
+- text: Feel Like You’re Overpaying for Hotels? Blame Expedia, a New Lawsuit Says.
+  source: rss.nytimes.com
+  deal: false
+- text: Lufthansa’s Final A346 Flight Marks the End of an Aviation Love Story
+  source: rss.nytimes.com
+  deal: false
+- text: Trump Hasn’t Lowered Drug Prices for These Voters
+  source: rss.nytimes.com
+  deal: false
+- text: After Welcoming China’s Electric Vehicles, This Country Is Paying the Price
+  source: rss.nytimes.com
+  deal: false
+- text: Is Longevity Medicine Going Mainstream?
+  source: rss.nytimes.com
+  deal: false
+- text: Why Bad News in the Bond Market May Be Good News for Investors
+  source: rss.nytimes.com
+  deal: false
+- text: Warsh Vows to Tame Inflation as A.I. Delivers ‘Shock’ to Economy
+  source: rss.nytimes.com
+  deal: false
+- text: Netflix Replaces Bela Bajaria as Chief Content Officer
+  source: rss.nytimes.com
+  deal: false
+- text: Mortgage Rates Hover at 7.4%, Highest Since 2023
+  source: rss.nytimes.com
+  deal: false
+- text: Data Centers Become Targets in Wars in Ukraine, Russia and the Middle East
+  source: rss.nytimes.com
+  deal: false
+- text: California’s Proposition 45 Brings the Sprawl Debate Back
+  source: rss.nytimes.com
+  deal: false
+- text: Homeownership Drifts Further Out of Reach as Mortgage Rates Rise
+  source: rss.nytimes.com
+  deal: false
+- text: Midterms Could Shift Focus of Epstein Abuse to Banks’ Role
+  source: rss.nytimes.com
+  deal: false
+- text: Shook Research Changes Name to Veritant After Forbes Scandal
+  source: rss.nytimes.com
+  deal: false
+- text: Tech Stocks Drop Further Amid Doubts Over AI Spending
+  source: rss.nytimes.com
+  deal: false
+- text: Gulf Oil Is Still Flowing Despite a Surge in Attacks on Ships
+  source: rss.nytimes.com
+  deal: false
+- text: Chinese Carmakers, Once a Sideshow, Take Center Stage at Paris Motor Show
+  source: rss.nytimes.com
+  deal: false
+- text: Tesla Debuts 2026 Roadster ‘Flying’ Electric Sports Car
+  source: rss.nytimes.com
+  deal: false
+- text: Families of Sailors Killed in Iran War Struggle for Compensation and Closure
+  source: rss.nytimes.com
+  deal: false
+- text: Battle Over the Pierre Ends in Defeat for the Buyer Pushed by Lutnick
+  source: rss.nytimes.com
+  deal: false
+- text: Stocks Tumble as Concerns Over Inflation and A.I. Investments Grow
+  source: rss.nytimes.com
+  deal: false
+- text: Energy Dept. Issues Emergency Order Amid Above-Average Temperatures
+  source: rss.nytimes.com
+  deal: false
+- text: Why Trump’s Russian Diesel Deal Is Unlikely to Lower Fuel Costs
+  source: rss.nytimes.com
+  deal: false
+- text: Netflix, Facing Slowing Growth, Cuts 6% of Its Work Force
+  source: rss.nytimes.com
+  deal: false
+- text: Democrats Blame Trump After CPI Report Shows Energy Prices Drove Up Inflation
+  source: rss.nytimes.com
+  deal: false
+- text: What Is Starshield, SpaceX’s Military-Grade Satellite Internet Service Ukraine Relies On?
+  source: rss.nytimes.com
+  deal: false
+- text: 5 Costs Americans Are Paying More for as Inflation Rises
+  source: rss.nytimes.com
+  deal: false
+- text: Here’s the latest.
+  source: rss.nytimes.com
+  deal: false
+- text: Surging Inflation Complicates Trump’s Final Push to Sell Voters on Strong Economy
+  source: rss.nytimes.com
+  deal: false
+- text: Rising Costs Push Necessities Out of Reach for Nearly Half of Americans
+  source: rss.nytimes.com
+  deal: false
+- text: Social Security COLA for 2027 Will Be 3.6%
+  source: rss.nytimes.com
+  deal: false
+- text: Gas Prices Are Up 34% From a Year Ago, Adding to Inflation Pressures
+  source: rss.nytimes.com
+  deal: false
+- text: Hollywood Agents and Producers Push to Restore Glory Days of Indie TV
+  source: rss.nytimes.com
+  deal: false
+- text: Attacks on Ships in Strait of Hormuz Escalate Sharply
+  source: rss.nytimes.com
+  deal: false
+- text: '''Dead money’ for a decade: Why this hedge fund approach may deliver an advantage over bonds'
+  source: cnbc.com
+  deal: false
+- text: Software’s new consolidator gets big vote of confidence from Berkshire
+  source: cnbc.com
+  deal: false
+- text: U.S. presses China on Mastercard, Citigroup market access in bilateral Bangkok talks, official says
+  source: cnbc.com
+  deal: false
+- text: People in China are spending nearly as much of their income as Americans on healthcare
+  source: cnbc.com
+  deal: false
+- text: Harvard’s endowment jumps 27% in fiscal 2026, lifted by SpaceX as top holding
+  source: cnbc.com
+  deal: false
+- text: China indicates rare earths will keep flowing to EU, regardless of U.S. trade deal expiration
+  source: cnbc.com
+  deal: false
+- text: Bank of America hired 1,000 contractors to patch software flaws exposed by Anthropic's Mythos
+  source: cnbc.com
+  deal: false
+- text: Morgan Stanley tops estimates as equities trading revenue beats expectations by $909 million
+  source: cnbc.com
+  deal: false
+- text: Bank of America shares drop after third-quarter revenue miss and regulatory penalty
+  source: cnbc.com
+  deal: false
+- text: China's exports and imports surge past expectations in September
+  source: cnbc.com
+  deal: false
+- text: Goldman says investors are looking for 'profitable' Chinese business growth overseas
+  source: cnbc.com
+  deal: false
+- text: Williams says Fed may not have to hike rates in 2027, at odds with traders
+  source: cnbc.com
+  deal: false
+- text: JPMorgan Chase blocks outside AI agents like Muse, Instinct from directly accessing accounts
+  source: cnbc.com
+  deal: false
+- text: Visa gets Beijing's green light for bank card business after 40 years of working with China
+  source: cnbc.com
+  deal: false
+- text: '''Boring is not bad'': CEO of Southeast Asia''s largest bank pitches Singapore as a haven amid global turmoil'
+  source: cnbc.com
+  deal: false
+- text: The bull market turned 4 years old on Monday. Investors say reaching a fifth birthday could be challenging
+  source: cnbc.com
+  deal: false
+- text: Higher rates could be needed to avoid 'inflationary mindset' taking hold, says Fed's Hammack
+  source: cnbc.com
+  deal: false
+- text: Inflation likely peaked for 2026 but will remain sticky, according to prediction markets
+  source: cnbc.com
+  deal: false
+- text: JPMorgan makes bullish call in fixed income space, suggests it's a once in a generation opportunity
+  source: cnbc.com
+  deal: false
+- text: Blockchain.com seeks U.S. approval for prediction markets, crypto derivatives trading
+  source: cnbc.com
+  deal: false
+- text: Tokenization could unleash tens of billions of dollars in trapped capital, Nasdaq CEO says
+  source: cnbc.com
+  deal: false
+- text: Little relief expected for gas prices ahead of Election Day, according to prediction markets
+  source: cnbc.com
+  deal: false
+- text: After a yearslong slump, China's real estate market may be set for a turnaround
+  source: cnbc.com
+  deal: false
+- text: Huawei doubles down on smartphones as EV sales slow
+  source: cnbc.com
+  deal: false
+- text: Fed officials see another hike coming, but no sign as to when, minutes show
+  source: cnbc.com
+  deal: false
+- text: Why AI is both the hope and the hazard for world leaders, according to IMF chief Georgieva
+  source: cnbc.com
+  deal: false
+- text: 'Chart: A look at the S&P 500''s remarkable and defiant trip to a new record'
+  source: cnbc.com
+  deal: false
+- text: How event contract bundles are boosting volume on prediction markets
+  source: cnbc.com
+  deal: false
+- text: 'Goldman: Diesel prices set to stay high through 2027 as refineries struggle to meet demand'
+  source: cnbc.com
+  deal: false
+- text: House Democrat targets candidate prediction market trades after opponent’s Kalshi penalty
+  source: cnbc.com
+  deal: false
+- text: Here's who Netflix just brought in to run content — and what it means for the streamer
+  source: cnbc.com
+  deal: false
+- text: Nike's India campus is a long-term growth bet amid turnaround
+  source: cnbc.com
+  deal: false
+- text: KFC to switch to Coca-Cola beverages in U.S. restaurants for the first time in decades
+  source: cnbc.com
+  deal: false
+- text: Porsche reveals Mission S concept car that previews new design identity
+  source: cnbc.com
+  deal: false
+- text: JetBlue’s new domestic first class, BlueFirst, is now on sale
+  source: cnbc.com
+  deal: false
+- text: Southwest is overhauling its frequent flyer program. Here's what's changing
+  source: cnbc.com
+  deal: false
+- text: How lower fuel economy targets could boost pickups and V-8 engines
+  source: cnbc.com
+  deal: false
+- text: Merck CEO tells CNBC he expects breakthrough cancer vaccine will become faster to make
+  source: cnbc.com
+  deal: false
+- text: Netflix to lay off roughly 1,000 employees, or 6% of workforce
+  source: cnbc.com
+  deal: false
+- text: 'Delta''s business-class revamp: New seats, menus, plates and more Porsches'
+  source: cnbc.com
+  deal: false
+- text: United Airlines is making it harder to reach its top frequent flyer status in 2027
+  source: cnbc.com
+  deal: false
+- text: Airport attacks put aviation in crosshairs of geopolitical conflicts
+  source: cnbc.com
+  deal: false
+- text: Walmart to cover some GLP-1s, inhalers and insulin for employees at no cost as it expands benefits
+  source: cnbc.com
+  deal: false
+- text: UnitedHealth Group tops estimates, hikes profit outlook as insurer manages high medical costs
+  source: cnbc.com
+  deal: false
+- text: Delta delays debut of Saudi Arabia service until March after Riyadh airport attacks
+  source: cnbc.com
+  deal: false
+- text: McDonald's is leaning into chicken and drinks to grow. New data shows it could be a tough task
+  source: cnbc.com
+  deal: false
+- text: Starbucks says it is not buying Chipotle after takeover speculation
+  source: cnbc.com
+  deal: false
+- text: FAA warns U.S. airlines of safety risks over Saudi Arabia after attacks
+  source: cnbc.com
+  deal: false
+- text: From BJ’s to Lululemon, retailers are trimming assortments to boost business
+  source: cnbc.com
+  deal: false
+- text: 'Delta CEO: ''Safety is going to make the call'' on launching Saudi Arabia flight'
+  source: cnbc.com
+  deal: false
+- text: Delta Air Lines cuts 2026 forecast on fuel surge, but CEO says demand is still strong
+  source: cnbc.com
+  deal: false
+- text: Why a Starbucks takeover of Chipotle would — and wouldn't — make sense for both companies
+  source: cnbc.com
+  deal: false
+- text: Skydance's David Ellison tells CNBC combined company is 'positioned to win in every single vertical'
+  source: cnbc.com
+  deal: false
+- text: PepsiCo cuts earnings forecast as North American turnaround takes longer than expected
+  source: cnbc.com
+  deal: false
+- text: Lululemon poaches Athleta CEO as new chief product officer
+  source: cnbc.com
+  deal: false
+- text: Levi Strauss hikes profit guidance after tariff refunds, but its sales outlook is less optimistic
+  source: cnbc.com
+  deal: false
+- text: Modelo owner Constellation is getting creative to bring back beer drinkers as overall demand weakens
+  source: cnbc.com
+  deal: false
+- text: Corporate donations flood US attorneys-general election races
+  source: ft.com
+  deal: false
+- text: Trump exempts Russia from further sanctions mandated by new law
+  source: ft.com
+  deal: false
+- text: 'Chart of the Week: The chip stock split'
+  source: ft.com
+  deal: false
+- text: Formula 1 bets on Rwanda
+  source: ft.com
+  deal: false
+- text: Margaret Hamilton, software engineer, 1936-2026
+  source: ft.com
+  deal: false
+- text: The financial double life of barristers
+  source: ft.com
+  deal: false
+- text: Activists highlight a Big Yellow warning sign for the London market
+  source: ft.com
+  deal: false
+- text: '‘Inflation will make people poor’: Airlines brace for years of pain'
+  source: ft.com
+  deal: false
+- text: Could you cut it as a commercial landlord?
+  source: ft.com
+  deal: false
+- text: How to create a tech-free zone in your home (without a family revolt)
+  source: ft.com
+  deal: false
+- text: SoftBank in talks to buy US security group Allied Universal
+  source: ft.com
+  deal: true
+  acquirer: SoftBank
+  target: Allied Universal
+  stage: rumored
+- text: Anthropic offers Blackstone double-digit yield in latest chip financing
+  source: ft.com
+  deal: false
+- text: Oil hits five-month high of $110 on new escalation in Middle East
+  source: ft.com
+  deal: false
+- text: Healey says new Heathrow runway would boost ‘growth’ despite Burnham wavering
+  source: ft.com
+  deal: false
+- text: Apple blames ‘extraordinary’ demand as foldable iPhones sell out
+  source: ft.com
+  deal: false
+- text: Big Tech stocks suffer biggest weekly drop since ‘liberation day’
+  source: ft.com
+  deal: false
+- text: Italy secures EU deal to lower its electricity prices
+  source: ft.com
+  deal: false
+- text: Rich make millions by flipping private jets
+  source: ft.com
+  deal: false
+- text: Fuel-price surge turbocharges global EV sales and spells end for diesel in Europe
+  source: ft.com
+  deal: false
+- text: 'Directors’ Deals: IG Design Group finance boss backs revamp'
+  source: ft.com
+  deal: false
+- text: 'Stockpickers: Bytes Technology, YouGov, Softcat'
+  source: ft.com
+  deal: false
+- text: Alexandr Wang, Meta’s AI wunderkind
+  source: ft.com
+  deal: false
+- text: Looming UK tax rise puts bankers on edge
+  source: ft.com
+  deal: false
+- text: Can consultants reinvent themselves once again?
+  source: ft.com
+  deal: false
+- text: Has London’s £5bn ‘super sewer’ improved water quality in the Thames?
+  source: ft.com
+  deal: false
+- text: The Dealmaker’s Guide to Stress-Testing AI Value
+  source: middlemarketgrowth.org
+  deal: false
+- text: 'PE Weekly: M&A Roundup Oct. 9-15'
+  source: middlemarketgrowth.org
+  deal: false
+- text: 100 Notable Acquisitions by ACG Members in Q3 2026
+  source: middlemarketgrowth.org
+  deal: false
+- text: AI Behind the Dealmaking Scenes
+  source: middlemarketgrowth.org
+  deal: false
+- text: 'Inside the Fastest-Growing Corner of Private Credit: Asset-Based Finance'
+  source: middlemarketgrowth.org
+  deal: false
+- text: 'PE Weekly: M&A Roundup Oct. 2-8'
+  source: middlemarketgrowth.org
+  deal: false
+- text: Why Capital Access Isn’t the Same as Capital Leverage
+  source: middlemarketgrowth.org
+  deal: false
+- text: Your IT Stack Is Costing You More Than You Think
+  source: middlemarketgrowth.org
+  deal: false
+- text: Finding the Entry Point Into AI’s Hyperscale Buildout
+  source: middlemarketgrowth.org
+  deal: false
+- text: 'PE Weekly: M&A Roundup Sept. 25-Oct. 1'
+  source: middlemarketgrowth.org
+  deal: false
+- text: 'The Week’s 10 Biggest Funding Rounds: Spending Contracts For Latest AI-Driven Startup Batch'
+  source: news.crunchbase.com
+  deal: false
+- text: Asia’s Startup Funding At Near Record High In Q3, Driven By AI
+  source: news.crunchbase.com
+  deal: false
+- text: The Crunchbase Tech Layoffs Tracker
+  source: news.crunchbase.com
+  deal: false
+- text: How To Build Your Team With Autonomous Humans, Not Just Autonomous Systems
+  source: news.crunchbase.com
+  deal: false
+- text: Cybersecurity Investors Put $6.8B To Work In The Third Quarter, Mostly In Larger Rounds
+  source: news.crunchbase.com
+  deal: false
+- text: 'Exclusive: Chariot Raises $10M To Help Consumers Fight Back Against Hidden Fees And Hard-To-Cancel Subscriptions'
+  source: news.crunchbase.com
+  deal: false
+- text: 'Exclusive: Stella & Dot Founder Raises $5M For Her Next Act, AI Marketing Startup Marklo'
+  source: news.crunchbase.com
+  deal: false
+- text: How I Learned That Some Startup Problems Are Too Big For A Minimum Viable Product
+  source: news.crunchbase.com
+  deal: false
+- text: 38 Companies Join The Crunchbase Unicorn Board In Blockbuster September, Led By Semiconductor, Fintech And Space Tech Companies
+  source: news.crunchbase.com
+  deal: false
+- text: Where The Next Generation Of Super Apps Will Be Built
+  source: news.crunchbase.com
+  deal: false
+- text: CMS proposes MA 'ghost network,' PBM transparency requirements
+  source: fiercehealthcare.com
+  deal: false
+- text: Centene to expand CHOICE Arrangements program to its employees in Ohio, Oklahoma
+  source: fiercehealthcare.com
+  deal: false
+- text: Parkview Health acquiring shared services vendor Ovation Healthcare
+  source: fiercehealthcare.com
+  deal: false
+- text: 'Fierce Healthcare Fundraising Tracker ''26: Abby Care secures $82M for family-led care; Allswell nabs $7M to expand LGBTQ therapy'
+  source: fiercehealthcare.com
+  deal: false
+- text: Three-quarters of Americans disillusioned with costs, say healthcare is defining voting issue
+  source: fiercehealthcare.com
+  deal: false
+- text: American Medical Association rolls out governance framework for agentic AI solutions
+  source: fiercehealthcare.com
+  deal: false
+- text: Industry Voices—How physician practices can grow and succeed without the support of private equity
+  source: fiercehealthcare.com
+  deal: false
+- text: 'Weekly Rundown: JAMA Network to add AI journal in 2027; UMass Memorial Health partners with Microsoft, Accenture'
+  source: fiercehealthcare.com
+  deal: false
+- text: 'Fierce Healthcare Regulatory Recap: HHS presses medical groups on gender-affirming care for minors; CMS distributes RHTP funding to 5 states'
+  source: fiercehealthcare.com
+  deal: false
+- text: Epic teams up with Amazon Pharmacy, LillyDirect and Mark Cuban to launch prescription drug pricing tool
+  source: fiercehealthcare.com
+  deal: false
+- text: NABIP sues CMS over moratorium on new ACA broker registrations
+  source: fiercehealthcare.com
+  deal: false
+- text: Duke Health, CaroMont Health seek to jointly build, operate 2 Charlotte-area hospitals
+  source: fiercehealthcare.com
+  deal: false
+- text: Drugmakers, PhRMA seek to intervene in hospitals' 340B rebate challenge
+  source: fiercehealthcare.com
+  deal: false
+- text: Catching up with Blue Shield of California CEO Mike Stuart one year in
+  source: fiercehealthcare.com
+  deal: false
+- text: Voice AI startup careCycle rolls out free plan comparison tool for Medicare beneficiaries
+  source: fiercehealthcare.com
+  deal: false
+- text: Clasp launches national marketplace for loan-linked hiring
+  source: fiercehealthcare.com
+  deal: false
+- text: Millie to open first of several joint clinics with El Camino Health in the Bay Area
+  source: fiercehealthcare.com
+  deal: false
+- text: Chutes & Ladders—Inspira Health outlines leadership transition; Joint Commission names COO
+  source: fiercehealthcare.com
+  deal: false
+- text: Elevance Health Foundation launched a prize program for patient safety initiatives. Here's why
+  source: fiercehealthcare.com
+  deal: false
+- text: American Academy of Family Physicians joins physician social network Roon
+  source: fiercehealthcare.com
+  deal: false
+- text: As prior auth becomes an AI ‘arms race,’ Otter Health raises $8M for a different approach
+  source: fiercehealthcare.com
+  deal: false
+- text: Big-ticket hospital deals are becoming the M&A story of 2026
+  source: fiercehealthcare.com
+  deal: false
+- text: Walmart to expand health benefits for employees, including $0 prescriptions, rare disease care
+  source: fiercehealthcare.com
+  deal: false
+- text: Zocdoc acquires health tech company Sohar Health for automated benefits eligibility checks
+  source: fiercehealthcare.com
+  deal: true
+  acquirer: Zocdoc
+  target: Sohar Health
+  stage: announced
+- text: Centene unveils national provider gold card program
+  source: fiercehealthcare.com
+  deal: false
+- text: Trump's pharma holdings surged as drugmakers benefited from Medicare price negotiation carveouts, Democrats allege
+  source: fiercepharma.com
+  deal: false
+- text: 'The Oral GLP-1 Tracker: Foundayo, Wegovy pill undergo minor fluctuations'
+  source: fiercepharma.com
+  deal: false
+- text: Lilly's obesity pill, RevMed's pancreatic cancer breakthrough among slew of CHMP endorsements in Europe
+  source: fiercepharma.com
+  deal: false
+- text: Sanofi cycles deeper into sports marketing niche as Tour de France partner
+  source: fiercepharma.com
+  deal: false
+- text: Inside Teva's Weltruza launch and Novo's GLP-1 strategy
+  source: fiercepharma.com
+  deal: false
+- text: Roche makes class-first push into thyroid eye disease with new FDA nod for Enspryng
+  source: fiercepharma.com
+  deal: false
+- text: Fierce Pharma Asia—Roche’s $1.2B obesity deal; Asahi Kasei’s FDA nod; Verastem’s KRAS boon
+  source: fiercepharma.com
+  deal: false
+- text: Kindeva lands $226M defense contract to supply nerve agent antidote in US
+  source: fiercepharma.com
+  deal: false
+- text: Par Health recalls 22 lots of IV blood thinner, its 3rd US product pull in a month
+  source: fiercepharma.com
+  deal: false
+- text: With new Omvoh analyses, Lilly argues 'higher bar' for IBD treatment is within reach
+  source: fiercepharma.com
+  deal: false
+- text: Gilead puts a timely spotlight on HIV prevention in Latino communities with 'Ahorita Mismo' campaign
+  source: fiercepharma.com
+  deal: false
+- text: Isotope supplier NorthStar continues rise with partnership to tee up China radiopharmaceutical filings
+  source: fiercepharma.com
+  deal: false
+- text: Compass puts treatment-resistant depression on the map with first awareness day
+  source: fiercepharma.com
+  deal: false
+- text: FDA clears ImmunityBio’s Anktiva expansion in bladder cancer after regulatory whiplash
+  source: fiercepharma.com
+  deal: false
+- text: Ultragenyx makes swift $413M return on FDA review vouchers after summer of gene therapy nods
+  source: fiercepharma.com
+  deal: false
+- text: United lands 'clear-cut win' as Liquidia agrees to $380M settlement in Tyvaso patent infringement saga
+  source: fiercepharma.com
+  deal: false
+- text: Galderma bulks up dermatology portfolio with $1.5B acquisition of Zo Skin Health
+  source: fiercepharma.com
+  deal: false
+- text: AbbVie marks calendar for ‘Time For Treks’ in National Park Foundation, CLL Society partnership
+  source: fiercepharma.com
+  deal: false
+- text: 'Regulatory tracker: Pierre Fabre''s Ebvallo takes 3rd run at FDA approval'
+  source: fiercepharma.com
+  deal: false
+- text: FTC seeks sanctions against Martin Shkreli over alleged pharma ban violations
+  source: fiercepharma.com
+  deal: false
+- text: NantWorks' Soon-Shiong puts chips behind manufacturing disruptors in new rounds for Prolific Machines, Multiply Labs
+  source: fiercepharma.com
+  deal: false
+- text: Sanofi dodges EU fine over alleged disparagement of CSL flu vaccine
+  source: fiercepharma.com
+  deal: false
+- text: TDI Unveils Transparency Tool Showing Why Auto Policies are Declined
+  source: insurancejournal.com
+  deal: false
+- text: NTSB Investigating Plane Crash in Wisconsin That Killed 6
+  source: insurancejournal.com
+  deal: false
+- text: Ohio AG Sues Home-Improvement Companies for Allegedly Scamming Customers
+  source: insurancejournal.com
+  deal: false
+- text: Taiwan to Fund $4 Billion Texas Complex for AI, Nvidia Partners
+  source: insurancejournal.com
+  deal: false
+- text: 'Burned by Fire, Malibu’s Million-Dollar Mansions Face a New Threat: El Niño'
+  source: insurancejournal.com
+  deal: false
+- text: As French Supermarkets Try to Restock, They Are Told Cyberattack May Be Ongoing
+  source: insurancejournal.com
+  deal: false
+- text: Travelers Reports Solid Underwriting, Record Investment Income for Q3
+  source: insurancejournal.com
+  deal: false
+- text: West Virginia Fire Commission Says State Really Needs More Firefighters
+  source: insurancejournal.com
+  deal: false
+- text: Florida Wins Key Ruling Allowing it to Enforce Law on Social Media Use by Kids
+  source: insurancejournal.com
+  deal: false
+- text: Roller Coaster Death Puts Spotlight on Safety of Ever-More Thrilling Rides
+  source: insurancejournal.com
+  deal: false
+- text: Axa Braces for Loss of Paschi Contract as Italy Bank Deals Swirl
+  source: insurancejournal.com
+  deal: false
+- text: 'IMF Chief: AI Risks May Exceed Opportunities Without Safeguards, Ethics Framework'
+  source: insurancejournal.com
+  deal: false
+- text: AI Credit Worries Send Default Insurance to Record High
+  source: insurancejournal.com
+  deal: false
+- text: 'People Moves: OneShield Appoints Brown as Chief Insurance Officer'
+  source: insurancejournal.com
+  deal: false
+- text: Cyber Rates Are Down, Risks Are Up but Small Businesses Slow to Adopt
+  source: insurancejournal.com
+  deal: false
+- text: Broad AI Exclusions in Insurance Policies Could Create Uncertainty, Marsh CEO Says
+  source: insurancejournal.com
+  deal: false
+- text: 'Viewpoint: Model Independence Is the AI Strategy Insurers Can’t Afford to Ignore'
+  source: insurancejournal.com
+  deal: false
+- text: CCC Intelligent Solutions Agrees to $6.1B Take-Private Deal with GTCR, Elliott
+  source: insurancejournal.com
+  deal: true
+  acquirer: ''
+  target: CCC Intelligent Solutions
+  stage: announced
+- text: 'All in the Family: Husband, Wife and Daughter Indicted for Insurance Fraud and Bribery'
+  source: insurancejournal.com
+  deal: false
+- text: Anthropic Stands Alone as Rest of IPO Market Slows to a Crawl
+  source: insurancejournal.com
+  deal: false
+- text: Lemonade Launches Renters Insurance in Hawaii
+  source: insurancejournal.com
+  deal: false
+- text: Adjuster Created Law Firm and Fake Claim to Defraud Insurer of $1M, Officials Charge
+  source: insurancejournal.com
+  deal: false
+- text: NYC Comptroller Levine Urges Anthropic to Pause US IPO
+  source: insurancejournal.com
+  deal: false
+- text: Romania Blames Russia for Escalating Black Sea Ship Strikes
+  source: insurancejournal.com
+  deal: false
+- text: France, Germany Near Deal on Car Emissions, Britain ‘Made in EU’ Status
+  source: insurancejournal.com
+  deal: false
+- text: Ukraine Hits Russian Refinery; Zelenskiy Says ‘We’re Done’ with Trump’s Energy Truce
+  source: insurancejournal.com
+  deal: false
+- text: Florida Congressional Candidate Says Home Ground Wires to Be Replaced After Suit
+  source: insurancejournal.com
+  deal: false
+- text: States Seek Children’s Data Protections in Character.AI Bankruptcy
+  source: insurancejournal.com
+  deal: false
+- text: KCC Says Isaias Insured Losses to Be $3 Billion; AM Best Calls Storm an Earnings Event
+  source: insurancejournal.com
+  deal: false
+- text: AM Best Revises Outlooks to Positive for AmTrust Group Insurers
+  source: insurancejournal.com
+  deal: false
+- text: 'APAC re/insurance markets face shifting risks and growth pressures: Gallagher Re'
+  source: reinsurancene.ws
+  deal: false
+- text: Generali advances reinsurance strategy with launch of Syndicate 2031 Red Bridge at Lloyd’s
+  source: reinsurancene.ws
+  deal: false
+- text: VisionFund, Global Parametrics to develop Amazon Basin parametric cover
+  source: reinsurancene.ws
+  deal: false
+- text: Moody’s RMS says Hurricane Isaias insured losses could hit $4.5bn
+  source: reinsurancene.ws
+  deal: false
+- text: Stand secures $70m Series C Funding to grow resilient home insurance business
+  source: reinsurancene.ws
+  deal: false
+- text: Travelers Q3’26 net income rises despite higher cat losses, but 9M cat toll down considerably
+  source: reinsurancene.ws
+  deal: false
+- text: Marsh Re’s Janeke expects Baden-Baden to ‘entrench’ buyer-favourable reinsurance market
+  source: reinsurancene.ws
+  deal: false
+- text: 'AI-driven incidents will escalate in frequency once attackers find the right business model: Coalition'
+  source: reinsurancene.ws
+  deal: false
+- text: Credeq Syndicate 1998 receives Lloyd’s in-principle approval
+  source: reinsurancene.ws
+  deal: false
+- text: Nepal and World Bank Group sign mandate to develop cat bond for earthquake
+  source: reinsurancene.ws
+  deal: false
+- text: Is an elevated hurdle rate a good idea?
+  source: privateequityinternational.com
+  deal: false
+- text: EQT expects another 12-15 months of fundraising for latest flagship
+  source: privateequityinternational.com
+  deal: false
+- text: 'Side Letter: Self-inflicted illiquidity?'
+  source: privateequityinternational.com
+  deal: false
+- text: 'Side Letter: Pain shared'
+  source: privateequityinternational.com
+  deal: false
+- text: 'Fund performance: Is the worst over or yet to come?'
+  source: privateequityinternational.com
+  deal: false
+- text: Aus regulator reports ‘significant concerns’ over unlisted asset valuations
+  source: privateequityinternational.com
+  deal: false
+- text: 'Side Letter: Returns recalibration'
+  source: privateequityinternational.com
+  deal: false
+- text: Lazard to reshuffle APAC advisory leadership following acquisition of Campbell Lutyens
+  source: privateequityinternational.com
+  deal: false
+- text: 'The Exit Playbook: Safe landings when exits stall'
+  source: privateequityinternational.com
+  deal: false
+- text: LP appetites for APAC turn positive as overall recovery remains on standby
+  source: privateequityinternational.com
+  deal: false
+- text: 'Key deals this week: International Paper, IonQ, Bumble, and more'
+  source: seekingalpha.com
+  deal: false
+- text: Softbank falls amid report it's evaluating bid for US security firm Allied
+  source: seekingalpha.com
+  deal: false
+- text: Ambarella may be seeing interest from a third bidder - report
+  source: seekingalpha.com
+  deal: false
+- text: Sandpiper comes out against H&R's proposed Go REIT deal
+  source: seekingalpha.com
+  deal: false
+- text: Sanara MedTech/MiMedx deal spread widens on FTC second request
+  source: seekingalpha.com
+  deal: false
+- text: Varonis being acquired by Proofpoint signals more cybersecurity M&A, Wedbush says
+  source: seekingalpha.com
+  deal: true
+  acquirer: Proofpoint
+  target: Varonis
+  stage: announced
+- text: International Seaways to buy Bruton in $370M deal, adding four VLCCs
+  source: seekingalpha.com
+  deal: true
+  acquirer: International Seaways
+  target: Bruton
+  stage: announced
+- text: Truist Financial Q3 earnings miss, hit by loan sale; agrees to sell Lightstream to Carlyle
+  source: seekingalpha.com
+  deal: true
+  acquirer: Carlyle
+  target: Lightstream
+  stage: announced
+- text: Site Centers sells stake in joint venture, declares $3.00 per share special distribution
+  source: seekingalpha.com
+  deal: false
+- text: Varonis Systems gains after Proofpoint agrees to buy for $49.75/share in cash
+  source: seekingalpha.com
+  deal: false
+- text: Beazer Homes stockholders approve acquisition by Dream Finders
+  source: seekingalpha.com
+  deal: false
+- text: Proofpoint to acquire Varonis Systems in $6.3B all-cash deal
+  source: seekingalpha.com
+  deal: true
+  acquirer: Proofpoint
+  target: Varonis Systems
+  stage: announced
+- text: UniCredit wins ECB approval to acquire Commerzbank
+  source: seekingalpha.com
+  deal: true
+  acquirer: UniCredit
+  target: Commerzbank
+  stage: announced
+- text: International Paper gains as PE firms explore bids for DS Smith (update)
+  source: seekingalpha.com
+  deal: false
+- text: Big Yellow gains as second activist pushes for company to be sold
+  source: seekingalpha.com
+  deal: false
+- text: CCC Intelligent Solutions to go private in $6.1B transaction led by GTCR and Elliott
+  source: seekingalpha.com
+  deal: false
+- text: Labcorp to buy select assets of OPKO’s BioReference Health for up to $872M
+  source: seekingalpha.com
+  deal: true
+  acquirer: Labcorp
+  target: OPKO’s BioReference Health
+  stage: announced
+- text: AtlasClear to acquire Ark Financial in deal worth up to $24.5M
+  source: seekingalpha.com
+  deal: true
+  acquirer: AtlasClear
+  target: Ark Financial
+  stage: announced
+- text: Canada's Cohere signs deal to acquire AI cybersecurity startup AISLE
+  source: seekingalpha.com
+  deal: true
+  acquirer: Cohere
+  target: AISLE
+  stage: announced
+- text: AT&T to sell Mexico wireless business to Televisa-Fintech consortium for $2B
+  source: seekingalpha.com
+  deal: true
+  acquirer: Televisa-Fintech
+  target: AT&T’s Mexico wireless business
+  stage: announced
+- text: $1.1B Hightower Naples Joins Flagship Firm The Bahnsen Group
+  source: WealthManagement.com
+  deal: false
+- text: $1.3 Billion UBS Duo Joins Wells FiNet Practice in Ohio
+  source: AdvisorHub
+  deal: false
+- text: $1.3B UBS Team Departs for Wells Fargo's FiNet
+  source: WealthManagement.com
+  deal: false
+- text: $1.4B Raymond James Team Launches Tennessee RIA
+  source: AdvisorHub
+  deal: false
+- text: '$10bn SignatureFD pursuing first-ever outside investor: Sources'
+  source: Citywire RIA
+  deal: false
+- text: $16bn Farther hires ex-Dynasty, Cap Group recruiter
+  source: Citywire RIA
+  deal: false
+- text: $33B Merit President Mayhue to Take CEO Role as Founder Kent Becomes Executive Chair
+  source: WealthManagement.com
+  deal: false
+- text: '$4.5M raised on trust alone: SEC alleges affinity fraud in merchant lending'
+  source: InvestmentNews
+  deal: false
+- text: $4.7M Merrill Team Decamps for Raymond James in Oregon
+  source: AdvisorHub
+  deal: false
+- text: $41bn Arax appoints new COO
+  source: Citywire RIA
+  deal: false
+- text: $472M Team Joins &Partners From LPL-Affiliated Bank in Illinois
+  source: AdvisorHub
+  deal: false
+- text: $57.6bn LPL OSJ Private Advisor Group names first chief client officer
+  source: Citywire RIA
+  deal: false
+- text: $580M Ameriprise Team Jumps to Wells Fargo FiNet in California
+  source: AdvisorHub
+  deal: false
+- text: $5B Trilogy Lands Colorado-based RIA Specializing in Aviation Workers
+  source: WealthManagement.com
+  deal: false
+- text: $744 Million Wells Fargo Team Joins &Partners in Missouri
+  source: AdvisorHub
+  deal: false
+- text: '&Partners Signs UBS Field Leaders Fox, Glassel in Growth Push'
+  source: AdvisorHub
+  deal: false
+- text: '&Partners taps two UBS leaders to run its private wealth business'
+  source: InvestmentNews
+  deal: false
+- text: '''I''m done'': Pandemic memories push business owners toward the exit'
+  source: InvestmentNews
+  deal: false
+- text: '''It''s not just for the founders'': Merit CEO Rick Kent shares his M&A must-haves'
+  source: Citywire RIA
+  deal: false
+- text: '''No rush'' Peter Mallouk is doing wild ''gap'' deals as he rides out RIA seller''s market and his Creative Planning keeps ''billions'' of purchasing power ''locked-and-loaded'' for ''perfect''
+    moment'
+  source: RIABiz
+  deal: false
+- text: '''The writing is on the wall'': What''s next after Fidelity axes sub-$100m RIAs?'
+  source: Citywire RIA
+  deal: false
+- text: '''They were probably getting overused'': Advice CIOs weigh limits on long-short SMAs'
+  source: Citywire RIA
+  deal: false
+- text: '''They were probably getting overused'': Mega-RIA CIOs weigh limits on long-short SMAs'
+  source: Citywire RIA
+  deal: false
+- text: '''Very little has changed'': ETF experts weigh IRS'' 351 crackdown'
+  source: Citywire RIA
+  deal: false
+- text: '10 Most Expensive ZIP Codes: 2026'
+  source: ThinkAdvisor
+  deal: false
+- text: 14 Investment Must Reads for This Week (Oct. 13, 2026)
+  source: WealthManagement.com
+  deal: false
+- text: 14 Investment Must Reads for This Week (Oct. 6, 2026)
+  source: WealthManagement.com
+  deal: false
+- text: 15 Investment Must Reads for This Week (Sept. 29, 2026)
+  source: WealthManagement.com
+  deal: false
+- text: 2027 Social Security COLA puts retirement income plans under review
+  source: InvestmentNews
+  deal: false
+- text: 3 prenup myths advisors can help clients move past
+  source: Financial Planning
+  deal: false
+- text: 3 ways RIAs can respond to Fidelity's new $100M minimum
+  source: Financial Planning
+  deal: false
+- text: 351 exchanges still viable after IRS ruling, says Baird planning leader
+  source: InvestmentNews
+  deal: false
+- text: '401(k) Real Talk Episode 209: September 23, 2026'
+  source: WealthManagement.com
+  deal: false
+- text: '401(k) Real Talk Episode 210: September 30, 2026'
+  source: WealthManagement.com
+  deal: false
+- text: '401(k) Real Talk Episode 211: October 7, 2026'
+  source: WealthManagement.com
+  deal: false
+- text: '401(k) Real Talk Episode 212: October 14, 2026'
+  source: WealthManagement.com
+  deal: false
+- text: 5 ways financial advisors can sharpen their listening skills
+  source: Financial Planning
+  deal: false
+- text: 5 ways to keep next-generation heirs in-house
+  source: Financial Planning
+  deal: false
+- text: '50% of Mercer''s new client flows in H1 came from custodial referrals: Document'
+  source: Citywire RIA
+  deal: false
+- text: '7 Charts For Client Conversations In Q4 2026: Interest Rates, The Fed, AI, And More'
+  source: Kitces
+  deal: false
+- text: 7 Social Security Bills Brewing in Congress
+  source: ThinkAdvisor
+  deal: false
+- text: 8 Ways Rising Costs Are Affecting Retirement Savings
+  source: ThinkAdvisor
+  deal: false
+- text: A 4-Step Guide To Reducing Advisor Turnover By Recruiting Career Changers
+  source: Kitces
+  deal: false
+- text: A 7-point decision framework for equity comp
+  source: Financial Planning
+  deal: false
+- text: A Tax-Free Way to Fund Long-Term Care
+  source: ThinkAdvisor
+  deal: false
+- text: A referral business newcomer seeks to link CD investors with advisors
+  source: Financial Planning
+  deal: false
+- text: 'A tale of two consumers: The growing divide between Wall Street and Main Street'
+  source: InvestmentNews
+  deal: false
+- text: AI IPO wave will inflate a bubble, warns advisor
+  source: InvestmentNews
+  deal: false
+- text: AI account opening is Jump's next push beyond advisor notetaking
+  source: InvestmentNews
+  deal: false
+- text: AI capex and rising real yields are reshaping portfolio construction
+  source: InvestmentNews
+  deal: false
+- text: AI chatbots give wrong financial answers most of the time, study finds
+  source: InvestmentNews
+  deal: false
+- text: AI could drag down RIA valuations, warns Alaris CEO Allen Darby
+  source: InvestmentNews
+  deal: false
+- text: AI could take advisors back 3 decades. That's a good thing
+  source: Financial Planning
+  deal: false
+- text: AI financial advice lifts demand for human advisors, says Vanguard
+  source: InvestmentNews
+  deal: false
+- text: AI financial advice sparks demand for human advisors among Gen Z
+  source: InvestmentNews
+  deal: false
+- text: AI investing takes hold far beyond Wall Street, new data shows
+  source: InvestmentNews
+  deal: false
+- text: AI marketing adoption gap costs financial firms revenue
+  source: InvestmentNews
+  deal: false
+- text: AI surveillance tool brings prediction markets under compliance watch
+  source: InvestmentNews
+  deal: false
+- text: AI tax breaks draw Warren probe of Meta, Google, Amazon, Microsoft
+  source: InvestmentNews
+  deal: false
+- text: AI-Driven Financial Planning is a Minefield
+  source: WealthManagement.com
+  deal: false
+- text: AI-powered tools reshape wealth management tech stack for advisors
+  source: InvestmentNews
+  deal: false
+- text: AM Best Downgrades A-Cap Annuity Issuers Atlantic Coast Life and Sentinel Security
+  source: ThinkAdvisor
+  deal: false
+- text: Active ETFs reshape how advisors build portfolios
+  source: InvestmentNews
+  deal: false
+- text: Adhesion Wealth Launches Custom Model Solutions for RIAs
+  source: GlobeNewswire
+  deal: false
+- text: Adhesion Wealth Launches Custom Models on its UMA Platform
+  source: WealthManagement.com
+  deal: false
+- text: 'Advanced certifications make for more referral-happy clients: IWI study'
+  source: InvestmentNews
+  deal: false
+- text: Advisor AI use hits 80%, but client time still falls short
+  source: InvestmentNews
+  deal: false
+- text: Advisor Compensation Climbs As Firm Growth Hits A Decade Low
+  source: Financial Advisor Magazine
+  deal: false
+- text: 'Advisor Sentiment Index: Market Optimism Slides Downward'
+  source: WealthManagement.com
+  deal: false
+- text: 'Advisor moves: $1.3B advisor team joins Wells Fargo FiNet practice in Ohio'
+  source: InvestmentNews
+  deal: false
+- text: 'Advisor moves: Ameriprise lands three RBC teams with $1.2B; Wells hails $900M recruiting haul'
+  source: InvestmentNews
+  deal: false
+- text: 'Advisor moves: Indie platforms add teams with $1.5B in assets'
+  source: InvestmentNews
+  deal: false
+- text: 'Advisor moves: LPL lands $1.1B Georgia team as Wells Fargo loses and wins'
+  source: InvestmentNews
+  deal: false
+- text: 'Advisor moves: LPL nabs $1B Northwestern team in Seattle'
+  source: InvestmentNews
+  deal: false
+- text: 'Advisor moves: LPL welcomes back RayJay advisor trio in Texas'
+  source: InvestmentNews
+  deal: false
+- text: 'Advisor moves: Merrill nabs Morgan Stanley, Wells Fargo teams overseeing $770M'
+  source: InvestmentNews
+  deal: false
+- text: 'Advisor moves: Osaic draws Equitable advisor overseeing $245 million in assets'
+  source: InvestmentNews
+  deal: false
+- text: 'Advisor moves: RBC lands $2B BofA Private Bank duo in La Jolla'
+  source: InvestmentNews
+  deal: false
+- text: 'Advisor moves: Raymond James lands $1.25B team as Merrill loses two'
+  source: InvestmentNews
+  deal: false
+- text: 'Advisor moves: Raymond James, Baird add significant teams in latest recruiting push'
+  source: InvestmentNews
+  deal: false
+- text: 'Advisor moves: Wells Fargo FiNet lands $580M Ameriprise team'
+  source: InvestmentNews
+  deal: false
+- text: Advisor tech platfoms court firms with discounts, notaries, education
+  source: InvestmentNews
+  deal: false
+- text: Advisor vs. advisor, Seattle showdown in fight for clients
+  source: InvestmentNews
+  deal: false
+- text: Advisors are building portfolios for the wrong clients
+  source: Financial Planning
+  deal: false
+- text: Advisors favor quality and value ETFs as leverage risks build
+  source: InvestmentNews
+  deal: false
+- text: Advisors rethink home equity liquidity with mortgage rates topping 7%
+  source: InvestmentNews
+  deal: false
+- text: After Fidelity shutdown its password-sharing business model last year, Pontera's new tack is a 'non-discretionary service' while it waits out a CFPB decision on bank data-sharing fees and offers
+    APIs to all comers
+  source: RIABiz
+  deal: false
+- text: AlphaCore adds $400M Blue Rock in Mid-Atlantic push
+  source: InvestmentNews
+  deal: true
+  acquirer: AlphaCore
+  target: Blue Rock
+  stage: announced
+- text: Alternative ETFs boom in 2026
+  source: InvestmentNews
+  deal: false
+- text: Alternatives and AI in focus for advisors at wirehouses in Q3
+  source: InvestmentNews
+  deal: false
+- text: Alto to buy Forge Trust from Schwab in self-directed IRA push
+  source: InvestmentNews
+  deal: true
+  acquirer: Alto
+  target: Forge Trust
+  stage: announced
+- text: Altruist Adds Donor-Advised Funds to Platform
+  source: WealthManagement.com
+  deal: false
+- text: Altruist adds donor-advised funds with no minimums for advisors
+  source: InvestmentNews
+  deal: false
+- text: Altruist is acquired by Vanguard to vertically integrate asset management and custody
+  source: InvestmentNews
+  deal: true
+  acquirer: Vanguard
+  target: Altruist
+  stage: announced
+- text: Altruist opens pre-IPO deals to RIA clients as AI listings loom
+  source: InvestmentNews
+  deal: false
+- text: America's wealth boom is creating a new generation of underinsured clients
+  source: InvestmentNews
+  deal: false
+- text: Americana Partners launches family office group for UHNW clients
+  source: InvestmentNews
+  deal: false
+- text: Americans rank near the bottom in global financial literacy study
+  source: InvestmentNews
+  deal: false
+- text: Ameriprise runs advisor ads on ESPN, Golf Channel, CBS
+  source: InvestmentNews
+  deal: false
+- text: Ameriprise to Pay Advisors for Sending Clients to Virtual Advice Unit
+  source: AdvisorHub
+  deal: false
+- text: Ameriprise, Broker to Pay Edward Jones $4.8M in Trade-Secrets Dispute
+  source: AdvisorHub
+  deal: false
+- text: Ameriprise, advisor on the hook to pay Edward Jones $4.7 million in trade secrets lawsuit
+  source: InvestmentNews
+  deal: false
+- text: Amid a flood of warnings about dangers of rogue AI, Hamachi steps in with newly patented system to protect sensitive RIA client data from AI breaches
+  source: RIABiz
+  deal: false
+- text: Amid pessimistic economic and policy sentiments, advisors see the potential in their firms
+  source: Financial Planning
+  deal: false
+- text: Amplified Planning's Externship draws record 2,825 aspiring planners
+  source: InvestmentNews
+  deal: false
+- text: An Inversion Of The U.S. Yield Curve Becomes New Risk As Fed Hikes
+  source: Financial Advisor Magazine
+  deal: false
+- text: 'Annuities for RIAs: Why fee-only advisors still hit a wall'
+  source: InvestmentNews
+  deal: false
+- text: 'Annuities math shines as 10-year Treasury yield tops 5 percent: American Equity'
+  source: InvestmentNews
+  deal: false
+- text: Annuity income eases retirement anxiety and market fear, advisors say
+  source: InvestmentNews
+  deal: false
+- text: Anthropic's landmark IPO filing shows 12-fold revenue jump, $518B compute bill
+  source: InvestmentNews
+  deal: false
+- text: Applying Fiduciary Principles To Demonstrate Value And Build Client Trust During 401(k) Rollover Conversations
+  source: Kitces
+  deal: false
+- text: Apriem Advisors Earns Three National and Regional Recognitions in 2026
+  source: GlobeNewswire
+  deal: false
+- text: Arax CFO Diego Galan gets expanded mandate as COO
+  source: InvestmentNews
+  deal: false
+- text: Arch pushes AI portfolio monitoring into pre-investment due diligence
+  source: InvestmentNews
+  deal: false
+- text: Are Your Clients Raising Heirs or Passengers?
+  source: WealthManagement.com
+  deal: false
+- text: 'Articulating The Evolving Value Of Financial Planning To Prospects: Kitces & Carl 200'
+  source: Kitces
+  deal: false
+- text: As the Bond Market Shudders, Wealth Management CIOs See Opportunity
+  source: WealthManagement.com
+  deal: false
+- text: Ask Your Wealth Management Concierge
+  source: WealthManagement.com
+  deal: false
+- text: 'Ask an Advisor: How do you help child-free clients plan?'
+  source: Financial Planning
+  deal: false
+- text: 'Ask an Advisor: What do you do when a client says ''ChatGPT told me''?'
+  source: Financial Planning
+  deal: false
+- text: Aspen Standard Buys $1B Louisiana RIA
+  source: AdvisorHub
+  deal: true
+  acquirer: Aspen Standard
+  target: ''
+  stage: announced
+- text: Aspen Standard Wealth buys $1B Louisiana RIA Cullen Investment Group
+  source: InvestmentNews
+  deal: true
+  acquirer: Aspen Standard Wealth
+  target: Cullen Investment Group
+  stage: announced
+- text: Aspen Standard Wealth's 10th Acquisition Is for $1B Louisiana RIA
+  source: WealthManagement.com
+  deal: true
+  acquirer: Aspen Standard Wealth
+  target: ''
+  stage: announced
+- text: Aspen Standard acquires $1bn Louisiana RIA
+  source: Citywire RIA
+  deal: true
+  acquirer: Aspen Standard
+  target: ''
+  stage: announced
+- text: At Future Proof, wealth management industry weighs realities of the AI revolution
+  source: InvestmentNews
+  deal: false
+- text: At Women Advisor Summit, Summit Place’s Liz Miller will offer key steps to advisor success
+  source: InvestmentNews
+  deal: false
+- text: Atlanta B-D Arkadios Capital pays $500K to settle investor lawsuit involving former broker.
+  source: InvestmentNews
+  deal: false
+- text: Author
+  source: ThinkAdvisor
+  deal: false
+- text: BNY Pershing Sunsetting Wove Wealth Platform
+  source: WealthManagement.com
+  deal: false
+- text: Bain Capital (mostly) funds Envestnet buy of Vestmark to surpass $10 trillion and define 'adaptive modularity' strategy, leaving Orion a clear RIA lane
+  source: RIABiz
+  deal: true
+  acquirer: Envestnet
+  target: Vestmark
+  stage: announced
+- text: Bank Stocks Mired in Correction as Yields Surge Before Earnings
+  source: AdvisorHub
+  deal: false
+- text: Bank Stocks Sink Further Into Correction as Citigroup Tumbles
+  source: AdvisorHub
+  deal: false
+- text: Before You Turn On AI, Treat It Like a New Hire
+  source: WealthManagement.com
+  deal: false
+- text: 'Best Places to Work 2027: Nominations now open'
+  source: InvestmentNews
+  deal: false
+- text: Betterment Advisor Solutions Launches AI Document Reader
+  source: WealthManagement.com
+  deal: false
+- text: Betterment Courts Fidelity RIAs With Platform Fee Waiver Through 2028
+  source: AdvisorHub
+  deal: false
+- text: Betterment waives fee to win custody business from Fidelity RIAs
+  source: InvestmentNews
+  deal: false
+- text: Beware the Stress of Building a Practice
+  source: WealthManagement.com
+  deal: false
+- text: 'Beyond sell or inherit: A third exit for appreciated property'
+  source: InvestmentNews
+  deal: false
+- text: 'Bigger than football: How Winston Justice went from NFL to RIA'
+  source: Citywire RIA
+  deal: false
+- text: Bitwise Partners with Vise for Crypto Model Rollout
+  source: WealthManagement.com
+  deal: false
+- text: BlackRock books Q3 earnings beat as AI rally offsets rate hike jitters
+  source: InvestmentNews
+  deal: false
+- text: BlackRock study exposes advice gap as women's wealth surges
+  source: InvestmentNews
+  deal: false
+- text: Blended Families Present Unique Financial, Estate Planning Issues
+  source: Financial Advisor Magazine
+  deal: false
+- text: Bluespring Wealth builds $1B team with Family Wealth Counseling deal
+  source: InvestmentNews
+  deal: true
+  acquirer: Bluespring Wealth
+  target: Family Wealth Counseling
+  stage: announced
+- text: BofA Faces $1.2 Billion of Fines for Money-Laundering Lapses
+  source: AdvisorHub
+  deal: false
+- text: BofA Sees the End of ‘Easy Money’ Made From the AI-Spending Trade
+  source: AdvisorHub
+  deal: false
+- text: BofA says it's ready to 'move forward' after $1.21B penalty
+  source: Financial Planning
+  deal: false
+- text: 'BofA''s Subramanian: AI Won''t Kill Us, But It Will Rock The Job Market'
+  source: Financial Advisor Magazine
+  deal: false
+- text: 'Breaking Bad News To A Client About Prior Problematic Financial Decisions: Kitces & Carl 199'
+  source: Kitces
+  deal: false
+- text: Broker-dealers must lean on tech, brand as advisors weigh options
+  source: InvestmentNews
+  deal: false
+- text: Brokers May Tout Performance Projections, Same as RIAs, SEC Says
+  source: AdvisorHub
+  deal: false
+- text: Building RIA internship programs that become top talent pipelines
+  source: Financial Planning
+  deal: false
+- text: Built on insurance experience to deliver on long-term promises
+  source: InvestmentNews
+  deal: false
+- text: Business owners want integrated advice – and almost half aren't getting it
+  source: InvestmentNews
+  deal: false
+- text: CD marketplace debuts RIA referral program
+  source: Citywire RIA
+  deal: false
+- text: CEO Jason Wenk says Altruist's AI 'Hazel' is ready for its second act, a financial planning service that will blow away the market with one big caveat -- advisors must be ready to provide PDFs,
+    if rivals refuse API access
+  source: RIABiz
+  deal: false
+- text: CFP Board resets timeline for 40-hour CE requirement
+  source: Financial Planning
+  deal: false
+- text: 'CFP Board survey: Social Security, Medicare fears top client concerns'
+  source: InvestmentNews
+  deal: false
+- text: CFTC Proposes Registering Crypto Exchanges Offering Leverage
+  source: WealthManagement.com
+  deal: false
+- text: CFTC warns prediction market exchanges on 'mention markets'
+  source: InvestmentNews
+  deal: false
+- text: California Billionaires’ Nemesis Plots National Wealth Tax Fight
+  source: WealthManagement.com
+  deal: false
+- text: California RIA Perigon Sues Ex-Partner Who Launched Rival Firm
+  source: AdvisorHub
+  deal: false
+- text: Callan Family Office Appoints Chuck Moore as Director of Data Solutions & Reporting
+  source: GlobeNewswire
+  deal: false
+- text: Calm Markets, Crowded Risks
+  source: WealthManagement.com
+  deal: false
+- text: Captive insurer fails to shake IRS challenge to $239,773 in tax deductions
+  source: InvestmentNews
+  deal: false
+- text: Captrust Adds $1.2B in Double Deal for Long Island Firms
+  source: WealthManagement.com
+  deal: true
+  acquirer: Captrust
+  target: ''
+  stage: announced
+- text: Captrust Adds $3B Hoge-Barrett Group from Truist
+  source: WealthManagement.com
+  deal: true
+  acquirer: Captrust
+  target: Hoge-Barrett Group
+  stage: announced
+- text: Captrust Lands $3B Truist Team in North Carolina
+  source: AdvisorHub
+  deal: false
+- text: Captrust Recruits $3 Billion Advisor Group in N.C.
+  source: Financial Advisor Magazine
+  deal: false
+- text: Captrust adds $1.2B Long Island firms in New York double deal
+  source: InvestmentNews
+  deal: true
+  acquirer: Captrust
+  target: ''
+  stage: announced
+- text: Captrust adds $3B Truist team as Hoge bets on employee equity
+  source: InvestmentNews
+  deal: false
+- text: Carnegie Investment Counsel sued over valuation suppression
+  source: InvestmentNews
+  deal: false
+- text: Carson Group taps ex-United Bank wealth chief to run W-2 channel
+  source: InvestmentNews
+  deal: false
+- text: Carson Names Goldman, United Bank Alum To Lead W-2 Advisor Channel
+  source: WealthManagement.com
+  deal: false
+- text: 'Celebrity Estates Replay: Lessons from Rob Reiner’s Estate'
+  source: WealthManagement.com
+  deal: false
+- text: Cerity Partners Adds $1.4B in Teams from Shufro Rose & Co.
+  source: WealthManagement.com
+  deal: false
+- text: Cerity Partners Adds $1.7B in Double Deal
+  source: WealthManagement.com
+  deal: true
+  acquirer: Cerity Partners
+  target: ''
+  stage: announced
+- text: Cerity Partners Adds $2B in Triple Deal
+  source: WealthManagement.com
+  deal: true
+  acquirer: Cerity Partners
+  target: ''
+  stage: announced
+- text: Cerity Partners adds Bay Area, Minneapolis firms in latest double-deal
+  source: InvestmentNews
+  deal: true
+  acquirer: Cerity Partners
+  target: ''
+  stage: announced
+- text: Cerity Partners adds Bay Area, Minneapolis, Atlanta firms in deal hat trick
+  source: InvestmentNews
+  deal: true
+  acquirer: Cerity Partners
+  target: ''
+  stage: announced
+- text: Cerity Partners to merge with $1.4B Shufro Rose advisory teams
+  source: InvestmentNews
+  deal: true
+  acquirer: Cerity Partners
+  target: Shufro Rose
+  stage: announced
+- text: 'Cerulli: Advisors struggle to turn 401(k) savers into wealth clients'
+  source: InvestmentNews
+  deal: false
+- text: Charitable Gift Annuities
+  source: WealthManagement.com
+  deal: false
+- text: Charitable Giving in Retirement
+  source: WealthManagement.com
+  deal: false
+- text: Choreo taps Beemo AI agents to speed proposals, scale onboarding
+  source: InvestmentNews
+  deal: false
+- text: Choreo taps ex-LPL tech leader as chief technology officer
+  source: InvestmentNews
+  deal: false
+- text: Citi doubles asset inflows, edging closer to profit goals
+  source: Financial Planning
+  deal: false
+- text: Citi sees Q3 profit jump as wealth unit books record $38B in net new assets
+  source: InvestmentNews
+  deal: false
+- text: Class action alleges Webull misled investors about China operations
+  source: InvestmentNews
+  deal: false
+- text: 'Claude For Financial Advisors Debuts To Tie Together The Advisor Tech Stack – But Will Tech Providers Play Along? (And More Of The Latest In Financial #AdvisorTech – October 2026)'
+  source: Kitces
+  deal: false
+- text: Clients fear outliving savings as AI and longevity upend retirement math
+  source: InvestmentNews
+  deal: false
+- text: Clients with advisors more likely to act on unchecked AI answers
+  source: InvestmentNews
+  deal: false
+- text: Climate change is a retirement planning issue, says sustainable investing pioneer
+  source: Financial Planning
+  deal: false
+- text: Colleges Slash Tuition Bills by $20,000 in Reckoning Over Costs
+  source: WealthManagement.com
+  deal: false
+- text: Communication isn't a soft skill. The research is clear
+  source: InvestmentNews
+  deal: false
+- text: Commuting the Income Interest of Charitable Trusts
+  source: WealthManagement.com
+  deal: false
+- text: Compliance Experts Caution Regulators After AI Agents Probe SEC
+  source: WealthManagement.com
+  deal: false
+- text: 'Compliance Issues When Clients Won’t Take Your Advice: Duty To Follow Instructions, When To Refuse, And When To Exit The Relationship'
+  source: Kitces
+  deal: false
+- text: Composition Wealth names general counsel and head of advisors in leadership push
+  source: InvestmentNews
+  deal: false
+- text: Concurrent Buys $5.4 Billion Firm in Virginia
+  source: AdvisorHub
+  deal: true
+  acquirer: Concurrent
+  target: ''
+  stage: announced
+- text: Concurrent Makes First RIA Platform Acquisition With $5.4B Spire Investment Partners
+  source: WealthManagement.com
+  deal: true
+  acquirer: Concurrent
+  target: Spire Investment Partners
+  stage: announced
+- text: Concurrent adds $425 million Houston team as breakaway wave continues
+  source: InvestmentNews
+  deal: false
+- text: Concurrent buys $5.4bn platform biz in Virginia
+  source: Citywire RIA
+  deal: true
+  acquirer: Concurrent
+  target: ''
+  stage: announced
+- text: Concurrent eyes $3B to $10B RIA platforms after Spire buy
+  source: InvestmentNews
+  deal: false
+- text: Connecticut Wealth Management Hires Subatomic to Build AI Operating System
+  source: WealthManagement.com
+  deal: false
+- text: Consumers Are Tapped and Wall Street Fears That’s a Rally Killer
+  source: AdvisorHub
+  deal: false
+- text: Convergence, AI Top Broker/Dealers’ Biggest Concerns
+  source: WealthManagement.com
+  deal: false
+- text: Core inflation comes in hot again, increasing the likelihood of an October Fed rate hike
+  source: InvestmentNews
+  deal: false
+- text: Corient Buys $2.6B Family Office in First Cayman Islands Move
+  source: WealthManagement.com
+  deal: true
+  acquirer: Corient
+  target: ''
+  stage: announced
+- text: Corient buys $2.6bn Cayman Islands-based family office
+  source: Citywire RIA
+  deal: true
+  acquirer: Corient
+  target: ''
+  stage: announced
+- text: Corient enters Cayman Islands with $2.6B FortCay acquisition
+  source: InvestmentNews
+  deal: true
+  acquirer: Corient
+  target: FortCay
+  stage: announced
+- text: Court limits Wells Fargo liability in wealth advisor harassment case
+  source: InvestmentNews
+  deal: false
+- text: Courts backs SEC freeze on biotech firm over investor deception claims
+  source: InvestmentNews
+  deal: false
+- text: 'Creating Effective Discovery Meetings To Convert 100% Of (High-Value) Prospects Into Clients: #FASuccess Ep 510 With Michael Yoder'
+  source: Kitces
+  deal: false
+- text: Creating a Lifetime Stretch Through a Charitable Remainder Unitrust
+  source: WealthManagement.com
+  deal: false
+- text: Creative Planning Hires Marketing Chief with Finance, Consumer Brand Experience
+  source: WealthManagement.com
+  deal: false
+- text: Cresset Aims for $13.1B Trust Business with National Advisors Trust Deal
+  source: WealthManagement.com
+  deal: true
+  acquirer: Cresset
+  target: National Advisors Trust
+  stage: announced
+- text: Cresset taps former Blackstone strategist Joe Zidle for markets role
+  source: InvestmentNews
+  deal: false
+- text: Custodians, RIA Platforms Target Fidelity Clients on Heels of $100M Minimum
+  source: WealthManagement.com
+  deal: false
+- text: Custom model portfolio race widens as Adhesion Wealth adds Fidelity
+  source: InvestmentNews
+  deal: false
+- text: DTCC Invests in iCapital, Announces Partnership
+  source: WealthManagement.com
+  deal: false
+- text: David Fortunato makes his third pivot after cash management cross-selling fails to yield ample robo investors -- a bolt-on discount brokerage will join its digital home-lending unit in a true Silicon
+    Valley mashup
+  source: RIABiz
+  deal: false
+- text: David Solomon eyeing near-term Goldman Sachs CEO exit, reports say, and his heir apparent looks RIA-friendly • DFA search for M&A partner went quiet, and complex factors could prolong the process
+  source: RIABiz
+  deal: false
+- text: 'Deals & Moves: HB Wealth Adds Family Trio, Hightower Signature Acquires Externally'
+  source: WealthManagement.com
+  deal: false
+- text: 'Deals & Moves: LPL Financial Adds Two Utah Advisory Teams With $1B'
+  source: WealthManagement.com
+  deal: false
+- text: 'Deals & Moves: The Mather Group, AlphaCore Snag $400M RIAs'
+  source: WealthManagement.com
+  deal: false
+- text: 'Deals & Moves: WPCG-Backed Apella, Waverly Keep Acquiring'
+  source: WealthManagement.com
+  deal: false
+- text: 'Debt, AI and the holiday season: what younger clients are telling advisors'
+  source: InvestmentNews
+  deal: false
+- text: Defrauded funds fail to seize convicted advisor's $5.1M in accounts
+  source: InvestmentNews
+  deal: false
+- text: Democratic lawmakers demand probe into DOL 401(k) rule comments
+  source: InvestmentNews
+  deal: false
+- text: Developing Advisors Who Stay
+  source: WealthManagement.com
+  deal: false
+- text: Diamonds may not be forever, at least in value terms
+  source: InvestmentNews
+  deal: false
+- text: Dividend growth investing gains ground as market concentration rises
+  source: InvestmentNews
+  deal: false
+- text: Do Index Funds Really Make Stocks More Volatile?
+  source: WealthManagement.com
+  deal: false
+- text: Dolly Parton estate drama shows limits of even careful planning
+  source: InvestmentNews
+  deal: false
+- text: Don’t be Fooled by IUL Policy Income Projections
+  source: WealthManagement.com
+  deal: false
+- text: Driving Better Advisor and Client Outcomes Through Technology Modernization
+  source: InvestmentNews
+  deal: false
+- text: Dropped by Fidelity? Here are RIAs' custody options
+  source: Financial Planning
+  deal: false
+- text: EP Wealth adds CFO, elevates client chief as growth accelerates
+  source: InvestmentNews
+  deal: false
+- text: EQT raises Perpetual takeover bid for the fourth time
+  source: InvestmentNews
+  deal: true
+  acquirer: EQT
+  target: Perpetual
+  stage: bid
+- text: ESG is out of fashion. The risks remain
+  source: Financial Planning
+  deal: false
+- text: ETF inflows hit record $1.54 trillion as investors rethink portfolios
+  source: InvestmentNews
+  deal: false
+- text: ETFs come of age
+  source: InvestmentNews
+  deal: false
+- text: Eaglebrook Launches Direct Indexing for Cryptocurrencies
+  source: WealthManagement.com
+  deal: false
+- text: Edelman Financial Engines names Tina Wilson chief retirement officer
+  source: InvestmentNews
+  deal: false
+- text: Edward Jones to Develop Retirement Plan Management Tech
+  source: WealthManagement.com
+  deal: false
+- text: 'Equity Compensation’s Missing Layer: Guidance'
+  source: WealthManagement.com
+  deal: false
+- text: Estate Planning for Clients with Non-Traditional Heirs
+  source: WealthManagement.com
+  deal: false
+- text: Ex-MLB player turned wealth executive questions expansion team math
+  source: InvestmentNews
+  deal: false
+- text: Ex-MML Associate Pleads Guilty To $3.8M Fraud
+  source: WealthManagement.com
+  deal: false
+- text: Ex-Morgan Stanley Broker Convicted of Defrauding NBA Players Wins Sentencing Delay
+  source: AdvisorHub
+  deal: false
+- text: Ex-Motif CEO Named Head of TD Bank's Wealth Business
+  source: ThinkAdvisor
+  deal: false
+- text: FINNY pivots to a 'pay-as-you-grow' revenue-share model
+  source: InvestmentNews
+  deal: false
+- text: FINRA Announces Results of Board of Governors Elections
+  source: FINRA News
+  deal: false
+- text: FINRA Announces Review of Higher-Risk Structured Products
+  source: FINRA News
+  deal: false
+- text: FINRA Bars Broker for Misappropriating $1.7 Million from Customers’ Accounts
+  source: FINRA News
+  deal: false
+- text: FINRA Bars Former LPL Rep For Taking $1.7M From Clients
+  source: WealthManagement.com
+  deal: false
+- text: FINRA Expels Reid & Rudiger, Bars Cofounders
+  source: FINRA News
+  deal: false
+- text: FINRA Fines American Portfolios $1.6M, Alleging UIT Lapses
+  source: WealthManagement.com
+  deal: false
+- text: FINRA Fines Pictet Overseas and Blue Ocean ATS for AML and Supervisory Violations Involving Low-Priced Securities
+  source: FINRA News
+  deal: false
+- text: FINRA Fines Revere Securities $800,000 for Small-Cap IPO-Related AML and Supervisory Failures
+  source: FINRA News
+  deal: false
+- text: FINRA Fines UBS Financial $20 Million for Anti-Money Laundering Violations
+  source: FINRA News
+  deal: false
+- text: FINRA Foundation Research Reveals Gaps in Fraud Awareness That May Leave Americans Vulnerable
+  source: FINRA News
+  deal: false
+- text: FINRA Foundation and AFCPE® Select the 2026 FINRA Foundation Military Spouse Fellows
+  source: FINRA News
+  deal: false
+- text: FINRA Launches Enhanced Investor Education and Protection Tools to Help Research Markets and Recognize Fraud
+  source: FINRA News
+  deal: false
+- text: FINRA Orders American Portfolios to Pay $1.2 Million in Restitution and $400,000 in Fines for UIT Supervision Failures
+  source: FINRA News
+  deal: false
+- text: FINRA Publishes 2026 Industry Snapshot
+  source: FINRA News
+  deal: false
+- text: FINRA Taps Christine Kieffer to Lead Investor Education Efforts
+  source: FINRA News
+  deal: false
+- text: FINRA bars former LPL broker for stealing $1.7 million from customers
+  source: InvestmentNews
+  deal: false
+- text: FINRA cuts exam retake waiting periods for aspiring brokers
+  source: InvestmentNews
+  deal: false
+- text: FINRA fines Vanguard $950,000 over decade of cost basis errors
+  source: InvestmentNews
+  deal: false
+- text: FINRA orders American Portfolios to pay $1.6 million over UIT failures
+  source: InvestmentNews
+  deal: false
+- text: FPA Debuts New Version of PlannerSearch Tool
+  source: WealthManagement.com
+  deal: false
+- text: FPA releases revamped PlannerSearch to better humanize planner and client interaction
+  source: Financial Planning
+  deal: false
+- text: FPA revamps PlannerSearch tool alongside Snappy Kraken
+  source: Citywire RIA
+  deal: false
+- text: 'Fake signals, frozen accounts: SEC sues crypto AI platform over $12.5M'
+  source: InvestmentNews
+  deal: false
+- text: Family Feud Brewing Over Dolly Parton’s Estate
+  source: WealthManagement.com
+  deal: false
+- text: Family offices pivot to public equities as succession pressure mounts
+  source: InvestmentNews
+  deal: false
+- text: Family offices poured $68.3B into AI and RIA deals in Q3 2026
+  source: InvestmentNews
+  deal: false
+- text: 'Fear of Meta’s Muse whacks share prices of financial advice firms: Reports'
+  source: InvestmentNews
+  deal: false
+- text: Fed minutes reveal another hike likely before year end amid elevated inflation
+  source: InvestmentNews
+  deal: false
+- text: Fed rate hike could cool RIA deal prices, but not for everyone
+  source: InvestmentNews
+  deal: false
+- text: Fed's Williams sees another rate hike as Treasury rout deepens
+  source: InvestmentNews
+  deal: false
+- text: Fidelity Investments just cast a wider net for RIA custody revenues by backstopping Savvy Wealth's (expected mid-2027 ) custody launch -- hastened by the lean-in of 'multi-billion-AUM' RIA prospects,
+    the company says
+  source: RIABiz
+  deal: false
+- text: 'Fidelity To Small RIAs: Find Another Custodian'
+  source: Financial Advisor Magazine
+  deal: false
+- text: Fidelity says it will end custody relationships with RIAs under $100M
+  source: Financial Planning
+  deal: false
+- text: Fidelity to Drop RIAs Below $100M Custody Minimum
+  source: AdvisorHub
+  deal: false
+- text: Fidelity to Raise RIA Custody Asset Minimum to $100M
+  source: WealthManagement.com
+  deal: false
+- text: Fidelity to remove sub-$100m RIAs from custody platform in June 2027
+  source: Citywire RIA
+  deal: false
+- text: Fidelity's $100M RIA custody minimum lands amid long-short SMA curbs
+  source: InvestmentNews
+  deal: false
+- text: Fidelity's move to kick sub-$100-million RIAs off its platform is 'bizarre,' Kitces says; it’s likely to backfire, Chalekian says; yet, the Fidelity-Savvy deal last week may soften any blow
+  source: RIABiz
+  deal: false
+- text: 'Fidelity: $100M Custody Minimum to Impact a Few Hundred Firms'
+  source: WealthManagement.com
+  deal: false
+- text: 'Fifth Third Wealth Advisors: Why CIO Chris Osmond Is Bullish on Infrastructure'
+  source: WealthManagement.com
+  deal: false
+- text: Financial Planning's September CE quiz now live for subscribers
+  source: Financial Planning
+  deal: false
+- text: Financial Wellness Tools Must Connect the Dots
+  source: WealthManagement.com
+  deal: false
+- text: Financial planning is becoming advisors' best tool for long-term client loyalty
+  source: InvestmentNews
+  deal: false
+- text: Finra Bars Ex-LPL Broker Who Ducked Investigation Into Outside Investment
+  source: AdvisorHub
+  deal: false
+- text: Finra Bars Ex-LPL Broker for Stealing $1.7M From Clients
+  source: AdvisorHub
+  deal: false
+- text: Finra Bars Ex-Wedbush Broker Over $3.5M in Client Losses
+  source: AdvisorHub
+  deal: false
+- text: Finra Cuts Waiting Periods for Retaking Broker Qualification Exams
+  source: AdvisorHub
+  deal: false
+- text: Finra Dings Ex-LPL Broker Who Settled With Client Off The Books
+  source: AdvisorHub
+  deal: false
+- text: 'Fintech bytes: DeepVest pushes into financial planning with PlanLab'
+  source: InvestmentNews
+  deal: false
+- text: 'Fintech bytes: Northwestern Mutual picks Jump for enterprise AI'
+  source: InvestmentNews
+  deal: false
+- text: Fintech veterans launch operating company for RIAs
+  source: InvestmentNews
+  deal: false
+- text: Firm that creates Forbes rankings returns - with a fresh moniker
+  source: InvestmentNews
+  deal: false
+- text: Firms push to make private markets more like publics
+  source: Financial Planning
+  deal: false
+- text: Five Key Developments for Estate Planners and Litigators
+  source: WealthManagement.com
+  deal: false
+- text: Five Misconceptions About Donor-Advised Funds
+  source: WealthManagement.com
+  deal: false
+- text: Five Things Every RIA Owner Must Know About Partner Buy-Ins
+  source: WealthManagement.com
+  deal: false
+- text: 'Focused on the Future: Creating Lasting Advisory Practices Through Client Experience and Continuity with Jim Mellin'
+  source: WealthManagement.com
+  deal: false
+- text: 'Focused on the Future: How RIA Leaders Can Prepare for Growth, Technology and AI with Stan Gregor'
+  source: WealthManagement.com
+  deal: false
+- text: Following IRS Guidance, Compliance Experts Caution RIAs on Section 351 ETF Conversions
+  source: WealthManagement.com
+  deal: false
+- text: For RIA custody, Betterment's platform fees will begin at 0.20%
+  source: Financial Planning
+  deal: false
+- text: Forget the billionaire tax. This California measure could affect 376K taxpayers
+  source: Financial Planning
+  deal: false
+- text: Former VestGen CEO Launches New Wealth Firm
+  source: WealthManagement.com
+  deal: false
+- text: Former Western Asset Management star bond manager fined $3 million
+  source: InvestmentNews
+  deal: false
+- text: Founders of $65bn &Partners launch RIA minority investing vehicle
+  source: Citywire RIA
+  deal: false
+- text: Four Practices Bring $1B to Ascentis Independent From Raymond James
+  source: WealthManagement.com
+  deal: false
+- text: From Hightower and Merrill, two teams launch with $1B+ in assets
+  source: InvestmentNews
+  deal: false
+- text: From small RIAs to megabanks, Apex's business a 'two-sided coin'
+  source: Financial Planning
+  deal: false
+- text: Funding for alternative investment distribution continues to swamp SaaS solutions
+  source: InvestmentNews
+  deal: false
+- text: GLP-1 users are trading retirement savings for their prescriptions
+  source: InvestmentNews
+  deal: false
+- text: Gas prices to heat up CPI, but core inflation holds the key to the Fed’s October call
+  source: InvestmentNews
+  deal: false
+- text: Gen X and millennials are rethinking retirement as pensions disappear
+  source: InvestmentNews
+  deal: false
+- text: Gen Z and millennial rollover candidates are shifting - and eyeing the exit
+  source: InvestmentNews
+  deal: false
+- text: Gen Z collectors outspend every generation in global art market
+  source: InvestmentNews
+  deal: false
+- text: Global M&A value rises 15%, with highest sentiment in financial sector
+  source: InvestmentNews
+  deal: false
+- text: Global economic freedom edges up, but pandemic damage lingers
+  source: InvestmentNews
+  deal: false
+- text: Global equity release market set to triple, with US leading growth
+  source: InvestmentNews
+  deal: false
+- text: Gold's rally drivers remain intact despite price surges
+  source: InvestmentNews
+  deal: false
+- text: 'Goldman Sachs succession plan: John Waldron set to take the top job'
+  source: InvestmentNews
+  deal: false
+- text: Goldman's $2.3B deal puts tax-smart ETFs under scrutiny
+  source: Financial Planning
+  deal: false
+- text: Goldman’s $2.3 Billion Deal Puts Tax-Smart ETFs Under Scrutiny
+  source: WealthManagement.com
+  deal: false
+- text: Great Wealth Transfer might give way to a 'mirage,' Dunham research warns
+  source: InvestmentNews
+  deal: false
+- text: 'Growing Bigger For Succession And Then Intentionally Downsizing For A Simpler Lifestyle Practice: #FASuccess Ep 507 With Carolyn McClanahan'
+  source: Kitces
+  deal: false
+- text: HB Wealth Expands In Texas With Addition Of $700M AUM Firm Catering To Physicians
+  source: Financial Advisor Magazine
+  deal: false
+- text: HB Wealth enters Texas with physician-focused advisory team
+  source: InvestmentNews
+  deal: false
+- text: HNW investors shrug off private credit concerns and stay the course on alts
+  source: InvestmentNews
+  deal: false
+- text: Helping Clients Navigate Tariff Whiplash
+  source: WealthManagement.com
+  deal: false
+- text: High Earners Stop Maxing Out 401(k)s, Betting They Can Outsmart Retirement Savings
+  source: WealthManagement.com
+  deal: false
+- text: High earners living paycheck to paycheck test advisors' playbook
+  source: InvestmentNews
+  deal: false
+- text: Higher rates to bolster US wealth managers' cash earnings, Fitch says
+  source: InvestmentNews
+  deal: false
+- text: Hightower Advisor CEO names two new presidents -- one to revamp the old rollup business, the other to develop the new single-system unit -- both with the objective of kindling buyer interest without
+    a conglomerate discount
+  source: RIABiz
+  deal: false
+- text: Hightower Advisors Hires Vanguard Executive as New President
+  source: WealthManagement.com
+  deal: false
+- text: Hightower Folds $1B Michigan Affiliate into Signature Wealth
+  source: AdvisorHub
+  deal: false
+- text: Hightower Signature Wealth Folds in $1B Michigan RIA
+  source: WealthManagement.com
+  deal: false
+- text: Hightower To Add $752M AUM Sandy Cove To Signature Channel
+  source: Financial Advisor Magazine
+  deal: true
+  acquirer: Hightower
+  target: Sandy Cove
+  stage: announced
+- text: Hightower taps Vanguard vet as president, shuffles Signature Wealth leadership
+  source: InvestmentNews
+  deal: false
+- text: Hightower’s Bahnsen Group Adds $1.1 Billion Naples Practice
+  source: AdvisorHub
+  deal: true
+  acquirer: Hightower’s Bahnsen Group
+  target: ''
+  stage: announced
+- text: Home investors face a bifurcated market as rates hit 7.4%
+  source: InvestmentNews
+  deal: false
+- text: House Foster Family Office Announces Inaugural Royal Weekend at the Millennium Biltmore Los Angeles
+  source: GlobeNewswire
+  deal: false
+- text: 'Household costs putting more pressure on retirement savings: Goldman Sachs'
+  source: InvestmentNews
+  deal: false
+- text: How $4bn Burney Company's president is planning for his own succession
+  source: Citywire RIA
+  deal: false
+- text: How 5 of the industry's biggest firms do RIA custody
+  source: Financial Planning
+  deal: false
+- text: How AI Accelerates Growth for Forward-Thinking Firms
+  source: ThinkAdvisor
+  deal: false
+- text: How Far Can AI Overlays Really Go?
+  source: WealthManagement.com
+  deal: false
+- text: How Fiscal Sponsorship Can Streamline Philanthropic Giving
+  source: WealthManagement.com
+  deal: false
+- text: How John Waldron could make his mark as Goldman's next CEO
+  source: Financial Planning
+  deal: false
+- text: How RIA consolidation and slow organic growth is changing compensation
+  source: Financial Planning
+  deal: false
+- text: How RIA sellers can avoid running out of runway
+  source: Financial Planning
+  deal: false
+- text: How RIAs can beat the clock when leaving Fidelity custody
+  source: Financial Planning
+  deal: false
+- text: How RIAs can stand out in a crowded market, PR experts say
+  source: InvestmentNews
+  deal: false
+- text: How an AM radio host dialed up her niche business
+  source: Financial Planning
+  deal: false
+- text: How private assets can help address longevity risk in DC plans
+  source: InvestmentNews
+  deal: false
+- text: How to Advise a Business Client With a Personal Judgment Against Them
+  source: WealthManagement.com
+  deal: false
+- text: How to Evaluate Financial Advisory Conferences
+  source: WealthManagement.com
+  deal: false
+- text: How to Value Fossils and Other Non-Traditional Collectibles
+  source: WealthManagement.com
+  deal: false
+- text: Hybrid investors are a retention risk advisors can't afford to ignore
+  source: InvestmentNews
+  deal: false
+- text: ICI annual report flags private markets, ETF reform as 2026 priorities
+  source: InvestmentNews
+  deal: false
+- text: IMF warns bond yields face disorderly spike on debt and AI risks
+  source: InvestmentNews
+  deal: false
+- text: IPOs provide rocket fuel for Morgan Stanley's wealth assets
+  source: Financial Planning
+  deal: false
+- text: IRS Draws A Line On Section 351
+  source: Financial Advisor Magazine
+  deal: false
+- text: IRS Threatens Crackdown on Array of Wall Street Tax Dodges
+  source: AdvisorHub
+  deal: false
+- text: IRS sets per diem rates for travelers for 2026-2027
+  source: Financial Planning
+  deal: false
+- text: IRS targets 351 ETF conversions in new guidance on tax strategies
+  source: InvestmentNews
+  deal: false
+- text: Indivisible Partners Adds $1.1B Baltimore Team From RBC Wealth Management
+  source: WealthManagement.com
+  deal: false
+- text: Indivisible Partners Lands $1.1 Billion RBC Team in Baltimore
+  source: AdvisorHub
+  deal: false
+- text: Indy B-D rep linked to troubled Texas real estate deal
+  source: InvestmentNews
+  deal: false
+- text: Infrastructure and emerging markets top global asset owner wish lists
+  source: InvestmentNews
+  deal: false
+- text: Inspired Healthcare sale price of properties is 59% of $1.2 billion sold by advisors
+  source: InvestmentNews
+  deal: false
+- text: Institutional crypto adoption is stickier than markets assumed, Bitwise finds
+  source: InvestmentNews
+  deal: false
+- text: Insurer and Wealth Manager HUB Rebrands Ahead of Planned IPO
+  source: WealthManagement.com
+  deal: false
+- text: 'Investing the first $100M: A centimillionaire''s view'
+  source: Financial Planning
+  deal: false
+- text: Investors accuse Broadstreet of draining billion-dollar fund
+  source: InvestmentNews
+  deal: false
+- text: Investors accuse Netcapital of inflating revenue through sham deals
+  source: InvestmentNews
+  deal: false
+- text: Investors sue Coastal Financial after one fintech partner erases $470M
+  source: InvestmentNews
+  deal: false
+- text: Is Montenegro a hidden investment opportunity as it closes in on the EU?
+  source: InvestmentNews
+  deal: false
+- text: Is Nvidia cheap as chips? Top-rated managers bet so
+  source: Citywire RIA
+  deal: false
+- text: JPMorgan Tweaks Data-Sharing Notices in Battle With Fintechs
+  source: AdvisorHub
+  deal: false
+- text: Janney Adds $3.5B Houston-Based Team From Raymond James
+  source: WealthManagement.com
+  deal: false
+- text: Janney Plants Flag in Houston With $3.3 Billion Raymond James Team
+  source: AdvisorHub
+  deal: false
+- text: Jobs report hides an investment signal advisors shouldn't ignore
+  source: InvestmentNews
+  deal: false
+- text: Joint Readout of Principals’ Meeting of U.S. and UK Authorities Regarding Central Counterparty Resolution
+  source: SEC Press Releases
+  deal: false
+- text: Judge Upholds Broker’s $4.25 Million Award in J.P. Morgan ‘Deli Platter’ Dispute
+  source: AdvisorHub
+  deal: false
+- text: Judge voids NYC pied-à-terre tax rollout, orders city to start over
+  source: InvestmentNews
+  deal: false
+- text: Junior advisors still in demand as AI reshapes RIA training
+  source: InvestmentNews
+  deal: false
+- text: K-shaped wealth gap pauses for first time in three years, Equifax data shows
+  source: InvestmentNews
+  deal: false
+- text: Kay Lynn Mayhue named Merit CEO, still seeks 'big splash' deal
+  source: InvestmentNews
+  deal: false
+- text: Ken Leech Agrees to $3M SEC Fine over Cherry-Picking Case
+  source: WealthManagement.com
+  deal: false
+- text: Kestra lands $550M Texas planning firm Ecclesiastes Wealth Partners
+  source: InvestmentNews
+  deal: true
+  acquirer: Kestra
+  target: Ecclesiastes Wealth Partners
+  stage: announced
+- text: KeyBank names Keane COO of Key Wealth as Calabrese retires
+  source: InvestmentNews
+  deal: false
+- text: LPL Draws $1B Northwestern Mutual Team to RIA Channel
+  source: WealthManagement.com
+  deal: false
+- text: LPL Lands $1.1B Wells Fargo FiNet Team in Georgia
+  source: AdvisorHub
+  deal: false
+- text: LPL Recruits $1.1B Team to its RIA Channel From Wells Fargo's FiNet
+  source: WealthManagement.com
+  deal: false
+- text: LPL Recruits Georgia Wells Fargo Team Managing $1.1B
+  source: Financial Advisor Magazine
+  deal: false
+- text: LPL adds $1 billion Salt Lake City teams from Northwestern Mutual
+  source: InvestmentNews
+  deal: false
+- text: Lawmakers Want Probe Of Comments Supporting DOL’s 401(k) Alts Rule
+  source: WealthManagement.com
+  deal: false
+- text: Lawsuit says Blockware Solutions sold investors unregistered Bitcoin mining securities
+  source: InvestmentNews
+  deal: false
+- text: Leader of $4.6B Ameriprise Team Ordered to Pay Ex-Teammate $450K
+  source: AdvisorHub
+  deal: false
+- text: 'Leveraging Video The Right Way To Add $1M Of New Revenue In Less Than 12 Months: #FASuccess Ep 508 With Nate Hoskin'
+  source: Kitces
+  deal: false
+- text: Life insurance trust deficit widens as Gen Z clients demand more
+  source: InvestmentNews
+  deal: false
+- text: Liquidity risk is shifting as non-banks take over from the Fed
+  source: InvestmentNews
+  deal: false
+- text: Long-term care gap puts advisors in the spotlight as boomer costs soar
+  source: InvestmentNews
+  deal: false
+- text: Looking for a passion asset? New investment platform touts stakes in classic cars
+  source: InvestmentNews
+  deal: false
+- text: 'Lululemon Founder Headed for Divorce: What’s at Stake?'
+  source: WealthManagement.com
+  deal: false
+- text: Luma adds first ETFs to its platform as advisors push for unified income tools
+  source: InvestmentNews
+  deal: false
+- text: M1 Advisor bets AI can serve clients wealth managers turn away
+  source: InvestmentNews
+  deal: false
+- text: M1 Brings AI Financial Advice to Clients
+  source: WealthManagement.com
+  deal: false
+- text: MAI Capital taps Barron’s rankings veteran for advisor recruiting push
+  source: InvestmentNews
+  deal: false
+- text: Major Obstacles Inhibit Widespread Adoption of Retirement Income in DC Plans
+  source: WealthManagement.com
+  deal: false
+- text: 'Managing Legacy Investments: 6 Best Practices To Reduce RIA Fiduciary And Compliance Risk'
+  source: Kitces
+  deal: false
+- text: 'Market Brief: AI Companies Expected to Drive Most Third-Quarter Earnings Growth'
+  source: AdvisorHub
+  deal: false
+- text: 'Market Brief: Bond Heavyweights Split on What 5% Treasury Yields Mean for Investors'
+  source: AdvisorHub
+  deal: false
+- text: 'Market Brief: Citigroup Earnings Jump 40% as Wealth Management and Banking Revenue Grow'
+  source: AdvisorHub
+  deal: false
+- text: 'Market Brief: Corporate Earnings Are Growing Much Faster Than the Economy'
+  source: AdvisorHub
+  deal: false
+- text: 'Market Brief: Emerging Markets Shrug Off Higher Rates With Record Borrowing Spree'
+  source: AdvisorHub
+  deal: false
+- text: 'Market Brief: Fed Chair Warsh Signals Cautious Approach to Interest Rates Despite Rising Inflation'
+  source: AdvisorHub
+  deal: false
+- text: 'Market Brief: Fed Minutes Signal Another Rate Hike as Inflation Remains Stubborn'
+  source: AdvisorHub
+  deal: false
+- text: 'Market Brief: Fed Rate Hike Becomes a Closer Call Following Inflation Report'
+  source: AdvisorHub
+  deal: false
+- text: 'Market Brief: Fed Shift Drives $26 Billion Out of Emerging Markets'
+  source: AdvisorHub
+  deal: false
+- text: 'Market Brief: Hiring Rebounds as Fed Weighs Its Next Rate Move'
+  source: AdvisorHub
+  deal: false
+- text: 'Market Brief: Nvidia Adds $150 Billion to Massive Share Buyback Program'
+  source: AdvisorHub
+  deal: false
+- text: 'Market Brief: Nvidia Looks to Insurers to Help Finance the AI Buildout'
+  source: AdvisorHub
+  deal: false
+- text: 'Market Brief: Paramount’s $52 Billion Debt Sale Shows How Higher Rates Are Biting Corporate America'
+  source: AdvisorHub
+  deal: false
+- text: 'Market Brief: Retail Sales Beat Expectations, but Higher Gas Prices Mask Consumer Weakness'
+  source: AdvisorHub
+  deal: false
+- text: 'Market Brief: Wall Street Banks Launch Record $60 Billion AI Chip Financing'
+  source: AdvisorHub
+  deal: false
+- text: 'Market Brief: Weak September Jobs Report Complicates the Fed’s Rate Path'
+  source: AdvisorHub
+  deal: false
+- text: Marty Bicknell commits $175 million to install 700 'AI' bots to revolutionize RIA automation; the gamble isn't AI but whether advisors, clients, staff and leadership will embrace the change, analyst
+    says
+  source: RIABiz
+  deal: false
+- text: MassMutual helps Flourish find white knight buyer and regain 'standalone' status just months ahead of Phase II rollout that makes its 1,300 RIA clients more like a giant virtual private bank
+  source: RIABiz
+  deal: false
+- text: MassMutual launches securities-backed credit line for advisor clients
+  source: InvestmentNews
+  deal: false
+- text: Mercer Advisors Completes $1.9B Debt Refinancing, Adds $340M Credit Facility
+  source: WealthManagement.com
+  deal: false
+- text: Mercer Advisors hires Goldman alum Cynthia Loh as first-ever chief platform officer
+  source: InvestmentNews
+  deal: false
+- text: Mercer sources half its new assets from custodian referrals, S&P says
+  source: InvestmentNews
+  deal: false
+- text: Merchant Takes Stake in $97B Australian Wealth Firm
+  source: WealthManagement.com
+  deal: true
+  acquirer: Merchant
+  target: ''
+  stage: announced
+- text: Meristead Wealth Launches as a National RIA Managing Close to $1.4B in Assets
+  source: GlobeNewswire
+  deal: false
+- text: Merit Buys $1.1B Commonwealth Practice in Western NY
+  source: AdvisorHub
+  deal: true
+  acquirer: Merit
+  target: ''
+  stage: announced
+- text: Merit Financial Snags 10th Commonwealth Advisor
+  source: WealthManagement.com
+  deal: false
+- text: Merrill Agrees to $39M Settlement in Cash Sweep Suit
+  source: AdvisorHub
+  deal: false
+- text: Merrill Lynch creates hefty new 'data' and 'shelf' fees and offers third-party managers who pay them a leg up when its 'thundering herd' recommends investments -- but stops short of leveling the
+    playing field, analysts say
+  source: RIABiz
+  deal: false
+- text: Merrill Says Recruited Assets Double as Advisory Flows Slow
+  source: AdvisorHub
+  deal: false
+- text: Merrill to pay $39 million in cash sweep settlement
+  source: InvestmentNews
+  deal: false
+- text: 'Merrill, UBS record net advisor losses for first half of 2026: Report'
+  source: Citywire RIA
+  deal: false
+- text: Merrill, Wells Fargo to Pay $4.4M Over Commissions
+  source: ThinkAdvisor
+  deal: false
+- text: Mesirow taps Morningstar veteran to lead investment solutions
+  source: InvestmentNews
+  deal: false
+- text: Milemarker Launches Advisory Firm MCP AI Server
+  source: WealthManagement.com
+  deal: false
+- text: Minimizing The Impact Of The New 0.5%-Of-AGI Floor On Charitable Contributions And 2/37ths Reduction Of Itemized Deductions
+  source: Kitces
+  deal: false
+- text: Modern Wealth acquires California RIA in sixth deal of 2026
+  source: InvestmentNews
+  deal: true
+  acquirer: Modern Wealth
+  target: ''
+  stage: announced
+- text: More ETFs, more opportunity, more homework
+  source: InvestmentNews
+  deal: false
+- text: More Than Half of Advisors Using AI Save 4+ Hours a Week, AssetMark Research Finds
+  source: GlobeNewswire
+  deal: false
+- text: Morgan Stanley Bank Analyst Graseck to Retire After 40 Years
+  source: AdvisorHub
+  deal: false
+- text: Morgan Stanley Bond Veteran Is Bullish for First Time in Decade
+  source: AdvisorHub
+  deal: false
+- text: Morgan Stanley Builds Crypto Lab to Test Future of Wall Street
+  source: AdvisorHub
+  deal: false
+- text: Morgan Stanley Claws Back $1 Million From Wells Broker in Silicon Valley
+  source: AdvisorHub
+  deal: false
+- text: Morgan Stanley Says Dallas Expansion Plan Includes 3,800 Jobs
+  source: AdvisorHub
+  deal: false
+- text: Morgan Stanley Wealth Arm Rakes in Record Haul From IPOs
+  source: AdvisorHub
+  deal: false
+- text: Morgan Stanley advisor with $1B pedigree joins upstate New York RIA
+  source: InvestmentNews
+  deal: false
+- text: Morningstar rolls out agentic AI platform built on its research
+  source: InvestmentNews
+  deal: false
+- text: 'Morningstar: Geopolitical Tensions, Inflation Top List of Advisors’ Market Concerns'
+  source: WealthManagement.com
+  deal: false
+- text: Most Americans avoid inheritance talk at the holidays, survey finds
+  source: InvestmentNews
+  deal: false
+- text: Most baby boomers want to age at home. That could be a blind spot for advisors
+  source: Financial Planning
+  deal: false
+- text: Most investors lack advanced risk knowledge, FINRA finds
+  source: InvestmentNews
+  deal: false
+- text: Most pre-retirees are planning without a planner - and it shows
+  source: InvestmentNews
+  deal: false
+- text: Most workers have retirement plans but no retirement strategy
+  source: InvestmentNews
+  deal: false
+- text: NFL referee Shawn Hochuli doubles as LPL-affiliated financial advisor
+  source: InvestmentNews
+  deal: false
+- text: NYC Families That Fled to Suburbs See Jersey Discount Disappear
+  source: WealthManagement.com
+  deal: false
+- text: NYC-Based Tax Firm CohnReznick to Add $8B West Coast Wealth Practice
+  source: WealthManagement.com
+  deal: true
+  acquirer: CohnReznick
+  target: ''
+  stage: announced
+- text: Nasdaq Warns Network Disruption Is Impacting Equity Markets
+  source: AdvisorHub
+  deal: false
+- text: Navigating the pitfalls and perks of private-placement life insurance
+  source: Financial Planning
+  deal: false
+- text: 'Nearly 1,000 RIAs affected by Fidelity''s new asset minimum: Report'
+  source: Citywire RIA
+  deal: false
+- text: 'Nearly 30% of social media finance videos lead investors astray: study'
+  source: InvestmentNews
+  deal: false
+- text: Neglected clients charge a 'silence tax.' 3 ways not to pay
+  source: Financial Planning
+  deal: false
+- text: 'Never a losing day: CFTC alleges $950 million forex Ponzi scheme'
+  source: InvestmentNews
+  deal: false
+- text: New Research Finds Most Investors Lack Advanced Investment Knowledge, Increasing Their Exposure to Investment Risk
+  source: FINRA News
+  deal: false
+- text: New Treasury Regulations Introduce (Mandatory) Auto-Enrollment And Individual Stocks To Sec. 530A Trump Accounts
+  source: Kitces
+  deal: false
+- text: New York court lets UBS pursue Highland Capital founder over unpaid judgments
+  source: InvestmentNews
+  deal: false
+- text: New data flips the script on winning rollover business
+  source: Financial Planning
+  deal: false
+- text: Newsletters
+  source: Citywire RIA
+  deal: false
+- text: No sooner does MassMutual sell control of Flourish than it massively buys its cash management services for its 6,000 brokers; odd timing explained by 'plumbing'
+  source: RIABiz
+  deal: false
+- text: Northern Trust bulks up family office team with New York hires
+  source: InvestmentNews
+  deal: false
+- text: Northern Trust nabs Citi and BNY veterans in continuing Northeast push
+  source: InvestmentNews
+  deal: false
+- text: Northwestern Mutual Launches Family Office Services
+  source: WealthManagement.com
+  deal: false
+- text: Northwestern Mutual targets ultra-wealthy with new family office unit
+  source: InvestmentNews
+  deal: false
+- text: 'Note From the Editor: October 2026'
+  source: WealthManagement.com
+  deal: false
+- text: Obama headlines Creative Planning event as RIA crosses 1,000 employee equity partners
+  source: InvestmentNews
+  deal: false
+- text: Obstacles Facing Convergence of Wealth and Retirement at Work
+  source: WealthManagement.com
+  deal: false
+- text: Oil shock threatens to lock in higher rates through 2027
+  source: InvestmentNews
+  deal: false
+- text: 'On the Cover: October 2026'
+  source: WealthManagement.com
+  deal: false
+- text: 'One Word Powering the Next Phase of RIA Growth: Connection'
+  source: WealthManagement.com
+  deal: false
+- text: 'Outsourcing And Managing Client Headcount To Stay Lean As A Two-Founder, $150M Firm: #FASuccess Ep 511 With Ashlee deSteiger'
+  source: Kitces
+  deal: false
+- text: PCE inflation gauge cools, but further rate hikes from Fed loom
+  source: InvestmentNews
+  deal: false
+- text: PPI shatters expectations, piling more rate hike pressure on the Fed
+  source: InvestmentNews
+  deal: false
+- text: Pace of investors selling nontraded BDCs slows but remains significant, says Fitch
+  source: InvestmentNews
+  deal: false
+- text: Panel Backs Former Merrill Trainee in Dispute Over Pension Rollover
+  source: AdvisorHub
+  deal: false
+- text: Paramount in advanced settlement talks over $81 billion Warner Bros. deal
+  source: InvestmentNews
+  deal: false
+- text: Pension fund accuses Duolingo of burying user-growth crisis
+  source: InvestmentNews
+  deal: false
+- text: 'People Moves: Advisor Vet Joins RIA Ballast Rock; UBS Leaders Join &Partners'
+  source: WealthManagement.com
+  deal: false
+- text: 'People Moves: Cresset Hires Blackstone Alum Joe Zidle Chief Market Strategist'
+  source: WealthManagement.com
+  deal: false
+- text: 'People Moves: Edelman Financial Engines Names Chief Retirement Officer'
+  source: WealthManagement.com
+  deal: false
+- text: 'People Moves: TradePMR Tech Executive Jon Patullo Jumps to Hybrid RIA'
+  source: WealthManagement.com
+  deal: false
+- text: 'People moves: AllianceBernstein names Onur Erzan as next CEO'
+  source: InvestmentNews
+  deal: false
+- text: 'People moves: XYPN president Vince Hockett to retire in 2027'
+  source: InvestmentNews
+  deal: false
+- text: Pershing reveal of 'Wove' kerfuffle during corporate restructuring last June raises questions about the No. 3 RIA custodian's direction; the task now lies with new RIA head Adam Vos
+  source: RIABiz
+  deal: false
+- text: 'Photo Gallery: More pics from our RIA CEO Summit in Austin'
+  source: Citywire RIA
+  deal: false
+- text: 'Photo Gallery: The best pics from day one of our RIA CIO Summit'
+  source: Citywire RIA
+  deal: false
+- text: 'Photo Gallery: The best pics from our ''50 Growers'' award ceremony'
+  source: Citywire RIA
+  deal: false
+- text: Playbook for Trump's $26B school choice program released
+  source: Financial Planning
+  deal: false
+- text: Pontera 'reframes' itself from 401(k) workaround agent to trusted gatekeeper of AI agents -- possibly solving impasse with Fidelity -- as Schwab unleashes 'Charley' agent as its new 'foundation
+  source: RIABiz
+  deal: false
+- text: Pontera 'reframes' itself from 401(k) workaround agent to trusted gatekeeper of AI agents -- possibly solving impasse with Fidelity -- as Schwab unleashes 'Charley,' its new AI agent 'foundation'
+    for millions of clients
+  source: RIABiz
+  deal: false
+- text: Pontera announces non-discretionary 401(K) management tool
+  source: InvestmentNews
+  deal: false
+- text: Powering retirement for Wall Street
+  source: InvestmentNews
+  deal: false
+- text: 'Pre-IPO investing: When should advisors buy into Anthropic or SpaceX?'
+  source: InvestmentNews
+  deal: false
+- text: 'Pre-retirees are looking for flexibility, security, and guidance when it comes to retirement income: Cerulli'
+  source: InvestmentNews
+  deal: false
+- text: Pre-retirees want income planning advice, beyond investment products
+  source: Financial Planning
+  deal: false
+- text: Pre-sale financial planning is where advisors prove their value
+  source: InvestmentNews
+  deal: false
+- text: 'Prediction markets get a new twist: betting on what''s already happened'
+  source: InvestmentNews
+  deal: false
+- text: 'Prenups for founders: How advisors can protect the business'
+  source: InvestmentNews
+  deal: false
+- text: 'Prime Capital: Private Equity-Backed But Advisor-Controlled'
+  source: WealthManagement.com
+  deal: false
+- text: Primerica alleges Osaic Wealth raided branch office and poached six advisors
+  source: InvestmentNews
+  deal: false
+- text: Private Equity Firms Cling To Assets For Longer, Upending Business Model
+  source: Financial Advisor Magazine
+  deal: false
+- text: Private Markets Boost TDF Returns, CFA Institute Study Finds
+  source: WealthManagement.com
+  deal: false
+- text: Private business owners selling now are often unprepared, BNY survey says
+  source: InvestmentNews
+  deal: false
+- text: Private credit becoming 'big piece' of annuities, T. Rowe exec says
+  source: InvestmentNews
+  deal: false
+- text: Private equity faces challenge from Warren's revived Stop Wall Street Looting Act
+  source: InvestmentNews
+  deal: false
+- text: Private market allocations in 401(k) plans can lift retirement outcomes
+  source: InvestmentNews
+  deal: false
+- text: Private market valuation practices under pressure as AI use surges
+  source: InvestmentNews
+  deal: false
+- text: Private markets advice is evolving - are advisors keeping up?
+  source: InvestmentNews
+  deal: false
+- text: Private markets are testing the wealth stack
+  source: InvestmentNews
+  deal: false
+- text: Progress runs on AI. Purpose runs on people
+  source: InvestmentNews
+  deal: false
+- text: Protecting Gifts to Institutions at Risk of Failing
+  source: WealthManagement.com
+  deal: false
+- text: Prudential Advisors has become Prudential Wealth Advisors in 'milestone' move
+  source: InvestmentNews
+  deal: false
+- text: Prudential Wealth Advisors teams up with InvestmentNews for Women Advisor Summit and Women to Watch Awards
+  source: InvestmentNews
+  deal: false
+- text: Putting Cash to Work Outside the Savings Account
+  source: ThinkAdvisor
+  deal: false
+- text: 'Q&A: Charlesbank''s David Katz on Building RIA Institutions'
+  source: WealthManagement.com
+  deal: false
+- text: 'Q&A: What the Spike in Treasuries Means for Real Estate Investing'
+  source: WealthManagement.com
+  deal: false
+- text: Q3 M&A Deal Volume Cools, But Consolidators May Yet Drive a Record 2026
+  source: WealthManagement.com
+  deal: false
+- text: Qualified Small Business Stock Tax Breaks Explained
+  source: WealthManagement.com
+  deal: false
+- text: 'RIA Dealmaking Dips Almost 20%, Threatening Record Streak: DeVoe'
+  source: AdvisorHub
+  deal: false
+- text: 'RIA Deals on Track to Fall in Q3: DeVoe'
+  source: ThinkAdvisor
+  deal: false
+- text: 'RIA Edge 100: Pathstone’s Unusual Growth Engine Includes Skiing, Fly Fishing Trips'
+  source: WealthManagement.com
+  deal: false
+- text: 'RIA Edge Podcast: Building an RIA on a Family Office Foundation with Andy Busser'
+  source: WealthManagement.com
+  deal: false
+- text: 'RIA Edge Podcast: How Mission Wealth Scales Without Sacrificing Client Experience with Matt Adams'
+  source: WealthManagement.com
+  deal: false
+- text: RIA M&A Activity Plummets 19% in Q3
+  source: WealthManagement.com
+  deal: false
+- text: RIA M&A drops 17% in Q3 as mega sellers set new record, DeVoe says
+  source: InvestmentNews
+  deal: false
+- text: RIA M&A slowdown threatens record streak, DeVoe says
+  source: InvestmentNews
+  deal: false
+- text: RIA consolidators turn to syndicated loans as Mercer refinances $1.9B
+  source: InvestmentNews
+  deal: false
+- text: RIA deal momentum slows, threatening record-breaking run
+  source: Financial Planning
+  deal: false
+- text: RIA founders should invest early and stay nimble
+  source: InvestmentNews
+  deal: false
+- text: 'RIA moves: Carson Group enters New Jersey with $410M Foran Financial Group deal'
+  source: InvestmentNews
+  deal: true
+  acquirer: Carson Group
+  target: Foran Financial Group
+  stage: announced
+- text: 'RIA moves: Carson, Mesirow and DayMark add planning teams across three states'
+  source: InvestmentNews
+  deal: false
+- text: 'RIA moves: Hightower Signature Wealth adds New England reach with $752M Sandy Cove Advisors'
+  source: InvestmentNews
+  deal: true
+  acquirer: Hightower Signature Wealth
+  target: Sandy Cove Advisors
+  stage: announced
+- text: 'RIA moves: Merit, Hightower and Trilogy announce billion-dollar additions'
+  source: InvestmentNews
+  deal: false
+- text: 'RIA moves: Savant enters Thousand Oaks as Procyon lands in New Jersey'
+  source: InvestmentNews
+  deal: false
+- text: 'RIA moves: The Mather Group deepens DFW presence with Legacy Partnership'
+  source: InvestmentNews
+  deal: false
+- text: RIA revenue tool targets fee leakage as PE growth pressure mounts
+  source: InvestmentNews
+  deal: false
+- text: 'RIABIZ INTERVIEW: Jason Wenk tells RIABiz one big unnoticed reason why he sold to Vanguard, and the Bogle-ish scenario he envisions for his eventual departure decades hence'
+  source: RIABiz
+  deal: false
+- text: RIAs riding active ETFs into international and emerging markets
+  source: InvestmentNews
+  deal: false
+- text: RIAs working with Schwab get higher-yielding option for clients' cash
+  source: Financial Planning
+  deal: false
+- text: Raymond James Attracts Two Teams Totaling $1.75B
+  source: WealthManagement.com
+  deal: false
+- text: Raymond James Launches Public/Private Model Portfolios for HNW Clients
+  source: WealthManagement.com
+  deal: false
+- text: Raymond James launches guided portfolios for high-net-worth advisor market
+  source: InvestmentNews
+  deal: false
+- text: Real estate deed theft is surging - what advisors need to tell clients
+  source: InvestmentNews
+  deal: false
+- text: Regardless of DEI politics, Quad-A's VISION conference grows
+  source: Financial Planning
+  deal: false
+- text: Register now for our Miami CIO Summit!
+  source: Citywire RIA
+  deal: false
+- text: Report From FINRA Board of Governors Meeting – June 2026
+  source: FINRA News
+  deal: false
+- text: Report From FINRA Board of Governors’ September Meeting
+  source: FINRA News
+  deal: false
+- text: Researchers challenge the 4% retirement rule with a 'flexible 3%' alternative
+  source: Financial Planning
+  deal: false
+- text: Retiree alleges advisor withheld $600K through real estate LLC web
+  source: InvestmentNews
+  deal: false
+- text: Retirement advisors have a major small business opportunity
+  source: InvestmentNews
+  deal: false
+- text: Retirement assets hit $51.2 trillion as savers keep contributing
+  source: InvestmentNews
+  deal: false
+- text: Retirement cash flow planning for business owners starts years early
+  source: InvestmentNews
+  deal: false
+- text: Retirement plan defaults leave key participant decisions unresolved
+  source: InvestmentNews
+  deal: false
+- text: Retirement plans offer advisors a bridge to new wealth clients
+  source: Financial Planning
+  deal: false
+- text: Retirement withdrawal strategies shift as US assets hit $51.2T
+  source: InvestmentNews
+  deal: false
+- text: Rich People Fleeing Private Credit Haven't Learned Their Lesson
+  source: Financial Advisor Magazine
+  deal: false
+- text: Rick Wurster chides Fidelity in wake of Fido's $100-million RIA purge, as Q3 net-new RIA assets -- both Schwab Advisor Services and Schwab Wealth Advisory -- soar 47% and 55%, respectively
+  source: RIABiz
+  deal: false
+- text: Ritik Malhotra sells not-for-sale Savvy stake for $100 million after Utah Jazz owner showed up big for his LPL-disruption-by-AI play -- and Mark Casady re-upped at the new price as well
+  source: RIABiz
+  deal: false
+- text: Rockefeller Scoops Up $6.2 Million Truist Team in North Carolina
+  source: AdvisorHub
+  deal: false
+- text: Rockefeller Snags $1.2 Billion Truist Team in Florida
+  source: AdvisorHub
+  deal: false
+- text: S&P 500 CEO pay hits $17.5M as equity awards reshape executive compensation
+  source: InvestmentNews
+  deal: false
+- text: S&P 500 closes above 7,800 for the first time as AI trade powers on
+  source: InvestmentNews
+  deal: false
+- text: SEC Alleges Man Defrauded Law Enforcement Members In South Florida Scheme
+  source: WealthManagement.com
+  deal: false
+- text: SEC Announces Agenda and Panelists for Roundtable on Preparations for 24-Hour Trading
+  source: SEC Press Releases
+  deal: false
+- text: SEC Announces Continuation of Small Business Advisory Committee Meeting
+  source: SEC Press Releases
+  deal: false
+- text: SEC Announces Roundtable on Preparations for 24-Hour Trading
+  source: SEC Press Releases
+  deal: false
+- text: SEC Censures OTC Link LLC for Repeated Compliance Failures Related to Regulation SCI
+  source: SEC Press Releases
+  deal: false
+- text: SEC Charges Boiler Room Operator and Three Entities with Defrauding Retail Investors in $74 Million Pre-IPO Investment Scam
+  source: SEC Press Releases
+  deal: false
+- text: SEC Charges Firms With $15M WhatsApp, Crypto Frauds
+  source: WealthManagement.com
+  deal: false
+- text: SEC Charges Former Executives With Fraud in Connection With $1.9 Billion Collapse of Subprime Auto Lender Tricolor
+  source: SEC Press Releases
+  deal: false
+- text: SEC Charges Founder and His Two New Jersey-Based Companies in Alleged $16 Million Ponzi Scheme
+  source: SEC Press Releases
+  deal: false
+- text: SEC Charges Meyer Global Management and Its CEO With Defrauding Retail Investors in Private Funds That Held Interests in SpaceX and Other Pre-IPO Securities
+  source: SEC Press Releases
+  deal: false
+- text: SEC Charges Multiple Entities in Fraud Schemes Totaling at Least $15 Million That Used WhatsApp and Other Platforms to Lure Investors
+  source: SEC Press Releases
+  deal: false
+- text: SEC Charges Private Fund Adviser Adit Ventures Management, Its CEO and Affiliated General Partners in Alleged Fraud
+  source: SEC Press Releases
+  deal: false
+- text: SEC Charges Registered Investment Adviser Zoe Financial for Failure to Disclose Conflict of Interest
+  source: SEC Press Releases
+  deal: false
+- text: SEC Charges San Francisco Bay Area Private Fund Executives with Multimillion Dollar Ponzi-Like Scheme
+  source: SEC Press Releases
+  deal: false
+- text: SEC Charges South Florida Resident and His Company for Alleged Investment Scheme Defrauding Law Enforcement
+  source: SEC Press Releases
+  deal: false
+- text: SEC Charges Toms River Trio in Connection with Alleged $47 Million Fraud Targeting Orthodox Jewish Communities
+  source: SEC Press Releases
+  deal: false
+- text: SEC Charges Two Individuals With Orchestrating Fraud Scheme That Targeted Veterans
+  source: SEC Press Releases
+  deal: false
+- text: SEC Commissioner Hester Peirce To Resign This Week
+  source: WealthManagement.com
+  deal: false
+- text: SEC Commissioner Peirce to leave agency
+  source: Financial Planning
+  deal: false
+- text: SEC Coordinates with Global Financial Regulators to Raise Fraud Awareness During World Investor Week
+  source: SEC Press Releases
+  deal: false
+- text: SEC Crypto Custody Proposal Draws Divisive Reactions
+  source: WealthManagement.com
+  deal: false
+- text: SEC Establishes Financial Reporting and Accounting Unit in Enforcement Division
+  source: SEC Press Releases
+  deal: false
+- text: SEC Fines Zoe Financial $450K Over Conflict of Interest Charges
+  source: WealthManagement.com
+  deal: false
+- text: SEC Grants Exemptive Relief from Certain Inline XBRL Filing or Submission Requirements
+  source: SEC Press Releases
+  deal: false
+- text: SEC Investor Advisory Committee to Host Sept. 10 Meeting
+  source: SEC Press Releases
+  deal: false
+- text: SEC Issues “Innovation Exemption” to Facilitate the Trading of Tokenized NMS Stock and Request for Comment
+  source: SEC Press Releases
+  deal: false
+- text: SEC Proposal Would Address How Investment Advisers and Funds Can Custody Crypto Assets Under the Federal Securities Laws
+  source: SEC Press Releases
+  deal: false
+- text: SEC Proposes Amendments to Exchange Act Rule 3a12-8 to Add European Union Debt Obligations
+  source: SEC Press Releases
+  deal: false
+- text: SEC Proposes Amendments to Expand Responsible Retailization of Private Markets
+  source: SEC Press Releases
+  deal: false
+- text: SEC Proposes Expanding Securities Eligible for Cross Trading by Registered Funds
+  source: SEC Press Releases
+  deal: false
+- text: SEC Proposes New Regulation Crypto Assets
+  source: SEC Press Releases
+  deal: false
+- text: SEC Proposes Rescission of Political Contribution Rule for Investment Advisers
+  source: SEC Press Releases
+  deal: false
+- text: SEC Proposes Rescission of Shareholder Proposal Rule and Reforms to Proxy Solicitation Process
+  source: SEC Press Releases
+  deal: false
+- text: SEC Proposes to Modernize Rules for Registered Transfer Agents
+  source: SEC Press Releases
+  deal: false
+- text: SEC Publishes Updated Market Statistics, Highlighting Increase in IPOs and Proceeds Raised
+  source: SEC Press Releases
+  deal: false
+- text: SEC Seeks Final Judgment Against Former Western Asset Co-CIO Ken Leech in Cherry Picking Case
+  source: SEC Press Releases
+  deal: false
+- text: SEC Sends ‘Critical’ Reminder on Hard-to-Value Private Assets
+  source: AdvisorHub
+  deal: false
+- text: SEC Small Business Advisory Committee to Discuss IPO Modernization and Regulation Crowdfunding
+  source: SEC Press Releases
+  deal: false
+- text: SEC accuses CEO of secretly funneling stock to family
+  source: InvestmentNews
+  deal: false
+- text: SEC accuses Linqto chiefs of 'Wizard of Oz' investor deception
+  source: InvestmentNews
+  deal: false
+- text: SEC accuses fund advisor of defrauding SpaceX, OpenAI investors
+  source: InvestmentNews
+  deal: false
+- text: SEC accuses fund operator of defrauding investors in $9.6M mobile home scheme
+  source: InvestmentNews
+  deal: false
+- text: SEC accuses trucking operator of running $127 million Ponzi scheme
+  source: InvestmentNews
+  deal: false
+- text: SEC alleges Florida operator faked fund returns targeting police retirees
+  source: InvestmentNews
+  deal: false
+- text: SEC alts proposals may spark compliance 'culture shock' for managers
+  source: InvestmentNews
+  deal: false
+- text: SEC and FDA Announce MOU to Bolster Cooperation and Ensure Market Integrity
+  source: SEC Press Releases
+  deal: false
+- text: SEC bars NY advisor who allegedly defrauded elderly client of $2.4 million
+  source: InvestmentNews
+  deal: false
+- text: SEC charges Caris Investment Partners in alleged cherry-picking scheme
+  source: InvestmentNews
+  deal: false
+- text: SEC fines Zoe Financial $450K over undisclosed referral conflict
+  source: InvestmentNews
+  deal: false
+- text: SEC floats CFP route to accredited investor status, fund rules refresh amid private market push
+  source: InvestmentNews
+  deal: false
+- text: SEC gives Navellier's firm 60 days to wind down, bars founder
+  source: InvestmentNews
+  deal: false
+- text: SEC rule would let investors take exam to qualify as accredited
+  source: Financial Planning
+  deal: false
+- text: SEC seeks to ease advisors' custody burdens with discretionary trading
+  source: Financial Planning
+  deal: false
+- text: SEC seeks to rescind 2010 'pay-to-play' rule, paving the way for investment advisors to again bid for public pension contracts while making political donations to officials with influence over pension
+    awards
+  source: RIABiz
+  deal: false
+- text: SEC spares fund giants charges but warns on Exxon climate campaign
+  source: InvestmentNews
+  deal: false
+- text: SEC strips Grenda Group of adviser registration over concealed bar
+  source: InvestmentNews
+  deal: false
+- text: SEC to Host Virtual National Compliance Outreach Seminar for Investment Companies and Investment Advisers
+  source: SEC Press Releases
+  deal: false
+- text: 'SEC: 38 Entities Feigned Legitimacy as U.S. Advisers Through False Filings to Lure Retail Investors'
+  source: SEC Press Releases
+  deal: false
+- text: SEC’s Division of Examinations Announces New Exam Handbook
+  source: SEC Press Releases
+  deal: false
+- text: SEI Names Kristie Edling-Day as Chief Information Officer
+  source: WealthManagement.com
+  deal: false
+- text: SEIA Partners With Invent to Unify Data Systems
+  source: WealthManagement.com
+  deal: false
+- text: 'SMArtX rejected acquisition offer from CAIS to pursue cap raise: Sources'
+  source: Citywire RIA
+  deal: true
+  acquirer: CAIS
+  target: SMArtX
+  stage: terminated
+- text: Sammons Launches Criterion Wealth Advisory Platform With $27B in Assets
+  source: WealthManagement.com
+  deal: false
+- text: Sammons launches Criterion to compete in wealth management
+  source: InvestmentNews
+  deal: false
+- text: Savvy Wealth Launches Custodial Platform for RIAs
+  source: WealthManagement.com
+  deal: false
+- text: Savvy Wealth opens its custodial platform to outside RIAs
+  source: InvestmentNews
+  deal: false
+- text: Savvy Wealth to Offer Fidelity-Based ‘Custody’ Platform to Outside RIAs
+  source: AdvisorHub
+  deal: false
+- text: Schwab Prepares Its Own Version Of Tax Strategy Used By The Rich
+  source: Financial Advisor Magazine
+  deal: false
+- text: Schwab Sells Forge Trust to Self-Directed IRA Platform Alto
+  source: WealthManagement.com
+  deal: true
+  acquirer: Alto
+  target: Forge Trust
+  stage: announced
+- text: Schwab Tags Wealth Advice as Key Growth Area, Investment Focus
+  source: WealthManagement.com
+  deal: false
+- text: Schwab Wealth Advisory (SWA) unveils 'corkage' fee on third-party SMAs, typically .35%, as slew of changes add to 'elegant' master plan to convert DIY book to fees
+  source: RIABiz
+  deal: false
+- text: Schwab blocks unauthorized AI agents, points clients to 'Charley'
+  source: Financial Planning
+  deal: false
+- text: Schwab is opening its SMA marketplace to a Houston start-up's 'cash' option that lets advisors chase 7.5% yields on FDIC-insured cash -- with a few wrinkles
+  source: RIABiz
+  deal: false
+- text: Schwab loses $4.5 million lawsuit to teachers who bought structured products
+  source: InvestmentNews
+  deal: false
+- text: Schwab scores exclusive (for now) contract with Anthropic and takes AI 'driver's seat' in RIA custody, analyst says, though others counter that it's generic and late-coming
+  source: RIABiz
+  deal: false
+- text: Schwab sells alts custodian Forge Trust to Alto, citing capability overlap
+  source: Citywire RIA
+  deal: true
+  acquirer: Alto
+  target: Forge Trust
+  stage: announced
+- text: Schwab's Jon Beatty is one custody head offering a port in the storm after Fidelity unmoors its sub-$100M RIAs and Altruist's Jason Wenk , Apex's Bill Capuzzi and TradePMR's R. Scott Victoria are
+    among others
+  source: RIABiz
+  deal: false
+- text: Schwab's poach of $8-billion Ameriprise breakaway extends its wild 2026 rout of the once impenetrable fortress to four $1-billion-plus teams with help from high-multiple market
+  source: RIABiz
+  deal: false
+- text: Schwab's surprise unveiling of Anthropic deal at Future Proof shows it has an AI ace up its sleeve, but it may take five years or more to catch up with Altruist, if at all, say two analysts
+  source: RIABiz
+  deal: false
+- text: Schwab, Anthropic block model training in Claude deal
+  source: InvestmentNews
+  deal: false
+- text: Schwab’s RIA business keeps growing even as it reins in long-short strategies
+  source: InvestmentNews
+  deal: false
+- text: Senate vote on NIL bill could reshape college athletes' paydays
+  source: InvestmentNews
+  deal: false
+- text: September jobs report misses forecasts. Here's what it means for advisors
+  source: InvestmentNews
+  deal: false
+- text: Serial acquirers 'moving up market' amid RIA M&A slowdown
+  source: InvestmentNews
+  deal: false
+- text: Shook Rebrands, Plans to Resume Advisor Rankings in December
+  source: AdvisorHub
+  deal: false
+- text: Shook Research Rebrands as Veritant, Plans December Return of Forbes RIA Rankings
+  source: WealthManagement.com
+  deal: false
+- text: Single-country ETFs surge as investors target AI, reform plays
+  source: InvestmentNews
+  deal: false
+- text: Slant and FinTurk debut new forms tools
+  source: InvestmentNews
+  deal: false
+- text: Small Business Forum’s Report to Congress Highlights Recommendations to Improve Capital-Raising Policy
+  source: SEC Press Releases
+  deal: false
+- text: Small employers are more open to pooled retirement plans
+  source: InvestmentNews
+  deal: false
+- text: Snowbird clients reshape how RIAs serve multi-state families
+  source: InvestmentNews
+  deal: false
+- text: Social Security COLA rises to 3.6% for 2027, largest since 2023
+  source: InvestmentNews
+  deal: false
+- text: Social Security Chief Says COLA Reveal Will Be 'Good Day' For Beneficiaries
+  source: Financial Advisor Magazine
+  deal: false
+- text: Social Security Has A Trust Problem. It's Bigger Than 2032.
+  source: Financial Advisor Magazine
+  deal: false
+- text: Social Security bill offers blue-collar workers full benefits at 60
+  source: InvestmentNews
+  deal: false
+- text: Social Security's 3.6% COLA may fall short for retirees. How advisors can help
+  source: Financial Planning
+  deal: false
+- text: Software Needs to 'Show its Work'—Why Outcome-Based Pricing Is the Future
+  source: WealthManagement.com
+  deal: false
+- text: SpaceX entry drives index reshuffle as market concentration rises
+  source: InvestmentNews
+  deal: false
+- text: Stansberry spinoff Meristead Wealth debuts as national RIA near $1.4B AUM
+  source: InvestmentNews
+  deal: false
+- text: State Regulators Fine Wells Fargo, Merrill Over Small-Dollar Trade Commissions
+  source: WealthManagement.com
+  deal: false
+- text: State Street's new wealth-services unit notches early win
+  source: Financial Planning
+  deal: false
+- text: State Street's newly launched Apex-powered RIA custody unit has sizzle and 'wedge' power, especially after Pershing's Wove 'fell flat;' but to avoid fizzling, the power duo needs to steer past divergent
+    'segment' priorities
+  source: RIABiz
+  deal: false
+- text: Stifel Pays $30 Million to Settle Another Claim Tied to Former Star Broker
+  source: AdvisorHub
+  deal: false
+- text: Stifel settles massive $30 million complaint involving star broker’s sale of structured products
+  source: InvestmentNews
+  deal: false
+- text: 'Strategy before technology: Establishing the foundation for measurable AI value'
+  source: InvestmentNews
+  deal: false
+- text: Structure an Inheritance With an Annuity
+  source: ThinkAdvisor
+  deal: false
+- text: Succession drives Wisconsin advisory team to Carson Group
+  source: InvestmentNews
+  deal: false
+- text: Succession planning for business-owning moms starts on day one
+  source: InvestmentNews
+  deal: false
+- text: Succession planning must include a path to ownership, says Quad-A CEO
+  source: InvestmentNews
+  deal: false
+- text: Supreme Court weighs new hurdle for 401(k) lawsuits
+  source: Financial Planning
+  deal: false
+- text: 'Systematizing Your Differentiated Service As A (True) Retirement Expert While Scaling To $850M Of AUM: #FASuccess Ep 509 With Dana Anspach'
+  source: Kitces
+  deal: false
+- text: T. Rowe Price Beefs Up its Advisor Distribution Efforts
+  source: WealthManagement.com
+  deal: false
+- text: T. Rowe Price Bulks Up Advisor-Facing Roles
+  source: Financial Advisor Magazine
+  deal: false
+- text: T. Rowe Price adds 50-plus roles in bid to win over financial advisors
+  source: InvestmentNews
+  deal: false
+- text: TD Bank's RIA unit poaches Schwab's 'head of firmwide AI' and makes him its 'head of U.S. Wealth' with an eye on national franchise
+  source: RIABiz
+  deal: false
+- text: 'Taking Equity In An Acquiring Aggregator: Weighing The Growth Opportunities Against Valuation And Illiquidity Risks'
+  source: Kitces
+  deal: false
+- text: 'Talking Trusts & Estates for Advisors: Advantages and Disadvantages of Putting an Inherited IRA Into a CRUT'
+  source: WealthManagement.com
+  deal: false
+- text: 'Talking Trusts & Estates for Advisors: When to Use Revocable Trusts vs. Alternative Strategies'
+  source: WealthManagement.com
+  deal: false
+- text: Tariffs added 2.9 percentage points to goods inflation, New York Fed finds
+  source: InvestmentNews
+  deal: false
+- text: 'Tax Law Update: October 2026'
+  source: WealthManagement.com
+  deal: false
+- text: Tax-Slashing Strategy Popularized By Largest Hedge Fund Faces IRS Crackdown
+  source: Financial Advisor Magazine
+  deal: false
+- text: Tax-slashing strategy popularized by largest hedge fund faces IRS crackdown
+  source: Financial Planning
+  deal: false
+- text: The 'Dividend Nomads' Investing Their Way Out Of The 9-To-5
+  source: Financial Advisor Magazine
+  deal: false
+- text: 'The Associate in the Server Closet: On-Premises AI'
+  source: WealthManagement.com
+  deal: false
+- text: The Changing Geography of Investment Risk
+  source: WealthManagement.com
+  deal: false
+- text: 'The Diamond Podcast for Financial Advisors: Cresset CEO, Head of AI on Building the Modern Family Office'
+  source: WealthManagement.com
+  deal: false
+- text: 'The Diamond Podcast for Financial Advisors: David Bahnsen on Building a $10.5B Business Worth Selling'
+  source: WealthManagement.com
+  deal: false
+- text: 'The Diamond Podcast for Financial Advisors: The Wirehouse Talent Battle'
+  source: WealthManagement.com
+  deal: false
+- text: 'The Diamond Podcast for Financial Advisors: UBS Breakaways on What It Takes to Move $1B in Just Months'
+  source: WealthManagement.com
+  deal: false
+- text: The False Positive Problem Wealth Managers Can’t Afford to Ignore
+  source: WealthManagement.com
+  deal: false
+- text: The Family Hotel Is Not Just Real Estate
+  source: WealthManagement.com
+  deal: false
+- text: The Great Wealth Transfer Is Also a Great Risk Transfer
+  source: WealthManagement.com
+  deal: false
+- text: 'The Great Wealth Transfer: Separating the myth from the reality'
+  source: InvestmentNews
+  deal: false
+- text: The Next Generation of Affluent Americans Are Reshaping Giving
+  source: WealthManagement.com
+  deal: false
+- text: The Opportunity Hiding in Plain Sight
+  source: WealthManagement.com
+  deal: false
+- text: The Org Chart Nobody Draws
+  source: WealthManagement.com
+  deal: false
+- text: The Real Disruption Behind PEPs
+  source: WealthManagement.com
+  deal: false
+- text: The Rise of Phased Retirement
+  source: WealthManagement.com
+  deal: false
+- text: The Seven Expensive Sins of Premium-Financed Life Insurance
+  source: WealthManagement.com
+  deal: false
+- text: The T&E Inner Circle | What to Expect After Mid-term Elections
+  source: WealthManagement.com
+  deal: false
+- text: 'The WealthStack Podcast: Cybersecurity and Client Protection Beyond the Portfolio with Ken Eiden'
+  source: WealthManagement.com
+  deal: false
+- text: 'The WealthStack Podcast: How AI Is Modernizing Private Markets with Arch’s Ryan Eisenman'
+  source: WealthManagement.com
+  deal: false
+- text: The hidden cost of growing a firm without intention
+  source: InvestmentNews
+  deal: false
+- text: The straight-line retirement is over. Here’s what comes next
+  source: InvestmentNews
+  deal: false
+- text: Third Circuit scraps 30-year stock-price test in securities fraud case
+  source: InvestmentNews
+  deal: false
+- text: 'Tips From the Pros: Lewis Shouldn’t be a Loser'
+  source: WealthManagement.com
+  deal: false
+- text: Top 100 global hedge funds lag broader sector in H1 2026
+  source: InvestmentNews
+  deal: false
+- text: 'Top 40 Brokers Under 40: Call for 2027 nominations'
+  source: Financial Planning
+  deal: false
+- text: Treasuries Head Into Seasonally Poor October After Selloff
+  source: Financial Advisor Magazine
+  deal: false
+- text: Treasury hits BofA with $1.2B fine over money laundering violations
+  source: InvestmentNews
+  deal: false
+- text: Treasury sets auto-enrollment rules for Trump Accounts, potentially adding 60 million more children
+  source: InvestmentNews
+  deal: false
+- text: Trump Accounts auto-enrollment leaves work to do, says Baird expert
+  source: InvestmentNews
+  deal: false
+- text: Trump Accounts face midterm test as rules shift, warns Focus exec
+  source: InvestmentNews
+  deal: false
+- text: Trump Administration Planning Sweeping Audit of Left-Wing Nonprofits
+  source: WealthManagement.com
+  deal: false
+- text: Trump ETF Brand, Dan Ives Mark Yorkville’s Push on Wall Street
+  source: AdvisorHub
+  deal: false
+- text: Trump accounts expand to nearly 70M kids as stock proposal draws questions
+  source: Financial Planning
+  deal: false
+- text: Trust & Will Launching Chartered Retail Trust Company
+  source: WealthManagement.com
+  deal: false
+- text: 'Trusts & Estates: October 2026 Digital Edition'
+  source: WealthManagement.com
+  deal: false
+- text: Turning A Revocable Trust Into a Working Plan
+  source: WealthManagement.com
+  deal: false
+- text: UBS Faces Swiss Exit or Stay-and-Pay as Capital Defeat Nears
+  source: AdvisorHub
+  deal: false
+- text: UBS Needs to Be in US to Be Successful, CEO Ermotti Tells CNBC
+  source: AdvisorHub
+  deal: false
+- text: UBS Should Quit Switzerland Over Capital Rule, Investor Says
+  source: AdvisorHub
+  deal: false
+- text: UBS Snags Merrill Duo Producing $7.5M in Silicon Valley
+  source: AdvisorHub
+  deal: false
+- text: US Retirees to Get Another $75 a Month for 2027 Social Security
+  source: AdvisorHub
+  deal: false
+- text: US debt crisis nears tipping point, watchdog warns Congress
+  source: InvestmentNews
+  deal: false
+- text: US home price growth picks up but flipping profits keep shrinking
+  source: InvestmentNews
+  deal: false
+- text: US households hold record wealth, but AI poses a $27 trillion risk
+  source: InvestmentNews
+  deal: false
+- text: US retirement ranking slides to 24th as debt and inflation squeeze savers
+  source: InvestmentNews
+  deal: false
+- text: US ultra wealthy gave $107bn in 2025 as philanthropy reshapes wealth planning
+  source: InvestmentNews
+  deal: false
+- text: Vanguard Fined $950K Over Cost-Basis Reporting Errors
+  source: AdvisorHub
+  deal: false
+- text: Vanguard Group and Altruist can win RIA hearts, no problem, experts say, but the bro-cultural chasm – 2,700 miles apart and two ways of defining 'client-first' – will determine if they can make
+    the marriage work
+  source: RIABiz
+  deal: false
+- text: Vanguard struck with Altruist take-out after Schwab (and Fidelity) zapped it with ETF 'platform' fees, lightning bolts that clearly woke a sleeping monster that could redraw the competitive landscape
+    for RIA custody, with massive 'Vanguard effect,' analysts say
+  source: RIABiz
+  deal: false
+- text: Verdence plans CTO hire, national push after largest acquisition
+  source: InvestmentNews
+  deal: false
+- text: VestGen Receives Growth Capital From Private Credit Firm
+  source: WealthManagement.com
+  deal: false
+- text: VestGen Receives Growth Capital From Private Credit Firms
+  source: WealthManagement.com
+  deal: false
+- text: VestGen lands institutional capital to fuel Midwest wealth rollup
+  source: InvestmentNews
+  deal: false
+- text: Vibe Coding Didn't Cause the Hugging Face Attack. It Explains Why Nobody Saw It Coming.
+  source: WealthManagement.com
+  deal: false
+- text: 'Views from 6,230: How Investors Choose Advisors'
+  source: WealthManagement.com
+  deal: false
+- text: 'Views from 6,230: New Opportunities Emerging in Municipal Bonds'
+  source: WealthManagement.com
+  deal: false
+- text: 'Views from 6,230: The Market Looks Calm. Look Beneath the Surface'
+  source: WealthManagement.com
+  deal: false
+- text: 'Views from 6,230: What''s Next in the Evolution of ETFs?'
+  source: WealthManagement.com
+  deal: false
+- text: Wait, what — Pokémon cards? The $16.5 million Pikachu that’s crashing the planning meeting
+  source: InvestmentNews
+  deal: false
+- text: Wall Street Regulator Moves to Expand Access to Private Funds
+  source: AdvisorHub
+  deal: false
+- text: 'Wall Street bonanza! The Street on track to hit a record $90 billion in profits: Report'
+  source: InvestmentNews
+  deal: false
+- text: Warsh touts US economic resilience, keeps coy on next rate move
+  source: InvestmentNews
+  deal: false
+- text: Waverly Acquires $1.7 Billion Virginia RIA
+  source: AdvisorHub
+  deal: true
+  acquirer: Waverly
+  target: ''
+  stage: announced
+- text: Waverly Advisors buys $1.7B Richmond RIA
+  source: InvestmentNews
+  deal: true
+  acquirer: Waverly Advisors
+  target: ''
+  stage: announced
+- text: Waverly, Apella buy $412M in RIA assets across Oregon, Northeast
+  source: InvestmentNews
+  deal: true
+  acquirer: Waverly
+  target: ''
+  stage: announced
+- text: Wavvest launches in-house RIA
+  source: InvestmentNews
+  deal: false
+- text: Wealth Enhancement Pens Largest Deal to Date with $22B RWA Partners
+  source: WealthManagement.com
+  deal: true
+  acquirer: Wealth Enhancement
+  target: RWA Partners
+  stage: announced
+- text: Wealth Enhancement Sues Ex-Advisor Who Left for RFG
+  source: WealthManagement.com
+  deal: false
+- text: Wealth Enhancement agrees to buy $22B RWA Wealth Partners in family office play
+  source: InvestmentNews
+  deal: true
+  acquirer: Wealth Enhancement
+  target: RWA Wealth Partners
+  stage: announced
+- text: Wealth Enhancement strategist warns AI risk hides in 'diversified' alts portfolios
+  source: InvestmentNews
+  deal: false
+- text: 'Wealth Management Invest: Opportunities Beyond Large Cap Stocks with BNY’s Alicia Levine'
+  source: WealthManagement.com
+  deal: false
+- text: Wealth Revenues Climb at Major Firms, Masking Weaknesses in Divisions
+  source: WealthManagement.com
+  deal: false
+- text: Wealth Revenues Climb at Morgan Stanley, Merrill Lynch
+  source: WealthManagement.com
+  deal: false
+- text: Wealth Services Firm Horizon Buys OCIO Provider
+  source: WealthManagement.com
+  deal: true
+  acquirer: Horizon
+  target: ''
+  stage: announced
+- text: 'Wealth advisors should adapt services as financial strain hits high earners: Goldman'
+  source: Financial Planning
+  deal: false
+- text: Wealth managers see payoff in leaving cash as Fed hikes
+  source: InvestmentNews
+  deal: false
+- text: Wealth tax, capital gains hikes draw bipartisan support in US battlegrounds
+  source: InvestmentNews
+  deal: false
+- text: Wealth transfer planning must go beyond the will, advisors say
+  source: InvestmentNews
+  deal: false
+- text: 'WealthStack Roundup: Docupace Launches Next, an Agentic AI Foundation'
+  source: WealthManagement.com
+  deal: false
+- text: 'WealthStack Roundup: Northwestern Mutual Adopts Jump''s AI Suite'
+  source: WealthManagement.com
+  deal: false
+- text: 'WealthStack Roundup: Retirement Income Planning Tech Gains New Urgency'
+  source: WealthManagement.com
+  deal: false
+- text: Wealthspire Announces $2.9B Sports and Entertainment Practice
+  source: WealthManagement.com
+  deal: false
+- text: Wealthspire forms sports and entertainment advisory group
+  source: Citywire RIA
+  deal: false
+- text: Wealthspire plans NIL program with new sports and entertainment unit
+  source: InvestmentNews
+  deal: false
+- text: Wealthtech Vendors Scramble as Orion Introduces Data Access Fees
+  source: WealthManagement.com
+  deal: false
+- text: Wealthy Gen Z and millennial donors are changing the philanthropic playbook
+  source: InvestmentNews
+  deal: false
+- text: 'Wealthy Without A Plan: How To Get Women Clients On The Right Track'
+  source: Financial Advisor Magazine
+  deal: false
+- text: Wealthy investors eye advisor guidance as 2026 midterms approach
+  source: InvestmentNews
+  deal: false
+- text: Wedbush Welcomes Wealth Management Leader Jim McDermott as Managing Director, Investments in Chicago
+  source: GlobeNewswire
+  deal: false
+- text: Weekend Reading For Financial Planners (October 10–11)
+  source: Kitces
+  deal: false
+- text: Weekend Reading For Financial Planners (October 17–18)
+  source: Kitces
+  deal: false
+- text: Weekend Reading For Financial Planners (October 3–4)
+  source: Kitces
+  deal: false
+- text: Weekend Reading For Financial Planners (September 12–13)
+  source: Kitces
+  deal: false
+- text: Weekend Reading For Financial Planners (September 19–20)
+  source: Kitces
+  deal: false
+- text: Weekend Reading For Financial Planners (September 26–27)
+  source: Kitces
+  deal: false
+- text: Weekend equity trading is coming - what advisors need to know
+  source: InvestmentNews
+  deal: false
+- text: Wells CEO Says Wealth Unit Realizing Its Potential, Downplays AI Threat
+  source: AdvisorHub
+  deal: false
+- text: Wells Fargo FiNet Adds Former UBS Team In Ohio Managing $1.3B
+  source: Financial Advisor Magazine
+  deal: false
+- text: Wells Fargo Tells Most Producing Managers to Choose Between Clients and Management
+  source: AdvisorHub
+  deal: false
+- text: Wells Fargo and Merrill Lynch settle excessive commissions probe
+  source: InvestmentNews
+  deal: false
+- text: Wells Fargo follows Morgan Stanley out the door, prompting Forbes and Shook to freeze all 2026 advisor rankings amid fallout from $6-million editor payout
+  source: RIABiz
+  deal: false
+- text: Wells Fargo names COO Scott Powell as its next chief risk officer
+  source: InvestmentNews
+  deal: false
+- text: Wells, Merrill Agree to $4.4M Settlement Over ‘Nickel-And-Dime’ Allegations
+  source: AdvisorHub
+  deal: false
+- text: What 2 RIAs get right about training new advisors as shortages loom
+  source: Financial Planning
+  deal: false
+- text: What Information Prospects Actually Seek When Choosing An Advisor
+  source: Kitces
+  deal: false
+- text: What Really Drives Client Referrals
+  source: Kitces
+  deal: false
+- text: What advisors need to know as Trump and Xi meet this week
+  source: InvestmentNews
+  deal: false
+- text: What climate finance means for portfolios
+  source: Financial Planning
+  deal: false
+- text: What selling your business doesn't tell you until it's too late
+  source: InvestmentNews
+  deal: false
+- text: What the industry gets wrong about DIY investors
+  source: Financial Planning
+  deal: false
+- text: What the largest wealth managers need from their CEO
+  source: Citywire RIA
+  deal: false
+- text: What ‘White Glove’ Means Today
+  source: WealthManagement.com
+  deal: false
+- text: When Are DAFs the Right Choice?
+  source: WealthManagement.com
+  deal: false
+- text: 'When Keeping Your Options Open Is Riskier Than Making A Commitment: Kitces & Carl 201'
+  source: Kitces
+  deal: false
+- text: When One Partner Wants More
+  source: WealthManagement.com
+  deal: false
+- text: When a Family Has Several Advisors
+  source: WealthManagement.com
+  deal: false
+- text: When it comes to retirement, Americans struggling with 'permission to spend,' says Prudential
+  source: InvestmentNews
+  deal: false
+- text: Where a client's parent lives may decide who pays for the nursing home
+  source: InvestmentNews
+  deal: false
+- text: Which technology providers stood out in 2026?
+  source: InvestmentNews
+  deal: false
+- text: Who are the financial professionals shaping the industry?
+  source: InvestmentNews
+  deal: false
+- text: Why Quality Investing May Be Entering a Rare Opportunity
+  source: WealthManagement.com
+  deal: false
+- text: Why RIA M&A Deals Keep Getting Bigger, and What It Means for Your Firm
+  source: WealthManagement.com
+  deal: false
+- text: Why TPAs are Suddenly Sexy
+  source: WealthManagement.com
+  deal: false
+- text: Why advisor annuity adoption often stalls on workflow and fee objections
+  source: InvestmentNews
+  deal: false
+- text: Why advisors are rethinking entity structures for clients — and maybe themselves
+  source: Financial Planning
+  deal: false
+- text: Why advisors must close the retirement longevity gap now
+  source: InvestmentNews
+  deal: false
+- text: Why advisors should get involved when clients take out a mortgage
+  source: Financial Planning
+  deal: false
+- text: Why female financial advisors are slow to embrace independence
+  source: InvestmentNews
+  deal: false
+- text: Why senior advisors abandon AI tools — and how to fix it
+  source: Financial Planning
+  deal: false
+- text: Why wealthy retirees struggle to spend — and how advisors can help
+  source: Financial Planning
+  deal: false
+- text: Wirehouse departures are up. How firms can appeal to those advisors
+  source: Financial Planning
+  deal: false
+- text: Wirehouses Lost 517 Advisors in First Half of 2026
+  source: WealthManagement.com
+  deal: false
+- text: 'Wirehouses losing more advisors so far in 2026: Report'
+  source: InvestmentNews
+  deal: false
+- text: With $74M in growth capital, can RQD boost its RIA custody business?
+  source: Financial Planning
+  deal: false
+- text: Workers allege Principal Financial ran $4.59B 401(k) as a fee machine
+  source: InvestmentNews
+  deal: false
+- text: XY Planning recruiting spikes as RIA M&A refugees flee rollups that dangle downer contracts
+  source: RIABiz
+  deal: false
+- text: XY Planning recruiting spikes as RIA M&A refugees flee rollups that dangle downer contracts -- Amazon, Google, and Fidelity are the second set of X factors feeding the boom
+  source: RIABiz
+  deal: false
+- text: XYPN Adds Income Lab as Member Benefit
+  source: WealthManagement.com
+  deal: false
+- text: XYPN Partners With Jump to Bring AI Tools to Its Advisors
+  source: WealthManagement.com
+  deal: false
+- text: XYPN Partners with Jump to Help Advisors Harness the Next Generation of Compliant AI-Powered Growth
+  source: GlobeNewswire
+  deal: false
+- text: XYPN Starts National Search for Next President as Vince Hockett to Step Down
+  source: WealthManagement.com
+  deal: false
+- text: You've Invested in AI. So Why Isn't it Doing the Real Work?
+  source: WealthManagement.com
+  deal: false
+- text: Young Americans are rewriting what financial success looks like
+  source: InvestmentNews
+  deal: false
+- text: Your Wealthiest Clients May Not Have Their Estate Plans in Order
+  source: WealthManagement.com
+  deal: false
+- text: Zocks debuts Claude plugin with seven skills for financial advisors
+  source: InvestmentNews
+  deal: false
+- text: thinkadvisor
+  source: ThinkAdvisor
+  deal: false
+- text: ‘Black Holes’ for Capital-Gains Tax Come Under Treasury Fire
+  source: WealthManagement.com
+  deal: false
+- text: ‘Dumbfounded’ Arbitrator Slams Client’s Elder Abuse Claim Against Wells Vet
+  source: AdvisorHub
+  deal: false
+- text: '‘I didn’t pay myself for all of 08 and 09’: How one RIA founder rode out the last big crash'
+  source: Citywire RIA
+  deal: false
+- text: “The AI tsunami is going to change this industry in very unpredictable ways”
+  source: InvestmentNews
+  deal: false

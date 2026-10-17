@@ -1,0 +1,107 @@
+# Industry tags for deals. A deal gets every industry whose `any` list matches its headline or press-release
+# teaser (and whose `unless` list doesn't), plus the industry of a single-industry outlet (`industry:` in
+# sources.yaml). Its primary industry is the first match in this order.
+#
+# Patterns are case-insensitive phrases matched on word boundaries; prefix with `re:` for a raw regex.
+# Company names are listed where the name alone says the industry ("Nvidia buys …").
+industries:
+  - name: Investment Banking
+    any: [investment bank, investment banks, investment banking, boutique bank, boutique investment bank, M&A advisory,
+          "re:m&a advis[eo]ry firm", capital markets firm, broker-dealer, broker dealer, sell-side, Houlihan Lokey, Lazard,
+          Moelis, Evercore, PJT Partners, Perella Weinberg, Centerview, Guggenheim Securities, Jefferies, Piper Sandler,
+          Stifel, William Blair, Baird, Lincoln International, Harris Williams, KBW, Keefe Bruyette, TD Cowen, Cowen,
+          Oppenheimer, B. Riley, Greenhill, Rothschild, Raymond James, Goldman Sachs, Morgan Stanley, Brown Gibbons,
+          Capstone Partners, Cascadia Capital, DC Advisory, Mizuho Securities, Nomura, Macquarie Capital, Canaccord]
+
+  - name: Wealth Management & RIAs
+    any: [RIA, RIAs, registered investment adviser, registered investment advisor, wealth management, wealth manager,
+          wealth managers, wealth advisor, wealth advisors, wealth adviser, wealth firm, wealth practice, financial advisor,
+          financial advisors, financial adviser, advisory practice, family office, multifamily office, multi-family office,
+          private wealth, OCIO, "re:\\$[\\d.,]+\\s?(?:b|bn|billion|m|mm|million)\\s+(?:ria|firm|practice|team)\\b",
+          "re:\\bin (?:aum|client assets)\\b", custodian, TAMP, Captrust, Cerity Partners, Mariner, Hightower, CAIS,
+          Wealth Enhancement, Mercer Advisors, Creative Planning, Edelman Financial, Focus Financial, Kestra, Carson Group,
+          Corient, Cresset, Waverly, AlphaCore, Merit Financial, Altruist, Commonwealth, LPL, Envestnet, Orion, SMArtX]
+
+  - name: Banking
+    any: [bank, banks, bancorp, bancshares, banc, banking, credit union, credit unions, savings bank, thrift, community bank,
+          JPMorgan, Wells Fargo, Citigroup, Citi, Truist, PNC, U.S. Bancorp, Capital One, Fifth Third, KeyCorp, Huntington,
+          Regions, M&T, Citizens Financial, First Horizon, Zions, Comerica, HSBC, Barclays, Santander, BMO, TD Bank,
+          UniCredit, "re:\\b(?-i:[A-Z][a-z]+bank)\\b", Lightstream]
+    unless: [investment bank, investment banks, investment banking, boutique bank, food bank, data bank, blood bank]
+
+  - name: Insurance
+    any: [insurance, insurer, insurers, insurtech, reinsurance, reinsurer, underwriter, underwriting, MGA, annuity,
+          annuities, life insurer, "P&C", insurance broker, benefits broker, Marsh, Aon, Gallagher, Brown & Brown, WTW,
+          Acrisure, Chubb, AIG, Allstate, Progressive, MetLife, Prudential, HUB International, Lincoln Financial, Lloyd's]
+
+  - name: Fintech & Payments
+    any: [fintech, payments, payment, payments company, card issuer, crypto, cryptocurrency, stablecoin, bitcoin, neobank,
+          BNPL, buy now pay later, lending platform, wealthtech, Stripe, Visa, Mastercard, PayPal, Block, Fiserv, FIS,
+          Global Payments, Adyen, Plaid, Chime, Robinhood, Coinbase, Kraken, SoFi, Intuit, Brex, Ramp]
+
+  - name: Private Equity & Asset Management
+    any: [private equity, PE firm, PE-backed, buyout firm, buyout, take-private, take private, private credit, asset manager,
+          asset managers, asset management, investment firm, investment manager, fund manager, hedge fund, alternative asset,
+          alternatives manager, GP stake, GP stakes, sponsor-backed, portfolio company, carve out, carve-out, Blackstone, KKR,
+          Apollo, Carlyle, TPG, Bain Capital, Warburg Pincus, Advent, EQT, CVC, Hellman & Friedman, Silver Lake,
+          General Atlantic, Permira, Brookfield, Ares, Clayton Dubilier, Leonard Green, Genstar, Thoma Bravo, Vista Equity,
+          Gryphon, Bluegem, Greybull, ECI Partners, Frazier Healthcare, THL, Thomas H. Lee, Hg, Insight Partners, Francisco
+          Partners, Stone Point, Warburg, Blue Owl, BlackRock, Vanguard, State Street, Franklin Templeton, Invesco, T. Rowe,
+          Nuveen, PIMCO, Janus, Victory Capital, Perpetual]
+
+  - name: Healthcare & Life Sciences
+    any: [health, healthcare, health care, health system, hospital, hospitals, clinic, clinics, medical, medtech, med tech,
+          pharma, pharmaceutical, pharmaceuticals, biotech, biotechnology, biopharma, therapeutics, drug, drugmaker,
+          oncology, diagnostics, pathology, dental, physician, physicians, infusion, life sciences, CRO, GLP-1, vaccine,
+          gene therapy, cell therapy, behavioral health, home health, senior care, veterinary, Pfizer, Merck, AstraZeneca,
+          GSK, Novartis, Sanofi, Eli Lilly, Lilly, Johnson & Johnson, AbbVie, Amgen, Gilead, Biogen, Agilent,
+          Thermo Fisher, Danaher, UnitedHealth, Optum, CVS, Zocdoc, Labcorp, Quest Diagnostics]
+
+  - name: Technology
+    any: [software, SaaS, tech, technology, technologies, AI, artificial intelligence, machine learning, cybersecurity,
+          cyber security, security software, identity security, data security, cloud, data center, data centers,
+          semiconductor, semiconductors, chip, chips, chipmaker, IT services, managed services, analytics, developer,
+          programming, internet, IoT, eSIM, robotics, quantum, Nvidia, Microsoft, Google,
+          Alphabet, Apple, Amazon, Meta, OpenAI, Anthropic, Salesforce, Adobe, Oracle, IBM, Cisco, Cloudflare,
+          Palo Alto Networks, CrowdStrike, Proofpoint, Varonis, SAP, ServiceNow, Workday, Snowflake, Databricks,
+          Hugging Face, Broadcom, AMD, Intel, Qualcomm, Dell, HP, xAI, Miro, Superhuman, Deno, OpenRouter, Bending Spoons]
+
+  - name: Energy & Utilities
+    any: [energy, oil, natural gas, gas producer, LNG, pipeline, midstream, upstream, downstream, utility, utilities,
+          power, electric, electricity, solar, wind, renewable, renewables, battery, batteries, energy storage, nuclear,
+          grid, hydrogen, coal, refinery, refiner, generators, oilfield, NextEra, Dominion, Duke Energy, AEP, Exxon,
+          ExxonMobil, Chevron, ConocoPhillips, Shell, BP, Constellation Energy, Vistra]
+
+  - name: Industrials
+    any: [industrial, industrials, manufacturing, manufacturer, aerospace, defense, logistics, freight, trucking,
+          shipping, tanker, tankers, VLCC, VLCCs, vessels, transportation, rail, railroad, airline, airlines, automotive, auto parts, automaker, construction,
+          engineering, chemicals, chemical, materials, packaging, steel, metals, mining, miner, machinery, equipment,
+          HVAC, plumbing, building products, textile, textiles, recycler, recycling, waste, environmental services,
+          mobility, components, distribution, distributor, Boeing, Honeywell, GE, Caterpillar, Deere, 3M, Lockheed,
+          Northrop, RTX, SpaceX]
+
+  - name: Consumer & Retail
+    any: [retail, retailer, retailers, restaurant, restaurants, food, foods, beverage, beverages, brand, brands, apparel,
+          fashion, consumer, grocery, grocer, CPG, beauty, cosmetics, lash, salon, fitness, gym, hospitality, hotel, hotels,
+          travel, e-commerce, ecommerce, dating, pet, pets, toys, furniture, ingredients, nutrition, wine, spirits, beer,
+          coffee, cannabis, footwear, jewelry, home goods, catering, Walmart, Target, Costco, Kroger, Nike, PepsiCo,
+          Coca-Cola, Unilever, Procter & Gamble, Bumble, Uber]
+
+  - name: Real Estate
+    any: [real estate, REIT, REITs, property, properties, apartment, apartments, multifamily, office building,
+          homebuilder, homebuilders, housing, self-storage, senior living, industrial real estate, commercial real estate,
+          CRE, landlord]
+    unless: [multifamily office, multi-family office, intellectual property]
+
+  - name: Media & Telecom
+    any: [media, telecom, telecommunications, wireless, broadband, fiber, cable, studio, studios, streaming,
+          entertainment, publisher, publishing, newspaper, broadcaster, broadcasting, TV, television, radio, music, gaming,
+          video game, video games, advertising, adtech, ad tech, sports team, Paramount, Warner Bros, Skydance, Fox, Roku,
+          Comcast, Disney, Netflix, Verizon, AT&T, T-Mobile, Charter, Spotify]
+
+  - name: Business Services
+    any: [staffing, consulting, consultancy, consultant, accounting, accounting firm, CPA, CPA firm, tax firm, law firm,
+          legal services, marketing agency, agency, outsourcing, HR, payroll, education, edtech, training, testing,
+          facilities, security services, security group, security company, professional services, business services, Unacademy, upGrad, CohnReznick]
+
+default: Other
