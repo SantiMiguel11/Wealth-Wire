@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SYNTHETIC TEST DATA - not real news -->
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel><title>Payments Dive</title><link>https://www.paymentsdive.com/feeds/news/</link><description>SYNTHETIC TEST DATA - not real news</description>
+<item><title>Tallyhook acquires payments startup Coinwell</title><link>https://www.paymentsdive.com/news/tallyhook-acquires-payments-startup-coinwell/700000/</link><guid>https://www.paymentsdive.com/news/tallyhook-acquires-payments-startup-coinwell/700000/</guid><pubDate>Thu, 24 Sep 2026 23:00:00 -0400</pubDate></item>
+<item><title>Card issuers brace for new fee rules</title><link>https://www.paymentsdive.com/news/card-issuers-brace-for-new-fee-rules/700001/</link><guid>https://www.paymentsdive.com/news/card-issuers-brace-for-new-fee-rules/700001/</guid><pubDate>Thu, 24 Sep 2026 13:00:00 -0400</pubDate></item>
+</channel></rss>

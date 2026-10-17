@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SYNTHETIC TEST DATA - not real news -->
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel><title>Fierce Healthcare</title><link>https://www.fiercehealthcare.com/rss/xml</link><description>SYNTHETIC TEST DATA - not real news</description>
+<item><title>Hospitals warn of staffing shortages this winter</title><link>https://www.fiercehealthcare.com/hospitals-warn-of-staffing-shortages-this-winter</link><guid>https://www.fiercehealthcare.com/hospitals-warn-of-staffing-shortages-this-winter</guid><pubDate>Thu, 24 Sep 2026 00:00:00 -0400</pubDate></item>
+</channel></rss>

@@ -51,29 +51,15 @@ class SourceIngester:
         self.conn = conn
         self.local_tz = local_tz
         self.now = now
-        self._sec = None
-        self._categorizer = None
-
-    @property
-    def sec(self):
-        if self._sec is None:
-            from .firms import SecMatcher
-
-            self._sec = SecMatcher.from_db(self.conn)
-        return self._sec
-
-    @property
-    def categorizer(self):
-        if self._categorizer is None:
-            from .categorize import Categorizer
-
-            self._categorizer = Categorizer()
-        return self._categorizer
 
     def _google_news(self, run: SourceRun, src: Source) -> None:
         from .gnews import feed_url, parse_google_news
 
         url = src.feed_url or feed_url(src.query or f"site:{src.homepage}")
+        allowed, why = self.fetcher.robots.check(url)
+        if not allowed:  # news.google.com/robots.txt disallows /rss/search (2026-10-17)
+            run.attempts.append(f"{url}: skipped, {why}")
+            return
         res = self.fetcher.get(url, conditional=True)
         if res.not_modified:
             run.method, run.url_used, run.ok = "Google News RSS", url, True
@@ -126,14 +112,15 @@ class SourceIngester:
             run.items = list(merged.values())
             run.fetched = sum(r["fetched"] for r in run.feed_stats)
             run.dropped = sum(r["dropped"] for r in run.feed_stats)
-            run.notes.append(f"wealth-management filter kept {sum(r['kept'] for r in run.feed_stats)} of {run.fetched} "
-                             f"across {len(ok_urls)} keyword feeds ({len(run.items)} unique)")
+            run.notes.append(f"deal filter kept {sum(r['kept'] for r in run.feed_stats)} of {run.fetched} "
+                             f"across {len(ok_urls)} feeds ({len(run.items)} unique)")
             if len(ok_urls) < len(src.feed_urls):
                 run.notes.append("; ".join(run.attempts))
         run.prefiltered = True
 
     def _filter(self, run: SourceRun) -> None:
-        """Age limit (wires, Google News) and the wealth-management filter (wires)."""
+        """Age limit (wires, Google News), then deals only: every source keeps just the items whose headline
+        announces an M&A deal (deals.classify). General news is never stored (DECISIONS D2)."""
         src = run.src
         if not src or not run.items:
             return
@@ -145,13 +132,12 @@ class SourceIngester:
             kept = [it for it in kept if from_iso(it.published_at) >= cutoff]
             if len(kept) < len(run.items):
                 run.notes.append(f"{len(run.items) - len(kept)} items older than {src.max_age_days} days ignored")
-        if src.kind == "wire":
-            from .wires import keep_wire_item
+        from .deals import is_deal
 
-            before = len(kept)
-            kept = [it for it in kept if keep_wire_item(it.title, it.description, self.sec, self.categorizer)[0]]
-            run.dropped = before - len(kept)
-            run.notes.append(f"wealth-management filter kept {len(kept)} of {before} (dropped {run.dropped})")
+        before = len(kept)
+        kept = [it for it in kept if is_deal(it.title)]
+        run.dropped = before - len(kept)
+        run.notes.append(f"deal filter kept {len(kept)} of {before}")
         run.items = kept
 
     def _try_feed(self, run: SourceRun, src: Source, url: str, method: str) -> bool:
@@ -379,7 +365,7 @@ def write_sources_md(runs: list[SourceRun], now: datetime, cfg: dict, demo: bool
         "- **discovered RSS** — found via `<link rel=\"alternate\">` on the homepage/news page or a common path (`/feed`, `/rss`, `/rss.xml`); cached for later runs.",
         "- **listing fallback** — headlines, links and dates parsed from the public listing page (robots.txt permitting).",
         "- **Google News RSS** — Google News search feed scoped to the outlet's site (`site:` query), for outlets that block automated readers. Items are attributed to the outlet; links are Google redirect URLs (not resolved); deduped by headline + outlet + date.",
-        "- **Dropped** — press-release wire items removed by the wealth-management filter (wealth terms AND an SEC firm or an M&A / people-move story).",
+        "- **Dropped** — items whose headline doesn't announce an M&A deal (commentary, general news, funding rounds, people moves). Only deals are stored.",
         "- **failed** — every step above failed; the exact reasons are listed per attempt.",
         "",
     ]

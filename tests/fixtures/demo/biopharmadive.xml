@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SYNTHETIC TEST DATA - not real news -->
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel><title>BioPharma Dive</title><link>https://www.biopharmadive.com/feeds/news/</link><description>SYNTHETIC TEST DATA - not real news</description>
+<item><title>Vireo Pharma to buy Calder Therapeutics for $3.2B</title><link>https://www.biopharmadive.com/news/vireo-pharma-to-buy-calder-therapeutics-for-3-2b/700000/</link><guid>https://www.biopharmadive.com/news/vireo-pharma-to-buy-calder-therapeutics-for-3-2b/700000/</guid><pubDate>Fri, 25 Sep 2026 03:00:00 -0400</pubDate><description><![CDATA[The deal adds a late-stage oncology drug.]]></description></item>
+<item><title>FDA approves Calder Therapeutics drug for rare disease</title><link>https://www.biopharmadive.com/news/fda-approves-calder-therapeutics-drug-for-rare-disease/700001/</link><guid>https://www.biopharmadive.com/news/fda-approves-calder-therapeutics-drug-for-rare-disease/700001/</guid><pubDate>Thu, 24 Sep 2026 01:00:00 -0400</pubDate></item>
+</channel></rss>

@@ -1,12 +1,23 @@
 """Industry tags for deals, from industries.yaml (multi-label; the first match in file order is primary)."""
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from functools import lru_cache
 
 import yaml
 
-from .categorize import _compile
+
+def _compile(patterns: list[str]) -> re.Pattern | None:
+    """Case-insensitive phrases on word boundaries; `re:` prefix = raw regex."""
+    parts = []
+    for p in patterns or []:
+        p = str(p)
+        if p.startswith("re:"):
+            parts.append(f"(?:{p[3:]})")
+        else:
+            parts.append(r"(?<![\w&])" + re.escape(p).replace(r"\ ", r"\s+") + r"(?![\w&])")
+    return re.compile("|".join(parts), re.I) if parts else None
 
 
 @dataclass(frozen=True)
@@ -16,11 +27,17 @@ class IndustryRule:
     unless: object
 
 
-@lru_cache(maxsize=1)
 def load_rules() -> tuple[list[IndustryRule], str]:
     from . import paths
 
-    data = yaml.safe_load((paths.config_dir() / "industries.yaml").read_text(encoding="utf-8")) or {}
+    return _load(str(paths.config_dir() / "industries.yaml"))
+
+
+@lru_cache(maxsize=4)
+def _load(path: str) -> tuple[list[IndustryRule], str]:
+    from pathlib import Path
+
+    data = yaml.safe_load(Path(path).read_text(encoding="utf-8")) or {}
     rules = [IndustryRule(r["name"], _compile(r.get("any", [])), _compile(r.get("unless", []))) for r in data.get("industries", [])]
     return rules, data.get("default", "Other")
 

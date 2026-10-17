@@ -97,6 +97,7 @@ class Snapshot:
 
         self.clusters: list[dict] = []
         cluster_rows = {r["id"]: dict(r) for r in conn.execute("SELECT * FROM clusters")}
+        deal_rows = {r["cluster_id"]: dict(r) for r in conn.execute("SELECT * FROM mna_deals")}
         for cid, items in items_by_cluster.items():
             row = cluster_rows.get(cid)
             if not row:
@@ -121,11 +122,16 @@ class Snapshot:
             sec_aum = row.get("sec_aum_usd")
             if not aum and sec_aum:
                 aum, aum_source = sec_aum, "sec"
+            industries = json.loads(row.get("industries") or "[]") or [row["category"] or "Other"]
+            d = deal_rows.get(cid)
             self.clusters.append({
                 "id": cid,
                 "headline": head["title"],
                 "url": head["url"],
-                "category": row["category"] or "Other",
+                "category": industries[0],
+                "industries": industries,
+                "deal": {"acquirer": d["acquirer"] or None, "target": d["target"] or None, "type": d["deal_type"] or None,
+                         "stage": d.get("stage") or "announced", "value_usd": d.get("value_usd")} if d else None,
                 "first_published": head["published_at"],
                 "last_published": max(it["published_at"] for it in items),
                 "first_seen": min(it["fetched_at"] for it in items),
@@ -175,6 +181,7 @@ class Snapshot:
                 "target_aum_usd": r["target_aum_usd"],
                 "target_aum_source": "headline" if r["target_aum_usd"] else None,
                 "deal_type": r["deal_type"] or None, "confidence": r["confidence"], "note": r["note"] or "",
+                "stage": r["stage"] or "announced", "value_usd": r["value_usd"], "industries": c["industries"],
                 "press_release": bool(r["press_release"]) or c["press_release"],
                 "sources": [{"name": s["name"], "url": s["url"]} for s in c["sources"]],
             })
@@ -277,6 +284,7 @@ def window_ranked(snap: Snapshot, window_start: datetime) -> list[dict]:
 def public_item(c: dict) -> dict:
     """A cluster as a digest item (summary fields empty until Claude's validated text fills them)."""
     return {"cluster_id": c["id"], "headline": c["headline"], "url": c["url"], "category": c["category"],
+            "industries": c["industries"], "deal": c["deal"],
             "outlet_count": c["outlet_count"], "sources": [{"name": s["name"], "url": s["url"]} for s in c["sources"]],
             "firms": [{"name": f["name"], "slug": f["slug"]} for f in c["firms"]],
             "aum_usd": c["aum_usd"], "aum_source": c["aum_source"], "summary": None, "why_it_matters": None}
@@ -369,6 +377,7 @@ def collect(conn: sqlite3.Connection, now: datetime | None = None) -> dict[str, 
         "sources_total": len(src),
         "sources": [{"name": s["name"], "ok": s["ok"], "method": s["method"], "items_last_run": s["items_last_run"]} for s in src],
         "categories": _categories(),
+        "industries": _categories(),
         "sec": {"data_date": snap.sec_date, "firm_count": len(snap.sec)},
         "digest": {"date": files["digest.json"]["date"], "ai": files["digest.json"]["ai"],
                    "last_good_date": (files["digest.json"]["last_good_digest"] or {}).get("date")},
@@ -378,9 +387,10 @@ def collect(conn: sqlite3.Connection, now: datetime | None = None) -> dict[str, 
 
 
 def _categories() -> list[str]:
-    from .config import load_categories
+    """The filters the site offers: industries (every story is a deal; its category is its primary industry)."""
+    from .industry import industry_names
 
-    return load_categories().categories
+    return industry_names()
 
 
 def build_site(out: Path, now: datetime | None = None, write_state: bool = True) -> dict:

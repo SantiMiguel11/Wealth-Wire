@@ -128,7 +128,7 @@ def test_verified_firms_and_region(files):
         ("Harborview Wealth Partners", True, "WA"), ("Summit Ridge Advisors", True, "CO")]
     assert deal["states"] == ["CO", "WA"]
     # not in the SEC data → regex fallback, unverified, no page
-    bear = cl["Bear Mountain Capital makes minority investment in Willowbrook Wealth"]
+    bear = cl["Willowbrook Wealth lands minority investment from Bear Mountain Capital"]
     assert ("Bear Mountain Capital", False, None) in [(f["name"], f["verified"], f["slug"]) for f in bear["firms"]]
     pnw = [c for c in cl.values() if set(c["states"]) & {"WA", "OR", "ID"}]
     assert len(pnw) >= 4
@@ -138,9 +138,12 @@ def test_sec_aum_labeled_and_only_when_unambiguous(files):
     cl = {c["headline"]: c for c in files["clusters.json"]["clusters"]}
     # headline AUM wins over SEC AUM
     assert cl["Harborview Wealth Partners buys $1.2bn Summit Ridge Advisors"]["aum_source"] == "headline"
-    # two firms named (Coldstream + Kestrel) → no SEC AUM (it would be ambiguous whose)
-    c = cl["Coldstream hires former Kestrel Advisors CIO to lead investments"]
-    assert c["aum_usd"] is None and c["aum_source"] is None
+    # two verified firms named → never SEC AUM on the story (it would be ambiguous whose)
+    two = [c for c in cl.values() if sum(f["verified"] for f in c["firms"]) >= 2]
+    assert two and not any(c["aum_source"] == "sec" for c in two)
+    # SEC AUM is adviser AUM: never shown on a deal outside wealth / asset management
+    assert not any(c["aum_source"] for c in cl.values()
+                   if not {"Wealth Management & RIAs", "Private Equity & Asset Management"} & set(c["industries"]))
     sec = [c for c in cl.values() if c["aum_source"] == "sec"]
     assert all(c["sec_aum_as_of"] == "2026-09-01" and len(c["firms"]) >= 1 for c in sec)
 
@@ -153,7 +156,7 @@ def test_firm_pages(files):
     assert page["crd"] == slugs[hv]["crd"] and page["state"] == "WA" and page["city"] == "Seattle"
     assert page["iapd_url"] == f"https://adviserinfo.sec.gov/firm/summary/{page['crd']}"
     assert page["sec_aum_as_of"] == "2026-09-01" and page["sec_aum_usd"] == 9.8e9
-    assert len(page["stories"]) == 2                          # the deal + the breakaway team
+    assert len(page["stories"]) == 1                          # the deal (the breakaway team is not a deal)
     assert [d["role"] for d in page["deals"]] == ["acquirer"]
     # only firms mentioned in at least one story get a page; unverified firms never do
     assert all(f["story_count"] >= 1 for f in idx["firms"])

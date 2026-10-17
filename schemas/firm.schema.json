@@ -249,6 +249,28 @@
               "acquirer",
               "target"
             ]
+          },
+          "stage": {
+            "enum": [
+              "announced",
+              "completed",
+              "rumored",
+              "bid",
+              "terminated"
+            ]
+          },
+          "value_usd": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "industries": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
           }
         },
         "required": [

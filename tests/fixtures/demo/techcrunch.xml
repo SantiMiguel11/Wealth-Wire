@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SYNTHETIC TEST DATA - not real news -->
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel><title>TechCrunch M&amp;A</title><link>https://techcrunch.com/tag/mergers-and-acquisitions/feed/</link><description>SYNTHETIC TEST DATA - not real news</description>
+<item><title>Quill AI is acquired by Ferrous Cloud</title><link>https://techcrunch.com/2026/09/quill-ai-is-acquired-by-ferrous-cloud/</link><guid>https://techcrunch.com/2026/09/quill-ai-is-acquired-by-ferrous-cloud/</guid><pubDate>Thu, 24 Sep 2026 18:00:00 -0700</pubDate></item>
+<item><title>Lumio raises $30M Series B to build AI agents</title><link>https://techcrunch.com/2026/09/lumio-raises-30m-series-b-to-build-ai-agents/</link><guid>https://techcrunch.com/2026/09/lumio-raises-30m-series-b-to-build-ai-agents/</guid><pubDate>Thu, 24 Sep 2026 16:00:00 -0700</pubDate></item>
+<item><title>Northwind Software buys Brightpath Analytics for $420M</title><link>https://techcrunch.com/2026/09/northwind-software-buys-brightpath-analytics-for-420m/</link><guid>https://techcrunch.com/2026/09/northwind-software-buys-brightpath-analytics-for-420m/</guid><pubDate>Thu, 24 Sep 2026 00:00:00 -0700</pubDate></item>
+</channel></rss>

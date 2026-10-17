@@ -23,148 +23,136 @@ LONG_HTML = (
     "<p>{d}</p><p>" + "Additional context paragraph with <strong>markup</strong> and &amp; entities. " * 8 + "</p>"
 )
 
-# (source, hours_before_T0, title, description)
+# (source, hours_before_T0, title, description). Deals and non-deals mixed: the pipeline keeps only deals.
 S = "SEC Press Releases"
 TA, WM, CW, FA, IN, RB, FP, AH, KI = (
     "ThinkAdvisor", "WealthManagement.com", "Citywire RIA", "Financial Advisor Magazine",
     "InvestmentNews", "RIABiz", "Financial Planning", "AdvisorHub", "Kitces",
 )
+PRN, SA, FT, PEH, TC = "PR Newswire M&A", "Seeking Alpha M&A", "Financial Times Companies", "PE Hub", "TechCrunch M&A"
+BD, PD, IJ, RN, BPD, HD, FH, FB, FPH, RD, UD, SCD = (
+    "Banking Dive", "Payments Dive", "Insurance Journal", "Reinsurance News", "BioPharma Dive", "Healthcare Dive",
+    "Fierce Healthcare", "Fierce Biotech", "Fierce Pharma", "Retail Dive", "Utility Dive", "Supply Chain Dive",
+)
 
 STORIES: list[list[tuple[str, float, str, str]]] = [
-    # --- M&A ---------------------------------------------------------------------------------------
+    # --- wealth management and RIA deals ----------------------------------------------------------
     [
-        (CW, 30, "Harborview Wealth Partners buys $1.2bn Summit Ridge Advisors", "The Denver-based consolidator adds a $1.2bn RIA with 14 advisors, its fifth deal this year."),
-        (TA, 28, "Harborview Wealth Partners Acquires $1.2B Summit Ridge Advisors | ThinkAdvisor", "Summit Ridge Advisors, which manages $1.2 billion, will keep its brand and leadership team."),
-        (WM, 26, "Harborview Wealth Partners to Acquire Summit Ridge Advisors, a $1.2 Billion RIA", "The deal is expected to close in the fourth quarter."),
+        (WM, 30, "Harborview Wealth Partners buys $1.2bn Summit Ridge Advisors", "The Denver-based consolidator adds a $1.2bn RIA with 14 advisors, its fifth deal this year."),
+        (FP, 28, "Harborview Wealth Partners Acquires $1.2B Summit Ridge Advisors", "Summit Ridge Advisors, which manages $1.2 billion, will keep its brand and leadership team."),
+        (IN, 26, "Harborview Wealth Partners to Acquire Summit Ridge Advisors, a $1.2 Billion RIA", "The deal is expected to close in the fourth quarter."),
         (RB, 20, "Harborview Wealth Partners scoops up Summit Ridge Advisors as its RIA buying spree continues", ""),
+        (PRN, 27, "Harborview Wealth Partners Announces Acquisition of Summit Ridge Advisors, a $1.2 Billion Registered Investment Adviser",
+         "SEATTLE -- Harborview Wealth Partners, a wealth management firm, today announced it has acquired Summit Ridge Advisors."),
     ],
     [
-        (CW, 52, "Cedar Lane Private Wealth sells to Meridian Capital Partners", "Cedar Lane, an $850M RIA in Charlotte, becomes Meridian's first Southeast office."),
+        (WM, 52, "Cedar Lane Private Wealth sells to Meridian Capital Partners", "Cedar Lane, an $850M RIA in Charlotte, becomes Meridian's first Southeast office."),
         (IN, 49, "Meridian Capital Partners adds $850M Cedar Lane Private Wealth", "Meridian Capital Partners continues its push into the Carolinas."),
     ],
     [
-        (FA, 40, "Blue Heron Capital Takes Minority Stake In Oakmont Family Office", "The private equity firm's investment values Oakmont at an undisclosed sum."),
-        (FP, 37, "Blue Heron Capital takes minority stake in Oakmont Family Office", "Oakmont oversees $2.3 billion for 60 ultra-high-net-worth families."),
+        (FP, 40, "Blue Heron Capital takes minority stake in Oakmont Family Office", "Oakmont oversees $2.3 billion for 60 ultra-high-net-worth families."),
     ],
     [
-        (TA, 62, "Northgate Advisors and Pinecrest Wealth Merge to Form $4.5B Firm", "The combined firm will operate under the Northgate name."),
-        (WM, 60, "Northgate Advisors and Pinecrest Wealth merge in $4.5 billion combination", "Both founders will serve as co-CEOs of the combined RIA."),
+        (WM, 62, "Northgate Advisors and Pinecrest Wealth Merge to Form $4.5B Firm", "The combined firm will operate under the Northgate name."),
+        (FP, 60, "Northgate Advisors and Pinecrest Wealth merge in $4.5 billion combination", "Both founders will serve as co-CEOs of the combined RIA."),
     ],
     [
         (IN, 18, "Lakeshore Financial Group agrees to be acquired by Atlas Wealth Management", "Lakeshore, with $640 million in assets, is Atlas's second Midwest deal."),
     ],
     [
-        (IN, 70, "Atlas Wealth Management acquires Brookfield Row Advisory", "Atlas adds a $300M practice in Minneapolis."),
+        (IN, 70, "Atlas Wealth Management acquires Birchwood Row Advisory", "Atlas adds a $300M practice in Minneapolis."),
     ],
     [
-        (CW, 14, "Two Texas RIAs combine in deal creating $3bn firm", "The firms, based in Austin and Dallas, did not disclose terms."),
+        (WM, 22, "PE-Backed Crestline Wealth to Buy Riverbend Financial and Aspen Grove Advisors", "The two deals add a combined $1.9B in client assets."),
+        (PRN, 21.5, "Crestline Wealth Completes Acquisition of Riverbend Financial, a $900 Million RIA",
+         "DALLAS -- Crestline Wealth, a registered investment adviser, closed its acquisition of Riverbend Financial."),
     ],
     [
-        (RB, 44, "Serial acquirer strikes again with $600M buy in Arizona", ""),
-    ],
-    [
-        (TA, 22, "PE-Backed Crestline Wealth to Buy Riverbend Financial and Aspen Grove Advisors", "The two deals add a combined $1.9B in client assets."),
-        (FA, 21, "Crestline Wealth To Buy Riverbend Financial, Aspen Grove Advisors", "Crestline is backed by private equity firm Granite Peak Partners."),
-    ],
-    [
-        (CW, 9, "Bear Mountain Capital makes minority investment in Willowbrook Wealth", "Willowbrook, a $1.1bn multifamily office, will use the capital to fund succession."),
         (RB, 7, "Willowbrook Wealth lands minority investment from Bear Mountain Capital", ""),
     ],
     [
         (FP, 56, "Sequoia Point Wealth completes recapitalization with Granite Peak Partners", "The $2.8B firm says the deal gives next-generation advisors a path to equity."),
     ],
-    # --- People Moves ------------------------------------------------------------------------------
+    # --- investment banking -----------------------------------------------------------------------
+    [
+        (PRN, 11, "Stonebridge Securities Acquires Boutique Investment Bank Calloway Partners", "NEW YORK -- Stonebridge Securities, a broker-dealer, acquired M&A advisory firm Calloway Partners."),
+        (SA, 10, "Stonebridge Securities to acquire investment bank Calloway Partners", ""),
+    ],
+    # --- technology -------------------------------------------------------------------------------
+    [
+        (PRN, 34, "Northwind Software to Acquire Brightpath Analytics for $420 Million", "REDMOND -- Northwind Software, a maker of business software, will acquire Brightpath Analytics."),
+        (TC, 33, "Northwind Software buys Brightpath Analytics for $420M", ""),
+        (SA, 32, "Northwind Software to buy Brightpath Analytics in $420M deal", ""),
+    ],
+    [
+        (TC, 15, "Quill AI is acquired by Ferrous Cloud", ""),
+    ],
+    # --- private equity / healthcare --------------------------------------------------------------
+    [
+        (PRN, 46, "Granite Peak Partners Completes Acquisition of Lumen Dental Group", "DENVER -- Granite Peak Partners, a private equity firm, completed its acquisition of Lumen Dental Group."),
+        (PEH, 45, "Granite Peak Partners buys dental group Lumen Dental Group",
+         LONG_HTML.format(d="The private equity firm adds a 40-office dental group in Colorado and Utah.")),
+        (HD, 44, "Lumen Dental Group sold to Granite Peak Partners", ""),
+    ],
+    [
+        (BPD, 9, "Vireo Pharma to buy Calder Therapeutics for $3.2B", "The deal adds a late-stage oncology drug."),
+    ],
+    # --- banking ----------------------------------------------------------------------------------
+    [
+        (PRN, 38, "Copperline Bancorp and First Prairie Bank Announce Merger Agreement", "OMAHA -- The combined bank will have $14 billion in assets."),
+        (BD, 37, "Copperline Bancorp, First Prairie Bank to merge in $1.1B deal", ""),
+    ],
+    # --- energy (rumor, then announcement) ---------------------------------------------------------
+    [
+        (SA, 58, "Halcyon Energy in talks to acquire Redstone Midstream", ""),
+        (UD, 30, "Halcyon Energy agrees to buy Redstone Midstream for $5.6 billion", ""),
+    ],
+    # --- industrials (completed) --------------------------------------------------------------------
+    [
+        (FT, 66, "Atlas Industrial to acquire Meridian Steel for $2.1bn", ""),
+        (SCD, 6, "Atlas Industrial completes acquisition of Meridian Steel", ""),
+    ],
+    # --- fintech, insurance, consumer -------------------------------------------------------------
+    [(PD, 13, "Tallyhook acquires payments startup Coinwell", "")],
+    [(PEH, 24, "Kestrel Equity acquires HVAC services provider Summit Air Systems", None)],   # content:encoded only
+    [(WM, 39, "Blue Heron Capital Takes Minority Stake In Oakmont Family Office | WealthManagement.com", "")],
+    [(IJ, 25, "Harbor Mutual to acquire Pinewood Insurance Agency", "")],
+    [(RD, 3, "Maple & Main to acquire Thistle Home in $640M deal", "")],
+    # --- not deals: every one of these must be dropped ------------------------------------------------
     [
         (AH, 12, "Wirehouse Team Managing $2.1 Billion Breaks Away to Join Harborview Wealth Partners", "Should never be stored: gated source."),
-        (TA, 10, "Wirehouse Team With $2.1B Breaks Away to Harborview Wealth Partners | ThinkAdvisor", "The four-advisor team served ultra-high-net-worth clients in Chicago."),
-        (CW, 8, "$2.1bn wirehouse team breaks away to join Harborview Wealth Partners", "The team cited technology and independence as reasons for the move."),
+        (IN, 8, "$2.1bn wirehouse team breaks away to join Harborview Wealth Partners", "The team cited technology and independence as reasons for the move."),
     ],
-    [
-        (CW, 33, "Coldstream hires former Kestrel Advisors CIO to lead investments", "Coldstream Wealth Management said the hire deepens its investment committee."),
-    ],
-    [
-        (FP, 26, "Pinecrest Wealth names Dana Ortiz CEO ahead of Northgate merger", "Ortiz previously served as president of the firm."),
-    ],
-    [
-        (AH, 5, "Alder Street Securities Team With $400 Million Joins Bluewater Private Wealth", ""),
-        (IN, 4, "Alder Street team with $400M joins Bluewater Private Wealth", "The father-son team moves after 22 years at the broker-dealer."),
-    ],
-    [
-        (FA, 58, "Former Goldman Sachs Advisors Launch Tidewater Family Office", "The founders previously worked in Goldman's private wealth unit in New York."),
-    ],
-    [
-        (WM, 34, "Pugh Capital Management Expands Fixed Income Team", "The Seattle firm adds two portfolio managers."),
-    ],
-    # --- Regulation --------------------------------------------------------------------------------
-    [
-        (S, 46, "SEC Charges Ohio Investment Adviser With Cherry-Picking Scheme", "The Securities and Exchange Commission today charged an Ohio-based investment adviser with a $3 million cherry-picking scheme."),
-        (IN, 43, "SEC charges Ohio adviser in $3M cherry-picking scheme", "The SEC said the adviser allocated profitable trades to his own accounts."),
-        (TA, 41, "SEC Charges Ohio Advisor Over Cherry-Picking Scheme | ThinkAdvisor", "Regulators say losing trades went to clients."),
-    ],
-    [
-        (S, 30, "SEC Charges New Jersey Adviser With Misappropriating Client Funds", "The adviser allegedly diverted $1.4 million from elderly clients."),
-    ],
-    [
-        (IN, 29, "FINRA fines broker-dealer $1.5 million over supervision lapses", "The self-regulator said the firm failed to review 1.2 million alerts."),
-        (FP, 27, "FINRA fines broker-dealer $1.5M for supervision failures", "The firm neither admitted nor denied the findings."),
-    ],
-    [
-        (FP, 15, "SEC proposes changes to custody rule for crypto assets", "The proposal would narrow the definition of a qualified custodian."),
-        (WM, 13, "SEC Proposes Revamp of Custody Rule for Crypto Assets", "Advisors would face new requirements for holding digital assets."),
-        (TA, 11, "SEC Proposes Custody Rule Changes for Crypto | ThinkAdvisor", "Comment period runs 60 days."),
-    ],
-    [
-        (S, 3, "SEC Announces Enforcement Results for Fiscal Year 2026", "The agency filed 612 enforcement actions in fiscal 2026."),
-    ],
-    [
-        (KI, 36, "How Advisors Can Navigate The DOL's Revised Fiduciary Rule", LONG_HTML.format(d="A practical guide to the Department of Labor's retirement advice rule and what changes for rollover recommendations.")),
-    ],
-    # --- Wealthtech --------------------------------------------------------------------------------
-    [
-        (CW, 24, "Ledgerline launches AI meeting-notes assistant for RIAs", "The wealthtech startup says the tool integrates with major CRMs."),
-        (TA, 23, "Ledgerline Launches AI Meeting-Notes Assistant for RIAs | ThinkAdvisor", "Pricing starts at $95 per advisor per month."),
-        (WM, 22, "Ledgerline Rolls Out AI Meeting-Notes Assistant for RIAs", "The launch follows a $40 million funding round."),
-    ],
-    [
-        (FA, 50, "Arbor Clearing Rolls Out New Advisor Portal", "The custodian's portal adds digital account opening."),
-    ],
-    [
-        (KI, 60, "The Latest In Financial #AdvisorTech (September 2026)", None),
-    ],
-    # --- Products & Funds --------------------------------------------------------------------------
-    [
-        (WM, 20, "Goldman Sachs Asset Management Launches Two Active ETFs", "The funds target short-duration income."),
-        (FA, 19, "Goldman Sachs Asset Management Launches Pair Of Active ETFs", "Both ETFs list on NYSE Arca."),
-        (TA, 17, "Goldman Sachs Asset Management Launches 2 Active ETFs | ThinkAdvisor", "Expense ratios are 0.35% and 0.45%."),
-    ],
-    [
-        (FP, 32, "Interval funds see record inflows as advisors chase private credit", "Interval fund assets topped $100 billion for the first time."),
-    ],
-    [
-        (IN, 38, "Vantage Street unveils model portfolios for tax-aware investors", "The models use direct indexing sleeves."),
-    ],
-    # --- Markets -----------------------------------------------------------------------------------
-    [
-        (IN, 6, "Fed holds rates steady as advisors brace for volatility", "Policymakers signaled one more cut this year."),
-        (FA, 5.5, "Fed Holds Rates Steady, Signals One More Cut", "Markets rallied on the decision."),
-        (WM, 5, "Fed Holds Rates Steady; What Advisors Should Tell Clients", "Strategists weigh in on bonds and equities."),
-    ],
-    [
-        (FA, 16, "S&P 500 Notches Record As Tech Rally Broadens", "Equities rose for a fifth straight session."),
-    ],
-    # --- Other -------------------------------------------------------------------------------------
-    [
-        (KI, 45, "Weekend Reading For Financial Planners (September 20-21)", LONG_HTML.format(d="This week's edition kicks off with news from the industry.")),
-    ],
-    [
-        (IN, 66, "InvestmentNews announces 2026 Excellence Awards winners", "Winners will be honored in New York in November."),
-    ],
-    [
-        (WM, 64, "Coldstream Wealth Management Opens Portland Office", "The office is the firm's fifth in the Pacific Northwest."),
-    ],
-    [
-        (RB, 2, "What the next generation of RIA founders wants from custodians", ""),
-    ],
+    [(IN, 33, "Coldstream hires former Kestrel Advisors CIO to lead investments", "Coldstream Wealth Management said the hire deepens its investment committee.")],
+    [(WM, 34, "Pugh Capital Management Expands Fixed Income Team", "The Seattle firm adds two portfolio managers.")],
+    [(WM, 64, "Coldstream Wealth Management Opens Portland Office", "The office is the firm's fifth in the Pacific Northwest.")],
+    [(IN, 43, "SEC charges Ohio adviser in $3M cherry-picking scheme", "The SEC said the adviser allocated profitable trades to his own accounts.")],
+    [(WM, 13, "SEC Proposes Revamp of Custody Rule for Crypto Assets", "Advisors would face new requirements for holding digital assets.")],
+    [(FP, 32, "Interval funds see record inflows as advisors chase private credit", "Interval fund assets topped $100 billion for the first time.")],
+    [(IN, 6, "Fed holds rates steady as advisors brace for volatility", "Policymakers signaled one more cut this year.")],
+    [(RB, 2, "What the next generation of RIA founders wants from custodians", "")],
+    [(RB, 44, "RIA M&A slows in the third quarter, DeVoe says", "")],
+    [(WM, 20, "Why RIA Deals Keep Getting Bigger", "Valuations climbed again this year.")],
+    [(PRN, 16, "SHAREHOLDER ALERT: Quinn & Hale Reminds Investors of Class Action Against Vireo Pharma", "")],
+    [(PRN, 14, "Le groupe Exemple acquiert la Société Fictive pour renforcer son offre en Europe", "")],
+    [(PRN, 500, "Old Merger Release From Last Spring: Acme Corp to Acquire Beta Corp", "Long ago.")],  # > 14 days old
+    [(SA, 4, "Is Brightpath Analytics a buy after the Northwind deal?", "")],
+    [(SA, 5, "Vanguard Group Inc. Raises Stake in Northwind Software", "")],
+    [(FT, 12, "Global markets slide as bond yields climb", "")],
+    [(PEH, 19, "PE fundraising slows in the third quarter", "")],
+    [(TC, 17, "Lumio raises $30M Series B to build AI agents", "")],
+    [(BD, 21, "Fed proposes changes to bank capital rules", "")],
+    [(PD, 23, "Card issuers brace for new fee rules", "")],
+    [(IJ, 29, "Hurricane season losses come in below forecasts", "")],
+    [(RN, 31, "Catastrophe bond issuance hits a record in the third quarter", "")],
+    [(BPD, 35, "FDA approves Calder Therapeutics drug for rare disease", "")],
+    [(FH, 36, "Hospitals warn of staffing shortages this winter", "")],
+    [(FB, 39, "Biotech seed funding slows as investors grow cautious", "")],
+    [(FPH, 41, "Vireo Pharma lays off 300 in restructuring", "")],
+    [(RD, 42, "Holiday sales forecast calls for modest growth", "")],
+    [(UD, 47, "Grid operators plan for record winter demand", "")],
+    [(SCD, 48, "Freight rates rise ahead of the holidays", "")],
+    [(HD, 50, "Insurers expand coverage for telehealth visits", "")],
 ]
 
 # Every source's items, in feed order (newest first)
@@ -232,33 +220,10 @@ def main() -> None:
 
     allow_all = "User-agent: *\nDisallow: /admin/\n"
 
-    # ThinkAdvisor — configured RSS, UTC "GMT" dates, utm params
-    items = [rss_item(t, f"https://www.thinkadvisor.com/2026/09/{dt(h).day}/{slug(t)}/?utm_source=rss&utm_medium=feed", rfc(h), d)
-             for h, t, d in by_source[TA]]
-    add("https://www.thinkadvisor.com/feed/", write("thinkadvisor.xml", rss("ThinkAdvisor", "https://www.thinkadvisor.com", items)))
-
     # WealthManagement.com — configured RSS, -0400 offsets
     items = [rss_item(t, f"https://www.wealthmanagement.com/industry/{slug(t)}", rfc(h, -4), d) for h, t, d in by_source[WM]]
     add("https://www.wealthmanagement.com/rss.xml", write("wealthmanagement.xml", rss("WealthManagement.com", "https://www.wealthmanagement.com", items)),
         headers={"ETag": '"wm-v1"'})
-
-    # Citywire — autodiscovery via <link rel="alternate">, +0100 offsets
-    add("https://citywire.com/robots.txt", body=allow_all, content_type="text/plain")
-    add("https://citywire.com/ria", write("citywire_home.html",
-        '<html><head><title>Citywire RIA</title>'
-        '<link rel="alternate" type="application/rss+xml" title="Comments" href="/ria/comments.rss">'
-        '<link rel="alternate" type="application/rss+xml" title="Citywire RIA news" href="/ria/news.rss">'
-        f"</head><body><!-- {NOTE} --></body></html>"), content_type="text/html")
-    items = [rss_item(t, f"https://citywire.com/ria/news/{slug(t)}/a{2400000 + i}#comments", rfc(h, 1), d)
-             for i, (h, t, d) in enumerate(by_source[CW])]
-    add("https://citywire.com/ria/news.rss", write("citywire.xml", rss("Citywire RIA", "https://citywire.com/ria", items)))
-
-    # Financial Advisor Magazine — no alternate link; /feed 404s; /rss works (common path)
-    add("https://www.fa-mag.com/robots.txt", body=allow_all, content_type="text/plain")
-    add("https://www.fa-mag.com", write("famag_home.html", f"<html><head><title>FA Mag</title></head><body><!-- {NOTE} --></body></html>"), content_type="text/html")
-    items = [rss_item(t, f"https://www.fa-mag.com/news/{slug(t)}-{81000 + i}.html", rfc(h, -5), d)
-             for i, (h, t, d) in enumerate(by_source[FA])]
-    add("https://www.fa-mag.com/rss", write("famag.xml", rss("Financial Advisor Magazine", "https://www.fa-mag.com", items)))
 
     # InvestmentNews — homepage blocks bots (403) but /feed works
     add("https://www.investmentnews.com/robots.txt", body=allow_all, content_type="text/plain")
@@ -293,77 +258,52 @@ def main() -> None:
     items = [rss_item(t, f"https://www.advisorhub.com/{slug(t)}/", rfc(h, -4), d or "Teaser", full_text) for h, t, d in by_source[AH]]
     add("https://www.advisorhub.com/feed/", write("advisorhub.xml", rss("AdvisorHub", "https://www.advisorhub.com", items)))
 
-    # Kitces — long HTML descriptions + content:encoded; one item with content:encoded only
-    items = [rss_item(t, f"https://www.kitces.com/blog/{slug(t)}/", rfc(h, -4), d, full_text) for h, t, d in by_source[KI]]
-    add("https://www.kitces.com/feed/", write("kitces.xml", rss("Nerd's Eye View | Kitces.com", "https://www.kitces.com", items)))
+    # Discovery test sites (not configured sources): <link rel="alternate"> on a homepage, and a common /rss path
+    add("https://citywire.com/robots.txt", body=allow_all, content_type="text/plain")
+    add("https://citywire.com/ria", write("citywire_home.html",
+        '<html><head><title>Citywire RIA</title>'
+        '<link rel="alternate" type="application/rss+xml" title="Comments" href="/ria/comments.rss">'
+        '<link rel="alternate" type="application/rss+xml" title="Citywire RIA news" href="/ria/news.rss">'
+        f"</head><body><!-- {NOTE} --></body></html>"), content_type="text/html")
+    cw = [(30, "Harborview Wealth Partners buys $1.2bn Summit Ridge Advisors"), (22, "Crestline Wealth to buy Riverbend Financial"),
+          (9, "Bear Mountain Capital makes minority investment in Willowbrook Wealth")]
+    add("https://citywire.com/ria/news.rss", write("citywire.xml", rss("Citywire RIA", "https://citywire.com/ria",
+        [rss_item(t, f"https://citywire.com/ria/news/{slug(t)}/a{2400000 + i}", rfc(h, 1), "") for i, (h, t) in enumerate(cw)])))
+    add("https://www.fa-mag.com/robots.txt", body=allow_all, content_type="text/plain")
+    add("https://www.fa-mag.com", write("famag_home.html", f"<html><head><title>FA Mag</title></head><body><!-- {NOTE} --></body></html>"), content_type="text/html")
+    add("https://www.fa-mag.com/rss", write("famag.xml", rss("Financial Advisor Magazine", "https://www.fa-mag.com",
+        [rss_item("Northgate Advisors And Pinecrest Wealth Merge", "https://www.fa-mag.com/news/northgate-81000.html", rfc(60, -5), "")])))
 
-    # SEC — configured RSS with ETag (conditional GET), EDT offsets
-    items = [rss_item(t, f"https://www.sec.gov/newsroom/press-releases/2026-{120 + i}", rfc(h, -4), d) for i, (h, t, d) in enumerate(by_source[S])]
-    add("https://www.sec.gov/news/pressreleases.rss", write("sec.xml", rss("SEC Press Releases", "https://www.sec.gov", items)),
-        headers={"ETag": '"sec-v1"', "Last-Modified": rfc(3)})
+    # Google News: robots.txt disallows the search feeds (the real file does, 2026-10-17)
+    add("https://news.google.com/robots.txt", body="User-agent: *\nDisallow: /rss/search\nAllow: /rss/articles\n", content_type="text/plain")
 
-    # Google News RSS for the outlets that block bots (§6): ThinkAdvisor, FA Magazine, Citywire.
-    # Titles carry Google's " - Outlet" suffix, links are news.google.com redirects, <source> names the outlet.
-    import hashlib
-    import sys
-
-    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-    from fiduciarywire.gnews import feed_url as gnews_url
-
-    def gnews_item(title, outlet, home, hours, salt=""):
-        h = hashlib.sha1((title + salt).encode()).hexdigest()[:24]
-        link = "https://news.google.com/rss/articles/CBMi" + h + "?oc=5"
-        clean = title.split(" | ")[0]
-        desc_html = '<a href="' + link + '">' + clean + '</a>&nbsp;&nbsp;<font color="#6f6f6f">' + outlet + "</font>"
-        return ("<item><title>" + escape(clean) + " - " + escape(outlet) + "</title><link>" + link + "</link>"
-                + '<guid isPermaLink="false">CBMi' + h + "</guid><pubDate>" + rfc(hours) + "</pubDate>"
-                + "<description>" + escape(desc_html) + "</description>"
-                + '<source url="' + home + '">' + escape(outlet) + "</source></item>")
-
-    for src_name, home, query, fname in ((TA, "https://www.thinkadvisor.com", "site:thinkadvisor.com", "gnews_thinkadvisor.xml"),
-                                         (FA, "https://www.fa-mag.com", "site:fa-mag.com", "gnews_famag.xml"),
-                                         (CW, "https://citywire.com", "site:citywire.com/ria", "gnews_citywire.xml")):
-        g_items = [gnews_item(t, src_name, home, h) for h, t, d in by_source[src_name]]
-        if src_name == TA:
-            h, t, d = by_source[TA][0]
-            g_items.append(gnews_item(t, src_name, home, h, salt="dup"))  # same story, different redirect link → deduped
-            g_items.append(gnews_item("Unrelated Story From Another Outlet", "Some Other Site", "https://example.org", 3))
-        add(gnews_url(query), write(fname, rss(f'"{query}" - Google News', "https://news.google.com", g_items)))
-
-    # Press-release wire (§5, follow-up 2): GlobeNewswire keyword feeds, each filtered on its own; the same
-    # release can appear in several keyword feeds (merged by URL). Award/ranking releases are dropped.
-    gnw = "https://www.globenewswire.com/RssFeed/keyword/{0}/feedTitle/GlobeNewswire%20-%20{0}"
-    harborview = (27, "Harborview Wealth Partners Announces Acquisition of Summit Ridge Advisors, a $1.2 Billion Registered Investment Adviser",
-                  "SEATTLE -- Harborview Wealth Partners, a wealth management firm, today announced it has acquired Summit Ridge Advisors.")
-    crestline = (21.5, "Crestline Wealth Completes Acquisition of Riverbend Financial, a $900 Million RIA",
-                 "DALLAS -- Crestline Wealth, a registered investment adviser, closed its acquisition of Riverbend Financial.")
-    wires = {
-        "registered%20investment%20advisor": ("gnw_ria_adviser.xml", [
-            harborview,
-            (50, "Meridian Capital Partners Completes Acquisition of Cedar Lane Private Wealth",
-             "PORTLAND, Ore. -- Meridian Capital Partners, an independent RIA, completed its acquisition of Cedar Lane Private Wealth."),
-            (12, "Acme Biotech Announces Positive Phase 2 Results for ACM-101", "The trial met its primary endpoint."),
-            (9, "National Survey: Financial Advisors Expect Client Growth in 2027", "A survey of 500 financial advisors found optimism."),
-        ]),
-        "wealth%20management": ("gnw_wealth_management.xml", [
-            harborview,                                           # duplicate across keyword feeds → one item
-            (31, "Kestrel Advisors Opens Boise Office to Serve Idaho Families", "Kestrel Advisors, a wealth management firm based in Portland, opened its third office."),
-            (8, "Global Shipping Firm Reports Third Quarter Results", "Revenue rose 4%."),
-            (500, "Old Wealth Management Release From Last Spring", "A wealth management firm said something long ago."),  # > 14 days
-        ]),
-        "RIA": ("gnw_ria.xml", [
-            crestline,
-            (15, "Industrial Holdings Corp. Merges With Regional Steel Supplier", "The combined company will have 4,000 employees."),
-        ]),
-        "family%20office": ("gnw_family_office.xml", [
-            (18, "Oakmont Family Office Named to Barron's Top 100 RIA Firms List", "Oakmont Family Office, a registered investment adviser, was recognized."),
-        ]),
+    # Deal sources (configured RSS). PR Newswire is a wire (robots-checked); the others are plain feeds.
+    add("https://www.prnewswire.com/robots.txt", body=allow_all, content_type="text/plain")
+    feeds = {
+        PRN: ("https://www.prnewswire.com/rss/financial-services-latest-news/acquisitions-mergers-and-takeovers-list.rss",
+              "prnewswire.xml", "https://www.prnewswire.com/news-releases/{slug}-30{i:04d}.html", -4),
+        SA: ("https://seekingalpha.com/tag/m-a.xml", "seekingalpha.xml", "https://seekingalpha.com/news/{i}-{slug}", -4),
+        FT: ("https://www.ft.com/companies?format=rss", "ft.xml", "https://www.ft.com/content/{i:08d}-{slug}", 0),
+        PEH: ("https://www.pehub.com/feed/", "pehub.xml", "https://www.pehub.com/{slug}/", -4),
+        TC: ("https://techcrunch.com/tag/mergers-and-acquisitions/feed/", "techcrunch.xml", "https://techcrunch.com/2026/09/{slug}/", -7),
+        BD: ("https://www.bankingdive.com/feeds/news/", "bankingdive.xml", "https://www.bankingdive.com/news/{slug}/{i}/", -4),
+        PD: ("https://www.paymentsdive.com/feeds/news/", "paymentsdive.xml", "https://www.paymentsdive.com/news/{slug}/{i}/", -4),
+        IJ: ("https://www.insurancejournal.com/rss/news/", "insurancejournal.xml", "https://www.insurancejournal.com/news/{slug}.htm", -5),
+        RN: ("https://www.reinsurancene.ws/feed/", "reinsurancenews.xml", "https://www.reinsurancene.ws/{slug}/", 0),
+        BPD: ("https://www.biopharmadive.com/feeds/news/", "biopharmadive.xml", "https://www.biopharmadive.com/news/{slug}/{i}/", -4),
+        HD: ("https://www.healthcaredive.com/feeds/news/", "healthcaredive.xml", "https://www.healthcaredive.com/news/{slug}/{i}/", -4),
+        FH: ("https://www.fiercehealthcare.com/rss/xml", "fiercehealthcare.xml", "https://www.fiercehealthcare.com/{slug}", -4),
+        FB: ("https://www.fiercebiotech.com/rss/xml", "fiercebiotech.xml", "https://www.fiercebiotech.com/{slug}", -4),
+        FPH: ("https://www.fiercepharma.com/rss/xml", "fiercepharma.xml", "https://www.fiercepharma.com/{slug}", -4),
+        RD: ("https://www.retaildive.com/feeds/news/", "retaildive.xml", "https://www.retaildive.com/news/{slug}/{i}/", -4),
+        UD: ("https://www.utilitydive.com/feeds/news/", "utilitydive.xml", "https://www.utilitydive.com/news/{slug}/{i}/", -4),
+        SCD: ("https://www.supplychaindive.com/feeds/news/", "supplychaindive.xml", "https://www.supplychaindive.com/news/{slug}/{i}/", -4),
     }
-    add("https://www.globenewswire.com/robots.txt", body=allow_all, content_type="text/plain")
-    for kw, (wfile, witems) in wires.items():
-        wurl = gnw.format(kw)
-        items = [rss_item(t, f"https://www.globenewswire.com/news-release/{slug(t)}.html", rfc(h, -4), d) for h, t, d in witems]
-        add(wurl, write(wfile, rss(f"GlobeNewswire - {kw.replace('%20', ' ')}", wurl, items)))
+    for src_name, (feed, fname, link, tz) in feeds.items():
+        items = [rss_item(t, link.format(slug=slug(t), i=700000 + i), rfc(h, tz), d or None,
+                          full_text if src_name == PEH else None)   # PE Hub ships full articles: never stored
+                 for i, (h, t, d) in enumerate(by_source.get(src_name, []))]
+        add(feed, write(fname, rss(src_name, feed, items)))
 
     # SEC Investment Adviser Information Reports — synthetic monthly file (fictional firms, fake CRDs 9990xx)
     import csv
@@ -387,7 +327,7 @@ def main() -> None:
         ("PINECREST WEALTH LLC", "PINECREST WEALTH", "CHICAGO", "IL", 2_000_000_000),
         ("LAKESHORE FINANCIAL GROUP, INC.", "LAKESHORE FINANCIAL GROUP", "MILWAUKEE", "WI", 640_000_000),
         ("ATLAS WEALTH MANAGEMENT LLC", "ATLAS WEALTH MANAGEMENT", "MINNEAPOLIS", "MN", 12_000_000_000),
-        ("BROOKFIELD ROW ADVISORY LLC", "BROOKFIELD ROW ADVISORY", "MINNEAPOLIS", "MN", 300_000_000),
+        ("BIRCHWOOD ROW ADVISORY LLC", "BIRCHWOOD ROW ADVISORY", "MINNEAPOLIS", "MN", 300_000_000),
         ("CRESTLINE WEALTH LLC", "CRESTLINE WEALTH", "DALLAS", "TX", 7_000_000_000),
         ("RIVERBEND FINANCIAL LLC", "RIVERBEND FINANCIAL", "AUSTIN", "TX", 900_000_000),
         ("ASPEN GROVE ADVISORS LLC", "ASPEN GROVE ADVISORS", "BOULDER", "CO", 1_000_000_000),

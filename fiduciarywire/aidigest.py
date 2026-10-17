@@ -83,11 +83,21 @@ def _cluster_input(snap, c: dict, teasers: dict[int, str]) -> dict:
         "id": c["id"],
         "headline": c["headline"],
         "category": c["category"],
+        "industries": c["industries"],
+        "deal": _deal_input(c["deal"]),
         "outlets": [{"name": it["source"], "headline": it["title"], "url": it["url"]} for it in items],
         "firms": [f["name"] for f in c["firms"]],
         "aum": aum_label(c["aum_usd"], c["aum_source"], c["sec_aum_as_of"]),
         "teasers": list(dict.fromkeys(teasers[it["id"]] for it in items if it["id"] in teasers)),
     }
+
+
+def _deal_input(d: dict | None) -> dict | None:
+    """The parsed deal, as Claude sees it: parties, type, stage and the stated price as a label ("$420M")."""
+    if not d:
+        return None
+    return {"acquirer": d["acquirer"], "target": d["target"], "type": d["type"], "stage": d["stage"],
+            "price": fmt_aum(d["value_usd"])}
 
 
 def weekly_data(snap, now: datetime) -> dict:
@@ -98,6 +108,8 @@ def weekly_data(snap, now: datetime) -> dict:
     deals = [d for d in snap.mna_json()["deals"]
              if start <= local_now(from_iso(d["date"]), snap.cfg).date() <= today]
     disclosed = [d["target_aum_usd"] for d in deals if d["target_aum_usd"] and d["target_aum_source"] == "headline"]
+    priced = [d["value_usd"] for d in deals if d.get("value_usd")]
+    by_industry: Counter = Counter(i for d in deals for i in d.get("industries") or [])
     counts: Counter = Counter()
     names: dict[str, dict] = {}
     for d in deals:
@@ -111,7 +123,10 @@ def weekly_data(snap, now: datetime) -> dict:
     return {"schema_version": 1, "generated_at": to_iso(now), "week": f"{iso[0]}-W{iso[1]:02d}",
             "start": start.isoformat(), "end": today.isoformat(), "deals": deals,
             "total_disclosed_aum_usd": sum(disclosed) if disclosed else None,
-            "disclosed_aum_deals": len(disclosed), "top_acquirers": top, "paragraph": None, "ai": False}
+            "disclosed_aum_deals": len(disclosed),
+            "total_disclosed_value_usd": sum(priced) if priced else None, "disclosed_value_deals": len(priced),
+            "industry_counts": [{"industry": k, "deals": n} for k, n in sorted(by_industry.items(), key=lambda kv: (-kv[1], kv[0]))],
+            "top_acquirers": top, "paragraph": None, "ai": False}
 
 
 def build_inputs(conn: sqlite3.Connection, now: datetime | None = None, work: Path | None = None,
@@ -141,11 +156,15 @@ def build_inputs(conn: sqlite3.Connection, now: datetime | None = None, work: Pa
                   "deal_count": len(w["deals"]),
                   "total_disclosed_aum": fmt_aum(w["total_disclosed_aum_usd"]),
                   "disclosed_aum_deals": w["disclosed_aum_deals"],
+                  "total_disclosed_value": fmt_aum(w["total_disclosed_value_usd"]),
+                  "disclosed_value_deals": w["disclosed_value_deals"],
+                  "industry_counts": w["industry_counts"],
                   "top_acquirers": [{"name": a["name"], "deals": a["deals"]} for a in w["top_acquirers"]],
                   "deals": [{"cluster_id": d["cluster_id"], "headline": d["headline"], "acquirer": d["acquirer"]["name"],
                              "target": d["target"]["name"],
                              "target_aum": aum_label(d["target_aum_usd"], d["target_aum_source"], snap.sec_date),
-                             "deal_type": d["deal_type"], "confidence": d["confidence"],
+                             "deal_type": d["deal_type"], "confidence": d["confidence"], "stage": d["stage"],
+                             "price": fmt_aum(d["value_usd"]), "industries": d["industries"],
                              "outlets": [s["name"] for s in d["sources"]],
                              "teasers": [wt[i] for i in snap.by_id[d["cluster_id"]]["item_ids"] if i in wt]}
                             for d in w["deals"]]}
@@ -251,7 +270,8 @@ def validate_weekly(output, winput: dict) -> list[str]:
         return ["output is not a JSON object"]
     blob = json.dumps(winput, ensure_ascii=False)
     teasers = [t for d in winput["deals"] for t in d["teasers"]]
-    extra = {float(winput["deal_count"]), float(winput["disclosed_aum_deals"])}
+    extra = {float(winput["deal_count"]), float(winput["disclosed_aum_deals"]), float(winput.get("disclosed_value_deals") or 0)}
+    extra |= {float(c["deals"]) for c in winput.get("industry_counts") or []}
     extra |= {float(p) for p in winput["start"].split("-") + winput["end"].split("-")}
     extra |= {float(a["deals"]) for a in winput["top_acquirers"]}
     return Checker(blob, teasers, extra).problems("paragraph", output.get("paragraph"), 1200, 6, 1)
@@ -270,7 +290,7 @@ def _read(path: Path):
 def render_markdown(d: dict, sec_date: str | None) -> str:
     from .sitebuild import FOOTER_NOTE
 
-    lines = [f"# Fiduciary Wire digest: {d['date']}", "", f"**Today in wealth management.** {d['opener']}", ""]
+    lines = [f"# Fiduciary Wire digest: {d['date']}", "", f"**Today in deals.** {d['opener']}", ""]
     for n, it in enumerate(d["items"], 1):
         meta = [it["category"], f"{it['outlet_count']} outlet{'s' if it['outlet_count'] != 1 else ''}"]
         a = aum_label(it["aum_usd"], it["aum_source"], sec_date)

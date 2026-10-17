@@ -1,20 +1,80 @@
 {
- "opener": "RIA consolidation dominated the day, with Harborview, Crestline and Meridian each adding firms and two minority-stake deals announced. Regulators were also active, from a proposed SEC custody rule for crypto assets to enforcement actions by the SEC and FINRA. The Fed held rates steady.",
+ "opener": "Wealth management led the day's deals, with Harborview, Meridian and Crestline buying RIAs and two minority stakes. Outside wealth, the largest stated prices were Halcyon Energy's $5.6 billion deal for Redstone Midstream and Vireo Pharma's $3.2 billion purchase of Calder Therapeutics. Atlas Industrial and Granite Peak Partners each closed deals.",
  "items": [
-  {"cluster_id": 5, "summary": "Harborview Wealth Partners, based in Seattle, has acquired Summit Ridge Advisors, an RIA with $1.2 billion in assets, with closing expected in the fourth quarter.", "why_it_matters": "Another sizable RIA sale points to continued buyer demand, which shapes valuations for advisors weighing a sale or succession plan."},
-  {"cluster_id": 8, "summary": "The Fed held rates steady and signaled one more cut this year.", "why_it_matters": "Advisors will field client questions on bond and cash positioning while the rate path stays uncertain."},
-  {"cluster_id": 9, "summary": "The SEC proposed changes to the custody rule for crypto assets that would narrow which firms count as qualified custodians.", "why_it_matters": "Advisors holding or recommending digital assets could face new custody requirements if the proposal is adopted."},
-  {"cluster_id": 10, "summary": "Goldman Sachs Asset Management launched two active ETFs aimed at short-duration income.", "why_it_matters": "More active short-duration options widen the product shelf for income-focused client portfolios."},
-  {"cluster_id": 19, "summary": "Private-equity-backed Crestline Wealth closed its purchase of Riverbend Financial, a $900 million RIA, and is also set to buy Aspen Grove Advisors.", "why_it_matters": "PE-funded buyers doing multiple deals at once keep competition for independent practices high."},
-  {"cluster_id": 4, "summary": "Ledgerline launched an AI assistant that takes meeting notes for RIAs, following a $40 million funding round.", "why_it_matters": "Note-taking tools aim at the documentation load of client meetings, so compliance review of AI records becomes relevant."},
-  {"cluster_id": 28, "summary": "The SEC charged an Ohio investment adviser over a $3 million cherry-picking scheme, saying profitable trades went to the adviser's own accounts.", "why_it_matters": "Trade-allocation practices remain an enforcement focus, a reminder to review allocation policies and testing."},
-  {"cluster_id": 7, "summary": "Meridian Capital Partners completed its acquisition of Cedar Lane Private Wealth, an $850 million firm in Portland, Oregon.", "why_it_matters": "Deals involving Pacific Northwest practices show buyers looking beyond the largest metro markets."},
-  {"cluster_id": 2, "summary": "Bear Mountain Capital made a minority investment in Willowbrook Wealth.", "why_it_matters": "Minority stakes give founders capital while keeping control, an alternative to an outright sale."},
-  {"cluster_id": 1, "summary": "A wirehouse team managing $2.1 billion broke away to join Harborview Wealth Partners.", "why_it_matters": "Large wirehouse teams keep moving to independent firms, adding to recruiting competition for experienced advisors."},
-  {"cluster_id": 26, "summary": "FINRA fined a broker-dealer $1.5 million for supervision failures, including 1.2 million alerts it did not review; the firm neither admitted nor denied the findings.", "why_it_matters": "Alert backlogs are a supervisory risk that examiners penalize, so surveillance staffing deserves a look."},
-  {"cluster_id": 20, "summary": "Blue Heron Capital took a minority stake in Oakmont Family Office, a $2.3 billion firm serving 60 ultra-wealthy families.", "why_it_matters": "Outside capital is reaching family offices too, not only traditional RIAs."},
-  {"cluster_id": 14, "summary": "Northgate Advisors and Pinecrest Wealth are merging to form a $4.5 billion firm, with both founders serving as co-CEOs.", "why_it_matters": "Mergers of equals are an option for firms that want scale without selling to a larger acquirer."},
-  {"cluster_id": 40, "summary": "RIABiz looked at what the next generation of RIA founders wants from custodians.", "why_it_matters": "Custodians competing for new RIA founders may change the service and pricing on offer to breakaway advisors."},
-  {"cluster_id": 55, "summary": "The SEC reported 612 enforcement actions in fiscal year 2026.", "why_it_matters": "The annual totals show where the agency spent its enforcement effort, which helps firms set compliance priorities."}
+  {
+   "cluster_id": 3,
+   "summary": "Harborview Wealth Partners agreed to buy Summit Ridge Advisors, an RIA with $1.2 billion in assets, with closing expected in the fourth quarter.",
+   "why_it_matters": "Another sizable RIA sale shows consolidators are still paying up for established firms, a reference point for advisors weighing a sale."
+  },
+  {
+   "cluster_id": 4,
+   "summary": "Northwind Software agreed to acquire Brightpath Analytics for $420 million.",
+   "why_it_matters": "Software buyers keep adding analytics tools to their platforms, which keeps demand high for smaller data companies."
+  },
+  {
+   "cluster_id": 6,
+   "summary": "Private equity firm Granite Peak Partners completed its purchase of Lumen Dental Group, a 40-office dental group in Colorado and Utah.",
+   "why_it_matters": "Dental groups remain a steady target for private equity roll-ups of regional health care practices."
+  },
+  {
+   "cluster_id": 10,
+   "summary": "Atlas Industrial completed its $2.1 billion acquisition of Meridian Steel.",
+   "why_it_matters": "Closing the deal gives Atlas Industrial more of its own steel supply as industrial buyers consolidate suppliers."
+  },
+  {
+   "cluster_id": 1,
+   "summary": "Broker-dealer Stonebridge Securities acquired Calloway Partners, a boutique investment bank that advises on M&A.",
+   "why_it_matters": "Buying an advisory boutique is a quick way for a broker-dealer to add an M&A practice and its client relationships."
+  },
+  {
+   "cluster_id": 2,
+   "summary": "PE-backed Crestline Wealth closed its purchase of Riverbend Financial and also plans to buy Aspen Grove Advisors.",
+   "why_it_matters": "Private-equity-funded RIA buyers doing several deals at once keep competition for independent practices high."
+  },
+  {
+   "cluster_id": 9,
+   "summary": "Halcyon Energy agreed to buy Redstone Midstream for $5.6 billion, after earlier reports of talks between the two.",
+   "why_it_matters": "A deal of this size would add pipeline assets to Halcyon and shows midstream consolidation continuing."
+  },
+  {
+   "cluster_id": 5,
+   "summary": "Copperline Bancorp and First Prairie Bank agreed to merge in a $1.1 billion deal, creating a bank with $14 billion in assets.",
+   "why_it_matters": "Regional bank mergers of this size build scale to spread technology and compliance costs."
+  },
+  {
+   "cluster_id": 17,
+   "summary": "Blue Heron Capital took a minority stake in Oakmont Family Office, which oversees $2.3 billion for 60 families.",
+   "why_it_matters": "Outside capital is reaching family offices too, not only traditional RIAs."
+  },
+  {
+   "cluster_id": 18,
+   "summary": "Meridian Capital Partners agreed to buy Cedar Lane Private Wealth, an $850 million RIA in Charlotte, its first Southeast office.",
+   "why_it_matters": "Buyers expanding into new regions through acquisitions raise the bar for local firms competing for clients."
+  },
+  {
+   "cluster_id": 19,
+   "summary": "Northgate Advisors and Pinecrest Wealth agreed to merge into a $4.5 billion firm under the Northgate name, with both founders as co-CEOs.",
+   "why_it_matters": "Mergers of equals are an option for firms that want scale without selling to a larger acquirer."
+  },
+  {
+   "cluster_id": 24,
+   "summary": "Willowbrook Wealth took a minority investment from Bear Mountain Capital.",
+   "why_it_matters": "Minority stakes give founders capital while they keep control, an alternative to an outright sale."
+  },
+  {
+   "cluster_id": 35,
+   "summary": "Maple & Main agreed to acquire Thistle Home in a $640 million deal.",
+   "why_it_matters": "Home goods brands are consolidating as larger retailers look for growth through acquisitions."
+  },
+  {
+   "cluster_id": 33,
+   "summary": "Vireo Pharma agreed to buy Calder Therapeutics for $3.2 billion, adding a late-stage oncology drug.",
+   "why_it_matters": "Large drugmakers keep buying late-stage cancer assets to refill their pipelines."
+  },
+  {
+   "cluster_id": 31,
+   "summary": "Tallyhook acquired payments startup Coinwell.",
+   "why_it_matters": "Payments companies keep buying startups to add features rather than build them."
+  }
  ]
 }

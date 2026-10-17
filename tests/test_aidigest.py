@@ -41,7 +41,7 @@ def test_input_is_top_15_ranked_with_teasers(prepared):
     counts = [len({o["name"] for o in c["outlets"]}) for c in inp["clusters"]]
     assert counts == sorted(counts, reverse=True)  # outlet count first
     c = inp["clusters"][0]
-    assert set(c) == {"id", "headline", "category", "outlets", "firms", "aum", "teasers"}
+    assert set(c) == {"id", "headline", "category", "industries", "deal", "outlets", "firms", "aum", "teasers"}
     assert c["aum"] == "$1.2B AUM (from headline)"
     assert any(c["teasers"] for c in inp["clusters"])
     assert any("SEC-reported AUM (as of 2026-09-01)" in (c["aum"] or "") for c in inp["clusters"])

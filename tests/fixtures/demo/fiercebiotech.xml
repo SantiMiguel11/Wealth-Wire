@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SYNTHETIC TEST DATA - not real news -->
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel><title>Fierce Biotech</title><link>https://www.fiercebiotech.com/rss/xml</link><description>SYNTHETIC TEST DATA - not real news</description>
+<item><title>Biotech seed funding slows as investors grow cautious</title><link>https://www.fiercebiotech.com/biotech-seed-funding-slows-as-investors-grow-cautious</link><guid>https://www.fiercebiotech.com/biotech-seed-funding-slows-as-investors-grow-cautious</guid><pubDate>Wed, 23 Sep 2026 21:00:00 -0400</pubDate></item>
+</channel></rss>

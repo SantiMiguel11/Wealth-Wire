@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SYNTHETIC TEST DATA - not real news -->
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel><title>Banking Dive</title><link>https://www.bankingdive.com/feeds/news/</link><description>SYNTHETIC TEST DATA - not real news</description>
+<item><title>Fed proposes changes to bank capital rules</title><link>https://www.bankingdive.com/news/fed-proposes-changes-to-bank-capital-rules/700000/</link><guid>https://www.bankingdive.com/news/fed-proposes-changes-to-bank-capital-rules/700000/</guid><pubDate>Thu, 24 Sep 2026 15:00:00 -0400</pubDate></item>
+<item><title>Copperline Bancorp, First Prairie Bank to merge in $1.1B deal</title><link>https://www.bankingdive.com/news/copperline-bancorp-first-prairie-bank-to-merge-in-1-1b-deal/700001/</link><guid>https://www.bankingdive.com/news/copperline-bancorp-first-prairie-bank-to-merge-in-1-1b-deal/700001/</guid><pubDate>Wed, 23 Sep 2026 23:00:00 -0400</pubDate></item>
+</channel></rss>

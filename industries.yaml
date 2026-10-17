@@ -81,7 +81,7 @@ industries:
           Northrop, RTX, SpaceX]
 
   - name: Consumer & Retail
-    any: [retail, retailer, retailers, restaurant, restaurants, food, foods, beverage, beverages, brand, brands, apparel,
+    any: [retail, retailer, retailers, restaurant, restaurants, food, foods, beverage, beverages, consumer brand, consumer brands, apparel,
           fashion, consumer, grocery, grocer, CPG, beauty, cosmetics, lash, salon, fitness, gym, hospitality, hotel, hotels,
           travel, e-commerce, ecommerce, dating, pet, pets, toys, furniture, ingredients, nutrition, wine, spirits, beer,
           coffee, cannabis, footwear, jewelry, home goods, catering, Walmart, Target, Costco, Kroger, Nike, PepsiCo,
@@ -101,7 +101,7 @@ industries:
 
   - name: Business Services
     any: [staffing, consulting, consultancy, consultant, accounting, accounting firm, CPA, CPA firm, tax firm, law firm,
-          legal services, marketing agency, agency, outsourcing, HR, payroll, education, edtech, training, testing,
+          legal services, marketing agency, advertising agency, outsourcing, HR, payroll, education, edtech, training, testing,
           facilities, security services, security group, security company, professional services, business services, Unacademy, upGrad, CohnReznick]
 
 default: Other

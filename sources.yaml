@@ -1,111 +1,211 @@
-# Each source: name, homepage, feed_url (blank = discover), gated, listing_url (optional), enabled.
-# Discovery order: feed_url → previously discovered feed → <link rel="alternate"> on homepage/listing
-# page → common paths (/feed, /feed/, /rss, /rss.xml) → listing-page parse → failed.
-# gated: true stores headline, link, date and source only (empty description).
+# Deal sources. Every item from every source goes through the deal filter (fiduciarywire/deals.py): only
+# headlines that announce an M&A deal are kept; general news is dropped (counted as "Dropped" per source).
+#
+# Each source: name, homepage, feed_url (blank = discover), kind (feed | wire | google_news), gated, listing_url,
+# max_age_days, enabled, industry. `industry` (optional) tags every deal from a single-industry outlet with that
+# industry in addition to what its headline says (names must match industries.yaml).
+# Discovery order: feed_url → previously discovered feed → <link rel="alternate"> on homepage/listing page →
+# common paths (/feed, /rss) → listing-page parse → failed.
+# Every feed below was checked from GitHub's network with .github/workflows/probe-feeds.yml on 2026-10-17
+# (robots.txt allows it; it returns items) — see DECISIONS D4.
 sources:
-  - name: Citywire RIA
-    homepage: https://citywire.com/ria
-    kind: google_news              # no feed; the news page is JavaScript-rendered
-    query: "site:citywire.com/ria"
+  # --- all industries ---
+  - name: PR Newswire M&A
+    homepage: https://www.prnewswire.com
+    kind: wire
+    feed_url: https://www.prnewswire.com/rss/financial-services-latest-news/acquisitions-mergers-and-takeovers-list.rss
     max_age_days: 14
-    gated: false
     enabled: true
 
+  - name: Seeking Alpha M&A
+    homepage: https://seekingalpha.com
+    feed_url: https://seekingalpha.com/tag/m-a.xml
+    max_age_days: 14
+    gated: true                    # headlines are public; articles are behind a login
+    enabled: true
+
+  - name: Financial Times Companies
+    homepage: https://www.ft.com/companies
+    feed_url: https://www.ft.com/companies?format=rss
+    max_age_days: 14
+    gated: true                    # paywalled: headline, link and date only
+    enabled: true
+
+  - name: PE Hub
+    homepage: https://www.pehub.com
+    feed_url: https://www.pehub.com/feed/
+    max_age_days: 14
+    industry: Private Equity & Asset Management
+    enabled: true
+
+  - name: TechCrunch M&A
+    homepage: https://techcrunch.com/tag/mergers-and-acquisitions/
+    feed_url: https://techcrunch.com/tag/mergers-and-acquisitions/feed/
+    max_age_days: 14
+    industry: Technology
+    enabled: true
+
+  # --- wealth management and RIAs ---
   - name: WealthManagement.com
     homepage: https://www.wealthmanagement.com
     feed_url: https://www.wealthmanagement.com/rss.xml
-    listing_url: ""
-    gated: false
-    enabled: true
-
-  - name: Financial Advisor Magazine
-    homepage: https://www.fa-mag.com
-    kind: google_news              # fa-mag.com answers HTTP 403 to automated readers
-    query: "site:fa-mag.com"
-    max_age_days: 14
-    gated: false
+    industry: Wealth Management & RIAs
     enabled: true
 
   - name: InvestmentNews
     homepage: https://www.investmentnews.com
-    feed_url: ""
     listing_url: https://www.investmentnews.com/latest-news
-    gated: false
-    enabled: true
-
-  - name: ThinkAdvisor
-    homepage: https://www.thinkadvisor.com
-    kind: google_news              # thinkadvisor.com answers HTTP 403 to automated readers
-    query: "site:thinkadvisor.com"
-    max_age_days: 14
-    gated: false
+    industry: Wealth Management & RIAs
     enabled: true
 
   - name: RIABiz
     homepage: https://riabiz.com
-    feed_url: ""
     listing_url: https://riabiz.com/
-    gated: false
+    industry: Wealth Management & RIAs
     enabled: true
 
   - name: Financial Planning
     homepage: https://www.financial-planning.com
     feed_url: https://www.financial-planning.com/feed?rss=true
-    listing_url: ""
-    gated: false
+    industry: Wealth Management & RIAs
     enabled: true
 
   - name: AdvisorHub
     homepage: https://www.advisorhub.com
     feed_url: https://www.advisorhub.com/feed/
-    listing_url: ""
     gated: true
+    industry: Wealth Management & RIAs
     enabled: true
 
-  - name: Kitces
-    homepage: https://www.kitces.com
-    feed_url: https://www.kitces.com/feed/
-    listing_url: ""
-    gated: false
-    enabled: true
-
-  - name: SEC Press Releases
-    homepage: https://www.sec.gov/newsroom/press-releases
-    feed_url: https://www.sec.gov/news/pressreleases.rss
-    listing_url: ""
-    gated: false
-    enabled: true
-
-  - name: FINRA News
-    homepage: https://www.finra.org/media-center/newsreleases
-    feed_url: ""
-    listing_url: https://www.finra.org/media-center/newsreleases
-    gated: false
-    enabled: true
-
-  # --- press-release wires (§5): only wealth-management items are kept ---
-  # PR Newswire has no keyword-scoped feed: every subject slug probed from GitHub (fund managers, financial
-  # advisors, wealth management, personnel…) either falls back to the all-news firehose or is off-topic (banking,
-  # M&A across all industries) — 0 wealth items. Disabled until a scoped feed exists (see DECISIONS F8).
-  - name: PR Newswire
-    homepage: https://www.prnewswire.com
-    kind: wire
-    feed_url: https://www.prnewswire.com/rss/financial-services-latest-news/financial-services-latest-news-list.rss
+  # --- other industries (Industry Dive, Fierce, insurance trade press) ---
+  - name: Banking Dive
+    homepage: https://www.bankingdive.com
+    feed_url: https://www.bankingdive.com/feeds/news/
     max_age_days: 14
-    gated: false
+    industry: Banking
+    enabled: true
+
+  - name: Payments Dive
+    homepage: https://www.paymentsdive.com
+    feed_url: https://www.paymentsdive.com/feeds/news/
+    max_age_days: 14
+    industry: Fintech & Payments
+    enabled: true
+
+  - name: Insurance Journal
+    homepage: https://www.insurancejournal.com
+    feed_url: https://www.insurancejournal.com/rss/news/
+    max_age_days: 14
+    industry: Insurance
+    enabled: true
+
+  - name: Reinsurance News
+    homepage: https://www.reinsurancene.ws
+    feed_url: https://www.reinsurancene.ws/feed/
+    max_age_days: 14
+    industry: Insurance
+    enabled: true
+
+  - name: BioPharma Dive
+    homepage: https://www.biopharmadive.com
+    feed_url: https://www.biopharmadive.com/feeds/news/
+    max_age_days: 14
+    industry: Healthcare & Life Sciences
+    enabled: true
+
+  - name: Healthcare Dive
+    homepage: https://www.healthcaredive.com
+    feed_url: https://www.healthcaredive.com/feeds/news/
+    max_age_days: 14
+    industry: Healthcare & Life Sciences
+    enabled: true
+
+  - name: Fierce Healthcare
+    homepage: https://www.fiercehealthcare.com
+    feed_url: https://www.fiercehealthcare.com/rss/xml
+    max_age_days: 14
+    industry: Healthcare & Life Sciences
+    enabled: true
+
+  - name: Fierce Biotech
+    homepage: https://www.fiercebiotech.com
+    feed_url: https://www.fiercebiotech.com/rss/xml
+    max_age_days: 14
+    industry: Healthcare & Life Sciences
+    enabled: true
+
+  - name: Fierce Pharma
+    homepage: https://www.fiercepharma.com
+    feed_url: https://www.fiercepharma.com/rss/xml
+    max_age_days: 14
+    industry: Healthcare & Life Sciences
+    enabled: true
+
+  - name: Retail Dive
+    homepage: https://www.retaildive.com
+    feed_url: https://www.retaildive.com/feeds/news/
+    max_age_days: 14
+    industry: Consumer & Retail
+    enabled: true
+
+  - name: Utility Dive
+    homepage: https://www.utilitydive.com
+    feed_url: https://www.utilitydive.com/feeds/news/
+    max_age_days: 14
+    industry: Energy & Utilities
+    enabled: true
+
+  - name: Supply Chain Dive
+    homepage: https://www.supplychaindive.com
+    feed_url: https://www.supplychaindive.com/feeds/news/
+    max_age_days: 14
+    industry: Industrials
+    enabled: true
+
+  # --- disabled (kept so the Sources page says why) ---
+  # Google News: news.google.com/robots.txt disallows /rss/search, which these used (found 2026-10-17).
+  - name: ThinkAdvisor
+    homepage: https://www.thinkadvisor.com
+    kind: google_news
+    query: "site:thinkadvisor.com"
+    max_age_days: 14
     enabled: false
 
-  # GlobeNewswire keyword feeds (verified from GitHub's network 2026-09-27). Each feed is filtered on its own
-  # and the stats go to state/wire_stats.csv. "registered investment adviser" (-er spelling) was dropped: its
-  # newest item is from 2011. Business Wire was removed: its robots.txt disallows the feed path.
+  - name: Financial Advisor Magazine
+    homepage: https://www.fa-mag.com
+    kind: google_news
+    query: "site:fa-mag.com"
+    max_age_days: 14
+    enabled: false
+
+  - name: Citywire RIA
+    homepage: https://citywire.com/ria
+    kind: google_news
+    query: "site:citywire.com/ria"
+    max_age_days: 14
+    enabled: false
+
+  # GlobeNewswire's robots.txt now answers HTTP 403, which is treated as "disallow everything".
   - name: GlobeNewswire
     homepage: https://www.globenewswire.com
     kind: wire
     feed_urls:
-      - https://www.globenewswire.com/RssFeed/keyword/registered%20investment%20advisor/feedTitle/GlobeNewswire%20-%20registered%20investment%20advisor
-      - https://www.globenewswire.com/RssFeed/keyword/wealth%20management/feedTitle/GlobeNewswire%20-%20wealth%20management
-      - https://www.globenewswire.com/RssFeed/keyword/RIA/feedTitle/GlobeNewswire%20-%20RIA
-      - https://www.globenewswire.com/RssFeed/keyword/family%20office/feedTitle/GlobeNewswire%20-%20family%20office
+      - https://www.globenewswire.com/RssFeed/subjectcode/27-Mergers%20and%20Acquisitions/feedTitle/GlobeNewswire%20-%20Mergers%20and%20Acquisitions
     max_age_days: 14
-    gated: false
-    enabled: true
+    enabled: false
+
+  # Regulators and planning blogs publish no deals.
+  - name: SEC Press Releases
+    homepage: https://www.sec.gov/newsroom/press-releases
+    feed_url: https://www.sec.gov/news/pressreleases.rss
+    enabled: false
+
+  - name: FINRA News
+    homepage: https://www.finra.org/media-center/newsreleases
+    listing_url: https://www.finra.org/media-center/newsreleases
+    enabled: false
+
+  - name: Kitces
+    homepage: https://www.kitces.com
+    feed_url: https://www.kitces.com/feed/
+    enabled: false

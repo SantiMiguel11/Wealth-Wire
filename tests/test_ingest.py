@@ -18,7 +18,7 @@ def _conn():
 
 def test_ingest_twice_inserts_zero_duplicates(ingested):
     _, first = ingested
-    assert first["new"] > 40
+    assert first["new"] > 30
     count = _conn().execute("SELECT COUNT(*) FROM items").fetchone()[0]
     second = run_ingest(fixtures=DEMO, now=NOW + timedelta(hours=2), quiet=True)
     assert second["new"] == 0
@@ -41,11 +41,11 @@ def test_no_full_text_stored(ingested):
     for (desc,) in conn.execute("SELECT description FROM items"):
         assert "FULL ARTICLE TEXT" not in desc
         assert "<" not in desc and "&amp;" not in desc
-    # Kitces item that only has content:encoded → empty description
-    row = conn.execute("SELECT description FROM items WHERE title LIKE 'The Latest In Financial #AdvisorTech%'").fetchone()
+    # PE Hub item that only has content:encoded (the full article) → empty description
+    row = conn.execute("SELECT description FROM items WHERE title LIKE 'Kestrel Equity acquires%'").fetchone()
     assert row["description"] == ""
     # long HTML description → stripped and truncated with an ellipsis
-    row = conn.execute("SELECT description FROM items WHERE title LIKE 'Weekend Reading%'").fetchone()
+    row = conn.execute("SELECT description FROM items WHERE source='PE Hub' AND title LIKE 'Granite Peak%'").fetchone()
     assert 200 < len(row["description"]) <= 300 and row["description"].endswith("…")
     # stored columns are only the allowed article fields + derived metadata
     cols = {r[1] for r in conn.execute("PRAGMA table_info(items)")}
@@ -66,8 +66,32 @@ def test_description_length_enforced_by_db(home):
 
 
 def test_gated_source_has_empty_descriptions(ingested):
-    rows = _conn().execute("SELECT description FROM items WHERE source='AdvisorHub'").fetchall()
+    rows = _conn().execute("SELECT description FROM items WHERE source IN ('Seeking Alpha M&A', 'Financial Times Companies')").fetchall()
     assert rows and all(r["description"] == "" for r in rows)
+
+
+def test_only_deals_are_stored(ingested):
+    from fiduciarywire.deals import is_deal
+
+    titles = [r[0] for r in _conn().execute("SELECT title FROM items")]
+    assert titles and all(is_deal(t) for t in titles)
+    for gone in ("Fed holds rates", "SEC charges Ohio adviser", "Pugh Capital Management Expands", "Breaks Away",
+                 "SHAREHOLDER ALERT", "Le groupe Exemple", "Is Brightpath Analytics a buy", "Raises Stake in",
+                 "RIA M&A slows", "Lumio raises", "Old Merger Release"):
+        assert not any(gone in t for t in titles), gone
+
+
+def test_existing_non_deal_items_are_purged(ingested):
+    """Items stored before the switch to deals only (general news) are removed by the next recompute."""
+    from fiduciarywire.pipeline import recompute
+
+    conn = db.connect()
+    conn.execute("INSERT INTO items(title,url,canonical_url,source,published_at,fetched_at,description) "
+                 "VALUES ('Fed holds rates steady','https://x.example/a','https://x.example/a','InvestmentNews',"
+                 "'2026-09-25T10:00:00Z','2026-09-25T10:00:00Z','')")
+    conn.commit()
+    recompute(conn, now=NOW)
+    assert not conn.execute("SELECT 1 FROM items WHERE title='Fed holds rates steady'").fetchone()
 
 
 def test_source_methods_and_reasons(ingested):
@@ -76,23 +100,22 @@ def test_source_methods_and_reasons(ingested):
     assert status["WealthManagement.com"]["method"] == "RSS"
     assert status["InvestmentNews"]["method"] == "discovered RSS"   # homepage 403 → /feed
     assert status["RIABiz"]["method"] == "listing fallback"
-    for name in ("ThinkAdvisor", "Financial Advisor Magazine", "Citywire RIA"):
-        assert status[name]["method"] == "Google News RSS" and status[name]["kind"] == "google_news"
-    assert status["FINRA News"]["method"] == "failed"
-    assert "robots.txt disallows" in status["FINRA News"]["reason"]
+    for name in ("ThinkAdvisor", "Financial Advisor Magazine", "Citywire RIA", "GlobeNewswire", "FINRA News", "Kitces"):
+        assert name not in status  # disabled: listed in SOURCES.md, never fetched
     assert "gated" in status["AdvisorHub"]["reason"]
-    assert status["GlobeNewswire"]["kind"] == "wire" and status["GlobeNewswire"]["dropped_last_run"] == 5
-    assert "PR Newswire" not in status  # disabled: listed in SOURCES.md, never fetched
-    assert sum(r["ok"] for r in status.values()) >= 7
+    prn = status["PR Newswire M&A"]
+    assert prn["kind"] == "wire" and prn["dropped_last_run"] == 2 and "deal filter kept 6 of 8" in prn["reason"]
+    assert status["Reinsurance News"]["ok"] and status["Reinsurance News"]["new_last_run"] == 0   # no deals in it
+    assert sum(r["ok"] for r in status.values()) == 22
 
 
 def test_sources_md_written(ingested):
     text = paths.sources_md_path().read_text()
-    assert "| FINRA News | feed | ❌ failed | failed |" in text
-    assert "robots.txt disallows /media-center/newsreleases" in text
-    assert "listing fallback" in text and "discovered RSS" in text and "Google News RSS" in text
-    assert "| GlobeNewswire | wire | ✅ ok | RSS (4 of 4 feeds) |" in text and "kept 5 of 11 across 4 keyword feeds (4 unique)" in text
-    assert "| PR Newswire | wire | ⏸ disabled | disabled |" in text
+    assert "listing fallback" in text and "discovered RSS" in text
+    assert "| PR Newswire M&A | wire | ✅ ok | RSS |" in text and "deal filter kept 6 of 8" in text
+    assert "| ThinkAdvisor | google_news | ⏸ disabled | disabled |" in text
+    assert "| GlobeNewswire | wire | ⏸ disabled | disabled |" in text
+    assert "Only deals are stored" in text
     assert "Offline fixture run" in text and "SEC adviser data" in text
 
 
@@ -107,7 +130,7 @@ def _discover(src, now=NOW):
 
 def test_discovery_via_link_rel_alternate_skips_comment_feeds(home):
     run, conn = _discover({"name": "CW direct", "homepage": "https://citywire.com/ria", "listing_url": "https://citywire.com/ria/news"})
-    assert run.method == "discovered RSS" and run.url_used == "https://citywire.com/ria/news.rss" and run.fetched == 7
+    assert run.method == "discovered RSS" and run.url_used == "https://citywire.com/ria/news.rss" and run.fetched == 3
     # cached and reused on the next run (no homepage crawl)
     row = conn.execute("SELECT discovered_feed_url FROM source_status WHERE name='CW direct'").fetchone()
     assert row["discovered_feed_url"] == "https://citywire.com/ria/news.rss"
@@ -123,21 +146,21 @@ def test_discovery_via_common_path(home):
 def test_conditional_get_uses_etag_and_handles_304(ingested):
     transport = FixtureTransport(DEMO)
     fetcher = Fetcher("UA test@example.com", per_host_delay=0, conn=db.connect(), transport=transport)
-    res = fetcher.get("https://www.sec.gov/news/pressreleases.rss", conditional=True)
+    res = fetcher.get("https://www.wealthmanagement.com/rss.xml", conditional=True)
     assert res.not_modified and res.status == 304
-    assert transport.requests[-1].headers["if-none-match"] == '"sec-v1"'
-    assert "if-modified-since" in transport.requests[-1].headers
+    assert transport.requests[-1].headers["if-none-match"] == '"wm-v1"'
 
 
 def test_listing_titles_stripped_of_source_suffix(ingested):
-    titles = [r[0] for r in _conn().execute("SELECT title FROM items WHERE source='ThinkAdvisor'")]
-    assert not any("| ThinkAdvisor" in t for t in titles)
+    titles = [r[0] for r in _conn().execute("SELECT title FROM items WHERE source='WealthManagement.com'")]
+    assert any(t.startswith("Blue Heron Capital Takes Minority Stake") for t in titles)
+    assert not any("| WealthManagement.com" in t for t in titles)
 
 
 def test_user_agent_sent(home):
     transport = FixtureTransport(DEMO)
     f = Fetcher("FiduciaryWire/0.1 (personal news reader; me@example.com)", per_host_delay=0, transport=transport)
-    f.get("https://www.kitces.com/feed/")
+    f.get("https://www.wealthmanagement.com/rss.xml")
     assert "me@example.com" in transport.requests[0].headers["user-agent"]
 
 

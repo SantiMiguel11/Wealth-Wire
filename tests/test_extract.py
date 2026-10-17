@@ -97,8 +97,8 @@ def test_trending_firms(ingested):
     snap = Snapshot(db.connect(), load_config(), NOW)
     rows = snap.trending_json()["firms"]
     ranked = {r["name"]: r["stories"] for r in rows}
-    # Harborview: the Summit Ridge deal + the breakaway team → 2 distinct clusters (not 7 items)
-    assert ranked["Harborview Wealth Partners"] == 2
+    # Atlas: two deals (Lakeshore, Birchwood Row) → 2 distinct clusters; Harborview: one deal in 5 outlets → 1
+    assert ranked["Atlas Wealth Management"] == 2 and ranked["Harborview Wealth Partners"] == 1
     assert rows[0]["stories"] >= rows[-1]["stories"]
     later = Snapshot(db.connect(), load_config(), NOW.replace(year=2027))
     assert later.trending_json()["firms"] == []

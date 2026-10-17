@@ -5,19 +5,18 @@ import pytest
 import yaml
 
 from fiduciarywire import paths
-from fiduciarywire.categorize import Categorizer
 from fiduciarywire.cluster import ClusterItem, cluster, normalize_title, score
 from fiduciarywire.config import load_config, load_stoplist
+from fiduciarywire.deals import is_deal
 from fiduciarywire.extract import extract_firms
 
 PAIRS = yaml.safe_load((Path(__file__).parent / "fixtures" / "cluster_pairs.yaml").read_text())
 THRESHOLD = float(load_config()["cluster"]["threshold"])
-_cat = Categorizer()
 _stop = load_stoplist()
 
 
 def item(i, title, source=None, when="2026-09-25T00:00:00Z"):
-    return ClusterItem(i, source or f"src{i}", when, title, firms=set(extract_firms(title, _stop)), category=_cat.categorize(title))
+    return ClusterItem(i, source or f"src{i}", when, title, firms=set(extract_firms(title, _stop)), category="M&A" if is_deal(title) else "Other")  # the pipeline clusters deals only (all "M&A")
 
 
 @pytest.mark.parametrize("a, b", PAIRS["match"])
@@ -52,16 +51,21 @@ def test_window():
 def test_demo_clusters(ingested):
     conn = sqlite3.connect(paths.db_path())
     conn.row_factory = sqlite3.Row
-    assert conn.execute("SELECT COUNT(*) FROM clusters").fetchone()[0] == 36
+    assert conn.execute("SELECT COUNT(*) FROM clusters").fetchone()[0] == 21
     row = conn.execute("SELECT * FROM clusters WHERE headline LIKE '%Summit Ridge%'").fetchone()
-    assert row["outlet_count"] == 5  # 4 trade outlets + the GlobeNewswire release
+    assert row["outlet_count"] == 5  # 4 trade outlets + the PR Newswire release
     # headline comes from the earliest item
     assert row["headline"] == "Harborview Wealth Partners buys $1.2bn Summit Ridge Advisors"
     sources = {r[0] for r in conn.execute("SELECT source FROM items WHERE cluster_id=?", (row["id"],))}
-    assert sources == {"Citywire RIA", "ThinkAdvisor", "WealthManagement.com", "RIABiz", "GlobeNewswire"}
-    # the breakaway team joining Harborview is a separate story
-    team = conn.execute("SELECT * FROM clusters WHERE headline LIKE '%Breaks Away%'").fetchone()
-    assert team["id"] != row["id"] and team["category"] == "People Moves" and team["outlet_count"] == 3
+    assert sources == {"WealthManagement.com", "Financial Planning", "InvestmentNews", "RIABiz", "PR Newswire M&A"}
+    assert row["category"] == "Wealth Management & RIAs"
+    # the breakaway team joining Harborview is a people move, not a deal: never stored
+    assert not conn.execute("SELECT 1 FROM items WHERE title LIKE '%Breaks Away%'").fetchone()
+    # the same deal in different words across outlets is one story ("to Acquire … for $420 Million" / "buys … for $420M")
+    nw = conn.execute("SELECT * FROM clusters WHERE headline LIKE 'Northwind Software%'").fetchall()
+    assert len(nw) == 1 and nw[0]["outlet_count"] == 3
+    lumen = conn.execute("SELECT * FROM clusters WHERE headline LIKE '%Lumen Dental%'").fetchall()
+    assert len(lumen) == 1 and lumen[0]["outlet_count"] == 3   # "Completes Acquisition of" / "buys" / "sold to"
 
 
 def test_public_card_lists_all_sources(ingested):
@@ -74,7 +78,9 @@ def test_public_card_lists_all_sources(ingested):
     cards = [c for c in files["clusters.json"]["clusters"] if "Summit Ridge" in c["headline"]]
     assert len(cards) == 1
     # AdvisorHub is excluded from the public site; the other outlets are all listed with links
-    assert {s["name"] for s in cards[0]["sources"]} == {"Citywire RIA", "ThinkAdvisor", "WealthManagement.com", "RIABiz", "GlobeNewswire"}
+    assert {s["name"] for s in cards[0]["sources"]} == {"WealthManagement.com", "Financial Planning", "InvestmentNews", "RIABiz", "PR Newswire M&A"}
     assert cards[0]["press_release"] is True
-    assert {s["name"]: s["kind"] for s in cards[0]["sources"]}["GlobeNewswire"] == "wire"
+    assert {s["name"]: s["kind"] for s in cards[0]["sources"]}["PR Newswire M&A"] == "wire"
+    assert cards[0]["deal"] == {"acquirer": "Harborview Wealth Partners", "target": "Summit Ridge Advisors", "type": "acquisition",
+                                "stage": "announced", "value_usd": None}
     assert all(s["url"].startswith("https://") for s in cards[0]["sources"])

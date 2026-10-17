@@ -144,7 +144,10 @@ _CUT = re.compile(r"\s*(?:[,;:(]|\s[-–—]\s|—|–|\.\.\.)|\s+(?:in|to|for|a
                   r"\s+(?:and|&)\s+(?=[A-Z][a-z]+s\b)", re.I)
 # Descriptors that Title Case headlines capitalize ("Louisiana RIA Cullen", "IRA Platform Alto", "Tax Firm CohnReznick");
 # other descriptors only count in lowercase, so "Bank of America" keeps its name.
-TITLE_DESCRIPTOR = {"ria", "firm", "platform", "practice", "provider", "startup", "office", "consolidator", "aggregator", "biz"}
+TITLE_DESCRIPTOR = {"ria", "firm", "platform", "practice", "provider", "startup", "consolidator", "aggregator", "biz"}
+# ... and these head a name only when another capitalized word follows ("Boutique Investment Bank Calloway Partners";
+# but "First Prairie Bank", "Bank of America" keep theirs)
+MID_DESCRIPTOR = TITLE_DESCRIPTOR | {"bank", "boutique", "lender", "insurer", "manufacturer", "maker", "developer"}
 DESCRIPTOR = re.compile(r"^(?:supplier|provider|maker|startup|start-up|firm|company|developer|operator|platform|specialist|"
                         r"manufacturer|distributor|producer|retailer|chain|brand|lender|insurer|broker|brokerage|consultancy|"
                         r"agency|ria|practice|office|manager|owner|recycler|notetaker|rival|unit|business|biz|subsidiary|division|"
@@ -218,6 +221,11 @@ def _name(text: str | None, first: bool, leading: bool = True) -> str:
     def descriptor(w: str) -> bool:
         w = w.strip(".,")
         return bool(DESCRIPTOR.match(w)) and (w.islower() or w.lower() in TITLE_DESCRIPTOR)
+    for i in range(len(words) - 2, -1, -1):
+        w = words[i].strip(".,").lower()
+        if w in MID_DESCRIPTOR and words[i + 1][:1].isupper() and words[i + 1].lower() not in {"of", "and", "&"}:
+            words = words[i + 1:]
+            break
     for i in range(len(words) - 1, -1, -1):
         if descriptor(words[i]):
             if i == len(words) - 1:
@@ -318,6 +326,8 @@ def classify(title: str) -> DealSignal | None:
             unit = re.sub(r"^(?:its|their|the|a|an)\s+", "", b_head.strip(), flags=re.I)
             tgt = f"{seller}’s {unit}" if unit and len(unit.split()) <= 5 and not unit[0].isdigit() else seller
         notes = [] if acq and tgt else [("acquirer" if not acq else "target") + " not named in the headline"]
+        if tgt and all(len(part.split()) >= 2 for part in re.split(r"\s+and\s+", tgt)) and " and " in tgt:
+            notes.append("several targets in one headline")  # "Riverbend Financial and Aspen Grove Advisors"
         return DealSignal(acquirer=acq, target=tgt, deal_type=deal_type, stage=_stage(raw), value_usd=_value(raw),
                           seller=seller, notes=notes)
     return None

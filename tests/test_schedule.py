@@ -51,13 +51,13 @@ WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri"]
 
 def test_schedule_in_daylight_time():
     runs = local_runs(datetime(2026, 7, 6, tzinfo=timezone.utc))  # a July week (PDT)
-    expected = {(d, h) for d in WEEKDAYS for h in (6, 12, 17)} | {("Sat", 8), ("Sun", 8)}
+    expected = {(d, h) for d in WEEKDAYS for h in (6, 9, 12, 15, 18)} | {("Sat", 8), ("Sun", 8)}
     assert runs == expected
 
 
 def test_schedule_drifts_one_hour_earlier_in_standard_time():
     runs = local_runs(datetime(2026, 1, 5, tzinfo=timezone.utc))  # a January week (PST)
-    expected = {(d, h) for d in WEEKDAYS for h in (5, 11, 16)} | {("Sat", 7), ("Sun", 7)}
+    expected = {(d, h) for d in WEEKDAYS for h in (5, 8, 11, 14, 17)} | {("Sat", 7), ("Sun", 7)}
     assert runs == expected
 
 

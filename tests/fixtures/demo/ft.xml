@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SYNTHETIC TEST DATA - not real news -->
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel><title>Financial Times Companies</title><link>https://www.ft.com/companies?format=rss</link><description>SYNTHETIC TEST DATA - not real news</description>
+<item><title>Global markets slide as bond yields climb</title><link>https://www.ft.com/content/00700000-global-markets-slide-as-bond-yields-climb</link><guid>https://www.ft.com/content/00700000-global-markets-slide-as-bond-yields-climb</guid><pubDate>Fri, 25 Sep 2026 04:00:00 +0000</pubDate></item>
+<item><title>Atlas Industrial to acquire Meridian Steel for $2.1bn</title><link>https://www.ft.com/content/00700001-atlas-industrial-to-acquire-meridian-steel-for-2-1bn</link><guid>https://www.ft.com/content/00700001-atlas-industrial-to-acquire-meridian-steel-for-2-1bn</guid><pubDate>Tue, 22 Sep 2026 22:00:00 +0000</pubDate></item>
+</channel></rss>

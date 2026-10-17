@@ -57,6 +57,7 @@ class Source:
     query: str = ""             # google_news: the search query, e.g. "site:thinkadvisor.com"
     max_age_days: int = 0       # 0 = no limit; wires/google_news skip items older than this
     feed_urls: list = field(default_factory=list)  # wire: several keyword-scoped feeds, merged and deduped
+    industry: str = ""          # single-industry outlet: every deal from it also gets this industry tag
 
 
 def load_sources() -> list[Source]:
@@ -75,20 +76,10 @@ def load_sources() -> list[Source]:
                 query=(raw.get("query") or "").strip(),
                 max_age_days=int(raw.get("max_age_days") or 0),
                 feed_urls=[str(u).strip() for u in raw.get("feed_urls") or [] if str(u).strip()],
+                industry=str(raw.get("industry") or "").strip(),
             )
         )
     return out
-
-
-@dataclass
-class CategoryRules:
-    categories: list[str]
-    rules: list[dict] = field(default_factory=list)
-
-
-def load_categories() -> CategoryRules:
-    data = _read_yaml(paths.config_dir() / "categories.yaml") or {}
-    return CategoryRules(categories=list(data.get("categories", [])), rules=list(data.get("rules", [])))
 
 
 def load_stoplist() -> set[str]:

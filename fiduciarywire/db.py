@@ -121,6 +121,10 @@ MIGRATIONS = [
     ("clusters", "sec_aum_crd", "ALTER TABLE clusters ADD COLUMN sec_aum_crd TEXT"),
     ("source_status", "dropped_last_run", "ALTER TABLE source_status ADD COLUMN dropped_last_run INTEGER NOT NULL DEFAULT 0"),
     ("source_status", "kind", "ALTER TABLE source_status ADD COLUMN kind TEXT NOT NULL DEFAULT 'feed'"),
+    ("clusters", "industries", "ALTER TABLE clusters ADD COLUMN industries TEXT NOT NULL DEFAULT '[]'"),
+    ("mna_deals", "stage", "ALTER TABLE mna_deals ADD COLUMN stage TEXT NOT NULL DEFAULT 'announced'"),
+    ("mna_deals", "value_usd", "ALTER TABLE mna_deals ADD COLUMN value_usd REAL"),
+    ("mna_deals", "industries", "ALTER TABLE mna_deals ADD COLUMN industries TEXT NOT NULL DEFAULT '[]'"),
 ]
 
 

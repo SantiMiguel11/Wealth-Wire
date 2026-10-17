@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SYNTHETIC TEST DATA - not real news -->
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel><title>Seeking Alpha M&amp;A</title><link>https://seekingalpha.com/tag/m-a.xml</link><description>SYNTHETIC TEST DATA - not real news</description>
+<item><title>Is Brightpath Analytics a buy after the Northwind deal?</title><link>https://seekingalpha.com/news/700000-is-brightpath-analytics-a-buy-after-the-northwind-deal</link><guid>https://seekingalpha.com/news/700000-is-brightpath-analytics-a-buy-after-the-northwind-deal</guid><pubDate>Fri, 25 Sep 2026 08:00:00 -0400</pubDate></item>
+<item><title>Vanguard Group Inc. Raises Stake in Northwind Software</title><link>https://seekingalpha.com/news/700001-vanguard-group-inc-raises-stake-in-northwind-software</link><guid>https://seekingalpha.com/news/700001-vanguard-group-inc-raises-stake-in-northwind-software</guid><pubDate>Fri, 25 Sep 2026 07:00:00 -0400</pubDate></item>
+<item><title>Stonebridge Securities to acquire investment bank Calloway Partners</title><link>https://seekingalpha.com/news/700002-stonebridge-securities-to-acquire-investment-bank-calloway-partners</link><guid>https://seekingalpha.com/news/700002-stonebridge-securities-to-acquire-investment-bank-calloway-partners</guid><pubDate>Fri, 25 Sep 2026 02:00:00 -0400</pubDate></item>
+<item><title>Northwind Software to buy Brightpath Analytics in $420M deal</title><link>https://seekingalpha.com/news/700003-northwind-software-to-buy-brightpath-analytics-in-420m-deal</link><guid>https://seekingalpha.com/news/700003-northwind-software-to-buy-brightpath-analytics-in-420m-deal</guid><pubDate>Thu, 24 Sep 2026 04:00:00 -0400</pubDate></item>
+<item><title>Halcyon Energy in talks to acquire Redstone Midstream</title><link>https://seekingalpha.com/news/700004-halcyon-energy-in-talks-to-acquire-redstone-midstream</link><guid>https://seekingalpha.com/news/700004-halcyon-energy-in-talks-to-acquire-redstone-midstream</guid><pubDate>Wed, 23 Sep 2026 02:00:00 -0400</pubDate></item>
+</channel></rss>

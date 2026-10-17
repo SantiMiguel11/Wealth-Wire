@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SYNTHETIC TEST DATA - not real news -->
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel><title>Retail Dive</title><link>https://www.retaildive.com/feeds/news/</link><description>SYNTHETIC TEST DATA - not real news</description>
+<item><title>Maple &amp; Main to acquire Thistle Home in $640M deal</title><link>https://www.retaildive.com/news/maple-main-to-acquire-thistle-home-in-640m-deal/700000/</link><guid>https://www.retaildive.com/news/maple-main-to-acquire-thistle-home-in-640m-deal/700000/</guid><pubDate>Fri, 25 Sep 2026 09:00:00 -0400</pubDate></item>
+<item><title>Holiday sales forecast calls for modest growth</title><link>https://www.retaildive.com/news/holiday-sales-forecast-calls-for-modest-growth/700001/</link><guid>https://www.retaildive.com/news/holiday-sales-forecast-calls-for-modest-growth/700001/</guid><pubDate>Wed, 23 Sep 2026 18:00:00 -0400</pubDate></item>
+</channel></rss>

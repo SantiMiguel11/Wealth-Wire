@@ -153,6 +153,28 @@
               ],
               "additionalProperties": false
             }
+          },
+          "stage": {
+            "enum": [
+              "announced",
+              "completed",
+              "rumored",
+              "bid",
+              "terminated"
+            ]
+          },
+          "value_usd": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "industries": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
           }
         },
         "required": [
@@ -218,6 +240,36 @@
     },
     "ai": {
       "type": "boolean"
+    },
+    "total_disclosed_value_usd": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "disclosed_value_deals": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "industry_counts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "industry",
+          "deals"
+        ],
+        "properties": {
+          "industry": {
+            "type": "string"
+          },
+          "deals": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
     }
   },
   "required": [

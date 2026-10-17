@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SYNTHETIC TEST DATA - not real news -->
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel><title>Supply Chain Dive</title><link>https://www.supplychaindive.com/feeds/news/</link><description>SYNTHETIC TEST DATA - not real news</description>
+<item><title>Atlas Industrial completes acquisition of Meridian Steel</title><link>https://www.supplychaindive.com/news/atlas-industrial-completes-acquisition-of-meridian-steel/700000/</link><guid>https://www.supplychaindive.com/news/atlas-industrial-completes-acquisition-of-meridian-steel/700000/</guid><pubDate>Fri, 25 Sep 2026 06:00:00 -0400</pubDate></item>
+<item><title>Freight rates rise ahead of the holidays</title><link>https://www.supplychaindive.com/news/freight-rates-rise-ahead-of-the-holidays/700001/</link><guid>https://www.supplychaindive.com/news/freight-rates-rise-ahead-of-the-holidays/700001/</guid><pubDate>Wed, 23 Sep 2026 12:00:00 -0400</pubDate></item>
+</channel></rss>

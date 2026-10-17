@@ -74,7 +74,7 @@ def prepare_demo() -> dict:
         shutil.rmtree(DEMO_HOME)
     cfg = DEMO_HOME / "config"
     cfg.mkdir(parents=True)
-    for name in ("config.yaml", "sources.yaml", "categories.yaml", "firm_stoplist.yaml", "firm_aliases.yaml"):
+    for name in ("config.yaml", "sources.yaml", "industries.yaml", "firm_stoplist.yaml", "firm_aliases.yaml"):
         shutil.copy(ROOT / name, cfg / name)
     env = dict(os.environ, FIDUCIARYWIRE_HOME=str(DEMO_HOME), FIDUCIARYWIRE_CONFIG=str(cfg), FIDUCIARYWIRE_NO_BACKGROUND="1",
                FIDUCIARYWIRE_NOW=FIXED_NOW)

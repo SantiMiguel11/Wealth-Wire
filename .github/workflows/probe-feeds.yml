@@ -41,7 +41,7 @@ jobs:
         run: |
           grep -vi '^playwright' requirements.txt > /tmp/requirements.txt
           pip install -r /tmp/requirements.txt
-      - name: Restore SEC data from live (for the wealth filter)
+      - name: Restore state from live
         run: |
           python -m fiduciarywire state fetch _prev
           python -m fiduciarywire state restore _prev

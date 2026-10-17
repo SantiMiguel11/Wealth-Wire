@@ -1,3 +1,4 @@
+import json
 import sqlite3
 
 import pytest
@@ -81,17 +82,22 @@ def test_demo_mna_table(ingested):
     conn = sqlite3.connect(paths.db_path())
     conn.row_factory = sqlite3.Row
     rows = {r["headline"]: dict(r) for r in conn.execute("SELECT d.*, c.headline FROM mna_deals d JOIN clusters c ON c.id = d.cluster_id")}
-    # one row per M&A cluster; People Moves (breakaway team to Harborview) is not in the table
-    assert conn.execute("SELECT COUNT(*) FROM clusters WHERE category='M&A'").fetchone()[0] == len(rows)
+    # deals only: one row per story, and every story is a deal
+    assert conn.execute("SELECT COUNT(*) FROM clusters").fetchone()[0] == len(rows) == 21
     assert not any("Breaks Away" in h for h in rows)
     summit = rows["Harborview Wealth Partners buys $1.2bn Summit Ridge Advisors"]
-    assert (summit["acquirer"], summit["target"], summit["target_aum_usd"], summit["confidence"]) == (
-        "Harborview Wealth Partners", "Summit Ridge Advisors", 1.2e9, "high")
-    lows = [h for h, r in rows.items() if r["confidence"] == "low"]
-    assert "Two Texas RIAs combine in deal creating $3bn firm" in lows
-    assert "Serial acquirer strikes again with $600M buy in Arizona" in lows
-    for h in lows:
-        assert rows[h]["note"]
+    assert (summit["acquirer"], summit["target"], summit["target_aum_usd"], summit["confidence"], summit["press_release"]) == (
+        "Harborview Wealth Partners", "Summit Ridge Advisors", 1.2e9, "high", 1)
+    assert summit["value_usd"] is None                       # $1.2bn is AUM, not a price
+    northwind = rows["Northwind Software to Acquire Brightpath Analytics for $420 Million"]
+    assert (northwind["value_usd"], northwind["target_aum_usd"], northwind["stage"]) == (420e6, None, "announced")
+    assert json.loads(northwind["industries"]) == ["Technology"]
+    # stage: the most advanced any headline reports
+    assert rows["Atlas Industrial to acquire Meridian Steel for $2.1bn"]["stage"] == "completed"
+    assert rows["Halcyon Energy in talks to acquire Redstone Midstream"]["stage"] == "announced"
+    assert rows["Copperline Bancorp and First Prairie Bank Announce Merger Agreement"]["deal_type"] == "merger"
+    for h, r in rows.items():
+        assert r["confidence"] == "high" or r["note"], h
 
 
 def test_public_mna_rows(ingested):
@@ -100,8 +106,20 @@ def test_public_mna_rows(ingested):
 
     from .conftest import NOW
 
-    deals = collect(db.connect(), NOW)["mna.json"]["deals"]
-    assert {r["confidence"] for r in deals} == {"high", "low"}
+    files = collect(db.connect(), NOW)
+    deals = files["mna.json"]["deals"]
     assert all(r["sources"] and r["sources"][0]["url"].startswith("https://") for r in deals)
     summit = next(r for r in deals if "Summit Ridge" in r["headline"])
     assert summit["acquirer"]["name"] == "Harborview Wealth Partners" and summit["target_aum_source"] == "headline"
+    assert summit["industries"][0] == "Wealth Management & RIAs" and summit["stage"] == "announced"
+    by_ind = {}
+    for r in deals:
+        for i in r["industries"]:
+            by_ind.setdefault(i, []).append(r["headline"])
+    assert {"Investment Banking", "Wealth Management & RIAs", "Technology", "Banking", "Healthcare & Life Sciences",
+            "Energy & Utilities", "Industrials", "Insurance", "Fintech & Payments", "Consumer & Retail",
+            "Private Equity & Asset Management"} <= set(by_ind)
+    assert any("Calloway Partners" in h for h in by_ind["Investment Banking"])
+    meta = files["meta.json"]
+    assert meta["industries"][0] == "Investment Banking" and meta["industries"][-1] == "Other"
+    assert meta["categories"] == meta["industries"]

@@ -1,7 +1,7 @@
 """Probe candidate feeds from where the refresh actually runs (GitHub Actions) and print what each returns.
 
 For each directory page: every RSS link it offers (optionally filtered by --grep). For each feed: HTTP status,
-item count, newest date, sample titles, and how many items the wealth filter (wires.keep_wire_item) would keep.
+item count, newest date, sample titles, and which items the deal filter (deals.classify) keeps, with their industries.
 Uses the same Fetcher as ingestion (User-Agent with contact email, robots.txt, >=2s per host).
 
     python scripts/probe_feeds.py [--extra "URL URL ..."] [--grep "financ|invest|merger|wealth"]
@@ -19,14 +19,12 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from fiduciarywire import db  # noqa: E402
-from fiduciarywire.categorize import Categorizer  # noqa: E402
-from fiduciarywire.config import load_categories, load_config  # noqa: E402
+from fiduciarywire.config import load_config  # noqa: E402
+from fiduciarywire.deals import classify  # noqa: E402
 from fiduciarywire.dates import utcnow  # noqa: E402
 from fiduciarywire.fetch import Fetcher  # noqa: E402
-from fiduciarywire.firms import SecMatcher  # noqa: E402
 from fiduciarywire.parse import parse_feed  # noqa: E402
-from fiduciarywire.wires import WEALTH_TERMS, keep_wire_item  # noqa: E402
+from fiduciarywire.industry import classify as industries  # noqa: E402
 
 HREF = re.compile(r"""<a\b[^>]*href\s*=\s*["']([^"']+)["'][^>]*>(.*?)</a>""", re.I | re.S)
 
@@ -44,10 +42,6 @@ def main() -> int:
     cfg = load_config()
     fetcher = Fetcher(cfg["user_agent"], per_host_delay=float(cfg["http"]["per_host_delay_seconds"]),
                       timeout=float(cfg["http"]["timeout_seconds"]), retries=1)
-    conn = db.connect()
-    sec = SecMatcher.from_db(conn)
-    cat = Categorizer(load_categories())
-    print(f"SEC advisers loaded for the filter: {len(sec.firms)}")
     grep = re.compile(args.grep, re.I)
 
     if not args.only_extra:
@@ -88,15 +82,14 @@ def main() -> int:
             continue
         items, parsed = parse_feed(res.content, "probe", utcnow())
         title = (parsed.feed.get("title") or "").strip()
-        wealth = [i for i in items if WEALTH_TERMS.search(f"{i.title}\n{i.description}")]
-        kept = [i for i in items if keep_wire_item(i.title, i.description, sec, cat)[0]]
+        kept = [i for i in items if classify(i.title)]
         newest = max((i.published_at for i in items), default="—")
         print(f"   HTTP {res.status} · feed title {title!r} · {len(items)} items · newest {newest} · "
-              f"wealth terms {len(wealth)} · kept by filter {len(kept)}")
+              f"deals {len(kept)}")
         for i in items[:args.titles]:
             print(f"   · {i.published_at[:10]} {i.title[:200]}")
-        for i in kept[:10]:
-            print(f"   ✓ kept: {i.title[:110]}")
+        for i in kept[:25]:
+            print(f"   ✓ deal: {i.title[:110]}  [{', '.join(industries(i.title, i.description))}]")
     fetcher.close()
     return 0
 

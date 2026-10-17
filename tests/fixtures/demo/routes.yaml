@@ -16,17 +16,15 @@ routes:
       '
     content_type: text/plain
     status: 200
-  https://news.google.com/rss/search?q=site:citywire.com%2Fria&hl=en-US&gl=US&ceid=US:en:
-    content_type: application/xml
-    file: gnews_citywire.xml
-    status: 200
-  https://news.google.com/rss/search?q=site:fa-mag.com&hl=en-US&gl=US&ceid=US:en:
-    content_type: application/xml
-    file: gnews_famag.xml
-    status: 200
-  https://news.google.com/rss/search?q=site:thinkadvisor.com&hl=en-US&gl=US&ceid=US:en:
-    content_type: application/xml
-    file: gnews_thinkadvisor.xml
+  https://news.google.com/robots.txt:
+    body: 'User-agent: *
+
+      Disallow: /rss/search
+
+      Allow: /rss/articles
+
+      '
+    content_type: text/plain
     status: 200
   https://riabiz.com:
     content_type: text/html
@@ -44,9 +42,25 @@ routes:
       '
     content_type: text/plain
     status: 200
+  https://seekingalpha.com/tag/m-a.xml:
+    content_type: application/xml
+    file: seekingalpha.xml
+    status: 200
+  https://techcrunch.com/tag/mergers-and-acquisitions/feed/:
+    content_type: application/xml
+    file: techcrunch.xml
+    status: 200
   https://www.advisorhub.com/feed/:
     content_type: application/xml
     file: advisorhub.xml
+    status: 200
+  https://www.bankingdive.com/feeds/news/:
+    content_type: application/xml
+    file: bankingdive.xml
+    status: 200
+  https://www.biopharmadive.com/feeds/news/:
+    content_type: application/xml
+    file: biopharmadive.xml
     status: 200
   https://www.fa-mag.com:
     content_type: text/html
@@ -64,6 +78,18 @@ routes:
     content_type: application/xml
     file: famag.xml
     status: 200
+  https://www.fiercebiotech.com/rss/xml:
+    content_type: application/xml
+    file: fiercebiotech.xml
+    status: 200
+  https://www.fiercehealthcare.com/rss/xml:
+    content_type: application/xml
+    file: fiercehealthcare.xml
+    status: 200
+  https://www.fiercepharma.com/rss/xml:
+    content_type: application/xml
+    file: fiercepharma.xml
+    status: 200
   https://www.financial-planning.com/feed?rss=true:
     content_type: application/xml
     file: financialplanning.xml
@@ -76,29 +102,17 @@ routes:
       '
     content_type: text/plain
     status: 200
-  https://www.globenewswire.com/RssFeed/keyword/RIA/feedTitle/GlobeNewswire%20-%20RIA:
+  https://www.ft.com/companies?format=rss:
     content_type: application/xml
-    file: gnw_ria.xml
+    file: ft.xml
     status: 200
-  https://www.globenewswire.com/RssFeed/keyword/family%20office/feedTitle/GlobeNewswire%20-%20family%20office:
+  https://www.healthcaredive.com/feeds/news/:
     content_type: application/xml
-    file: gnw_family_office.xml
+    file: healthcaredive.xml
     status: 200
-  ? https://www.globenewswire.com/RssFeed/keyword/registered%20investment%20advisor/feedTitle/GlobeNewswire%20-%20registered%20investment%20advisor
-  : content_type: application/xml
-    file: gnw_ria_adviser.xml
-    status: 200
-  https://www.globenewswire.com/RssFeed/keyword/wealth%20management/feedTitle/GlobeNewswire%20-%20wealth%20management:
+  https://www.insurancejournal.com/rss/news/:
     content_type: application/xml
-    file: gnw_wealth_management.xml
-    status: 200
-  https://www.globenewswire.com/robots.txt:
-    body: 'User-agent: *
-
-      Disallow: /admin/
-
-      '
-    content_type: text/plain
+    file: insurancejournal.xml
     status: 200
   https://www.investmentnews.com:
     body: Forbidden
@@ -116,9 +130,33 @@ routes:
       '
     content_type: text/plain
     status: 200
-  https://www.kitces.com/feed/:
+  https://www.paymentsdive.com/feeds/news/:
     content_type: application/xml
-    file: kitces.xml
+    file: paymentsdive.xml
+    status: 200
+  https://www.pehub.com/feed/:
+    content_type: application/xml
+    file: pehub.xml
+    status: 200
+  https://www.prnewswire.com/robots.txt:
+    body: 'User-agent: *
+
+      Disallow: /admin/
+
+      '
+    content_type: text/plain
+    status: 200
+  https://www.prnewswire.com/rss/financial-services-latest-news/acquisitions-mergers-and-takeovers-list.rss:
+    content_type: application/xml
+    file: prnewswire.xml
+    status: 200
+  https://www.reinsurancene.ws/feed/:
+    content_type: application/xml
+    file: reinsurancenews.xml
+    status: 200
+  https://www.retaildive.com/feeds/news/:
+    content_type: application/xml
+    file: retaildive.xml
     status: 200
   ? https://www.sec.gov/data-research/sec-markets-data/information-about-registered-investment-advisers-exempt-reporting-advisers
   : content_type: text/html
@@ -128,16 +166,13 @@ routes:
   : content_type: application/zip
     file: sec_ia090126.zip
     status: 200
-  https://www.sec.gov/news/pressreleases.rss:
+  https://www.supplychaindive.com/feeds/news/:
     content_type: application/xml
-    file: sec.xml
-    headers:
-      ETag: '"sec-v1"'
-      Last-Modified: Fri, 25 Sep 2026 13:00:00 +0000
+    file: supplychaindive.xml
     status: 200
-  https://www.thinkadvisor.com/feed/:
+  https://www.utilitydive.com/feeds/news/:
     content_type: application/xml
-    file: thinkadvisor.xml
+    file: utilitydive.xml
     status: 200
   https://www.wealthmanagement.com/rss.xml:
     content_type: application/xml

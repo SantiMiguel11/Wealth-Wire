@@ -11,7 +11,8 @@ from fiduciarywire.alert import REQUIRED, compose, run_alert
 
 from .conftest import ROOT
 
-HARBORVIEW = json.dumps({"version": 1, "firms": [{"name": "Harborview Wealth Partners", "aliases": ["Harborview"]}]})
+HARBORVIEW = json.dumps({"version": 1, "firms": [{"name": "Harborview Wealth Partners", "aliases": ["Harborview"]},
+                                                 {"name": "Atlas Wealth Management"}]})
 
 
 class Outbox:
@@ -58,7 +59,7 @@ def test_no_email_when_nothing_matches(ingested):
 def test_one_email_listing_new_matches(ingested, capsys):
     box = Outbox()
     r = run_alert(db.connect(), env(ALERT_EMAIL="me@example.com, you@example.com", SITE_URL="https://ww.example"), send=box)
-    assert r["status"] == "sent" and r["stories"] >= 2
+    assert r["status"] == "sent" and r["stories"] == 3          # Harborview's deal + Atlas's two
     assert len(box.sent) == 1
     key, payload = box.sent[0]
     assert key == "re_test"

@@ -85,4 +85,4 @@ def test_user_agent_email_and_digest_text_use_the_new_name(home):
     md = render_markdown({"date": "2026-09-25", "opener": "O.", "items": []}, None)
     assert md.startswith("# Fiduciary Wire digest: 2026-09-25")
     prompt = (paths.ROOT / "prompts" / "digest.md").read_text()
-    assert "You write the Fiduciary Wire digest" in prompt and not OLD_NAMES.search(prompt)
+    assert "You write the Fiduciary Wire deal digest" in prompt and not OLD_NAMES.search(prompt)

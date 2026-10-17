@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SYNTHETIC TEST DATA - not real news -->
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel><title>Insurance Journal</title><link>https://www.insurancejournal.com/rss/news/</link><description>SYNTHETIC TEST DATA - not real news</description>
+<item><title>Harbor Mutual to acquire Pinewood Insurance Agency</title><link>https://www.insurancejournal.com/news/harbor-mutual-to-acquire-pinewood-insurance-agency.htm</link><guid>https://www.insurancejournal.com/news/harbor-mutual-to-acquire-pinewood-insurance-agency.htm</guid><pubDate>Thu, 24 Sep 2026 10:00:00 -0500</pubDate></item>
+<item><title>Hurricane season losses come in below forecasts</title><link>https://www.insurancejournal.com/news/hurricane-season-losses-come-in-below-forecasts.htm</link><guid>https://www.insurancejournal.com/news/hurricane-season-losses-come-in-below-forecasts.htm</guid><pubDate>Thu, 24 Sep 2026 06:00:00 -0500</pubDate></item>
+</channel></rss>

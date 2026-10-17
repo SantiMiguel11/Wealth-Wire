@@ -171,6 +171,13 @@
     },
     "footer_note": {
       "type": "string"
+    },
+    "industries": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
     }
   },
   "required": [
@@ -188,7 +195,8 @@
     "categories",
     "sec",
     "digest",
-    "footer_note"
+    "footer_note",
+    "industries"
   ],
   "additionalProperties": false
 }

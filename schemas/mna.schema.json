@@ -152,6 +152,28 @@
               ],
               "additionalProperties": false
             }
+          },
+          "stage": {
+            "enum": [
+              "announced",
+              "completed",
+              "rumored",
+              "bid",
+              "terminated"
+            ]
+          },
+          "value_usd": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "industries": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
           }
         },
         "required": [
@@ -166,7 +188,10 @@
           "confidence",
           "note",
           "press_release",
-          "sources"
+          "sources",
+          "stage",
+          "value_usd",
+          "industries"
         ],
         "additionalProperties": false
       }
