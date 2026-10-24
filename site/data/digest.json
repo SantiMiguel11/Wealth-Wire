@@ -1,0 +1,230 @@
+{
+ "schema_version": 1,
+ "date": "2026-10-23",
+ "generated_at": "2026-10-24T05:42:35Z",
+ "ai": false,
+ "opener": null,
+ "items": [
+  {
+   "cluster_id": 1035,
+   "headline": "ENERGY SERVICES OF AMERICA COMPLETES FAMCO ACQUISITION",
+   "url": "https://www.prnewswire.com/news-releases/energy-services-of-america-completes-famco-acquisition-302918424.html",
+   "category": "Energy & Utilities",
+   "industries": [
+    "Energy & Utilities"
+   ],
+   "deal": {
+    "acquirer": "ENERGY SERVICES OF AMERICA",
+    "target": "FAMCO",
+    "type": "acquisition",
+    "stage": "completed",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/energy-services-of-america-completes-famco-acquisition-302918424.html"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1036,
+   "headline": "Smith & Nephew was in discussions to merge with J&J unit, talks collapsed - FT",
+   "url": "https://seekingalpha.com/news/4656696-smith-and-nephew-was-in-discussions-to-merge-with-j-and-j-unit-talks-collapsed-ft?source=feed_tag_m_a",
+   "category": "Other",
+   "industries": [
+    "Other"
+   ],
+   "deal": {
+    "acquirer": "Smith",
+    "target": "Nephew",
+    "type": "merger",
+    "stage": "terminated",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4656696-smith-and-nephew-was-in-discussions-to-merge-with-j-and-j-unit-talks-collapsed-ft?source=feed_tag_m_a"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1031,
+   "headline": "Oklahoma Landlord to Pay $52K for Violating Fair Housing Act",
+   "url": "https://www.insurancejournal.com/news/southcentral/2026/10/23/890193.htm",
+   "category": "Insurance",
+   "industries": [
+    "Insurance",
+    "Real Estate"
+   ],
+   "deal": {
+    "acquirer": "Oklahoma Landlord",
+    "target": "Violating Fair Housing Act",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Insurance Journal",
+     "url": "https://www.insurancejournal.com/news/southcentral/2026/10/23/890193.htm"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1032,
+   "headline": "Everspan to sell its redundant admitted shell company to Falvey Insurance",
+   "url": "https://www.reinsurancene.ws/everspan-to-sell-its-redundant-admitted-shell-company-to-falvey-insurance/",
+   "category": "Insurance",
+   "industries": [
+    "Insurance",
+    "Energy & Utilities"
+   ],
+   "deal": {
+    "acquirer": "Falvey Insurance",
+    "target": "Everspan’s redundant admitted shell company",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Reinsurance News",
+     "url": "https://www.reinsurancene.ws/everspan-to-sell-its-redundant-admitted-shell-company-to-falvey-insurance/"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Everspan Group",
+     "slug": null
+    },
+    {
+     "name": "Rhode Island-based Falvey Insurance Group",
+     "slug": null
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1030,
+   "headline": "Midera Food Processing acquires Phoenix Innovations",
+   "url": "https://seekingalpha.com/news/4656562-midera-food-processing-acquires-phoenix-innovations?source=feed_tag_m_a",
+   "category": "Consumer & Retail",
+   "industries": [
+    "Consumer & Retail"
+   ],
+   "deal": {
+    "acquirer": "Midera Food Processing",
+    "target": "Phoenix Innovations",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4656562-midera-food-processing-acquires-phoenix-innovations?source=feed_tag_m_a"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1029,
+   "headline": "WSG ACQUIRES SANCTUARY, POSITIONING THE CONTEMPORARY WOMEN'S BRAND FOR GLOBAL GROWTH",
+   "url": "https://www.prnewswire.com/news-releases/wsg-acquires-sanctuary-positioning-the-contemporary-womens-brand-for-global-growth-302917570.html",
+   "category": "Other",
+   "industries": [
+    "Other"
+   ],
+   "deal": {
+    "acquirer": "WSG",
+    "target": "SANCTUARY",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/wsg-acquires-sanctuary-positioning-the-contemporary-womens-brand-for-global-growth-302917570.html"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Wealth Boutique",
+     "slug": "wealth-boutique-317291"
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1033,
+   "headline": "Gilead to pay $1.3B upfront for PepStar’s oral IL-23 challenger to J&J’s Icotyde",
+   "url": "https://www.fiercebiotech.com/biotech/gilead-pay-13b-upfront-pepstars-oral-il-23-challenger-jjs-icotyde",
+   "category": "Healthcare & Life Sciences",
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "deal": {
+    "acquirer": "Gilead",
+    "target": "IL-23",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": 1300000000.0
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Fierce Biotech",
+     "url": "https://www.fiercebiotech.com/biotech/gilead-pay-13b-upfront-pepstars-oral-il-23-challenger-jjs-icotyde"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Gilead Capital",
+     "slug": "gilead-capital-282023"
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  }
+ ],
+ "more": [],
+ "window_start": "2026-10-23T05:42:35Z",
+ "last_good_digest": null,
+ "footer_note": "Summaries written with Claude from outlet headlines."
+}

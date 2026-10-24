@@ -1,0 +1,112 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-10-24T05:42:35Z",
+ "days": 7,
+ "firms": [
+  {
+   "name": "Acore Capital",
+   "slug": "acore-capital-175054",
+   "crd": "175054",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Advantage Capital",
+   "slug": "advantage-capital-171365",
+   "crd": "171365",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Alliant Securities, Inc. Turner, Nord, Kienbaum",
+   "slug": "alliant-securities-inc-turner-nord-kienbaum-7726",
+   "crd": "7726",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "American Industrial Partners",
+   "slug": "american-industrial-partners-156878",
+   "crd": "156878",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Ares Management",
+   "slug": "ares-management-130074",
+   "crd": "130074",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Banner Capital Management",
+   "slug": "banner-capital-management-326949",
+   "crd": "326949",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Brightstar Capital Partners",
+   "slug": "brightstar-capital-partners-283313",
+   "crd": "283313",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Cbre Investment Management",
+   "slug": "cbre-investment-management-109981",
+   "crd": "109981",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Centrus Financial Strategies",
+   "slug": "centrus-financial-strategies-339651",
+   "crd": "339651",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "D. E. Shaw",
+   "slug": "d-e-shaw-108679",
+   "crd": "108679",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "East Coast Asset Management",
+   "slug": "east-coast-asset-management-147910",
+   "crd": "147910",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "EQT Partners",
+   "slug": "eqt-partners-160179",
+   "crd": "160179",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Forward Consumer Partners",
+   "slug": "forward-consumer-partners-327847",
+   "crd": "327847",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Gallagher Fiduciary Advisors",
+   "slug": "gallagher-fiduciary-advisors-146509",
+   "crd": "146509",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Gemspring Capital Management",
+   "slug": "gemspring-capital-management-285081",
+   "crd": "285081",
+   "verified": true,
+   "stories": 1
+  }
+ ]
+}

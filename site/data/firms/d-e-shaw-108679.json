@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "d-e-shaw-108679",
+ "name": "D. E. Shaw",
+ "legal_name": "D. E. Shaw",
+ "crd": "108679",
+ "sec_number": "801-56171",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 213364737381.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/108679",
+ "stories": [
+  {
+   "cluster_id": 951,
+   "headline": "Threadlock Precision, Supported by The D. E. Shaw Group, Acquires Service & Sales, Inc. to Expand U.S. Aerospace and Defense Precision Manufacturing Network",
+   "url": "https://www.prnewswire.com/news-releases/threadlock-precision-supported-by-the-d-e-shaw-group-acquires-service--sales-inc-to-expand-us-aerospace-and-defense-precision-manufacturing-network-302913013.html",
+   "category": "Industrials",
+   "last_published": "2026-10-20T15:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/threadlock-precision-supported-by-the-d-e-shaw-group-acquires-service--sales-inc-to-expand-us-aerospace-and-defense-precision-manufacturing-network-302913013.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

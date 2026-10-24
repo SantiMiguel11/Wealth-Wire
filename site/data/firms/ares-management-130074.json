@@ -1,0 +1,65 @@
+{
+ "schema_version": 1,
+ "slug": "ares-management-130074",
+ "name": "Ares Management",
+ "legal_name": "Ares Management",
+ "crd": "130074",
+ "sec_number": "801-63800",
+ "city": "Los Angeles",
+ "state": "CA",
+ "sec_aum_usd": 458821489418.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/130074",
+ "stories": [
+  {
+   "cluster_id": 938,
+   "headline": "KKR to sell Infinity to Ares for $2.9bn; Thoma Bravo, GTCR and Francisco among PE firms making SaaS take-privates in 2026",
+   "url": "https://www.pehub.com/kkr-to-sell-infinity-to-ares-for-2-9bn-thoma-bravo-gtcr-and-francisco-among-pe-firms-making-saas-take-privates-in-2026/",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-10-19T13:32:45Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/kkr-to-sell-infinity-to-ares-for-2-9bn-thoma-bravo-gtcr-and-francisco-among-pe-firms-making-saas-take-privates-in-2026/"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 938,
+   "date": "2026-10-19T13:32:45Z",
+   "headline": "KKR to sell Infinity to Ares for $2.9bn; Thoma Bravo, GTCR and Francisco among PE firms making SaaS take-privates in 2026",
+   "acquirer": {
+    "name": "Ares",
+    "slug": "ares-management-130074",
+    "crd": "130074"
+   },
+   "target": {
+    "name": "Infinity",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 2900000000.0,
+   "industries": [
+    "Private Equity & Asset Management",
+    "Technology"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/kkr-to-sell-infinity-to-ares-for-2-9bn-thoma-bravo-gtcr-and-francisco-among-pe-firms-making-saas-take-privates-in-2026/"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

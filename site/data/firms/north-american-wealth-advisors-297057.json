@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "north-american-wealth-advisors-297057",
+ "name": "North American Wealth Advisors",
+ "legal_name": "North American Wealth Advisors",
+ "crd": "297057",
+ "sec_number": "801-113619",
+ "city": "Jordan",
+ "state": "MN",
+ "sec_aum_usd": 237322597.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/297057",
+ "stories": [
+  {
+   "cluster_id": 973,
+   "headline": "Mapmygenome Completes Acquisition of dnaPower Inc. to Accelerate North American Expansion in DNA, Microbiome, Longevity and Precision Health Testing",
+   "url": "https://www.prnewswire.com/news-releases/mapmygenome-completes-acquisition-of-dnapower-inc-to-accelerate-north-american-expansion-in-dna-microbiome-longevity-and-precision-health-testing-302915388.html",
+   "category": "Healthcare & Life Sciences",
+   "last_published": "2026-10-21T16:30:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/mapmygenome-completes-acquisition-of-dnapower-inc-to-accelerate-north-american-expansion-in-dna-microbiome-longevity-and-precision-health-testing-302915388.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,73 @@
+{
+ "schema_version": 1,
+ "slug": "centrus-financial-strategies-339651",
+ "name": "Centrus Financial Strategies",
+ "legal_name": "Wilson Group Financial Management",
+ "crd": "339651",
+ "sec_number": "801-135155",
+ "city": "Orlando",
+ "state": "FL",
+ "sec_aum_usd": 125094769.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/339651",
+ "stories": [
+  {
+   "cluster_id": 927,
+   "headline": "Centrus Acquires Westerman Holdings, LLC, Bringing a Key Supplier In-House and Diversifying Its Manufacturing Capacity",
+   "url": "https://www.prnewswire.com/news-releases/centrus-acquires-westerman-holdings-llc-bringing-a-key-supplier-in-house-and-diversifying-its-manufacturing-capacity-302912534.html",
+   "category": "Energy & Utilities",
+   "last_published": "2026-10-19T11:42:00Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/centrus-acquires-westerman-holdings-llc-bringing-a-key-supplier-in-house-and-diversifying-its-manufacturing-capacity-302912534.html"
+    },
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654167-centrus-energy-to-buy-westerman-in-116m-deal-adding-key-centrifuge-supplier?source=feed_tag_m_a"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 927,
+   "date": "2026-10-19T11:18:00Z",
+   "headline": "Centrus Acquires Westerman Holdings, LLC, Bringing a Key Supplier In-House and Diversifying Its Manufacturing Capacity",
+   "acquirer": {
+    "name": "Centrus",
+    "slug": "centrus-financial-strategies-339651",
+    "crd": "339651"
+   },
+   "target": {
+    "name": "Westerman Holdings",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 116000000.0,
+   "industries": [
+    "Energy & Utilities",
+    "Industrials"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/centrus-acquires-westerman-holdings-llc-bringing-a-key-supplier-in-house-and-diversifying-its-manufacturing-capacity-302912534.html"
+    },
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654167-centrus-energy-to-buy-westerman-in-116m-deal-adding-key-centrifuge-supplier?source=feed_tag_m_a"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

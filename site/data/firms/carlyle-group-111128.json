@@ -1,0 +1,65 @@
+{
+ "schema_version": 1,
+ "slug": "carlyle-group-111128",
+ "name": "Carlyle Group",
+ "legal_name": "Carlyle Investment Management",
+ "crd": "111128",
+ "sec_number": "801-52462",
+ "city": "Washington",
+ "state": "DC",
+ "sec_aum_usd": 283814531141.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/111128",
+ "stories": [
+  {
+   "cluster_id": 892,
+   "headline": "Truist Financial Q3 earnings miss, hit by loan sale; agrees to sell Lightstream to Carlyle",
+   "url": "https://seekingalpha.com/news/4653743-truist-financial-q3-earnings-miss-hit-by-loan-sale-agrees-to-sell-lightstream-to-carlyle?source=feed_tag_m_a",
+   "category": "Banking",
+   "last_published": "2026-10-16T11:10:38Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4653743-truist-financial-q3-earnings-miss-hit-by-loan-sale-agrees-to-sell-lightstream-to-carlyle?source=feed_tag_m_a"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 892,
+   "date": "2026-10-16T11:10:38Z",
+   "headline": "Truist Financial Q3 earnings miss, hit by loan sale; agrees to sell Lightstream to Carlyle",
+   "acquirer": {
+    "name": "Carlyle",
+    "slug": "carlyle-group-111128",
+    "crd": "111128"
+   },
+   "target": {
+    "name": "Lightstream",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Banking",
+    "Private Equity & Asset Management"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4653743-truist-financial-q3-earnings-miss-hit-by-loan-sale-agrees-to-sell-lightstream-to-carlyle?source=feed_tag_m_a"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

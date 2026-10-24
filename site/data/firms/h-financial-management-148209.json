@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "h-financial-management-148209",
+ "name": "H Financial Management",
+ "legal_name": "Hoge Financial Services",
+ "crd": "148209",
+ "sec_number": "801-69665",
+ "city": "Canonsburg",
+ "state": "PA",
+ "sec_aum_usd": 621882966.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/148209",
+ "stories": [
+  {
+   "cluster_id": 759,
+   "headline": "Captrust Adds $3B Hoge-Barrett Group from Truist",
+   "url": "https://www.wealthmanagement.com/ria-news/captrust-adds-3-billion-hoge-barrett-group",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-10-14T10:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/captrust-adds-3-billion-hoge-barrett-group"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

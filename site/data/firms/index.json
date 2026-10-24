@@ -1,0 +1,837 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-10-24T05:42:35Z",
+ "sec_data_date": "2026-10-02",
+ "firms": [
+  {
+   "slug": "acore-capital-175054",
+   "name": "Acore Capital",
+   "legal_name": "Acore Capital",
+   "crd": "175054",
+   "city": "New York",
+   "state": "NY",
+   "sec_aum_usd": 18271945621.0,
+   "story_count": 1
+  },
+  {
+   "slug": "advantage-capital-171365",
+   "name": "Advantage Capital",
+   "legal_name": "Advantage Capital Investment Adviser",
+   "crd": "171365",
+   "city": "New Orleans",
+   "state": "LA",
+   "sec_aum_usd": 1294679102.0,
+   "story_count": 1
+  },
+  {
+   "slug": "aldrich-wealth-147200",
+   "name": "Aldrich Wealth",
+   "legal_name": "Aldrich Wealth, Limited Partnership",
+   "crd": "147200",
+   "city": "Lake Oswego",
+   "state": "OR",
+   "sec_aum_usd": 7615331850.0,
+   "story_count": 1
+  },
+  {
+   "slug": "alliant-securities-inc-turner-nord-kienbaum-7726",
+   "name": "Alliant Securities, Inc. Turner, Nord, Kienbaum",
+   "legal_name": "Alliant Securities",
+   "crd": "7726",
+   "city": "Liberty Lake",
+   "state": "WA",
+   "sec_aum_usd": 300000000.0,
+   "story_count": 1
+  },
+  {
+   "slug": "alphacore-capital-174346",
+   "name": "Alphacore Capital",
+   "legal_name": "Alphacore Capital",
+   "crd": "174346",
+   "city": "La Jolla",
+   "state": "CA",
+   "sec_aum_usd": 12959408390.0,
+   "story_count": 1
+  },
+  {
+   "slug": "altruist-299398",
+   "name": "Altruist",
+   "legal_name": "Altruist",
+   "crd": "299398",
+   "city": "Culver City",
+   "state": "CA",
+   "sec_aum_usd": 0.0,
+   "story_count": 1
+  },
+  {
+   "slug": "american-industrial-partners-156878",
+   "name": "American Industrial Partners",
+   "legal_name": "Aip",
+   "crd": "156878",
+   "city": "New York",
+   "state": "NY",
+   "sec_aum_usd": 17473970965.0,
+   "story_count": 1
+  },
+  {
+   "slug": "apella-wealth-171106",
+   "name": "Apella Wealth",
+   "legal_name": "Apella Capital",
+   "crd": "171106",
+   "city": "West Hartford",
+   "state": "CT",
+   "sec_aum_usd": 11065217421.0,
+   "story_count": 1
+  },
+  {
+   "slug": "ares-management-130074",
+   "name": "Ares Management",
+   "legal_name": "Ares Management",
+   "crd": "130074",
+   "city": "Los Angeles",
+   "state": "CA",
+   "sec_aum_usd": 458821489418.0,
+   "story_count": 1
+  },
+  {
+   "slug": "bain-capital-private-equity-145653",
+   "name": "Bain Capital Private Equity",
+   "legal_name": "Bain Capital Private Equity",
+   "crd": "145653",
+   "city": "Boston",
+   "state": "MA",
+   "sec_aum_usd": 96429353000.0,
+   "story_count": 1
+  },
+  {
+   "slug": "banner-capital-management-326949",
+   "name": "Banner Capital Management",
+   "legal_name": "Banner Capital Management",
+   "crd": "326949",
+   "city": "Lehi",
+   "state": "UT",
+   "sec_aum_usd": 619188611.0,
+   "story_count": 1
+  },
+  {
+   "slug": "blue-rock-financial-group-298558",
+   "name": "Blue Rock Financial Group",
+   "legal_name": "Dravo Bay",
+   "crd": "298558",
+   "city": "Rehoboth Beach",
+   "state": "DE",
+   "sec_aum_usd": 381821487.0,
+   "story_count": 1
+  },
+  {
+   "slug": "bluespring-wealth-management-152667",
+   "name": "Bluespring Wealth Management",
+   "legal_name": "Bluespring Wealth Management",
+   "crd": "152667",
+   "city": "Austin",
+   "state": "TX",
+   "sec_aum_usd": 5430907207.0,
+   "story_count": 1
+  },
+  {
+   "slug": "brightstar-capital-partners-283313",
+   "name": "Brightstar Capital Partners",
+   "legal_name": "Brightstar Capital Partners",
+   "crd": "283313",
+   "city": "New York",
+   "state": "NY",
+   "sec_aum_usd": 4849984324.0,
+   "story_count": 1
+  },
+  {
+   "slug": "cais-advisors-317466",
+   "name": "Cais Advisors",
+   "legal_name": "Cais Advisors",
+   "crd": "317466",
+   "city": "New York",
+   "state": "NY",
+   "sec_aum_usd": 225327313.0,
+   "story_count": 1
+  },
+  {
+   "slug": "captrust-175112",
+   "name": "Captrust",
+   "legal_name": "Capfinancial Partners",
+   "crd": "175112",
+   "city": "Raleigh",
+   "state": "NC",
+   "sec_aum_usd": 1236704853633.0,
+   "story_count": 2
+  },
+  {
+   "slug": "carlyle-group-111128",
+   "name": "Carlyle Group",
+   "legal_name": "Carlyle Investment Management",
+   "crd": "111128",
+   "city": "Washington",
+   "state": "DC",
+   "sec_aum_usd": 283814531141.0,
+   "story_count": 1
+  },
+  {
+   "slug": "carson-group-investing-291744",
+   "name": "Carson Group Investing",
+   "legal_name": "Carson Group Investing",
+   "crd": "291744",
+   "city": "Omaha",
+   "state": "NE",
+   "sec_aum_usd": 2048522707.0,
+   "story_count": 1
+  },
+  {
+   "slug": "cbre-investment-management-109981",
+   "name": "Cbre Investment Management",
+   "legal_name": "Cbre Investment Management",
+   "crd": "109981",
+   "city": "New York",
+   "state": "NY",
+   "sec_aum_usd": 22840880000.0,
+   "story_count": 1
+  },
+  {
+   "slug": "centrus-financial-strategies-339651",
+   "name": "Centrus Financial Strategies",
+   "legal_name": "Wilson Group Financial Management",
+   "crd": "339651",
+   "city": "Orlando",
+   "state": "FL",
+   "sec_aum_usd": 125094769.0,
+   "story_count": 1
+  },
+  {
+   "slug": "cerity-partners-151559",
+   "name": "Cerity Partners",
+   "legal_name": "Cerity Partners",
+   "crd": "151559",
+   "city": "New York",
+   "state": "NY",
+   "sec_aum_usd": 161675524141.0,
+   "story_count": 2
+  },
+  {
+   "slug": "charles-schwab-5393",
+   "name": "Charles Schwab",
+   "legal_name": "Charles Schwab",
+   "crd": "5393",
+   "city": "San Francisco",
+   "state": "CA",
+   "sec_aum_usd": 0.0,
+   "story_count": 1
+  },
+  {
+   "slug": "compass-advisors-288256",
+   "name": "Compass Advisors",
+   "legal_name": "Compass Advisory Group",
+   "crd": "288256",
+   "city": "Melville",
+   "state": "NY",
+   "sec_aum_usd": 767495362.0,
+   "story_count": 1
+  },
+  {
+   "slug": "compass-wealth-282420",
+   "name": "Compass Wealth",
+   "legal_name": "Compass Retirement Group",
+   "crd": "282420",
+   "city": "St. Louis",
+   "state": "MO",
+   "sec_aum_usd": 111859803.0,
+   "story_count": 1
+  },
+  {
+   "slug": "concurrent-investment-advisors-323135",
+   "name": "Concurrent Investment Advisors",
+   "legal_name": "Concurrent Investment Advisors",
+   "crd": "323135",
+   "city": "Tampa",
+   "state": "FL",
+   "sec_aum_usd": 15727990844.0,
+   "story_count": 1
+  },
+  {
+   "slug": "corient-319448",
+   "name": "Corient",
+   "legal_name": "Corient Private Wealth",
+   "crd": "319448",
+   "city": "Miami",
+   "state": "FL",
+   "sec_aum_usd": 165252436553.0,
+   "story_count": 1
+  },
+  {
+   "slug": "cornerstone-capital-105396",
+   "name": "Cornerstone Capital",
+   "legal_name": "Cornerstone Capital",
+   "crd": "105396",
+   "city": "Palo Alto",
+   "state": "CA",
+   "sec_aum_usd": 1357670355.0,
+   "story_count": 1
+  },
+  {
+   "slug": "cullen-investment-group-18266",
+   "name": "Cullen Investment Group",
+   "legal_name": "Cullen Investment Group",
+   "crd": "18266",
+   "city": "Lafayette",
+   "state": "LA",
+   "sec_aum_usd": 909951360.0,
+   "story_count": 1
+  },
+  {
+   "slug": "d-e-shaw-108679",
+   "name": "D. E. Shaw",
+   "legal_name": "D. E. Shaw",
+   "crd": "108679",
+   "city": "New York",
+   "state": "NY",
+   "sec_aum_usd": 213364737381.0,
+   "story_count": 1
+  },
+  {
+   "slug": "east-coast-asset-management-147910",
+   "name": "East Coast Asset Management",
+   "legal_name": "East Coast Asset Management",
+   "crd": "147910",
+   "city": "Essex",
+   "state": "MA",
+   "sec_aum_usd": 1006114321.0,
+   "story_count": 1
+  },
+  {
+   "slug": "echo-wealth-management-174136",
+   "name": "Echo Wealth Management",
+   "legal_name": "Echo Wealth Management",
+   "crd": "174136",
+   "city": "Plymouth",
+   "state": "MN",
+   "sec_aum_usd": 288189706.0,
+   "story_count": 1
+  },
+  {
+   "slug": "elliott-investment-management-307151",
+   "name": "Elliott Investment Management",
+   "legal_name": "Elliott Investment Management",
+   "crd": "307151",
+   "city": "West Palm Beach",
+   "state": "FL",
+   "sec_aum_usd": 128623830745.0,
+   "story_count": 1
+  },
+  {
+   "slug": "envestnet-pmc-111694",
+   "name": "Envestnet PMC",
+   "legal_name": "Envestnet Asset Management",
+   "crd": "111694",
+   "city": "Berwyn",
+   "state": "PA",
+   "sec_aum_usd": 614933249744.0,
+   "story_count": 1
+  },
+  {
+   "slug": "eqt-partners-160179",
+   "name": "EQT Partners",
+   "legal_name": "EQT Partners",
+   "crd": "160179",
+   "city": "New York",
+   "state": "NY",
+   "sec_aum_usd": 39196925743.0,
+   "story_count": 2
+  },
+  {
+   "slug": "forge-global-advisors-284722",
+   "name": "Forge Global Advisors",
+   "legal_name": "Forge Global Advisors",
+   "crd": "284722",
+   "city": "San Francisco",
+   "state": "CA",
+   "sec_aum_usd": 2458638402.0,
+   "story_count": 1
+  },
+  {
+   "slug": "forward-consumer-partners-327847",
+   "name": "Forward Consumer Partners",
+   "legal_name": "Forward Consumer Partners",
+   "crd": "327847",
+   "city": "Greenwich",
+   "state": "CT",
+   "sec_aum_usd": 425000000.0,
+   "story_count": 1
+  },
+  {
+   "slug": "frazier-healthcare-partners-157324",
+   "name": "Frazier Healthcare Partners",
+   "legal_name": "Frazier Management",
+   "crd": "157324",
+   "city": "Seattle",
+   "state": "WA",
+   "sec_aum_usd": 7718663169.0,
+   "story_count": 1
+  },
+  {
+   "slug": "gallagher-fiduciary-advisors-146509",
+   "name": "Gallagher Fiduciary Advisors",
+   "legal_name": "Gallagher Fiduciary Advisors",
+   "crd": "146509",
+   "city": "Rolling Meadows",
+   "state": "IL",
+   "sec_aum_usd": 194823102725.0,
+   "story_count": 1
+  },
+  {
+   "slug": "gemspring-capital-management-285081",
+   "name": "Gemspring Capital Management",
+   "legal_name": "Gemspring Capital Management",
+   "crd": "285081",
+   "city": "Westport",
+   "state": "CT",
+   "sec_aum_usd": 5140364797.0,
+   "story_count": 1
+  },
+  {
+   "slug": "general-catalyst-162548",
+   "name": "General Catalyst",
+   "legal_name": "General Catalyst Group Management",
+   "crd": "162548",
+   "city": "Cambridge",
+   "state": "MA",
+   "sec_aum_usd": 45502659880.0,
+   "story_count": 1
+  },
+  {
+   "slug": "gilead-capital-282023",
+   "name": "Gilead Capital",
+   "legal_name": "Gilead Capital",
+   "crd": "282023",
+   "city": "New York",
+   "state": "NY",
+   "sec_aum_usd": 39070470.0,
+   "story_count": 1
+  },
+  {
+   "slug": "goldman-sachs-361",
+   "name": "Goldman Sachs",
+   "legal_name": "Goldman Sachs",
+   "crd": "361",
+   "city": "New York",
+   "state": "NY",
+   "sec_aum_usd": 133644228926.0,
+   "story_count": 1
+  },
+  {
+   "slug": "greenberg-financial-group-38747",
+   "name": "Greenberg Financial Group",
+   "legal_name": "Greenberg Financial Group",
+   "crd": "38747",
+   "city": "Tucson",
+   "state": "AZ",
+   "sec_aum_usd": 406904132.0,
+   "story_count": 1
+  },
+  {
+   "slug": "greybull-advisors-317767",
+   "name": "Greybull Advisors",
+   "legal_name": "Greybull Advisors",
+   "crd": "317767",
+   "city": "Jackson",
+   "state": "WY",
+   "sec_aum_usd": 513589887.0,
+   "story_count": 1
+  },
+  {
+   "slug": "gryphon-advisors-160185",
+   "name": "Gryphon Advisors",
+   "legal_name": "Gryphon Advisors",
+   "crd": "160185",
+   "city": "San Francisco",
+   "state": "CA",
+   "sec_aum_usd": 9317854280.0,
+   "story_count": 1
+  },
+  {
+   "slug": "gtcr-159545",
+   "name": "Gtcr",
+   "legal_name": "Gtcr",
+   "crd": "159545",
+   "city": "Chicago",
+   "state": "IL",
+   "sec_aum_usd": 48641503665.0,
+   "story_count": 2
+  },
+  {
+   "slug": "h-financial-management-148209",
+   "name": "H Financial Management",
+   "legal_name": "Hoge Financial Services",
+   "crd": "148209",
+   "city": "Canonsburg",
+   "state": "PA",
+   "sec_aum_usd": 621882966.0,
+   "story_count": 1
+  },
+  {
+   "slug": "h-i-g-capital-160711",
+   "name": "H.i.g. Capital",
+   "legal_name": "H.i.g. Capital",
+   "crd": "160711",
+   "city": "Miami",
+   "state": "FL",
+   "sec_aum_usd": 72329598943.0,
+   "story_count": 1
+  },
+  {
+   "slug": "hightower-advisors-145323",
+   "name": "Hightower Advisors",
+   "legal_name": "Hightower Advisors",
+   "crd": "145323",
+   "city": "Chicago",
+   "state": "IL",
+   "sec_aum_usd": 198577009283.0,
+   "story_count": 1
+  },
+  {
+   "slug": "infrastructure-capital-advisors-166459",
+   "name": "Infrastructure Capital Advisors",
+   "legal_name": "Infrastructure Capital Advisors",
+   "crd": "166459",
+   "city": "New York",
+   "state": "NY",
+   "sec_aum_usd": 3641900000.0,
+   "story_count": 1
+  },
+  {
+   "slug": "integris-wealth-management-111336",
+   "name": "Integris Wealth Management",
+   "legal_name": "Integris Wealth Management",
+   "crd": "111336",
+   "city": "Monterey",
+   "state": "CA",
+   "sec_aum_usd": 811958816.0,
+   "story_count": 1
+  },
+  {
+   "slug": "kestra-advisory-services-283330",
+   "name": "Kestra Advisory Services",
+   "legal_name": "Kestra Advisory Services",
+   "crd": "283330",
+   "city": "Austin",
+   "state": "TX",
+   "sec_aum_usd": 79798091767.0,
+   "story_count": 1
+  },
+  {
+   "slug": "kian-capital-partners-329179",
+   "name": "Kian Capital Partners",
+   "legal_name": "Kian Capital Partners",
+   "crd": "329179",
+   "city": "Charlotte",
+   "state": "NC",
+   "sec_aum_usd": 1104633769.0,
+   "story_count": 1
+  },
+  {
+   "slug": "kintra-wealth-299407",
+   "name": "Kintra Wealth",
+   "legal_name": "Kintra Wealth",
+   "crd": "299407",
+   "city": "Williamsport",
+   "state": "PA",
+   "sec_aum_usd": 1501009982.0,
+   "story_count": 1
+  },
+  {
+   "slug": "lightview-capital-306106",
+   "name": "Lightview Capital",
+   "legal_name": "Lightview Capital",
+   "crd": "306106",
+   "city": "West Palm Beach",
+   "state": "FL",
+   "sec_aum_usd": 157564446.0,
+   "story_count": 1
+  },
+  {
+   "slug": "long-island-wealth-management-173363",
+   "name": "Long Island Wealth Management",
+   "legal_name": "Long Island Wealth Management",
+   "crd": "173363",
+   "city": null,
+   "state": null,
+   "sec_aum_usd": 291674579.0,
+   "story_count": 1
+  },
+  {
+   "slug": "modern-wealth-management-324624",
+   "name": "Modern Wealth Management",
+   "legal_name": "Modern Wealth Management",
+   "crd": "324624",
+   "city": "Kansas City",
+   "state": "MO",
+   "sec_aum_usd": 10904051242.0,
+   "story_count": 1
+  },
+  {
+   "slug": "morgan-stanley-149777",
+   "name": "Morgan Stanley",
+   "legal_name": "Morgan Stanley Smith Barney",
+   "crd": "149777",
+   "city": "Purchase",
+   "state": "NY",
+   "sec_aum_usd": 1961887313229.0,
+   "story_count": 1
+  },
+  {
+   "slug": "no-other-primary-business-name-120371",
+   "name": "No Other Primary Business Name",
+   "legal_name": "Eastside Financial Advisors",
+   "crd": "120371",
+   "city": null,
+   "state": null,
+   "sec_aum_usd": 30100000.0,
+   "story_count": 1
+  },
+  {
+   "slug": "north-american-wealth-advisors-297057",
+   "name": "North American Wealth Advisors",
+   "legal_name": "North American Wealth Advisors",
+   "crd": "297057",
+   "city": "Jordan",
+   "state": "MN",
+   "sec_aum_usd": 237322597.0,
+   "story_count": 1
+  },
+  {
+   "slug": "oaktree-capital-management-106793",
+   "name": "Oaktree Capital Management",
+   "legal_name": "Oaktree Capital Management",
+   "crd": "106793",
+   "city": "Los Angeles",
+   "state": "CA",
+   "sec_aum_usd": 183286850212.0,
+   "story_count": 1
+  },
+  {
+   "slug": "ophir-asset-management-us-312619",
+   "name": "Ophir Asset Management Us",
+   "legal_name": "Ophir Asset Management Us",
+   "crd": "312619",
+   "city": "Denver",
+   "state": "CO",
+   "sec_aum_usd": 1268507779.0,
+   "story_count": 1
+  },
+  {
+   "slug": "oridian-capital-management-155834",
+   "name": "Oridian Capital Management",
+   "legal_name": "Oridian Capital Management",
+   "crd": "155834",
+   "city": "Washington",
+   "state": "DC",
+   "sec_aum_usd": 1201575709.0,
+   "story_count": 1
+  },
+  {
+   "slug": "orion-portfolio-solutions-107975",
+   "name": "Orion Portfolio Solutions",
+   "legal_name": "Orion Portfolio Solutions",
+   "crd": "107975",
+   "city": "Omaha",
+   "state": "NE",
+   "sec_aum_usd": 64842135351.0,
+   "story_count": 1
+  },
+  {
+   "slug": "parkview-160171",
+   "name": "Parkview",
+   "legal_name": "Parkview",
+   "crd": "160171",
+   "city": "Zurich",
+   "state": null,
+   "sec_aum_usd": 488483244.0,
+   "story_count": 1
+  },
+  {
+   "slug": "quish-146212",
+   "name": "Quish",
+   "legal_name": "Quish",
+   "crd": "146212",
+   "city": "Boulder",
+   "state": "CO",
+   "sec_aum_usd": 154181658.0,
+   "story_count": 1
+  },
+  {
+   "slug": "redmond-asset-management-138706",
+   "name": "Redmond Asset Management",
+   "legal_name": "Redmond Asset Management",
+   "crd": "138706",
+   "city": "Henrico",
+   "state": "VA",
+   "sec_aum_usd": 537229250.0,
+   "story_count": 1
+  },
+  {
+   "slug": "rwa-wealth-partners-156984",
+   "name": "Rwa Wealth Partners",
+   "legal_name": "Rwa Wealth Partners",
+   "crd": "156984",
+   "city": "Boston",
+   "state": "MA",
+   "sec_aum_usd": 19795286684.0,
+   "story_count": 1
+  },
+  {
+   "slug": "sandy-cove-advisors-152482",
+   "name": "Sandy Cove Advisors",
+   "legal_name": "Sandy Cove Advisors",
+   "crd": "152482",
+   "city": "Hingham",
+   "state": "MA",
+   "sec_aum_usd": 684905062.0,
+   "story_count": 1
+  },
+  {
+   "slug": "sequoia-financial-group-117756",
+   "name": "Sequoia Financial Group",
+   "legal_name": "Sequoia Financial Advisors",
+   "crd": "117756",
+   "city": "Akron",
+   "state": "OH",
+   "sec_aum_usd": 32243580060.0,
+   "story_count": 1
+  },
+  {
+   "slug": "shufro-rose-3403",
+   "name": "Shufro, Rose",
+   "legal_name": "Shufro, Rose",
+   "crd": "3403",
+   "city": "New York",
+   "state": "NY",
+   "sec_aum_usd": 2463652453.0,
+   "story_count": 1
+  },
+  {
+   "slug": "smartx-advisory-solutions-297680",
+   "name": "Smartx Advisory Solutions",
+   "legal_name": "Smartx Advisory Solutions",
+   "crd": "297680",
+   "city": "West Palm Beach",
+   "state": "FL",
+   "sec_aum_usd": 26993430437.0,
+   "story_count": 1
+  },
+  {
+   "slug": "thoma-bravo-157041",
+   "name": "Thoma Bravo",
+   "legal_name": "Thoma Bravo",
+   "crd": "157041",
+   "city": "Chicago",
+   "state": "IL",
+   "sec_aum_usd": 182937300000.0,
+   "story_count": 2
+  },
+  {
+   "slug": "truist-advisory-services-283390",
+   "name": "Truist Advisory Services",
+   "legal_name": "Truist Advisory Services",
+   "crd": "283390",
+   "city": "Atlanta",
+   "state": "GA",
+   "sec_aum_usd": 77391727185.0,
+   "story_count": 2
+  },
+  {
+   "slug": "vanguard-group-105958",
+   "name": "Vanguard Group",
+   "legal_name": "Vanguard Group",
+   "crd": "105958",
+   "city": "Malvern",
+   "state": "PA",
+   "sec_aum_usd": 11092665107962.0,
+   "story_count": 1
+  },
+  {
+   "slug": "vestmark-advisory-solutions-221518",
+   "name": "Vestmark Advisory Solutions",
+   "legal_name": "Vestmark Advisory Solutions",
+   "crd": "221518",
+   "city": "Wakefield",
+   "state": "MA",
+   "sec_aum_usd": 49854767353.0,
+   "story_count": 1
+  },
+  {
+   "slug": "vinci-partners-usa-162399",
+   "name": "Vinci Partners Usa",
+   "legal_name": "Vinci Partners Usa",
+   "crd": "162399",
+   "city": "New York",
+   "state": "NY",
+   "sec_aum_usd": 327036866.0,
+   "story_count": 1
+  },
+  {
+   "slug": "vista-equity-partners-management-156973",
+   "name": "Vista Equity Partners Management",
+   "legal_name": "Vista Equity Partners Management",
+   "crd": "156973",
+   "city": "San Francisco",
+   "state": "CA",
+   "sec_aum_usd": 106022254910.0,
+   "story_count": 2
+  },
+  {
+   "slug": "waverly-advisors-115332",
+   "name": "Waverly Advisors",
+   "legal_name": "Waverly Advisors",
+   "crd": "115332",
+   "city": "Birmingham",
+   "state": "AL",
+   "sec_aum_usd": 29872072116.0,
+   "story_count": 2
+  },
+  {
+   "slug": "wealth-boutique-317291",
+   "name": "Wealth Boutique",
+   "legal_name": "Women's Wealth Advisor",
+   "crd": "317291",
+   "city": "Chester",
+   "state": "NJ",
+   "sec_aum_usd": 120806478.0,
+   "story_count": 1
+  },
+  {
+   "slug": "wealth-enhancement-advisory-services-116407",
+   "name": "Wealth Enhancement Advisory Services",
+   "legal_name": "Wealth Enhancement Advisory Services",
+   "crd": "116407",
+   "city": "Plymouth",
+   "state": "MN",
+   "sec_aum_usd": 122186725110.0,
+   "story_count": 1
+  },
+  {
+   "slug": "wealthspire-retirement-advisory-121254",
+   "name": "Wealthspire Retirement Advisory",
+   "legal_name": "Wealthspire Retirement",
+   "crd": "121254",
+   "city": "Aliso Viejo",
+   "state": "CA",
+   "sec_aum_usd": 38609440509.0,
+   "story_count": 1
+  },
+  {
+   "slug": "wedbush-securities-877",
+   "name": "Wedbush Securities",
+   "legal_name": "Wedbush Securities",
+   "crd": "877",
+   "city": "Pasadena",
+   "state": "CA",
+   "sec_aum_usd": 6748146144.0,
+   "story_count": 1
+  }
+ ]
+}

@@ -1,0 +1,120 @@
+{
+ "schema_version": 1,
+ "slug": "captrust-175112",
+ "name": "Captrust",
+ "legal_name": "Capfinancial Partners",
+ "crd": "175112",
+ "sec_number": "801-62193",
+ "city": "Raleigh",
+ "state": "NC",
+ "sec_aum_usd": 1236704853633.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/175112",
+ "stories": [
+  {
+   "cluster_id": 759,
+   "headline": "Captrust Adds $3B Hoge-Barrett Group from Truist",
+   "url": "https://www.wealthmanagement.com/ria-news/captrust-adds-3-billion-hoge-barrett-group",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-10-14T10:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/captrust-adds-3-billion-hoge-barrett-group"
+    }
+   ]
+  },
+  {
+   "cluster_id": 39,
+   "headline": "Captrust Adds $1.2B in Double Deal for Long Island Firms",
+   "url": "https://www.wealthmanagement.com/ria-news/captrust-acquires-two-new-york-rias-with-12b",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-09-23T14:43:41Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/captrust-acquires-two-new-york-rias-with-12b"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/captrust-adds-12b-long-island-duo-in-new-york-double-deal/268316"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 759,
+   "date": "2026-10-14T10:00:00Z",
+   "headline": "Captrust Adds $3B Hoge-Barrett Group from Truist",
+   "acquirer": {
+    "name": "Captrust",
+    "slug": "captrust-175112",
+    "crd": "175112"
+   },
+   "target": {
+    "name": "Hoge-Barrett Group",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 3000000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs",
+    "Banking"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/captrust-adds-3-billion-hoge-barrett-group"
+    }
+   ],
+   "role": "acquirer"
+  },
+  {
+   "cluster_id": 39,
+   "date": "2026-09-23T10:00:00Z",
+   "headline": "Captrust Adds $1.2B in Double Deal for Long Island Firms",
+   "acquirer": {
+    "name": "Captrust",
+    "slug": "captrust-175112",
+    "crd": "175112"
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 1200000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target not named in the headline",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/captrust-acquires-two-new-york-rias-with-12b"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/captrust-adds-12b-long-island-duo-in-new-york-double-deal/268316"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "wealth-boutique-317291",
+ "name": "Wealth Boutique",
+ "legal_name": "Women's Wealth Advisor",
+ "crd": "317291",
+ "sec_number": "801-129886",
+ "city": "Chester",
+ "state": "NJ",
+ "sec_aum_usd": 120806478.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/317291",
+ "stories": [
+  {
+   "cluster_id": 1029,
+   "headline": "WSG ACQUIRES SANCTUARY, POSITIONING THE CONTEMPORARY WOMEN'S BRAND FOR GLOBAL GROWTH",
+   "url": "https://www.prnewswire.com/news-releases/wsg-acquires-sanctuary-positioning-the-contemporary-womens-brand-for-global-growth-302917570.html",
+   "category": "Other",
+   "last_published": "2026-10-23T13:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/wsg-acquires-sanctuary-positioning-the-contemporary-womens-brand-for-global-growth-302917570.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}
