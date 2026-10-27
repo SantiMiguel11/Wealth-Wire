@@ -18,6 +18,10 @@ on:
         description: "Sample titles printed per feed"
         required: false
         default: "6"
+      inspect_sec:
+        description: "Instead: print the SEC adviser file's columns and check the Census ZIP gazetteer"
+        type: boolean
+        default: false
       only_extra:
         description: "Probe only the extra URLs"
         type: boolean
@@ -51,6 +55,8 @@ jobs:
           ONLY: ${{ inputs.only_extra }}
           CANDIDATES: ${{ inputs.candidates }}
           TITLES: ${{ inputs.titles }}
+          INSPECT_SEC: ${{ inputs.inspect_sec }}
         run: |
+          if [ "$INSPECT_SEC" = "true" ]; then python scripts/inspect_sec.py; exit 0; fi
           flag=""; [ "$ONLY" = "true" ] && flag="--only-extra"
           python scripts/probe_feeds.py --extra "$EXTRA" --candidates "${CANDIDATES:-scripts/probe_candidates.yaml}" --titles "${TITLES:-6}" $flag | tee -a "$GITHUB_STEP_SUMMARY"
