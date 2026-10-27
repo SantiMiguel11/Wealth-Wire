@@ -22,6 +22,10 @@ on:
         description: "Instead: print the SEC adviser file's columns and check the Census ZIP gazetteer"
         type: boolean
         default: false
+      sec_crds:
+        description: "With inspect_sec: comma-separated CRDs whose address columns to print"
+        type: string
+        default: ""
       only_extra:
         description: "Probe only the extra URLs"
         type: boolean
@@ -56,6 +60,7 @@ jobs:
           CANDIDATES: ${{ inputs.candidates }}
           TITLES: ${{ inputs.titles }}
           INSPECT_SEC: ${{ inputs.inspect_sec }}
+          SEC_CRDS: ${{ inputs.sec_crds }}
         run: |
           if [ "$INSPECT_SEC" = "true" ]; then python scripts/inspect_sec.py; exit 0; fi
           flag=""; [ "$ONLY" = "true" ] && flag="--only-extra"

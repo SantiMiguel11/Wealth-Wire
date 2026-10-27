@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 import io
+import os
 import sys
 import zipfile
 from pathlib import Path
@@ -19,6 +20,9 @@ GAZ = [
     "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip",
     "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2023_Gazetteer/2023_Gaz_zcta_national.zip",
 ]
+
+
+CRDS = {c.strip() for c in os.environ.get("SEC_CRDS", "").split(",") if c.strip()}
 
 
 def main() -> int:
@@ -45,7 +49,7 @@ def main() -> int:
                 rows = []
                 for i, r in enumerate(ws.iter_rows(values_only=True)):
                     rows.append(["" if c is None else str(c) for c in r])
-                    if i > 40:
+                    if i > 40 and not CRDS:
                         break
             else:
                 continue
@@ -57,6 +61,13 @@ def main() -> int:
                     for j, h in enumerate(hdr):
                         print(f"  [{j}] {h!r} = {sample[j] if j < len(sample) else ''!r}")
                     break
+            if CRDS:   # every address-like column for the given CRDs (to see why some rows lack a main office)
+                ci = next(j for j, h in enumerate(hdr) if "crd" in h.lower())
+                cols = [j for j, h in enumerate(hdr) if any(w in h.lower() for w in ("office", "address", "city", "state",
+                                                                                         "postal", "country", "zip"))]
+                for r in rows:
+                    if ci < len(r) and r[ci].strip().split(".")[0] in CRDS:
+                        print("CRD", r[ci], {hdr[j]: r[j] for j in cols if j < len(r) and r[j]})
     for url in GAZ:
         ok, why = f.robots.check(url)
         r = f.get(url) if ok else None
