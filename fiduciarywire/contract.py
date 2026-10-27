@@ -23,6 +23,8 @@ RULES = [
     (r"firms/[a-z0-9-]+\.json", "firm.schema.json"),
     (r"trending\.json", "trending.schema.json"),
     (r"sources\.json", "sources.schema.json"),
+    (r"riamap\.json", "riamap.schema.json"),
+    (r"riamap/details-\d{2}\.json", "riamap-details.schema.json"),
 ]
 
 

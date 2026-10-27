@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "riamap/details-NN.json \u2014 what a click on the map shows, by CRD",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "firms"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "firms": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "legal_name": {
+            "type": "string"
+          },
+          "zip": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "website": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "registered": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "adv_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "org_type": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "employees": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "advisory_staff": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "offices": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "clients": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "accounts": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "avg_account_usd": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "discretionary_pct": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "client_mix": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "items": false
+            }
+          },
+          "services": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "compensation": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "other_business": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "private_funds": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "disclosures": {
+            "type": "boolean"
+          },
+          "iapd_url": {
+            "type": "string"
+          },
+          "slug": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "deals": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "date",
+                "headline",
+                "role",
+                "url"
+              ],
+              "properties": {
+                "date": {
+                  "type": "string"
+                },
+                "headline": {
+                  "type": "string"
+                },
+                "role": {
+                  "enum": [
+                    "acquirer",
+                    "target"
+                  ]
+                },
+                "url": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "legal_name",
+          "zip",
+          "website",
+          "registered",
+          "adv_date",
+          "org_type",
+          "employees",
+          "advisory_staff",
+          "offices",
+          "clients",
+          "accounts",
+          "avg_account_usd",
+          "discretionary_pct",
+          "client_mix",
+          "services",
+          "compensation",
+          "other_business",
+          "private_funds",
+          "disclosures",
+          "iapd_url",
+          "slug",
+          "deals"
+        ]
+      },
+      "propertyNames": {
+        "pattern": "^[0-9]+$"
+      }
+    }
+  }
+}

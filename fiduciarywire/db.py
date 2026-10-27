@@ -104,6 +104,12 @@ CREATE TABLE IF NOT EXISTS sec_firms (
     data_date     TEXT NOT NULL          -- date of the SEC file this row came from (YYYY-MM-DD)
 );
 
+CREATE TABLE IF NOT EXISTS zcta (            -- Census ZIP Code Tabulation Area centroids (RIA map geocoding)
+    zip  TEXT PRIMARY KEY,
+    lat  REAL NOT NULL,
+    lon  REAL NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS meta (
     key   TEXT PRIMARY KEY,
     value TEXT
@@ -125,6 +131,9 @@ MIGRATIONS = [
     ("mna_deals", "stage", "ALTER TABLE mna_deals ADD COLUMN stage TEXT NOT NULL DEFAULT 'announced'"),
     ("mna_deals", "value_usd", "ALTER TABLE mna_deals ADD COLUMN value_usd REAL"),
     ("mna_deals", "industries", "ALTER TABLE mna_deals ADD COLUMN industries TEXT NOT NULL DEFAULT '[]'"),
+    ("sec_firms", "zip", "ALTER TABLE sec_firms ADD COLUMN zip TEXT"),
+    ("sec_firms", "country", "ALTER TABLE sec_firms ADD COLUMN country TEXT"),
+    ("sec_firms", "profile", "ALTER TABLE sec_firms ADD COLUMN profile TEXT"),
 ]
 
 

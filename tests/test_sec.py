@@ -172,4 +172,4 @@ def test_trending_links_to_firm_pages(files):
 
 
 def test_meta_reports_sec_file(files):
-    assert files["meta.json"]["sec"] == {"data_date": "2026-09-01", "firm_count": 22}
+    assert files["meta.json"]["sec"] == {"data_date": "2026-09-01", "firm_count": 621}  # 22 named + 599 synthetic map advisers

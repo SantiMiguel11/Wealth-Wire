@@ -342,19 +342,124 @@ def main() -> None:
         ("MERCER CAPITAL ADVISORS LLC", "MERCER CAPITAL ADVISORS", "MEMPHIS", "TN", 700_000_000),
         ("FOCUS ADVISORY LLC", "FOCUS ADVISORY", "RENO", "NV", 90_000_000),
     ]
+    # Metro areas for the RIA map demo: (city, state, ZIP, lat, lon, weight). Approximate centroids; synthetic data.
+    metros = [
+        ("NEW YORK", "NY", "10022", 40.759, -73.968, 70), ("BOSTON", "MA", "02110", 42.357, -71.053, 26),
+        ("CHICAGO", "IL", "60606", 41.882, -87.637, 30), ("SAN FRANCISCO", "CA", "94111", 37.799, -122.399, 28),
+        ("LOS ANGELES", "CA", "90067", 34.058, -118.414, 26), ("DALLAS", "TX", "75201", 32.790, -96.804, 18),
+        ("HOUSTON", "TX", "77002", 29.757, -95.365, 16), ("AUSTIN", "TX", "78701", 30.271, -97.744, 10),
+        ("DENVER", "CO", "80202", 39.752, -104.999, 14), ("SEATTLE", "WA", "98101", 47.611, -122.337, 16),
+        ("PORTLAND", "OR", "97204", 45.518, -122.676, 9), ("BELLEVUE", "WA", "98004", 47.618, -122.205, 6),
+        ("SPOKANE", "WA", "99201", 47.663, -117.433, 3), ("BOISE", "ID", "83702", 43.632, -116.204, 4),
+        ("SALT LAKE CITY", "UT", "84111", 40.757, -111.884, 6), ("PHOENIX", "AZ", "85004", 33.451, -112.069, 9),
+        ("SCOTTSDALE", "AZ", "85251", 33.494, -111.921, 7), ("LAS VEGAS", "NV", "89101", 36.172, -115.122, 4),
+        ("RENO", "NV", "89501", 39.526, -119.812, 2), ("SAN DIEGO", "CA", "92101", 32.719, -117.163, 10),
+        ("SAN JOSE", "CA", "95113", 37.333, -121.889, 8), ("BOULDER", "CO", "80302", 40.017, -105.283, 5),
+        ("MINNEAPOLIS", "MN", "55402", 44.976, -93.271, 12), ("MILWAUKEE", "WI", "53202", 43.043, -87.899, 6),
+        ("ST. LOUIS", "MO", "63102", 38.627, -90.188, 8), ("KANSAS CITY", "MO", "64105", 39.102, -94.589, 7),
+        ("OVERLAND PARK", "KS", "66210", 38.926, -94.705, 5), ("OMAHA", "NE", "68102", 41.262, -95.935, 5),
+        ("DES MOINES", "IA", "50309", 41.587, -93.627, 3), ("DETROIT", "MI", "48226", 42.331, -83.047, 6),
+        ("CLEVELAND", "OH", "44114", 41.507, -81.684, 7), ("COLUMBUS", "OH", "43215", 39.963, -83.005, 6),
+        ("CINCINNATI", "OH", "45202", 39.104, -84.510, 6), ("INDIANAPOLIS", "IN", "46204", 39.771, -86.157, 6),
+        ("NASHVILLE", "TN", "37219", 36.166, -86.784, 8), ("MEMPHIS", "TN", "38103", 35.150, -90.052, 4),
+        ("ATLANTA", "GA", "30309", 33.799, -84.386, 16), ("CHARLOTTE", "NC", "28202", 35.228, -80.843, 11),
+        ("RALEIGH", "NC", "27601", 35.774, -78.637, 6), ("RICHMOND", "VA", "23219", 37.540, -77.435, 6),
+        ("WASHINGTON", "DC", "20006", 38.898, -77.040, 12), ("BALTIMORE", "MD", "21202", 39.296, -76.608, 7),
+        ("PHILADELPHIA", "PA", "19103", 39.953, -75.173, 14), ("PITTSBURGH", "PA", "15222", 40.444, -79.996, 7),
+        ("STAMFORD", "CT", "06901", 41.053, -73.537, 14), ("GREENWICH", "CT", "06830", 41.040, -73.626, 12),
+        ("PRINCETON", "NJ", "08540", 40.357, -74.667, 6), ("MIAMI", "FL", "33131", 25.767, -80.190, 14),
+        ("TAMPA", "FL", "33602", 27.951, -82.459, 8), ("NAPLES", "FL", "34102", 26.141, -81.795, 7),
+        ("ORLANDO", "FL", "32801", 28.541, -81.379, 5), ("NEW ORLEANS", "LA", "70130", 29.950, -90.071, 4),
+        ("OKLAHOMA CITY", "OK", "73102", 35.468, -97.516, 4), ("ALBUQUERQUE", "NM", "87102", 35.084, -106.650, 2),
+        ("PORTLAND", "ME", "04101", 43.661, -70.255, 3), ("BURLINGTON", "VT", "05401", 44.476, -73.212, 2),
+        ("ANCHORAGE", "AK", "99501", 61.217, -149.890, 2), ("HONOLULU", "HI", "96813", 21.309, -157.858, 3),
+        ("CHARLESTON", "SC", "29401", 32.779, -79.931, 4), ("LOUISVILLE", "KY", "40202", 38.253, -85.759, 4),
+        ("BIRMINGHAM", "AL", "35203", 33.519, -86.810, 3), ("SANTA FE", "NM", "87501", 35.687, -105.938, 2),
+        ("CHAPEL HILL", "NC", "27514", 35.913, -79.056, 2), ("JACKSON", "WY", "83001", 43.479, -110.762, 2),
+    ]
+    by_city = {(c, st): z for c, st, z, *_ in metros}
+    import random
+
+    rnd = random.Random(7)
+    words_a = ["Alder", "Basalt", "Bramble", "Corvid", "Dovetail", "Elmstead", "Fernhill", "Gable", "Halyard", "Ironbark",
+               "Juniper", "Kestle", "Larkspur", "Marlow", "Northfork", "Oakhurst", "Pennant", "Quarry", "Rookwood",
+               "Saltmarsh", "Thornbury", "Upland", "Vesper", "Wrenfield", "Yarrow", "Zephyr", "Ashgrove", "Bellwick",
+               "Copperfield", "Driftwood", "Emberly", "Foxglove", "Greystone", "Hollis", "Inkwell", "Jasperwood"]
+    words_b = ["Hill", "Creek", "Point", "Ridge", "Bay", "Grove", "Field", "Crossing", "Hollow", "Landing", "Commons", "Row"]
+    words_c = ["Wealth Advisors", "Capital Management", "Private Wealth", "Financial Partners", "Investment Counsel",
+               "Asset Management", "Family Office", "Wealth Management", "Advisory Group", "Fund Management"]
+    synthetic, used = [], set()
+    for city, st, z, la, lo, weight in metros:
+        for _ in range(weight):
+            while True:
+                name = f"{rnd.choice(words_a)} {rnd.choice(words_b)} {rnd.choice(words_c)}"
+                if name not in used:
+                    used.add(name)
+                    break
+            aum = int(10 ** rnd.uniform(7.3, 10.2)) if rnd.random() > 0.03 else int(10 ** rnd.uniform(10.5, 12.2))
+            synthetic.append((name.upper() + ", LLC", name.upper(), city, st, aum))
+
+    def profile_cols(i: int, business: str, aum: int) -> list[str]:
+        r = random.Random(i)
+        if "FUND" in business:
+            mix = {"f": aum * 0.8, "g": aum * 0.2}
+        elif "ASSET" in business or "COUNSEL" in business:
+            mix = {"g": aum * 0.5, "h": aum * 0.2, "b": aum * 0.3}
+        else:
+            hnw = r.uniform(0.5, 0.9)
+            mix = {"b": aum * hnw, "a": aum * (1 - hnw) * 0.7, "g": aum * (1 - hnw) * 0.3}
+        accounts = max(1, int(aum / r.uniform(4e5, 3e6)))
+        yn = lambda p: "Y" if r.random() < p else "N"  # noqa: E731
+        individuals = "b" in mix
+        return [business.lower().replace(" ", "").replace(",", "") + ".example", f"{r.randint(1,12):02d}/{r.randint(1,28):02d}/{r.randint(1996, 2025)}",
+                f"{r.randint(1,9):02d}/{r.randint(1,28):02d}/2026", r.choice(["Limited Liability Company", "Corporation", "Limited Partnership"]),
+                str(r.randint(3, 120)), str(r.randint(2, 60)), str(r.randint(20, 2000)), str(r.randint(0, 6)),
+                f"{aum * r.uniform(0.85, 1.0):,.2f}", f"{accounts:,}",
+                *[f"{mix.get(x, 0):,.2f}" if mix.get(x) else "" for x in "abcdefghijklmn"],
+                yn(0.85 if individuals else 0.2), yn(0.95 if individuals else 0.1), "N", yn(0.9 if not individuals else 0.05),
+                yn(0.5 if not individuals else 0.15), yn(0.3), yn(0.25), "N", "N", "N", yn(0.1), "N",
+                "Y", yn(0.4), "N", yn(0.6), yn(0.1), yn(0.9 if not individuals else 0.05), "N",
+                yn(0.08), yn(0.15), yn(0.12), yn(0.07)]
+
+    zips = {"SEATTLE": "98101", "DENVER": "80202", "CHARLOTTE": "28202", "PORTLAND": "97204", "BELLEVUE": "98004",
+            "CHICAGO": "60606", "MILWAUKEE": "53202", "MINNEAPOLIS": "55402", "DALLAS": "75201", "AUSTIN": "78701",
+            "BOULDER": "80302", "SPOKANE": "99201", "SAN JOSE": "95113", "TAMPA": "33602", "NEW YORK": "10022",
+            "BOISE": "83702", "OMAHA": "68102", "MEMPHIS": "38103", "RENO": "89501"}
     buf = io.StringIO()
     w = csv.writer(buf)
     w.writerow(["SEC#", "Organization CRD#", "SEC Region", "Legal Name", "Primary Business Name", "Main Office City",
-                "Main Office State", "Main Office Country", "5F(2)(c)"])
+                "Main Office State", "Main Office Country", "Main Office Postal Code", "5F(2)(c)",
+                "Website Address", "SEC Status Effective Date", "Latest ADV Filing Date", "3A", "5A", "5B(1)", "5C(1)",
+                "Total number of offices, other than your Principal Office and place of business", "5F(2)(a)", "5F(2)(f)",
+                *[f"5D({x})(3)" for x in "abcdefghijklmn"], *[f"5G({i})" for i in range(1, 13)],
+                *[f"5E({i})" for i in range(1, 8)], "6A(1)", "6A(6)", "5I(1)", "11"])
     for i, (legal, business, city, state, aum) in enumerate(firms):
-        w.writerow([f"801-{99000 + i}", str(999001 + i), "SEC", legal, business, city, state, "United States", f"{aum:,}"])
-    w.writerow(["802-99999", "998001", "SEC", "EXEMPT REPORTING FUND ADVISER LLC", "HARBORVIEW VENTURES", "SEATTLE", "WA", "United States", ""])
-    zbuf = io.BytesIO()
+        w.writerow([f"801-{99000 + i}", str(999001 + i), "SEC", legal, business, city, state, "United States",
+                    zips.get(city, ""), f"{aum:,}", *profile_cols(i, business, aum)])
+    for j, (legal, business, city, state, aum) in enumerate(synthetic):
+        w.writerow([f"801-{90000 + j}", str(970001 + j), "SEC", legal, business, city, state, "United States",
+                    by_city[(city, state)] + ("-1234" if j % 7 == 0 else ""), f"{aum:,}", *profile_cols(1000 + j, business, aum)])
+    w.writerow(["801-98999", "998002", "SEC", "LONDON BRIDGE ADVISERS LTD", "LONDON BRIDGE ADVISERS", "LONDON", "", "United Kingdom",
+                "", "2,000,000,000", *profile_cols(5000, "LONDON BRIDGE ADVISERS", 2_000_000_000)])   # not on the US map
+    w.writerow(["802-99999", "998001", "SEC", "EXEMPT REPORTING FUND ADVISER LLC", "HARBORVIEW VENTURES", "SEATTLE", "WA", "United States"])
+    zi = zipfile.ZipInfo("IA_FIRM_SEC_Feed_09_01_2026.csv", date_time=(2026, 9, 1, 0, 0, 0))
+    zbuf = io.BytesIO()   # fixed timestamps: regenerating the fixtures gives byte-identical zips
     with zipfile.ZipFile(zbuf, "w", zipfile.ZIP_DEFLATED) as zf:
-        zf.writestr("IA_FIRM_SEC_Feed_09_01_2026.csv", buf.getvalue())
-        zf.writestr("README.txt", NOTE + "\n")
+        zf.writestr(zi, buf.getvalue())
+        zf.writestr(zipfile.ZipInfo("README.txt", date_time=(2026, 9, 1, 0, 0, 0)), NOTE + "\n")
     (OUT / "sec_ia090126.zip").write_bytes(zbuf.getvalue())
     routes[f"https://www.sec.gov{base}/ia090126.zip"] = {"status": 200, "content_type": "application/zip", "file": "sec_ia090126.zip"}
+
+    # Census ZCTA gazetteer (synthetic subset: the demo metros' ZIPs)
+    gaz = "GEOID\tALAND\tAWATER\tALAND_SQMI\tAWATER_SQMI\tINTPTLAT\tINTPTLONG\n" + "".join(
+        f"{z}\t1000000\t0\t0.386\t0\t{la:.6f}\t{lo:.6f}\n" for _, _, z, la, lo, _ in sorted({m[2]: m for m in metros}.values()))
+    gbuf = io.BytesIO()
+    with zipfile.ZipFile(gbuf, "w", zipfile.ZIP_DEFLATED) as zf:
+        zf.writestr(zipfile.ZipInfo("2024_Gaz_zcta_national.txt", date_time=(2024, 1, 1, 0, 0, 0)), gaz)
+    (OUT / "zcta_gazetteer.zip").write_bytes(gbuf.getvalue())
+    add("https://www2.census.gov/robots.txt", body=allow_all, content_type="text/plain")
+    routes["https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"] = {
+        "status": 200, "content_type": "application/zip", "file": "zcta_gazetteer.zip"}
 
     # FINRA — robots.txt disallows the news section → failed with a robots reason
     add("https://www.finra.org/robots.txt", body="User-agent: *\nDisallow: /media-center/\n", content_type="text/plain")

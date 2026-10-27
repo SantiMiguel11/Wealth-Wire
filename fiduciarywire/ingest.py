@@ -401,6 +401,11 @@ def run_ingest(fixtures: Path | None = None, now: datetime | None = None, quiet:
                 cfg.setdefault("sec", {})["allow_small_file"] = True
             sec_status = maybe_update(conn, fetcher, now, cfg)
             db.set_meta(conn, "sec_status", json.dumps(sec_status))
+            from .geo import maybe_update_zcta
+
+            zcta = maybe_update_zcta(conn, fetcher, now, min_rows=1 if fixtures else 1000)  # ZIP centroids for the RIA map
+            if not quiet and zcta["status"] != "cached":
+                print(f"[MAP] ZIP centroids: {zcta['status']} ({zcta.get('zips', 0)} ZIPs){' — ' + zcta['reason'] if zcta.get('reason') else ''}")
             conn.commit()
             if not quiet:
                 print(f"[SEC] adviser data: {sec_status.get('status')} (file {sec_status.get('data_date') or '—'}, "

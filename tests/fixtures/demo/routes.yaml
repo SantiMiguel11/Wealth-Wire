@@ -180,3 +180,15 @@ routes:
     headers:
       ETag: '"wm-v1"'
     status: 200
+  https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip:
+    content_type: application/zip
+    file: zcta_gazetteer.zip
+    status: 200
+  https://www2.census.gov/robots.txt:
+    body: 'User-agent: *
+
+      Disallow: /admin/
+
+      '
+    content_type: text/plain
+    status: 200

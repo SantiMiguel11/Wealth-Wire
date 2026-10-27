@@ -363,6 +363,9 @@ def collect(conn: sqlite3.Connection, now: datetime | None = None) -> dict[str, 
     for slug, page in firm_pages.items():
         files[f"firms/{slug}.json"] = page
     files.update(digest_files(snap, window_start))
+    from .riamap import build as build_riamap
+
+    files.update(build_riamap(conn, now, {f["crd"]: f["slug"] for f in firm_index["firms"]}, files["mna.json"]["deals"]))
     src = files["sources.json"]["sources"]
     files["meta.json"] = {
         "schema_version": SCHEMA_VERSION,
