@@ -74,7 +74,7 @@ def build(conn: sqlite3.Connection, now: datetime, page_slugs: dict[str, str], d
             if crd:
                 deals_by_crd.setdefault(crd, []).append({"date": d["date"], "headline": d["headline"], "role": role,
                                                           "url": (d.get("sources") or [{}])[0].get("url")})
-    placed, unmapped = [], 0
+    placed, unmapped, no_address = [], 0, 0
     for r in rows:
         country = (r.get("country") or "United States").strip().lower()
         pt = None
@@ -83,17 +83,19 @@ def build(conn: sqlite3.Connection, now: datetime, page_slugs: dict[str, str], d
             pt = albers_usa(ll[1], ll[0]) if ll else None
         if pt is None:
             unmapped += 1
+            no_address += not (r.get("zip") or r.get("country") or r.get("city"))
             continue
         placed.append((r, pt))
     spots = fan_out([(r["crd"], x, y) for r, (x, y) in placed])
     compact, shards = [], {i: {} for i in range(SHARDS)}
-    total_aum = 0.0
+    total_aum, approximate = 0.0, 0
     for r, _ in placed:
         prof = json.loads(r.get("profile") or "{}")
         crd = r["crd"]
         x, y = spots[crd]
         aum = r.get("aum_usd") or 0
         total_aum += aum
+        approximate += bool(prof.get("approx_location"))
         recent = [d for d in deals_by_crd.get(crd, []) if from_iso(d["date"]) >= since]
         flags = (F_PAGE if crd in page_slugs else 0) | (F_DEAL if recent else 0) | \
                 (F_DISCLOSURE if prof.get("disclosures") else 0) | (F_WRAP if prof.get("wrap") else 0)
@@ -108,6 +110,7 @@ def build(conn: sqlite3.Connection, now: datetime, page_slugs: dict[str, str], d
         detail = {
             "legal_name": pretty_name(r["legal_name"]),
             "zip": r.get("zip"),
+            "approx_location": bool(prof.get("approx_location")),
             "website": _website(prof.get("website")),
             "registered": prof.get("registered"), "adv_date": prof.get("adv_date"), "org_type": prof.get("org_type"),
             "employees": prof.get("employees"), "advisory_staff": prof.get("advisory_staff"), "offices": prof.get("offices"),
@@ -131,7 +134,8 @@ def build(conn: sqlite3.Connection, now: datetime, page_slugs: dict[str, str], d
         "riamap.json": {
             "schema_version": SCHEMA_VERSION, "generated_at": to_iso(now), "sec_data_date": sec_date,
             "width": WIDTH, "height": HEIGHT, "shards": SHARDS,
-            "counts": {"advisers": len(rows), "mapped": len(compact), "unmapped": unmapped},
+            "counts": {"advisers": len(rows), "mapped": len(compact), "unmapped": unmapped,
+                       "approximate": approximate, "no_address": no_address},
             "total_aum_usd": round(total_aum),
             "focus": FOCUS, "services": [SERVICE[i] for i in range(1, 13)],
             "fields": FIELDS, "firms": compact,

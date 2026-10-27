@@ -205,7 +205,7 @@ firms, which have no page to link to.
 ## `riamap.json` and `riamap/details-NN.json`
 
 The RIA map. `riamap.json` = `{schema_version, generated_at, sec_data_date, width: 975, height: 610, shards, counts
-{advisers, mapped, unmapped}, total_aum_usd, focus[4], services[12], fields, firms[]}`. Each firm is a compact row
+{advisers, mapped, unmapped, approximate, no_address}, total_aum_usd, focus[4], services[12], fields, firms[]}`. Each firm is a compact row
 in `fields` order: `[crd, name, x, y, aum_usd, city, state, focus, services, flags]`:
 - `x`, `y`: position in the 975×610 Albers USA frame of `/us-states.json` (the firm's ZIP centroid, fanned out
   when several firms share a ZIP);
@@ -215,9 +215,13 @@ in `fields` order: `[crd, name, x, y, aum_usd, city, state, focus, services, fla
 Rows are sorted by AUM, largest first.
 
 `riamap/details-NN.json` (NN = CRD mod `shards`, two digits) = `{schema_version, firms: {"<crd>": {legal_name, zip,
-website, registered, adv_date, org_type, employees, advisory_staff, offices, clients, accounts, avg_account_usd,
+approx_location, website, registered, adv_date, org_type, employees, advisory_staff, offices, clients, accounts, avg_account_usd,
 discretionary_pct, client_mix[[label, percent]], services[], compensation[], other_business[], private_funds,
 disclosures, iapd_url, slug, deals[{date, headline, role, url}]}}}`. No street address is ever published.
+`approx_location` is true when the SEC withheld the main office (a private residence) and the firm is placed at
+its books-and-records ZIP instead. In `counts`:
+- `approximate` is how many firms are placed that way;
+- `no_address` is how many published no address at all.
 
 ## `sources.json`
 

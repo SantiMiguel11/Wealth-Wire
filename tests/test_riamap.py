@@ -88,6 +88,32 @@ def test_profile_parse_from_real_headers():
     assert p["other_business"] == [6] and p["client_aum"] == {"a": 163209871.0, "b": 434165916.0} and p["disclosures"] is False
 
 
+def test_withheld_main_office_falls_back_to_books_and_records():
+    """Probe of 2026-10-27: for home-based advisers the SEC blanks every Main Office field (private residence flag)
+    but still publishes where the books and records are kept. That ZIP places the firm, marked approximate;
+    a firm with neither stays off the map."""
+    from datetime import date
+
+    from fiduciarywire.sec import _rows_from_table
+
+    hdr = ["Organization CRD#", "SEC#", "Primary Business Name", "Legal Name", "Main Office City", "Main Office State",
+           "Main Office Country", "Main Office Postal Code", "Main Office Private Residence Flag",
+           "Location of Books and Records City", "Location of Books and Records State",
+           "Location of Books and Records Country", "Location of Books and Records Postal Code", "5F(2)(c)"]
+    rows = [hdr,
+            ["45348", "801-108980", "SUPREME ALLIANCE LLC", "SUPREME ALLIANCE LLC", "", "", "", "", "Y",
+             "CHARLOTTE", "NC", "United States", "28277", "35,314,242"],
+            ["108583", "801-1", "VALLEY VIEW CONSULTING LLC", "VALLEY VIEW CONSULTING LLC", "", "", "", "", "Y",
+             "", "", "", "", "16,400,000,000"],
+            ["38", "801-57838", "AMERICAN INVESTORS CO", "L.S.Y., INC", "SAN RAMON", "CA", "United States", "94583", "N",
+             "WALNUT CREEK", "CA", "United States", "94596", "1"]]
+    a, b, c = _rows_from_table(rows, date(2026, 9, 1))
+    assert (a["city"], a["state"], a["zip"], a["country"]) == ("CHARLOTTE", "NC", "28277", "United States")
+    assert json.loads(a["profile"])["approx_location"] is True
+    assert (b["city"], b["zip"], b["country"]) == (None, None, None) and "approx_location" not in json.loads(b["profile"])
+    assert (c["city"], c["zip"]) == ("SAN RAMON", "94583") and "approx_location" not in json.loads(c["profile"])
+
+
 def test_map_files(ingested):
     from fiduciarywire import db
     from fiduciarywire.sitebuild import collect
@@ -97,7 +123,8 @@ def test_map_files(ingested):
     files = collect(db.connect(), NOW)
     m = files["riamap.json"]
     assert m["fields"] == FIELDS and m["width"] == 975
-    assert m["counts"] == {"advisers": 621, "mapped": 620, "unmapped": 1}      # the London adviser has no US spot
+    assert m["counts"] == {"advisers": 621, "mapped": 620, "unmapped": 1,    # the London adviser has no US spot
+                           "approximate": 0, "no_address": 0}
     rows = {r[1]: r for r in m["firms"]}
     hv = rows["Harborview Wealth Partners"]
     assert hv[5:7] == ["Seattle", "WA"] and hv[4] == 9.8e9 and hv[9] & F_PAGE     # in the news → has a firm page

@@ -584,6 +584,13 @@ M3. **Privacy: ZIP centroids, never addresses.** The SEC file flags main offices
     checked from GitHub. The gazetteer is cached in the state database and refreshed yearly. ZIPs it lacks
     (PO-box-only) fall back to the ZIP3 average. Firms sharing a ZIP are fanned out in a small sunflower so
     each stays clickable.
+    - **Home-based advisers.** The first live run left 1,406 US advisers without any address. A probe of the
+      SEC file showed why: when the main office is a private residence, the SEC blanks every main-office field.
+      For those firms the same file still publishes where the books and records are kept, so the map uses
+      that ZIP's centroid and the panel says "Approximate location". Firms that publish neither stay off the
+      map.
+    - **Firms that stay off the map.** These are firms abroad, in Puerto Rico and the other territories, and
+      those with no public address. The stats line counts them, and its tooltip says why.
 M4. **Projection without a mapping library.** `geo.albers_usa` reimplements d3's composite Albers USA
     (scale 1300, translate 487.5/305, Alaska and Hawaii insets). The state outlines are us-atlas 3.0.1
     (ISC, Census 2017), which d3 projected the same way. A test checks 12 cities land inside their own state.

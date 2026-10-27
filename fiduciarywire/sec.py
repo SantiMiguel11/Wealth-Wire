@@ -89,7 +89,7 @@ FIELDS = {
 
 
 # Bump when the parse keeps new fields: the next refresh re-reads the current SEC file once (see maybe_update).
-PARSE_VERSION = "2"
+PARSE_VERSION = "3"
 CLIENT_TYPES = "abcdefghijklmn"            # Item 5D(a)…(n)
 PROFILE_KEYS = {
     "zip": "mainofficepostalcode", "country": "mainofficecountry", "website": "websiteaddress",
@@ -193,13 +193,22 @@ def _rows_from_table(rows: list[list], data_date: date) -> list[dict]:
         by_key = lambda k: (r[keys[k]] if k in keys and keys[k] < len(r) else None)  # noqa: E731
         aum = _num(get("aum"))
         prof = _profile(by_key, aum)
-        zip_raw = str(by_key("mainofficepostalcode") or "").strip()
-        zip5 = re.sub(r"\D", "", zip_raw)[:5]
+        text = lambda v: str(v or "").strip() or None  # noqa: E731
+        city, state, zip_raw, country = text(get("city")), text(get("state")), text(by_key("mainofficepostalcode")), \
+            text(by_key("mainofficecountry"))
+        if not (city or state or zip_raw or country):
+            # The SEC blanks the main office of advisers working from home (private residence flag). Fall back to the
+            # books-and-records location the same file publishes; it's only used for a ZIP centroid, marked approximate.
+            city, state, zip_raw, country = (text(by_key(f"locationofbooksandrecords{k}")) for k in
+                                             ("city", "state", "postalcode", "country"))
+            if zip_raw:
+                prof["approx_location"] = True
+        zip5 = re.sub(r"\D", "", zip_raw or "")[:5]
         out.append({"crd": crd, "sec_number": sec_number, "legal_name": legal or business, "business_name": business,
-                    "city": (str(get("city") or "").strip() or None), "state": (str(get("state") or "").strip().upper()[:2] or None),
+                    "city": city, "state": state.upper()[:2] if state else None,
                     "aum_usd": aum, "data_date": data_date.isoformat(),
                     "zip": zip5 if len(zip5) == 5 else None,
-                    "country": (str(by_key("mainofficecountry") or "").strip() or None),
+                    "country": country,
                     "profile": json.dumps(prof, separators=(",", ":"))})
     return out
 

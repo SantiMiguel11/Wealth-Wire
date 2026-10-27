@@ -604,6 +604,7 @@
         const since = d.registered ? d.registered.slice(0, 4) : null;
         put(panel, el("div", { class: "map-card is-open" }, head,
           d.legal_name && d.legal_name.toLowerCase() !== fm.name.toLowerCase() ? el("div", { class: "map-legal" }, "Legal name: " + d.legal_name) : null,
+          d.approx_location ? el("p", { class: "map-note" }, "Approximate location: the SEC withholds this adviser's main office (a private residence), so it's placed at the ZIP of its books-and-records address.") : null,
           el("dl", { class: "map-facts" },
             fact("Accounts", n(d.accounts), d.avg_account_usd ? "Avg " + fmtAum(d.avg_account_usd) : null),
             fact("Clients", n(d.clients)),
@@ -671,7 +672,12 @@
     }
     function renderStats() {
       const m = state.meta;
-      stats.textContent = `${m.counts.mapped.toLocaleString("en-US")} SEC-registered advisers · ${fmtAum(m.total_aum_usd)} AUM · Form ADV data, ${fmtDate(m.sec_data_date)}`;
+      const c = m.counts, num = (v) => v.toLocaleString("en-US");
+      stats.textContent = `${num(c.mapped)} SEC-registered advisers · ${fmtAum(m.total_aum_usd)} AUM · Form ADV data, ${fmtDate(m.sec_data_date)}` +
+        (c.unmapped ? ` · ${num(c.unmapped)} not on the map` : "");
+      stats.title = c.unmapped ? `Not on the map: advisers based outside the 50 states and DC (abroad, Puerto Rico and other territories)` +
+        (c.no_address ? `, and ${num(c.no_address)} whose main office the SEC withholds as a private residence with no other public address` : "") +
+        (c.approximate ? `. ${num(c.approximate)} home-based advisers are placed at their books-and-records ZIP instead.` : ".") : "";
     }
   }
 

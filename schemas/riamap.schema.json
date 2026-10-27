@@ -46,7 +46,9 @@
       "required": [
         "advisers",
         "mapped",
-        "unmapped"
+        "unmapped",
+        "approximate",
+        "no_address"
       ],
       "properties": {
         "advisers": {
@@ -58,6 +60,14 @@
           "minimum": 0
         },
         "unmapped": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "approximate": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "no_address": {
           "type": "integer",
           "minimum": 0
         }

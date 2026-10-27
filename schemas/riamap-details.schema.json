@@ -26,6 +26,9 @@
               "null"
             ]
           },
+          "approx_location": {
+            "type": "boolean"
+          },
           "website": {
             "type": [
               "string",
@@ -185,6 +188,7 @@
         "required": [
           "legal_name",
           "zip",
+          "approx_location",
           "website",
           "registered",
           "adv_date",
