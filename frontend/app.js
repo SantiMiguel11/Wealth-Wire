@@ -5,7 +5,7 @@
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const TZ = "America/Los_Angeles";
-const TABS = ["today", "feed", "mna", "archive", "weekly", "sources"];
+const TABS = ["today", "feed", "mna", "archive", "weekly", "sources", "map"];
 const TAB_ALIASES = { digest: "today", deals: "mna" };
 // Industry → tag color (meta.json lists the industries; unknown ones fall back to the neutral color)
 const CAT_CLASS = {
@@ -341,7 +341,7 @@ async function route() {
   for (const t of [...TABS, "firm"]) $("#view-" + t).hidden = t !== s.tab;
   const current = s.tab === "weekly" || (s.tab === "today" && s.date) ? "archive" : s.tab;
   for (const a of document.querySelectorAll(".sections a")) a.setAttribute("aria-selected", String(a.dataset.tab === current));
-  const TITLES = { feed: "Feed", mna: "Deals", archive: "Archive", weekly: "Weekly M&A recap", sources: "Sources" };
+  const TITLES = { feed: "Feed", mna: "Deals", archive: "Archive", weekly: "Weekly M&A recap", sources: "Sources", map: "RIA map" };
   document.title = (TITLES[s.tab] ? TITLES[s.tab] + " · " : "") + "Fiduciary Wire";
   if (!META) {
     const view = $("#view-" + s.tab);
@@ -350,7 +350,8 @@ async function route() {
     try { await loadCore(); } catch (e) { put(target, errorState(e, () => location.reload())); return; }
   }
   syncIndustryBar(s);
-  ({ today: renderToday, feed: renderFeed, mna: renderDeals, archive: renderArchive, weekly: renderWeekly, sources: renderSources, firm: renderFirm })[s.tab](s);
+  ({ today: renderToday, feed: renderFeed, mna: renderDeals, archive: renderArchive, weekly: renderWeekly, sources: renderSources,
+    firm: renderFirm, map: renderMap })[s.tab](s);
 }
 
 /* ---------- side column ---------- */
@@ -657,6 +658,28 @@ async function renderDeals(s) {
         s.conf || s.industry.length ? nav("/?tab=mna", "Show all deals") : null));
 }
 
+/* ---------- RIA map (frontend/map.js, loaded on first visit) ---------- */
+let mapScript = null;
+function renderMap() {
+  const box = $("#view-map");
+  if (box.dataset.mounted) return;   // the map keeps its own state (view, selection, filters in the URL)
+  put(box, ...skeletons(3));
+  mapScript = mapScript || new Promise((resolve, reject) => {
+    const s = el("script", { src: "/map.js", async: true });
+    s.onload = resolve;
+    s.onerror = () => reject(new Error("Couldn't load the map (network error)."));
+    document.head.append(s);
+  });
+  mapScript.then(() => {
+    box.dataset.mounted = "1";
+    window.FWMap.mount(box, {
+      el, put, fmtAum, ext, nav, plural, fmtDate: (d) => fmtDate(d),
+      isWatched: (crd, name) => MATCHERS.some((m) => m.crds.has(String(crd)) || (m.re && m.re.test(name))),
+      addWatch: (name) => { if (!WATCH.some((w) => norm(w.name) === norm(name))) setWatch([...WATCH, { name, aliases: [] }], `Added ${name}.`); },
+    });
+  }).catch((e) => { mapScript = null; put(box, errorState(e, renderMap)); });
+}
+
 /* ---------- Firm page ---------- */
 function firmWatched(f) {
   return MATCHERS.some((m) => m.crds.has(f.crd)) || WATCH.some((w) => norm(w.name) === norm(f.name));
@@ -687,7 +710,7 @@ async function renderFirm(s) {
       el("div", {}, el("dt", {}, "SEC-reported AUM"), el("dd", { class: "big" }, fmtAum(f.sec_aum_usd)),
         el("dd", {}, f.sec_aum_as_of ? `Form ADV, as of ${fmtDate(f.sec_aum_as_of)}` : "No AUM reported")),
       el("div", {}, el("dt", {}, "CRD number"), el("dd", { class: "big" }, f.crd || "—"),
-        el("dd", {}, f.iapd_url ? ext(f.iapd_url, "SEC adviser page ↗") : null)),
+        el("dd", {}, f.iapd_url ? ext(f.iapd_url, "SEC adviser page ↗") : null, f.crd ? [" · ", nav(`/?tab=map&firm=${f.crd}`, "On the RIA map")] : null)),
       el("div", {}, el("dt", {}, "Coverage"), el("dd", { class: "big" }, plural(stories.length, "deal")),
         el("dd", {}, deals.length ? plural(deals.length, "deal") + " in the tracker" : "No deals in the tracker"))),
     el("div", { class: "block-gap" }, sectionHead("Coverage"),

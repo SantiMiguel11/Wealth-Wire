@@ -555,3 +555,68 @@ D11. **Removed:** the keyword news categorizer (`categorize.py`, `categories.yam
      wire filter (`wires.py`), both replaced by the deal filter and industries. The offline fixture site
      was regenerated: synthetic deals across industries, plus non-deal noise in every feed that the tests
      check is dropped.
+
+## RIA map (2026-10-27)
+
+The user asked for a clickable map of every RIA in the U.S. showing AUM, location, main practices and anything
+else useful, with light animations.
+
+M1. **Which firms.** The map shows every SEC-registered adviser in the SEC's monthly Form ADV file (about
+    15,800), with US main offices. State-registered advisers (small firms under ~$100M) aren't in that file
+    and aren't shown. Neither are exempt reporting advisers. The SEC file covers more than wealth managers, so
+    each firm is colored by **client focus**, the client type holding most of its AUM per Form ADV Item 5D:
+    - Wealth management: individuals and HNW;
+    - Funds & alternatives: investment companies, BDCs, pooled vehicles;
+    - Institutional: everything else;
+    - Other: no client AUM reported.
+    "Wealth management only" is one click.
+M2. **Columns checked before parsing.** `scripts/inspect_sec.py`, run from GitHub through `probe-feeds.yml`
+    (`inspect_sec`), printed the real file's 448 headers. The parse keeps:
+    - ZIP, country and website;
+    - SEC registration date and latest filing;
+    - employees (5A/5B), clients (5C), offices, discretionary AUM and accounts (5F);
+    - AUM by client type (5D), services (5G), compensation (5E), other businesses (6A);
+    - private funds (7B) and whether disciplinary disclosures were reported (11).
+    A parse-version stamp makes the next refresh re-read the current file once.
+M3. **Privacy: ZIP centroids, never addresses.** The SEC file flags main offices that are private residences,
+    and many small advisers work from home. No street address is stored or published. Every firm sits at its
+    ZIP code's centroid, from the Census Bureau's ZCTA gazetteer: public domain, robots.txt allows it,
+    checked from GitHub. The gazetteer is cached in the state database and refreshed yearly. ZIPs it lacks
+    (PO-box-only) fall back to the ZIP3 average. Firms sharing a ZIP are fanned out in a small sunflower so
+    each stays clickable.
+M4. **Projection without a mapping library.** `geo.albers_usa` reimplements d3's composite Albers USA
+    (scale 1300, translate 487.5/305, Alaska and Hawaii insets). The state outlines are us-atlas 3.0.1
+    (ISC, Census 2017), which d3 projected the same way. A test checks 12 cities land inside their own state.
+    Puerto Rico and other territories have no inset and aren't mapped. The outlines were taken from the npm
+    registry as data and converted to SVG paths by `scripts/build_us_states.py`. Nothing third-party runs in
+    the browser.
+M5. **Rendering and "alive but light."**
+    - Outlines are SVG; dots are one canvas, repainted only when the view, filters or theme change.
+    - During a zoom or pan, the last full frame is scaled instead of redrawn, then repainted crisply when you
+      stop. Measured with 16,000 synthetic advisers in headless Chromium: p95 frame 16.8 ms while zooming
+      (it was 67 ms redrawing every frame), and zero repaints while idle (both checked by
+      `scripts/screenshots.py`).
+    - Animations live on a second small canvas at ~30 fps, only while something moves:
+      - a one-second "lights coming on" reveal;
+      - slow pulse rings on firms in a deal in the last two weeks;
+      - a breathing halo on the selected firm;
+      - eased fly-to on selection.
+    - Everything pauses when the tab is hidden or the map is scrolled away, and the motion is off under
+      `prefers-reduced-motion`.
+M6. **Loading.**
+    - `map.js` loads only when the Map tab opens.
+    - `riamap.json` holds one compact row per firm: about 1 MB raw for the full file, much less compressed.
+    - A click loads one of 32 detail shards (about 30 KB).
+    - The panel shows:
+      - AUM with its Form ADV date;
+      - accounts and average account size, clients, employees and advisory staff, offices;
+      - discretionary share, client mix by AUM, main practices (5G), fee types, other registrations, private
+        funds;
+      - whether disclosures were reported (neutral wording, with a link to the SEC page);
+      - recent deals from the tracker, website, SEC adviser page, Fiduciary Wire coverage, and "Add to
+        watchlist".
+    - Watchlist firms get an accent ring. Filters and the selected firm live in the URL
+      (`/?tab=map&focus=0&min=1000000000&firm=CRD`), and firm pages link to their spot on the map.
+M7. **Demo data.** The offline fixtures add ~600 synthetic advisers (made-up names) across 64 metros, plus a
+    synthetic gazetteer, so the demo map and the screenshots aren't nearly empty. "Demo data" stays in the
+    dateline.

@@ -50,7 +50,7 @@ GitHub Actions (weekdays every 3 hours 6:00–18:00 PT; weekends ~8:00 PT; or "R
 
 ## Using the site
 
-Four sections across the top, **Today · Feed · Deals · Archive**. Under them, on Today, Feed and Deals, a row of
+Five sections across the top, **Today · Feed · Deals · Archive · RIA map**. Under them, on Today, Feed and Deals, a row of
 **industry chips** filters everything to the industries you pick (pick several; the selection stays as you
 switch tabs and is kept in the URL, e.g. `/?tab=mna&industry=Investment+Banking,Wealth+Management+%26+RIAs`).
 
@@ -70,6 +70,14 @@ switch tabs and is kept in the URL, e.g. `/?tab=mna&industry=Investment+Banking,
   SEC adviser page, and every deal naming the firm.
 - **Archive** (`?tab=archive`) lists past digests by week, and the **Friday M&A recaps**: deal count, deals per
   industry, disclosed price total, most active acquirers and a short Claude-written paragraph.
+- **RIA map** (`?tab=map`) puts every SEC-registered adviser (about 15,800) on a map of the U.S., sized by AUM and
+  colored by client focus (wealth management, funds & alternatives, institutional). Drag, scroll or pinch to
+  zoom; search by name or city; filter by AUM, service offered or focus, or show only firms in the news. Click a
+  dot for its Form ADV profile: AUM, accounts and average account size, clients, staff, offices, client mix,
+  main practices, fee types, other registrations, disclosures, recent deals, and links to its website and SEC
+  page. Firms are placed at their ZIP code's centroid, never a street address. Firms with a deal in the last
+  two weeks pulse gently; the motion pauses when you're not looking and is off if your system asks for reduced
+  motion.
 - **Sources** (footer link) shows each source's status and how many of its items were dropped as not deals.
 - **Watchlist** (dateline): add companies with optional aliases; it lives only in your browser. Export/Import
   JSON moves it between browsers; the same file is the `WATCHLIST_JSON` email secret.
@@ -172,7 +180,7 @@ generated data still matches the contract.
 ```bash
 pip install -r requirements.txt
 python -m pytest                   # 352 tests, no network (fixture feeds + httpx MockTransport)
-python scripts/screenshots.py      # Playwright: 16 views × 1440/390 × light/dark, interactions, tap targets; fails on console errors
+python scripts/screenshots.py      # Playwright: 19 views (+ a 16k-adviser map load test) × 1440/390 × light/dark, interactions, tap targets; fails on console errors
 python scripts/make_fixtures.py    # regenerate the offline fixture sites
 python -m fiduciarywire eval-firms    # firm-matching precision/recall on the 75 labeled headlines
 ```

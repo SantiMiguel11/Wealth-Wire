@@ -33,6 +33,8 @@ Conventions:
 | `firms/<slug>.json` | `firm.schema.json` | Firm page `/firm/<slug>` |
 | `trending.json` | `trending.schema.json` | Trending Firms sidebar |
 | `sources.json` | `sources.schema.json` | Sources view |
+| `riamap.json` | `riamap.schema.json` | RIA map (one row per adviser) |
+| `riamap/details-NN.json` | `riamap-details.schema.json` | RIA map → one adviser's profile |
 
 Routes the frontend must handle:
 - `/` (feed)
@@ -199,6 +201,23 @@ Only SEC-verified firms mentioned in at least one story get an entry and a page.
 `{schema_version, generated_at, days, firms[{name, slug, crd, verified, stories}]}`: firms ranked by the
 number of distinct stories (clusters) mentioning them in the last `days` days. `slug` is null for unverified
 firms, which have no page to link to.
+
+## `riamap.json` and `riamap/details-NN.json`
+
+The RIA map. `riamap.json` = `{schema_version, generated_at, sec_data_date, width: 975, height: 610, shards, counts
+{advisers, mapped, unmapped}, total_aum_usd, focus[4], services[12], fields, firms[]}`. Each firm is a compact row
+in `fields` order: `[crd, name, x, y, aum_usd, city, state, focus, services, flags]`:
+- `x`, `y`: position in the 975×610 Albers USA frame of `/us-states.json` (the firm's ZIP centroid, fanned out
+  when several firms share a ZIP);
+- `focus`: index into `focus` (0 wealth management, 1 funds & alternatives, 2 institutional, 3 other);
+- `services`: bitmask over `services` (Form ADV 5G; bit 0 = financial planning);
+- `flags`: 1 has a firm page, 2 in a deal in the last 14 days, 4 reports disciplinary disclosures, 8 wrap-fee program.
+Rows are sorted by AUM, largest first.
+
+`riamap/details-NN.json` (NN = CRD mod `shards`, two digits) = `{schema_version, firms: {"<crd>": {legal_name, zip,
+website, registered, adv_date, org_type, employees, advisory_staff, offices, clients, accounts, avg_account_usd,
+discretionary_pct, client_mix[[label, percent]], services[], compensation[], other_business[], private_funds,
+disclosures, iapd_url, slug, deals[{date, headline, role, url}]}}}`. No street address is ever published.
 
 ## `sources.json`
 

@@ -49,6 +49,9 @@ SCENES = [
     ("weekly", "/?tab=weekly&week=2026-W39"),
     ("sources", "/?tab=sources"),
     ("empty", "/?tab=feed&q=zzzznotaword"),
+    ("map", "/?tab=map"),
+    ("map-firm", "/?tab=map&firm=999001"),
+    ("map-filtered", "/?tab=map&focus=1,2&min=1000000000"),
 ]
 TAP_CHECK = """() => {
   const bad = [];
@@ -179,6 +182,9 @@ def main() -> int:
                         page.goto(base + path.format(firm=firm))
                         page.wait_for_load_state("networkidle")
                         page.wait_for_function("!document.querySelector('.skeleton')")
+                        if name.startswith("map"):
+                            page.wait_for_selector(".map-card")
+                            page.wait_for_timeout(1500)   # the reveal animation and fly-to finish
                         page.evaluate("document.fonts.ready")
                         overflow = page.evaluate("document.documentElement.scrollWidth - document.documentElement.clientWidth")
                         if overflow > 0:
@@ -200,6 +206,76 @@ def main() -> int:
             if "clusters.json" not in page.inner_text(".state.error"):
                 problems.append("error state does not name the file that failed")
             page.screenshot(path=str(OUT / "error-desktop-light.png"))
+            ctx.close()
+            # RIA map: search → select, click hit-testing, and frame times at production size (16k advisers)
+            ctx = browser.new_context(ignore_https_errors=True, viewport={"width": 1440, "height": 900}, color_scheme="light")
+            serve_fonts(ctx)
+            page = ctx.new_page()
+            page.on("pageerror", lambda e: problems.append(f"[map] pageerror: {e}"))
+            page.goto(base + "/?tab=map")
+            page.wait_for_selector(".map-top li")
+            page.fill(".map-search input", "Harborview")
+            page.keyboard.press("Enter")
+            page.wait_for_selector(".map-facts")
+            if "firm=999001" not in page.url or "Harborview" not in page.text_content(".map-name"):
+                problems.append("map: search did not select Harborview")
+            page.wait_for_timeout(1000)          # fly-to: the firm is now at the center of the map
+            box = page.locator(".map-stage").bounding_box()
+            page.mouse.click(box["x"] + box["width"] / 2, box["y"] + box["height"] / 2)
+            page.wait_for_timeout(200)
+            if "Harborview" not in (page.text_content(".map-name") or ""):
+                problems.append("map: clicking the centered dot did not keep Harborview selected")
+            page.locator(".map-stage").scroll_into_view_if_needed()
+            box = page.locator(".map-stage").bounding_box()
+            page.mouse.click(box["x"] + 12, box["y"] + 12)   # empty corner (the zoom buttons are top right) → deselect
+            try:
+                page.wait_for_function("!location.search.includes('firm=')", timeout=3000)
+            except Exception:
+                problems.append("map: clicking empty map did not clear the selection")
+            ctx.close()
+            ctx = browser.new_context(ignore_https_errors=True, viewport={"width": 1440, "height": 900}, color_scheme="dark")
+            serve_fonts(ctx)
+            page = ctx.new_page()
+
+            def big_map(route):
+                import random
+                real = json.loads(route.fetch().text())
+                rnd = random.Random(3)
+                rows = [[100000 + i, f"Adviser {i}", round(rnd.uniform(60, 900), 1), round(rnd.uniform(40, 560), 1),
+                         int(10 ** rnd.uniform(7, 11)), "City", "NY", rnd.randrange(4), rnd.randrange(4096), 2 if i % 400 == 0 else 0]
+                        for i in range(16000)]
+                real["firms"] = sorted(rows, key=lambda r: -r[4])
+                route.fulfill(status=200, content_type="application/json", body=json.dumps(real))
+            page.route("**/data/riamap.json", big_map)
+            page.goto(base + "/?tab=map")
+            page.wait_for_selector(".map-top li")
+            page.wait_for_timeout(1500)
+            box = page.locator(".map-stage").bounding_box()
+            page.mouse.move(box["x"] + box["width"] / 2, box["y"] + box["height"] / 2)
+            stats = page.evaluate("""async () => {
+              const deltas = []; let last = performance.now(); let run = true;
+              const loop = (t) => { deltas.push(t - last); last = t; if (run) requestAnimationFrame(loop); };
+              requestAnimationFrame(loop);
+              const stage = document.querySelector('.map-stage'); const r = stage.getBoundingClientRect();
+              for (let i = 0; i < 30; i++) {
+                stage.dispatchEvent(new WheelEvent('wheel', { deltaY: i < 15 ? -60 : 60, clientX: r.left + r.width / 2, clientY: r.top + r.height / 2, bubbles: true, cancelable: true }));
+                await new Promise((res) => setTimeout(res, 40));
+              }
+              run = false;
+              deltas.sort((a, b) => a - b);
+              return { frames: deltas.length, p50: deltas[Math.floor(deltas.length * .5)], p95: deltas[Math.floor(deltas.length * .95)] };
+            }""")
+            print(f"map at 16k advisers, zooming: {stats['frames']} frames, p50 {stats['p50']:.1f} ms, p95 {stats['p95']:.1f} ms")
+            if stats["p95"] > 50:
+                problems.append(f"map: zooming 16k advisers is janky (p95 frame {stats['p95']:.0f} ms)")
+            page.wait_for_timeout(400)   # the one full-quality repaint after zooming stops
+            idle = page.evaluate("""async () => {   // with nothing moving, the dots canvas must not repaint
+              const c = document.querySelector('.map-dots'); const ctx = c.getContext('2d'); let n = 0;
+              const orig = ctx.clearRect.bind(ctx); ctx.clearRect = (...a) => { n++; return orig(...a); };
+              await new Promise((res) => setTimeout(res, 1500)); ctx.clearRect = orig; return n; }""")
+            if idle:
+                problems.append(f"map: the dots canvas repainted {idle} times while idle")
+            page.screenshot(path=str(OUT / "map-16k-desktop-dark.png"))
             ctx.close()
             # interactions: URL-held filters; watchlist drawer (add/pin/export/remove/import, Esc, focus trap)
             for vp_name, (w, h) in VIEWPORTS.items():

@@ -89,12 +89,13 @@ def test_local_server_serves_site_and_firm_fallback(built):
 
 
 def test_frontend_script_parses():
-    """A syntax error in app.js blanks the whole site; catch it without a browser."""
+    """A syntax error in app.js blanks the whole site (map.js, the map); catch it without a browser."""
     import shutil
     import subprocess
 
     node = shutil.which("node")
     if not node:
         pytest.skip("node not installed")
-    r = subprocess.run([node, "--check", str(paths.FRONTEND_DIR / "app.js")], capture_output=True, text=True)
-    assert r.returncode == 0, r.stderr
+    for name in ("app.js", "map.js"):
+        r = subprocess.run([node, "--check", str(paths.FRONTEND_DIR / name)], capture_output=True, text=True)
+        assert r.returncode == 0, (name, r.stderr)
