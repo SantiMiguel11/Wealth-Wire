@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "cross-border-wealth-288330",
+ "name": "Cross Border Wealth",
+ "legal_name": "Cross Border Wealth",
+ "crd": "288330",
+ "sec_number": "801-114158",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 221885239.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/288330",
+ "stories": [
+  {
+   "cluster_id": 1073,
+   "headline": "Odeko Acquires Nantel McDiarmid in First Cross-Border Transaction",
+   "url": "https://www.prnewswire.com/news-releases/odeko-acquires-nantel-mcdiarmid-in-first-cross-border-transaction-302920051.html",
+   "category": "Technology",
+   "last_published": "2026-10-27T13:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/odeko-acquires-nantel-mcdiarmid-in-first-cross-border-transaction-302920051.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

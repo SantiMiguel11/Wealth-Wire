@@ -1,0 +1,112 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-10-31T06:55:14Z",
+ "days": 7,
+ "firms": [
+  {
+   "name": "North American Wealth Advisors",
+   "slug": "north-american-wealth-advisors-297057",
+   "crd": "297057",
+   "verified": true,
+   "stories": 3
+  },
+  {
+   "name": "All Star Financial",
+   "slug": "all-star-financial-323765",
+   "crd": "323765",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Andersen",
+   "slug": "andersen-124205",
+   "crd": "124205",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Apollo Capital Management",
+   "slug": "apollo-capital-management-143161",
+   "crd": "143161",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Apple & Associates",
+   "slug": "apple-associates-126849",
+   "crd": "126849",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Ares Capital Management",
+   "slug": "ares-capital-management-131619",
+   "crd": "131619",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Avance Investment Management",
+   "slug": "avance-investment-management-310749",
+   "crd": "310749",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Beverly Hills Private Wealth",
+   "slug": "beverly-hills-private-wealth-321132",
+   "crd": "321132",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Blue Moon Capital Management",
+   "slug": "blue-moon-capital-management-311941",
+   "crd": "311941",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Bluewater Wealth Advisors",
+   "slug": "bluewater-wealth-advisors-330078",
+   "crd": "330078",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Captrust",
+   "slug": "captrust-175112",
+   "crd": "175112",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Carlyle Group",
+   "slug": "carlyle-group-111128",
+   "crd": "111128",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Clio Asset Management",
+   "slug": "clio-asset-management-298041",
+   "crd": "298041",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Cross Border Wealth",
+   "slug": "cross-border-wealth-288330",
+   "crd": "288330",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Cumberland Advisors",
+   "slug": "cumberland-advisors-107964",
+   "crd": "107964",
+   "verified": true,
+   "stories": 1
+  }
+ ]
+}

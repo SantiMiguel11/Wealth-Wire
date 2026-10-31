@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "phase-3-capital-management-294408",
+ "name": "Phase 3 Capital Management",
+ "legal_name": "Phase 3 Capital Management",
+ "crd": "294408",
+ "sec_number": "801-113155",
+ "city": "Boca Raton",
+ "state": "FL",
+ "sec_aum_usd": 2537991000.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/294408",
+ "stories": [
+  {
+   "cluster_id": 1080,
+   "headline": "US WorldMeds Acquires Orbus Therapeutics, Expanding Commitment to Rare Diseases and Advancing Eflornithine in Adult Malignant Glioma",
+   "url": "https://www.prnewswire.com/news-releases/us-worldmeds-acquires-orbus-therapeutics-expanding-commitment-to-rare-diseases-and-advancing-eflornithine-in-adult-malignant-glioma-302921067.html",
+   "category": "Healthcare & Life Sciences",
+   "last_published": "2026-10-27T17:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/us-worldmeds-acquires-orbus-therapeutics-expanding-commitment-to-rare-diseases-and-advancing-eflornithine-in-adult-malignant-glioma-302921067.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

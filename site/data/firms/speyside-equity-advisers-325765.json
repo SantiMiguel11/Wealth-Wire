@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "speyside-equity-advisers-325765",
+ "name": "Speyside Equity Advisers",
+ "legal_name": "Speyside Equity Advisers",
+ "crd": "325765",
+ "sec_number": "801-127849",
+ "city": "Ann Arbor",
+ "state": "MI",
+ "sec_aum_usd": 811367311.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/325765",
+ "stories": [
+  {
+   "cluster_id": 1108,
+   "headline": "SPEYSIDE COMPLETES ACQUISITION OF THE TAPCO TUBE COMPANY",
+   "url": "https://www.prnewswire.com/news-releases/speyside-completes-acquisition-of-the-tapco-tube-company-302922824.html",
+   "category": "Industrials",
+   "last_published": "2026-10-29T14:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/speyside-completes-acquisition-of-the-tapco-tube-company-302922824.html"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1108,
+   "date": "2026-10-29T14:00:00Z",
+   "headline": "SPEYSIDE COMPLETES ACQUISITION OF THE TAPCO TUBE COMPANY",
+   "acquirer": {
+    "name": "SPEYSIDE",
+    "slug": "speyside-equity-advisers-325765",
+    "crd": "325765"
+   },
+   "target": {
+    "name": "TAPCO TUBE COMPANY",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "completed",
+   "value_usd": null,
+   "industries": [
+    "Industrials"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/speyside-completes-acquisition-of-the-tapco-tube-company-302922824.html"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

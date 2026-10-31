@@ -1,0 +1,42 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-10-31T06:55:14Z",
+ "digests": [],
+ "weekly": [
+  {
+   "week": "2026-W44",
+   "start": "2026-10-26",
+   "end": "2026-10-30",
+   "deal_count": 78,
+   "path": "data/weekly/2026-W44.json"
+  },
+  {
+   "week": "2026-W43",
+   "start": "2026-10-19",
+   "end": "2026-10-23",
+   "deal_count": 97,
+   "path": "data/weekly/2026-W43.json"
+  },
+  {
+   "week": "2026-W42",
+   "start": "2026-10-12",
+   "end": "2026-10-16",
+   "deal_count": 9,
+   "path": "data/weekly/2026-W42.json"
+  },
+  {
+   "week": "2026-W41",
+   "start": "2026-10-05",
+   "end": "2026-10-09",
+   "deal_count": 13,
+   "path": "data/weekly/2026-W41.json"
+  },
+  {
+   "week": "2026-W40",
+   "start": "2026-09-28",
+   "end": "2026-10-02",
+   "deal_count": 14,
+   "path": "data/weekly/2026-W40.json"
+  }
+ ]
+}

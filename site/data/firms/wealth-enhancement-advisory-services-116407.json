@@ -1,0 +1,72 @@
+{
+ "schema_version": 1,
+ "slug": "wealth-enhancement-advisory-services-116407",
+ "name": "Wealth Enhancement Advisory Services",
+ "legal_name": "Wealth Enhancement Advisory Services",
+ "crd": "116407",
+ "sec_number": "801-60749",
+ "city": "Plymouth",
+ "state": "MN",
+ "sec_aum_usd": 122186725110.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/116407",
+ "stories": [
+  {
+   "cluster_id": 339,
+   "headline": "Wealth Enhancement Pens Largest Deal to Date with $22B RWA Partners",
+   "url": "https://www.wealthmanagement.com/ria-news/wealth-enhancement-pens-largest-deal-to-date-with-22b-rwa-partners",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-09-30T16:05:00Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/wealth-enhancement-pens-largest-deal-to-date-with-22b-rwa-partners"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/wealth-enhancement-agrees-to-buy-22b-rwa-wealth-partners-in-family-office-play/268419"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 339,
+   "date": "2026-09-30T16:05:00Z",
+   "headline": "Wealth Enhancement Pens Largest Deal to Date with $22B RWA Partners",
+   "acquirer": {
+    "name": "Wealth Enhancement",
+    "slug": "wealth-enhancement-advisory-services-116407",
+    "crd": "116407"
+   },
+   "target": {
+    "name": "RWA Partners",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/wealth-enhancement-pens-largest-deal-to-date-with-22b-rwa-partners"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/wealth-enhancement-agrees-to-buy-22b-rwa-wealth-partners-in-family-office-play/268419"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

@@ -1,0 +1,72 @@
+{
+ "schema_version": 1,
+ "slug": "truelink-capital-management-323910",
+ "name": "Truelink Capital Management",
+ "legal_name": "Truelink Capital Management",
+ "crd": "323910",
+ "sec_number": "801-126925",
+ "city": "Los Angeles",
+ "state": "CA",
+ "sec_aum_usd": 4197667227.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/323910",
+ "stories": [
+  {
+   "cluster_id": 1063,
+   "headline": "Truelink Capital Signs Definitive Agreement to Acquire Johnson Controls' Global Intrusion Products Business",
+   "url": "https://www.prnewswire.com/news-releases/truelink-capital-signs-definitive-agreement-to-acquire-johnson-controls-global-intrusion-products-business-302919844.html",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-10-26T20:22:57Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/truelink-capital-signs-definitive-agreement-to-acquire-johnson-controls-global-intrusion-products-business-302919844.html"
+    },
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4657539-truelink-capital-to-acquire-johnson-controls-global-intrusion-products-business?source=feed_tag_m_a"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1063,
+   "date": "2026-10-26T20:07:00Z",
+   "headline": "Truelink Capital Signs Definitive Agreement to Acquire Johnson Controls' Global Intrusion Products Business",
+   "acquirer": {
+    "name": "Truelink Capital",
+    "slug": "truelink-capital-management-323910",
+    "crd": "323910"
+   },
+   "target": {
+    "name": "Johnson Controls' Global Intrusion Products Business",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/truelink-capital-signs-definitive-agreement-to-acquire-johnson-controls-global-intrusion-products-business-302919844.html"
+    },
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4657539-truelink-capital-to-acquire-johnson-controls-global-intrusion-products-business?source=feed_tag_m_a"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

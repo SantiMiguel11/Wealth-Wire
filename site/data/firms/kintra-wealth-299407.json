@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "kintra-wealth-299407",
+ "name": "Kintra Wealth",
+ "legal_name": "Kintra Wealth",
+ "crd": "299407",
+ "sec_number": "801-114485",
+ "city": "Williamsport",
+ "state": "PA",
+ "sec_aum_usd": 1501009982.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/299407",
+ "stories": [
+  {
+   "cluster_id": 1020,
+   "headline": "RIA moves: Kintra Wealth adds $355M Great Scott Financial practice",
+   "url": "https://www.investmentnews.com/ria-news/ria-moves-kintra-wealth-adds-355m-great-scott-financial-practice/268700",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-10-22T15:14:51Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/ria-moves-kintra-wealth-adds-355m-great-scott-financial-practice/268700"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1020,
+   "date": "2026-10-22T15:14:51Z",
+   "headline": "RIA moves: Kintra Wealth adds $355M Great Scott Financial practice",
+   "acquirer": {
+    "name": "Kintra Wealth",
+    "slug": "kintra-wealth-299407",
+    "crd": "299407"
+   },
+   "target": {
+    "name": "Great Scott Financial",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 355000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/ria-moves-kintra-wealth-adds-355m-great-scott-financial-practice/268700"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

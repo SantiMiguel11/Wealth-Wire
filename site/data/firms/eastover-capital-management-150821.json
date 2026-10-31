@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "eastover-capital-management-150821",
+ "name": "Eastover Capital Management",
+ "legal_name": "Eastover Investment Advisors",
+ "crd": "150821",
+ "sec_number": "801-70406",
+ "city": "Charlotte",
+ "state": "NC",
+ "sec_aum_usd": 392271338.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/150821",
+ "stories": [
+  {
+   "cluster_id": 1104,
+   "headline": "South Atlantic Bank to Acquire Eastover Investment Advisors LLC",
+   "url": "https://www.prnewswire.com/news-releases/south-atlantic-bank-to-acquire-eastover-investment-advisors-llc-302922633.html",
+   "category": "Banking",
+   "last_published": "2026-10-28T20:01:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/south-atlantic-bank-to-acquire-eastover-investment-advisors-llc-302922633.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

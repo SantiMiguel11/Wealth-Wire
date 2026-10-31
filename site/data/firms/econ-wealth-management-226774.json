@@ -1,0 +1,34 @@
+{
+ "schema_version": 1,
+ "slug": "econ-wealth-management-226774",
+ "name": "Econ Wealth Management",
+ "legal_name": "Econ Financial Services",
+ "crd": "226774",
+ "sec_number": "801-104471",
+ "city": "Harrisburg",
+ "state": "PA",
+ "sec_aum_usd": 232083037.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/226774",
+ "stories": [
+  {
+   "cluster_id": 1084,
+   "headline": "ALAMO GROUP ANNOUNCES ACQUISITION OF ECON ENGINEERING",
+   "url": "https://www.prnewswire.com/news-releases/alamo-group-announces-acquisition-of-econ-engineering-302921217.html",
+   "category": "Industrials",
+   "last_published": "2026-10-27T20:24:54Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/alamo-group-announces-acquisition-of-econ-engineering-302921217.html"
+    },
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4658403-alamo-group-acquires-uk-based-econ-engineering-for-120m?source=feed_tag_m_a"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,3301 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-10-24T05:42:32Z",
+ "week": "2026-W43",
+ "start": "2026-10-19",
+ "end": "2026-10-23",
+ "deals": [
+  {
+   "cluster_id": 1035,
+   "date": "2026-10-23T20:30:00Z",
+   "headline": "ENERGY SERVICES OF AMERICA COMPLETES FAMCO ACQUISITION",
+   "acquirer": {
+    "name": "ENERGY SERVICES OF AMERICA",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "FAMCO",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "completed",
+   "value_usd": null,
+   "industries": [
+    "Energy & Utilities"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/energy-services-of-america-completes-famco-acquisition-302918424.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1036,
+   "date": "2026-10-23T18:18:01Z",
+   "headline": "Smith & Nephew was in discussions to merge with J&J unit, talks collapsed - FT",
+   "acquirer": {
+    "name": "Smith",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Nephew",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "merger",
+   "confidence": "high",
+   "note": "",
+   "stage": "terminated",
+   "value_usd": null,
+   "industries": [
+    "Other"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4656696-smith-and-nephew-was-in-discussions-to-merge-with-j-and-j-unit-talks-collapsed-ft?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1031,
+   "date": "2026-10-23T16:18:02Z",
+   "headline": "Oklahoma Landlord to Pay $52K for Violating Fair Housing Act",
+   "acquirer": {
+    "name": "Oklahoma Landlord",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Violating Fair Housing Act",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Insurance",
+    "Real Estate"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Insurance Journal",
+     "url": "https://www.insurancejournal.com/news/southcentral/2026/10/23/890193.htm"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1032,
+   "date": "2026-10-23T16:00:00Z",
+   "headline": "Everspan to sell its redundant admitted shell company to Falvey Insurance",
+   "acquirer": {
+    "name": "Falvey Insurance",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Everspan’s redundant admitted shell company",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Insurance",
+    "Energy & Utilities"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Reinsurance News",
+     "url": "https://www.reinsurancene.ws/everspan-to-sell-its-redundant-admitted-shell-company-to-falvey-insurance/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1030,
+   "date": "2026-10-23T13:00:48Z",
+   "headline": "Midera Food Processing acquires Phoenix Innovations",
+   "acquirer": {
+    "name": "Midera Food Processing",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Phoenix Innovations",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Consumer & Retail"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4656562-midera-food-processing-acquires-phoenix-innovations?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1029,
+   "date": "2026-10-23T13:00:00Z",
+   "headline": "WSG ACQUIRES SANCTUARY, POSITIONING THE CONTEMPORARY WOMEN'S BRAND FOR GLOBAL GROWTH",
+   "acquirer": {
+    "name": "WSG",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "SANCTUARY",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Other"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/wsg-acquires-sanctuary-positioning-the-contemporary-womens-brand-for-global-growth-302917570.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1033,
+   "date": "2026-10-23T07:00:00Z",
+   "headline": "Gilead to pay $1.3B upfront for PepStar’s oral IL-23 challenger to J&J’s Icotyde",
+   "acquirer": {
+    "name": "Gilead",
+    "slug": "gilead-capital-282023",
+    "crd": "282023"
+   },
+   "target": {
+    "name": "IL-23",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 1300000000.0,
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Fierce Biotech",
+     "url": "https://www.fiercebiotech.com/biotech/gilead-pay-13b-upfront-pepstars-oral-il-23-challenger-jjs-icotyde"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1024,
+   "date": "2026-10-22T21:00:00Z",
+   "headline": "Procede Software Announces Strategic Acquisition of RIMSS, Bringing Together Decades of Dealer Technology Leadership",
+   "acquirer": {
+    "name": "Procede Software",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "RIMSS",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Technology"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/procede-software-announces-strategic-acquisition-of-rimss-bringing-together-decades-of-dealer-technology-leadership-302916018.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1025,
+   "date": "2026-10-22T20:00:00Z",
+   "headline": "Oridian Capital Partners-Backed ACR Acquires Ultra Green Packaging",
+   "acquirer": {
+    "name": "Oridian Capital Partners-Backed ACR",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Ultra Green Packaging",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Industrials"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/oridian-capital-partners-backed-acr-acquires-ultra-green-packaging-302917396.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1026,
+   "date": "2026-10-22T19:21:00Z",
+   "headline": "Amynta Group Completes Acquisition of Southern States Underwriters",
+   "acquirer": {
+    "name": "Amynta Group",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Southern States Underwriters",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "completed",
+   "value_usd": null,
+   "industries": [
+    "Insurance"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/amynta-group-completes-acquisition-of-southern-states-underwriters-302917382.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1027,
+   "date": "2026-10-22T17:59:00Z",
+   "headline": "Harlem Children's Zone Acquires FinTech Platform, Goalsetter, to Accelerate Universal Economic Mobility",
+   "acquirer": {
+    "name": "Harlem Children's Zone",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target not named in the headline",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Fintech & Payments",
+    "Industrials"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/harlem-childrens-zone-acquires-fintech-platform-goalsetter-to-accelerate-universal-economic-mobility-302917320.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1015,
+   "date": "2026-10-22T17:41:14Z",
+   "headline": "Datadog made offer to buy cloud cybersecurity startup Upwind - Information",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Upwind",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "acquirer not named in the headline",
+   "stage": "bid",
+   "value_usd": null,
+   "industries": [
+    "Technology"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4656092-datadog-made-offer-to-buy-cloud-cybersecurity-startup-upwind---information?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1022,
+   "date": "2026-10-22T16:24:10Z",
+   "headline": "Risant Health to acquire Oklahoma system Integris Health",
+   "acquirer": {
+    "name": "Risant Health",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Integris Health",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Healthcare Dive",
+     "url": "https://www.healthcaredive.com/news/risant-health-acquire-oklahoma-system-integris-health/833748/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1019,
+   "date": "2026-10-22T16:22:30Z",
+   "headline": "Investment Roundup: ACORE Capital Adds Wealth Division",
+   "acquirer": {
+    "name": "Investment Roundup",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Wealth Division",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/real-estate/investment-roundup-acore-capital-adds-wealth-division"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1020,
+   "date": "2026-10-22T15:14:51Z",
+   "headline": "RIA moves: Kintra Wealth adds $355M Great Scott Financial practice",
+   "acquirer": {
+    "name": "Kintra Wealth",
+    "slug": "kintra-wealth-299407",
+    "crd": "299407"
+   },
+   "target": {
+    "name": "Great Scott Financial",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 355000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/ria-moves-kintra-wealth-adds-355m-great-scott-financial-practice/268700"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1007,
+   "date": "2026-10-22T13:55:00Z",
+   "headline": "Alliant Power Acquires Family Machine LLC, Expanding Remanufacturing Capacity and Customer Service",
+   "acquirer": {
+    "name": "Alliant Power",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Family Machine LLC",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Energy & Utilities"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/alliant-power-acquires-family-machine-llc-expanding-remanufacturing-capacity-and-customer-service-302916940.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1016,
+   "date": "2026-10-22T13:53:14Z",
+   "headline": "Visa in talks to buy Fireblocks for about $2.5B - Axios Pro (update)",
+   "acquirer": {
+    "name": "Visa",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Fireblocks",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "rumored",
+   "value_usd": 2500000000.0,
+   "industries": [
+    "Fintech & Payments"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4655899-visa-in-talks-to-buy-fireblocks-for-about-2_5b-axios-pro?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1008,
+   "date": "2026-10-22T13:52:00Z",
+   "headline": "Sequoia Financial Group Acquires Colorado Wealth Manager Quish",
+   "acquirer": {
+    "name": "Sequoia Financial Group",
+    "slug": "sequoia-financial-group-117756",
+    "crd": "117756"
+   },
+   "target": {
+    "name": "Colorado Wealth Manager Quish",
+    "slug": "quish-146212",
+    "crd": "146212"
+   },
+   "target_aum_usd": 154181658.0,
+   "target_aum_source": "sec",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/sequoia-financial-group-acquires-colorado-wealth-manager-quish-302917053.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1009,
+   "date": "2026-10-22T12:53:00Z",
+   "headline": "Forte Technologies Acquires Business Cyber Security Solutions, Launches Dedicated Cyber Assurance Practice",
+   "acquirer": {
+    "name": "Forte Technologies",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Business Cyber Security Solutions",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Technology"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/forte-technologies-acquires-business-cyber-security-solutions-launches-dedicated-cyber-assurance-practice-302916403.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1010,
+   "date": "2026-10-22T12:32:00Z",
+   "headline": "Real Diagnostics Acquires SimplyTest, Expands Its High-Complexity Laboratory Portfolio with Saliva-Based Oral Health Testing",
+   "acquirer": {
+    "name": "Real Diagnostics",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "SimplyTest",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Healthcare & Life Sciences",
+    "Business Services"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/real-diagnostics-acquires-simplytest-expands-its-high-complexity-laboratory-portfolio-with-saliva-based-oral-health-testing-302916353.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1017,
+   "date": "2026-10-22T11:14:55Z",
+   "headline": "KKR to acquire Explosion Protection and Static Control segments from HOERBIGER",
+   "acquirer": {
+    "name": "KKR",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Explosion Protection and Static Control",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "several targets in one headline",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4655817-kkr-to-acquire-explosion-protection-and-static-control-segments-from-hoerbiger?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1012,
+   "date": "2026-10-22T11:00:00Z",
+   "headline": "PRC-Saltillo Acquires Ner Chat, Bringing Minspeak® Symbols to Glint Visual Support Platform",
+   "acquirer": {
+    "name": "PRC-Saltillo",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Ner Chat",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Other"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/prc-saltillo-acquires-ner-chat-bringing-minspeak-symbols-to-glint-visual-support-platform-302915859.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1013,
+   "date": "2026-10-22T10:00:00Z",
+   "headline": "H.I.G. Capital Acquires a Majority Stake in L4A to Support Continued Growth and Expansion",
+   "acquirer": {
+    "name": "H.I.G. Capital",
+    "slug": "h-i-g-capital-160711",
+    "crd": "160711"
+   },
+   "target": {
+    "name": "L4A",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "stake",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/hig-capital-acquires-a-majority-stake-in-l4a-to-support-continued-growth-and-expansion-302916040.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1011,
+   "date": "2026-10-22T07:00:00Z",
+   "headline": "Redesign Health, ARC Global merge in $2B deal to accelerate health system innovation",
+   "acquirer": {
+    "name": "Redesign Health",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "ARC Global",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "merger",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 2000000000.0,
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "Fierce Healthcare",
+     "url": "https://www.fiercehealthcare.com/health-tech/redesign-health-arc-global-merge-2b-deal-accelerate-health-system-innovation"
+    },
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/redesign-health-and-arc-global-merge-to-help-health-systems-shape-the-future-of-healthcare-from-within-302915968.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1006,
+   "date": "2026-10-22T05:00:57Z",
+   "headline": "Plymouth Rock Sells Encharter Agency to MountainOne",
+   "acquirer": {
+    "name": "MountainOne",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Encharter Agency",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Banking",
+    "Insurance"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Insurance Journal",
+     "url": "https://www.insurancejournal.com/news/east/2026/10/22/889924.htm"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1002,
+   "date": "2026-10-22T04:00:12Z",
+   "headline": "Politico and Telegraph owner pitched deal to buy European arm of TikTok",
+   "acquirer": {
+    "name": "FirstFT",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "TikTok’s European",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Other"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Financial Times Companies",
+     "url": "https://www.ft.com/content/171220b9-8d8e-4d82-a866-f9aaf258e0fb?syn-25a6b1a6=1"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1000,
+   "date": "2026-10-22T01:00:00Z",
+   "headline": "Side Acquires Boutique Art Studio Roboto Entertainment in Creative Services Push",
+   "acquirer": {
+    "name": "Side",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Art Studio Roboto Entertainment",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Media & Telecom"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/side-acquires-boutique-art-studio-roboto-entertainment-in-creative-services-push-302915576.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1001,
+   "date": "2026-10-21T23:25:00Z",
+   "headline": "Cognizant to Acquire DyFlex Solutions, Accelerating AI-Led Enterprise Transformation for SAP Clients in Australia and New Zealand",
+   "acquirer": {
+    "name": "Cognizant",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "DyFlex Solutions",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Technology"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/cognizant-to-acquire-dyflex-solutions-accelerating-ai-led-enterprise-transformation-for-sap-clients-in-australia-and-new-zealand-302916092.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1004,
+   "date": "2026-10-21T22:23:49Z",
+   "headline": "Buyout firm EQT acquires German diagnostics group in €10.8bn deal",
+   "acquirer": {
+    "name": "EQT",
+    "slug": "eqt-partners-160179",
+    "crd": "160179"
+   },
+   "target": {
+    "name": "German",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management",
+    "Healthcare & Life Sciences"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Financial Times Companies",
+     "url": "https://www.ft.com/content/5833c24e-3a4b-4242-a8c2-8f9918c4670c?syn-25a6b1a6=1"
+    },
+    {
+     "name": "Fierce Biotech",
+     "url": "https://www.fiercebiotech.com/medtech/eqt-buys-molecular-diagnostics-specialist-qiagen-eur108b-deal"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1005,
+   "date": "2026-10-21T21:55:29Z",
+   "headline": "LSEG nears $3.5bn deal to buy credit data specialist Octus",
+   "acquirer": {
+    "name": "LSEG",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Octus",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 3500000000.0,
+   "industries": [
+    "Other"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Financial Times Companies",
+     "url": "https://www.ft.com/content/abe0ee90-b0ad-45c2-95db-93f0663af34b?syn-25a6b1a6=1"
+    },
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4655699-lseg-buys-credit-data-provider-octus-in-35b-cash-deal?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 997,
+   "date": "2026-10-21T20:30:00Z",
+   "headline": "Bose Corporation Acquires Skullcandy, Expanding Its Consumer Audio Portfolio to Reach New Audiences",
+   "acquirer": {
+    "name": "Bose Corporation",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Skullcandy",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Consumer & Retail"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/bose-corporation-acquires-skullcandy-expanding-its-consumer-audio-portfolio-to-reach-new-audiences-302915875.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 998,
+   "date": "2026-10-21T20:10:00Z",
+   "headline": "VINCI COMPASS ANNOUNCES THE LAUNCH OF VINCI PERMANENT CAPITAL SOLUTIONS WITH THE ACQUISITION OF AUSTRALRE",
+   "acquirer": {
+    "name": "CAPITAL SOLUTIONS",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "AUSTRALRE",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/vinci-compass-announces-the-launch-of-vinci-permanent-capital-solutions-with-the-acquisition-of-australre-302915949.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 999,
+   "date": "2026-10-21T18:35:00Z",
+   "headline": "Greenberg Traurig Advises OPKO Health on $722M+ Agreement to Sell Select BioReference Health Assets to Labcorp",
+   "acquirer": {
+    "name": "Labcorp",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Select BioReference Health Assets",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/greenberg-traurig-advises-opko-health-on-722m-agreement-to-sell-select-bioreference-health-assets-to-labcorp-302915762.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 973,
+   "date": "2026-10-21T16:30:00Z",
+   "headline": "Mapmygenome Completes Acquisition of dnaPower Inc. to Accelerate North American Expansion in DNA, Microbiome, Longevity and Precision Health Testing",
+   "acquirer": {
+    "name": "Mapmygenome",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "dnaPower Inc",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "completed",
+   "value_usd": null,
+   "industries": [
+    "Healthcare & Life Sciences",
+    "Business Services"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/mapmygenome-completes-acquisition-of-dnapower-inc-to-accelerate-north-american-expansion-in-dna-microbiome-longevity-and-precision-health-testing-302915388.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 992,
+   "date": "2026-10-21T16:27:08Z",
+   "headline": "Cross River to acquire customer-loyalty specialist Accrue",
+   "acquirer": {
+    "name": "Cross River",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Accrue",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Banking",
+    "Fintech & Payments",
+    "Technology"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Banking Dive",
+     "url": "https://www.bankingdive.com/news/cross-river-acquisition-accrue-fintech-branded-wallet-loyalty/833611/"
+    },
+    {
+     "name": "Payments Dive",
+     "url": "https://www.paymentsdive.com/news/cross-river-acquisition-accrue-fintech-branded-wallet-loyalty/833670/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 988,
+   "date": "2026-10-21T15:22:18Z",
+   "headline": "Thompson Street-backed Savillex carves out Entegris’ life sciences fluid management business",
+   "acquirer": {
+    "name": "Thompson Street-backed Savillex",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Entegris’",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management",
+    "Healthcare & Life Sciences"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/thompson-street-backed-savillex-carves-out-entegris-life-sciences-fluid-management-business/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 974,
+   "date": "2026-10-21T15:00:00Z",
+   "headline": "Mérieux NutriSciences Completes Acquisition of Certified Group, Becoming North America's Leading Food Testing Provider",
+   "acquirer": {
+    "name": "Mérieux NutriSciences",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Certified Group",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "completed",
+   "value_usd": null,
+   "industries": [
+    "Consumer & Retail",
+    "Business Services"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/merieux-nutrisciences-completes-acquisition-of-certified-group-becoming-north-americas-leading-food-testing-provider-302915607.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 989,
+   "date": "2026-10-21T14:30:41Z",
+   "headline": "Extens strikes deal to sell MediReport stake to Philips",
+   "acquirer": {
+    "name": "Philips",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "MediReport",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management",
+    "Healthcare & Life Sciences",
+    "Technology"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/extens-strikes-deal-to-sell-medireport-stake-to-philips/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 985,
+   "date": "2026-10-21T13:38:40Z",
+   "headline": "Rockets, robots and risk: Musk’s $3.6tn gamble to merge Tesla and SpaceX",
+   "acquirer": {
+    "name": "Rockets",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "merger",
+   "confidence": "low",
+   "note": "target not named in the headline",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Industrials"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Financial Times Companies",
+     "url": "https://www.ft.com/content/e598bbc7-8211-436f-a57e-46c3ae21ac0f?syn-25a6b1a6=1"
+    }
+   ]
+  },
+  {
+   "cluster_id": 986,
+   "date": "2026-10-21T13:23:37Z",
+   "headline": "Dangote takes stake in Kenyan pipeline and pledges more ‘aggressive’ energy investment",
+   "acquirer": {
+    "name": "Dangote",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Kenyan",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "stake",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Energy & Utilities"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Financial Times Companies",
+     "url": "https://www.ft.com/content/e3282291-be9a-4c97-8fc8-d43f9297e167?syn-25a6b1a6=1"
+    }
+   ]
+  },
+  {
+   "cluster_id": 978,
+   "date": "2026-10-21T13:00:00Z",
+   "headline": "CPL Expands Chicago, Midwest Footprint Through Acquisition of Bailey Edward",
+   "acquirer": {
+    "name": "Midwest Footprint",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Bailey Edward",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Other"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/cpl-expands-chicago-midwest-footprint-through-acquisition-of-bailey-edward-302915059.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 975,
+   "date": "2026-10-21T13:00:00Z",
+   "headline": "Stord Acquires AMS Fulfillment, Enhancing Its Market-Leading Scale and Network Coverage",
+   "acquirer": {
+    "name": "Stord",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "AMS Fulfillment",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Technology",
+    "Industrials"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/stord-acquires-ams-fulfillment-enhancing-its-market-leading-scale-and-network-coverage-302915069.html"
+    },
+    {
+     "name": "Supply Chain Dive",
+     "url": "https://www.supplychaindive.com/news/stord-expands-network-with-ams-fulfillment-purchase/833617/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 979,
+   "date": "2026-10-21T12:57:00Z",
+   "headline": "Shrieve Chemical Company Acquires Research Solutions Group",
+   "acquirer": {
+    "name": "Shrieve Chemical Company",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Research Solutions Group",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management",
+    "Industrials"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/shrieve-chemical-company-acquires-research-solutions-group-302914663.html"
+    },
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/gemsprings-shrieve-chemical-adds-alabama-solvents-specialist-research-solutions-group/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 980,
+   "date": "2026-10-21T11:38:00Z",
+   "headline": "Newforma Acquires Lumi AI and Sets Its Standard for AI Answers on Project Data",
+   "acquirer": {
+    "name": "Newforma",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Lumi AI",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Technology"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/newforma-acquires-lumi-ai-and-sets-its-standard-for-ai-answers-on-project-data-302914832.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 987,
+   "date": "2026-10-21T10:47:07Z",
+   "headline": "National Express owner in talks over £282mn take-private deal",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "282mn",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "acquirer not named in the headline",
+   "stage": "rumored",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Financial Times Companies",
+     "url": "https://www.ft.com/content/a2c32972-da84-44ff-82cf-d66ae8bc1446?syn-25a6b1a6=1"
+    }
+   ]
+  },
+  {
+   "cluster_id": 981,
+   "date": "2026-10-21T10:30:00Z",
+   "headline": "Tide Rock Acquires Electro-Spec to Launch Specialty Surface Finishing Platform",
+   "acquirer": {
+    "name": "Tide Rock",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Electro-Spec",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Healthcare & Life Sciences",
+    "Technology",
+    "Industrials"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/tide-rock-acquires-electro-spec-to-launch-specialty-surface-finishing-platform-302914841.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 976,
+   "date": "2026-10-21T07:38:00Z",
+   "headline": "HR Path Strengthens its Australian Presence with Strategic Acquisition of Payroll Experts Australia",
+   "acquirer": {
+    "name": "Strategic",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Payroll Experts Australia",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Business Services"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/hr-path-strengthens-its-australian-presence-with-strategic-acquisition-of-payroll-experts-australia-302915164.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 996,
+   "date": "2026-10-21T07:00:00Z",
+   "headline": "Hologic snaps up Reveal Genomics to boost genomic diagnostic reach",
+   "acquirer": {
+    "name": "Hologic",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Reveal Genomics",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Fierce Biotech",
+     "url": "https://www.fiercebiotech.com/medtech/hologic-snaps-reveal-genomics-boost-genomic-diagnostic-reach"
+    }
+   ]
+  },
+  {
+   "cluster_id": 984,
+   "date": "2026-10-21T07:00:00Z",
+   "headline": "Cencora to acquire majority stake in $2.4B American Oncology Network",
+   "acquirer": {
+    "name": "Cencora",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "American Oncology Network",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "stake",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 2400000000.0,
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Fierce Healthcare",
+     "url": "https://www.fiercehealthcare.com/finance/cencora-acquire-majority-stake-24b-american-oncology-network"
+    },
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4655122-cencora-buy-american-oncology-network?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 972,
+   "date": "2026-10-21T05:11:21Z",
+   "headline": "EC-Council Acquires Cyber Insurance Academy, Expands AI Risk Education",
+   "acquirer": {
+    "name": "EC-Council",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Cyber Insurance Academy",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Insurance",
+    "Technology",
+    "Business Services"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Insurance Journal",
+     "url": "https://www.insurancejournal.com/news/national/2026/10/21/889750.htm"
+    }
+   ]
+  },
+  {
+   "cluster_id": 970,
+   "date": "2026-10-20T22:43:00Z",
+   "headline": "Network Brainiacs Expands into Maryland Through Acquisition of Computer Enhancement Systems in Frederick",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Computer Enhancement Systems",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "acquirer not named in the headline",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Technology"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/network-brainiacs-expands-into-maryland-through-acquisition-of-computer-enhancement-systems-in-frederick-302914596.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 964,
+   "date": "2026-10-20T21:41:32Z",
+   "headline": "Alcon acquires Neurotech Pharmaceuticals",
+   "acquirer": {
+    "name": "Alcon",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Neurotech Pharmaceuticals",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654962-alcon-acquires-neurotech-pharmaceuticals?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 965,
+   "date": "2026-10-20T21:40:54Z",
+   "headline": "Musk says SpaceX, Tesla form committees to explore potential merger",
+   "acquirer": {
+    "name": "SpaceX",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Tesla",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "merger",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Industrials"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654965-musk-says-spacex-tesla-form-committees-to-explore-potential-merger?source=feed_tag_m_a"
+    },
+    {
+     "name": "Financial Times Companies",
+     "url": "https://www.ft.com/content/f2a2a578-5a2e-42ff-b4c9-8bafff271b37?syn-25a6b1a6=1"
+    }
+   ]
+  },
+  {
+   "cluster_id": 966,
+   "date": "2026-10-20T19:39:27Z",
+   "headline": "CBRE to buy Onnec for up to ~$1B to add to data center infrastructure services",
+   "acquirer": {
+    "name": "CBRE",
+    "slug": "cbre-investment-management-109981",
+    "crd": "109981"
+   },
+   "target": {
+    "name": "Onnec",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Technology"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654847-cbre-to-buy-onnec-for-up-to-1b-to-add-to-data-center-infrastructure-services?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 962,
+   "date": "2026-10-20T17:01:12Z",
+   "headline": "Wealthspire Division Acquires $1B Wealth Manager in London",
+   "acquirer": {
+    "name": "Wealthspire Division",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 1000000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target not named in the headline",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/ground-control-acquires-atlantic-swift-wealth-firm"
+    }
+   ]
+  },
+  {
+   "cluster_id": 949,
+   "date": "2026-10-20T15:15:00Z",
+   "headline": "Trinity Acquires Verix, Adding AI-Powered Next-Best-Action and Omnichannel Orchestration to the TrinityEDGE Platform",
+   "acquirer": {
+    "name": "Trinity",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Verix",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Technology"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/trinity-acquires-verix-adding-ai-powered-next-best-action-and-omnichannel-orchestration-to-the-trinityedge-platform-302914278.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 950,
+   "date": "2026-10-20T15:02:00Z",
+   "headline": "Azra AI Acquires Blackford Analysis to Close the Most Dangerous Gap in Healthcare: What Happens After the Scan",
+   "acquirer": {
+    "name": "Azra AI",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Blackford Analysis",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Healthcare & Life Sciences",
+    "Technology"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/azra-ai-acquires-blackford-analysis-to-close-the-most-dangerous-gap-in-healthcare-what-happens-after-the-scan-302913732.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 952,
+   "date": "2026-10-20T15:00:00Z",
+   "headline": "SERVICEMASTER OF TACOMA ACQUIRES REDMOND RESTORATION OPERATION, EXPANDING EASTSIDE FOOTPRINT",
+   "acquirer": {
+    "name": "SERVICEMASTER OF TACOMA",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "REDMOND RESTORATION OPERATION",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Other"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/servicemaster-of-tacoma-acquires-redmond-restoration-operation-expanding-eastside-footprint-302910855.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 951,
+   "date": "2026-10-20T15:00:00Z",
+   "headline": "Threadlock Precision, Supported by The D. E. Shaw Group, Acquires Service & Sales, Inc. to Expand U.S. Aerospace and Defense Precision Manufacturing Network",
+   "acquirer": {
+    "name": "Threadlock Precision",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Service",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Industrials"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/threadlock-precision-supported-by-the-d-e-shaw-group-acquires-service--sales-inc-to-expand-us-aerospace-and-defense-precision-manufacturing-network-302913013.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 963,
+   "date": "2026-10-20T14:27:21Z",
+   "headline": "Oaktree’s Deal to Buy A-Cap Insurer Crumbles, Spawning New Talks",
+   "acquirer": {
+    "name": "Oaktree’s Deal",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Crumbles",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Insurance"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Insurance Journal",
+     "url": "https://www.insurancejournal.com/news/southeast/2026/10/20/889671.htm"
+    }
+   ]
+  },
+  {
+   "cluster_id": 953,
+   "date": "2026-10-20T14:19:00Z",
+   "headline": "The Partner Companies Acquires Advanced CNC Industries, Inc., Increasing Manufacturing Capacity for Aerospace, Defense, Medical and Energy Customers",
+   "acquirer": {
+    "name": "Partner Companies",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Advanced CNC Industries",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Healthcare & Life Sciences",
+    "Energy & Utilities",
+    "Industrials"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/the-partner-companies-acquires-advanced-cnc-industries-inc-increasing-manufacturing-capacity-for-aerospace-defense-medical-and-energy-customers-302914204.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 960,
+   "date": "2026-10-20T13:59:46Z",
+   "headline": "Mutares agrees term sheet to sell Polish drugstore chain Natura to Specjał",
+   "acquirer": {
+    "name": "Specjał",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Natura",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management",
+    "Consumer & Retail"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/mutares-agrees-term-sheet-to-sell-polish-drugstore-chain-natura-to-specjal/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 961,
+   "date": "2026-10-20T13:47:01Z",
+   "headline": "Morgan Stanley Capital Partners scoops up The Rapid Group; Brightstar bets on automated warehouse trends with Material Handling Group USA",
+   "acquirer": {
+    "name": "Morgan Stanley Capital Partners",
+    "slug": "morgan-stanley-149777",
+    "crd": "149777"
+   },
+   "target": {
+    "name": "Rapid Group",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Investment Banking",
+    "Private Equity & Asset Management"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/morgan-stanley-capital-partners-scoops-up-the-rapid-group-brightstar-bets-on-automated-warehouse-trends-with-material-handling-group-usa/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 955,
+   "date": "2026-10-20T13:27:31Z",
+   "headline": "Myriad to sell prenatal health testing business to Labcorp for $210M",
+   "acquirer": {
+    "name": "Labcorp",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Myriad’s prenatal health testing business",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 210000000.0,
+   "industries": [
+    "Healthcare & Life Sciences",
+    "Business Services"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654601-myriad-sell-prenatal-health-business-labcorp?source=feed_tag_m_a"
+    },
+    {
+     "name": "Fierce Biotech",
+     "url": "https://www.fiercebiotech.com/medtech/myriad-genetics-sell-prenatal-health-testing-business-labcorp"
+    }
+   ]
+  },
+  {
+   "cluster_id": 954,
+   "date": "2026-10-20T13:00:00Z",
+   "headline": "Southern Paving & Milling Announces Acquisition of Carolina Site",
+   "acquirer": {
+    "name": "Southern Paving & Milling",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Carolina Site",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Other"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/southern-paving--milling-announces-acquisition-of-carolina-site-302913842.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 956,
+   "date": "2026-10-20T12:21:12Z",
+   "headline": "Salesforce to buy Braze for $47.50 a share in cash",
+   "acquirer": {
+    "name": "Salesforce",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Braze",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Technology"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654554-salesforce-to-buy-braze-for-47_50-a-share-in-cash?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 957,
+   "date": "2026-10-20T11:42:51Z",
+   "headline": "Prudential Financial sells Brazilian, Mexican units to CNP for $4B",
+   "acquirer": {
+    "name": "CNP",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Brazilian",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 4000000000.0,
+   "industries": [
+    "Insurance"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654537-prudential-financial-sells-brazilian-mexican-units-to-cnp-for-4b?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 958,
+   "date": "2026-10-20T11:17:06Z",
+   "headline": "Gulf Keystone, ShaMaran Petroleum agree to $600M Kurdistan oil merger",
+   "acquirer": {
+    "name": "Gulf Keystone",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "ShaMaran Petroleum",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "merger",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Energy & Utilities"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654525-gulf-keystone-shamaran-petroleum-agree-to-600m-kurdistan-oil-merger?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 959,
+   "date": "2026-10-20T10:28:05Z",
+   "headline": "Dime to acquire Empire Bancshares in $58M deal",
+   "acquirer": {
+    "name": "Dime",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Empire Bancshares",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 58000000.0,
+   "industries": [
+    "Banking"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654479-dime-to-acquire-empire-bancshares-in-58m-deal?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 969,
+   "date": "2026-10-20T07:00:00Z",
+   "headline": "Hackensack Meridian Health signs definitive agreement to acquire Hunterdon Health, commits $230M",
+   "acquirer": {
+    "name": "Hackensack Meridian Health",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Hunterdon Health",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Healthcare & Life Sciences",
+    "Business Services"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Fierce Healthcare",
+     "url": "https://www.fiercehealthcare.com/providers/hackensack-meridian-health-signs-230m-definitive-agreement-acquire-hunterdon-health"
+    },
+    {
+     "name": "Healthcare Dive",
+     "url": "https://www.healthcaredive.com/news/hackensack-meridian-hunterdon-pen-merger-agreement/833610/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 948,
+   "date": "2026-10-20T04:00:11Z",
+   "headline": "AIX sold the Dubai dream to investors. Now it is struggling to repay them",
+   "acquirer": {
+    "name": "Now",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Dubai",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Other"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Financial Times Companies",
+     "url": "https://www.ft.com/content/83be85af-1cc5-4661-954e-f671e8f3aa3b?syn-25a6b1a6=1"
+    }
+   ]
+  },
+  {
+   "cluster_id": 947,
+   "date": "2026-10-19T22:27:32Z",
+   "headline": "Anthropic and Nscale in talks for second multibillion-dollar deal",
+   "acquirer": {
+    "name": "Anthropic and Nscale",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target not named in the headline",
+   "stage": "rumored",
+   "value_usd": null,
+   "industries": [
+    "Technology"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Financial Times Companies",
+     "url": "https://www.ft.com/content/26a604d8-1a9d-4801-bd73-6ac588b63bdc?syn-25a6b1a6=1"
+    }
+   ]
+  },
+  {
+   "cluster_id": 944,
+   "date": "2026-10-19T21:27:02Z",
+   "headline": "Maximus to acquire Agile Defense for $660M",
+   "acquirer": {
+    "name": "Maximus",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Agile Defense",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 660000000.0,
+   "industries": [
+    "Industrials"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654441-maximus-to-acquire-agile-defense-for-660m?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 945,
+   "date": "2026-10-19T21:24:13Z",
+   "headline": "Tradeweb to acquire Trumid for $1.97B, expanding its bond lifecycle capabilities",
+   "acquirer": {
+    "name": "Tradeweb",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Trumid",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 1970000000.0,
+   "industries": [
+    "Other"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654437-tradeweb-to-acquire-trumid-for-197b-expanding-its-bond-lifecycle-capabilities?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 943,
+   "date": "2026-10-19T20:15:00Z",
+   "headline": "Construction Partners, Inc. Completes Florida Acquisition",
+   "acquirer": {
+    "name": "Construction Partners",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target not named in the headline",
+   "stage": "completed",
+   "value_usd": null,
+   "industries": [
+    "Industrials"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/construction-partners-inc-completes-florida-acquisition-302913034.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 946,
+   "date": "2026-10-19T17:45:11Z",
+   "headline": "New Hope to buy Malabar Resources in A$2.4B Australian coal deal",
+   "acquirer": {
+    "name": "New Hope",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Malabar Resources",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 2400000000.0,
+   "industries": [
+    "Energy & Utilities"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654449-new-hope-to-buy-malabar-resources-in-a24b-australian-coal-deal?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 935,
+   "date": "2026-10-19T17:44:19Z",
+   "headline": "Forward Consumer Partners strikes deal to carve out Welly from Unilever",
+   "acquirer": {
+    "name": "Forward Consumer Partners",
+    "slug": "forward-consumer-partners-327847",
+    "crd": "327847"
+   },
+   "target": {
+    "name": "Welly",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management",
+    "Consumer & Retail"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/forward-consumer-partners-strikes-deal-to-carve-out-welly-from-unilever/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 918,
+   "date": "2026-10-19T17:00:00Z",
+   "headline": "IXL Learning Acquires NoRedInk",
+   "acquirer": {
+    "name": "IXL Learning",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "NoRedInk",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Other"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/ixl-learning-acquires-noredink-302912835.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 936,
+   "date": "2026-10-19T15:41:34Z",
+   "headline": "Archimed acquires majority stake in medical imaging cloud provider 3verest",
+   "acquirer": {
+    "name": "Archimed",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "3verest",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "stake",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management",
+    "Healthcare & Life Sciences",
+    "Technology"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/archimed-acquires-majority-stake-in-medical-imaging-cloud-provider-3verest/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 919,
+   "date": "2026-10-19T15:00:00Z",
+   "headline": "Central National Gottesman Inc. (CNG) Acquires Nebraska-Based Omaha Paper Company",
+   "acquirer": {
+    "name": "Central National Gottesman Inc",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Omaha Paper Company",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Other"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/central-national-gottesman-inc-cng-acquires-nebraska-based-omaha-paper-company-302912689.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 920,
+   "date": "2026-10-19T14:45:00Z",
+   "headline": "NexTech Solutions (NTS) Acquires Halcyon Days Consulting, Adding Combat-Tested Tactical Mission Networks to Its Defense Technology Portfolio",
+   "acquirer": {
+    "name": "NexTech Solutions",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Halcyon Days Consulting",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Technology",
+    "Industrials",
+    "Business Services"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/nextech-solutions-nts-acquires-halcyon-days-consulting-adding-combat-tested-tactical-mission-networks-to-its-defense-technology-portfolio-302912738.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 937,
+   "date": "2026-10-19T14:41:09Z",
+   "headline": "Garibaldi Blue takes majority stake in Canadian coffee roaster Level Ground",
+   "acquirer": {
+    "name": "Garibaldi Blue",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Level Ground",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "stake",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management",
+    "Consumer & Retail"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/garibaldi-blue-takes-majority-stake-in-canadian-coffee-roaster-level-ground/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 921,
+   "date": "2026-10-19T14:01:00Z",
+   "headline": "Scorpion deepens its investment in pest control and lawn care, acquires Coalmarch Marketing",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Coalmarch Marketing",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "acquirer not named in the headline",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Technology"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/scorpion-deepens-its-investment-in-pest-control-and-lawn-care-acquires-coalmarch-marketing-302912687.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 923,
+   "date": "2026-10-19T14:00:00Z",
+   "headline": "Kapital Agrees to Acquire AI Startup Woz for $30M to Enhance Capabilities of AI-Native Banking Platform",
+   "acquirer": {
+    "name": "Kapital",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Woz",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 30000000.0,
+   "industries": [
+    "Banking",
+    "Technology"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/kapital-agrees-to-acquire-ai-startup-woz-for-30m-to-enhance-capabilities-of-ai-native-banking-platform-302912404.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 922,
+   "date": "2026-10-19T14:00:00Z",
+   "headline": "System One Acquires GMP, a Critical Infrastructure Capital Project Planning and Consulting Leader",
+   "acquirer": {
+    "name": "System One",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "GMP",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Business Services"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/system-one-acquires-gmp-a-critical-infrastructure-capital-project-planning-and-consulting-leader-302912206.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 928,
+   "date": "2026-10-19T13:37:19Z",
+   "headline": "Saturn Oil & Gas to buy Corex Resources in C$302M cash and stock deal",
+   "acquirer": {
+    "name": "Saturn Oil",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Corex Resources",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 302000000.0,
+   "industries": [
+    "Energy & Utilities"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654216-saturn-oil-gas-to-buy-corex-resources-in-c302m-cash-and-stock-deal?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 938,
+   "date": "2026-10-19T13:32:45Z",
+   "headline": "KKR to sell Infinity to Ares for $2.9bn; Thoma Bravo, GTCR and Francisco among PE firms making SaaS take-privates in 2026",
+   "acquirer": {
+    "name": "Ares",
+    "slug": "ares-management-130074",
+    "crd": "130074"
+   },
+   "target": {
+    "name": "Infinity",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 2900000000.0,
+   "industries": [
+    "Private Equity & Asset Management",
+    "Technology"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/kkr-to-sell-infinity-to-ares-for-2-9bn-thoma-bravo-gtcr-and-francisco-among-pe-firms-making-saas-take-privates-in-2026/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 925,
+   "date": "2026-10-19T13:00:00Z",
+   "headline": "Arthur J. Gallagher & Co. Acquires Intelligent Communications Experiences",
+   "acquirer": {
+    "name": "Arthur J. Gallagher & Co",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Intelligent Communications Experiences",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Insurance"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/arthur-j-gallagher--co-acquires-intelligent-communications-experiences-302911555.html"
+    },
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654215-arthur-j-gallagher-buys-intelligent-communications-experiences?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 924,
+   "date": "2026-10-19T13:00:00Z",
+   "headline": "WILLIAMS SAFETY & RESCUE COMPLETES ACQUISITION OF FRANDSON SAFETY",
+   "acquirer": {
+    "name": "WILLIAMS SAFETY & RESCUE",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "FRANDSON SAFETY",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "completed",
+   "value_usd": null,
+   "industries": [
+    "Other"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/williams-safety--rescue-completes-acquisition-of-frandson-safety-302911847.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 930,
+   "date": "2026-10-19T12:49:57Z",
+   "headline": "MKS to sell Ophir Optics business to TTM for $650M; shares up",
+   "acquirer": {
+    "name": "TTM",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Ophir Optics",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 650000000.0,
+   "industries": [
+    "Other"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654200-mks-to-sell-ophir-optics-business-to-ttm-for-650m-shares-up?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 939,
+   "date": "2026-10-19T12:44:45Z",
+   "headline": "Lightview Capital makes investment in lobbying firm Thorn Run Partners",
+   "acquirer": {
+    "name": "Lightview Capital",
+    "slug": "lightview-capital-306106",
+    "crd": "306106"
+   },
+   "target": {
+    "name": "Thorn Run Partners",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "stake",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/lightview-capital-makes-investment-in-lobbying-firm-thorn-run-partners/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 926,
+   "date": "2026-10-19T12:00:00Z",
+   "headline": "KORT Payments to Acquire AptPay, Expanding Real-Time Payments and Payment Orchestration Across North America",
+   "acquirer": {
+    "name": "KORT Payments",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "AptPay",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Fintech & Payments"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/kort-payments-to-acquire-aptpay-expanding-real-time-payments-and-payment-orchestration-across-north-america-302912058.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 940,
+   "date": "2026-10-19T11:49:39Z",
+   "headline": "Banner Capital launches roofing platform with Exterior Solutions Group deal",
+   "acquirer": {
+    "name": "Banner Capital",
+    "slug": "banner-capital-management-326949",
+    "crd": "326949"
+   },
+   "target": {
+    "name": "Exterior Solutions Group",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management",
+    "Real Estate"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/banner-capital-launches-roofing-platform-with-exterior-solutions-group-deal/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 933,
+   "date": "2026-10-19T11:25:48Z",
+   "headline": "Silgan, American Industrial Partners funds to buy Trivium in deal valued at $3.4B",
+   "acquirer": {
+    "name": "Silgan",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Trivium",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 3400000000.0,
+   "industries": [
+    "Private Equity & Asset Management",
+    "Industrials"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654159-silgan-american-industrial-partners-funds-to-buy-trivium-in-deal-valued-at-3_4b?source=feed_tag_m_a"
+    },
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/aip-to-commit-1bn-for-40-percent-stake-in-silgans-3-4bn-trivium-deal/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 927,
+   "date": "2026-10-19T11:18:00Z",
+   "headline": "Centrus Acquires Westerman Holdings, LLC, Bringing a Key Supplier In-House and Diversifying Its Manufacturing Capacity",
+   "acquirer": {
+    "name": "Centrus",
+    "slug": "centrus-financial-strategies-339651",
+    "crd": "339651"
+   },
+   "target": {
+    "name": "Westerman Holdings",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 116000000.0,
+   "industries": [
+    "Energy & Utilities",
+    "Industrials"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/centrus-acquires-westerman-holdings-llc-bringing-a-key-supplier-in-house-and-diversifying-its-manufacturing-capacity-302912534.html"
+    },
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654167-centrus-energy-to-buy-westerman-in-116m-deal-adding-key-centrifuge-supplier?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 934,
+   "date": "2026-10-19T07:41:34Z",
+   "headline": "Red Cat proposes to acquire engine specialist Steyr Motors",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Steyr Motors",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "acquirer not named in the headline",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Other"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654104-red-cat-proposes-to-acquire-engine-specialist-steyr-motors?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 931,
+   "date": "2026-10-19T07:00:00Z",
+   "headline": "Merck KGaA buys Silence in $1.3B deal after siRNA drug's phase 2 blood cancer win",
+   "acquirer": {
+    "name": "Merck KGaA",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Silence",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 1300000000.0,
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Fierce Biotech",
+     "url": "https://www.fiercebiotech.com/biotech/merck-kgaa-buys-silence-13b-deal-biotechs-blood-cancer-sirna-drug"
+    },
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654185-merck-kgaa-to-buy-silence-therapeutics-in-all-cash-deal?source=feed_tag_m_a"
+    }
+   ]
+  }
+ ],
+ "total_disclosed_aum_usd": 1355000000.0,
+ "disclosed_aum_deals": 2,
+ "total_disclosed_value_usd": 29696000000.0,
+ "disclosed_value_deals": 18,
+ "industry_counts": [
+  {
+   "industry": "Technology",
+   "deals": 21
+  },
+  {
+   "industry": "Healthcare & Life Sciences",
+   "deals": 19
+  },
+  {
+   "industry": "Private Equity & Asset Management",
+   "deals": 17
+  },
+  {
+   "industry": "Other",
+   "deals": 15
+  },
+  {
+   "industry": "Industrials",
+   "deals": 14
+  },
+  {
+   "industry": "Business Services",
+   "deals": 9
+  },
+  {
+   "industry": "Energy & Utilities",
+   "deals": 9
+  },
+  {
+   "industry": "Insurance",
+   "deals": 8
+  },
+  {
+   "industry": "Consumer & Retail",
+   "deals": 6
+  },
+  {
+   "industry": "Banking",
+   "deals": 4
+  },
+  {
+   "industry": "Fintech & Payments",
+   "deals": 4
+  },
+  {
+   "industry": "Wealth Management & RIAs",
+   "deals": 4
+  },
+  {
+   "industry": "Real Estate",
+   "deals": 2
+  },
+  {
+   "industry": "Investment Banking",
+   "deals": 1
+  },
+  {
+   "industry": "Media & Telecom",
+   "deals": 1
+  }
+ ],
+ "top_acquirers": [
+  {
+   "name": "Labcorp",
+   "slug": null,
+   "deals": 2
+  },
+  {
+   "name": "Alcon",
+   "slug": null,
+   "deals": 1
+  },
+  {
+   "name": "Alliant Power",
+   "slug": null,
+   "deals": 1
+  },
+  {
+   "name": "Amynta Group",
+   "slug": null,
+   "deals": 1
+  },
+  {
+   "name": "Anthropic and Nscale",
+   "slug": null,
+   "deals": 1
+  }
+ ],
+ "paragraph": null,
+ "ai": false
+}

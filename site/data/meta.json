@@ -1,0 +1,231 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-10-31T06:55:14Z",
+ "last_refresh": "2026-10-31T06:54:49Z",
+ "previous_refresh": "2026-10-30T22:56:10Z",
+ "top_window_start": "2026-10-30T06:55:14Z",
+ "timezone": "America/Los_Angeles",
+ "demo": false,
+ "counts": {
+  "stories": 293,
+  "clusters": 231,
+  "deals": 231,
+  "firms": 118
+ },
+ "sources_ok": 20,
+ "sources_total": 28,
+ "sources": [
+  {
+   "name": "PR Newswire M&A",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 20
+  },
+  {
+   "name": "Seeking Alpha M&A",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 0
+  },
+  {
+   "name": "Financial Times Companies",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 25
+  },
+  {
+   "name": "PE Hub",
+   "ok": false,
+   "method": "failed",
+   "items_last_run": 0
+  },
+  {
+   "name": "TechCrunch M&A",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 20
+  },
+  {
+   "name": "WealthManagement.com",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 50
+  },
+  {
+   "name": "InvestmentNews",
+   "ok": true,
+   "method": "discovered RSS",
+   "items_last_run": 88
+  },
+  {
+   "name": "RIABiz",
+   "ok": true,
+   "method": "discovered RSS",
+   "items_last_run": 0
+  },
+  {
+   "name": "Financial Planning",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 10
+  },
+  {
+   "name": "Banking Dive",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 0
+  },
+  {
+   "name": "Payments Dive",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 0
+  },
+  {
+   "name": "Insurance Journal",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 30
+  },
+  {
+   "name": "Reinsurance News",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 0
+  },
+  {
+   "name": "BioPharma Dive",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 0
+  },
+  {
+   "name": "Healthcare Dive",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 0
+  },
+  {
+   "name": "Fierce Healthcare",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 25
+  },
+  {
+   "name": "Fierce Biotech",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 25
+  },
+  {
+   "name": "Fierce Pharma",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 25
+  },
+  {
+   "name": "Retail Dive",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 0
+  },
+  {
+   "name": "Utility Dive",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 0
+  },
+  {
+   "name": "Supply Chain Dive",
+   "ok": true,
+   "method": "RSS",
+   "items_last_run": 0
+  },
+  {
+   "name": "ThinkAdvisor",
+   "ok": false,
+   "method": "disabled",
+   "items_last_run": 0
+  },
+  {
+   "name": "Financial Advisor Magazine",
+   "ok": false,
+   "method": "disabled",
+   "items_last_run": 0
+  },
+  {
+   "name": "Citywire RIA",
+   "ok": false,
+   "method": "disabled",
+   "items_last_run": 0
+  },
+  {
+   "name": "GlobeNewswire",
+   "ok": false,
+   "method": "disabled",
+   "items_last_run": 0
+  },
+  {
+   "name": "SEC Press Releases",
+   "ok": false,
+   "method": "disabled",
+   "items_last_run": 0
+  },
+  {
+   "name": "FINRA News",
+   "ok": false,
+   "method": "disabled",
+   "items_last_run": 0
+  },
+  {
+   "name": "Kitces",
+   "ok": false,
+   "method": "disabled",
+   "items_last_run": 0
+  }
+ ],
+ "categories": [
+  "Investment Banking",
+  "Wealth Management & RIAs",
+  "Banking",
+  "Insurance",
+  "Fintech & Payments",
+  "Private Equity & Asset Management",
+  "Healthcare & Life Sciences",
+  "Technology",
+  "Energy & Utilities",
+  "Industrials",
+  "Consumer & Retail",
+  "Real Estate",
+  "Media & Telecom",
+  "Business Services",
+  "Other"
+ ],
+ "industries": [
+  "Investment Banking",
+  "Wealth Management & RIAs",
+  "Banking",
+  "Insurance",
+  "Fintech & Payments",
+  "Private Equity & Asset Management",
+  "Healthcare & Life Sciences",
+  "Technology",
+  "Energy & Utilities",
+  "Industrials",
+  "Consumer & Retail",
+  "Real Estate",
+  "Media & Telecom",
+  "Business Services",
+  "Other"
+ ],
+ "sec": {
+  "data_date": "2026-10-02",
+  "firm_count": 17210
+ },
+ "digest": {
+  "date": "2026-10-30",
+  "ai": false,
+  "last_good_date": null
+ },
+ "footer_note": "Summaries written with Claude from outlet headlines."
+}

@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "everest-financial-group-137260",
+ "name": "Everest Financial Group",
+ "legal_name": "Everest Financial Group",
+ "crd": "137260",
+ "sec_number": "801-67635",
+ "city": "Minneapolis",
+ "state": "MN",
+ "sec_aum_usd": 1002472036.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/137260",
+ "stories": [
+  {
+   "cluster_id": 1132,
+   "headline": "AIG to acquire Everest's insurance operations in Chile, closes on Colombia buy",
+   "url": "https://seekingalpha.com/news/4661531-aig-to-acquire-everests-insurance-operations-in-chile-closes-on-colombia-buy?source=feed_tag_m_a",
+   "category": "Insurance",
+   "last_published": "2026-10-30T15:58:26Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4661531-aig-to-acquire-everests-insurance-operations-in-chile-closes-on-colombia-buy?source=feed_tag_m_a"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1132,
+   "date": "2026-10-30T15:58:26Z",
+   "headline": "AIG to acquire Everest's insurance operations in Chile, closes on Colombia buy",
+   "acquirer": {
+    "name": "AIG",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Everest",
+    "slug": "everest-financial-group-137260",
+    "crd": "137260"
+   },
+   "target_aum_usd": 1002472036.0,
+   "target_aum_source": "sec",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "completed",
+   "value_usd": null,
+   "industries": [
+    "Insurance"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4661531-aig-to-acquire-everests-insurance-operations-in-chile-closes-on-colombia-buy?source=feed_tag_m_a"
+    }
+   ],
+   "role": "target"
+  }
+ ]
+}

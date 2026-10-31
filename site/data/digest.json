@@ -1,0 +1,437 @@
+{
+ "schema_version": 1,
+ "date": "2026-10-30",
+ "generated_at": "2026-10-31T06:55:14Z",
+ "ai": false,
+ "opener": null,
+ "items": [
+  {
+   "cluster_id": 1136,
+   "headline": "Arch Insurance North America acquires Premier Dealer Services",
+   "url": "https://seekingalpha.com/news/4661751-arch-insurance-north-america-acquires-premier-dealer-services?source=feed_tag_m_a",
+   "category": "Insurance",
+   "industries": [
+    "Insurance"
+   ],
+   "deal": {
+    "acquirer": "Arch Insurance North America",
+    "target": "Premier Dealer Services",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4661751-arch-insurance-north-america-acquires-premier-dealer-services?source=feed_tag_m_a"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1137,
+   "headline": "Ambarella in exclusive talks with NXP Semiconductors - report",
+   "url": "https://seekingalpha.com/news/4661636-ambarella-in-exclusive-talks-with-one-bidder-report?source=feed_tag_m_a",
+   "category": "Technology",
+   "industries": [
+    "Technology"
+   ],
+   "deal": {
+    "acquirer": "Ambarella",
+    "target": "NXP Semiconductors",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4661636-ambarella-in-exclusive-talks-with-one-bidder-report?source=feed_tag_m_a"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1126,
+   "headline": "MadaLuxe Group Acquires DUXIANA North American Business as Iconic Swedish Brand Celebrates 100 Years",
+   "url": "https://www.prnewswire.com/news-releases/madaluxe-group-acquires-duxiana-north-american-business-as-iconic-swedish-brand-celebrates-100-years-302925198.html",
+   "category": "Industrials",
+   "industries": [
+    "Industrials",
+    "Consumer & Retail"
+   ],
+   "deal": {
+    "acquirer": "MadaLuxe Group",
+    "target": "DUXIANA North American Business",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/madaluxe-group-acquires-duxiana-north-american-business-as-iconic-swedish-brand-celebrates-100-years-302925198.html"
+    }
+   ],
+   "firms": [
+    {
+     "name": "North American Wealth Advisors",
+     "slug": "north-american-wealth-advisors-297057"
+    },
+    {
+     "name": "MadaLuxe Group",
+     "slug": null
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1135,
+   "headline": "Dive Deposits: Black-owned bank repeatedly rebuffs offer from upstart",
+   "url": "https://www.bankingdive.com/news/m-and-f-bank-optus-triad-competing-offer-black-mdi-cdfi-north-carolina/873339/",
+   "category": "Banking",
+   "industries": [
+    "Banking"
+   ],
+   "deal": {
+    "acquirer": null,
+    "target": "Dive Deposits",
+    "type": "acquisition",
+    "stage": "terminated",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Banking Dive",
+     "url": "https://www.bankingdive.com/news/m-and-f-bank-optus-triad-competing-offer-black-mdi-cdfi-north-carolina/873339/"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1127,
+   "headline": "Lepage Millwork to Acquire Fenêtres MQ from Andersen",
+   "url": "https://www.prnewswire.com/news-releases/lepage-millwork-to-acquire-fenetres-mq-from-andersen-302925105.html",
+   "category": "Other",
+   "industries": [
+    "Other"
+   ],
+   "deal": {
+    "acquirer": "Lepage Millwork",
+    "target": "Fenêtres MQ",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/lepage-millwork-to-acquire-fenetres-mq-from-andersen-302925105.html"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Andersen",
+     "slug": "andersen-124205"
+    },
+    {
+     "name": "Fenêtres MQ",
+     "slug": null
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1128,
+   "headline": "Vistra Completes Acquisition of Cogentrix Energy, Expanding Diverse Generation Fleet",
+   "url": "https://www.prnewswire.com/news-releases/vistra-completes-acquisition-of-cogentrix-energy-expanding-diverse-generation-fleet-302925088.html",
+   "category": "Energy & Utilities",
+   "industries": [
+    "Energy & Utilities"
+   ],
+   "deal": {
+    "acquirer": "Vistra",
+    "target": "Cogentrix Energy",
+    "type": "acquisition",
+    "stage": "completed",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/vistra-completes-acquisition-of-cogentrix-energy-expanding-diverse-generation-fleet-302925088.html"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1132,
+   "headline": "AIG to acquire Everest's insurance operations in Chile, closes on Colombia buy",
+   "url": "https://seekingalpha.com/news/4661531-aig-to-acquire-everests-insurance-operations-in-chile-closes-on-colombia-buy?source=feed_tag_m_a",
+   "category": "Insurance",
+   "industries": [
+    "Insurance"
+   ],
+   "deal": {
+    "acquirer": "AIG",
+    "target": "Everest",
+    "type": "acquisition",
+    "stage": "completed",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4661531-aig-to-acquire-everests-insurance-operations-in-chile-closes-on-colombia-buy?source=feed_tag_m_a"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Everest Financial Group",
+     "slug": "everest-financial-group-137260"
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1133,
+   "headline": "Xponential Fitness jumps on report investor looking to purchase Club Pilates owner",
+   "url": "https://seekingalpha.com/news/4661421-xponential-fitness-jumps-on-report-investor-looking-to-purchase-club-pilates-owner?source=feed_tag_m_a",
+   "category": "Consumer & Retail",
+   "industries": [
+    "Consumer & Retail"
+   ],
+   "deal": {
+    "acquirer": null,
+    "target": "Club Pilates",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4661421-xponential-fitness-jumps-on-report-investor-looking-to-purchase-club-pilates-owner?source=feed_tag_m_a"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1134,
+   "headline": "Apple acquires agentic platform Ascension Labs",
+   "url": "https://seekingalpha.com/news/4661410-apple-acquires-agentic-platform-ascension-labs?source=feed_tag_m_a",
+   "category": "Technology",
+   "industries": [
+    "Technology"
+   ],
+   "deal": {
+    "acquirer": "Apple",
+    "target": "Ascension Labs",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4661410-apple-acquires-agentic-platform-ascension-labs?source=feed_tag_m_a"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Apple & Associates",
+     "slug": "apple-associates-126849"
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1129,
+   "headline": "Viatris Announces Commencement of Tender Offer to Acquire Pacira BioSciences, Inc.",
+   "url": "https://www.prnewswire.com/news-releases/viatris-announces-commencement-of-tender-offer-to-acquire-pacira-biosciences-inc-302924916.html",
+   "category": "Healthcare & Life Sciences",
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "deal": {
+    "acquirer": "Viatris Announces Commencement of Tender Offer",
+    "target": "Pacira BioSciences",
+    "type": "acquisition",
+    "stage": "bid",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/viatris-announces-commencement-of-tender-offer-to-acquire-pacira-biosciences-inc-302924916.html"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Viatris",
+     "slug": null
+    },
+    {
+     "name": "Peach Purchaser Sub",
+     "slug": null
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1130,
+   "headline": "Hongli Group Provides Progress Update on Proposed Acquisition of a 20% Equity Interest in Xell Energy",
+   "url": "https://www.prnewswire.com/news-releases/hongli-group-provides-progress-update-on-proposed-acquisition-of-a-20-equity-interest-in-xell-energy-302924062.html",
+   "category": "Energy & Utilities",
+   "industries": [
+    "Energy & Utilities"
+   ],
+   "deal": {
+    "acquirer": "Proposed",
+    "target": "Equity Interest",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/hongli-group-provides-progress-update-on-proposed-acquisition-of-a-20-equity-interest-in-xell-energy-302924062.html"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Hongli Group",
+     "slug": null
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1131,
+   "headline": "Falcon Capital takes a strategic stake in the leading energy investor Pont Capital",
+   "url": "https://www.prnewswire.com/news-releases/falcon-capital-takes-a-strategic-stake-in-the-leading-energy-investor-pont-capital-302924808.html",
+   "category": "Energy & Utilities",
+   "industries": [
+    "Energy & Utilities"
+   ],
+   "deal": {
+    "acquirer": "Falcon Capital",
+    "target": "Pont Capital",
+    "type": "stake",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/falcon-capital-takes-a-strategic-stake-in-the-leading-energy-investor-pont-capital-302924808.html"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Falcon Capital",
+     "slug": null
+    },
+    {
+     "name": "Pont Capital",
+     "slug": null
+    },
+    {
+     "name": "Falcon Capital Investments",
+     "slug": null
+    },
+    {
+     "name": "Falcon Family Office Group",
+     "slug": null
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1125,
+   "headline": "Private equity firm swoops on China Evergrande unit in rare win for creditors",
+   "url": "https://www.ft.com/content/a9fb5f83-8455-40da-804f-17bdc8eba64e?syn-25a6b1a6=1",
+   "category": "Private Equity & Asset Management",
+   "industries": [
+    "Private Equity & Asset Management"
+   ],
+   "deal": {
+    "acquirer": null,
+    "target": "China Evergrande",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Financial Times Companies",
+     "url": "https://www.ft.com/content/a9fb5f83-8455-40da-804f-17bdc8eba64e?syn-25a6b1a6=1"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  }
+ ],
+ "more": [],
+ "window_start": "2026-10-30T06:55:14Z",
+ "last_good_digest": null,
+ "footer_note": "Summaries written with Claude from outlet headlines."
+}

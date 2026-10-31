@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "alliant-securities-inc-turner-nord-kienbaum-7726",
+ "name": "Alliant Securities, Inc. Turner, Nord, Kienbaum",
+ "legal_name": "Alliant Securities",
+ "crd": "7726",
+ "sec_number": "801-120849",
+ "city": "Liberty Lake",
+ "state": "WA",
+ "sec_aum_usd": 300000000.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/7726",
+ "stories": [
+  {
+   "cluster_id": 1007,
+   "headline": "Alliant Power Acquires Family Machine LLC, Expanding Remanufacturing Capacity and Customer Service",
+   "url": "https://www.prnewswire.com/news-releases/alliant-power-acquires-family-machine-llc-expanding-remanufacturing-capacity-and-customer-service-302916940.html",
+   "category": "Energy & Utilities",
+   "last_published": "2026-10-22T13:55:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/alliant-power-acquires-family-machine-llc-expanding-remanufacturing-capacity-and-customer-service-302916940.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

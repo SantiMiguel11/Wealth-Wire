@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "blue-moon-capital-management-311941",
+ "name": "Blue Moon Capital Management",
+ "legal_name": "Blue Moon Capital Management",
+ "crd": "311941",
+ "sec_number": "801-122443",
+ "city": "Boston",
+ "state": "MA",
+ "sec_aum_usd": 159527074.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/311941",
+ "stories": [
+  {
+   "cluster_id": 1062,
+   "headline": "Blue Moon Announces the Signing of the Refurbishment Contract for the Springer Mill, Engages with Wood Group and Acquires Accommodations for Springer Site",
+   "url": "https://www.prnewswire.com/news-releases/blue-moon-announces-the-signing-of-the-refurbishment-contract-for-the-springer-mill-engages-with-wood-group-and-acquires-accommodations-for-springer-site-302919900.html",
+   "category": "Industrials",
+   "last_published": "2026-10-26T20:53:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/blue-moon-announces-the-signing-of-the-refurbishment-contract-for-the-springer-mill-engages-with-wood-group-and-acquires-accommodations-for-springer-site-302919900.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

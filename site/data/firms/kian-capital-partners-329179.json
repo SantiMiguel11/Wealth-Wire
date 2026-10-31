@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "kian-capital-partners-329179",
+ "name": "Kian Capital Partners",
+ "legal_name": "Kian Capital Partners",
+ "crd": "329179",
+ "sec_number": "801-129981",
+ "city": "Charlotte",
+ "state": "NC",
+ "sec_aum_usd": 1104633769.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/329179",
+ "stories": [
+  {
+   "cluster_id": 961,
+   "headline": "Morgan Stanley Capital Partners scoops up The Rapid Group; Brightstar bets on automated warehouse trends with Material Handling Group USA",
+   "url": "https://www.pehub.com/morgan-stanley-capital-partners-scoops-up-the-rapid-group-brightstar-bets-on-automated-warehouse-trends-with-material-handling-group-usa/",
+   "category": "Investment Banking",
+   "last_published": "2026-10-20T13:47:01Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/morgan-stanley-capital-partners-scoops-up-the-rapid-group-brightstar-bets-on-automated-warehouse-trends-with-material-handling-group-usa/"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

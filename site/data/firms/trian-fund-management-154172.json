@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "trian-fund-management-154172",
+ "name": "Trian Fund Management",
+ "legal_name": "Trian Fund Management",
+ "crd": "154172",
+ "sec_number": "801-71968",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 10392850137.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/154172",
+ "stories": [
+  {
+   "cluster_id": 1099,
+   "headline": "Peltz’s Trian makes $3.8bn take-private offer for fast-food chain Wendy’s",
+   "url": "https://www.ft.com/content/9cf40241-94df-403d-b93f-ac6c09728627?syn-25a6b1a6=1",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-10-28T18:04:39Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Financial Times Companies",
+     "url": "https://www.ft.com/content/9cf40241-94df-403d-b93f-ac6c09728627?syn-25a6b1a6=1"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}
