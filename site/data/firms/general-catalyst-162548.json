@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "general-catalyst-162548",
+ "name": "General Catalyst",
+ "legal_name": "General Catalyst Group Management",
+ "crd": "162548",
+ "sec_number": "801-115155",
+ "city": "Cambridge",
+ "state": "MA",
+ "sec_aum_usd": 45502659880.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/162548",
+ "stories": [
+  {
+   "cluster_id": 903,
+   "headline": "Vista to carve out identity security biz amid digital machine identity boom; General Catalyst, ArchiMed, THL bet on cardiometabolic care",
+   "url": "https://www.pehub.com/vista-to-carve-out-identity-security-biz-amid-digital-machine-identity-boom-general-catalyst-archimed-thl-bet-on-cardiometabolic-care/",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-10-16T13:35:09Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/vista-to-carve-out-identity-security-biz-amid-digital-machine-identity-boom-general-catalyst-archimed-thl-bet-on-cardiometabolic-care/"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

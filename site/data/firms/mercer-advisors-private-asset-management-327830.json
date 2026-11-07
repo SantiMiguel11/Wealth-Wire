@@ -1,0 +1,66 @@
+{
+ "schema_version": 1,
+ "slug": "mercer-advisors-private-asset-management-327830",
+ "name": "Mercer Advisors Private Asset Management",
+ "legal_name": "Mercer Advisors Private Asset Management",
+ "crd": "327830",
+ "sec_number": "801-129203",
+ "city": "Denver",
+ "state": "CO",
+ "sec_aum_usd": 205589000.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/327830",
+ "stories": [
+  {
+   "cluster_id": 1234,
+   "headline": "Mercer Advisors snaps up AI-native tax firm Fifteenth in tech-forward deal",
+   "url": "https://www.investmentnews.com/mergers-acquisitions/mercer-advisors-snaps-up-ai-native-tax-firm-fifteenth-in-tech-forward-deal/268890",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-05T12:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/mergers-acquisitions/mercer-advisors-snaps-up-ai-native-tax-firm-fifteenth-in-tech-forward-deal/268890"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1234,
+   "date": "2026-11-05T12:00:00Z",
+   "headline": "Mercer Advisors snaps up AI-native tax firm Fifteenth in tech-forward deal",
+   "acquirer": {
+    "name": "Mercer Advisors",
+    "slug": "mercer-advisors-private-asset-management-327830",
+    "crd": "327830"
+   },
+   "target": {
+    "name": "Fifteenth",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs",
+    "Technology",
+    "Business Services"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/mergers-acquisitions/mercer-advisors-snaps-up-ai-native-tax-firm-fifteenth-in-tech-forward-deal/268890"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

@@ -1,0 +1,73 @@
+{
+ "schema_version": 1,
+ "slug": "ge-vernova-investment-advisers-329905",
+ "name": "Ge Vernova Investment Advisers",
+ "legal_name": "Ge Vernova Investment Advisers",
+ "crd": "329905",
+ "sec_number": "801-129639",
+ "city": "Stamford",
+ "state": "CT",
+ "sec_aum_usd": 1238657494.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/329905",
+ "stories": [
+  {
+   "cluster_id": 1098,
+   "headline": "GE Vernova to buy grid equipment maker Trench in $9B deal, raises revenue forecast again",
+   "url": "https://seekingalpha.com/news/4658762-ge-vernova-to-buy-grid-equipment-maker-trench-in-9b-deal-raises-revenue-forecast-again?source=feed_tag_m_a",
+   "category": "Energy & Utilities",
+   "last_published": "2026-10-29T17:40:22Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4658762-ge-vernova-to-buy-grid-equipment-maker-trench-in-9b-deal-raises-revenue-forecast-again?source=feed_tag_m_a"
+    },
+    {
+     "name": "Utility Dive",
+     "url": "https://www.utilitydive.com/news/ge-vernova-in-9b-deal-to-buy-high-voltage-manufacturer-as-gas-turbine-orde/873223/"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1098,
+   "date": "2026-10-28T11:32:14Z",
+   "headline": "GE Vernova to buy grid equipment maker Trench in $9B deal, raises revenue forecast again",
+   "acquirer": {
+    "name": "GE Vernova",
+    "slug": "ge-vernova-investment-advisers-329905",
+    "crd": "329905"
+   },
+   "target": {
+    "name": "Trench",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 9000000000.0,
+   "industries": [
+    "Energy & Utilities",
+    "Industrials"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4658762-ge-vernova-to-buy-grid-equipment-maker-trench-in-9b-deal-raises-revenue-forecast-again?source=feed_tag_m_a"
+    },
+    {
+     "name": "Utility Dive",
+     "url": "https://www.utilitydive.com/news/ge-vernova-in-9b-deal-to-buy-high-voltage-manufacturer-as-gas-turbine-orde/873223/"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

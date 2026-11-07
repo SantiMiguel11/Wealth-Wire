@@ -1,0 +1,297 @@
+{
+ "schema_version": 1,
+ "date": "2026-11-06",
+ "generated_at": "2026-11-07T07:01:48Z",
+ "ai": false,
+ "opener": null,
+ "items": [
+  {
+   "cluster_id": 1242,
+   "headline": "FOX CORPORATION COMPLETES ACQUISITION OF ROKU",
+   "url": "https://www.prnewswire.com/news-releases/fox-corporation-completes-acquisition-of-roku-302932088.html",
+   "category": "Technology",
+   "industries": [
+    "Technology",
+    "Media & Telecom"
+   ],
+   "deal": {
+    "acquirer": "FOX CORPORATION",
+    "target": "ROKU",
+    "type": "acquisition",
+    "stage": "completed",
+    "value_usd": 22000000000.0
+   },
+   "outlet_count": 3,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/fox-corporation-completes-acquisition-of-roku-302932088.html"
+    },
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4668169-fox-completes-22b-purchase-of-roku?source=feed_tag_m_a"
+    },
+    {
+     "name": "TechCrunch M&A",
+     "url": "https://techcrunch.com/2026/11/06/fox-completes-its-22b-acquisition-of-roku/"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1253,
+   "headline": "Hims & Hers inks deal with Eli Lilly to offer branded weight loss drugs",
+   "url": "https://www.fiercehealthcare.com/health-tech/hims-hers-inks-deal-eli-lilly-offer-branded-weight-loss-drugs",
+   "category": "Healthcare & Life Sciences",
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "deal": {
+    "acquirer": "Hims",
+    "target": "Eli Lilly",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "Fierce Healthcare",
+     "url": "https://www.fiercehealthcare.com/health-tech/hims-hers-inks-deal-eli-lilly-offer-branded-weight-loss-drugs"
+    },
+    {
+     "name": "Fierce Pharma",
+     "url": "https://www.fiercepharma.com/health-tech/hims-hers-inks-deal-eli-lilly-offer-branded-weight-loss-drugs"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1251,
+   "headline": "Cognizant Completes Acquisition of Wizeline",
+   "url": "https://www.prnewswire.com/news-releases/cognizant-completes-acquisition-of-wizeline-302932412.html",
+   "category": "Technology",
+   "industries": [
+    "Technology",
+    "Industrials"
+   ],
+   "deal": {
+    "acquirer": "Cognizant",
+    "target": "Wizeline",
+    "type": "acquisition",
+    "stage": "completed",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/cognizant-completes-acquisition-of-wizeline-302932412.html"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1252,
+   "headline": "American Water and Essential Utilities Proposed Merger Progresses with Approval from the Illinois Commerce Commission",
+   "url": "https://www.prnewswire.com/news-releases/american-water-and-essential-utilities-proposed-merger-progresses-with-approval-from-the-illinois-commerce-commission-302932211.html",
+   "category": "Energy & Utilities",
+   "industries": [
+    "Energy & Utilities"
+   ],
+   "deal": {
+    "acquirer": "American Water",
+    "target": "Essential Utilities Proposed",
+    "type": "merger",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/american-water-and-essential-utilities-proposed-merger-progresses-with-approval-from-the-illinois-commerce-commission-302932211.html"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Bryn Mawr Trust Advisors",
+     "slug": "bryn-mawr-trust-advisors-285359"
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1250,
+   "headline": "Advisor moves: JPMorgan lands $940M Merrill veteran in Los Angeles",
+   "url": "https://www.investmentnews.com/wirehouses/advisor-moves-jpmorgan-lands-940m-merrill-veteran-in-los-angeles/268918",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs",
+    "Banking"
+   ],
+   "deal": {
+    "acquirer": null,
+    "target": "Merrill",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/wirehouses/advisor-moves-jpmorgan-lands-940m-merrill-veteran-in-los-angeles/268918"
+    }
+   ],
+   "firms": [
+    {
+     "name": "J.P. Morgan Securities",
+     "slug": "j-p-morgan-securities-79"
+    },
+    {
+     "name": "Merrill Lynch, Pierce, Fenner & Smith",
+     "slug": "merrill-lynch-pierce-fenner-smith-7691"
+    }
+   ],
+   "aum_usd": 429694491042.0,
+   "aum_source": "sec",
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1244,
+   "headline": "National Bank of Canada to acquire education savings business",
+   "url": "https://seekingalpha.com/news/4668224-national-bank-of-canada-to-acquire-education-savings-business?source=feed_tag_m_a",
+   "category": "Banking",
+   "industries": [
+    "Banking",
+    "Business Services"
+   ],
+   "deal": {
+    "acquirer": "National Bank of Canada",
+    "target": null,
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4668224-national-bank-of-canada-to-acquire-education-savings-business?source=feed_tag_m_a"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1241,
+   "headline": "DRAGONPASS ACQUIRES ICOUPON THE LEADING GLOBAL VOUCHER REDEMPTION NETWORK TO BUILD INTERNATIONAL LOYALTY-AS-A-SERVICE PLATFORM",
+   "url": "https://www.prnewswire.com/news-releases/dragonpass-acquires-icoupon-the-leading-global-voucher-redemption-network-to-build-international-loyalty-as-a-service-platform-302932143.html",
+   "category": "Banking",
+   "industries": [
+    "Banking",
+    "Technology",
+    "Consumer & Retail"
+   ],
+   "deal": {
+    "acquirer": "DRAGONPASS",
+    "target": "ICOUPON THE LEADING GLOBAL VOUCHER REDEMPTION NETWORK",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/dragonpass-acquires-icoupon-the-leading-global-voucher-redemption-network-to-build-international-loyalty-as-a-service-platform-302932143.html"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1247,
+   "headline": "Beam Global ends deal to acquire Norwegian drone firm ScoutDI",
+   "url": "https://seekingalpha.com/news/4667956-beam-global-ends-deal-to-acquire-norwegian-drone-firm-scoutdi?source=feed_tag_m_a",
+   "category": "Other",
+   "industries": [
+    "Other"
+   ],
+   "deal": {
+    "acquirer": null,
+    "target": "ScoutDI",
+    "type": "acquisition",
+    "stage": "terminated",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4667956-beam-global-ends-deal-to-acquire-norwegian-drone-firm-scoutdi?source=feed_tag_m_a"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1243,
+   "headline": "Alfa Laval to acquire NAVTOR AS to strengthen the digital offering for the maritime sector",
+   "url": "https://www.prnewswire.com/news-releases/alfa-laval-to-acquire-navtor-as-to-strengthen-the-digital-offering-for-the-maritime-sector-302931898.html",
+   "category": "Technology",
+   "industries": [
+    "Technology"
+   ],
+   "deal": {
+    "acquirer": "Alfa Laval",
+    "target": "NAVTOR",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/alfa-laval-to-acquire-navtor-as-to-strengthen-the-digital-offering-for-the-maritime-sector-302931898.html"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  }
+ ],
+ "more": [],
+ "window_start": "2026-11-06T07:01:48Z",
+ "last_good_digest": null,
+ "footer_note": "Summaries written with Claude from outlet headlines."
+}

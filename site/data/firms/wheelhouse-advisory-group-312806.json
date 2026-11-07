@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "wheelhouse-advisory-group-312806",
+ "name": "Wheelhouse Advisory Group",
+ "legal_name": "Wheelhouse Advisory Group",
+ "crd": "312806",
+ "sec_number": "801-125869",
+ "city": "St. Louis",
+ "state": "MO",
+ "sec_aum_usd": 388141822.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/312806",
+ "stories": [
+  {
+   "cluster_id": 1107,
+   "headline": "Wheelhouse Announces Acquisition of All Star Garage Door",
+   "url": "https://www.prnewswire.com/news-releases/wheelhouse-announces-acquisition-of-all-star-garage-door-302922641.html",
+   "category": "Other",
+   "last_published": "2026-10-29T15:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/wheelhouse-announces-acquisition-of-all-star-garage-door-302922641.html"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1107,
+   "date": "2026-10-29T15:00:00Z",
+   "headline": "Wheelhouse Announces Acquisition of All Star Garage Door",
+   "acquirer": {
+    "name": "Wheelhouse",
+    "slug": "wheelhouse-advisory-group-312806",
+    "crd": "312806"
+   },
+   "target": {
+    "name": "All Star Garage Door",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Other"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/wheelhouse-announces-acquisition-of-all-star-garage-door-302922641.html"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "st-john-associates-124778",
+ "name": "ST. John & Associates",
+ "legal_name": "ST. John & Associates",
+ "crd": "124778",
+ "sec_number": "801-121426",
+ "city": "Roswell",
+ "state": "GA",
+ "sec_aum_usd": 128352401.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/124778",
+ "stories": [
+  {
+   "cluster_id": 1226,
+   "headline": "Pye-Barker Fire & Safety Acquires St. John's Fire Equipment, Inc., Strengthening Fire Suppression Services in Florida",
+   "url": "https://www.prnewswire.com/news-releases/pye-barker-fire--safety-acquires-st-johns-fire-equipment-inc-strengthening-fire-suppression-services-in-florida-302929464.html",
+   "category": "Industrials",
+   "last_published": "2026-11-05T13:58:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/pye-barker-fire--safety-acquires-st-johns-fire-equipment-inc-strengthening-fire-suppression-services-in-florida-302929464.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

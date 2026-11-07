@@ -1,0 +1,65 @@
+{
+ "schema_version": 1,
+ "slug": "morgan-stanley-149777",
+ "name": "Morgan Stanley",
+ "legal_name": "Morgan Stanley Smith Barney",
+ "crd": "149777",
+ "sec_number": "801-70103",
+ "city": "Purchase",
+ "state": "NY",
+ "sec_aum_usd": 1961887313229.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/149777",
+ "stories": [
+  {
+   "cluster_id": 961,
+   "headline": "Morgan Stanley Capital Partners scoops up The Rapid Group; Brightstar bets on automated warehouse trends with Material Handling Group USA",
+   "url": "https://www.pehub.com/morgan-stanley-capital-partners-scoops-up-the-rapid-group-brightstar-bets-on-automated-warehouse-trends-with-material-handling-group-usa/",
+   "category": "Investment Banking",
+   "last_published": "2026-10-20T13:47:01Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/morgan-stanley-capital-partners-scoops-up-the-rapid-group-brightstar-bets-on-automated-warehouse-trends-with-material-handling-group-usa/"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 961,
+   "date": "2026-10-20T13:47:01Z",
+   "headline": "Morgan Stanley Capital Partners scoops up The Rapid Group; Brightstar bets on automated warehouse trends with Material Handling Group USA",
+   "acquirer": {
+    "name": "Morgan Stanley Capital Partners",
+    "slug": "morgan-stanley-149777",
+    "crd": "149777"
+   },
+   "target": {
+    "name": "Rapid Group",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Investment Banking",
+    "Private Equity & Asset Management"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/morgan-stanley-capital-partners-scoops-up-the-rapid-group-brightstar-bets-on-automated-warehouse-trends-with-material-handling-group-usa/"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

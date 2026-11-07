@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "kane-company-wealth-management-115756",
+ "name": "Kane Company Wealth Management",
+ "legal_name": "Kane Company Wealth Management",
+ "crd": "115756",
+ "sec_number": "801-117373",
+ "city": "Johnston",
+ "state": "IA",
+ "sec_aum_usd": 284748782.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/115756",
+ "stories": [
+  {
+   "cluster_id": 1194,
+   "headline": "ONYX PARTNERS LTD ACQUIRES KANE'S FURNITURE, LLC",
+   "url": "https://www.prnewswire.com/news-releases/onyx-partners-ltd-acquires-kanes-furniture-llc-302929585.html",
+   "category": "Consumer & Retail",
+   "last_published": "2026-11-04T17:59:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/onyx-partners-ltd-acquires-kanes-furniture-llc-302929585.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

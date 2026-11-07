@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "nexxus-holdings-advisors-166884",
+ "name": "Nexxus Holdings Advisors",
+ "legal_name": "Nexxus Holdings Advisors",
+ "crd": "166884",
+ "sec_number": "801-80020",
+ "city": "Santa Barbara",
+ "state": "CA",
+ "sec_aum_usd": 246222556.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/166884",
+ "stories": [
+  {
+   "cluster_id": 1193,
+   "headline": "Nexxus Capital Strengthens Market Position with Latest E-Commerce Acquisition",
+   "url": "https://www.prnewswire.com/news-releases/nexxus-capital-strengthens-market-position-with-latest-e-commerce-acquisition-302929597.html",
+   "category": "Consumer & Retail",
+   "last_published": "2026-11-04T18:07:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/nexxus-capital-strengthens-market-position-with-latest-e-commerce-acquisition-302929597.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

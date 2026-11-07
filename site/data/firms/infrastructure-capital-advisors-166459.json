@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "infrastructure-capital-advisors-166459",
+ "name": "Infrastructure Capital Advisors",
+ "legal_name": "Infrastructure Capital Advisors",
+ "crd": "166459",
+ "sec_number": "801-79940",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 3641900000.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/166459",
+ "stories": [
+  {
+   "cluster_id": 922,
+   "headline": "System One Acquires GMP, a Critical Infrastructure Capital Project Planning and Consulting Leader",
+   "url": "https://www.prnewswire.com/news-releases/system-one-acquires-gmp-a-critical-infrastructure-capital-project-planning-and-consulting-leader-302912206.html",
+   "category": "Business Services",
+   "last_published": "2026-10-19T14:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/system-one-acquires-gmp-a-critical-infrastructure-capital-project-planning-and-consulting-leader-302912206.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "cresta-fund-management-288079",
+ "name": "Cresta Fund Management",
+ "legal_name": "Cresta Fund Management",
+ "crd": "288079",
+ "sec_number": "801-117050",
+ "city": "Dallas",
+ "state": "TX",
+ "sec_aum_usd": 2044723282.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/288079",
+ "stories": [
+  {
+   "cluster_id": 1151,
+   "headline": "Salesforce agrees to buy Cresta",
+   "url": "https://seekingalpha.com/news/4662941-salesforce-agrees-to-buy-cresta?source=feed_tag_m_a",
+   "category": "Technology",
+   "last_published": "2026-11-02T21:38:59Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4662941-salesforce-agrees-to-buy-cresta?source=feed_tag_m_a"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1151,
+   "date": "2026-11-02T21:38:59Z",
+   "headline": "Salesforce agrees to buy Cresta",
+   "acquirer": {
+    "name": "Salesforce",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Cresta",
+    "slug": "cresta-fund-management-288079",
+    "crd": "288079"
+   },
+   "target_aum_usd": 2044723282.0,
+   "target_aum_source": "sec",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Technology"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4662941-salesforce-agrees-to-buy-cresta?source=feed_tag_m_a"
+    }
+   ],
+   "role": "target"
+  }
+ ]
+}

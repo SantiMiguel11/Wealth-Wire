@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "frazier-healthcare-partners-157324",
+ "name": "Frazier Healthcare Partners",
+ "legal_name": "Frazier Management",
+ "crd": "157324",
+ "sec_number": "801-81162",
+ "city": "Seattle",
+ "state": "WA",
+ "sec_aum_usd": 7718663169.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/157324",
+ "stories": [
+  {
+   "cluster_id": 902,
+   "headline": "Frazier Healthcare’s LUX Infusion enters Colorado with Suite Health acquisition",
+   "url": "https://www.pehub.com/frazier-healthcares-lux-infusion-enters-colorado-with-suite-health-acquisition/",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-10-16T14:31:57Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/frazier-healthcares-lux-infusion-enters-colorado-with-suite-health-acquisition/"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

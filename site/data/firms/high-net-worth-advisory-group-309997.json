@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "high-net-worth-advisory-group-309997",
+ "name": "High Net Worth Advisory Group",
+ "legal_name": "High Net Worth Advisory Group",
+ "crd": "309997",
+ "sec_number": "801-119234",
+ "city": "Naples",
+ "state": "FL",
+ "sec_aum_usd": 861690592.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/309997",
+ "stories": [
+  {
+   "cluster_id": 1191,
+   "headline": "EPIC Acquires High Net Worth Firm Randall Insurance in California",
+   "url": "https://www.insurancejournal.com/news/west/2026/11/04/891376.htm",
+   "category": "Insurance",
+   "last_published": "2026-11-04T06:00:32Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Insurance Journal",
+     "url": "https://www.insurancejournal.com/news/west/2026/11/04/891376.htm"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1191,
+   "date": "2026-11-04T06:00:32Z",
+   "headline": "EPIC Acquires High Net Worth Firm Randall Insurance in California",
+   "acquirer": {
+    "name": "EPIC",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "High Net",
+    "slug": "high-net-worth-advisory-group-309997",
+    "crd": "309997"
+   },
+   "target_aum_usd": 861690592.0,
+   "target_aum_source": "sec",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Insurance"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Insurance Journal",
+     "url": "https://www.insurancejournal.com/news/west/2026/11/04/891376.htm"
+    }
+   ],
+   "role": "target"
+  }
+ ]
+}

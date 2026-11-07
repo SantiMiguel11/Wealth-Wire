@@ -1,0 +1,72 @@
+{
+ "schema_version": 1,
+ "slug": "meta-wealth-advisory-338023",
+ "name": "Meta Wealth Advisory",
+ "legal_name": "Thompson Wealth Solutions",
+ "crd": "338023",
+ "sec_number": "801-134259",
+ "city": "Timonium",
+ "state": "MD",
+ "sec_aum_usd": 172057328.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/338023",
+ "stories": [
+  {
+   "cluster_id": 1203,
+   "headline": "Meta to buy AI coding startup Conductor: report",
+   "url": "https://seekingalpha.com/news/4665243-meta-to-buy-ai-coding-startup-conductor-report?source=feed_tag_m_a",
+   "category": "Technology",
+   "last_published": "2026-11-04T21:10:56Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4665243-meta-to-buy-ai-coding-startup-conductor-report?source=feed_tag_m_a"
+    },
+    {
+     "name": "TechCrunch M&A",
+     "url": "https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1203,
+   "date": "2026-11-04T18:27:54Z",
+   "headline": "Meta to buy AI coding startup Conductor: report",
+   "acquirer": {
+    "name": "Meta",
+    "slug": "meta-wealth-advisory-338023",
+    "crd": "338023"
+   },
+   "target": {
+    "name": "Conductor",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Technology"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4665243-meta-to-buy-ai-coding-startup-conductor-report?source=feed_tag_m_a"
+    },
+    {
+     "name": "TechCrunch M&A",
+     "url": "https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

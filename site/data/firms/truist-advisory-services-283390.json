@@ -1,0 +1,44 @@
+{
+ "schema_version": 1,
+ "slug": "truist-advisory-services-283390",
+ "name": "Truist Advisory Services",
+ "legal_name": "Truist Advisory Services",
+ "crd": "283390",
+ "sec_number": "801-107729",
+ "city": "Atlanta",
+ "state": "GA",
+ "sec_aum_usd": 77391727185.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/283390",
+ "stories": [
+  {
+   "cluster_id": 892,
+   "headline": "Truist Financial Q3 earnings miss, hit by loan sale; agrees to sell Lightstream to Carlyle",
+   "url": "https://seekingalpha.com/news/4653743-truist-financial-q3-earnings-miss-hit-by-loan-sale-agrees-to-sell-lightstream-to-carlyle?source=feed_tag_m_a",
+   "category": "Banking",
+   "last_published": "2026-10-16T11:10:38Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4653743-truist-financial-q3-earnings-miss-hit-by-loan-sale-agrees-to-sell-lightstream-to-carlyle?source=feed_tag_m_a"
+    }
+   ]
+  },
+  {
+   "cluster_id": 759,
+   "headline": "Captrust Adds $3B Hoge-Barrett Group from Truist",
+   "url": "https://www.wealthmanagement.com/ria-news/captrust-adds-3-billion-hoge-barrett-group",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-10-14T10:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/captrust-adds-3-billion-hoge-barrett-group"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

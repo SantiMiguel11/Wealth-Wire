@@ -1,0 +1,66 @@
+{
+ "schema_version": 1,
+ "slug": "edge-wealth-management-142380",
+ "name": "Edge Wealth Management",
+ "legal_name": "Edge Wealth Management",
+ "crd": "142380",
+ "sec_number": "801-67345",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 827150449.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/142380",
+ "stories": [
+  {
+   "cluster_id": 1072,
+   "headline": "EDGE Acquires Harvest Blade, Strengthens its Resharpening Expertise",
+   "url": "https://www.prnewswire.com/news-releases/edge-acquires-harvest-blade-strengthens-its-resharpening-expertise-302920686.html",
+   "category": "Technology",
+   "last_published": "2026-10-27T13:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/edge-acquires-harvest-blade-strengthens-its-resharpening-expertise-302920686.html"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1072,
+   "date": "2026-10-27T13:00:00Z",
+   "headline": "EDGE Acquires Harvest Blade, Strengthens its Resharpening Expertise",
+   "acquirer": {
+    "name": "EDGE",
+    "slug": "edge-wealth-management-142380",
+    "crd": "142380"
+   },
+   "target": {
+    "name": "Harvest Blade",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Technology",
+    "Industrials",
+    "Consumer & Retail"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/edge-acquires-harvest-blade-strengthens-its-resharpening-expertise-302920686.html"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

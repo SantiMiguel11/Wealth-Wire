@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "marsh-wealth-management-282111",
+ "name": "Marsh Wealth Management",
+ "legal_name": "Marsh Wealth Management",
+ "crd": "282111",
+ "sec_number": "801-130732",
+ "city": "Knoxville",
+ "state": "TN",
+ "sec_aum_usd": 182304196.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/282111",
+ "stories": [
+  {
+   "cluster_id": 1160,
+   "headline": "Marsh Acquires Marine and Yacht Specialist Triton Agency",
+   "url": "https://www.insurancejournal.com/news/east/2026/11/02/891196.htm",
+   "category": "Insurance",
+   "last_published": "2026-11-02T17:01:35Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Insurance Journal",
+     "url": "https://www.insurancejournal.com/news/east/2026/11/02/891196.htm"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1160,
+   "date": "2026-11-02T17:01:35Z",
+   "headline": "Marsh Acquires Marine and Yacht Specialist Triton Agency",
+   "acquirer": {
+    "name": "Marsh",
+    "slug": "marsh-wealth-management-282111",
+    "crd": "282111"
+   },
+   "target": {
+    "name": "Marine and Yacht Specialist Triton Agency",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Insurance"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Insurance Journal",
+     "url": "https://www.insurancejournal.com/news/east/2026/11/02/891196.htm"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

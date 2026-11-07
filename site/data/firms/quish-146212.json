@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "quish-146212",
+ "name": "Quish",
+ "legal_name": "Quish",
+ "crd": "146212",
+ "sec_number": "801-132344",
+ "city": "Boulder",
+ "state": "CO",
+ "sec_aum_usd": 154181658.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/146212",
+ "stories": [
+  {
+   "cluster_id": 1008,
+   "headline": "Sequoia Financial Group Acquires Colorado Wealth Manager Quish",
+   "url": "https://www.prnewswire.com/news-releases/sequoia-financial-group-acquires-colorado-wealth-manager-quish-302917053.html",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-10-22T13:52:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/sequoia-financial-group-acquires-colorado-wealth-manager-quish-302917053.html"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1008,
+   "date": "2026-10-22T13:52:00Z",
+   "headline": "Sequoia Financial Group Acquires Colorado Wealth Manager Quish",
+   "acquirer": {
+    "name": "Sequoia Financial Group",
+    "slug": "sequoia-financial-group-117756",
+    "crd": "117756"
+   },
+   "target": {
+    "name": "Colorado Wealth Manager Quish",
+    "slug": "quish-146212",
+    "crd": "146212"
+   },
+   "target_aum_usd": 154181658.0,
+   "target_aum_source": "sec",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/sequoia-financial-group-acquires-colorado-wealth-manager-quish-302917053.html"
+    }
+   ],
+   "role": "target"
+  }
+ ]
+}

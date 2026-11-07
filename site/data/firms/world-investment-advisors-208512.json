@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "world-investment-advisors-208512",
+ "name": "World Investment Advisors",
+ "legal_name": "World Investment Advisors",
+ "crd": "208512",
+ "sec_number": "801-96193",
+ "city": "Lincroft",
+ "state": "NJ",
+ "sec_aum_usd": 71641184639.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/208512",
+ "stories": [
+  {
+   "cluster_id": 1056,
+   "headline": "World Acquires Texas’ Zoom Insurance",
+   "url": "https://www.insurancejournal.com/news/southcentral/2026/10/26/890318.htm",
+   "category": "Insurance",
+   "last_published": "2026-10-26T16:11:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Insurance Journal",
+     "url": "https://www.insurancejournal.com/news/southcentral/2026/10/26/890318.htm"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1056,
+   "date": "2026-10-26T16:11:00Z",
+   "headline": "World Acquires Texas’ Zoom Insurance",
+   "acquirer": {
+    "name": "World",
+    "slug": "world-investment-advisors-208512",
+    "crd": "208512"
+   },
+   "target": {
+    "name": "Texas’ Zoom Insurance",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Insurance"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Insurance Journal",
+     "url": "https://www.insurancejournal.com/news/southcentral/2026/10/26/890318.htm"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

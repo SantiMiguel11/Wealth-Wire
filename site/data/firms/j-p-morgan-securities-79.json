@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "j-p-morgan-securities-79",
+ "name": "J.P. Morgan Securities",
+ "legal_name": "J.P. Morgan Securities",
+ "crd": "79",
+ "sec_number": "801-3702",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 429694491042.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/79",
+ "stories": [
+  {
+   "cluster_id": 1250,
+   "headline": "Advisor moves: JPMorgan lands $940M Merrill veteran in Los Angeles",
+   "url": "https://www.investmentnews.com/wirehouses/advisor-moves-jpmorgan-lands-940m-merrill-veteran-in-los-angeles/268918",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-06T16:49:59Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/wirehouses/advisor-moves-jpmorgan-lands-940m-merrill-veteran-in-los-angeles/268918"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,48 @@
+{
+ "schema_version": 1,
+ "slug": "gemspring-capital-management-285081",
+ "name": "Gemspring Capital Management",
+ "legal_name": "Gemspring Capital Management",
+ "crd": "285081",
+ "sec_number": "801-108389",
+ "city": "Westport",
+ "state": "CT",
+ "sec_aum_usd": 5140364797.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/285081",
+ "stories": [
+  {
+   "cluster_id": 1074,
+   "headline": "Shrieve Chemical Company Acquires Clear Solutions",
+   "url": "https://www.prnewswire.com/news-releases/shrieve-chemical-company-acquires-clear-solutions-302919944.html",
+   "category": "Industrials",
+   "last_published": "2026-10-27T12:57:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/shrieve-chemical-company-acquires-clear-solutions-302919944.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 979,
+   "headline": "Shrieve Chemical Company Acquires Research Solutions Group",
+   "url": "https://www.prnewswire.com/news-releases/shrieve-chemical-company-acquires-research-solutions-group-302914663.html",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-10-21T13:16:20Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/shrieve-chemical-company-acquires-research-solutions-group-302914663.html"
+    },
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/gemsprings-shrieve-chemical-adds-alabama-solvents-specialist-research-solutions-group/"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

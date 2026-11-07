@@ -1,0 +1,112 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-11-07T07:01:48Z",
+ "days": 7,
+ "firms": [
+  {
+   "name": "Pacific Capital",
+   "slug": "pacific-capital-159294",
+   "crd": "159294",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "Accelerated Wealth Advisors",
+   "slug": "accelerated-wealth-advisors-170022",
+   "crd": "170022",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Act Wealth Management",
+   "slug": "act-wealth-management-155131",
+   "crd": "155131",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Beacon Pointe Advisors",
+   "slug": "beacon-pointe-advisors-119290",
+   "crd": "119290",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Blue Moon Capital Management",
+   "slug": "blue-moon-capital-management-311941",
+   "crd": "311941",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Bryn Mawr Trust Advisors",
+   "slug": "bryn-mawr-trust-advisors-285359",
+   "crd": "285359",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Carson Group Investing",
+   "slug": "carson-group-investing-291744",
+   "crd": "291744",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Columbia Capital",
+   "slug": "columbia-capital-159616",
+   "crd": "159616",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Creative Planning",
+   "slug": "creative-planning-105348",
+   "crd": "105348",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Cresta Fund Management",
+   "slug": "cresta-fund-management-288079",
+   "crd": "288079",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Everest Financial Group",
+   "slug": "everest-financial-group-137260",
+   "crd": "137260",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Genstar Capital",
+   "slug": "genstar-capital-156932",
+   "crd": "156932",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "High Net Worth Advisory Group",
+   "slug": "high-net-worth-advisory-group-309997",
+   "crd": "309997",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Hull Street Energy",
+   "slug": "hull-street-energy-291881",
+   "crd": "291881",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "J.P. Morgan Securities",
+   "slug": "j-p-morgan-securities-79",
+   "crd": "79",
+   "verified": true,
+   "stories": 1
+  }
+ ]
+}

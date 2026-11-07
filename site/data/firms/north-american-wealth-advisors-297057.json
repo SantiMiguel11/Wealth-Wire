@@ -1,0 +1,76 @@
+{
+ "schema_version": 1,
+ "slug": "north-american-wealth-advisors-297057",
+ "name": "North American Wealth Advisors",
+ "legal_name": "North American Wealth Advisors",
+ "crd": "297057",
+ "sec_number": "801-113619",
+ "city": "Jordan",
+ "state": "MN",
+ "sec_aum_usd": 237322597.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/297057",
+ "stories": [
+  {
+   "cluster_id": 1126,
+   "headline": "MadaLuxe Group Acquires DUXIANA North American Business as Iconic Swedish Brand Celebrates 100 Years",
+   "url": "https://www.prnewswire.com/news-releases/madaluxe-group-acquires-duxiana-north-american-business-as-iconic-swedish-brand-celebrates-100-years-302925198.html",
+   "category": "Industrials",
+   "last_published": "2026-10-30T17:45:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/madaluxe-group-acquires-duxiana-north-american-business-as-iconic-swedish-brand-celebrates-100-years-302925198.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1073,
+   "headline": "Odeko Acquires Nantel McDiarmid in First Cross-Border Transaction",
+   "url": "https://www.prnewswire.com/news-releases/odeko-acquires-nantel-mcdiarmid-in-first-cross-border-transaction-302920051.html",
+   "category": "Technology",
+   "last_published": "2026-10-27T13:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/odeko-acquires-nantel-mcdiarmid-in-first-cross-border-transaction-302920051.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1041,
+   "headline": "High Liner Foods to be acquired by Umios for C$27.00 per share in cash",
+   "url": "https://seekingalpha.com/news/4657087-high-liner-foods-to-be-acquired-by-umios-for-c2700-per-share-in-cash?source=feed_tag_m_a",
+   "category": "Consumer & Retail",
+   "last_published": "2026-10-26T14:09:00Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4657087-high-liner-foods-to-be-acquired-by-umios-for-c2700-per-share-in-cash?source=feed_tag_m_a"
+    },
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/umios-to-acquire-high-liner-foods-creating-a-vertically-integrated-global-protein-leader-302919412.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 973,
+   "headline": "Mapmygenome Completes Acquisition of dnaPower Inc. to Accelerate North American Expansion in DNA, Microbiome, Longevity and Precision Health Testing",
+   "url": "https://www.prnewswire.com/news-releases/mapmygenome-completes-acquisition-of-dnapower-inc-to-accelerate-north-american-expansion-in-dna-microbiome-longevity-and-precision-health-testing-302915388.html",
+   "category": "Healthcare & Life Sciences",
+   "last_published": "2026-10-21T16:30:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/mapmygenome-completes-acquisition-of-dnapower-inc-to-accelerate-north-american-expansion-in-dna-microbiome-longevity-and-precision-health-testing-302915388.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

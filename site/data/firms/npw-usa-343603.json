@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "npw-usa-343603",
+ "name": "NPW Usa",
+ "legal_name": "Nour Private Wealth",
+ "crd": "343603",
+ "sec_number": "801-137142",
+ "city": "Oakville, Ontario",
+ "state": null,
+ "sec_aum_usd": 0.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/343603",
+ "stories": [
+  {
+   "cluster_id": 1168,
+   "headline": "Nour Private Management Completes Acquisition of Mirabaud Canada's Wealth Management Business",
+   "url": "https://www.prnewswire.com/news-releases/nour-private-management-completes-acquisition-of-mirabaud-canadas-wealth-management-business-302928199.html",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-03T18:11:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/nour-private-management-completes-acquisition-of-mirabaud-canadas-wealth-management-business-302928199.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}
