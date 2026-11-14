@@ -1,0 +1,34 @@
+{
+ "schema_version": 1,
+ "slug": "rwa-wealth-partners-156984",
+ "name": "Rwa Wealth Partners",
+ "legal_name": "Rwa Wealth Partners",
+ "crd": "156984",
+ "sec_number": "801-73098",
+ "city": "Boston",
+ "state": "MA",
+ "sec_aum_usd": 19795286684.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/156984",
+ "stories": [
+  {
+   "cluster_id": 339,
+   "headline": "Wealth Enhancement Pens Largest Deal to Date with $22B RWA Partners",
+   "url": "https://www.wealthmanagement.com/ria-news/wealth-enhancement-pens-largest-deal-to-date-with-22b-rwa-partners",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-09-30T16:05:00Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/wealth-enhancement-pens-largest-deal-to-date-with-22b-rwa-partners"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/wealth-enhancement-agrees-to-buy-22b-rwa-wealth-partners-in-family-office-play/268419"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

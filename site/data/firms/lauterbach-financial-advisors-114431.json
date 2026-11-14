@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "lauterbach-financial-advisors-114431",
+ "name": "Lauterbach Financial Advisors",
+ "legal_name": "Lauterbach Financial Advisors",
+ "crd": "114431",
+ "sec_number": "801-64326",
+ "city": "El Paso",
+ "state": "TX",
+ "sec_aum_usd": 700256828.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/114431",
+ "stories": [
+  {
+   "cluster_id": 1296,
+   "headline": "Siemens to buy Lauterbach to expand semiconductor design business",
+   "url": "https://seekingalpha.com/news/4669680-siemens-to-buy-lauterbach-to-expand-semiconductor-design-business?source=feed_tag_m_a",
+   "category": "Technology",
+   "last_published": "2026-11-10T12:37:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4669680-siemens-to-buy-lauterbach-to-expand-semiconductor-design-business?source=feed_tag_m_a"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1296,
+   "date": "2026-11-10T12:37:00Z",
+   "headline": "Siemens to buy Lauterbach to expand semiconductor design business",
+   "acquirer": {
+    "name": "Siemens",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Lauterbach",
+    "slug": "lauterbach-financial-advisors-114431",
+    "crd": "114431"
+   },
+   "target_aum_usd": 700256828.0,
+   "target_aum_source": "sec",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Technology"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4669680-siemens-to-buy-lauterbach-to-expand-semiconductor-design-business?source=feed_tag_m_a"
+    }
+   ],
+   "role": "target"
+  }
+ ]
+}

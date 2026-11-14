@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "riverbend-capital-advisors-157117",
+ "name": "Riverbend Capital Advisors",
+ "legal_name": "Riverbend Capital Advisors",
+ "crd": "157117",
+ "sec_number": "801-72250",
+ "city": "Chicago",
+ "state": "IL",
+ "sec_aum_usd": 1104592273.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/157117",
+ "stories": [
+  {
+   "cluster_id": 1333,
+   "headline": "Third-Generation, Family-Owned ThirdGen Timber Group Acquires PrecisionCraft Log & Timber Homes, Riverbend Timber Framing, M.T.N Design and TimberScape",
+   "url": "https://www.prnewswire.com/news-releases/third-generation-family-owned-thirdgen-timber-group-acquires-precisioncraft-log--timber-homes-riverbend-timber-framing-mtn-design-and-timberscape-302937733.html",
+   "category": "Industrials",
+   "last_published": "2026-11-12T14:58:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/third-generation-family-owned-thirdgen-timber-group-acquires-precisioncraft-log--timber-homes-riverbend-timber-framing-mtn-design-and-timberscape-302937733.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

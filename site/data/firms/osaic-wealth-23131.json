@@ -1,0 +1,65 @@
+{
+ "schema_version": 1,
+ "slug": "osaic-wealth-23131",
+ "name": "Osaic Wealth",
+ "legal_name": "Osaic Wealth",
+ "crd": "23131",
+ "sec_number": "801-54859",
+ "city": "Scottsdale",
+ "state": "AZ",
+ "sec_aum_usd": 234858518740.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/23131",
+ "stories": [
+  {
+   "cluster_id": 1356,
+   "headline": "Osaic in talks with Anthropic as AI reshapes advisor workforce",
+   "url": "https://www.investmentnews.com/transformation/exclusive-osaic-in-talks-with-anthropic-as-ai-reshapes-advisor-workforce/268990",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-13T19:57:27Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/transformation/exclusive-osaic-in-talks-with-anthropic-as-ai-reshapes-advisor-workforce/268990"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1356,
+   "date": "2026-11-13T19:57:27Z",
+   "headline": "Osaic in talks with Anthropic as AI reshapes advisor workforce",
+   "acquirer": {
+    "name": "Osaic",
+    "slug": "osaic-wealth-23131",
+    "crd": "23131"
+   },
+   "target": {
+    "name": "Anthropic",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "rumored",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs",
+    "Technology"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/transformation/exclusive-osaic-in-talks-with-anthropic-as-ai-reshapes-advisor-workforce/268990"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

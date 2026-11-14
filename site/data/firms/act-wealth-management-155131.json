@@ -1,0 +1,65 @@
+{
+ "schema_version": 1,
+ "slug": "act-wealth-management-155131",
+ "name": "Act Wealth Management",
+ "legal_name": "Act Wealth Management",
+ "crd": "155131",
+ "sec_number": "801-71924",
+ "city": "Allen",
+ "state": "TX",
+ "sec_aum_usd": 568799540.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/155131",
+ "stories": [
+  {
+   "cluster_id": 1181,
+   "headline": "Beacon Pointe buys $637M ACT Wealth in bet on airline pilot clients",
+   "url": "https://www.investmentnews.com/ria-news/beacon-pointe-buys-637m-act-wealth-in-bet-on-airline-pilot-clients/268859",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-03T18:25:09Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/beacon-pointe-buys-637m-act-wealth-in-bet-on-airline-pilot-clients/268859"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1181,
+   "date": "2026-11-03T18:25:09Z",
+   "headline": "Beacon Pointe buys $637M ACT Wealth in bet on airline pilot clients",
+   "acquirer": {
+    "name": "Beacon Pointe",
+    "slug": "beacon-pointe-advisors-119290",
+    "crd": "119290"
+   },
+   "target": {
+    "name": "ACT Wealth",
+    "slug": "act-wealth-management-155131",
+    "crd": "155131"
+   },
+   "target_aum_usd": 637000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs",
+    "Industrials"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/beacon-pointe-buys-637m-act-wealth-in-bet-on-airline-pilot-clients/268859"
+    }
+   ],
+   "role": "target"
+  }
+ ]
+}

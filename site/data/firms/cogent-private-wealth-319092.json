@@ -1,0 +1,65 @@
+{
+ "schema_version": 1,
+ "slug": "cogent-private-wealth-319092",
+ "name": "Cogent Private Wealth",
+ "legal_name": "Cogent Private Wealth",
+ "crd": "319092",
+ "sec_number": "801-132819",
+ "city": "Orlando",
+ "state": "FL",
+ "sec_aum_usd": 250272040.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/319092",
+ "stories": [
+  {
+   "cluster_id": 1294,
+   "headline": "Cogent Agrees to Acquire Specular to Strengthen Autonomous Cyber Defense Against Frontier AI Threats",
+   "url": "https://www.prnewswire.com/news-releases/cogent-agrees-to-acquire-specular-to-strengthen-autonomous-cyber-defense-against-frontier-ai-threats-302934903.html",
+   "category": "Technology",
+   "last_published": "2026-11-10T14:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/cogent-agrees-to-acquire-specular-to-strengthen-autonomous-cyber-defense-against-frontier-ai-threats-302934903.html"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1294,
+   "date": "2026-11-10T14:00:00Z",
+   "headline": "Cogent Agrees to Acquire Specular to Strengthen Autonomous Cyber Defense Against Frontier AI Threats",
+   "acquirer": {
+    "name": "Cogent",
+    "slug": "cogent-private-wealth-319092",
+    "crd": "319092"
+   },
+   "target": {
+    "name": "Specular",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Technology",
+    "Industrials"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/cogent-agrees-to-acquire-specular-to-strengthen-autonomous-cyber-defense-against-frontier-ai-threats-302934903.html"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

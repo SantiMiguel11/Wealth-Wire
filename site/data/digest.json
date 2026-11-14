@@ -1,0 +1,236 @@
+{
+ "schema_version": 1,
+ "date": "2026-11-13",
+ "generated_at": "2026-11-14T07:32:40Z",
+ "ai": false,
+ "opener": null,
+ "items": [
+  {
+   "cluster_id": 1358,
+   "headline": "Enjay Converters Ltd (\"Enjay\") is pleased to announce the acquisition of New Method Packaging LLC (\"New Method\")",
+   "url": "https://www.prnewswire.com/news-releases/enjay-converters-ltd-enjay-is-pleased-to-announce-the-acquisition-of-new-method-packaging-llc-new-method-302939376.html",
+   "category": "Industrials",
+   "industries": [
+    "Industrials"
+   ],
+   "deal": {
+    "acquirer": "Enjay Converters Ltd",
+    "target": "New Method Packaging LLC",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/enjay-converters-ltd-enjay-is-pleased-to-announce-the-acquisition-of-new-method-packaging-llc-new-method-302939376.html"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Method Packaging",
+     "slug": null
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1359,
+   "headline": "Cohere announces acquisition of cubic, aimed at boosting AI cyber defense",
+   "url": "https://seekingalpha.com/news/4672646-cohere-announces-acquisition-of-cubic-aimed-at-boosting-ai-cyber-defense?source=feed_tag_m_a",
+   "category": "Technology",
+   "industries": [
+    "Technology",
+    "Industrials"
+   ],
+   "deal": {
+    "acquirer": "Cohere",
+    "target": null,
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4672646-cohere-announces-acquisition-of-cubic-aimed-at-boosting-ai-cyber-defense?source=feed_tag_m_a"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Cohere Capital",
+     "slug": "cohere-capital-305806"
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1356,
+   "headline": "Osaic in talks with Anthropic as AI reshapes advisor workforce",
+   "url": "https://www.investmentnews.com/transformation/exclusive-osaic-in-talks-with-anthropic-as-ai-reshapes-advisor-workforce/268990",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs",
+    "Technology"
+   ],
+   "deal": {
+    "acquirer": "Osaic",
+    "target": "Anthropic",
+    "type": "acquisition",
+    "stage": "rumored",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/transformation/exclusive-osaic-in-talks-with-anthropic-as-ai-reshapes-advisor-workforce/268990"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Osaic Wealth",
+     "slug": "osaic-wealth-23131"
+    }
+   ],
+   "aum_usd": 234858518740.0,
+   "aum_source": "sec",
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1353,
+   "headline": "H.I.G. Forms New Creator Economy Company Waveborn, Acquires JRE",
+   "url": "https://www.prnewswire.com/news-releases/hig-forms-new-creator-economy-company-waveborn-acquires-jre-302938533.html",
+   "category": "Other",
+   "industries": [
+    "Other"
+   ],
+   "deal": {
+    "acquirer": "H.I.G. Forms New Creator Economy Company Waveborn",
+    "target": "JRE",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/hig-forms-new-creator-economy-company-waveborn-acquires-jre-302938533.html"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1354,
+   "headline": "Farmacias Benavides Announces Definitive Agreement to Be Acquired by Farmacias del Ahorro",
+   "url": "https://www.prnewswire.com/news-releases/farmacias-benavides-announces-definitive-agreement-to-be-acquired-by-farmacias-del-ahorro-302938956.html",
+   "category": "Other",
+   "industries": [
+    "Other"
+   ],
+   "deal": {
+    "acquirer": "Farmacias",
+    "target": "Farmacias Benavides Announces Definitive Agreement",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/farmacias-benavides-announces-definitive-agreement-to-be-acquired-by-farmacias-del-ahorro-302938956.html"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Boots Group",
+     "slug": null
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1355,
+   "headline": "Yamaha to buy London-based Disguise Technologies",
+   "url": "https://seekingalpha.com/news/4672202-yamaha-to-buy-london-based-disguise-technologies?source=feed_tag_m_a",
+   "category": "Technology",
+   "industries": [
+    "Technology"
+   ],
+   "deal": {
+    "acquirer": "Yamaha",
+    "target": "Disguise Technologies",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4672202-yamaha-to-buy-london-based-disguise-technologies?source=feed_tag_m_a"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1357,
+   "headline": "Charles River pays $470M for 2 Frontage bioanalysis labs in Pennsylvania",
+   "url": "https://www.fiercebiotech.com/cro/charles-river-shells-out-470m-tigermed-owned-frontage-bioanalysis-business",
+   "category": "Healthcare & Life Sciences",
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "deal": {
+    "acquirer": "Charles River",
+    "target": "2 Frontage",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": 470000000.0
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Fierce Biotech",
+     "url": "https://www.fiercebiotech.com/cro/charles-river-shells-out-470m-tigermed-owned-frontage-bioanalysis-business"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Charles River Wealth Management",
+     "slug": "charles-river-wealth-management-288017"
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  }
+ ],
+ "more": [],
+ "window_start": "2026-11-13T07:32:40Z",
+ "last_good_digest": null,
+ "footer_note": "Summaries written with Claude from outlet headlines."
+}

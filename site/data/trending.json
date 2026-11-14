@@ -1,0 +1,112 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-11-14T07:32:40Z",
+ "days": 7,
+ "firms": [
+  {
+   "name": "H.i.g. Capital",
+   "slug": "h-i-g-capital-160711",
+   "crd": "160711",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "&partners",
+   "slug": "partners-3767",
+   "crd": "3767",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Altius Financial",
+   "slug": "altius-financial-113268",
+   "crd": "113268",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Arini Capital Management",
+   "slug": "arini-capital-management-331241",
+   "crd": "331241",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Axar Capital Management",
+   "slug": "axar-capital-management-217520",
+   "crd": "217520",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Beacon Pointe Advisors",
+   "slug": "beacon-pointe-advisors-119290",
+   "crd": "119290",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Blackstone Management Partners",
+   "slug": "blackstone-management-partners-136979",
+   "crd": "136979",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "BPM Wealth Advisors",
+   "slug": "bpm-wealth-advisors-325909",
+   "crd": "325909",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Charles River Wealth Management",
+   "slug": "charles-river-wealth-management-288017",
+   "crd": "288017",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Coalesce Capital Management",
+   "slug": "coalesce-capital-management-324179",
+   "crd": "324179",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Cogent Private Wealth",
+   "slug": "cogent-private-wealth-319092",
+   "crd": "319092",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Cohere Capital",
+   "slug": "cohere-capital-305806",
+   "crd": "305806",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "CW Advisors",
+   "slug": "cw-advisors-310873",
+   "crd": "310873",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Edge Wealth Management",
+   "slug": "edge-wealth-management-142380",
+   "crd": "142380",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Elevation Point Wealth Partners",
+   "slug": "elevation-point-wealth-partners-137068",
+   "crd": "137068",
+   "verified": true,
+   "stories": 1
+  }
+ ]
+}

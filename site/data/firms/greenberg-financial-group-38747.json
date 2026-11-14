@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "greenberg-financial-group-38747",
+ "name": "Greenberg Financial Group",
+ "legal_name": "Greenberg Financial Group",
+ "crd": "38747",
+ "sec_number": "801-36988",
+ "city": "Tucson",
+ "state": "AZ",
+ "sec_aum_usd": 406904132.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/38747",
+ "stories": [
+  {
+   "cluster_id": 999,
+   "headline": "Greenberg Traurig Advises OPKO Health on $722M+ Agreement to Sell Select BioReference Health Assets to Labcorp",
+   "url": "https://www.prnewswire.com/news-releases/greenberg-traurig-advises-opko-health-on-722m-agreement-to-sell-select-bioreference-health-assets-to-labcorp-302915762.html",
+   "category": "Healthcare & Life Sciences",
+   "last_published": "2026-10-21T18:35:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/greenberg-traurig-advises-opko-health-on-722m-agreement-to-sell-select-bioreference-health-assets-to-labcorp-302915762.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

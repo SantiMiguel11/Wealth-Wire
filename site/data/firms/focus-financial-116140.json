@@ -1,0 +1,65 @@
+{
+ "schema_version": 1,
+ "slug": "focus-financial-116140",
+ "name": "Focus Financial",
+ "legal_name": "Focus Financial Network",
+ "crd": "116140",
+ "sec_number": "801-71117",
+ "city": "Minneapolis",
+ "state": "MN",
+ "sec_aum_usd": 6823756233.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/116140",
+ "stories": [
+  {
+   "cluster_id": 1274,
+   "headline": "Focus Financial buys entertainment business manager ML Management",
+   "url": "https://www.investmentnews.com/ria-news/focus-financial-buys-entertainment-business-manager-ml-management/268955",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-09T22:08:04Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/focus-financial-buys-entertainment-business-manager-ml-management/268955"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1274,
+   "date": "2026-11-09T22:08:04Z",
+   "headline": "Focus Financial buys entertainment business manager ML Management",
+   "acquirer": {
+    "name": "Focus Financial",
+    "slug": "focus-financial-116140",
+    "crd": "116140"
+   },
+   "target": {
+    "name": "ML Management",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs",
+    "Media & Telecom"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/focus-financial-buys-entertainment-business-manager-ml-management/268955"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

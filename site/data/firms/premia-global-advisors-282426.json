@@ -1,0 +1,66 @@
+{
+ "schema_version": 1,
+ "slug": "premia-global-advisors-282426",
+ "name": "Premia Global Advisors",
+ "legal_name": "Premia Global Advisors",
+ "crd": "282426",
+ "sec_number": "801-107142",
+ "city": "Coral Gables",
+ "state": "FL",
+ "sec_aum_usd": 340818253.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/282426",
+ "stories": [
+  {
+   "cluster_id": 1183,
+   "headline": "Premia acquires Cowen Reinsurance from TD Bank",
+   "url": "https://www.reinsurancene.ws/premia-acquires-cowen-reinsurance-from-td-bank/",
+   "category": "Investment Banking",
+   "last_published": "2026-11-03T17:00:07Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Reinsurance News",
+     "url": "https://www.reinsurancene.ws/premia-acquires-cowen-reinsurance-from-td-bank/"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1183,
+   "date": "2026-11-03T17:00:07Z",
+   "headline": "Premia acquires Cowen Reinsurance from TD Bank",
+   "acquirer": {
+    "name": "Premia",
+    "slug": "premia-global-advisors-282426",
+    "crd": "282426"
+   },
+   "target": {
+    "name": "Cowen Reinsurance",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Investment Banking",
+    "Banking",
+    "Insurance"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Reinsurance News",
+     "url": "https://www.reinsurancene.ws/premia-acquires-cowen-reinsurance-from-td-bank/"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

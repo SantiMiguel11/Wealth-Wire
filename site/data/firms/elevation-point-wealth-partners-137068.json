@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "elevation-point-wealth-partners-137068",
+ "name": "Elevation Point Wealth Partners",
+ "legal_name": "Elevation Point Wealth Partners",
+ "crd": "137068",
+ "sec_number": "801-65068",
+ "city": "Denver",
+ "state": "CO",
+ "sec_aum_usd": 8290502368.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/137068",
+ "stories": [
+  {
+   "cluster_id": 1273,
+   "headline": "Merchant Takes Stake in Elevation Point as Emigrant Exits",
+   "url": "https://www.wealthmanagement.com/ria-news/merchant-takes-stake-in-elevation-point-as-emigrant-exits",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-09T11:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/merchant-takes-stake-in-elevation-point-as-emigrant-exits"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1273,
+   "date": "2026-11-09T11:00:00Z",
+   "headline": "Merchant Takes Stake in Elevation Point as Emigrant Exits",
+   "acquirer": {
+    "name": "Merchant",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Elevation Point",
+    "slug": "elevation-point-wealth-partners-137068",
+    "crd": "137068"
+   },
+   "target_aum_usd": 8290502368.0,
+   "target_aum_source": "sec",
+   "deal_type": "stake",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/merchant-takes-stake-in-elevation-point-as-emigrant-exits"
+    }
+   ],
+   "role": "target"
+  }
+ ]
+}

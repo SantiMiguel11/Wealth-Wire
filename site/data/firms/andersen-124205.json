@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "andersen-124205",
+ "name": "Andersen",
+ "legal_name": "Andersen Tax",
+ "crd": "124205",
+ "sec_number": "801-61693",
+ "city": "Mclean",
+ "state": "VA",
+ "sec_aum_usd": 6348792000.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/124205",
+ "stories": [
+  {
+   "cluster_id": 1127,
+   "headline": "Lepage Millwork to Acquire Fenêtres MQ from Andersen",
+   "url": "https://www.prnewswire.com/news-releases/lepage-millwork-to-acquire-fenetres-mq-from-andersen-302925105.html",
+   "category": "Other",
+   "last_published": "2026-10-30T16:02:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/lepage-millwork-to-acquire-fenetres-mq-from-andersen-302925105.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

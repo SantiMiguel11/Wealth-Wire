@@ -1,0 +1,78 @@
+{
+ "schema_version": 1,
+ "slug": "pacific-capital-159294",
+ "name": "Pacific Capital",
+ "legal_name": "Pacific Capital Wealth Advisors",
+ "crd": "159294",
+ "sec_number": "801-80494",
+ "city": "Corona",
+ "state": "CA",
+ "sec_aum_usd": 820635175.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/159294",
+ "stories": [
+  {
+   "cluster_id": 1208,
+   "headline": "Key to buy private capital adviser in boost to investment bank",
+   "url": "https://www.bankingdive.com/news/keycorp-buy-atlantic-pacific-capital-investment-bank/873739/",
+   "category": "Investment Banking",
+   "last_published": "2026-11-04T16:11:05Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Banking Dive",
+     "url": "https://www.bankingdive.com/news/keycorp-buy-atlantic-pacific-capital-investment-bank/873739/"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1176,
+   "headline": "KeyCorp unit to acquire Atlantic-Pacific Capital, terms undisclosed",
+   "url": "https://seekingalpha.com/news/4663428-keycorp-unit-to-acquire-atlantic-pacific-capital-terms-undisclosed?source=feed_tag_m_a",
+   "category": "Banking",
+   "last_published": "2026-11-03T14:09:26Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4663428-keycorp-unit-to-acquire-atlantic-pacific-capital-terms-undisclosed?source=feed_tag_m_a"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1176,
+   "date": "2026-11-03T14:09:26Z",
+   "headline": "KeyCorp unit to acquire Atlantic-Pacific Capital, terms undisclosed",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Atlantic-Pacific Capital",
+    "slug": "pacific-capital-159294",
+    "crd": "159294"
+   },
+   "target_aum_usd": 820635175.0,
+   "target_aum_source": "sec",
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "acquirer not named in the headline",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Banking"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4663428-keycorp-unit-to-acquire-atlantic-pacific-capital-terms-undisclosed?source=feed_tag_m_a"
+    }
+   ],
+   "role": "target"
+  }
+ ]
+}

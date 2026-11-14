@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "hull-street-energy-291881",
+ "name": "Hull Street Energy",
+ "legal_name": "Hull Street Energy",
+ "crd": "291881",
+ "sec_number": "801-113755",
+ "city": "Bethesda",
+ "state": "MD",
+ "sec_aum_usd": 4574988000.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/291881",
+ "stories": [
+  {
+   "cluster_id": 1143,
+   "headline": "Hull Street Energy Completes Acquisition of FirstLight's U.S. Generation Fleet",
+   "url": "https://www.prnewswire.com/news-releases/hull-street-energy-completes-acquisition-of-firstlights-us-generation-fleet-302925892.html",
+   "category": "Energy & Utilities",
+   "last_published": "2026-11-02T16:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/hull-street-energy-completes-acquisition-of-firstlights-us-generation-fleet-302925892.html"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1143,
+   "date": "2026-11-02T16:00:00Z",
+   "headline": "Hull Street Energy Completes Acquisition of FirstLight's U.S. Generation Fleet",
+   "acquirer": {
+    "name": "Hull Street Energy",
+    "slug": "hull-street-energy-291881",
+    "crd": "291881"
+   },
+   "target": {
+    "name": "FirstLight's U.S. Generation Fleet",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "completed",
+   "value_usd": null,
+   "industries": [
+    "Energy & Utilities"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/hull-street-energy-completes-acquisition-of-firstlights-us-generation-fleet-302925892.html"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

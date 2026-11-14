@@ -1,0 +1,72 @@
+{
+ "schema_version": 1,
+ "slug": "securitize-capital-315859",
+ "name": "Securitize Capital",
+ "legal_name": "Securitize Capital",
+ "crd": "315859",
+ "sec_number": "801-136838",
+ "city": "Miami",
+ "state": "FL",
+ "sec_aum_usd": 530192153.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/315859",
+ "stories": [
+  {
+   "cluster_id": 1257,
+   "headline": "Securitize to Acquire River One, Connecting Stablecoin Capital to the $6 Trillion Asset-Backed Finance Market",
+   "url": "https://www.prnewswire.com/news-releases/securitize-to-acquire-river-one-connecting-stablecoin-capital-to-the-6-trillion-asset-backed-finance-market-302933804.html",
+   "category": "Fintech & Payments",
+   "last_published": "2026-11-10T10:29:54Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/securitize-to-acquire-river-one-connecting-stablecoin-capital-to-the-6-trillion-asset-backed-finance-market-302933804.html"
+    },
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4669601-securitize-to-buy-river-credit-labs?source=feed_tag_m_a"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1257,
+   "date": "2026-11-09T21:17:00Z",
+   "headline": "Securitize to Acquire River One, Connecting Stablecoin Capital to the $6 Trillion Asset-Backed Finance Market",
+   "acquirer": {
+    "name": "Securitize",
+    "slug": "securitize-capital-315859",
+    "crd": "315859"
+   },
+   "target": {
+    "name": "River One",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Fintech & Payments"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/securitize-to-acquire-river-one-connecting-stablecoin-capital-to-the-6-trillion-asset-backed-finance-market-302933804.html"
+    },
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4669601-securitize-to-buy-river-credit-labs?source=feed_tag_m_a"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

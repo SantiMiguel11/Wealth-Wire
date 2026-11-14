@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "altius-financial-113268",
+ "name": "Altius Financial",
+ "legal_name": "Altius Financial",
+ "crd": "113268",
+ "sec_number": "801-117124",
+ "city": "Denver",
+ "state": "CO",
+ "sec_aum_usd": 212179837.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/113268",
+ "stories": [
+  {
+   "cluster_id": 1317,
+   "headline": "Altius Minerals to acquire TNR Gold in $122M deal",
+   "url": "https://seekingalpha.com/news/4670607-altius-minerals-to-acquire-tnr-gold-in-122m-deal?source=feed_tag_m_a",
+   "category": "Other",
+   "last_published": "2026-11-12T03:10:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4670607-altius-minerals-to-acquire-tnr-gold-in-122m-deal?source=feed_tag_m_a"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

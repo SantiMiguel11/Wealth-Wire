@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "midcap-financial-services-capital-management-285820",
+ "name": "Midcap Financial Services Capital Management",
+ "legal_name": "Midcap Financial Services Capital Management",
+ "crd": "285820",
+ "sec_number": "801-108694",
+ "city": "Bethesda",
+ "state": "MD",
+ "sec_aum_usd": 7270655672.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/285820",
+ "stories": [
+  {
+   "cluster_id": 1077,
+   "headline": "Ares Capital to acquire MidCap Financial for $2.6B in cash and stock; MFIC rallies 17%",
+   "url": "https://seekingalpha.com/news/4657713-ares-capital-to-acquire-midcap-financial-for-26b-in-cash-and-stock-mficl-rallies-15?source=feed_tag_m_a",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-10-27T10:17:19Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4657713-ares-capital-to-acquire-midcap-financial-for-26b-in-cash-and-stock-mficl-rallies-15?source=feed_tag_m_a"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1077,
+   "date": "2026-10-27T10:17:19Z",
+   "headline": "Ares Capital to acquire MidCap Financial for $2.6B in cash and stock; MFIC rallies 17%",
+   "acquirer": {
+    "name": "Ares Capital",
+    "slug": "ares-capital-management-131619",
+    "crd": "131619"
+   },
+   "target": {
+    "name": "MidCap Financial",
+    "slug": "midcap-financial-services-capital-management-285820",
+    "crd": "285820"
+   },
+   "target_aum_usd": 7270655672.0,
+   "target_aum_source": "sec",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 2600000000.0,
+   "industries": [
+    "Private Equity & Asset Management"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4657713-ares-capital-to-acquire-midcap-financial-for-26b-in-cash-and-stock-mficl-rallies-15?source=feed_tag_m_a"
+    }
+   ],
+   "role": "target"
+  }
+ ]
+}
