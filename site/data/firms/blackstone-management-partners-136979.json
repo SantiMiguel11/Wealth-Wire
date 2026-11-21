@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "blackstone-management-partners-136979",
+ "name": "Blackstone Management Partners",
+ "legal_name": "Blackstone Management Partners",
+ "crd": "136979",
+ "sec_number": "801-64755",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 145730683863.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/136979",
+ "stories": [
+  {
+   "cluster_id": 1351,
+   "headline": "Blackstone buys into India’s IIFL",
+   "url": "https://www.ft.com/content/e5b7fb29-2466-4b69-9b4d-63a488c1ef52?syn-25a6b1a6=1",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-11-13T01:30:05Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Financial Times Companies",
+     "url": "https://www.ft.com/content/e5b7fb29-2466-4b69-9b4d-63a488c1ef52?syn-25a6b1a6=1"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1351,
+   "date": "2026-11-13T01:30:05Z",
+   "headline": "Blackstone buys into India’s IIFL",
+   "acquirer": {
+    "name": "Blackstone",
+    "slug": "blackstone-management-partners-136979",
+    "crd": "136979"
+   },
+   "target": {
+    "name": "IIFL",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Financial Times Companies",
+     "url": "https://www.ft.com/content/e5b7fb29-2466-4b69-9b4d-63a488c1ef52?syn-25a6b1a6=1"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

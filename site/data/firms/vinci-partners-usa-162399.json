@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "vinci-partners-usa-162399",
+ "name": "Vinci Partners Usa",
+ "legal_name": "Vinci Partners Usa",
+ "crd": "162399",
+ "sec_number": "801-77895",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 327036866.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/162399",
+ "stories": [
+  {
+   "cluster_id": 998,
+   "headline": "VINCI COMPASS ANNOUNCES THE LAUNCH OF VINCI PERMANENT CAPITAL SOLUTIONS WITH THE ACQUISITION OF AUSTRALRE",
+   "url": "https://www.prnewswire.com/news-releases/vinci-compass-announces-the-launch-of-vinci-permanent-capital-solutions-with-the-acquisition-of-australre-302915949.html",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-10-21T20:10:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/vinci-compass-announces-the-launch-of-vinci-permanent-capital-solutions-with-the-acquisition-of-australre-302915949.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

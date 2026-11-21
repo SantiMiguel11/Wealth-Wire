@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "genstar-capital-156932",
+ "name": "Genstar Capital",
+ "legal_name": "Genstar Capital Management",
+ "crd": "156932",
+ "sec_number": "801-73806",
+ "city": "San Francisco",
+ "state": "CA",
+ "sec_aum_usd": 51264294886.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/156932",
+ "stories": [
+  {
+   "cluster_id": 1210,
+   "headline": "Protective completes Obsidian acquisition, establishing new specialty P&C business line",
+   "url": "https://www.reinsurancene.ws/protective-completes-obsidian-acquisition-establishing-new-specialty-pc-business-line/",
+   "category": "Insurance",
+   "last_published": "2026-11-04T14:30:40Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Reinsurance News",
+     "url": "https://www.reinsurancene.ws/protective-completes-obsidian-acquisition-establishing-new-specialty-pc-business-line/"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

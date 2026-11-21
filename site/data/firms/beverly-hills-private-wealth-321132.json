@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "beverly-hills-private-wealth-321132",
+ "name": "Beverly Hills Private Wealth",
+ "legal_name": "Beverly Hills Private Wealth",
+ "crd": "321132",
+ "sec_number": "801-126697",
+ "city": "Beverly Hills",
+ "state": "CA",
+ "sec_aum_usd": 912247090.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/321132",
+ "stories": [
+  {
+   "cluster_id": 1070,
+   "headline": "Evolve Media Acquires CafeMom, LittleThings and MamásLatinas, Expanding Its Parenting and Family Portfolio",
+   "url": "https://www.prnewswire.com/news-releases/evolve-media-acquires-cafemom-littlethings-and-mamaslatinas-expanding-its-parenting-and-family-portfolio-302917210.html",
+   "category": "Media & Telecom",
+   "last_published": "2026-10-27T13:15:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/evolve-media-acquires-cafemom-littlethings-and-mamaslatinas-expanding-its-parenting-and-family-portfolio-302917210.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

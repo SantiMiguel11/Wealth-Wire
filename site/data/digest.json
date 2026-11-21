@@ -1,0 +1,396 @@
+{
+ "schema_version": 1,
+ "date": "2026-11-21",
+ "generated_at": "2026-11-21T08:13:03Z",
+ "ai": false,
+ "opener": null,
+ "items": [
+  {
+   "cluster_id": 1438,
+   "headline": "McGowan Acquires GJS Re",
+   "url": "https://www.prnewswire.com/news-releases/mcgowan-acquires-gjs-re-302946316.html",
+   "category": "Insurance",
+   "industries": [
+    "Insurance"
+   ],
+   "deal": {
+    "acquirer": "McGowan",
+    "target": "GJS Re",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/mcgowan-acquires-gjs-re-302946316.html"
+    },
+    {
+     "name": "Reinsurance News",
+     "url": "https://www.reinsurancene.ws/mcgowan-bolsters-reinsurance-capabilities-with-gjs-re-acquisition/"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Mcgowan Group Asset Management",
+     "slug": "mcgowan-group-asset-management-154127"
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1447,
+   "headline": "Verlinvest Announces Commencement of Technical Tender Offer to Facilitate Buyout of Joint Venture Partner's Interest in Oatly Group AB",
+   "url": "https://www.prnewswire.com/news-releases/verlinvest-announces-commencement-of-technical-tender-offer-to-facilitate-buyout-of-joint-venture-partners-interest-in-oatly-group-ab-302947330.html",
+   "category": "Private Equity & Asset Management",
+   "industries": [
+    "Private Equity & Asset Management"
+   ],
+   "deal": {
+    "acquirer": "Facilitate",
+    "target": "Joint Venture Partner's Interest",
+    "type": "acquisition",
+    "stage": "bid",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/verlinvest-announces-commencement-of-technical-tender-offer-to-facilitate-buyout-of-joint-venture-partners-interest-in-oatly-group-ab-302947330.html"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Oatly Group",
+     "slug": null
+    },
+    {
+     "name": "HOLDERS OF SECURITIES OF OATLY GROUP",
+     "slug": null
+    },
+    {
+     "name": "MARKET PRICE OF OATLY GROUP",
+     "slug": null
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1436,
+   "headline": "HR HealthCare Acquires MaxWell Medical Services, Expanding National DMEPOS Presence",
+   "url": "https://www.prnewswire.com/news-releases/hr-healthcare-acquires-maxwell-medical-services-expanding-national-dmepos-presence-302946998.html",
+   "category": "Healthcare & Life Sciences",
+   "industries": [
+    "Healthcare & Life Sciences",
+    "Business Services"
+   ],
+   "deal": {
+    "acquirer": "HR HealthCare",
+    "target": "MaxWell Medical Services",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/hr-healthcare-acquires-maxwell-medical-services-expanding-national-dmepos-presence-302946998.html"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1441,
+   "headline": "KKR in talks to buy majority stake in EdgeCore - report",
+   "url": "https://seekingalpha.com/news/4675260-kkr-in-talks-to-buy-majority-stake-in-edgecore---report?source=feed_tag_m_a",
+   "category": "Private Equity & Asset Management",
+   "industries": [
+    "Private Equity & Asset Management"
+   ],
+   "deal": {
+    "acquirer": "KKR",
+    "target": "EdgeCore",
+    "type": "stake",
+    "stage": "rumored",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4675260-kkr-in-talks-to-buy-majority-stake-in-edgecore---report?source=feed_tag_m_a"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1445,
+   "headline": "Ansay & Associates Acquires Wisconsin’s Meyer Insurance",
+   "url": "https://www.insurancejournal.com/news/midwest/2026/11/20/893321.htm",
+   "category": "Insurance",
+   "industries": [
+    "Insurance"
+   ],
+   "deal": {
+    "acquirer": "Ansay",
+    "target": "Wisconsin’s Meyer Insurance",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Insurance Journal",
+     "url": "https://www.insurancejournal.com/news/midwest/2026/11/20/893321.htm"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1444,
+   "headline": "Bill sells for $6B to TPG, Corpay",
+   "url": "https://www.paymentsdive.com/news/bill-sells-for-6b-to-tpg-corpay/875331/",
+   "category": "Fintech & Payments",
+   "industries": [
+    "Fintech & Payments",
+    "Private Equity & Asset Management"
+   ],
+   "deal": {
+    "acquirer": "TPG",
+    "target": "6B",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": 6000000000.0
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Payments Dive",
+     "url": "https://www.paymentsdive.com/news/bill-sells-for-6b-to-tpg-corpay/875331/"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1437,
+   "headline": "ENERGYRE SELLS A PORTFOLIO OF SOUTH CAROLINA SOLAR PROJECTS TOTALING 317 MWDC TO ENEL GREEN POWER NORTH AMERICA",
+   "url": "https://www.prnewswire.com/news-releases/energyre-sells-a-portfolio-of-south-carolina-solar-projects-totaling-317-mwdc-to-enel-green-power-north-america-302947038.html",
+   "category": "Energy & Utilities",
+   "industries": [
+    "Energy & Utilities"
+   ],
+   "deal": {
+    "acquirer": "ENEL GREEN POWER NORTH AMERICA",
+    "target": "ENERGYRE",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/energyre-sells-a-portfolio-of-south-carolina-solar-projects-totaling-317-mwdc-to-enel-green-power-north-america-302947038.html"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1439,
+   "headline": "Rock Gate Partners Announces Acquisition of Blast Deflectors, Inc.",
+   "url": "https://www.prnewswire.com/news-releases/rock-gate-partners-announces-acquisition-of-blast-deflectors-inc-302946292.html",
+   "category": "Other",
+   "industries": [
+    "Other"
+   ],
+   "deal": {
+    "acquirer": "Rock Gate Partners",
+    "target": "Blast Deflectors",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/rock-gate-partners-announces-acquisition-of-blast-deflectors-inc-302946292.html"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Rock Gate Partners",
+     "slug": null
+    },
+    {
+     "name": "Hanover Partners",
+     "slug": null
+    },
+    {
+     "name": "Northstar Mezzanine Partners",
+     "slug": null
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1440,
+   "headline": "MAJORS MANAGEMENT ANNOUNCES THE ACQUISITION OF SWEET PEA'S CONVENIENCE STORES IN WESTERN PENNSYLVANIA",
+   "url": "https://www.prnewswire.com/news-releases/majors-management-announces-the-acquisition-of-sweet-peas-convenience-stores-in-western-pennsylvania-302946951.html",
+   "category": "Other",
+   "industries": [
+    "Other"
+   ],
+   "deal": {
+    "acquirer": "MAJORS MANAGEMENT",
+    "target": "SWEET PEA'S CONVENIENCE STORES",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/majors-management-announces-the-acquisition-of-sweet-peas-convenience-stores-in-western-pennsylvania-302946951.html"
+    }
+   ],
+   "firms": [
+    {
+     "name": "MAJORS MANAGEMENT",
+     "slug": null
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1442,
+   "headline": "MasTec to acquire mechanical contractor Murphy for about $1.25B",
+   "url": "https://seekingalpha.com/news/4675103-mastec-to-acquire-mechanical-contractor-murphy-for-about-125b?source=feed_tag_m_a",
+   "category": "Other",
+   "industries": [
+    "Other"
+   ],
+   "deal": {
+    "acquirer": "MasTec",
+    "target": "Murphy",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": 1250000000.0
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4675103-mastec-to-acquire-mechanical-contractor-murphy-for-about-125b?source=feed_tag_m_a"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1431,
+   "headline": "Bluespring adds $1.6B New Jersey firm in fifth deal of 2026",
+   "url": "https://www.investmentnews.com/ria-news/bluespring-adds-16b-new-jersey-firm-in-fifth-deal-of-2026/269106",
+   "category": "Wealth Management & RIAs",
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "deal": {
+    "acquirer": "Kestra’s Bluespring",
+    "target": "Affiliate",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/bluespring-adds-16b-new-jersey-firm-in-fifth-deal-of-2026/269106"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Bluespring Wealth Management",
+     "slug": "bluespring-wealth-management-152667"
+    }
+   ],
+   "aum_usd": 1600000000.0,
+   "aum_source": "headline",
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1435,
+   "headline": "Nvidia in advanced talks to buy diffusion AI startup Inception for over $500M - report",
+   "url": "https://seekingalpha.com/news/4675003-nvidia-in-advanced-talks-to-buy-diffusion-ai-startup-inception-for-over-500m---report?source=feed_tag_m_a",
+   "category": "Technology",
+   "industries": [
+    "Technology"
+   ],
+   "deal": {
+    "acquirer": "Nvidia",
+    "target": "Inception",
+    "type": "acquisition",
+    "stage": "rumored",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4675003-nvidia-in-advanced-talks-to-buy-diffusion-ai-startup-inception-for-over-500m---report?source=feed_tag_m_a"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  }
+ ],
+ "more": [],
+ "window_start": "2026-11-20T08:13:03Z",
+ "last_good_digest": null,
+ "footer_note": "Summaries written with Claude from outlet headlines."
+}

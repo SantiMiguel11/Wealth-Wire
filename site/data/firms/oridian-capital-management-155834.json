@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "oridian-capital-management-155834",
+ "name": "Oridian Capital Management",
+ "legal_name": "Oridian Capital Management",
+ "crd": "155834",
+ "sec_number": "801-72052",
+ "city": "Washington",
+ "state": "DC",
+ "sec_aum_usd": 1201575709.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/155834",
+ "stories": [
+  {
+   "cluster_id": 1025,
+   "headline": "Oridian Capital Partners-Backed ACR Acquires Ultra Green Packaging",
+   "url": "https://www.prnewswire.com/news-releases/oridian-capital-partners-backed-acr-acquires-ultra-green-packaging-302917396.html",
+   "category": "Industrials",
+   "last_published": "2026-10-22T20:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/oridian-capital-partners-backed-acr-acquires-ultra-green-packaging-302917396.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

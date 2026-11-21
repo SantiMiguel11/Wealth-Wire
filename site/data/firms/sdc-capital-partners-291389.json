@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "sdc-capital-partners-291389",
+ "name": "SDC Capital Partners",
+ "legal_name": "SDC Capital Partners",
+ "crd": "291389",
+ "sec_number": "801-115188",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 9484510000.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/291389",
+ "stories": [
+  {
+   "cluster_id": 1407,
+   "headline": "Lyte Fiber Acquires MidSouth Fiber Internet Expanding Its Texas Footprint to 6 Southeastern Counties",
+   "url": "https://www.prnewswire.com/news-releases/lyte-fiber-acquires-midsouth-fiber-internet-expanding-its-texas-footprint-to-6-southeastern-counties-302944378.html",
+   "category": "Technology",
+   "last_published": "2026-11-18T20:14:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/lyte-fiber-acquires-midsouth-fiber-internet-expanding-its-texas-footprint-to-6-southeastern-counties-302944378.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

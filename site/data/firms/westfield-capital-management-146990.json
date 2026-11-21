@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "westfield-capital-management-146990",
+ "name": "Westfield Capital Management",
+ "legal_name": "Westfield Capital Management",
+ "crd": "146990",
+ "sec_number": "801-69413",
+ "city": "Boston",
+ "state": "MA",
+ "sec_aum_usd": 29807982355.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/146990",
+ "stories": [
+  {
+   "cluster_id": 1092,
+   "headline": "Keyrenter Indianapolis North Acquires J & J Property Services, Expanding Its Reach Across Carmel, Westfield and Zionsville",
+   "url": "https://www.prnewswire.com/news-releases/keyrenter-indianapolis-north-acquires-j--j-property-services-expanding-its-reach-across-carmel-westfield-and-zionsville-302922288.html",
+   "category": "Real Estate",
+   "last_published": "2026-10-28T14:29:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/keyrenter-indianapolis-north-acquires-j--j-property-services-expanding-its-reach-across-carmel-westfield-and-zionsville-302922288.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

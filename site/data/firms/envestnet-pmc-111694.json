@@ -1,0 +1,65 @@
+{
+ "schema_version": 1,
+ "slug": "envestnet-pmc-111694",
+ "name": "Envestnet PMC",
+ "legal_name": "Envestnet Asset Management",
+ "crd": "111694",
+ "sec_number": "801-57260",
+ "city": "Berwyn",
+ "state": "PA",
+ "sec_aum_usd": 614933249744.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/111694",
+ "stories": [
+  {
+   "cluster_id": 154,
+   "headline": "Bain Capital (mostly) funds Envestnet buy of Vestmark to surpass $10 trillion and define 'adaptive modularity' strategy, leaving Orion a clear RIA lane",
+   "url": "https://riabiz.com/a/2026/9/10/bain-capital-mostly-funds-envestnet-buy-of-vestmark-to-surpass-10-trillion-and-define-adaptive-modularity-strategy-leaving-orion-a-clear-ria-lane",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-09-10T12:51:50Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/10/bain-capital-mostly-funds-envestnet-buy-of-vestmark-to-surpass-10-trillion-and-define-adaptive-modularity-strategy-leaving-orion-a-clear-ria-lane"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 154,
+   "date": "2026-09-10T12:51:50Z",
+   "headline": "Bain Capital (mostly) funds Envestnet buy of Vestmark to surpass $10 trillion and define 'adaptive modularity' strategy, leaving Orion a clear RIA lane",
+   "acquirer": {
+    "name": "Envestnet",
+    "slug": "envestnet-pmc-111694",
+    "crd": "111694"
+   },
+   "target": {
+    "name": "Vestmark",
+    "slug": "vestmark-advisory-solutions-221518",
+    "crd": "221518"
+   },
+   "target_aum_usd": 49854767353.0,
+   "target_aum_source": "sec",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs",
+    "Private Equity & Asset Management"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "RIABiz",
+     "url": "https://riabiz.com/a/2026/9/10/bain-capital-mostly-funds-envestnet-buy-of-vestmark-to-surpass-10-trillion-and-define-adaptive-modularity-strategy-leaving-orion-a-clear-ria-lane"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

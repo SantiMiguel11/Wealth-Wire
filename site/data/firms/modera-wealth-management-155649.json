@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "modera-wealth-management-155649",
+ "name": "Modera Wealth Management",
+ "legal_name": "Modera Wealth Management",
+ "crd": "155649",
+ "sec_number": "801-71973",
+ "city": "Westwood",
+ "state": "NJ",
+ "sec_aum_usd": 17678214162.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/155649",
+ "stories": [
+  {
+   "cluster_id": 1207,
+   "headline": "Modera Wealth plants West Coast flag with $750M RS Crum deal",
+   "url": "https://www.investmentnews.com/ria-news/modera-wealth-plants-west-coast-flag-with-750m-rs-crum-deal/268882",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-04T16:55:54Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/modera-wealth-plants-west-coast-flag-with-750m-rs-crum-deal/268882"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1207,
+   "date": "2026-11-04T16:55:54Z",
+   "headline": "Modera Wealth plants West Coast flag with $750M RS Crum deal",
+   "acquirer": {
+    "name": "Modera Wealth",
+    "slug": "modera-wealth-management-155649",
+    "crd": "155649"
+   },
+   "target": {
+    "name": "RS Crum",
+    "slug": "rs-crum-158621",
+    "crd": "158621"
+   },
+   "target_aum_usd": 720678466.0,
+   "target_aum_source": "sec",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/modera-wealth-plants-west-coast-flag-with-750m-rs-crum-deal/268882"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

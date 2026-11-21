@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "kps-capital-partners-157678",
+ "name": "KPS Capital Partners",
+ "legal_name": "KPS Capital Partners",
+ "crd": "157678",
+ "sec_number": "801-73907",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 19080662866.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/157678",
+ "stories": [
+  {
+   "cluster_id": 1256,
+   "headline": "KPS to Acquire MM Packaging from MM Group",
+   "url": "https://www.prnewswire.com/news-releases/kps-to-acquire-mm-packaging-from-mm-group-302933918.html",
+   "category": "Industrials",
+   "last_published": "2026-11-09T22:15:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/kps-to-acquire-mm-packaging-from-mm-group-302933918.html"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1256,
+   "date": "2026-11-09T22:15:00Z",
+   "headline": "KPS to Acquire MM Packaging from MM Group",
+   "acquirer": {
+    "name": "KPS",
+    "slug": "kps-capital-partners-157678",
+    "crd": "157678"
+   },
+   "target": {
+    "name": "MM Packaging",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Industrials"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/kps-to-acquire-mm-packaging-from-mm-group-302933918.html"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

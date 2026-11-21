@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "partners-3767",
+ "name": "&partners",
+ "legal_name": "&partners",
+ "crd": "3767",
+ "sec_number": "801-37145",
+ "city": "Nashville",
+ "state": "TN",
+ "sec_aum_usd": 30268689798.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/3767",
+ "stories": [
+  {
+   "cluster_id": 1318,
+   "headline": "Houlihan Lokey to buy Vicente & Partners",
+   "url": "https://seekingalpha.com/news/4670520-houlihan-lokey-to-buy-vicente-partners?source=feed_tag_m_a",
+   "category": "Investment Banking",
+   "last_published": "2026-11-11T10:06:25Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4670520-houlihan-lokey-to-buy-vicente-partners?source=feed_tag_m_a"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

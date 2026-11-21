@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "ep-wealth-advisors-111147",
+ "name": "EP Wealth Advisors",
+ "legal_name": "EP Wealth Advisors",
+ "crd": "111147",
+ "sec_number": "801-29358",
+ "city": "Torrance",
+ "state": "CA",
+ "sec_aum_usd": 45145000000.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/111147",
+ "stories": [
+  {
+   "cluster_id": 1397,
+   "headline": "EP Wealth buys $1.4B Lodestar, Concurrent adds Carteret",
+   "url": "https://www.investmentnews.com/ria-news/ep-wealth-buys-14b-lodestar-concurrent-adds-carteret/269049",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-17T16:43:22Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/ep-wealth-buys-14b-lodestar-concurrent-adds-carteret/269049"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1397,
+   "date": "2026-11-17T16:43:22Z",
+   "headline": "EP Wealth buys $1.4B Lodestar, Concurrent adds Carteret",
+   "acquirer": {
+    "name": "EP Wealth",
+    "slug": "ep-wealth-advisors-111147",
+    "crd": "111147"
+   },
+   "target": {
+    "name": "Lodestar",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 1400000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/ep-wealth-buys-14b-lodestar-concurrent-adds-carteret/269049"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

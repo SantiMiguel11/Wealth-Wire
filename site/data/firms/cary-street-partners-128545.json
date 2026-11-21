@@ -1,0 +1,65 @@
+{
+ "schema_version": 1,
+ "slug": "cary-street-partners-128545",
+ "name": "Cary Street Partners",
+ "legal_name": "Cary Street Partners Investment Advisory",
+ "crd": "128545",
+ "sec_number": "801-64239",
+ "city": "Richmond",
+ "state": "VA",
+ "sec_aum_usd": 10252264301.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/128545",
+ "stories": [
+  {
+   "cluster_id": 1379,
+   "headline": "Cary Street Partners buys Townsend Asset Management in Raleigh push",
+   "url": "https://www.investmentnews.com/ria-news/cary-street-partners-buys-townsend-asset-management-in-raleigh-push/269033",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-16T20:23:28Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/cary-street-partners-buys-townsend-asset-management-in-raleigh-push/269033"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1379,
+   "date": "2026-11-16T20:23:28Z",
+   "headline": "Cary Street Partners buys Townsend Asset Management in Raleigh push",
+   "acquirer": {
+    "name": "Cary Street Partners",
+    "slug": "cary-street-partners-128545",
+    "crd": "128545"
+   },
+   "target": {
+    "name": "Townsend Asset Management",
+    "slug": "townsend-asset-management-108216",
+    "crd": "108216"
+   },
+   "target_aum_usd": 479589639.0,
+   "target_aum_source": "sec",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs",
+    "Private Equity & Asset Management"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/cary-street-partners-buys-townsend-asset-management-in-raleigh-push/269033"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

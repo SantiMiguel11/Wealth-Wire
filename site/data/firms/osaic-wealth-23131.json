@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "slug": "osaic-wealth-23131",
+ "name": "Osaic Wealth",
+ "legal_name": "Osaic Wealth",
+ "crd": "23131",
+ "sec_number": "801-54859",
+ "city": "Scottsdale",
+ "state": "AZ",
+ "sec_aum_usd": 234858518740.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/23131",
+ "stories": [
+  {
+   "cluster_id": 1356,
+   "headline": "Osaic in talks with Anthropic as AI reshapes advisor workforce",
+   "url": "https://www.investmentnews.com/transformation/exclusive-osaic-in-talks-with-anthropic-as-ai-reshapes-advisor-workforce/268990",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-19T12:31:14Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/transformation/exclusive-osaic-in-talks-with-anthropic-as-ai-reshapes-advisor-workforce/268990"
+    },
+    {
+     "name": "Financial Times Companies",
+     "url": "https://www.ft.com/content/30d21725-f889-4e3d-a3a8-63ed6b55e4d8?syn-25a6b1a6=1"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1411,
+   "headline": "CW Advisors buys $920M Woburn RIA, its seventh deal under Osaic",
+   "url": "https://www.investmentnews.com/independent-broker-dealers/cw-advisors-buys-920m-woburn-ria-its-seventh-deal-under-osaic/269067",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-18T18:23:29Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/cw-advisors-buys-920m-woburn-ria-its-seventh-deal-under-osaic/269067"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/cw-advisors-buys-93-financial-adds-fifth-boston-office"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1356,
+   "date": "2026-11-13T19:57:27Z",
+   "headline": "Osaic in talks with Anthropic as AI reshapes advisor workforce",
+   "acquirer": {
+    "name": "Osaic",
+    "slug": "osaic-wealth-23131",
+    "crd": "23131"
+   },
+   "target": {
+    "name": "Anthropic",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs",
+    "Technology",
+    "Consumer & Retail"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/transformation/exclusive-osaic-in-talks-with-anthropic-as-ai-reshapes-advisor-workforce/268990"
+    },
+    {
+     "name": "Financial Times Companies",
+     "url": "https://www.ft.com/content/30d21725-f889-4e3d-a3a8-63ed6b55e4d8?syn-25a6b1a6=1"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

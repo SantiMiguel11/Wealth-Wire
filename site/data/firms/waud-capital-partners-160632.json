@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "waud-capital-partners-160632",
+ "name": "Waud Capital Partners",
+ "legal_name": "Waud Capital Partners",
+ "crd": "160632",
+ "sec_number": "801-73921",
+ "city": "Chicago",
+ "state": "IL",
+ "sec_aum_usd": 4560711481.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/160632",
+ "stories": [
+  {
+   "cluster_id": 1313,
+   "headline": "Waud Capital Partners Completes Sale of PromptCare Infusion to AOM Infusion",
+   "url": "https://www.prnewswire.com/news-releases/waud-capital-partners-completes-sale-of-promptcare-infusion-to-aom-infusion-302935169.html",
+   "category": "Healthcare & Life Sciences",
+   "last_published": "2026-11-11T12:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/waud-capital-partners-completes-sale-of-promptcare-infusion-to-aom-infusion-302935169.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

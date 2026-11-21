@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "open-source-investments-287501",
+ "name": "Open Source Investments",
+ "legal_name": "Open Source Investments",
+ "crd": "287501",
+ "sec_number": "801-124704",
+ "city": null,
+ "state": null,
+ "sec_aum_usd": 130717514.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/287501",
+ "stories": [
+  {
+   "cluster_id": 1227,
+   "headline": "EDB Acquires Altinity to Bring Together the Two Leading Open Source Databases, Advancing Its Sovereign AI Data System and Reducing Overall Costs for Customers",
+   "url": "https://www.prnewswire.com/news-releases/edb-acquires-altinity-to-bring-together-the-two-leading-open-source-databases-advancing-its-sovereign-ai-data-system-and-reducing-overall-costs-for-customers-302930209.html",
+   "category": "Technology",
+   "last_published": "2026-11-05T13:49:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/edb-acquires-altinity-to-bring-together-the-two-leading-open-source-databases-advancing-its-sovereign-ai-data-system-and-reducing-overall-costs-for-customers-302930209.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "wealthspire-retirement-advisory-121254",
+ "name": "Wealthspire Retirement Advisory",
+ "legal_name": "Wealthspire Retirement",
+ "crd": "121254",
+ "sec_number": "801-66107",
+ "city": "Aliso Viejo",
+ "state": "CA",
+ "sec_aum_usd": 38609440509.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/121254",
+ "stories": [
+  {
+   "cluster_id": 962,
+   "headline": "Wealthspire Division Acquires $1B Wealth Manager in London",
+   "url": "https://www.wealthmanagement.com/ria-news/ground-control-acquires-atlantic-swift-wealth-firm",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-10-20T17:01:12Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/ground-control-acquires-atlantic-swift-wealth-firm"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

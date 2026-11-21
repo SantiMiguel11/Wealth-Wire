@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "charles-river-wealth-management-288017",
+ "name": "Charles River Wealth Management",
+ "legal_name": "Charles River Wealth Management",
+ "crd": "288017",
+ "sec_number": "801-132125",
+ "city": "Burlington",
+ "state": "MA",
+ "sec_aum_usd": 110312780.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/288017",
+ "stories": [
+  {
+   "cluster_id": 1357,
+   "headline": "Charles River pays $470M for 2 Frontage bioanalysis labs in Pennsylvania",
+   "url": "https://www.fiercebiotech.com/cro/charles-river-shells-out-470m-tigermed-owned-frontage-bioanalysis-business",
+   "category": "Healthcare & Life Sciences",
+   "last_published": "2026-11-13T08:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Fierce Biotech",
+     "url": "https://www.fiercebiotech.com/cro/charles-river-shells-out-470m-tigermed-owned-frontage-bioanalysis-business"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1357,
+   "date": "2026-11-13T08:00:00Z",
+   "headline": "Charles River pays $470M for 2 Frontage bioanalysis labs in Pennsylvania",
+   "acquirer": {
+    "name": "Charles River",
+    "slug": "charles-river-wealth-management-288017",
+    "crd": "288017"
+   },
+   "target": {
+    "name": "2 Frontage",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": 470000000.0,
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Fierce Biotech",
+     "url": "https://www.fiercebiotech.com/cro/charles-river-shells-out-470m-tigermed-owned-frontage-bioanalysis-business"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

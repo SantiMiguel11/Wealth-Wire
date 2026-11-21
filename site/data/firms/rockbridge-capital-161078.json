@@ -1,0 +1,38 @@
+{
+ "schema_version": 1,
+ "slug": "rockbridge-capital-161078",
+ "name": "Rockbridge Capital",
+ "legal_name": "Rockbridge Capital",
+ "crd": "161078",
+ "sec_number": "801-74104",
+ "city": "Columbus",
+ "state": "OH",
+ "sec_aum_usd": 5007030717.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/161078",
+ "stories": [
+  {
+   "cluster_id": 1197,
+   "headline": "Creative Planning Acquires Rockbridge Investment Management, Expanding Financial Planning and Wealth Management for Syracuse-Area Families",
+   "url": "https://www.prnewswire.com/news-releases/creative-planning-acquires-rockbridge-investment-management-expanding-financial-planning-and-wealth-management-for-syracuse-area-families-302929311.html",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-05T14:13:55Z",
+   "outlet_count": 3,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/creative-planning-acquires-rockbridge-investment-management-expanding-financial-planning-and-wealth-management-for-syracuse-area-families-302929311.html"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/creative-planning-acquires-rockbridge-in-22b-deal"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/creative-planning-adds-22b-fee-only-ria-rockbridge-in-syracuse/268897"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

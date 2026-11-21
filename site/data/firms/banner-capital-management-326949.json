@@ -1,0 +1,65 @@
+{
+ "schema_version": 1,
+ "slug": "banner-capital-management-326949",
+ "name": "Banner Capital Management",
+ "legal_name": "Banner Capital Management",
+ "crd": "326949",
+ "sec_number": "801-130725",
+ "city": "Lehi",
+ "state": "UT",
+ "sec_aum_usd": 619188611.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/326949",
+ "stories": [
+  {
+   "cluster_id": 940,
+   "headline": "Banner Capital launches roofing platform with Exterior Solutions Group deal",
+   "url": "https://www.pehub.com/banner-capital-launches-roofing-platform-with-exterior-solutions-group-deal/",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-10-19T11:49:39Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/banner-capital-launches-roofing-platform-with-exterior-solutions-group-deal/"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 940,
+   "date": "2026-10-19T11:49:39Z",
+   "headline": "Banner Capital launches roofing platform with Exterior Solutions Group deal",
+   "acquirer": {
+    "name": "Banner Capital",
+    "slug": "banner-capital-management-326949",
+    "crd": "326949"
+   },
+   "target": {
+    "name": "Exterior Solutions Group",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management",
+    "Real Estate"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/banner-capital-launches-roofing-platform-with-exterior-solutions-group-deal/"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

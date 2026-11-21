@@ -1,0 +1,73 @@
+{
+ "schema_version": 1,
+ "slug": "wilshire-6210",
+ "name": "Wilshire",
+ "legal_name": "Wilshire Advisors",
+ "crd": "6210",
+ "sec_number": "801-36233",
+ "city": "Santa Monica",
+ "state": "CA",
+ "sec_aum_usd": 149102543671.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/6210",
+ "stories": [
+  {
+   "cluster_id": 1304,
+   "headline": "CC Capital and Motive Partners Reach Agreement to Sell Wilshire to Marsh",
+   "url": "https://www.prnewswire.com/news-releases/cc-capital-and-motive-partners-reach-agreement-to-sell-wilshire-to-marsh-302935572.html",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-11T11:36:00Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/cc-capital-and-motive-partners-reach-agreement-to-sell-wilshire-to-marsh-302935572.html"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/mergers-acquisitions/marsh-acquires-wilshire-to-deepen-wealth-advisor-reach/268975"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1304,
+   "date": "2026-11-10T21:10:00Z",
+   "headline": "CC Capital and Motive Partners Reach Agreement to Sell Wilshire to Marsh",
+   "acquirer": {
+    "name": "Marsh",
+    "slug": "marsh-wealth-management-282111",
+    "crd": "282111"
+   },
+   "target": {
+    "name": "Wilshire",
+    "slug": "wilshire-6210",
+    "crd": "6210"
+   },
+   "target_aum_usd": 149102543671.0,
+   "target_aum_source": "sec",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs",
+    "Insurance"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/cc-capital-and-motive-partners-reach-agreement-to-sell-wilshire-to-marsh-302935572.html"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/mergers-acquisitions/marsh-acquires-wilshire-to-deepen-wealth-advisor-reach/268975"
+    }
+   ],
+   "role": "target"
+  }
+ ]
+}

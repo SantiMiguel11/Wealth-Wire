@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "monroe-capital-management-advisors-157073",
+ "name": "Monroe Capital Management Advisors",
+ "legal_name": "Monroe Capital Management Advisors",
+ "crd": "157073",
+ "sec_number": "801-74559",
+ "city": "Chicago",
+ "state": "IL",
+ "sec_aum_usd": 18555608314.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/157073",
+ "stories": [
+  {
+   "cluster_id": 1071,
+   "headline": "Financial Plus Credit Union and Monroe Community Credit Union Announce Intent to Merge",
+   "url": "https://www.prnewswire.com/news-releases/financial-plus-credit-union-and-monroe-community-credit-union-announce-intent-to-merge-302919996.html",
+   "category": "Banking",
+   "last_published": "2026-10-27T13:01:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/financial-plus-credit-union-and-monroe-community-credit-union-announce-intent-to-merge-302919996.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

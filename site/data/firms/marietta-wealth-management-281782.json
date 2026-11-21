@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "marietta-wealth-management-281782",
+ "name": "Marietta Wealth Management",
+ "legal_name": "Marietta Wealth Management",
+ "crd": "281782",
+ "sec_number": "801-106784",
+ "city": "Marietta",
+ "state": "GA",
+ "sec_aum_usd": 1394544576.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/281782",
+ "stories": [
+  {
+   "cluster_id": 1182,
+   "headline": "Carson Group adds $1.6B Marietta Wealth Management in Atlanta push",
+   "url": "https://www.investmentnews.com/ria-news/carson-group-adds-16b-marietta-wealth-management-in-atlanta-push/268856",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-03T16:23:43Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/carson-group-adds-16b-marietta-wealth-management-in-atlanta-push/268856"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1182,
+   "date": "2026-11-03T16:23:43Z",
+   "headline": "Carson Group adds $1.6B Marietta Wealth Management in Atlanta push",
+   "acquirer": {
+    "name": "Carson Group",
+    "slug": "carson-group-investing-291744",
+    "crd": "291744"
+   },
+   "target": {
+    "name": "Marietta Wealth Management",
+    "slug": "marietta-wealth-management-281782",
+    "crd": "281782"
+   },
+   "target_aum_usd": 1600000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/carson-group-adds-16b-marietta-wealth-management-in-atlanta-push/268856"
+    }
+   ],
+   "role": "target"
+  }
+ ]
+}

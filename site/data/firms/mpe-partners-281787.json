@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "mpe-partners-281787",
+ "name": "Mpe Partners",
+ "legal_name": "Mpe MGT",
+ "crd": "281787",
+ "sec_number": "801-110907",
+ "city": "Cleveland",
+ "state": "OH",
+ "sec_aum_usd": 1437606522.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/281787",
+ "stories": [
+  {
+   "cluster_id": 1217,
+   "headline": "MPE PARTNERS AND INTERMATIC ANNOUNCE THE ACQUISITION OF SUN-TECH",
+   "url": "https://www.prnewswire.com/news-releases/mpe-partners-and-intermatic-announce-the-acquisition-of-sun-tech-302929762.html",
+   "category": "Technology",
+   "last_published": "2026-11-05T16:34:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/mpe-partners-and-intermatic-announce-the-acquisition-of-sun-tech-302929762.html"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1217,
+   "date": "2026-11-05T16:34:00Z",
+   "headline": "MPE PARTNERS AND INTERMATIC ANNOUNCE THE ACQUISITION OF SUN-TECH",
+   "acquirer": {
+    "name": "MPE PARTNERS AND INTERMATIC",
+    "slug": "mpe-partners-281787",
+    "crd": "281787"
+   },
+   "target": {
+    "name": "SUN-TECH",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Technology"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/mpe-partners-and-intermatic-announce-the-acquisition-of-sun-tech-302929762.html"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

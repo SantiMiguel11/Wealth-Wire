@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "accelerated-wealth-advisors-170022",
+ "name": "Accelerated Wealth Advisors",
+ "legal_name": "Accelerated Wealth Advisors",
+ "crd": "170022",
+ "sec_number": "801-108636",
+ "city": "Colorado Springs",
+ "state": "CO",
+ "sec_aum_usd": 180488828.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/170022",
+ "stories": [
+  {
+   "cluster_id": 1214,
+   "headline": "BKFi Acquires San Diego-Based Firm in First Deal",
+   "url": "https://www.wealthmanagement.com/ria-news/bkfi-acquires-wealth-with-options-in-first-deal",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-04T21:22:05Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/bkfi-acquires-wealth-with-options-in-first-deal"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

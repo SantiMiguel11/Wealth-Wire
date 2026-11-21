@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "integris-wealth-management-111336",
+ "name": "Integris Wealth Management",
+ "legal_name": "Integris Wealth Management",
+ "crd": "111336",
+ "sec_number": "801-66376",
+ "city": "Monterey",
+ "state": "CA",
+ "sec_aum_usd": 811958816.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/111336",
+ "stories": [
+  {
+   "cluster_id": 1022,
+   "headline": "Risant Health to acquire Oklahoma system Integris Health",
+   "url": "https://www.healthcaredive.com/news/risant-health-acquire-oklahoma-system-integris-health/833748/",
+   "category": "Healthcare & Life Sciences",
+   "last_published": "2026-10-22T16:24:10Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Healthcare Dive",
+     "url": "https://www.healthcaredive.com/news/risant-health-acquire-oklahoma-system-integris-health/833748/"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

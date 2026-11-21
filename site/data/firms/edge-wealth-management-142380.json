@@ -1,0 +1,129 @@
+{
+ "schema_version": 1,
+ "slug": "edge-wealth-management-142380",
+ "name": "Edge Wealth Management",
+ "legal_name": "Edge Wealth Management",
+ "crd": "142380",
+ "sec_number": "801-67345",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 827150449.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/142380",
+ "stories": [
+  {
+   "cluster_id": 1292,
+   "headline": "Beacon Pointe Advisors Deepens New York Presence with Edge Wealth Management Acquisition",
+   "url": "https://www.prnewswire.com/news-releases/beacon-pointe-advisors-deepens-new-york-presence-with-edge-wealth-management-acquisition-302934246.html",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-10T17:27:33Z",
+   "outlet_count": 3,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/beacon-pointe-advisors-deepens-new-york-presence-with-edge-wealth-management-acquisition-302934246.html"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/ria-moves-beacon-pointe-buys-905m-firm-asn-lands-commonwealth-team/268964"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/beacon-pointe-acquires-edge-wealth-management"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1072,
+   "headline": "EDGE Acquires Harvest Blade, Strengthens its Resharpening Expertise",
+   "url": "https://www.prnewswire.com/news-releases/edge-acquires-harvest-blade-strengthens-its-resharpening-expertise-302920686.html",
+   "category": "Technology",
+   "last_published": "2026-10-27T13:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/edge-acquires-harvest-blade-strengthens-its-resharpening-expertise-302920686.html"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1292,
+   "date": "2026-11-10T14:00:00Z",
+   "headline": "Beacon Pointe Advisors Deepens New York Presence with Edge Wealth Management Acquisition",
+   "acquirer": {
+    "name": "Beacon Pointe",
+    "slug": "beacon-pointe-advisors-119290",
+    "crd": "119290"
+   },
+   "target": {
+    "name": "Edge Wealth Management",
+    "slug": "edge-wealth-management-142380",
+    "crd": "142380"
+   },
+   "target_aum_usd": 905000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/beacon-pointe-advisors-deepens-new-york-presence-with-edge-wealth-management-acquisition-302934246.html"
+    },
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/ria-news/ria-moves-beacon-pointe-buys-905m-firm-asn-lands-commonwealth-team/268964"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/beacon-pointe-acquires-edge-wealth-management"
+    }
+   ],
+   "role": "target"
+  },
+  {
+   "cluster_id": 1072,
+   "date": "2026-10-27T13:00:00Z",
+   "headline": "EDGE Acquires Harvest Blade, Strengthens its Resharpening Expertise",
+   "acquirer": {
+    "name": "EDGE",
+    "slug": "edge-wealth-management-142380",
+    "crd": "142380"
+   },
+   "target": {
+    "name": "Harvest Blade",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Technology",
+    "Industrials",
+    "Consumer & Retail"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/edge-acquires-harvest-blade-strengthens-its-resharpening-expertise-302920686.html"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

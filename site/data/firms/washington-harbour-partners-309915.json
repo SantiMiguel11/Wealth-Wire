@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "washington-harbour-partners-309915",
+ "name": "Washington Harbour Partners",
+ "legal_name": "Washington Harbour Partners",
+ "crd": "309915",
+ "sec_number": "801-119968",
+ "city": "Arlington",
+ "state": "VA",
+ "sec_aum_usd": 4725096051.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/309915",
+ "stories": [
+  {
+   "cluster_id": 1337,
+   "headline": "Trusted Space Acquires Falcon ExoDynamics to Deliver End-to-End Trusted Autonomy for National Security Space",
+   "url": "https://www.prnewswire.com/news-releases/trusted-space-acquires-falcon-exodynamics-to-deliver-end-to-end-trusted-autonomy-for-national-security-space-302935637.html",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-11-12T12:30:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/trusted-space-acquires-falcon-exodynamics-to-deliver-end-to-end-trusted-autonomy-for-national-security-space-302935637.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

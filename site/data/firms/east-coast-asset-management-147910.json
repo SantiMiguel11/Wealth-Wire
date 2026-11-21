@@ -1,0 +1,48 @@
+{
+ "schema_version": 1,
+ "slug": "east-coast-asset-management-147910",
+ "name": "East Coast Asset Management",
+ "legal_name": "East Coast Asset Management",
+ "crd": "147910",
+ "sec_number": "801-69456",
+ "city": "Essex",
+ "state": "MA",
+ "sec_aum_usd": 1006114321.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/147910",
+ "stories": [
+  {
+   "cluster_id": 1400,
+   "headline": "Texas-Based Caliber Acquires East Coast’s Arrow Auto Glass",
+   "url": "https://www.insurancejournal.com/news/east/2026/11/17/892844.htm",
+   "category": "Insurance",
+   "last_published": "2026-11-17T13:45:18Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Insurance Journal",
+     "url": "https://www.insurancejournal.com/news/east/2026/11/17/892844.htm"
+    }
+   ]
+  },
+  {
+   "cluster_id": 975,
+   "headline": "Stord Acquires AMS Fulfillment, Enhancing Its Market-Leading Scale and Network Coverage",
+   "url": "https://www.prnewswire.com/news-releases/stord-acquires-ams-fulfillment-enhancing-its-market-leading-scale-and-network-coverage-302915069.html",
+   "category": "Technology",
+   "last_published": "2026-10-22T14:00:28Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/stord-acquires-ams-fulfillment-enhancing-its-market-leading-scale-and-network-coverage-302915069.html"
+    },
+    {
+     "name": "Supply Chain Dive",
+     "url": "https://www.supplychaindive.com/news/stord-expands-network-with-ams-fulfillment-purchase/833617/"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

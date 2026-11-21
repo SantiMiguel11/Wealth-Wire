@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "cahaba-wealth-management-151675",
+ "name": "Cahaba Wealth Management",
+ "legal_name": "Cahaba Wealth Management",
+ "crd": "151675",
+ "sec_number": "801-70837",
+ "city": "Atlanta",
+ "state": "GA",
+ "sec_aum_usd": 2060891106.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/151675",
+ "stories": [
+  {
+   "cluster_id": 1408,
+   "headline": "Resolve Pain Solutions Announces Acquisition of Cahaba Pain and Spine Care",
+   "url": "https://www.prnewswire.com/news-releases/resolve-pain-solutions-announces-acquisition-of-cahaba-pain-and-spine-care-302944294.html",
+   "category": "Other",
+   "last_published": "2026-11-18T18:50:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/resolve-pain-solutions-announces-acquisition-of-cahaba-pain-and-spine-care-302944294.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

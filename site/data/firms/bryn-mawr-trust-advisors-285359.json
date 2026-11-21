@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "bryn-mawr-trust-advisors-285359",
+ "name": "Bryn Mawr Trust Advisors",
+ "legal_name": "Bryn Mawr Trust Advisors",
+ "crd": "285359",
+ "sec_number": "801-108434",
+ "city": "Philadelphia",
+ "state": "PA",
+ "sec_aum_usd": 3513817710.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/285359",
+ "stories": [
+  {
+   "cluster_id": 1252,
+   "headline": "American Water and Essential Utilities Proposed Merger Progresses with Approval from the Illinois Commerce Commission",
+   "url": "https://www.prnewswire.com/news-releases/american-water-and-essential-utilities-proposed-merger-progresses-with-approval-from-the-illinois-commerce-commission-302932211.html",
+   "category": "Energy & Utilities",
+   "last_published": "2026-11-06T21:15:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/american-water-and-essential-utilities-proposed-merger-progresses-with-approval-from-the-illinois-commerce-commission-302932211.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

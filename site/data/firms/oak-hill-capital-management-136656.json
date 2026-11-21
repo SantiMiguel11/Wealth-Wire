@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "oak-hill-capital-management-136656",
+ "name": "Oak Hill Capital Management",
+ "legal_name": "Oak Hill Capital Management",
+ "crd": "136656",
+ "sec_number": "801-64749",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 13928883994.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/136656",
+ "stories": [
+  {
+   "cluster_id": 1110,
+   "headline": "Oak Hill Capital to Acquire Majority Stake in Wyyerd from Carlyle",
+   "url": "https://www.prnewswire.com/news-releases/oak-hill-capital-to-acquire-majority-stake-in-wyyerd-from-carlyle-302923593.html",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-10-29T13:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/oak-hill-capital-to-acquire-majority-stake-in-wyyerd-from-carlyle-302923593.html"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1110,
+   "date": "2026-10-29T13:00:00Z",
+   "headline": "Oak Hill Capital to Acquire Majority Stake in Wyyerd from Carlyle",
+   "acquirer": {
+    "name": "Oak Hill Capital",
+    "slug": "oak-hill-capital-management-136656",
+    "crd": "136656"
+   },
+   "target": {
+    "name": "Majority Stake",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/oak-hill-capital-to-acquire-majority-stake-in-wyyerd-from-carlyle-302923593.html"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

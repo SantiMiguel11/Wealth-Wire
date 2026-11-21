@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "oak-hill-advisors-125352",
+ "name": "Oak Hill Advisors",
+ "legal_name": "Oak Hill Advisors",
+ "crd": "125352",
+ "sec_number": "801-62894",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 100716569239.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/125352",
+ "stories": [
+  {
+   "cluster_id": 1110,
+   "headline": "Oak Hill Capital to Acquire Majority Stake in Wyyerd from Carlyle",
+   "url": "https://www.prnewswire.com/news-releases/oak-hill-capital-to-acquire-majority-stake-in-wyyerd-from-carlyle-302923593.html",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-10-29T13:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/oak-hill-capital-to-acquire-majority-stake-in-wyyerd-from-carlyle-302923593.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

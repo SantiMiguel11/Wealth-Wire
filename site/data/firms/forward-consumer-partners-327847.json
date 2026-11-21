@@ -1,0 +1,65 @@
+{
+ "schema_version": 1,
+ "slug": "forward-consumer-partners-327847",
+ "name": "Forward Consumer Partners",
+ "legal_name": "Forward Consumer Partners",
+ "crd": "327847",
+ "sec_number": "801-129028",
+ "city": "Greenwich",
+ "state": "CT",
+ "sec_aum_usd": 425000000.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/327847",
+ "stories": [
+  {
+   "cluster_id": 935,
+   "headline": "Forward Consumer Partners strikes deal to carve out Welly from Unilever",
+   "url": "https://www.pehub.com/forward-consumer-partners-strikes-deal-to-carve-out-welly-from-unilever/",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-10-19T17:44:19Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/forward-consumer-partners-strikes-deal-to-carve-out-welly-from-unilever/"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 935,
+   "date": "2026-10-19T17:44:19Z",
+   "headline": "Forward Consumer Partners strikes deal to carve out Welly from Unilever",
+   "acquirer": {
+    "name": "Forward Consumer Partners",
+    "slug": "forward-consumer-partners-327847",
+    "crd": "327847"
+   },
+   "target": {
+    "name": "Welly",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management",
+    "Consumer & Retail"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/forward-consumer-partners-strikes-deal-to-carve-out-welly-from-unilever/"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

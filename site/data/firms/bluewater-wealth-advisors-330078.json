@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "bluewater-wealth-advisors-330078",
+ "name": "Bluewater Wealth Advisors",
+ "legal_name": "Bluewater Wealth Advisors",
+ "crd": "330078",
+ "sec_number": "801-129724",
+ "city": "Vestavia Hills",
+ "state": "AL",
+ "sec_aum_usd": 145781465.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/330078",
+ "stories": [
+  {
+   "cluster_id": 1105,
+   "headline": "NIIT Learning Systems Limited Acquires Bluewater Learning to Power AI-Driven Learning and Talent Transformation",
+   "url": "https://www.prnewswire.com/news-releases/niit-learning-systems-limited-acquires-bluewater-learning-to-power-ai-driven-learning-and-talent-transformation-302923820.html",
+   "category": "Technology",
+   "last_published": "2026-10-29T17:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/niit-learning-systems-limited-acquires-bluewater-learning-to-power-ai-driven-learning-and-talent-transformation-302923820.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

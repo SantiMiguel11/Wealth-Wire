@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "arini-capital-management-331241",
+ "name": "Arini Capital Management",
+ "legal_name": "Arini Capital Management",
+ "crd": "331241",
+ "sec_number": "801-130893",
+ "city": "London",
+ "state": null,
+ "sec_aum_usd": 35527062904.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/331241",
+ "stories": [
+  {
+   "cluster_id": 1308,
+   "headline": "Arini founder agrees to buy £40mn London mansion as hedge fund reels",
+   "url": "https://www.ft.com/content/1c44cb5e-68ff-4396-a906-0bb6161e02d6?syn-25a6b1a6=1",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-11-11T05:00:21Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Financial Times Companies",
+     "url": "https://www.ft.com/content/1c44cb5e-68ff-4396-a906-0bb6161e02d6?syn-25a6b1a6=1"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

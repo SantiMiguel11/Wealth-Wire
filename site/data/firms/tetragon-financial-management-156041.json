@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "tetragon-financial-management-156041",
+ "name": "Tetragon Financial Management",
+ "legal_name": "Tetragon Financial Management",
+ "crd": "156041",
+ "sec_number": "801-74151",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 4256460791.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/156041",
+ "stories": [
+  {
+   "cluster_id": 1190,
+   "headline": "Tetragon Financial Group Limited Announcement of Tender Offer to Purchase $50,000,000 of Tetragon Non-Voting Shares",
+   "url": "https://www.prnewswire.com/news-releases/tetragon-financial-group-limited-announcement-of-tender-offer-to-purchase-50-000-000-of-tetragon-non-voting-shares-302928244.html",
+   "category": "Fintech & Payments",
+   "last_published": "2026-11-04T06:55:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/tetragon-financial-group-limited-announcement-of-tender-offer-to-purchase-50-000-000-of-tetragon-non-voting-shares-302928244.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

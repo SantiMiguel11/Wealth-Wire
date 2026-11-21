@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "cumberland-advisors-107964",
+ "name": "Cumberland Advisors",
+ "legal_name": "Cumberland Advisors",
+ "crd": "107964",
+ "sec_number": "801-55344",
+ "city": "Sarasota",
+ "state": "FL",
+ "sec_aum_usd": 3217125317.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/107964",
+ "stories": [
+  {
+   "cluster_id": 1037,
+   "headline": "Couche-Tard makes bid for Cumberland Farms: report",
+   "url": "https://seekingalpha.com/news/4656933-couche-tard-makes-bid-cumberland-farms?source=feed_tag_m_a",
+   "category": "Other",
+   "last_published": "2026-10-24T16:30:05Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4656933-couche-tard-makes-bid-cumberland-farms?source=feed_tag_m_a"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "rmg-advisors-122366",
+ "name": "RMG Advisors",
+ "legal_name": "Risk Management Group",
+ "crd": "122366",
+ "sec_number": "801-132202",
+ "city": "Rockville",
+ "state": "MD",
+ "sec_aum_usd": 200477570.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/122366",
+ "stories": [
+  {
+   "cluster_id": 1058,
+   "headline": "Pennsylvania’s Commonwealth University Adds Risk Management/Insurance Program",
+   "url": "https://www.insurancejournal.com/news/east/2026/10/26/890061.htm",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-10-26T05:00:08Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Insurance Journal",
+     "url": "https://www.insurancejournal.com/news/east/2026/10/26/890061.htm"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

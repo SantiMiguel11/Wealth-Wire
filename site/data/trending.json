@@ -1,0 +1,112 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-11-21T08:13:03Z",
+ "days": 7,
+ "firms": [
+  {
+   "name": "Osaic Wealth",
+   "slug": "osaic-wealth-23131",
+   "crd": "23131",
+   "verified": true,
+   "stories": 2
+  },
+  {
+   "name": "Accel-kkr",
+   "slug": "accel-kkr-156498",
+   "crd": "156498",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Accredited Investors Wealth Management",
+   "slug": "accredited-investors-wealth-management-105439",
+   "crd": "105439",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Blue Moon Capital Management",
+   "slug": "blue-moon-capital-management-311941",
+   "crd": "311941",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Bluespring Wealth Management",
+   "slug": "bluespring-wealth-management-152667",
+   "crd": "152667",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Bluestone Equity Partners",
+   "slug": "bluestone-equity-partners-323332",
+   "crd": "323332",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Cahaba Wealth Management",
+   "slug": "cahaba-wealth-management-151675",
+   "crd": "151675",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Cary Street Partners",
+   "slug": "cary-street-partners-128545",
+   "crd": "128545",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Christopher Weil",
+   "slug": "christopher-weil-22090",
+   "crd": "22090",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Concurrent Investment Advisors",
+   "slug": "concurrent-investment-advisors-323135",
+   "crd": "323135",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "CW Advisors",
+   "slug": "cw-advisors-310873",
+   "crd": "310873",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Delphi Management",
+   "slug": "delphi-management-106042",
+   "crd": "106042",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "Double Eagle Family Offices",
+   "slug": "double-eagle-family-offices-315523",
+   "crd": "315523",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "East Coast Asset Management",
+   "slug": "east-coast-asset-management-147910",
+   "crd": "147910",
+   "verified": true,
+   "stories": 1
+  },
+  {
+   "name": "EP Wealth Advisors",
+   "slug": "ep-wealth-advisors-111147",
+   "crd": "111147",
+   "verified": true,
+   "stories": 1
+  }
+ ]
+}

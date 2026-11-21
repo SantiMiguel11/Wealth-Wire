@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "avance-investment-management-310749",
+ "name": "Avance Investment Management",
+ "legal_name": "Avance Investment Management",
+ "crd": "310749",
+ "sec_number": "801-119844",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 2618772663.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/310749",
+ "stories": [
+  {
+   "cluster_id": 1093,
+   "headline": "Alchemy Technology Group Acquires Freeit Data Solutions, an Austin-Based IT and Cybersecurity Solutions Provider",
+   "url": "https://www.prnewswire.com/news-releases/alchemy-technology-group-acquires-freeit-data-solutions-an-austin-based-it-and-cybersecurity-solutions-provider-302922225.html",
+   "category": "Technology",
+   "last_published": "2026-10-28T13:36:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/alchemy-technology-group-acquires-freeit-data-solutions-an-austin-based-it-and-cybersecurity-solutions-provider-302922225.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

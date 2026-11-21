@@ -1,0 +1,65 @@
+{
+ "schema_version": 1,
+ "slug": "merrill-lynch-pierce-fenner-smith-7691",
+ "name": "Merrill Lynch, Pierce, Fenner & Smith",
+ "legal_name": "Merrill Lynch, Pierce, Fenner & Smith",
+ "crd": "7691",
+ "sec_number": "801-14235",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 1781568171479.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/7691",
+ "stories": [
+  {
+   "cluster_id": 1250,
+   "headline": "Advisor moves: JPMorgan lands $940M Merrill veteran in Los Angeles",
+   "url": "https://www.investmentnews.com/wirehouses/advisor-moves-jpmorgan-lands-940m-merrill-veteran-in-los-angeles/268918",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-06T16:49:59Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/wirehouses/advisor-moves-jpmorgan-lands-940m-merrill-veteran-in-los-angeles/268918"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1250,
+   "date": "2026-11-06T16:49:59Z",
+   "headline": "Advisor moves: JPMorgan lands $940M Merrill veteran in Los Angeles",
+   "acquirer": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Merrill",
+    "slug": "merrill-lynch-pierce-fenner-smith-7691",
+    "crd": "7691"
+   },
+   "target_aum_usd": 1781568171479.0,
+   "target_aum_source": "sec",
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "acquirer not named in the headline",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs",
+    "Banking"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/wirehouses/advisor-moves-jpmorgan-lands-940m-merrill-veteran-in-los-angeles/268918"
+    }
+   ],
+   "role": "target"
+  }
+ ]
+}

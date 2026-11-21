@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "advantage-capital-171365",
+ "name": "Advantage Capital",
+ "legal_name": "Advantage Capital Investment Adviser",
+ "crd": "171365",
+ "sec_number": "801-80355",
+ "city": "New Orleans",
+ "state": "LA",
+ "sec_aum_usd": 1294679102.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/171365",
+ "stories": [
+  {
+   "cluster_id": 963,
+   "headline": "Oaktree’s Deal to Buy A-Cap Insurer Crumbles, Spawning New Talks",
+   "url": "https://www.insurancejournal.com/news/southeast/2026/10/20/889671.htm",
+   "category": "Insurance",
+   "last_published": "2026-10-20T14:27:21Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Insurance Journal",
+     "url": "https://www.insurancejournal.com/news/southeast/2026/10/20/889671.htm"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

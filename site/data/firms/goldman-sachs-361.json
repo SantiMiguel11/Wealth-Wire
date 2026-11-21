@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "goldman-sachs-361",
+ "name": "Goldman Sachs",
+ "legal_name": "Goldman Sachs",
+ "crd": "361",
+ "sec_number": "801-16048",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 133644228926.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/361",
+ "stories": [
+  {
+   "cluster_id": 956,
+   "headline": "Salesforce to buy Braze for $47.50 a share in cash",
+   "url": "https://seekingalpha.com/news/4654554-salesforce-to-buy-braze-for-47_50-a-share-in-cash?source=feed_tag_m_a",
+   "category": "Technology",
+   "last_published": "2026-10-21T16:55:32Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654554-salesforce-to-buy-braze-for-47_50-a-share-in-cash?source=feed_tag_m_a"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

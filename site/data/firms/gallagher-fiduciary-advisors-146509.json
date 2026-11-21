@@ -1,0 +1,52 @@
+{
+ "schema_version": 1,
+ "slug": "gallagher-fiduciary-advisors-146509",
+ "name": "Gallagher Fiduciary Advisors",
+ "legal_name": "Gallagher Fiduciary Advisors",
+ "crd": "146509",
+ "sec_number": "801-68868",
+ "city": "Rolling Meadows",
+ "state": "IL",
+ "sec_aum_usd": 194823102725.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/146509",
+ "stories": [
+  {
+   "cluster_id": 1416,
+   "headline": "Arthur J. Gallagher Acquires Bay and Basin Insurance Services in California",
+   "url": "https://www.insurancejournal.com/news/west/2026/11/19/892854.htm",
+   "category": "Insurance",
+   "last_published": "2026-11-19T14:01:00Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "Insurance Journal",
+     "url": "https://www.insurancejournal.com/news/west/2026/11/19/892854.htm"
+    },
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/arthur-j-gallagher--co-acquires-agriserv-inc-302944823.html"
+    }
+   ]
+  },
+  {
+   "cluster_id": 925,
+   "headline": "Arthur J. Gallagher & Co. Acquires Intelligent Communications Experiences",
+   "url": "https://www.prnewswire.com/news-releases/arthur-j-gallagher--co-acquires-intelligent-communications-experiences-302911555.html",
+   "category": "Insurance",
+   "last_published": "2026-10-21T13:00:00Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/arthur-j-gallagher--co-acquires-intelligent-communications-experiences-302911555.html"
+    },
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654215-arthur-j-gallagher-buys-intelligent-communications-experiences?source=feed_tag_m_a"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

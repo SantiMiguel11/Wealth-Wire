@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "nexus-capital-management-168618",
+ "name": "Nexus Capital Management",
+ "legal_name": "Nexus Capital Management",
+ "crd": "168618",
+ "sec_number": "801-79220",
+ "city": "Los Angeles",
+ "state": "CA",
+ "sec_aum_usd": 5133744572.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/168618",
+ "stories": [
+  {
+   "cluster_id": 1141,
+   "headline": "NEXUS CAPITAL MANAGEMENT COMPLETES ACQUISITION OF COLDWATER CREEK AND SOFT SURROUNDINGS",
+   "url": "https://www.prnewswire.com/news-releases/nexus-capital-management-completes-acquisition-of-coldwater-creek-and-soft-surroundings-302925846.html",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-11-02T16:30:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/nexus-capital-management-completes-acquisition-of-coldwater-creek-and-soft-surroundings-302925846.html"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1141,
+   "date": "2026-11-02T16:30:00Z",
+   "headline": "NEXUS CAPITAL MANAGEMENT COMPLETES ACQUISITION OF COLDWATER CREEK AND SOFT SURROUNDINGS",
+   "acquirer": {
+    "name": "NEXUS CAPITAL MANAGEMENT",
+    "slug": "nexus-capital-management-168618",
+    "crd": "168618"
+   },
+   "target": {
+    "name": "COLDWATER CREEK AND SOFT SURROUNDINGS",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "completed",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/nexus-capital-management-completes-acquisition-of-coldwater-creek-and-soft-surroundings-302925846.html"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

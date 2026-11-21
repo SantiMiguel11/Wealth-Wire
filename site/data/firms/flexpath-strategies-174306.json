@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "flexpath-strategies-174306",
+ "name": "Flexpath Strategies",
+ "legal_name": "Flexpath Strategies",
+ "crd": "174306",
+ "sec_number": "801-80914",
+ "city": "Aliso Viejo",
+ "state": "CA",
+ "sec_aum_usd": 2913734672.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/174306",
+ "stories": [
+  {
+   "cluster_id": 1038,
+   "headline": "Mesirow Fiduciary Solutions Completes Acquisition of flexPATH Strategies' Plan-Level 3(38) Business",
+   "url": "https://www.prnewswire.com/news-releases/mesirow-fiduciary-solutions-completes-acquisition-of-flexpath-strategies-plan-level-338-business-302919723.html",
+   "category": "Other",
+   "last_published": "2026-10-26T18:32:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/mesirow-fiduciary-solutions-completes-acquisition-of-flexpath-strategies-plan-level-338-business-302919723.html"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1038,
+   "date": "2026-10-26T18:32:00Z",
+   "headline": "Mesirow Fiduciary Solutions Completes Acquisition of flexPATH Strategies' Plan-Level 3(38) Business",
+   "acquirer": {
+    "name": "Mesirow Fiduciary Solutions",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "flexPATH Strategies' Plan-Level 3",
+    "slug": "flexpath-strategies-174306",
+    "crd": "174306"
+   },
+   "target_aum_usd": 2913734672.0,
+   "target_aum_source": "sec",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "completed",
+   "value_usd": null,
+   "industries": [
+    "Other"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/mesirow-fiduciary-solutions-completes-acquisition-of-flexpath-strategies-plan-level-338-business-302919723.html"
+    }
+   ],
+   "role": "target"
+  }
+ ]
+}

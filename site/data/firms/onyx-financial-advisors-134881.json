@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "onyx-financial-advisors-134881",
+ "name": "Onyx Financial Advisors",
+ "legal_name": "Onyx Financial Advisors",
+ "crd": "134881",
+ "sec_number": "801-107355",
+ "city": "Idaho Falls",
+ "state": "ID",
+ "sec_aum_usd": 506448769.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/134881",
+ "stories": [
+  {
+   "cluster_id": 1194,
+   "headline": "ONYX PARTNERS LTD ACQUIRES KANE'S FURNITURE, LLC",
+   "url": "https://www.prnewswire.com/news-releases/onyx-partners-ltd-acquires-kanes-furniture-llc-302929585.html",
+   "category": "Consumer & Retail",
+   "last_published": "2026-11-04T17:59:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/onyx-partners-ltd-acquires-kanes-furniture-llc-302929585.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

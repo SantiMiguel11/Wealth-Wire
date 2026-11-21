@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "rainier-investment-management-105556",
+ "name": "Rainier Investment Management",
+ "legal_name": "Rainier Investment Management",
+ "crd": "105556",
+ "sec_number": "801-35638",
+ "city": "Seattle",
+ "state": "WA",
+ "sec_aum_usd": 581139481.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/105556",
+ "stories": [
+  {
+   "cluster_id": 1116,
+   "headline": "Rainier Partners Acquires Texas MGA Platform Apex",
+   "url": "https://www.insurancejournal.com/news/southcentral/2026/10/29/890822.htm",
+   "category": "Insurance",
+   "last_published": "2026-10-29T16:26:10Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Insurance Journal",
+     "url": "https://www.insurancejournal.com/news/southcentral/2026/10/29/890822.htm"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

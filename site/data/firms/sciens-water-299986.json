@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "sciens-water-299986",
+ "name": "Sciens Water",
+ "legal_name": "Sciens Water Opportunities Management",
+ "crd": "299986",
+ "sec_number": "801-136184",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 743453428.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/299986",
+ "stories": [
+  {
+   "cluster_id": 1348,
+   "headline": "Sciens Water Acquires Roberts Filter Group",
+   "url": "https://www.prnewswire.com/news-releases/sciens-water-acquires-roberts-filter-group-302937069.html",
+   "category": "Industrials",
+   "last_published": "2026-11-12T22:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/sciens-water-acquires-roberts-filter-group-302937069.html"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1348,
+   "date": "2026-11-12T22:00:00Z",
+   "headline": "Sciens Water Acquires Roberts Filter Group",
+   "acquirer": {
+    "name": "Sciens Water",
+    "slug": "sciens-water-299986",
+    "crd": "299986"
+   },
+   "target": {
+    "name": "Roberts Filter Group",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Industrials"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/sciens-water-acquires-roberts-filter-group-302937069.html"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

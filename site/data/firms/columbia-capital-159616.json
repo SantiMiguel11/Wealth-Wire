@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "columbia-capital-159616",
+ "name": "Columbia Capital",
+ "legal_name": "Columbia Capital",
+ "crd": "159616",
+ "sec_number": "801-126354",
+ "city": "Alexandria",
+ "state": "VA",
+ "sec_aum_usd": 13837922735.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/159616",
+ "stories": [
+  {
+   "cluster_id": 1219,
+   "headline": "Telarus Announces Strategic Investment from Snowhawk Partners, with Continued Investment from Columbia Capital",
+   "url": "https://www.prnewswire.com/news-releases/telarus-announces-strategic-investment-from-snowhawk-partners-with-continued-investment-from-columbia-capital-302930399.html",
+   "category": "Technology",
+   "last_published": "2026-11-05T16:15:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/telarus-announces-strategic-investment-from-snowhawk-partners-with-continued-investment-from-columbia-capital-302930399.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

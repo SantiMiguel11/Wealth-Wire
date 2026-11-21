@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "brightstar-capital-partners-283313",
+ "name": "Brightstar Capital Partners",
+ "legal_name": "Brightstar Capital Partners",
+ "crd": "283313",
+ "sec_number": "801-110361",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 4849984324.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/283313",
+ "stories": [
+  {
+   "cluster_id": 961,
+   "headline": "Morgan Stanley Capital Partners scoops up The Rapid Group; Brightstar bets on automated warehouse trends with Material Handling Group USA",
+   "url": "https://www.pehub.com/morgan-stanley-capital-partners-scoops-up-the-rapid-group-brightstar-bets-on-automated-warehouse-trends-with-material-handling-group-usa/",
+   "category": "Investment Banking",
+   "last_published": "2026-10-20T13:47:01Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PE Hub",
+     "url": "https://www.pehub.com/morgan-stanley-capital-partners-scoops-up-the-rapid-group-brightstar-bets-on-automated-warehouse-trends-with-material-handling-group-usa/"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

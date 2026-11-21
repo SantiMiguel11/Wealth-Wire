@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "accel-kkr-156498",
+ "name": "Accel-kkr",
+ "legal_name": "Akkr Fund Ii Management",
+ "crd": "156498",
+ "sec_number": "801-74133",
+ "city": "Menlo Park",
+ "state": "CA",
+ "sec_aum_usd": 23808800000.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/156498",
+ "stories": [
+  {
+   "cluster_id": 1365,
+   "headline": "Loftware to Acquire Seagull Software, Uniting Product Identification Solutions to Serve Businesses Across the Supply Chain",
+   "url": "https://www.prnewswire.com/news-releases/loftware-to-acquire-seagull-software-uniting-product-identification-solutions-to-serve-businesses-across-the-supply-chain-302940574.html",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-11-16T19:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/loftware-to-acquire-seagull-software-uniting-product-identification-solutions-to-serve-businesses-across-the-supply-chain-302940574.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

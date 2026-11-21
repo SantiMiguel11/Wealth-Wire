@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "christopher-weil-22090",
+ "name": "Christopher Weil",
+ "legal_name": "Weil",
+ "crd": "22090",
+ "sec_number": "801-42757",
+ "city": "San Diego",
+ "state": "CA",
+ "sec_aum_usd": 896242185.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/22090",
+ "stories": [
+  {
+   "cluster_id": 1429,
+   "headline": "Milbank swoops on Weil Paris office as US law firms target European growth",
+   "url": "https://www.ft.com/content/d3f558d6-bbe3-4ba6-b831-8064579a6731?syn-25a6b1a6=1",
+   "category": "Banking",
+   "last_published": "2026-11-19T15:30:08Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Financial Times Companies",
+     "url": "https://www.ft.com/content/d3f558d6-bbe3-4ba6-b831-8064579a6731?syn-25a6b1a6=1"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

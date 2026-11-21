@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "acore-capital-175054",
+ "name": "Acore Capital",
+ "legal_name": "Acore Capital",
+ "crd": "175054",
+ "sec_number": "801-95178",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 18271945621.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/175054",
+ "stories": [
+  {
+   "cluster_id": 1019,
+   "headline": "Investment Roundup: ACORE Capital Adds Wealth Division",
+   "url": "https://www.wealthmanagement.com/real-estate/investment-roundup-acore-capital-adds-wealth-division",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-10-22T16:22:30Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/real-estate/investment-roundup-acore-capital-adds-wealth-division"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

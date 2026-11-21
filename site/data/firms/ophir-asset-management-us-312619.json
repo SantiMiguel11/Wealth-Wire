@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "ophir-asset-management-us-312619",
+ "name": "Ophir Asset Management Us",
+ "legal_name": "Ophir Asset Management Us",
+ "crd": "312619",
+ "sec_number": "801-120534",
+ "city": "Denver",
+ "state": "CO",
+ "sec_aum_usd": 1268507779.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/312619",
+ "stories": [
+  {
+   "cluster_id": 930,
+   "headline": "MKS to sell Ophir Optics business to TTM for $650M; shares up",
+   "url": "https://seekingalpha.com/news/4654200-mks-to-sell-ophir-optics-business-to-ttm-for-650m-shares-up?source=feed_tag_m_a",
+   "category": "Other",
+   "last_published": "2026-10-19T12:49:57Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4654200-mks-to-sell-ophir-optics-business-to-ttm-for-650m-shares-up?source=feed_tag_m_a"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

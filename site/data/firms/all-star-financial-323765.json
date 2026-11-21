@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "all-star-financial-323765",
+ "name": "All Star Financial",
+ "legal_name": "All Star Financial",
+ "crd": "323765",
+ "sec_number": "801-126834",
+ "city": "Minneapolis",
+ "state": "MN",
+ "sec_aum_usd": 881693500.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/323765",
+ "stories": [
+  {
+   "cluster_id": 1107,
+   "headline": "Wheelhouse Announces Acquisition of All Star Garage Door",
+   "url": "https://www.prnewswire.com/news-releases/wheelhouse-announces-acquisition-of-all-star-garage-door-302922641.html",
+   "category": "Other",
+   "last_published": "2026-10-29T15:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/wheelhouse-announces-acquisition-of-all-star-garage-door-302922641.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

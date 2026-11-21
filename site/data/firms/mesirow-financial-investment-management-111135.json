@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "mesirow-financial-investment-management-111135",
+ "name": "Mesirow Financial Investment Management",
+ "legal_name": "Mesirow Financial Investment Management",
+ "crd": "111135",
+ "sec_number": "801-27047",
+ "city": "Chicago",
+ "state": "IL",
+ "sec_aum_usd": 50438375000.0,
+ "sec_aum_as_of": "2026-10-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/111135",
+ "stories": [
+  {
+   "cluster_id": 1038,
+   "headline": "Mesirow Fiduciary Solutions Completes Acquisition of flexPATH Strategies' Plan-Level 3(38) Business",
+   "url": "https://www.prnewswire.com/news-releases/mesirow-fiduciary-solutions-completes-acquisition-of-flexpath-strategies-plan-level-338-business-302919723.html",
+   "category": "Other",
+   "last_published": "2026-10-26T18:32:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/mesirow-fiduciary-solutions-completes-acquisition-of-flexpath-strategies-plan-level-338-business-302919723.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}
