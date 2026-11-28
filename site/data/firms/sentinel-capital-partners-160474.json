@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "sentinel-capital-partners-160474",
+ "name": "Sentinel Capital Partners",
+ "legal_name": "Sentinel Capital Partners",
+ "crd": "160474",
+ "sec_number": "801-73968",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 8955819639.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/160474",
+ "stories": [
+  {
+   "cluster_id": 1487,
+   "headline": "Sentinel Capital Partners Acquires GSI Group Holdings",
+   "url": "https://www.prnewswire.com/news-releases/sentinel-capital-partners-acquires-gsi-group-holdings-302948842.html",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-11-24T12:30:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/sentinel-capital-partners-acquires-gsi-group-holdings-302948842.html"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1487,
+   "date": "2026-11-24T12:30:00Z",
+   "headline": "Sentinel Capital Partners Acquires GSI Group Holdings",
+   "acquirer": {
+    "name": "Sentinel Capital Partners",
+    "slug": "sentinel-capital-partners-160474",
+    "crd": "160474"
+   },
+   "target": {
+    "name": "GSI Group Holdings",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Private Equity & Asset Management"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/sentinel-capital-partners-acquires-gsi-group-holdings-302948842.html"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "schema_version": 1,
+ "slug": "tailwind-capital-156562",
+ "name": "Tailwind Capital",
+ "legal_name": "Tailwind Management",
+ "crd": "156562",
+ "sec_number": "801-73545",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 5410743372.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/156562",
+ "stories": [
+  {
+   "cluster_id": 1497,
+   "headline": "Applied Systems acquires InsurTech Tailwind",
+   "url": "https://www.reinsurancene.ws/applied-systems-acquires-insurtech-tailwind/",
+   "category": "Insurance",
+   "last_published": "2026-11-24T15:05:24Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "Reinsurance News",
+     "url": "https://www.reinsurancene.ws/applied-systems-acquires-insurtech-tailwind/"
+    },
+    {
+     "name": "Insurance Journal",
+     "url": "https://www.insurancejournal.com/news/national/2026/11/24/893608.htm"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

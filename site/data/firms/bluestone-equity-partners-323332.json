@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "bluestone-equity-partners-323332",
+ "name": "Bluestone Equity Partners",
+ "legal_name": "Bluestone Equity Partners",
+ "crd": "323332",
+ "sec_number": "801-126705",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 439942030.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/323332",
+ "stories": [
+  {
+   "cluster_id": 1391,
+   "headline": "o15 Capital Partners Provides Unitranche Facility and Equity Co-Investment to Support Bluestone Equity Partners' Acquisition of 11th St. Workshop",
+   "url": "https://www.prnewswire.com/news-releases/o15-capital-partners-provides-unitranche-facility-and-equity-co-investment-to-support-bluestone-equity-partners-acquisition-of-11th-st-workshop-302942496.html",
+   "category": "Other",
+   "last_published": "2026-11-17T16:45:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/o15-capital-partners-provides-unitranche-facility-and-equity-co-investment-to-support-bluestone-equity-partners-acquisition-of-11th-st-workshop-302942496.html"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1391,
+   "date": "2026-11-17T16:45:00Z",
+   "headline": "o15 Capital Partners Provides Unitranche Facility and Equity Co-Investment to Support Bluestone Equity Partners' Acquisition of 11th St. Workshop",
+   "acquirer": {
+    "name": "Support Bluestone Equity Partners",
+    "slug": "bluestone-equity-partners-323332",
+    "crd": "323332"
+   },
+   "target": {
+    "name": "11th St. Workshop",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Other"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/o15-capital-partners-provides-unitranche-facility-and-equity-co-investment-to-support-bluestone-equity-partners-acquisition-of-11th-st-workshop-302942496.html"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

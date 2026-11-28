@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "kelso-131471",
+ "name": "Kelso",
+ "legal_name": "Kelso",
+ "crd": "131471",
+ "sec_number": "801-73793",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 14323432504.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/131471",
+ "stories": [
+  {
+   "cluster_id": 1511,
+   "headline": "EQT Healthcare Growth to acquire majority stake in specialty European pharmaceutical business, Kelso Pharma",
+   "url": "https://www.prnewswire.com/news-releases/eqt-healthcare-growth-to-acquire-majority-stake-in-specialty-european-pharmaceutical-business-kelso-pharma-302951594.html",
+   "category": "Private Equity & Asset Management",
+   "last_published": "2026-11-27T07:20:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/eqt-healthcare-growth-to-acquire-majority-stake-in-specialty-european-pharmaceutical-business-kelso-pharma-302951594.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "peloton-capital-management-109775",
+ "name": "Peloton Capital Management",
+ "legal_name": "Peloton Capital Management",
+ "crd": "109775",
+ "sec_number": "801-27200",
+ "city": "Indianapolis",
+ "state": "IN",
+ "sec_aum_usd": 281997605.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/109775",
+ "stories": [
+  {
+   "cluster_id": 1501,
+   "headline": "BMS sells its Canadian business to Peloton Capital Management",
+   "url": "https://www.reinsurancene.ws/bms-sells-its-canadian-business-to-peloton-capital-management/",
+   "category": "Insurance",
+   "last_published": "2026-11-25T09:00:55Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Reinsurance News",
+     "url": "https://www.reinsurancene.ws/bms-sells-its-canadian-business-to-peloton-capital-management/"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1501,
+   "date": "2026-11-25T09:00:55Z",
+   "headline": "BMS sells its Canadian business to Peloton Capital Management",
+   "acquirer": {
+    "name": "Peloton Capital Management",
+    "slug": "peloton-capital-management-109775",
+    "crd": "109775"
+   },
+   "target": {
+    "name": "Canadian",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Insurance"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Reinsurance News",
+     "url": "https://www.reinsurancene.ws/bms-sells-its-canadian-business-to-peloton-capital-management/"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

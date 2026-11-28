@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "park-west-asset-management-157660",
+ "name": "Park West Asset Management",
+ "legal_name": "Park West Asset Management",
+ "crd": "157660",
+ "sec_number": "801-74145",
+ "city": "San Francisco",
+ "state": "CA",
+ "sec_aum_usd": 2860803000.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/157660",
+ "stories": [
+  {
+   "cluster_id": 1386,
+   "headline": "CenterCal Properties Acquires Park West in Peoria, Arizona",
+   "url": "https://www.prnewswire.com/news-releases/centercal-properties-acquires-park-west-in-peoria-arizona-302942706.html",
+   "category": "Real Estate",
+   "last_published": "2026-11-17T19:11:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/centercal-properties-acquires-park-west-in-peoria-arizona-302942706.html"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1386,
+   "date": "2026-11-17T19:11:00Z",
+   "headline": "CenterCal Properties Acquires Park West in Peoria, Arizona",
+   "acquirer": {
+    "name": "CenterCal Properties",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Park West",
+    "slug": "park-west-asset-management-157660",
+    "crd": "157660"
+   },
+   "target_aum_usd": 2860803000.0,
+   "target_aum_source": "sec",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Real Estate"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/centercal-properties-acquires-park-west-in-peoria-arizona-302942706.html"
+    }
+   ],
+   "role": "target"
+  }
+ ]
+}

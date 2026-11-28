@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "double-eagle-family-offices-315523",
+ "name": "Double Eagle Family Offices",
+ "legal_name": "Double Eagle Family Offices",
+ "crd": "315523",
+ "sec_number": "801-122127",
+ "city": "Fort Worth",
+ "state": "TX",
+ "sec_aum_usd": 1398671728.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/315523",
+ "stories": [
+  {
+   "cluster_id": 1375,
+   "headline": "Diamondback Energy confirms $5B deal to buy Permian holdings from Double Eagle",
+   "url": "https://seekingalpha.com/news/4672932-diamondback-energy-confirms-5b-deal-to-buy-permian-holdings-from-double-eagle?source=feed_tag_m_a",
+   "category": "Energy & Utilities",
+   "last_published": "2026-11-16T12:33:15Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4672932-diamondback-energy-confirms-5b-deal-to-buy-permian-holdings-from-double-eagle?source=feed_tag_m_a"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "christy-capital-management-149313",
+ "name": "Christy Capital Management",
+ "legal_name": "Christy Capital Management",
+ "crd": "149313",
+ "sec_number": "801-113307",
+ "city": "Macon",
+ "state": "GA",
+ "sec_aum_usd": 376298631.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/149313",
+ "stories": [
+  {
+   "cluster_id": 1469,
+   "headline": "Backcountry acquires winter sports retailer Christy Sports",
+   "url": "https://www.retaildive.com/news/backcountry-acquires-christy-sports-ski-retailer/875323/",
+   "category": "Consumer & Retail",
+   "last_published": "2026-11-23T15:44:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Retail Dive",
+     "url": "https://www.retaildive.com/news/backcountry-acquires-christy-sports-ski-retailer/875323/"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

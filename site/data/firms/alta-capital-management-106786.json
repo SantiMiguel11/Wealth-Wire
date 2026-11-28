@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "alta-capital-management-106786",
+ "name": "Alta Capital Management",
+ "legal_name": "Alta Capital Management",
+ "crd": "106786",
+ "sec_number": "801-50778",
+ "city": "Salt Lake City",
+ "state": "UT",
+ "sec_aum_usd": 1598578238.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/106786",
+ "stories": [
+  {
+   "cluster_id": 1473,
+   "headline": "Alta Equipment to buy Jackson Group Peterbilt for ~$399M",
+   "url": "https://seekingalpha.com/news/4676037-alta-equipment-to-buy-jackson-group-peterbilt-for-399m?source=feed_tag_m_a",
+   "category": "Industrials",
+   "last_published": "2026-11-24T10:28:17Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4676037-alta-equipment-to-buy-jackson-group-peterbilt-for-399m?source=feed_tag_m_a"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

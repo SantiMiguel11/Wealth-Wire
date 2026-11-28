@@ -1,0 +1,72 @@
+{
+ "schema_version": 1,
+ "slug": "mcgowan-group-asset-management-154127",
+ "name": "Mcgowan Group Asset Management",
+ "legal_name": "Mcgowan Group Asset Management",
+ "crd": "154127",
+ "sec_number": "801-71582",
+ "city": "Dallas",
+ "state": "TX",
+ "sec_aum_usd": 1083076071.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/154127",
+ "stories": [
+  {
+   "cluster_id": 1438,
+   "headline": "McGowan Acquires GJS Re",
+   "url": "https://www.prnewswire.com/news-releases/mcgowan-acquires-gjs-re-302946316.html",
+   "category": "Insurance",
+   "last_published": "2026-11-20T15:00:30Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/mcgowan-acquires-gjs-re-302946316.html"
+    },
+    {
+     "name": "Reinsurance News",
+     "url": "https://www.reinsurancene.ws/mcgowan-bolsters-reinsurance-capabilities-with-gjs-re-acquisition/"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1438,
+   "date": "2026-11-20T13:44:00Z",
+   "headline": "McGowan Acquires GJS Re",
+   "acquirer": {
+    "name": "McGowan",
+    "slug": "mcgowan-group-asset-management-154127",
+    "crd": "154127"
+   },
+   "target": {
+    "name": "GJS Re",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Insurance"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/mcgowan-acquires-gjs-re-302946316.html"
+    },
+    {
+     "name": "Reinsurance News",
+     "url": "https://www.reinsurancene.ws/mcgowan-bolsters-reinsurance-capabilities-with-gjs-re-acquisition/"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

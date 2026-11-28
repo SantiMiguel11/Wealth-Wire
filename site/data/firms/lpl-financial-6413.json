@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "lpl-financial-6413",
+ "name": "LPL Financial",
+ "legal_name": "LPL Financial",
+ "crd": "6413",
+ "sec_number": "801-10970",
+ "city": "Fort Mill",
+ "state": "SC",
+ "sec_aum_usd": 819117829825.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/6413",
+ "stories": [
+  {
+   "cluster_id": 1494,
+   "headline": "Advisor moves: LPL lands $605M El Paso group as Merrill adds three",
+   "url": "https://www.investmentnews.com/independent-broker-dealers/advisor-moves-lpl-lands-605m-el-paso-team-as-merrill-adds-three/269139",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-23T20:54:24Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/advisor-moves-lpl-lands-605m-el-paso-team-as-merrill-adds-three/269139"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

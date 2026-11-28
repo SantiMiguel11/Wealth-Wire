@@ -1,0 +1,73 @@
+{
+ "schema_version": 1,
+ "slug": "tjc-160313",
+ "name": "TJC",
+ "legal_name": "TJC",
+ "crd": "160313",
+ "sec_number": "801-73848",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 30780881806.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/160313",
+ "stories": [
+  {
+   "cluster_id": 1422,
+   "headline": "HMP Global Enters into Definitive Agreement to Be Acquired by TJC",
+   "url": "https://www.prnewswire.com/news-releases/hmp-global-enters-into-definitive-agreement-to-be-acquired-by-tjc-302945592.html",
+   "category": "Healthcare & Life Sciences",
+   "last_published": "2026-11-24T08:00:00Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/hmp-global-enters-into-definitive-agreement-to-be-acquired-by-tjc-302945592.html"
+    },
+    {
+     "name": "Fierce Pharma",
+     "url": "https://www.fiercepharma.com/marketing/tjc-buys-majority-stake-healthcare-events-firm-hmp-unleash-ma"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1422,
+   "date": "2026-11-19T15:00:00Z",
+   "headline": "HMP Global Enters into Definitive Agreement to Be Acquired by TJC",
+   "acquirer": {
+    "name": "TJC",
+    "slug": "tjc-160313",
+    "crd": "160313"
+   },
+   "target": {
+    "name": "HMP Global Enters",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Healthcare & Life Sciences",
+    "Business Services"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/hmp-global-enters-into-definitive-agreement-to-be-acquired-by-tjc-302945592.html"
+    },
+    {
+     "name": "Fierce Pharma",
+     "url": "https://www.fiercepharma.com/marketing/tjc-buys-majority-stake-healthcare-events-firm-hmp-unleash-ma"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

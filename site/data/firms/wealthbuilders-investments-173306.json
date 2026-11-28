@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "wealthbuilders-investments-173306",
+ "name": "Wealthbuilders Investments",
+ "legal_name": "Authentic Counsel",
+ "crd": "173306",
+ "sec_number": "801-127787",
+ "city": "Greenwood Village",
+ "state": "CO",
+ "sec_aum_usd": 172621305.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/173306",
+ "stories": [
+  {
+   "cluster_id": 1455,
+   "headline": "Authentic Acquires O'Neill, Expanding Global Action and Outdoor Portfolio",
+   "url": "https://www.prnewswire.com/news-releases/authentic-acquires-oneill-expanding-global-action-and-outdoor-portfolio-302948389.html",
+   "category": "Media & Telecom",
+   "last_published": "2026-11-23T16:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/authentic-acquires-oneill-expanding-global-action-and-outdoor-portfolio-302948389.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "terra-partners-asset-management-166117",
+ "name": "Terra Partners Asset Management",
+ "legal_name": "Terra Partners Asset Management",
+ "crd": "166117",
+ "sec_number": "801-100475",
+ "city": "Naxxar",
+ "state": null,
+ "sec_aum_usd": 266891503.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/166117",
+ "stories": [
+  {
+   "cluster_id": 1459,
+   "headline": "Palo Alto Networks in talks to buy AI cyber startup Terra - Calcalist",
+   "url": "https://seekingalpha.com/news/4675710-palo-alto-networks-in-talks-to-buy-ai-cyber-startup-terra-calcalist?source=feed_tag_m_a",
+   "category": "Technology",
+   "last_published": "2026-11-23T16:42:07Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4675710-palo-alto-networks-in-talks-to-buy-ai-cyber-startup-terra-calcalist?source=feed_tag_m_a"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1459,
+   "date": "2026-11-23T16:42:07Z",
+   "headline": "Palo Alto Networks in talks to buy AI cyber startup Terra - Calcalist",
+   "acquirer": {
+    "name": "Palo Alto Networks",
+    "slug": null,
+    "crd": null
+   },
+   "target": {
+    "name": "Terra",
+    "slug": "terra-partners-asset-management-166117",
+    "crd": "166117"
+   },
+   "target_aum_usd": 266891503.0,
+   "target_aum_source": "sec",
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "rumored",
+   "value_usd": null,
+   "industries": [
+    "Technology"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4675710-palo-alto-networks-in-talks-to-buy-ai-cyber-startup-terra-calcalist?source=feed_tag_m_a"
+    }
+   ],
+   "role": "target"
+  }
+ ]
+}

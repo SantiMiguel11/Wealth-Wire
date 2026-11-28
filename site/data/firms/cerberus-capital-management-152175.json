@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "cerberus-capital-management-152175",
+ "name": "Cerberus Capital Management",
+ "legal_name": "Cerberus Capital Management",
+ "crd": "152175",
+ "sec_number": "801-70989",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 92499746649.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/152175",
+ "stories": [
+  {
+   "cluster_id": 1482,
+   "headline": "Cerberus to Acquire the U.S. Space Systems Business of Airbus",
+   "url": "https://www.prnewswire.com/news-releases/cerberus-to-acquire-the-us-space-systems-business-of-airbus-302949473.html",
+   "category": "Other",
+   "last_published": "2026-11-24T14:00:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/cerberus-to-acquire-the-us-space-systems-business-of-airbus-302949473.html"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1482,
+   "date": "2026-11-24T14:00:00Z",
+   "headline": "Cerberus to Acquire the U.S. Space Systems Business of Airbus",
+   "acquirer": {
+    "name": "Cerberus",
+    "slug": "cerberus-capital-management-152175",
+    "crd": "152175"
+   },
+   "target": {
+    "name": "U.S. Space Systems Business of Airbus",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Other"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/cerberus-to-acquire-the-us-space-systems-business-of-airbus-302949473.html"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

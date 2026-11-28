@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "total-investment-management-108818",
+ "name": "Total Investment Management",
+ "legal_name": "Total Investment Management",
+ "crd": "108818",
+ "sec_number": "801-69759",
+ "city": "Scottsdale",
+ "state": "AZ",
+ "sec_aum_usd": 1352142086.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/108818",
+ "stories": [
+  {
+   "cluster_id": 1369,
+   "headline": "PINE TREE JOINT VENTURE ACQUIRES $108 MILLION SHOPPING CENTER IN TULSA, OKLAHOMA",
+   "url": "https://www.prnewswire.com/news-releases/pine-tree-joint-venture-acquires-108-million-shopping-center-in-tulsa-oklahoma-302940613.html",
+   "category": "Consumer & Retail",
+   "last_published": "2026-11-16T15:30:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/pine-tree-joint-venture-acquires-108-million-shopping-center-in-tulsa-oklahoma-302940613.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

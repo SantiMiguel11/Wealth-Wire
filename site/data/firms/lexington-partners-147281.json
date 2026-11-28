@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "lexington-partners-147281",
+ "name": "Lexington Partners",
+ "legal_name": "Lexington Partners",
+ "crd": "147281",
+ "sec_number": "801-71411",
+ "city": "New York",
+ "state": "NY",
+ "sec_aum_usd": 79274402408.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/147281",
+ "stories": [
+  {
+   "cluster_id": 1458,
+   "headline": "Mill Steel Company Acquires Assets of Chicago Steel and Lexington Steel",
+   "url": "https://www.prnewswire.com/news-releases/mill-steel-company-acquires-assets-of-chicago-steel-and-lexington-steel-302947516.html",
+   "category": "Industrials",
+   "last_published": "2026-11-23T13:32:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/mill-steel-company-acquires-assets-of-chicago-steel-and-lexington-steel-302947516.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

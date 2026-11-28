@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "accredited-investors-wealth-management-105439",
+ "name": "Accredited Investors Wealth Management",
+ "legal_name": "Accredited Investors",
+ "crd": "105439",
+ "sec_number": "801-33659",
+ "city": "Edina",
+ "state": "MN",
+ "sec_aum_usd": 4412886238.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/105439",
+ "stories": [
+  {
+   "cluster_id": 1388,
+   "headline": "Kingsbarn Acquires Two-Property Medical Office Portfolio in San Antonio",
+   "url": "https://www.prnewswire.com/news-releases/kingsbarn-acquires-two-property-medical-office-portfolio-in-san-antonio-302942626.html",
+   "category": "Healthcare & Life Sciences",
+   "last_published": "2026-11-17T18:09:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/kingsbarn-acquires-two-property-medical-office-portfolio-in-san-antonio-302942626.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

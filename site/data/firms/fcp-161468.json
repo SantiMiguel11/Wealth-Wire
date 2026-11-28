@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "slug": "fcp-161468",
+ "name": "FCP",
+ "legal_name": "Federated Hermes FCP Manager",
+ "crd": "161468",
+ "sec_number": "801-74428",
+ "city": "Chevy Chase",
+ "state": "MD",
+ "sec_aum_usd": 3477753977.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/161468",
+ "stories": [
+  {
+   "cluster_id": 1480,
+   "headline": "FCP ACQUIRES 2048 BOLTON DRIVE NW IN UPPER WESTSIDE ATLANTA",
+   "url": "https://www.prnewswire.com/news-releases/fcp-acquires-2048-bolton-drive-nw-in-upper-westside-atlanta-302949674.html",
+   "category": "Real Estate",
+   "last_published": "2026-11-24T16:43:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/fcp-acquires-2048-bolton-drive-nw-in-upper-westside-atlanta-302949674.html"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1480,
+   "date": "2026-11-24T16:43:00Z",
+   "headline": "FCP ACQUIRES 2048 BOLTON DRIVE NW IN UPPER WESTSIDE ATLANTA",
+   "acquirer": {
+    "name": "FCP",
+    "slug": "fcp-161468",
+    "crd": "161468"
+   },
+   "target": {
+    "name": "2048 BOLTON DRIVE NW",
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": null,
+   "target_aum_source": null,
+   "deal_type": "acquisition",
+   "confidence": "high",
+   "note": "",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Real Estate"
+   ],
+   "press_release": true,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/fcp-acquires-2048-bolton-drive-nw-in-upper-westside-atlanta-302949674.html"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

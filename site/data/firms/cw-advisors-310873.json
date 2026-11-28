@@ -1,0 +1,119 @@
+{
+ "schema_version": 1,
+ "slug": "cw-advisors-310873",
+ "name": "CW Advisors",
+ "legal_name": "CW Advisors",
+ "crd": "310873",
+ "sec_number": "801-119667",
+ "city": "Boston",
+ "state": "MA",
+ "sec_aum_usd": 15224527279.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/310873",
+ "stories": [
+  {
+   "cluster_id": 1411,
+   "headline": "CW Advisors buys $920M Woburn RIA, its seventh deal under Osaic",
+   "url": "https://www.investmentnews.com/independent-broker-dealers/cw-advisors-buys-920m-woburn-ria-its-seventh-deal-under-osaic/269067",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-18T18:23:29Z",
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/cw-advisors-buys-920m-woburn-ria-its-seventh-deal-under-osaic/269067"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/cw-advisors-buys-93-financial-adds-fifth-boston-office"
+    }
+   ]
+  },
+  {
+   "cluster_id": 1275,
+   "headline": "CW Advisors adds $1.6B with triple acquisition push into Texas and beyond",
+   "url": "https://www.investmentnews.com/independent-broker-dealers/cw-advisors-adds-16b-with-triple-acquisition-push-into-texas-and-beyond/268931",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-09T11:47:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/cw-advisors-adds-16b-with-triple-acquisition-push-into-texas-and-beyond/268931"
+    }
+   ]
+  }
+ ],
+ "deals": [
+  {
+   "cluster_id": 1411,
+   "date": "2026-11-18T14:30:05Z",
+   "headline": "CW Advisors buys $920M Woburn RIA, its seventh deal under Osaic",
+   "acquirer": {
+    "name": "CW Advisors",
+    "slug": "cw-advisors-310873",
+    "crd": "310873"
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 920000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target not named in the headline",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/cw-advisors-buys-920m-woburn-ria-its-seventh-deal-under-osaic/269067"
+    },
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/cw-advisors-buys-93-financial-adds-fifth-boston-office"
+    }
+   ],
+   "role": "acquirer"
+  },
+  {
+   "cluster_id": 1275,
+   "date": "2026-11-09T11:47:00Z",
+   "headline": "CW Advisors adds $1.6B with triple acquisition push into Texas and beyond",
+   "acquirer": {
+    "name": "CW Advisors",
+    "slug": "cw-advisors-310873",
+    "crd": "310873"
+   },
+   "target": {
+    "name": null,
+    "slug": null,
+    "crd": null
+   },
+   "target_aum_usd": 1600000000.0,
+   "target_aum_source": "headline",
+   "deal_type": "acquisition",
+   "confidence": "low",
+   "note": "target not named in the headline",
+   "stage": "announced",
+   "value_usd": null,
+   "industries": [
+    "Wealth Management & RIAs"
+   ],
+   "press_release": false,
+   "sources": [
+    {
+     "name": "InvestmentNews",
+     "url": "https://www.investmentnews.com/independent-broker-dealers/cw-advisors-adds-16b-with-triple-acquisition-push-into-texas-and-beyond/268931"
+    }
+   ],
+   "role": "acquirer"
+  }
+ ]
+}

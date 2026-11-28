@@ -1,0 +1,198 @@
+{
+ "schema_version": 1,
+ "date": "2026-11-28",
+ "generated_at": "2026-11-28T08:51:44Z",
+ "ai": false,
+ "opener": null,
+ "items": [
+  {
+   "cluster_id": 1513,
+   "headline": "Verizon in talks over $6bn deal for Fidium to boost broadband footprint",
+   "url": "https://www.ft.com/content/19c8508b-0dc6-492c-9f68-497da516a398?syn-25a6b1a6=1",
+   "category": "Media & Telecom",
+   "industries": [
+    "Media & Telecom"
+   ],
+   "deal": {
+    "acquirer": "Verizon",
+    "target": "Fidium",
+    "type": "acquisition",
+    "stage": "rumored",
+    "value_usd": 6000000000.0
+   },
+   "outlet_count": 2,
+   "sources": [
+    {
+     "name": "Financial Times Companies",
+     "url": "https://www.ft.com/content/19c8508b-0dc6-492c-9f68-497da516a398?syn-25a6b1a6=1"
+    },
+    {
+     "name": "Seeking Alpha M&A",
+     "url": "https://seekingalpha.com/news/4677076-verizon-in-talks-to-buy-fidium-in-6b-deal-ft?source=feed_tag_m_a"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1516,
+   "headline": "First Citizens Bank Enters into Whole Bank Purchase of United Fidelity Bank, fsb",
+   "url": "https://www.prnewswire.com/news-releases/first-citizens-bank-enters-into-whole-bank-purchase-of-united-fidelity-bank-fsb-302951956.html",
+   "category": "Banking",
+   "industries": [
+    "Banking"
+   ],
+   "deal": {
+    "acquirer": "Whole Bank",
+    "target": "United Fidelity Bank",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/first-citizens-bank-enters-into-whole-bank-purchase-of-united-fidelity-bank-fsb-302951956.html"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Fidelity Management & Research",
+     "slug": "fidelity-management-research-108281"
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1517,
+   "headline": "Peak Credit Union Announces Agreement to Acquire Southwest Heritage Bank",
+   "url": "https://www.prnewswire.com/news-releases/peak-credit-union-announces-agreement-to-acquire-southwest-heritage-bank-302951825.html",
+   "category": "Banking",
+   "industries": [
+    "Banking"
+   ],
+   "deal": {
+    "acquirer": "Peak Credit Union",
+    "target": "Southwest Heritage Bank",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/peak-credit-union-announces-agreement-to-acquire-southwest-heritage-bank-302951825.html"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1512,
+   "headline": "MDA SPACE COMPLETES ACQUISITION OF BLUE CANYON TECHNOLOGIES",
+   "url": "https://www.prnewswire.com/news-releases/mda-space-completes-acquisition-of-blue-canyon-technologies-302951817.html",
+   "category": "Technology",
+   "industries": [
+    "Technology"
+   ],
+   "deal": {
+    "acquirer": "MDA SPACE",
+    "target": "BLUE CANYON TECHNOLOGIES",
+    "type": "acquisition",
+    "stage": "completed",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/mda-space-completes-acquisition-of-blue-canyon-technologies-302951817.html"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1515,
+   "headline": "Oliver Wyman to acquire technology consulting firm Synpulse",
+   "url": "https://www.reinsurancene.ws/oliver-wyman-to-acquire-technology-consulting-firm-synpulse/",
+   "category": "Insurance",
+   "industries": [
+    "Insurance",
+    "Technology",
+    "Business Services"
+   ],
+   "deal": {
+    "acquirer": "Oliver Wyman",
+    "target": "Synpulse",
+    "type": "acquisition",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "Reinsurance News",
+     "url": "https://www.reinsurancene.ws/oliver-wyman-to-acquire-technology-consulting-firm-synpulse/"
+    }
+   ],
+   "firms": [],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  },
+  {
+   "cluster_id": 1511,
+   "headline": "EQT Healthcare Growth to acquire majority stake in specialty European pharmaceutical business, Kelso Pharma",
+   "url": "https://www.prnewswire.com/news-releases/eqt-healthcare-growth-to-acquire-majority-stake-in-specialty-european-pharmaceutical-business-kelso-pharma-302951594.html",
+   "category": "Private Equity & Asset Management",
+   "industries": [
+    "Private Equity & Asset Management",
+    "Healthcare & Life Sciences"
+   ],
+   "deal": {
+    "acquirer": "EQT Healthcare Growth",
+    "target": "European",
+    "type": "stake",
+    "stage": "announced",
+    "value_usd": null
+   },
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/eqt-healthcare-growth-to-acquire-majority-stake-in-specialty-european-pharmaceutical-business-kelso-pharma-302951594.html"
+    }
+   ],
+   "firms": [
+    {
+     "name": "Kelso",
+     "slug": "kelso-131471"
+    }
+   ],
+   "aum_usd": null,
+   "aum_source": null,
+   "summary": null,
+   "why_it_matters": null
+  }
+ ],
+ "more": [],
+ "window_start": "2026-11-27T08:51:44Z",
+ "last_good_digest": null,
+ "footer_note": "Summaries written with Claude from outlet headlines."
+}

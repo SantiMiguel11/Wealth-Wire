@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "stone-point-capital-156521",
+ "name": "Stone Point Capital",
+ "legal_name": "Stone Point Capital",
+ "crd": "156521",
+ "sec_number": "801-74033",
+ "city": "Greenwich",
+ "state": "CT",
+ "sec_aum_usd": 67625202830.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/156521",
+ "stories": [
+  {
+   "cluster_id": 1378,
+   "headline": "Apollo Makes Minority Investment in Focus Financial",
+   "url": "https://www.wealthmanagement.com/ria-news/apollo-funds-invest-in-focus-financial-partners",
+   "category": "Wealth Management & RIAs",
+   "last_published": "2026-11-16T14:37:27Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "WealthManagement.com",
+     "url": "https://www.wealthmanagement.com/ria-news/apollo-funds-invest-in-focus-financial-partners"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}

@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "slug": "westside-investment-management-154522",
+ "name": "Westside Investment Management",
+ "legal_name": "Westside Investment Management",
+ "crd": "154522",
+ "sec_number": "801-71762",
+ "city": "Santa Monica",
+ "state": "CA",
+ "sec_aum_usd": 888776410.0,
+ "sec_aum_as_of": "2026-11-02",
+ "iapd_url": "https://adviserinfo.sec.gov/firm/summary/154522",
+ "stories": [
+  {
+   "cluster_id": 1480,
+   "headline": "FCP ACQUIRES 2048 BOLTON DRIVE NW IN UPPER WESTSIDE ATLANTA",
+   "url": "https://www.prnewswire.com/news-releases/fcp-acquires-2048-bolton-drive-nw-in-upper-westside-atlanta-302949674.html",
+   "category": "Real Estate",
+   "last_published": "2026-11-24T16:43:00Z",
+   "outlet_count": 1,
+   "sources": [
+    {
+     "name": "PR Newswire M&A",
+     "url": "https://www.prnewswire.com/news-releases/fcp-acquires-2048-bolton-drive-nw-in-upper-westside-atlanta-302949674.html"
+    }
+   ]
+  }
+ ],
+ "deals": []
+}
